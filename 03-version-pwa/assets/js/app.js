@@ -902,28 +902,6 @@
     `;
   }
 
-  function renderSujets() {
-    main.innerHTML = `
-      <h1 class="page-title">Tous les sujets</h1>
-      <p class="page-lead">Si tu préfères chercher par catégorie plutôt que par situation.</p>
-
-      <div class="fiche-list">
-        ${MODULES.map(m => `
-          <a class="fiche-link" href="#/module/${m.id}">
-            <div>
-              <div class="fiche-link-title" style="display:flex; align-items:center; gap:10px;">
-                <span class="tile-icon" style="width:32px; height:32px; background: var(--color-${m.color}-soft); color: var(--color-${m.color}); display:inline-flex; align-items:center; justify-content:center; border-radius:8px;">${m.icon}</span>
-                ${escapeHtml(m.title)}
-              </div>
-              <div class="fiche-link-sub">${escapeHtml(m.objective)}</div>
-            </div>
-            <span class="fiche-link-arrow">${arrow}</span>
-          </a>
-        `).join('')}
-      </div>
-    `;
-  }
-
   function renderMesNotes() {
     const list = Notes.list();
     main.innerHTML = `
@@ -984,7 +962,6 @@
     'mes-contacts': { render: renderMesContacts, nav: 'mon-espace' },
     'mes-rappels': { render: renderMesRappels, nav: 'mon-espace' },
     'mes-notes': { render: renderMesNotes, nav: 'mon-espace' },
-    'sujets': { render: renderSujets, nav: 'home' },
     'a-propos': { render: renderAPropos, nav: 'home' }
   };
 

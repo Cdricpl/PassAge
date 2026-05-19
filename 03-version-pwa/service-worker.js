@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v13-2026-05-fixes';
+const VERSION = 'v14-2026-05-fixes';
 const SHELL_CACHE = `monavenir-shell-${VERSION}`;
 const RUNTIME_CACHE = `monavenir-runtime-${VERSION}`;
 

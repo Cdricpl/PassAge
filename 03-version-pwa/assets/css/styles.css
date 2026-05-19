@@ -178,8 +178,10 @@ p + p { margin-top: var(--sp-3); }
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--color-border-soft);
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
+  gap: var(--sp-2);
   padding: 0 var(--sp-4);
   z-index: 100;
 }
@@ -194,14 +196,24 @@ p + p { margin-top: var(--sp-3); }
   color: var(--color-text);
   transition: background 0.15s;
 }
+.header-back { grid-column: 1; justify-self: start; }
+.header-fav { grid-column: 3; justify-self: end; }
+/* Les boutons masqués gardent leur emplacement : le logo reste centré
+   à l'identique sur toutes les pages (sinon il saute sur l'Accueil). */
+.header-back[hidden], .header-fav[hidden] {
+  display: inline-flex;
+  visibility: hidden;
+}
 .header-back:hover, .header-fav:hover { background: var(--color-border-soft); }
 .header-fav.is-active { color: var(--color-argent); }
 
 .header-brand {
+  grid-column: 2;
+  justify-self: center;
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  margin: 0 auto;
+  margin: 0;
   text-decoration: none;
   color: inherit;
 }

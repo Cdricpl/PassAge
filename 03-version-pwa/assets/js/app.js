@@ -1036,7 +1036,9 @@
   function updatePageMetadata() {
     const titleText = main.querySelector('h1, .page-title')?.textContent?.trim();
     document.title = titleText ? `${titleText} — Pass'âge` : 'Pass\'âge — Tu n\'es pas seul·e';
-    main.focus();
+    // preventScroll : sinon le focus refait défiler <main> dans la vue
+    // après le scrollTo(0,0) → décalage visible à chaque changement de page.
+    main.focus({ preventScroll: true });
   }
 
   // ============================================================

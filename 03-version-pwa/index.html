@@ -8,7 +8,7 @@
   <meta name="format-detection" content="telephone=yes" />
 
   <!-- Sécurité : Content Security Policy stricte (defense in depth) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -61,7 +61,7 @@
       </ul>
     </section>
 
-    <form class="search-bar" role="search" onsubmit="event.preventDefault(); window.location.hash = '/recherche?q=' + encodeURIComponent(this.q.value);">
+    <form class="search-bar" role="search">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input type="search" name="q" placeholder="Une question ? Tape un mot…" aria-label="Rechercher dans Pass'âge" />
     </form>
@@ -230,15 +230,6 @@
 
   <script src="assets/js/content.js?v=2026-05-08-01" defer></script>
   <script src="assets/js/app.js?v=2026-05-08-01" defer></script>
-  <script>
-    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js').then(reg => {
-          reg.update();
-          if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-        }).catch(() => {});
-      });
-    }
-  </script>
+  <script src="assets/js/sw-register.js?v=2026-05-08-01" defer></script>
 </body>
 </html>

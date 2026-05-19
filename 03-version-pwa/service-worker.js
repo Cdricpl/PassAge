@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v15-2026-05-fixes';
+const VERSION = 'v16-2026-05-fixes';
 const SHELL_CACHE = `passage-shell-${VERSION}`;
 const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 
@@ -16,6 +16,7 @@ const SHELL_ASSETS = [
   './assets/css/styles.css',
   './assets/js/app.js?v=2026-05-08-01',
   './assets/js/content.js?v=2026-05-08-01',
+  './assets/js/sw-register.js?v=2026-05-08-01',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',
   './assets/policy.html'
@@ -66,8 +67,10 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(req)
         .then(res => {
-          const clone = res.clone();
-          caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+          if (res.ok) {
+            const clone = res.clone();
+            caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+          }
           return res;
         })
         .catch(() =>

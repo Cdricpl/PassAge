@@ -181,6 +181,7 @@
   const formatDate = (iso) => {
     if (!iso) return '';
     const d = new Date(iso + 'T00:00');
+    if (isNaN(d)) return iso;
     return d.toLocaleDateString('fr-BE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
   };
   const isPast = (iso) => iso && iso < new Date().toISOString().slice(0, 10);
@@ -265,9 +266,9 @@
         </ul>
       </section>
 
-      <form class="search-bar" role="search" onsubmit="event.preventDefault(); window.location.hash = '/recherche?q=' + encodeURIComponent(this.q.value);">
+      <form class="search-bar" role="search">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="search" name="q" placeholder="Une question ? Tape un mot…" aria-label="Rechercher" />
+        <input type="search" name="q" placeholder="Une question ? Tape un mot…" aria-label="Rechercher dans Pass'âge" />
       </form>
       <div class="search-suggest">
         <span>Essaye :</span>
@@ -342,14 +343,8 @@
         </div>
         <span class="fiche-link-arrow">${arrow}</span>
       </a>`;
-    let target = document.getElementById('resumeBanner');
-    if (target) {
-      target.innerHTML = html;
-    } else {
-      // Cas home statique : on insère avant l'urgence-cta
-      const urgenceCta = main.querySelector('.urgence-cta');
-      if (urgenceCta) urgenceCta.insertAdjacentHTML('beforebegin', html);
-    }
+    const target = document.getElementById('resumeBanner');
+    if (target) target.innerHTML = html;
   }
 
   function renderSituation(id) {
@@ -548,9 +543,9 @@
 
     main.innerHTML = `
       <h1 class="page-title">Rechercher</h1>
-      <form class="search-bar" role="search" onsubmit="event.preventDefault(); window.location.hash = '/recherche?q=' + encodeURIComponent(this.q.value);">
+      <form class="search-bar" role="search">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="search" name="q" placeholder="Une question ? Tape un mot…" autofocus value="${escapeHtml(q)}" />
+        <input type="search" name="q" placeholder="Une question ? Tape un mot…" aria-label="Rechercher dans Pass'âge" autofocus value="${escapeHtml(q)}" />
       </form>
       <div class="search-suggest">
         <span>Idées :</span>
@@ -964,7 +959,9 @@
     const params = {};
     (qs || '').split('&').forEach(p => {
       const [k, v] = p.split('=');
-      if (k) params[k] = decodeURIComponent(v || '');
+      if (!k) return;
+      try { params[k] = decodeURIComponent(v || ''); }
+      catch (_) { params[k] = v || ''; } // lien tronqué/mal collé : on garde la valeur brute plutôt que de crasher
     });
     return { segments, params };
   }
@@ -1163,16 +1160,27 @@
     if (Profile.welcomeDone()) return;
     const overlay = document.getElementById('welcomeOverlay');
     if (!overlay) return;
-    overlay.hidden = false;
-    document.body.classList.add('no-scroll');
-
     const form = document.getElementById('welcomeForm');
     const skip = document.getElementById('welcomeSkipBtn');
     const input = document.getElementById('welcomeName');
+    if (!form || !skip || !input) return;
+
+    const dialog = overlay.querySelector('.welcome-dialog');
+    const background = [
+      document.getElementById('appHeader'),
+      document.getElementById('main'),
+      document.querySelector('.bottom-nav')
+    ].filter(Boolean);
+
+    overlay.hidden = false;
+    document.body.classList.add('no-scroll');
+    // Le fond ne doit pas être atteignable au clavier ni annoncé tant que le modal est ouvert
+    background.forEach(el => { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); });
 
     const close = () => {
       overlay.hidden = true;
       document.body.classList.remove('no-scroll');
+      background.forEach(el => { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); });
       Profile.markWelcomeDone();
     };
 
@@ -1186,9 +1194,16 @@
 
     skip.addEventListener('click', close);
 
-    // Échap pour fermer (= Plus tard)
     overlay.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') close();
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab' || !dialog) return;
+      // Piège de focus : Tab reste dans le modal
+      const focusables = dialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
     setTimeout(() => input.focus(), 150);
@@ -1199,6 +1214,15 @@
   // ============================================================
 
   window.addEventListener('hashchange', route);
+
+  // Recherche : écouteur délégué (remplace les onsubmit inline → CSP stricte)
+  document.addEventListener('submit', (e) => {
+    const f = e.target.closest && e.target.closest('form.search-bar');
+    if (!f) return;
+    e.preventDefault();
+    const field = f.querySelector('[name="q"]');
+    window.location.hash = '/recherche?q=' + encodeURIComponent(field ? field.value : '');
+  });
 
   backBtn.addEventListener('click', () => {
     if (history.length > 1) history.back();

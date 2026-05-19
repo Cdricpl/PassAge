@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v12-2026-05-fixes';
+const VERSION = 'v13-2026-05-fixes';
 const SHELL_CACHE = `monavenir-shell-${VERSION}`;
 const RUNTIME_CACHE = `monavenir-runtime-${VERSION}`;
 
@@ -14,11 +14,10 @@ const SHELL_ASSETS = [
   './index.html',
   './manifest.webmanifest',
   './assets/css/styles.css',
-  './assets/js/app.js?v=2026-05-07-13',
-  './assets/js/content.js?v=2026-05-07-13',
+  './assets/js/app.js?v=2026-05-08-01',
+  './assets/js/content.js?v=2026-05-08-01',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',
-  './assets/icons/sfa-verviers.svg',
   './assets/policy.html'
 ];
 
@@ -98,7 +97,4 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
-
-// ---- Permettre une activation immédiate sur demande de l'app ----
-// Le listener est déjà défini plus haut. Cette duplication est redondante.
 

@@ -179,18 +179,6 @@
   const trash = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   // ============================================================
-  // Tuiles principales de la home (alignées avec index.html statique)
-  // ============================================================
-  const HOME_TILES = [
-    { href: '#/situation/majorite', color: 'majeur', icon: ICONS.cake, title: "Je viens d'avoir 18 ans", sub: 'Tout ce qui change pour toi' },
-    { href: '#/situation/argent', color: 'argent', icon: ICONS.euro, title: "J'ai besoin d'argent", sub: 'Aides, RIS, allocations' },
-    { href: '#/situation/logement', color: 'logement', icon: ICONS.home, title: 'Je cherche un logement', sub: 'Bail, garantie, aides' },
-    { href: '#/situation/travail', color: 'travail', icon: ICONS.bag, title: 'Je cherche un job', sub: 'CV, Forem, contrat' },
-    { href: '#/module/admin', color: 'admin', icon: ICONS.doc, title: 'Je veux comprendre mes droits', sub: 'Sans jargon, en clair' },
-    { href: '#/situation/sante-mal-etre', color: 'sante', icon: ICONS.leaf, title: 'Ça stresse, ma santé', sub: 'Trouver un médecin, parler quand ça va pas' }
-  ];
-
-  // ============================================================
   // Pages
   // ============================================================
 

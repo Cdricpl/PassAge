@@ -111,9 +111,12 @@
 html {
   -webkit-text-size-adjust: 100%;
   background: var(--color-bg);
-  overflow-x: hidden;
   /* Réserve toujours la place de l'ascenseur : sinon le contenu centré
-     saute horizontalement entre une page longue et une page courte. */
+     saute horizontalement entre une page longue et une page courte.
+     overflow-y: scroll = repli universel (navigateurs sans
+     scrollbar-gutter) ; scrollbar-gutter = équivalent moderne. */
+  overflow-x: hidden;
+  overflow-y: scroll;
   scrollbar-gutter: stable;
 }
 

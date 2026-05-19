@@ -1,5 +1,5 @@
 /* ============================================================
-   MonAvenir — Contenus
+   Pass'âge — Contenus
    Sources : Fiche Majorité (Service Familles d'Accueil)
    Tonalité : tutoiement, langage simple, bienveillant
    ============================================================ */

@@ -1,12 +1,12 @@
 /* ============================================================
-   MonAvenir — Service Worker
+   Pass'âge — Service Worker
    Stratégie : app shell pre-cached + cache-first pour les assets,
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v14-2026-05-fixes';
-const SHELL_CACHE = `monavenir-shell-${VERSION}`;
-const RUNTIME_CACHE = `monavenir-runtime-${VERSION}`;
+const VERSION = 'v15-2026-05-fixes';
+const SHELL_CACHE = `passage-shell-${VERSION}`;
+const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 
 // App shell : ressources pré-cachées dès l'install (offline dès la 1ère visite installée)
 const SHELL_ASSETS = [

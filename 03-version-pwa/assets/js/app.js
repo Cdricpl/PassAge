@@ -1,5 +1,5 @@
 /* ============================================================
-   MonAvenir — Application
+   Pass'âge — Application
    Routing par hash, rendu client, données en localStorage.
    La home est pré-rendue en HTML : on ne la remplace pas au 1er chargement,
    on l'enrichit (resume banner, progression sur les tuiles).
@@ -28,10 +28,30 @@
   // ============================================================
   // Stockage local
   // ============================================================
+  const STORE_PREFIX = 'passage.';
+  const LEGACY_STORE_PREFIX = 'monavenir.';
+
+  // Migration unique : reprend les données enregistrées sous l'ancien
+  // préfixe interne (favoris, notes, contacts, rappels…) pour ne rien
+  // perdre lors du renommage. Idempotente.
+  (function migrateLegacyStorage() {
+    try {
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (!k || k.indexOf(LEGACY_STORE_PREFIX) !== 0) continue;
+        const newKey = STORE_PREFIX + k.slice(LEGACY_STORE_PREFIX.length);
+        if (localStorage.getItem(newKey) === null) {
+          localStorage.setItem(newKey, localStorage.getItem(k));
+        }
+        localStorage.removeItem(k);
+      }
+    } catch (e) { /* localStorage indisponible — rien à migrer */ }
+  })();
+
   const Store = {
     get(key, fallback) {
       try {
-        const raw = localStorage.getItem('monavenir.' + key);
+        const raw = localStorage.getItem(STORE_PREFIX + key);
         if (raw === null) return fallback;
         const parsed = JSON.parse(raw);
         return parsed ?? fallback;
@@ -42,19 +62,19 @@
     },
     set(key, value) {
       try {
-        localStorage.setItem('monavenir.' + key, JSON.stringify(value));
+        localStorage.setItem(STORE_PREFIX + key, JSON.stringify(value));
         return true;
       } catch (e) {
         // QuotaExceededError, mode privé, ou autre — l'app ne doit pas crasher
         if (e && e.name === 'QuotaExceededError') {
           // Tentative douce : prévenir l'utilisateur sans bloquer
-          try { console.warn('[MonAvenir] Stockage local plein — sauvegarde impossible.'); } catch (_) {}
+          try { console.warn('[Pass\'âge] Stockage local plein — sauvegarde impossible.'); } catch (_) {}
         }
         return false;
       }
     },
     remove(key) {
-      try { localStorage.removeItem('monavenir.' + key); } catch (e) { /* ignore */ }
+      try { localStorage.removeItem(STORE_PREFIX + key); } catch (e) { /* ignore */ }
     }
   };
 

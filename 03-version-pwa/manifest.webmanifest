@@ -1,0 +1,53 @@
+{
+  "id": "monavenir",
+  "name": "Pass'âge — Comprendre. Agir. Avancer.",
+  "short_name": "Pass'âge",
+  "description": "L'app gratuite qui aide les jeunes à comprendre leurs droits, gérer l'administratif, trouver un logement, un job, ou de l'aide quand ça ne va pas.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#FAFAF8",
+  "theme_color": "#4F7CAC",
+  "lang": "fr-BE",
+  "dir": "ltr",
+  "categories": ["education", "social", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Aide / Urgence",
+      "short_name": "Aide",
+      "description": "Numéros d'écoute et d'urgence",
+      "url": "./index.html#/urgence",
+      "icons": [{ "src": "assets/icons/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Mon espace",
+      "short_name": "Espace",
+      "description": "Mes favoris, mes notes, mes rappels",
+      "url": "./index.html#/mon-espace",
+      "icons": [{ "src": "assets/icons/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Rechercher",
+      "short_name": "Recherche",
+      "description": "Trouver une info en quelques mots",
+      "url": "./index.html#/recherche",
+      "icons": [{ "src": "assets/icons/icon-192.svg", "sizes": "192x192" }]
+    }
+  ]
+}

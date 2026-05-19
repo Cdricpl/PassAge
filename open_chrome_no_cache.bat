@@ -1,0 +1,2 @@
+@echo off
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-cache --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding "file:///c:/Users/cpi/Documents/Majorité/03-version-pwa/index.html"

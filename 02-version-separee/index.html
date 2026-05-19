@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#4F7CAC" />
+  <meta name="description" content="MonAvenir, l'app gratuite qui aide les jeunes (18–25 ans) à comprendre leurs droits, gérer l'administratif, trouver un logement, un job, ou de l'aide quand ça ne va pas. 100 % confidentiel, sans compte." />
+  <meta name="format-detection" content="telephone=yes" />
+
+  <!-- Sécurité : Content Security Policy stricte (defense in depth) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="robots" content="index,follow" />
+
+  <title>MonAvenir — Tu n'es pas seul·e</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MonAvenir — Comprendre. Agir. Avancer." />
+  <meta property="og:description" content="Des infos claires et des aides concrètes pour t'orienter dans ta vie de tous les jours. Gratuit, anonyme, sans jugement." />
+  <meta property="og:locale" content="fr_BE" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon-192.svg" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preload" href="data.js" as="script" />
+  <link rel="preload" href="app.js" as="script" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <header class="app-header" id="appHeader">
+    <button class="header-back" id="backBtn" aria-label="Retour" hidden>
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="header-brand" id="headerBrand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="15" fill="#4F7CAC"/><path d="M10 22 L10 14 L16 10 L22 14 L22 22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-name">MonAvenir</span>
+    </div>
+    <button class="header-fav" id="favToggleBtn" aria-label="Ajouter aux favoris" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </button>
+  </header>
+
+  <main id="main" class="app-main" data-static-home="true" aria-live="polite" aria-atomic="false" tabindex="-1">
+    <!-- Cette page est rendue côté serveur/statique. Visible avant que JS ne charge. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero-greeting">Salut.</h1>
+      <p class="hero-question">Ici, on t'aide à comprendre, à choisir, à avancer. À ton rythme.</p>
+      <ul class="trust-chips" aria-label="Nos engagements">
+        <li><span class="dot" aria-hidden="true"></span> 100 % gratuit</li>
+        <li><span class="dot" aria-hidden="true"></span> Sans compte</li>
+        <li><span class="dot" aria-hidden="true"></span> Sans jugement</li>
+      </ul>
+    </section>
+
+    <form class="search-bar" role="search" onsubmit="event.preventDefault(); window.location.hash = '/recherche?q=' + encodeURIComponent(this.q.value);">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" name="q" placeholder="Une question ? Tape un mot…" aria-label="Rechercher dans MonAvenir" />
+    </form>
+    <div class="search-suggest">
+      <span>Essaye :</span>
+      <a href="#/recherche?q=CPAS">CPAS</a>
+      <a href="#/recherche?q=bail">bail</a>
+      <a href="#/recherche?q=mutuelle">mutuelle</a>
+      <a href="#/recherche?q=Forem">Forem</a>
+    </div>
+
+    <div id="resumeBanner"></div>
+
+    <a class="urgence-cta" href="#/urgence" aria-label="Aide ou urgence : ça ne va pas, parler à quelqu'un">
+      <span class="urgence-cta-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="urgence-cta-body">
+        <strong>Ça ne va pas ?</strong>
+        <span>Trouve quelqu'un à qui parler, tout de suite.</span>
+      </span>
+    </a>
+
+    <section class="themes-preview" aria-labelledby="themes-preview-label">
+      <header class="themes-preview-head">
+        <h2 id="themes-preview-label">
+          <span class="themes-preview-spark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z M19 14l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" fill="currentColor"/></svg>
+          </span>
+          Explore par thème
+        </h2>
+        <span class="themes-preview-count">9 thèmes</span>
+      </header>
+      <p class="themes-preview-lead">Découvre les 9 thèmes de l'app et choisis ce qui t'intéresse.</p>
+      <div class="themes-preview-grid">
+        <a class="theme-mini" href="#/module/argent" data-color="argent">
+          <span class="theme-mini-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 6a8 8 0 1 0 0 12 M5 10h10 M5 14h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <strong>Argent &amp; aides</strong>
+          <span>RIS, bourses, banque, budget</span>
+        </a>
+        <a class="theme-mini" href="#/module/logement" data-color="logement">
+          <span class="theme-mini-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <strong>Logement</strong>
+          <span>Bail, garantie, énergie</span>
+        </a>
+        <a class="theme-mini" href="#/module/travail" data-color="travail">
+          <span class="theme-mini-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 8h18l-1 12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 8z M8 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <strong>Travail</strong>
+          <span>CV, Forem, contrat</span>
+        </a>
+        <a class="theme-mini" href="#/module/sante" data-color="sante">
+          <span class="theme-mini-icon"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <strong>Santé &amp; bien-être</strong>
+          <span>Médecin, planning, mal-être</span>
+        </a>
+      </div>
+      <a class="themes-preview-cta" href="#/sujets">Voir les 9 thèmes <span aria-hidden="true">→</span></a>
+    </section>
+
+    <footer class="app-footer">
+      <p><strong>Tu peux fermer l'app et revenir plus tard.</strong> On garde tes notes et favoris sur ton appareil — rien n'est envoyé sur Internet.</p>
+
+      <a href="https://famillesdaccueil.mypixieset.com/" target="_blank" rel="noopener" class="signature-block">
+        <img src="assets/icons/sfa-verviers.svg" alt="" class="signature-logo" />
+        <span class="signature-text">
+          <span class="signature-intro">Une initiative du</span>
+          <strong>Service Familles d'Accueil</strong>
+          <span>de Verviers</span>
+        </span>
+        <svg viewBox="0 0 24 24" width="14" height="14" class="signature-ext" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <nav class="footer-links" aria-label="Liens utiles">
+        <a href="#/a-propos">À propos</a>
+        <a href="#/urgence">Aide &amp; urgence</a>
+      </nav>
+
+      <p class="updated-date">Contenu mis à jour le 2 mai 2026.</p>
+    </footer>
+  </main>
+
+  <!-- Onboarding (1er lancement) -->
+  <div class="welcome-overlay" id="welcomeOverlay" hidden>
+    <div class="welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+      <div class="welcome-illu" aria-hidden="true">
+        <svg viewBox="0 0 80 80" width="64" height="64">
+          <circle cx="40" cy="40" r="34" fill="#E5EDF5"/>
+          <path d="M22 50 Q40 32 58 50" stroke="#4F7CAC" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="30" cy="36" r="2.5" fill="#4F7CAC"/>
+          <circle cx="50" cy="36" r="2.5" fill="#4F7CAC"/>
+        </svg>
+      </div>
+      <h2 id="welcomeTitle">Salut, on commence&nbsp;?</h2>
+      <p>Tu peux nous donner un prénom (ou un surnom) pour qu'on te tutoie plus chaleureusement. <strong>C'est facultatif</strong> — si tu sautes, on continue pareil.</p>
+      <p class="welcome-privacy">Comme tout dans MonAvenir, ça reste <strong>sur ton téléphone</strong>. Personne d'autre n'y a accès.</p>
+      <form id="welcomeForm" class="welcome-form" autocomplete="off">
+        <label for="welcomeName" class="visually-hidden">Ton prénom</label>
+        <input id="welcomeName" name="name" type="text" maxlength="30" placeholder="Ton prénom (ou un surnom)" autocomplete="off" />
+        <div class="welcome-actions">
+          <button type="button" class="btn-ghost" id="welcomeSkipBtn">Plus tard</button>
+          <button type="submit" class="btn-primary">C'est parti</button>
+        </div>
+      </form>
+      <p class="welcome-footnote">Tu peux changer ou enlever ton prénom plus tard dans <strong>Mon espace</strong>.</p>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="noscript-notice" role="alert">
+      <h2>Pour profiter de tout, active JavaScript</h2>
+      <p>Les liens ci-dessus ouvrent les fiches détaillées une fois JavaScript activé. En attendant, voici les numéros qui peuvent t'aider tout de suite&nbsp;:</p>
+      <ul>
+        <li><a href="tel:112"><strong>112</strong></a> — Urgences vitales (24/7, gratuit)</li>
+        <li><a href="tel:1733"><strong>1733</strong></a> — Médecin de garde (soir, week-end)</li>
+        <li><a href="tel:0702452452"><strong>070 245 245</strong></a> — Centre Anti-Poisons (24/7, gratuit)</li>
+        <li><a href="tel:103"><strong>103</strong></a> — Écoute Enfants Ado (jusqu'à 20 ans, gratuit)</li>
+        <li><a href="tel:107"><strong>107</strong></a> — Télé-Accueil (24/7, parler à quelqu'un)</li>
+        <li><a href="tel:080032123"><strong>0800 32 123</strong></a> — Prévention du suicide (24/7, gratuit)</li>
+      </ul>
+    </div>
+  </noscript>
+
+  <nav class="bottom-nav" aria-label="Navigation principale">
+    <a href="#/" class="nav-item" data-route="home">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Accueil</span>
+    </a>
+    <a href="#/recherche" class="nav-item" data-route="recherche">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Rechercher</span>
+    </a>
+    <a href="#/urgence" class="nav-item nav-urgence" data-route="urgence" aria-label="Aide ou urgence">
+      <span class="urgence-badge">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 7v6M12 16.5v.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </span>
+      <span>Aide</span>
+    </a>
+    <a href="#/favoris" class="nav-item" data-route="favoris">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Favoris</span>
+    </a>
+    <a href="#/mon-espace" class="nav-item" data-route="mon-espace">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Mon espace</span>
+    </a>
+  </nav>
+
+  <script src="assets/js/content.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

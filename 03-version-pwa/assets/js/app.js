@@ -254,6 +254,36 @@
     });
   }
 
+  // Source unique du footer de la home (utilisé par le rendu JS ; le HTML
+  // statique d'index.html ne contient plus de copie — cf. enhanceStaticHome).
+  function homeFooterHTML() {
+    return `
+      <footer class="app-footer">
+        <p><strong>Tu peux fermer l'app et revenir plus tard.</strong> On garde tes notes et favoris sur ton appareil — rien n'est envoyé sur Internet.</p>
+        <a href="https://famillesdaccueil.mypixieset.com/" target="_blank" rel="noopener" class="signature-block">
+          <img src="assets/icons/logo-sfa.png" alt="" class="signature-logo" />
+          <span class="signature-text">
+            <span class="signature-intro">Une initiative du</span>
+            <strong>Service Familles d'Accueil</strong>
+            <span>de Verviers</span>
+          </span>
+          <svg viewBox="0 0 24 24" width="14" height="14" class="signature-ext" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <nav class="footer-links" aria-label="Liens utiles">
+          <a href="#/a-propos">À propos</a>
+          <a href="#/urgence">Aide &amp; urgence</a>
+        </nav>
+        <p class="updated-date">Contenu mis à jour le 8 mai 2026.</p>
+      </footer>
+    `;
+  }
+
+  // Partie dérivée de la home (grille des thèmes + footer) : SOURCE UNIQUE.
+  // Injectée par renderHome() (navigation) et enhanceStaticHome() (1er chargement).
+  function homeDynamicHTML() {
+    return renderThemesPreview() + homeFooterHTML();
+  }
+
   function renderHome() {
     main.innerHTML = `
       <section class="hero">
@@ -280,8 +310,6 @@
 
       <div id="resumeBanner"></div>
 
-      ${renderThemesPreview()}
-
       <a class="urgence-cta" href="#/urgence">
         <span class="urgence-cta-icon">${ICONS.sos}</span>
         <span class="urgence-cta-body">
@@ -290,39 +318,17 @@
         </span>
       </a>
 
-      <footer class="app-footer">
-        <p><strong>Tu peux fermer l'app et revenir plus tard.</strong> On garde tes notes et favoris sur ton appareil — rien n'est envoyé sur Internet.</p>
-        <a href="https://famillesdaccueil.mypixieset.com/" target="_blank" rel="noopener" class="signature-block">
-          <img src="assets/icons/logo-sfa.png" alt="" class="signature-logo" />
-          <span class="signature-text">
-            <span class="signature-intro">Une initiative du</span>
-            <strong>Service Familles d'Accueil</strong>
-            <span>de Verviers</span>
-          </span>
-          <svg viewBox="0 0 24 24" width="14" height="14" class="signature-ext" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <nav class="footer-links" aria-label="Liens utiles">
-          <a href="#/a-propos">À propos</a>
-          <a href="#/urgence">Aide &amp; urgence</a>
-        </nav>
-        <p class="updated-date">Contenu mis à jour le 8 mai 2026.</p>
-      </footer>
+      <div id="homeDynamic">${homeDynamicHTML()}</div>
     `;
     injectResumeBanner();
   }
 
-  // Au 1er chargement, la home est déjà rendue en HTML statique : on l'enrichit seulement.
+  // Au 1er chargement, le haut de la home est déjà en HTML statique (paint
+  // instantané). On injecte ici la partie dérivée depuis la source JS unique.
   function enhanceStaticHome() {
+    const slot = document.getElementById('homeDynamic');
+    if (slot) slot.innerHTML = homeDynamicHTML();
     injectResumeBanner();
-    // Mise à jour des sous-titres avec progression si parcours commencé
-    document.querySelectorAll('a.tile[href^="#/situation/"]').forEach(el => {
-      const sid = el.getAttribute('href').split('/').pop();
-      const p = Checklists.progress(sid);
-      if (p.done > 0) {
-        const sub = el.querySelector('.tile-sub');
-        if (sub) sub.textContent = `${p.done}/${p.total} étapes faites`;
-      }
-    });
   }
 
   function injectResumeBanner() {

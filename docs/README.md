@@ -1,22 +1,32 @@
-# MonAvenir
+# Pass'âge
 
-> L'app qui t'aide à avancer, à ton rythme.
+> Comprendre. Agir. Avancer.
 
 Application web (PWA) pour les jeunes majeurs (18–25 ans), principalement les jeunes sortant de l'aide à la jeunesse et des familles d'accueil en Belgique francophone.
 
-## Lancer l'app
+## En ligne
+
+Version déployée : **https://cdricpl.github.io/Pass-ge/**
+
+Le déploiement est automatique : à chaque push sur `main`, le workflow `.github/workflows/deploy-pages.yml` publie le dossier `03-version-pwa/` à la racine de GitHub Pages.
+
+## Lancer l'app en local
+
+Toute l'app vit dans le dossier `03-version-pwa/`.
 
 ### Option 1 — ouverture directe (rapide)
 
-Double-clique sur `index.html` — l'app s'ouvre dans ton navigateur.
+Double-clique sur `03-version-pwa/index.html` — l'app s'ouvre dans ton navigateur.
 
 > Note : en `file://`, le service worker (mode hors-ligne) ne fonctionne pas. Pour tester le mode hors-ligne, utilise l'option 2.
 
 ### Option 2 — serveur local (recommandé)
 
-Depuis le dossier du projet, lance un mini-serveur :
+Depuis le dossier `03-version-pwa/`, lance un mini-serveur :
 
 ```bash
+cd 03-version-pwa
+
 # Avec Python (souvent déjà installé)
 python -m http.server 8000
 
@@ -34,28 +44,39 @@ Puis ouvre [http://localhost:8000](http://localhost:8000).
 4. Ouvre `http://<ton-ip>:8000` dans le navigateur du téléphone.
 5. Sur Android (Chrome) → menu → "Installer l'application". Sur iOS (Safari) → partager → "Sur l'écran d'accueil". Tu as une vraie app installée.
 
-## Structure du projet
+## Structure du dépôt
 
 ```
 .
-├── index.html                    Shell de l'app (header, main, bottom nav)
-├── manifest.webmanifest          Manifeste PWA (installable sur téléphone)
-├── service-worker.js             Cache pour fonctionnement hors-ligne
-├── README.md
-└── assets/
-    ├── css/
-    │   └── styles.css            Design system complet
-    ├── js/
-    │   ├── content.js            TOUS les contenus (modules, parcours, fiches)
-    │   └── app.js                Routing + interactions
-    └── icons/
-        ├── icon-192.svg
-        └── icon-512.svg
+├── 03-version-pwa/               L'app déployée (la seule version maintenue)
+│   ├── index.html                Shell de l'app (header, main, bottom nav)
+│   ├── manifest.webmanifest      Manifeste PWA (installable sur téléphone)
+│   ├── service-worker.js         Cache pour fonctionnement hors-ligne
+│   └── assets/
+│       ├── css/
+│       │   └── styles.css        Design system complet
+│       ├── js/
+│       │   ├── content.js        TOUS les contenus (modules, parcours, fiches)
+│       │   └── app.js            Routing + interactions
+│       ├── icons/
+│       │   ├── icon-192.svg
+│       │   └── icon-512.svg
+│       └── policy.html           Politique de confidentialité
+├── docs/                         Documentation, fiche source, listing store
+├── archive/                      Anciens prototypes conservés (non déployés)
+│   ├── 01-prototype-simple/      1er prototype mono-fichier
+│   ├── 02-version-separee/       Version intermédiaire
+│   ├── admin/                    Ancien outil d'édition local
+│   └── open_chrome_no_cache.bat
+└── .github/workflows/
+    └── deploy-pages.yml          Déploiement automatique GitHub Pages
 ```
+
+> Le dossier `archive/` n'est jamais publié : le workflow ne déploie que `03-version-pwa/`. Il est conservé pour référence et l'historique git reste intact.
 
 ## Modifier les contenus
 
-Tout est dans **`assets/js/content.js`**. Pas de base de données, pas de CMS pour l'instant — c'est un fichier JavaScript que tu peux ouvrir dans n'importe quel éditeur.
+Tout est dans **`03-version-pwa/assets/js/content.js`**. Pas de base de données, pas de CMS pour l'instant — c'est un fichier JavaScript que tu peux ouvrir dans n'importe quel éditeur.
 
 - **Ajouter une fiche dans un module** : trouve le module concerné, ajoute un objet dans `sections`.
 - **Ajouter un parcours** (situation de vie) : ajoute un objet dans `SITUATIONS`.

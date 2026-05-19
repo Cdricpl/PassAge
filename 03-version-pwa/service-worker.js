@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v17-2026-05-fixes';
+const VERSION = 'v18-2026-05-fixes';
 const SHELL_CACHE = `passage-shell-${VERSION}`;
 const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 

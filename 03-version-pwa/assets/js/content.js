@@ -101,8 +101,7 @@ window.MA_CONTENT = (function () {
       steps: [
         { title: "Choisir mon médecin", desc: "Médecin traitant, maison médicale : ce qui te convient", linkType: 'fiche', linkId: 'sante/medecin' },
         { title: "La maison médicale", desc: "Soins gratuits si tu t'inscris au forfait", linkType: 'fiche', linkId: 'sante/maison-medicale' },
-        { title: "Combien ça va me coûter", desc: "DMG, BIM, génériques : ce qui réduit la facture", linkType: 'fiche', linkId: 'admin/mutuelle' },
-        { title: "Prendre soin de moi au quotidien", desc: "Dentiste, gyno, check-ups : la fréquence à connaître", linkType: 'fiche', linkId: 'admin/mutuelle' }
+        { title: "Combien ça va me coûter", desc: "DMG, BIM, génériques : ce qui réduit la facture", linkType: 'fiche', linkId: 'admin/mutuelle' }
       ],
       outcome: "Tu sais comment voir un médecin et combien ça va te coûter.",
       relatedModules: ['sante', 'admin']
@@ -117,7 +116,7 @@ window.MA_CONTENT = (function () {
       steps: [
         { title: "Reconnaître ce qui ne va pas", desc: "Anxiété, fatigue, tristesse : c'est plus courant que tu ne crois", linkType: 'fiche', linkId: 'urgence/mal-etre' },
         { title: "Parler sans appeler", desc: "Chat 103, e-mail Télé-Accueil, planning familial", linkType: 'fiche', linkId: 'sante/parler-sans-appeler' },
-        { title: "Voir un psy à 11 €", desc: "La convention psy 1ère ligne, comment commencer", linkType: 'fiche', linkId: 'sante/convention-psy' },
+        { title: "Voir un psy (gratuit avant 24 ans)", desc: "Convention psy 1ère ligne — comment commencer", linkType: 'fiche', linkId: 'sante/convention-psy' },
         { title: "Si c'est urgent maintenant", desc: "Numéros gratuits, 24/7, anonymes", linkType: 'page', linkId: 'urgence' }
       ],
       outcome: "Tu connais 2 ou 3 portes d'entrée — et tu choisis celle qui te ressemble.",
@@ -404,13 +403,14 @@ window.MA_CONTENT = (function () {
 <p>Tu peux demander au SAJ de prolonger l'intervention de ton service, <strong>jusqu'à 2 fois 6 mois maximum</strong>. Cette prolongation est acceptée sur base d'objectifs précis (mise en ordre administrative, passage à d'autres services…).</p>
 
 <h2>Les AMO (Aide en Milieu Ouvert)</h2>
-<p>Les AMO accompagnent les jeunes au quotidien : écoute, animations, aide pour démarrer en autonomie. C'est gratuit et confidentiel.</p>
+<p>Les AMO accompagnent les jeunes au quotidien : écoute, animations, aide pour démarrer en autonomie. C'est <strong>gratuit, confidentiel et anonyme</strong>.</p>
 <ul>
+  <li><strong>Tranche d'âge : 0 à 22 ans</strong> (jeunes et familles). Si tu as 23 ans ou plus, tourne-toi plutôt vers <strong>Inforjeunes</strong>, <strong>SOS Jeunes</strong>, le <strong>planning familial</strong> ou le <strong>CPAS</strong>.</li>
   <li>Trouver une AMO près de chez toi : <a href="https://inforjeunes.be/centre/" target="_blank" rel="noopener">inforjeunes.be/centre</a></li>
 </ul>
 
 <h2>Les maisons de jeunes</h2>
-<p>Lieux où tu peux rencontrer d'autres jeunes, te changer les idées, participer à des ateliers. Une équipe d'éducateurs y est présente pour te conseiller. Les coordonnées sont sur le site de ta commune.</p>
+<p>Lieux où tu peux rencontrer d'autres jeunes, te changer les idées, participer à des ateliers. Une équipe d'animateur·rices est présente pour te conseiller. <strong>Public : 12 à 26 ans</strong>. Les coordonnées sont sur le site de ta commune ou via la <a href="https://fmjbf.org/membres/" target="_blank" rel="noopener">Fédération des Maisons de Jeunes</a>.</p>
 
 <h2>Le service Familles d'Accueil</h2>
 <p>La porte du Service Familles d'Accueil te reste toujours ouverte. N'hésite pas à les contacter en cas de doute, de question ou simplement d'un besoin d'écoute.</p>
@@ -622,7 +622,7 @@ window.MA_CONTENT = (function () {
 <h2>Ce qui change à 18 ans</h2>
 <ul>
   <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
-  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins 17 crédits/semestre dans le supérieur, ou enseignement secondaire à temps plein).</li>
+  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études : dans le supérieur, il faut être inscrit·e à <strong>au moins 27 crédits pour l'année académique</strong> (et l'inscription doit être faite <strong>avant le 30 novembre</strong>), ou être en enseignement secondaire à temps plein.</li>
   <li>Si tu interromps tes études : tu les gardes pendant <strong>360 jours</strong> de stage d'insertion (voir <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
 
@@ -1995,7 +1995,7 @@ window.MA_CONTENT = (function () {
 <h2>Voir un·e professionnel·le</h2>
 <ul>
   <li><strong>Ton médecin traitant</strong> peut t'orienter et prescrire un suivi psy.</li>
-  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e à <strong>11 €</strong> la séance (4 € si BIM). Demande à ton médecin.</li>
+  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e — <strong>gratuit avant 24 ans</strong>, 11 € la séance ensuite (4 € si BIM). 1ʳᵉ séance toujours gratuite. Pas besoin de prescription. Voir <a href="#/fiche/sante/convention-psy">la fiche détaillée</a>.</li>
   <li>Le <strong>service de santé mentale</strong> de ta région.</li>
 </ul>
 

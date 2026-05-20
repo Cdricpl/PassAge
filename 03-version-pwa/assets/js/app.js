@@ -273,7 +273,7 @@
           <a href="#/a-propos">À propos</a>
           <a href="#/urgence">Aide &amp; urgence</a>
         </nav>
-        <p class="updated-date">Contenu mis à jour le 8 mai 2026.</p>
+        <p class="updated-date">Contenu mis à jour le 20 mai 2026.</p>
       </footer>
     `;
   }

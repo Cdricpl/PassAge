@@ -213,8 +213,7 @@
       { href: '#/module/administratif', color: 'admin', icon: ICONS.doc, title: 'Administratif', subtitle: 'Papiers, mutuelle, démarches' },
       { href: '#/module/etudes', color: 'etudes', icon: ICONS.cap, title: 'Études & formations', subtitle: 'Bourses, écoles, orientation' },
       { href: '#/module/vie', color: 'vie', icon: ICONS.cart, title: 'Vie quotidienne', subtitle: 'Transports, GSM, alimentation' },
-      { href: '#/module/loisirs', color: 'majeur', icon: ICONS.leaf, title: 'Loisirs', subtitle: 'Activités, culture, souffler' },
-      { href: '#/urgence', color: 'urgence', icon: ICONS.sos, title: 'Aide & urgence', subtitle: 'Quand ça ne va pas' }
+      { href: '#/module/loisirs', color: 'majeur', icon: ICONS.leaf, title: 'Loisirs', subtitle: 'Activités, culture, souffler' }
     ];
 
     return `

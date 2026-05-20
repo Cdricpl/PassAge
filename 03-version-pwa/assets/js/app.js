@@ -177,6 +177,15 @@
   // Helpers
   // ============================================================
   const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  // Transforme les noms de domaines (ex. "inami.fgov.be") du champ source en liens cliquables.
+  // Échappe d'abord pour la sécurité, puis enrobe les domaines reconnus dans <a>.
+  const linkifySource = (src) => {
+    if (!src) return 'Source à vérifier';
+    return escapeHtml(src).replace(
+      /\b([a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)+\.(?:be|org|com|eu|fr|brussels))\b/gi,
+      m => `<a href="https://${m}" target="_blank" rel="noopener">${m}</a>`
+    );
+  };
   const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   const formatDate = (iso) => {
     if (!iso) return '';
@@ -451,7 +460,7 @@
     const f = FICHES_INDEX[path];
     if (!f) return render404();
     const noteValue = Notes.get(path);
-    const metaSource = escapeHtml(f.source || `Source à vérifier`);
+    const metaSource = linkifySource(f.source);
     const metaDate = escapeHtml(f.lastChecked || `20/05/2026`);
     const metaDisclaimer = f.disclaimer
       ? escapeHtml(f.disclaimer)
@@ -890,14 +899,6 @@
       </section>
 
       <section class="apropos-card">
-        <h2><span class="apropos-icon" style="background: var(--color-primary-soft); color: var(--color-primary);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H4z M20 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span> Nos sources</h2>
-        <p>Les contenus s'appuient sur des ressources publiques fiables. En cas de doute juridique, c'est toujours ces services qui font foi : l'app est un repère, pas un avis légal.</p>
-        <p><a href="https://inforjeunes.be" target="_blank" rel="noopener" class="apropos-link">Inforjeunes <span aria-hidden="true">↗</span></a> — info gratuite pour les 12–26 ans</p>
-        <p><a href="https://www.sdj.be" target="_blank" rel="noopener" class="apropos-link">Service Droit des Jeunes <span aria-hidden="true">↗</span></a> — questions juridiques, gratuit</p>
-        <p><a href="https://envoltoit.be" target="_blank" rel="noopener" class="apropos-link">Envol'toit <span aria-hidden="true">↗</span></a> — logement des jeunes (Inforjeunes)</p>
-      </section>
-
-      <section class="apropos-card">
         <h2><span class="apropos-icon" style="background: var(--color-sante-soft); color: var(--color-sante);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Tes données</h2>
         <p>Pas de compte, pas de cookie de tracking, pas de pub. Tes favoris, ton prénom et tes notes sont stockés <strong>uniquement</strong> sur ton téléphone. Rien n'est envoyé sur Internet.</p>
         <p>
@@ -970,7 +971,7 @@
           <li><a href="https://www.belgium.be" target="_blank" rel="noopener" class="apropos-link">belgium.be</a> — portail des services publics fédéraux</li>
         </ul>
 
-        <p class="apropos-meta-small">Les montants, seuils et procédures changent régulièrement en Belgique. En cas de doute, vérifie auprès du service compétent ou contacte le CPI à <a href="mailto:cpi@famillesaccueil.be" class="apropos-link">cpi@famillesaccueil.be</a>.</p>
+        <p class="apropos-meta-small">Les montants, seuils et procédures changent régulièrement en Belgique. En cas de doute, vérifie auprès du service compétent.</p>
       </section>
 
       <p class="apropos-meta">Contenu mis à jour le 20 mai 2026. Vérifié à partir des sites publics belges.</p>

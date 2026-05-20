@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  const { SITUATIONS, SITUATIONS_INDEX, MODULES, MODULES_INDEX, FICHES_INDEX, REDIRECTS, LEXIQUE, DOCUMENTS_ESSENTIELS, ICONS } = window.MA_CONTENT;
+  const { MODULES, MODULES_INDEX, FICHES_INDEX, REDIRECTS, LEXIQUE, ICONS } = window.MA_CONTENT;
 
   const main = document.getElementById('main');
   const backBtn = document.getElementById('backBtn');
@@ -102,49 +102,6 @@
     list: () => Object.entries(Notes.all()).map(([id, text]) => ({ id, text }))
   };
 
-  const Checklists = {
-    all: () => Store.get('checklists', {}),
-    get: (sid) => Checklists.all()[sid] || {},
-    isChecked: (sid, idx) => !!Checklists.get(sid)[idx],
-    toggle: (sid, idx) => {
-      const all = Checklists.all();
-      if (!all[sid]) all[sid] = {};
-      if (all[sid][idx]) delete all[sid][idx];
-      else all[sid][idx] = true;
-      Store.set('checklists', all);
-    },
-    progress: (sid) => {
-      const total = (SITUATIONS_INDEX[sid] || {}).steps?.length || 0;
-      if (!total) return { done: 0, total: 0, percent: 0 };
-      const done = Object.keys(Checklists.get(sid)).length;
-      return { done, total, percent: Math.round((done / total) * 100) };
-    }
-  };
-
-  const Docs = {
-    all: () => Store.get('documents', {}),
-    get: (id) => Docs.all()[id] || null,
-    set: (id, status) => {
-      const all = Docs.all();
-      if (status) all[id] = status; else delete all[id];
-      Store.set('documents', all);
-    },
-    custom: () => Store.get('documents.custom', []),
-    addCustom: (label) => {
-      const list = Docs.custom();
-      const id = 'custom-' + Date.now();
-      list.push({ id, label, category: "Personnels" });
-      Store.set('documents.custom', list);
-      return id;
-    },
-    removeCustom: (id) => {
-      Store.set('documents.custom', Docs.custom().filter(d => d.id !== id));
-      const all = Docs.all();
-      delete all[id];
-      Store.set('documents', all);
-    }
-  };
-
   const Contacts = {
     all: () => Store.get('contacts', []),
     add: (c) => {
@@ -212,7 +169,6 @@
   // Pages
   // ============================================================
 
-  // 9 thèmes affichés sur l'accueil avec les libellés et routes actualisées
   function renderThemesPreview() {
     const HOME_THEME_CARDS = [
       { href: '#/module/argent', color: 'argent', icon: ICONS.euro, title: 'Argent & aides', subtitle: 'Mes revenus, mes aides, mon budget' },
@@ -262,8 +218,6 @@
     });
   }
 
-  // Source unique du footer de la home (utilisé par le rendu JS ; le HTML
-  // statique d'index.html ne contient plus de copie — cf. enhanceStaticHome).
   function homeFooterHTML() {
     return `
       <footer class="app-footer">
@@ -286,8 +240,6 @@
     `;
   }
 
-  // Partie dérivée de la home (grille des thèmes + footer) : SOURCE UNIQUE.
-  // Injectée par renderHome() (navigation) et enhanceStaticHome() (1er chargement).
   function homeDynamicHTML() {
     return renderThemesPreview() + homeFooterHTML();
   }
@@ -316,8 +268,6 @@
         <a href="#/recherche?q=Forem">Forem</a>
       </div>
 
-      <div id="resumeBanner"></div>
-
       <a class="urgence-cta" href="#/urgence">
         <span class="urgence-cta-icon">${ICONS.sos}</span>
         <span class="urgence-cta-body">
@@ -328,100 +278,11 @@
 
       <div id="homeDynamic">${homeDynamicHTML()}</div>
     `;
-    injectResumeBanner();
   }
 
-  // Au 1er chargement, le haut de la home est déjà en HTML statique (paint
-  // instantané). On injecte ici la partie dérivée depuis la source JS unique.
   function enhanceStaticHome() {
     const slot = document.getElementById('homeDynamic');
     if (slot) slot.innerHTML = homeDynamicHTML();
-    injectResumeBanner();
-  }
-
-  function injectResumeBanner() {
-    const inProgress = SITUATIONS
-      .map(s => ({ s, p: Checklists.progress(s.id) }))
-      .filter(({ p }) => p.done > 0 && p.done < p.total);
-    if (inProgress.length === 0) return;
-    const next = inProgress[0];
-    const html = `
-      <a href="#/situation/${next.s.id}" class="resume-banner">
-        <div>
-          <div class="resume-banner-label">Tu as commencé</div>
-          <div class="resume-banner-title">${escapeHtml(next.s.title)}</div>
-          <div class="progress">
-            <div class="progress-bar"><div class="progress-fill" style="width:${next.p.percent}%"></div></div>
-            <span class="progress-text">${next.p.done}/${next.p.total}</span>
-          </div>
-        </div>
-        <span class="fiche-link-arrow">${arrow}</span>
-      </a>`;
-    const target = document.getElementById('resumeBanner');
-    if (target) target.innerHTML = html;
-  }
-
-  function renderSituation(id) {
-    const s = SITUATIONS_INDEX[id];
-    if (!s) return render404();
-    const p = Checklists.progress(s.id);
-    main.innerHTML = `
-      <section class="parcours-intro" data-color="${s.color}">
-        <h1 class="page-title">${escapeHtml(s.title)}</h1>
-        <p>${escapeHtml(s.intro)}</p>
-        ${p.total > 0 ? `
-          <div class="progress" style="margin-top: var(--sp-4)">
-            <div class="progress-bar"><div class="progress-fill" style="width:${p.percent}%"></div></div>
-            <span class="progress-text">${p.done}/${p.total} étape${p.total > 1 ? 's' : ''}</span>
-          </div>
-        ` : ''}
-      </section>
-
-      <h2 class="section-label">Les étapes — coche au fur et à mesure</h2>
-      <div class="parcours-steps" data-situation="${s.id}">
-        ${s.steps.map((step, i) => {
-          const checked = Checklists.isChecked(s.id, i);
-          const href = step.linkType === 'fiche' ? `#/fiche/${step.linkId}` : `#/${step.linkId}`;
-          return `
-            <div class="parcours-step ${checked ? 'is-done' : ''}">
-              <button class="step-check" data-toggle-step="${i}" aria-pressed="${checked}" aria-label="Marquer comme ${checked ? 'non fait' : 'fait'}">
-                ${checked
-                  ? '<svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M8 12l3 3 5-6" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-                  : '<svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg>'}
-              </button>
-              <a class="step-body-link" href="${href}">
-                <div class="step-title">${escapeHtml(step.title)}</div>
-                <div class="step-desc">${escapeHtml(step.desc)}</div>
-              </a>
-              <a class="fiche-link-arrow" href="${href}" aria-label="Ouvrir">${arrow}</a>
-            </div>`;
-        }).join('')}
-      </div>
-
-      <div class="parcours-outcome">
-        <strong>Ce que tu auras à la fin</strong>
-        ${escapeHtml(s.outcome)}
-      </div>
-
-      ${s.relatedModules && s.relatedModules.length ? `
-        <h2 class="section-label">Pour aller plus loin</h2>
-        <div class="related-modules">
-          ${s.relatedModules.map(mid => {
-            const m = MODULES_INDEX[mid];
-            if (!m) return '';
-            return `
-              <a class="related-module" href="#/module/${m.id}" data-color="${m.color}">
-                <span class="tile-icon">${m.icon}</span>
-                <div>
-                  <strong>${escapeHtml(m.title)}</strong>
-                  <span>${escapeHtml(m.objective)}</span>
-                </div>
-                <span class="related-arrow" aria-hidden="true">→</span>
-              </a>`;
-          }).join('')}
-        </div>
-      ` : ''}
-    `;
   }
 
   function renderModule(id) {
@@ -452,7 +313,6 @@
   }
 
   function renderFiche(path) {
-    // Compatibilité : favoris d'avant le déplacement vers Santé
     if (REDIRECTS && REDIRECTS[path]) {
       window.location.hash = `#/fiche/${REDIRECTS[path]}`;
       return;
@@ -521,7 +381,6 @@
         return tokens.every(token => normText.includes(token));
       };
 
-      // 1. Recherche exacte/partielle dans le contenu des fiches
       Object.entries(FICHES_INDEX).forEach(([path, f]) => {
         const text = `${f.title} ${f.summary} ${f.body.replace(/<[^>]+>/g, ' ')}`;
         if (matchesAllTokens(text)) {
@@ -529,21 +388,12 @@
         }
       });
 
-      // 2. Recherche dans modules et situations
       MODULES.forEach(m => {
         const text = `${m.title} ${m.subtitle || ''} ${m.objective || ''}`;
         if (matchesAllTokens(text)) {
           addResult({ href: `#/module/${m.id}`, title: m.title, sub: m.subtitle || '' });
         }
       });
-      SITUATIONS.forEach(s => {
-        const text = `${s.title} ${s.subtitle || ''} ${s.intro || ''}`;
-        if (matchesAllTokens(text)) {
-          addResult({ href: `#/situation/${s.id}`, title: s.title, sub: 'Parcours guidé' });
-        }
-      });
-
-      // 3. Lexique invisible : termes familiers, synonymes, fautes courantes
       Object.entries(LEXIQUE).forEach(([term, paths]) => {
         const nt = norm(term);
         if (nt.length >= 3 && (nt.includes(nq) || nq.includes(nt))) {
@@ -574,7 +424,7 @@
       ` : results.length === 0 ? `
         <div class="empty-state">
           <p>Rien trouvé pour <strong>« ${escapeHtml(q)} »</strong>.</p>
-          <p style="margin-top: var(--sp-3)">Essaie un autre mot, ou reviens à <a href="#/">l'accueil</a> pour voir les situations.</p>
+          <p style="margin-top: var(--sp-3)">Essaie un autre mot, ou reviens à <a href="#/">l'accueil</a>.</p>
         </div>
       ` : `
         <p style="color: var(--color-text-soft); margin: var(--sp-3) 0;">${results.length} résultat${results.length > 1 ? 's' : ''}</p>
@@ -675,37 +525,13 @@
     const counts = {
       favoris: Favs.all().length,
       notes: Notes.list().length,
-      docs: Object.values(Docs.all()).filter(s => s === 'oui').length,
-      docsTotal: DOCUMENTS_ESSENTIELS.length + Docs.custom().length,
       contacts: Contacts.all().length,
       rappels: Rappels.all().length
     };
 
-    const inProgress = SITUATIONS
-      .map(s => ({ s, p: Checklists.progress(s.id) }))
-      .filter(({ p }) => p.done > 0);
-
     main.innerHTML = `
       <h1 class="page-title">Mon espace</h1>
       <p class="page-lead">Tout ce que tu sauvegardes reste sur ton appareil.</p>
-
-      ${inProgress.length > 0 ? `
-        <h2 class="section-label">Mes parcours en cours</h2>
-        <div class="fiche-list">
-          ${inProgress.map(({ s, p }) => `
-            <a class="fiche-link" href="#/situation/${s.id}">
-              <div style="flex: 1">
-                <div class="fiche-link-title">${escapeHtml(s.title)}</div>
-                <div class="progress" style="margin-top: 6px">
-                  <div class="progress-bar"><div class="progress-fill" style="width:${p.percent}%"></div></div>
-                  <span class="progress-text">${p.done}/${p.total}</span>
-                </div>
-              </div>
-              <span class="fiche-link-arrow">${arrow}</span>
-            </a>
-          `).join('')}
-        </div>
-      ` : ''}
 
       <h2 class="section-label">Mon profil</h2>
       <section class="profile-card">
@@ -735,51 +561,6 @@
       <p style="text-align: center; margin: var(--sp-6) 0; font-size: var(--fs-sm);">
         <a href="#" id="resetDataLink" style="color: var(--color-text-muted)">Tout effacer (favoris, notes, rappels…)</a>
       </p>
-    `;
-  }
-
-  function renderMesDocuments() {
-    const all = [...DOCUMENTS_ESSENTIELS, ...Docs.custom()];
-    const byCat = {};
-    all.forEach(d => {
-      const cat = d.category || 'Autres';
-      (byCat[cat] = byCat[cat] || []).push(d);
-    });
-    const oui = all.filter(d => Docs.get(d.id) === 'oui').length;
-
-    main.innerHTML = `
-      <h1 class="page-title">Mes documents</h1>
-      <p class="page-lead">Coche ce que tu as déjà. Pratique pour ne rien oublier au moment d'un dossier.</p>
-
-      <div class="progress" style="margin-bottom: var(--sp-5)">
-        <div class="progress-bar"><div class="progress-fill" style="width:${all.length ? Math.round(oui/all.length*100) : 0}%"></div></div>
-        <span class="progress-text">${oui}/${all.length}</span>
-      </div>
-
-      ${Object.entries(byCat).map(([cat, docs]) => `
-        <h2 class="section-label">${escapeHtml(cat)}</h2>
-        <div class="docs-list">
-          ${docs.map(d => {
-            const status = Docs.get(d.id);
-            const isCustom = d.id.startsWith('custom-');
-            return `
-              <div class="doc-item ${status === 'oui' ? 'is-done' : ''}">
-                <div class="doc-label">${escapeHtml(d.label)}</div>
-                <div class="doc-actions">
-                  <button class="chip ${status === 'oui' ? 'chip-on chip-green' : ''}" data-doc="${d.id}" data-status="oui">J'ai</button>
-                  <button class="chip ${status === 'a-faire' ? 'chip-on chip-orange' : ''}" data-doc="${d.id}" data-status="a-faire">À faire</button>
-                  ${isCustom ? `<button class="icon-btn" data-doc-remove="${d.id}" aria-label="Supprimer">${trash}</button>` : ''}
-                </div>
-              </div>`;
-          }).join('')}
-        </div>
-      `).join('')}
-
-      <h2 class="section-label">Ajouter un document</h2>
-      <form class="form-row" id="addDocForm">
-        <input type="text" name="label" placeholder="Ex : ma facture d'énergie" required maxlength="80" />
-        <button type="submit" class="btn-primary">Ajouter</button>
-      </form>
     `;
   }
 
@@ -1029,14 +810,12 @@
 
   const ROUTES = {
     '': { render: renderHome, nav: 'home' },
-    'situation': { render: (s) => renderSituation(s[1]), nav: 'home' },
     'module': { render: (s) => renderModule(s[1]), nav: 'home' },
     'fiche': { render: (s) => renderFiche(`${s[1]}/${s[2]}`), nav: 'home' },
     'recherche': { render: (s, p) => renderRecherche(p.q), nav: 'recherche' },
     'urgence': { render: renderUrgence, nav: 'urgence' },
     'favoris': { render: renderFavoris, nav: 'favoris' },
     'mon-espace': { render: renderMonEspace, nav: 'mon-espace' },
-    'mes-documents': { render: renderMesDocuments, nav: 'mon-espace' },
     'mes-contacts': { render: renderMesContacts, nav: 'mon-espace' },
     'mes-rappels': { render: renderMesRappels, nav: 'mon-espace' },
     'mes-notes': { render: renderMesNotes, nav: 'mon-espace' },
@@ -1091,8 +870,6 @@
   function updatePageMetadata() {
     const titleText = main.querySelector('h1, .page-title')?.textContent?.trim();
     document.title = titleText ? `${titleText} — Pass'âge` : 'Pass\'âge — Tu n\'es pas seul·e';
-    // preventScroll : sinon le focus refait défiler <main> dans la vue
-    // après le scrollTo(0,0) → décalage visible à chaque changement de page.
     main.focus({ preventScroll: true });
   }
 
@@ -1101,28 +878,6 @@
   // ============================================================
 
   main.addEventListener('click', (e) => {
-    const stepBtn = e.target.closest('[data-toggle-step]');
-    if (stepBtn) {
-      const container = stepBtn.closest('[data-situation]');
-      const idx = parseInt(stepBtn.dataset.toggleStep, 10);
-      Checklists.toggle(container.dataset.situation, idx);
-      route();
-      return;
-    }
-
-    const docBtn = e.target.closest('[data-doc]');
-    if (docBtn) {
-      const id = docBtn.dataset.doc;
-      const newStatus = docBtn.dataset.status;
-      const current = Docs.get(id);
-      Docs.set(id, current === newStatus ? null : newStatus);
-      route();
-      return;
-    }
-
-    const docRem = e.target.closest('[data-doc-remove]');
-    if (docRem) { Docs.removeCustom(docRem.dataset.docRemove); route(); return; }
-
     const cRem = e.target.closest('[data-contact-remove]');
     if (cRem) {
       if (confirm('Supprimer ce contact ?')) { Contacts.remove(cRem.dataset.contactRemove); route(); }
@@ -1135,7 +890,6 @@
       return;
     }
 
-    // Édition du prénom
     if (e.target.closest('[data-action="edit-name"]')) {
       const form = document.getElementById('profileEditForm');
       if (form) {
@@ -1160,7 +914,7 @@
     if (e.target.id === 'resetDataLink') {
       e.preventDefault();
       if (confirm("Tu effaces tout ? Favoris, notes, rappels et contacts disparaissent. Pas moyen de revenir en arrière.")) {
-        ['favorites', 'notes', 'checklists', 'documents', 'documents.custom', 'contacts', 'rappels'].forEach(k => Store.remove(k));
+        ['favorites', 'notes', 'contacts', 'rappels'].forEach(k => Store.remove(k));
         route();
       }
     }
@@ -1180,15 +934,7 @@
   });
 
   main.addEventListener('submit', (e) => {
-    if (e.target.id === 'addDocForm') {
-      e.preventDefault();
-      const label = e.target.label.value.trim();
-      if (label) {
-        const id = Docs.addCustom(label);
-        Docs.set(id, 'a-faire');
-        route();
-      }
-    } else if (e.target.id === 'addContactForm') {
+    if (e.target.id === 'addContactForm') {
       e.preventDefault();
       const f = e.target;
       Contacts.add({
@@ -1237,7 +983,6 @@
 
     overlay.hidden = false;
     document.body.classList.add('no-scroll');
-    // Le fond ne doit pas être atteignable au clavier ni annoncé tant que le modal est ouvert
     background.forEach(el => { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); });
 
     const close = () => {
@@ -1260,7 +1005,6 @@
     overlay.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') { close(); return; }
       if (e.key !== 'Tab' || !dialog) return;
-      // Piège de focus : Tab reste dans le modal
       const focusables = dialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])');
       if (!focusables.length) return;
       const first = focusables[0];
@@ -1278,7 +1022,6 @@
 
   window.addEventListener('hashchange', route);
 
-  // Recherche : écouteur délégué (remplace les onsubmit inline → CSP stricte)
   document.addEventListener('submit', (e) => {
     const f = e.target.closest && e.target.closest('form.search-bar');
     if (!f) return;

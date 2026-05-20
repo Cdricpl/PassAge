@@ -4,17 +4,16 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v28-2026-05-fixes';
+const VERSION = 'v29-2026-05-fixes';
 const SHELL_CACHE = `passage-shell-${VERSION}`;
 const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 
-// App shell : ressources pré-cachées dès l'install (offline dès la 1ère visite installée)
 const SHELL_ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './assets/css/styles.css?v=2026-05-20-06',
-  './assets/js/app.js?v=2026-05-20-08',
+  './assets/js/app.js?v=2026-05-20-09',
   './assets/js/content.js?v=2026-05-20-07',
   './assets/js/sw-register.js?v=2026-05-08-01',
   './assets/icons/icon-192.svg',
@@ -22,7 +21,6 @@ const SHELL_ASSETS = [
   './assets/policy.html'
 ];
 
-// ---- Install : pré-cache du shell ----
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(SHELL_CACHE)
@@ -31,7 +29,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// ---- Activate : nettoyage des anciennes versions ----
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
@@ -43,27 +40,23 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Listen for skip waiting message
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
 
-// ---- Fetch : stratégie hybride ----
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
 
   const url = new URL(req.url);
   const sameOrigin = url.origin === self.location.origin;
-  if (!sameOrigin) return; // les ressources externes passent en réseau direct
+  if (!sameOrigin) return;
 
   const isHTML = req.mode === 'navigate' || req.headers.get('accept')?.includes('text/html');
 
   if (isHTML) {
-    // Network-first pour le HTML : on récupère les nouvelles versions si possible,
-    // mais on tombe sur le cache (puis sur l'index) en mode hors-ligne.
     event.respondWith(
       fetch(req)
         .then(res => {
@@ -80,11 +73,9 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Cache-first pour les assets statiques (CSS, JS, icônes)
   event.respondWith(
     caches.match(req).then(cached => {
       if (cached) {
-        // Mise à jour silencieuse en arrière-plan (stale-while-revalidate)
         fetch(req).then(res => {
           if (res.ok) caches.open(RUNTIME_CACHE).then(c => c.put(req, res.clone()));
         }).catch(() => {});
@@ -100,4 +91,3 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
-

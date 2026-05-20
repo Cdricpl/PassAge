@@ -200,6 +200,47 @@
   const trash = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   // ============================================================
+  // Motifs identitaires « Passage » — seuil, horizon, chemin.
+  // Décoratifs (aria-hidden), currentColor pour s'adapter au thème.
+  // ============================================================
+  function passageThresholdHTML(size) {
+    const s = size || 56;
+    const h = Math.round(s * 64 / 56);
+    return `<svg class="passage-threshold" viewBox="0 0 56 64" width="${s}" height="${h}" aria-hidden="true" focusable="false"><path d="M8 60 V28 a20 20 0 0 1 40 0 V60" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 60 H52" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/></svg>`;
+  }
+  function passageHorizonHTML() {
+    return `<svg class="passage-horizon" viewBox="0 0 240 12" width="240" height="12" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path d="M8 8 H232" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><path d="M96 4 H144" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/></svg>`;
+  }
+  function passagePathHTML(done, total) {
+    const t = Math.max(1, Math.min(5, total || 1));
+    const d = Math.max(0, Math.min(t, total ? Math.round((done || 0) * t / total) : 0));
+    const positions = [];
+    for (let i = 0; i < t; i++) {
+      positions.push(t === 1 ? 60 : Math.round(10 + 100 * i / (t - 1)));
+    }
+    const dots = positions.map((x, i) => {
+      if (i < d) return `<circle cx="${x}" cy="8" r="3" fill="currentColor"/>`;
+      if (i === d && d < t) return `<circle cx="${x}" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.25"/><circle cx="${x}" cy="8" r="3" fill="currentColor"/>`;
+      return `<circle cx="${x}" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>`;
+    }).join('');
+    return `<svg class="passage-path" viewBox="0 0 120 16" width="120" height="16" aria-hidden="true" focusable="false"><path d="M10 8 H110" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>${dots}</svg>`;
+  }
+  function passageSignHTML(line) {
+    return `<aside class="passage-sign" aria-hidden="true">${passageThresholdHTML(56)}<p>${line}</p>${passageHorizonHTML()}</aside>`;
+  }
+  const PASSAGE_MICROCOPY = [
+    "Tu n'es pas seul·e ici.",
+    "Un pas suffit, aujourd'hui.",
+    "On avance à ton rythme."
+  ];
+  function microcopyPick(seed) {
+    const s = String(seed || '');
+    let h = 0;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    return PASSAGE_MICROCOPY[Math.abs(h) % PASSAGE_MICROCOPY.length];
+  }
+
+  // ============================================================
   // Pages
   // ============================================================
 
@@ -345,6 +386,7 @@
             <div class="progress-bar"><div class="progress-fill" style="width:${next.p.percent}%"></div></div>
             <span class="progress-text">${next.p.done}/${next.p.total}</span>
           </div>
+          <div class="resume-banner-path">${passagePathHTML(next.p.done, next.p.total)}</div>
         </div>
         <span class="fiche-link-arrow">${arrow}</span>
       </a>`;
@@ -365,6 +407,7 @@
             <div class="progress-bar"><div class="progress-fill" style="width:${p.percent}%"></div></div>
             <span class="progress-text">${p.done}/${p.total} étape${p.total > 1 ? 's' : ''}</span>
           </div>
+          <div class="parcours-path">${passagePathHTML(p.done, p.total)}</div>
         ` : ''}
       </section>
 
@@ -412,6 +455,7 @@
           }).join('')}
         </div>
       ` : ''}
+      ${p.total > 0 && p.percent === 100 ? passageSignHTML('Tu as traversé ce passage.') : ''}
     `;
   }
 
@@ -479,6 +523,8 @@
         <textarea id="notes-area" data-note-path="${path}" maxlength="2000" placeholder="Écris ce que tu veux retenir : un RDV pris, un nom, une question à poser…">${escapeHtml(noteValue)}</textarea>
         <div class="notes-meta" id="notes-meta">${noteValue ? 'Gardé sur ton appareil' : 'C\'est juste pour toi, ça reste sur ton téléphone'}</div>
       </section>
+
+      ${passageSignHTML(microcopyPick(path))}
     `;
     favToggleBtn.dataset.fiche = path;
     favToggleBtn.hidden = false;
@@ -641,6 +687,7 @@
       <p class="page-lead">Les fiches que tu as gardées de côté.</p>
       ${items.length === 0 ? `
         <div class="empty-state">
+          <div class="passage-threshold-wrap">${passageThresholdHTML(72)}</div>
           <div class="empty-state-icon">
             <svg viewBox="0 0 24 24" width="32" height="32"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
           </div>
@@ -777,6 +824,8 @@
         <input type="text" name="label" placeholder="Ex : ma facture d'énergie" required maxlength="80" />
         <button type="submit" class="btn-primary">Ajouter</button>
       </form>
+
+      ${all.length > 0 && oui === all.length ? passageSignHTML('Dossier prêt. Beau travail.') : ''}
     `;
   }
 
@@ -788,6 +837,7 @@
 
       ${list.length === 0 ? `
         <div class="empty-state">
+          <div class="passage-threshold-wrap">${passageThresholdHTML(72)}</div>
           <div class="empty-state-icon">
             <svg viewBox="0 0 24 24" width="32" height="32"><circle cx="12" cy="11" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 21c0-3.5 3.1-6 7-6s7 2.5 7 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
@@ -834,6 +884,7 @@
 
       ${list.length === 0 ? `
         <div class="empty-state">
+          <div class="passage-threshold-wrap">${passageThresholdHTML(72)}</div>
           <div class="empty-state-icon">
             <svg viewBox="0 0 24 24" width="32" height="32"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
@@ -930,6 +981,7 @@
 
       ${list.length === 0 ? `
         <div class="empty-state">
+          <div class="passage-threshold-wrap">${passageThresholdHTML(72)}</div>
           <div class="empty-state-icon">
             <svg viewBox="0 0 24 24" width="32" height="32"><path d="M11 4H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>

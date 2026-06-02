@@ -1,8 +1,8 @@
 /* ============================================================
    Pass'âge — Application
    Routing par hash, rendu client, données en localStorage.
-   La home est pré-rendue en HTML : on ne la remplace pas au 1er chargement,
-   on l'enrichit (resume banner, progression sur les tuiles).
+   Home pré-rendue en HTML statique : au 1er chargement on ne la
+   remplace pas, on injecte seulement la partie dérivée (thèmes + footer).
    ============================================================ */
 
 (function () {
@@ -134,12 +134,14 @@
   // Helpers
   // ============================================================
   const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  // Transforme les noms de domaines (ex. "inami.fgov.be") du champ source en liens cliquables.
-  // Échappe d'abord pour la sécurité, puis enrobe les domaines reconnus dans <a>.
+  // Transforme les noms de domaines (ex. "belgium.be", "inami.fgov.be") du
+  // champ source en liens cliquables. Échappe d'abord pour la sécurité, puis
+  // enrobe les domaines reconnus dans <a>. Le bloc (?:\.…)* accepte zéro ou
+  // plus de sous-domaines : "domaine.be" comme "sous.domaine.be" sont couverts.
   const linkifySource = (src) => {
     if (!src) return 'Source à vérifier';
     return escapeHtml(src).replace(
-      /\b([a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)+\.(?:be|org|com|eu|fr|brussels))\b/gi,
+      /\b([a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)*\.(?:be|org|com|eu|fr|brussels))\b/gi,
       m => `<a href="https://${m}" target="_blank" rel="noopener">${m}</a>`
     );
   };

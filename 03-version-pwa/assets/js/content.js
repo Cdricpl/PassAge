@@ -1632,6 +1632,7 @@ window.MA_CONTENT = (function () {
           id: 'lessive',
           title: "Faire sa lessive",
           summary: "Trier, doser, programmer, étendre : les bases pour pas tout abîmer.",
+          source: 'ecoconso.be · inforjeunes.be',
           body: `
 <p>Première lessive sans tes parents ou ta famille d'accueil ? Pas de panique, ce n'est pas sorcier. Quelques règles simples suffisent à ne pas transformer ton t-shirt blanc en t-shirt rose.</p>
 
@@ -1718,6 +1719,7 @@ window.MA_CONTENT = (function () {
           id: 'lavoir',
           title: "Les lavoirs (laveries automatiques)",
           summary: "Quand y aller, comment ça marche, combien ça coûte.",
+          source: 'inforjeunes.be · wassalon.be',
           body: `
 <p>Pas de machine chez toi ? En kot, en colocation sans accès lave-linge, ou ta machine est en panne ? Direction le <strong>lavoir</strong> (aussi appelé laverie automatique ou laundromat). C'est simple, rapide, et ça dépanne bien.</p>
 

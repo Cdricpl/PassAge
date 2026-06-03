@@ -242,6 +242,14 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <div class="callout tip"><div><strong>Bon à savoir</strong>Une formation ou un diplôme reste un atout fort pour trouver un emploi. Pas besoin de tout décider tout de suite.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/majeur/demarches">Mes premières démarches</a> — par quoi commencer concrètement</li>
+  <li><a href="#/fiche/admin/mutuelle">La mutuelle</a> et <a href="#/fiche/admin/rc-familiale">l'assurance RC familiale</a></li>
+  <li><a href="#/fiche/majeur/vote">Le droit de vote</a> et <a href="#/fiche/majeur/impots">La déclaration d'impôts</a></li>
+  <li><a href="https://www.belgium.be/fr" target="_blank" rel="noopener">belgium.be</a> — portail officiel des droits et devoirs des citoyens belges</li>
+</ul>
 `
         },
         {
@@ -256,16 +264,16 @@ window.MA_CONTENT = (function () {
 <p>Tant que tu es domicilié·e chez ta famille ou famille d'accueil, tu restes sur leur mutuelle. Si tu prends ton autonomie, tu dois t'affilier toi-même à une mutuelle (Chrétienne, Neutre, Socialiste, Libérale, Solidaris…) ou à la <strong>CAAMI</strong> (gratuite, mais moins avantageuse). Voir aussi <a href="#/fiche/sante/maison-medicale">la maison médicale</a>.</p>
 
 <h2>2. Le compte bancaire</h2>
-<p>Indispensable pour recevoir un salaire, payer en magasin, recevoir tes aides. Tu peux ouvrir un compte courant dès 18 ans — souvent gratuit pour les jeunes (-25 ans). Pense à activer <strong>itsme</strong> en même temps : tu vas en avoir besoin pour la déclaration d'impôts, Tax-on-Web, le SPF Finances…</p>
+<p>Indispensable pour recevoir un salaire, payer en magasin, recevoir tes aides. Tu peux ouvrir un compte courant dès 18 ans — souvent gratuit pour les jeunes (-25 ans). Pense à activer <strong>itsme</strong> en même temps : tu vas en avoir besoin pour la déclaration d'impôts, Tax-on-Web, le SPF Finances… Voir <a href="#/fiche/argent/compte-bancaire">Le compte bancaire</a>.</p>
 
 <h2>3. L'assurance RC familiale</h2>
-<p>Si tu vis encore chez ta famille ou FA, tu es couvert·e par leur assurance. Si tu prends un logement, tu dois en souscrire une — c'est elle qui paye si tu casses quelque chose à quelqu'un.</p>
+<p>Si tu vis encore chez ta famille ou FA, tu es couvert·e par leur assurance. Si tu prends un logement, tu dois en souscrire une. Voir <a href="#/fiche/admin/rc-familiale">L'assurance RC familiale</a>.</p>
 
 <h2>4. Le RIS du CPAS (si besoin)</h2>
-<p>En tant que <strong>jeune accueilli·e</strong>, tu as droit au revenu d'intégration sociale. Demande à introduire au CPAS de ta commune.</p>
+<p>En tant que <strong>jeune accueilli·e</strong>, tu as droit au revenu d'intégration sociale. Demande à introduire au CPAS de ta commune. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> pour toutes les étapes.</p>
 
 <h2>5. Les allocations familiales</h2>
-<p>À 18 ans, elles sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil). Si tu poursuis tes études, tu les touches jusqu'à 25 ans max.</p>
+<p>À 18 ans, elles sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil). Si tu poursuis tes études, tu les touches jusqu'à 25 ans max. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
 
 <h2>6. Ta déclaration d'impôts (chaque année)</h2>
 <p>Dès l'année qui suit tes 18 ans, tu reçois ta déclaration. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a> pour les détails — c'est plus simple que ça en a l'air.</p>
@@ -855,6 +863,14 @@ window.MA_CONTENT = (function () {
 <p>Plusieurs communes wallonnes ont mis en place des <strong>frigos solidaires</strong> où chacun peut déposer ou prendre. Renseigne-toi à ta commune ou ton CPAS pour savoir s'il y en a près de chez toi.</p>
 
 <div class="callout tip"><div><strong>L'aide alimentaire, c'est un droit</strong>Restos du Cœur, Croix-Rouge, épiceries sociales : si tu galères en fin de mois, n'attends pas. Ton CPAS peut t'orienter vers le bon service.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — comment accéder à ces tarifs sociaux</li>
+  <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — gérer ses dépenses prioritaires</li>
+  <li><a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a> — offre internet sociale officielle</li>
+  <li><a href="https://www.ecoconso.be" target="_blank" rel="noopener">ecoconso.be</a> — conseils pour réduire sa consommation</li>
+</ul>
 `
         },
         {
@@ -868,10 +884,10 @@ window.MA_CONTENT = (function () {
 <h2>Dépenses fixes — par ordre de priorité</h2>
 <p>Ne paie <strong>jamais</strong> tes loisirs avant tes dépenses obligatoires. Voici l'ordre :</p>
 <ol class="fiche-ol">
-  <li><strong>Loyer</strong> — astuce : tu peux demander au CPAS de payer ton loyer directement au propriétaire (il te reverse le solde du RIS). Ça évite les oublis.</li>
-  <li><strong>Énergie</strong> (eau, électricité, gaz) — provision mensuelle + décompte annuel.</li>
-  <li><strong>Assurance habitation</strong> (souvent obligatoire dans le bail).</li>
-  <li><strong>Cotisation mutuelle</strong> — tu peux payer mensuellement ou annuellement.</li>
+  <li><strong>Loyer</strong> — astuce : tu peux demander au <a href="#/fiche/argent/ris-cpas">CPAS</a> de payer ton loyer directement au propriétaire (il te reverse le solde du RIS). Ça évite les oublis.</li>
+  <li><strong>Énergie</strong> (eau, électricité, gaz) — provision mensuelle + décompte annuel. Voir <a href="#/fiche/logement/compteurs">L'ouverture des compteurs</a>.</li>
+  <li><strong>Assurance habitation</strong> (souvent obligatoire dans le <a href="#/fiche/logement/bail">bail</a>). Voir <a href="#/fiche/logement/assurance-habitation">L'assurance habitation</a>.</li>
+  <li><strong>Cotisation mutuelle</strong> — tu peux payer mensuellement ou annuellement. Voir <a href="#/fiche/admin/mutuelle">La mutuelle</a>.</li>
   <li><strong>Téléphone &amp; internet</strong> — voir aussi <a href="#/fiche/argent/aides-supp">tarif social internet</a>.</li>
   <li><strong>Transport</strong> (TEC, SNCB, carburant, vélo).</li>
   <li><strong>Impôts/taxes</strong> (taxe communale, taxe poubelles…) — souvent annuelles.</li>
@@ -900,6 +916,14 @@ window.MA_CONTENT = (function () {
 <p>Préviens du changement d'adresse à : ta mutuelle, ta banque, ton opérateur télécom, ton fournisseur d'énergie, FAMIWAL (allocations familiales), ton employeur, le Forem, le CPAS si tu y es suivi·e.</p>
 
 <div class="callout tip"><div><strong>Demande de l'aide</strong>Le CPAS, Inforjeunes ou une AMO peuvent t'aider à faire ton budget <strong>gratuitement et sans jugement</strong>. Tu peux aussi voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a>.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — si tes revenus ne couvrent pas le minimum</li>
+  <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> — réduire les factures</li>
+  <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADIL</li>
+  <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — aide gratuite pour les dettes et difficultés financières</li>
+</ul>
 `
         }
       ]
@@ -1013,7 +1037,15 @@ window.MA_CONTENT = (function () {
 <p>Adecco, Tempo Team, Randstad, LEM Interim, Equip Interim… Tu peux t'inscrire en ligne ou directement en agence. C'est souvent un bon point d'entrée pour un premier job.</p>
 
 <h2>La candidature spontanée</h2>
-<p>Tu identifies des entreprises qui t'intéressent et tu leur envoies CV + lettre, même sans annonce. C'est un moyen efficace, surtout dans les petites structures.</p>
+<p>Tu identifies des entreprises qui t'intéressent et tu leur envoies CV + lettre, même sans annonce. C'est un moyen efficace, surtout dans les petites structures. Voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> si tu n'as pas l'habitude.</p>
+
+<div class="callout tip"><div><strong>Astuce</strong>Envoie ta candidature spontanée par e-mail ET par lettre — tu te démarques davantage quand tu prends le temps d'écrire.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/travail/entretien">Réussir l'entretien d'embauche</a> — se préparer avant le rendez-vous.</li>
+  <li><a href="#/fiche/travail/contrat">Comprendre mon contrat</a> — avant de signer.</li>
+</ul>
 `
         },
         {
@@ -1061,7 +1093,7 @@ window.MA_CONTENT = (function () {
 <h2>Brut, net, c'est quoi ?</h2>
 <ul>
   <li><strong>Salaire brut</strong> : avant les retenues.</li>
-  <li><strong>Cotisations sociales</strong> (~13,07%) : pour la sécurité sociale (chômage, pension, mutuelle).</li>
+  <li><strong>Cotisations sociales</strong> (~13,07%) : pour la sécurité sociale (chômage, pension, <a href="#/fiche/admin/mutuelle">mutuelle</a>).</li>
   <li><strong>Précompte professionnel</strong> : un acompte sur tes impôts.</li>
   <li><strong>Salaire net</strong> : ce qui arrive sur ton compte.</li>
 </ul>
@@ -1100,7 +1132,7 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <h2>Si tu touches le RIS</h2>
-<div class="callout warn"><div><strong>Attention</strong>Si tu travailles, ton RIS du CPAS peut être réduit ce mois-là. Une exonération existe (différente si tu es boursier·ère ou non) — demande à ton·ta assistant·e social·e avant de signer.</div></div>
+<div class="callout warn"><div><strong>Attention</strong>Si tu travailles, ton <a href="#/fiche/argent/ris-cpas">RIS du CPAS</a> peut être réduit ce mois-là. Une exonération existe (différente si tu es boursier·ère ou non) — demande à ton·ta assistant·e social·e avant de signer.</div></div>
 
 <h2>Côté impôts</h2>
 <p>Si tu gagnes plus que la quotité exemptée d'impôt sur l'année, tu devras déclarer tes revenus. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a>. À ton âge, tu n'as souvent rien à payer.</p>
@@ -1254,6 +1286,14 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <div class="callout tip"><div><strong>Avant de visiter</strong>Vérifie ton budget réel : loyer + charges ≤ ~1/3 de tes revenus, c'est une règle de prudence.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — ce qu'il doit contenir avant de signer.</li>
+  <li><a href="#/fiche/logement/garantie">La garantie locative</a> — comment la financer si tu n'as pas l'argent.</li>
+  <li><a href="#/fiche/logement/etat-des-lieux">L'état des lieux</a> — indispensable à l'entrée.</li>
+  <li><a href="#/fiche/logement/aides">Les aides au logement</a> — CPAS, ADIL, allocation loyer.</li>
+</ul>
 `
         },
         {
@@ -1282,8 +1322,16 @@ window.MA_CONTENT = (function () {
 <h2>Durée du bail</h2>
 <ul>
   <li>1 an, 3 ans ou 9 ans : c'est la loi.</li>
-  <li>Si tu veux partir, tu dois donner ton <strong>préavis par recommandé</strong>.</li>
+  <li>Si tu veux partir, tu dois donner ton <strong>préavis par lettre recommandée</strong> — voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>.</li>
   <li>Le délai commence le <strong>1er du mois suivant</strong> l'envoi du recommandé.</li>
+</ul>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/logement/etat-des-lieux">L'état des lieux</a> — le document qui te protège quand tu pars.</li>
+  <li><a href="#/fiche/logement/garantie">La garantie locative</a> — comment la constituer, l'aide du CPAS.</li>
+  <li><a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> — pour ton préavis recommandé.</li>
+  <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — relecture gratuite du bail.</li>
 </ul>
 `
         },
@@ -1401,6 +1449,16 @@ window.MA_CONTENT = (function () {
 
 <h2>Le service Droit des Jeunes</h2>
 <p>Gratuit, confidentiel : ils t'aident à comprendre tes droits et à monter ton dossier. À contacter dès le début.</p>
+
+<div class="callout tip"><div><strong>Agis tôt</strong>Plus tu attends, moins il y a d'options. Dès que tu cherches un logement, contacte le CPAS et le Service Droit des Jeunes — même si tu n'es pas encore en difficulté.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/logement/garantie">La garantie locative</a> — l'aide CPAS en détail.</li>
+  <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — pour connaître toutes les aides disponibles.</li>
+  <li><a href="https://logement.wallonie.be" target="_blank" rel="noopener">logement.wallonie.be</a> — aides régionales au logement.</li>
+  <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — accompagnement gratuit.</li>
+</ul>
 `
         },
         {
@@ -1554,6 +1612,13 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <div class="callout tip"><div><strong>Avant de signer</strong>Vérifie toujours : durée d'engagement (12 ou 24 mois), frais de résiliation anticipée, prix après les 6 premiers mois (souvent en promo, puis ça monte).</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://www.mesfournisseurs.be/mobile/" target="_blank" rel="noopener">mesfournisseurs.be</a> — comparateur GSM indépendant</li>
+  <li><a href="https://www.bestetarif.be" target="_blank" rel="noopener">bestetarif.be</a> — comparateur officiel BIPT</li>
+  <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a> — offre internet sociale à 19 €/mois si tu touches le RIS</li>
+</ul>
 `
         },
         {
@@ -1636,6 +1701,14 @@ window.MA_CONTENT = (function () {
 
 <h2>Permis de conduire</h2>
 <p>Voir la fiche dédiée <a href="#/fiche/vie/permis-conduire">Le permis de conduire (B)</a> pour toutes les étapes (théorique, pratique, filières, coût) et les aides possibles via le CPAS.</p>
+
+<div class="callout tip"><div><strong>Tarif social transport</strong>Si tu touches le RIS du CPAS, l'abonnement TEC est gratuit (et non plus 12 €). Demande à ton·ta assistant·e social·e au CPAS.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a> — abonnements TEC et tarifs jeunes</li>
+  <li><a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> — Go Pass et abonnements SNCB</li>
+</ul>
 `
         },
         {
@@ -1695,7 +1768,7 @@ window.MA_CONTENT = (function () {
   <li><a href="https://www.restosducoeur.be" target="_blank" rel="noopener">Restos du Cœur</a></li>
   <li><a href="https://www.croix-rouge.be" target="_blank" rel="noopener">Croix-Rouge</a> — colis et épiceries sociales</li>
   <li>Épiceries sociales locales (à ~10–30 % du prix normal)</li>
-  <li>Ton <strong>CPAS</strong> peut t'orienter et accorder une aide ponctuelle.</li>
+  <li>Ton <strong>CPAS</strong> peut t'orienter et accorder une aide ponctuelle — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> et <a href="#/fiche/urgence/services-aide">Les services d'aide près de moi</a>.</li>
 </ul>
 
 <div class="callout tip"><div><strong>Pas de honte</strong>Demander de l'aide alimentaire, c'est un droit. Beaucoup de jeunes y ont recours à un moment de leur vie. Personne ne te demandera de te justifier.</div></div>
@@ -1982,6 +2055,14 @@ Rue du Commerce 10
 <ul>
   <li>Vérifie toujours sur le site du musée avant de te déplacer.</li>
 </ul>
+
+<div class="callout tip"><div><strong>Combiner les réductions</strong>Article 27 + maison de jeunes + Pass Partout = tu peux accéder à énormément d'activités pour quelques euros par mois. Demande à ton AMO ou ton CPAS de t'aider à activer ces dispositifs.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://www.article27.be" target="_blank" rel="noopener">article27.be</a> — culture à 1,25 €</li>
+  <li><a href="#/fiche/loisirs/maisons-jeunes">Maisons de jeunes et centres culturels</a> — activités gratuites ou peu chères</li>
+</ul>
 `
         },
         {
@@ -2125,7 +2206,7 @@ Rue du Commerce 10
 
 <h2>Le 1er rendez-vous</h2>
 <ul>
-  <li>Apporte ta <strong>carte d'identité</strong>, ta <strong>vignette de mutuelle</strong>, et tes éventuels antécédents.</li>
+  <li>Apporte ta <strong>carte d'identité</strong>, ta <a href="#/fiche/admin/mutuelle"><strong>vignette de mutuelle</strong></a>, et tes éventuels antécédents.</li>
   <li>Tu peux <strong>écrire tes questions avant</strong> — pas grave si tu hésites.</li>
   <li>Le médecin est tenu au secret professionnel. Tu peux tout dire.</li>
 </ul>
@@ -2196,7 +2277,7 @@ Rue du Commerce 10
 <ol class="fiche-ol">
   <li>Trouve un psy conventionné : <a href="https://www.psyforyou.be" target="_blank" rel="noopener">psyforyou.be</a> (annuaire officiel) ou <a href="https://psychologue-premiere-ligne.be" target="_blank" rel="noopener">psychologue-premiere-ligne.be</a>.</li>
   <li>Tu peux y aller <strong>directement</strong> : <strong>pas besoin de prescription</strong> de ton médecin.</li>
-  <li>Apporte simplement ta carte d'identité et ta carte de mutuelle au 1er RDV.</li>
+  <li>Apporte simplement ta carte d'identité et ta <a href="#/fiche/admin/mutuelle">carte de mutuelle</a> au 1er RDV.</li>
   <li>Le paiement se fait en <strong>tiers payant</strong> : tu n'avances pas l'argent, tu paies juste ta part (ou rien si -24 ans).</li>
 </ol>
 

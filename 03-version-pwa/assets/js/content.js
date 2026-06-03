@@ -2019,11 +2019,11 @@ Rue du Commerce 10
         {
           id: 'cuisine',
           title: "Cuisiner simple et pas cher",
-          summary: "Ustensiles de base, placard minimum et 5 recettes pour se débrouiller.",
+          summary: "Ustensiles de base, placard minimum et liens vers des sites de recettes faciles.",
           source: 'foodinaction.com · ecoconso.be · inforjeunes.be',
           lastChecked: '03/06/2026',
           body: `
-<p>Pas besoin d'être cuisinier pour se nourrir correctement. Avec quelques ustensiles, un placard de base et 5 recettes, tu couvres 80 % de tes repas — pour moins de 3 € par assiette.</p>
+<p>Pas besoin d'être cuisinier pour se nourrir correctement. Avec quelques ustensiles et un placard de base, tu peux te débrouiller — et trouver l'inspiration en quelques secondes en ligne.</p>
 
 <h2>Les ustensiles indispensables</h2>
 <p>Pas besoin de tout : juste ça pour commencer.</p>
@@ -2052,48 +2052,6 @@ Rue du Commerce 10
   <li>Quelques épices : cumin, curry, origan — 1 € chacun en épicerie ou au marché</li>
 </ul>
 
-<h2>5 recettes de base</h2>
-
-<h3>1. Pâtes sauce tomate rapide (15 min)</h3>
-<ol class="fiche-ol">
-  <li>Faire bouillir de l'eau avec du sel dans la casserole.</li>
-  <li>Dans la poêle, faire chauffer un peu d'huile, ajouter 1 gousse d'ail, laisser 1 min.</li>
-  <li>Ajouter 1 boîte de tomates, sel, origan ou basilic. Laisser mijoter 5 min à feu moyen.</li>
-  <li>Cuire les pâtes selon le paquet (généralement 8–10 min), égoutter.</li>
-  <li>Mélanger les pâtes avec la sauce. Ajouter du fromage râpé si t'en as.</li>
-</ol>
-
-<h3>2. Omelette (5 min)</h3>
-<ol class="fiche-ol">
-  <li>Casser 2–3 œufs dans un bol, battre avec sel et poivre.</li>
-  <li>Chauffer la poêle avec un peu d'huile ou de beurre à feu moyen.</li>
-  <li>Verser les œufs. Ajouter ce que tu as : fromage râpé, jambon, légumes cuits.</li>
-  <li>Quand le dessus est encore légèrement baveux, plier en deux. Servir.</li>
-</ol>
-
-<h3>3. Riz sauté aux légumes (20 min)</h3>
-<ol class="fiche-ol">
-  <li>Cuire le riz : verser le riz dans 2 fois son volume d'eau froide salée, porter à ébullition, puis feu doux 12 min à couvert.</li>
-  <li>Pendant ce temps, faire revenir dans la poêle les légumes que t'as (courgette, poivron, carotte, oignon) avec huile et sel.</li>
-  <li>Une fois le riz cuit, mélanger avec les légumes. Ajouter de la sauce soja ou du curry selon goût.</li>
-</ol>
-
-<h3>4. Soupe de lentilles corail (25 min)</h3>
-<ol class="fiche-ol">
-  <li>Rincer 200 g de lentilles corail à l'eau froide.</li>
-  <li>Dans la casserole, faire revenir 1 oignon + 1 ail + 1 c. à café de curry dans l'huile (2 min).</li>
-  <li>Ajouter les lentilles + 600 ml d'eau, porter à ébullition, puis feu moyen 18–20 min.</li>
-  <li>Saler, mixer si tu veux une texture lisse, servir avec du pain.</li>
-</ol>
-
-<h3>5. Pâtes au thon express (10 min)</h3>
-<ol class="fiche-ol">
-  <li>Cuire les pâtes. Égoutter en gardant 2 cuillères d'eau de cuisson.</li>
-  <li>Dans la poêle : huile + ail + 1 boîte de thon égoutté, faire revenir 2 min.</li>
-  <li>Ajouter les pâtes + l'eau de cuisson, sel, poivre. Mélanger.</li>
-  <li>Ajouter quelques câpres ou olives si t'en as.</li>
-</ol>
-
 <h2>Quelques règles de sécurité alimentaire</h2>
 <ul>
   <li><strong>Frigo à 4 °C max</strong> : viande et poisson en bas (zone froide), restes dans des boîtes fermées.</li>
@@ -2102,7 +2060,16 @@ Rue du Commerce 10
   <li>Un reste de repas se garde <strong>2–3 jours</strong> au frigo dans un contenant fermé.</li>
 </ul>
 
-<div class="callout tip"><div><strong>Et si tu ne sais pas cuisiner du tout ?</strong>YouTube est ton meilleur ami. Tape « recette pâtes débutant » ou « omelette facile » — il y a des vidéos pour tout, pas besoin de cours.</div></div>
+<h2>Trouver des recettes faciles</h2>
+<p>Pour apprendre à cuisiner pas à pas, ces sites et chaînes sont faits pour les débutants&nbsp;:</p>
+<ul>
+  <li><a href="https://www.750g.com/recettes-faciles.htm" target="_blank" rel="noopener">750g.com</a> — recettes simples avec vidéos, filtres « débutant » et « pas cher »</li>
+  <li><a href="https://www.marmiton.org" target="_blank" rel="noopener">Marmiton.org</a> — la référence francophone, tri par difficulté et budget</li>
+  <li><a href="https://www.cuisineaz.com" target="_blank" rel="noopener">CuisineAZ.com</a> — recettes du quotidien avec listes d'ingrédients claires</li>
+  <li><strong>YouTube</strong> — tape « recette [ingrédient] débutant » ou « cuisine facile moins de 5 euros » pour des vidéos pas à pas</li>
+</ul>
+
+<div class="callout tip"><div><strong>Astuce budget</strong>Tape dans la barre de recherche ce que t'as dans ton frigo (ex. « recette œufs courgette »). Tu évites le gaspillage et tu n'achètes pas exprès.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>

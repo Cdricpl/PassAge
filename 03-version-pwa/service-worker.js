@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v31-2026-05-fixes';
+const VERSION = 'v32-2026-06-lessive';
 const SHELL_CACHE = `passage-shell-${VERSION}`;
 const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 
@@ -14,7 +14,7 @@ const SHELL_ASSETS = [
   './manifest.webmanifest',
   './assets/css/styles.css?v=2026-05-20-06',
   './assets/js/app.js?v=2026-05-20-10',
-  './assets/js/content.js?v=2026-05-20-11',
+  './assets/js/content.js?v=2026-06-03-01',
   './assets/js/sw-register.js?v=2026-05-08-01',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',

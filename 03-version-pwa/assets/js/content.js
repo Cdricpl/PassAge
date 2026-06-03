@@ -1566,6 +1566,75 @@ window.MA_CONTENT = (function () {
   <li>Ton <strong>fournisseur d'énergie</strong> et ton opérateur télécom.</li>
 </ul>
 `
+        },
+        {
+          id: 'urgence-maison',
+          title: "Panne, fuite, urgence chez soi",
+          summary: "Couper l'eau, le gaz ou l'électricité, qui appelle qui, et les numéros utiles.",
+          source: 'inforjeunes.be · sibelga.be · ores.net',
+          lastChecked: '03/06/2026',
+          body: `
+<p>Ça arrive à tout le monde : un robinet qui fuit, une panne de courant, une odeur de gaz. Savoir quoi faire — et vite — évite les dégâts.</p>
+
+<div class="callout warn"><div><strong>Odeur de gaz : procédure stricte</strong>N'allume ou n'éteins <strong>rien</strong> (même la lumière). Ouvre grand les fenêtres et portes. Coupe l'arrivée de gaz au compteur. Sors immédiatement. Appelle le <strong>112</strong> depuis l'extérieur, puis contacte ton gestionnaire de réseau gaz (numéro sur tes factures). Ne rentre pas avant que les secours aient vérifié.</div></div>
+
+<h2>Couper l'eau</h2>
+<p>La vanne d'arrêt principale est généralement&nbsp;:</p>
+<ul>
+  <li>Sous l'évier ou dans la salle de bain (petit robinet sur le tuyau d'arrivée d'eau)</li>
+  <li>Dans le couloir, la cave ou derrière un panneau au mur</li>
+  <li>Près du compteur d'eau (souvent dans la cave ou dans un coffret extérieur)</li>
+</ul>
+<p><strong>Pour fermer</strong> : tourner dans le sens des aiguilles d'une montre jusqu'en butée. L'eau s'arrête immédiatement.</p>
+<p>En cas de fuite, ferme l'eau et préviens ton propriétaire par écrit (voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>).</p>
+
+<h2>Couper l'électricité</h2>
+<p>Le <strong>tableau électrique</strong> (boîte avec des disjoncteurs) est souvent dans le couloir, la cuisine, la cave ou un placard. Il y a&nbsp;:</p>
+<ul>
+  <li><strong>Un disjoncteur général</strong> (grand interrupteur en haut ou à part) : coupe tout le logement.</li>
+  <li><strong>Des disjoncteurs par circuit</strong> (lumières, prises, cuisine, etc.) : si l'un saute (position basse), retrouve le problème et remets-le en position haute.</li>
+</ul>
+<p>Si un disjoncteur saute en boucle, ne l'insiste pas : il y a un problème électrique → préviens le propriétaire.</p>
+
+
+<h2>Panne de chauffage</h2>
+<p>Si ta chaudière s'éteint&nbsp;:</p>
+<ul>
+  <li>Vérifie la <strong>pression</strong> sur le manomètre (cadran sur la chaudière) : elle doit être entre 1 et 2 bars. Si elle est en dessous, il faut faire l'appoint d'eau (petit robinet de remplissage sous la chaudière — consulte le manuel ou YouTube pour ton modèle).</li>
+  <li>Si la chaudière affiche un <strong>code d'erreur</strong>, note-le et appelle le propriétaire : c'est sa responsabilité de la faire réparer.</li>
+  <li>Si tu as très froid et que la réparation tarde, le <strong>CPAS</strong> peut t'aider à trouver une solution d'urgence — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
+</ul>
+
+<h2>Robinet qui fuit ou WC qui coule</h2>
+<ul>
+  <li><strong>Robinet</strong> : ferme la vanne d'arrêt sous l'évier ou derrière la chasse d'eau. Préviens le propriétaire.</li>
+  <li><strong>WC qui coule</strong> (bruit constant d'eau) : souvent un flotteur à ajuster ou remplacer. Si tu n'es pas à l'aise, c'est au propriétaire de réparer.</li>
+  <li>Note et photo à l'appui : garde une trace de chaque signalement.</li>
+</ul>
+
+<h2>Qui est responsable de quoi ?</h2>
+<p>C'est dans le <a href="#/fiche/logement/bail">contrat de bail</a> — mais voici la règle générale&nbsp;:</p>
+<ul>
+  <li><strong>Toi (locataire)</strong> : entretien courant (changer une ampoule, détartrer un robinet, nettoyer les vitres).</li>
+  <li><strong>Le propriétaire</strong> : réparations importantes (chaudière, canalisations, toit, fenêtres, électricité générale). Il doit intervenir dans un délai raisonnable.</li>
+</ul>
+<p>Si le propriétaire ne réagit pas, contacte le <strong>Service Droit des Jeunes (SDJ)</strong> ou un <strong>service juridique de première ligne</strong> — voir <a href="#/fiche/admin/aide-juridique">Avocat prodéo et aide juridique</a>.</p>
+
+<h2>Numéros utiles</h2>
+<ul>
+  <li><strong>112</strong> — Urgences vitales, incendie, fuite de gaz (24/7, gratuit)</li>
+  <li><strong>Ton propriétaire</strong> — Garde son numéro dans ton téléphone dès l'emménagement</li>
+  <li><strong>Gestionnaire de réseau gaz/élec</strong> — Affiché sur tes factures (Sibelga, ORES, RESA…)</li>
+  <li><strong>SWDE (eau, Wallonie)</strong> — <a href="https://www.swde.be" target="_blank" rel="noopener">swde.be</a></li>
+</ul>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/logement/entretien">Entretien du logement</a> — les habitudes de ménage au quotidien</li>
+  <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — tes droits et obligations en tant que locataire</li>
+  <li><a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> — pour signaler un problème par écrit</li>
+</ul>
+`
         }
       ]
     },
@@ -2075,85 +2144,6 @@ Rue du Commerce 10
 <ul>
   <li><a href="#/fiche/vie/alimentation">Alimentation : manger bien sans se ruiner</a> — courses, anti-gaspi, aide alimentaire</li>
   <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — estimer combien prévoir pour les courses</li>
-</ul>
-`
-        },
-        {
-          id: 'urgence-maison',
-          title: "Panne, fuite, urgence chez soi",
-          summary: "Couper l'eau, le gaz ou l'électricité, qui appelle qui, et les numéros utiles.",
-          source: 'inforjeunes.be · sibelga.be · ores.net',
-          lastChecked: '03/06/2026',
-          body: `
-<p>Ça arrive à tout le monde : un robinet qui fuit, une panne de courant, une odeur de gaz. Savoir quoi faire — et vite — évite les dégâts.</p>
-
-<div class="callout warn"><div><strong>Odeur de gaz : procédure stricte</strong>Si tu sens le gaz, n'allume ou n'éteins <strong>rien</strong> (même la lumière). Ouvre les fenêtres, ferme le gaz, sors du logement, et appelle le 112 depuis l'extérieur.</div></div>
-
-<h2>Couper l'eau</h2>
-<p>La vanne d'arrêt principale est généralement&nbsp;:</p>
-<ul>
-  <li>Sous l'évier ou dans la salle de bain (petit robinet sur le tuyau d'arrivée d'eau)</li>
-  <li>Dans le couloir, la cave ou derrière un panneau au mur</li>
-  <li>Près du compteur d'eau (souvent dans la cave ou dans un coffret extérieur)</li>
-</ul>
-<p><strong>Pour fermer</strong> : tourner dans le sens des aiguilles d'une montre jusqu'en butée. L'eau s'arrête immédiatement.</p>
-<p>En cas de fuite, ferme l'eau et préviens ton propriétaire par écrit (voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>).</p>
-
-<h2>Couper l'électricité</h2>
-<p>Le <strong>tableau électrique</strong> (boîte avec des disjoncteurs) est souvent dans le couloir, la cuisine, la cave ou un placard. Il y a&nbsp;:</p>
-<ul>
-  <li><strong>Un disjoncteur général</strong> (grand interrupteur en haut ou à part) : coupe tout le logement.</li>
-  <li><strong>Des disjoncteurs par circuit</strong> (lumières, prises, cuisine, etc.) : si l'un saute (position basse), retrouve le problème et remets-le en position haute.</li>
-</ul>
-<p>Si un disjoncteur saute en boucle, ne l'insiste pas : il y a un problème électrique → préviens le propriétaire.</p>
-
-<h2>Fuite de gaz : que faire exactement</h2>
-<ol class="fiche-ol">
-  <li><strong>Ne touche à aucun interrupteur</strong> — même éteindre la lumière peut créer une étincelle.</li>
-  <li><strong>Ouvre grand</strong> les fenêtres et portes.</li>
-  <li><strong>Coupe l'arrivée de gaz</strong> au compteur (vanne à tourner perpendiculairement à la tuyauterie = fermée).</li>
-  <li><strong>Sors du logement</strong> immédiatement.</li>
-  <li><strong>Appelle le 112</strong> depuis l'extérieur (ou depuis le téléphone d'un voisin).</li>
-  <li>Appelle aussi ton gestionnaire de réseau gaz (numéro sur tes factures ou ton compteur).</li>
-  <li><strong>Ne rentre pas</strong> avant que les secours aient vérifié.</li>
-</ol>
-
-<h2>Panne de chauffage</h2>
-<p>Si ta chaudière s'éteint&nbsp;:</p>
-<ul>
-  <li>Vérifie la <strong>pression</strong> sur le manomètre (cadran sur la chaudière) : elle doit être entre 1 et 2 bars. Si elle est en dessous, il faut faire l'appoint d'eau (petit robinet de remplissage sous la chaudière — consulte le manuel ou YouTube pour ton modèle).</li>
-  <li>Si la chaudière affiche un <strong>code d'erreur</strong>, note-le et appelle le propriétaire : c'est sa responsabilité de la faire réparer.</li>
-  <li>Si tu as très froid et que la réparation tarde, le <strong>CPAS</strong> peut t'aider à trouver une solution d'urgence — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
-</ul>
-
-<h2>Robinet qui fuit ou WC qui coule</h2>
-<ul>
-  <li><strong>Robinet</strong> : ferme la vanne d'arrêt sous l'évier ou derrière la chasse d'eau. Préviens le propriétaire.</li>
-  <li><strong>WC qui coule</strong> (bruit constant d'eau) : souvent un flotteur à ajuster ou remplacer. Si tu n'es pas à l'aise, c'est au propriétaire de réparer.</li>
-  <li>Note et photo à l'appui : garde une trace de chaque signalement.</li>
-</ul>
-
-<h2>Qui est responsable de quoi ?</h2>
-<p>C'est dans le <a href="#/fiche/logement/bail">contrat de bail</a> — mais voici la règle générale&nbsp;:</p>
-<ul>
-  <li><strong>Toi (locataire)</strong> : entretien courant (changer une ampoule, détartrer un robinet, nettoyer les vitres).</li>
-  <li><strong>Le propriétaire</strong> : réparations importantes (chaudière, canalisations, toit, fenêtres, électricité générale). Il doit intervenir dans un délai raisonnable.</li>
-</ul>
-<p>Si le propriétaire ne réagit pas, contacte le <strong>Service Droit des Jeunes (SDJ)</strong> ou un <strong>service juridique de première ligne</strong> — voir <a href="#/fiche/admin/aide-juridique">Avocat prodéo et aide juridique</a>.</p>
-
-<h2>Numéros utiles</h2>
-<ul>
-  <li><strong>112</strong> — Urgences vitales, incendie, fuite de gaz (24/7, gratuit)</li>
-  <li><strong>Ton propriétaire</strong> — Garde son numéro dans ton téléphone dès l'emménagement</li>
-  <li><strong>Gestionnaire de réseau gaz/élec</strong> — Affiché sur tes factures (Sibelga, ORES, RESA…)</li>
-  <li><strong>SWDE (eau, Wallonie)</strong> — <a href="https://www.swde.be" target="_blank" rel="noopener">swde.be</a></li>
-</ul>
-
-<h2>Pour aller plus loin</h2>
-<ul>
-  <li><a href="#/fiche/logement/entretien">Entretien du logement</a> — les habitudes de ménage au quotidien</li>
-  <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — tes droits et obligations en tant que locataire</li>
-  <li><a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> — pour signaler un problème par écrit</li>
 </ul>
 `
         }
@@ -2890,24 +2880,24 @@ Rue du Commerce 10
     'placard': ['vie/cuisine', 'vie/alimentation'],
 
     // Urgence maison
-    'panne': ['vie/urgence-maison'],
-    'pannes': ['vie/urgence-maison'],
-    'fuite': ['vie/urgence-maison'],
-    'fuite d eau': ['vie/urgence-maison'],
-    'fuite de gaz': ['vie/urgence-maison'],
-    'gaz': ['vie/urgence-maison'],
-    'odeur de gaz': ['vie/urgence-maison'],
-    'chaudiere': ['vie/urgence-maison'],
-    'chaudière': ['vie/urgence-maison'],
-    'disjoncteur': ['vie/urgence-maison'],
-    'electricite': ['vie/urgence-maison'],
-    'électricité': ['vie/urgence-maison'],
-    'couper eau': ['vie/urgence-maison'],
-    'robinet': ['vie/urgence-maison'],
-    'wc': ['vie/urgence-maison'],
-    'vanne': ['vie/urgence-maison'],
-    'proprietaire': ['vie/urgence-maison', 'logement/bail'],
-    'propriétaire': ['vie/urgence-maison', 'logement/bail'],
+    'panne': ['logement/urgence-maison'],
+    'pannes': ['logement/urgence-maison'],
+    'fuite': ['logement/urgence-maison'],
+    'fuite d eau': ['logement/urgence-maison'],
+    'fuite de gaz': ['logement/urgence-maison'],
+    'gaz': ['logement/urgence-maison'],
+    'odeur de gaz': ['logement/urgence-maison'],
+    'chaudiere': ['logement/urgence-maison'],
+    'chaudière': ['logement/urgence-maison'],
+    'disjoncteur': ['logement/urgence-maison'],
+    'electricite': ['logement/urgence-maison'],
+    'électricité': ['logement/urgence-maison'],
+    'couper eau': ['logement/urgence-maison'],
+    'robinet': ['logement/urgence-maison'],
+    'wc': ['logement/urgence-maison'],
+    'vanne': ['logement/urgence-maison'],
+    'proprietaire': ['logement/urgence-maison', 'logement/bail'],
+    'propriétaire': ['logement/urgence-maison', 'logement/bail'],
     'compte bancaire': ['argent/compte-bancaire'],
     'ouvrir un compte': ['argent/compte-bancaire'],
     'itsme': ['argent/compte-bancaire', 'majeur/impots'],

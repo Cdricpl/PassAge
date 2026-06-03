@@ -2015,6 +2015,180 @@ Rue du Commerce 10
   <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — modèles de lettres type</li>
 </ul>
 `
+        },
+        {
+          id: 'cuisine',
+          title: "Cuisiner simple et pas cher",
+          summary: "Ustensiles de base, placard minimum et 5 recettes pour se débrouiller.",
+          source: 'foodinaction.com · ecoconso.be · inforjeunes.be',
+          lastChecked: '03/06/2026',
+          body: `
+<p>Pas besoin d'être cuisinier pour se nourrir correctement. Avec quelques ustensiles, un placard de base et 5 recettes, tu couvres 80 % de tes repas — pour moins de 3 € par assiette.</p>
+
+<h2>Les ustensiles indispensables</h2>
+<p>Pas besoin de tout : juste ça pour commencer.</p>
+<ul>
+  <li><strong>1 casserole</strong> (pour les pâtes, le riz, les soupes)</li>
+  <li><strong>1 poêle</strong> (pour tout faire sauter, les omelettes)</li>
+  <li><strong>1 couteau de cuisine</strong> (1 seul bon couteau suffit)</li>
+  <li><strong>1 planche à découper</strong></li>
+  <li><strong>1 passoire</strong> (pour égoutter les pâtes)</li>
+  <li><strong>1 spatule ou cuillère en bois</strong></li>
+  <li><strong>1 ouvre-boîte</strong></li>
+</ul>
+<p>Tout ça se trouve en seconde main pour 5–10 €, ou dans les vide-greniers. Voir <a href="#/fiche/argent/aides-supp">Bons plans : seconde main</a>.</p>
+
+<h2>Le placard de débrouille</h2>
+<p>Ces ingrédients durent longtemps et permettent de tout cuisiner&nbsp;:</p>
+<ul>
+  <li>Pâtes (~1 €/500 g)</li>
+  <li>Riz (~1 €/500 g)</li>
+  <li>Lentilles corail ou pois chiches en boîte (~1 €)</li>
+  <li>Boîtes de tomates concassées (~0,70 €)</li>
+  <li>Thon ou sardines en boîte (~1 €)</li>
+  <li>Huile (tournesol ou olive, petite bouteille)</li>
+  <li>Sel, poivre</li>
+  <li>Ail (1 tête dure 3 semaines à température ambiante)</li>
+  <li>Quelques épices : cumin, curry, origan — 1 € chacun en épicerie ou au marché</li>
+</ul>
+
+<h2>5 recettes de base</h2>
+
+<h3>1. Pâtes sauce tomate rapide (15 min)</h3>
+<ol class="fiche-ol">
+  <li>Faire bouillir de l'eau avec du sel dans la casserole.</li>
+  <li>Dans la poêle, faire chauffer un peu d'huile, ajouter 1 gousse d'ail, laisser 1 min.</li>
+  <li>Ajouter 1 boîte de tomates, sel, origan ou basilic. Laisser mijoter 5 min à feu moyen.</li>
+  <li>Cuire les pâtes selon le paquet (généralement 8–10 min), égoutter.</li>
+  <li>Mélanger les pâtes avec la sauce. Ajouter du fromage râpé si t'en as.</li>
+</ol>
+
+<h3>2. Omelette (5 min)</h3>
+<ol class="fiche-ol">
+  <li>Casser 2–3 œufs dans un bol, battre avec sel et poivre.</li>
+  <li>Chauffer la poêle avec un peu d'huile ou de beurre à feu moyen.</li>
+  <li>Verser les œufs. Ajouter ce que tu as : fromage râpé, jambon, légumes cuits.</li>
+  <li>Quand le dessus est encore légèrement baveux, plier en deux. Servir.</li>
+</ol>
+
+<h3>3. Riz sauté aux légumes (20 min)</h3>
+<ol class="fiche-ol">
+  <li>Cuire le riz : verser le riz dans 2 fois son volume d'eau froide salée, porter à ébullition, puis feu doux 12 min à couvert.</li>
+  <li>Pendant ce temps, faire revenir dans la poêle les légumes que t'as (courgette, poivron, carotte, oignon) avec huile et sel.</li>
+  <li>Une fois le riz cuit, mélanger avec les légumes. Ajouter de la sauce soja ou du curry selon goût.</li>
+</ol>
+
+<h3>4. Soupe de lentilles corail (25 min)</h3>
+<ol class="fiche-ol">
+  <li>Rincer 200 g de lentilles corail à l'eau froide.</li>
+  <li>Dans la casserole, faire revenir 1 oignon + 1 ail + 1 c. à café de curry dans l'huile (2 min).</li>
+  <li>Ajouter les lentilles + 600 ml d'eau, porter à ébullition, puis feu moyen 18–20 min.</li>
+  <li>Saler, mixer si tu veux une texture lisse, servir avec du pain.</li>
+</ol>
+
+<h3>5. Pâtes au thon express (10 min)</h3>
+<ol class="fiche-ol">
+  <li>Cuire les pâtes. Égoutter en gardant 2 cuillères d'eau de cuisson.</li>
+  <li>Dans la poêle : huile + ail + 1 boîte de thon égoutté, faire revenir 2 min.</li>
+  <li>Ajouter les pâtes + l'eau de cuisson, sel, poivre. Mélanger.</li>
+  <li>Ajouter quelques câpres ou olives si t'en as.</li>
+</ol>
+
+<h2>Quelques règles de sécurité alimentaire</h2>
+<ul>
+  <li><strong>Frigo à 4 °C max</strong> : viande et poisson en bas (zone froide), restes dans des boîtes fermées.</li>
+  <li><strong>Jamais recongeler</strong> un aliment décongelé.</li>
+  <li>La viande crue et le poulet ne durent que <strong>2 jours au frigo</strong>.</li>
+  <li>Un reste de repas se garde <strong>2–3 jours</strong> au frigo dans un contenant fermé.</li>
+</ul>
+
+<div class="callout tip"><div><strong>Et si tu ne sais pas cuisiner du tout ?</strong>YouTube est ton meilleur ami. Tape « recette pâtes débutant » ou « omelette facile » — il y a des vidéos pour tout, pas besoin de cours.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/vie/alimentation">Alimentation : manger bien sans se ruiner</a> — courses, anti-gaspi, aide alimentaire</li>
+  <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — estimer combien prévoir pour les courses</li>
+</ul>
+`
+        },
+        {
+          id: 'urgence-maison',
+          title: "Panne, fuite, urgence chez soi",
+          summary: "Couper l'eau, le gaz ou l'électricité, qui appelle qui, et les numéros utiles.",
+          source: 'inforjeunes.be · sibelga.be · ores.net',
+          lastChecked: '03/06/2026',
+          body: `
+<p>Ça arrive à tout le monde : un robinet qui fuit, une panne de courant, une odeur de gaz. Savoir quoi faire — et vite — évite les dégâts.</p>
+
+<div class="callout warn"><div><strong>Odeur de gaz : procédure stricte</strong>Si tu sens le gaz, n'allume ou n'éteins <strong>rien</strong> (même la lumière). Ouvre les fenêtres, ferme le gaz, sors du logement, et appelle le 112 depuis l'extérieur.</div></div>
+
+<h2>Couper l'eau</h2>
+<p>La vanne d'arrêt principale est généralement&nbsp;:</p>
+<ul>
+  <li>Sous l'évier ou dans la salle de bain (petit robinet sur le tuyau d'arrivée d'eau)</li>
+  <li>Dans le couloir, la cave ou derrière un panneau au mur</li>
+  <li>Près du compteur d'eau (souvent dans la cave ou dans un coffret extérieur)</li>
+</ul>
+<p><strong>Pour fermer</strong> : tourner dans le sens des aiguilles d'une montre jusqu'en butée. L'eau s'arrête immédiatement.</p>
+<p>En cas de fuite, ferme l'eau et préviens ton propriétaire par écrit (voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>).</p>
+
+<h2>Couper l'électricité</h2>
+<p>Le <strong>tableau électrique</strong> (boîte avec des disjoncteurs) est souvent dans le couloir, la cuisine, la cave ou un placard. Il y a&nbsp;:</p>
+<ul>
+  <li><strong>Un disjoncteur général</strong> (grand interrupteur en haut ou à part) : coupe tout le logement.</li>
+  <li><strong>Des disjoncteurs par circuit</strong> (lumières, prises, cuisine, etc.) : si l'un saute (position basse), retrouve le problème et remets-le en position haute.</li>
+</ul>
+<p>Si un disjoncteur saute en boucle, ne l'insiste pas : il y a un problème électrique → préviens le propriétaire.</p>
+
+<h2>Fuite de gaz : que faire exactement</h2>
+<ol class="fiche-ol">
+  <li><strong>Ne touche à aucun interrupteur</strong> — même éteindre la lumière peut créer une étincelle.</li>
+  <li><strong>Ouvre grand</strong> les fenêtres et portes.</li>
+  <li><strong>Coupe l'arrivée de gaz</strong> au compteur (vanne à tourner perpendiculairement à la tuyauterie = fermée).</li>
+  <li><strong>Sors du logement</strong> immédiatement.</li>
+  <li><strong>Appelle le 112</strong> depuis l'extérieur (ou depuis le téléphone d'un voisin).</li>
+  <li>Appelle aussi ton gestionnaire de réseau gaz (numéro sur tes factures ou ton compteur).</li>
+  <li><strong>Ne rentre pas</strong> avant que les secours aient vérifié.</li>
+</ol>
+
+<h2>Panne de chauffage</h2>
+<p>Si ta chaudière s'éteint&nbsp;:</p>
+<ul>
+  <li>Vérifie la <strong>pression</strong> sur le manomètre (cadran sur la chaudière) : elle doit être entre 1 et 2 bars. Si elle est en dessous, il faut faire l'appoint d'eau (petit robinet de remplissage sous la chaudière — consulte le manuel ou YouTube pour ton modèle).</li>
+  <li>Si la chaudière affiche un <strong>code d'erreur</strong>, note-le et appelle le propriétaire : c'est sa responsabilité de la faire réparer.</li>
+  <li>Si tu as très froid et que la réparation tarde, le <strong>CPAS</strong> peut t'aider à trouver une solution d'urgence — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
+</ul>
+
+<h2>Robinet qui fuit ou WC qui coule</h2>
+<ul>
+  <li><strong>Robinet</strong> : ferme la vanne d'arrêt sous l'évier ou derrière la chasse d'eau. Préviens le propriétaire.</li>
+  <li><strong>WC qui coule</strong> (bruit constant d'eau) : souvent un flotteur à ajuster ou remplacer. Si tu n'es pas à l'aise, c'est au propriétaire de réparer.</li>
+  <li>Note et photo à l'appui : garde une trace de chaque signalement.</li>
+</ul>
+
+<h2>Qui est responsable de quoi ?</h2>
+<p>C'est dans le <a href="#/fiche/logement/bail">contrat de bail</a> — mais voici la règle générale&nbsp;:</p>
+<ul>
+  <li><strong>Toi (locataire)</strong> : entretien courant (changer une ampoule, détartrer un robinet, nettoyer les vitres).</li>
+  <li><strong>Le propriétaire</strong> : réparations importantes (chaudière, canalisations, toit, fenêtres, électricité générale). Il doit intervenir dans un délai raisonnable.</li>
+</ul>
+<p>Si le propriétaire ne réagit pas, contacte le <strong>Service Droit des Jeunes (SDJ)</strong> ou un <strong>service juridique de première ligne</strong> — voir <a href="#/fiche/admin/aide-juridique">Avocat prodéo et aide juridique</a>.</p>
+
+<h2>Numéros utiles</h2>
+<ul>
+  <li><strong>112</strong> — Urgences vitales, incendie, fuite de gaz (24/7, gratuit)</li>
+  <li><strong>Ton propriétaire</strong> — Garde son numéro dans ton téléphone dès l'emménagement</li>
+  <li><strong>Gestionnaire de réseau gaz/élec</strong> — Affiché sur tes factures (Sibelga, ORES, RESA…)</li>
+  <li><strong>SWDE (eau, Wallonie)</strong> — <a href="https://www.swde.be" target="_blank" rel="noopener">swde.be</a></li>
+</ul>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="#/fiche/logement/entretien">Entretien du logement</a> — les habitudes de ménage au quotidien</li>
+  <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — tes droits et obligations en tant que locataire</li>
+  <li><a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> — pour signaler un problème par écrit</li>
+</ul>
+`
         }
       ]
     },
@@ -2732,6 +2906,41 @@ Rue du Commerce 10
     'poste': ['vie/courrier'],
     'preavis': ['vie/courrier', 'logement/bail'],
     'préavis': ['vie/courrier', 'logement/bail'],
+
+    // Cuisine
+    'cuisiner': ['vie/cuisine'],
+    'cuisinier': ['vie/cuisine'],
+    'recette': ['vie/cuisine', 'vie/alimentation'],
+    'recettes': ['vie/cuisine', 'vie/alimentation'],
+    'omelette': ['vie/cuisine'],
+    'pates': ['vie/cuisine'],
+    'pâtes': ['vie/cuisine'],
+    'lentilles': ['vie/cuisine'],
+    'casserole': ['vie/cuisine'],
+    'poele': ['vie/cuisine'],
+    'poêle': ['vie/cuisine'],
+    'ustensiles': ['vie/cuisine'],
+    'placard': ['vie/cuisine', 'vie/alimentation'],
+
+    // Urgence maison
+    'panne': ['vie/urgence-maison'],
+    'pannes': ['vie/urgence-maison'],
+    'fuite': ['vie/urgence-maison'],
+    'fuite d eau': ['vie/urgence-maison'],
+    'fuite de gaz': ['vie/urgence-maison'],
+    'gaz': ['vie/urgence-maison'],
+    'odeur de gaz': ['vie/urgence-maison'],
+    'chaudiere': ['vie/urgence-maison'],
+    'chaudière': ['vie/urgence-maison'],
+    'disjoncteur': ['vie/urgence-maison'],
+    'electricite': ['vie/urgence-maison'],
+    'électricité': ['vie/urgence-maison'],
+    'couper eau': ['vie/urgence-maison'],
+    'robinet': ['vie/urgence-maison'],
+    'wc': ['vie/urgence-maison'],
+    'vanne': ['vie/urgence-maison'],
+    'proprietaire': ['vie/urgence-maison', 'logement/bail'],
+    'propriétaire': ['vie/urgence-maison', 'logement/bail'],
     'compte bancaire': ['argent/compte-bancaire'],
     'ouvrir un compte': ['argent/compte-bancaire'],
     'itsme': ['argent/compte-bancaire', 'majeur/impots'],

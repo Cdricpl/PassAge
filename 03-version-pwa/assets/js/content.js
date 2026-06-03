@@ -718,25 +718,57 @@ window.MA_CONTENT = (function () {
           id: 'compte-bancaire',
           title: "Le compte bancaire",
           summary: "Ouvrir un compte, ordres permanents, épargne.",
+          source: 'febelfin.be · inforjeunes.be',
           body: `
 <p>À 18 ans, tu peux ouvrir un compte en banque à ton nom. C'est indispensable pour recevoir un salaire, payer en magasin, ou recevoir tes aides.</p>
 
-<h2>Le compte courant</h2>
-<p>C'est ton compte de tous les jours. Tu peux y :</p>
+<h2>Comment ouvrir un compte</h2>
+<p>Tu as deux options :</p>
+<ol class="fiche-ol">
+  <li><strong>En ligne</strong> : la plupart des banques proposent une ouverture de compte en quelques minutes via leur site ou appli. Tu auras besoin de ta carte d'identité (photo) et d'un selfie pour vérifier ton identité.</li>
+  <li><strong>En agence</strong> : tu te présentes avec ta carte d'identité. Un conseiller ouvre le compte sur place.</li>
+</ol>
+
+<h2>Ce qu'il te faut</h2>
+<ul>
+  <li>Ta <strong>carte d'identité</strong> (obligatoire).</li>
+  <li>Parfois : une <strong>preuve de domicile</strong> (facture, attestation commune) — pas toujours demandée.</li>
+  <li>Un <strong>numéro de téléphone</strong> pour activer l'appli et les codes.</li>
+</ul>
+
+<h2>Comptes gratuits pour les jeunes (-25 ans)</h2>
+<p>De nombreuses banques proposent des comptes <strong>sans frais</strong> pour les jeunes :</p>
+<ul>
+  <li><strong>BNP Paribas Fortis</strong> — Fintro (compte Sixto gratuit -25 ans)</li>
+  <li><strong>Belfius</strong> — compte Belfius Start gratuit -25 ans</li>
+  <li><strong>ING</strong> — compte Lion gratuit -25 ans</li>
+  <li><strong>KBC / CBC</strong> — compte KBC Start gratuit -26 ans</li>
+  <li><strong>Argenta</strong> — compte gratuit tous âges</li>
+  <li><strong>Keytrade</strong> — 100 % en ligne, gratuit</li>
+</ul>
+<p>Compare les services (carte de débit, appli, retraits gratuits en Belgique) avant de choisir.</p>
+
+<h2>Le droit au compte de base</h2>
+<p>Si une banque te refuse, tu as le droit à un <strong>compte de base</strong> — c'est garanti par la loi belge. Demande à n'importe quelle grande banque ou renseigne-toi auprès du <a href="https://www.febelfin.be" target="_blank" rel="noopener">SPF Économie</a>.</p>
+
+<h2>Activer itsme dès que possible</h2>
+<p>Dès l'ouverture du compte, active <strong>itsme</strong> (l'identité numérique belge). Tu en auras besoin pour : Tax-on-Web (impôts), myFAMIWAL (allocations), e-services gouvernementaux, certaines banques en ligne.</p>
+
+<h2>Le compte courant — ce que tu peux faire</h2>
 <ul>
   <li>Recevoir tes revenus (salaire, allocations, RIS).</li>
   <li>Faire des virements et payer en magasin.</li>
-  <li>Mettre en place des <strong>domiciliations</strong> (pour tes factures qui reviennent chaque mois).</li>
-  <li>Faire des <strong>ordres permanents</strong> (par exemple : ton loyer payé automatiquement chaque mois).</li>
+  <li>Mettre en place des <strong>domiciliations</strong> (factures qui partent automatiquement).</li>
+  <li>Faire des <strong>ordres permanents</strong> (ex : loyer payé chaque mois sans y penser).</li>
 </ul>
 
 <h2>Le compte épargne</h2>
-<p>À associer à ton compte courant pour mettre de côté (un projet, un voyage, un coup dur). Il rapporte un petit intérêt.</p>
+<p>À associer à ton compte courant pour mettre de côté (projet, coup dur). Il rapporte un petit intérêt.</p>
 
-<h2>L'application mobile de la banque</h2>
-<p>Très pratique : tu vois l'état de tes finances en temps réel, tu fais tes virements en quelques clics. Toutes les banques en proposent une.</p>
+<h2>L'application mobile</h2>
+<p>Très pratique : tu vois tes finances en temps réel, tu fais tes virements en quelques clics. Toutes les banques en proposent une.</p>
 
-<div class="callout tip"><div><strong>Astuce</strong>Beaucoup de banques proposent un compte gratuit pour les jeunes ou les étudiants. Compare avant de choisir.</div></div>
+<div class="callout tip"><div><strong>Astuce</strong>Beaucoup de banques proposent un compte gratuit pour les jeunes. Compare avant de choisir — les services (retraits, carte, appli) varient selon les établissements.</div></div>
 `
         },
         {
@@ -1784,6 +1816,88 @@ window.MA_CONTENT = (function () {
   <li>Voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> pour les aides liées au quotidien.</li>
 </ul>
 `
+        },
+        {
+          id: 'courrier',
+          title: "Écrire une lettre et l'envoyer",
+          summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet.",
+          source: 'bpost.be · inforjeunes.be',
+          body: `
+<p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>
+
+<h2>1. Rédiger ta lettre</h2>
+<p>Une lettre officielle suit toujours la même structure :</p>
+<ul>
+  <li><strong>En haut à gauche</strong> : tes coordonnées (prénom, nom, adresse, e-mail, téléphone).</li>
+  <li><strong>En haut à droite</strong> : le nom et l'adresse du destinataire.</li>
+  <li><strong>La date</strong> : juste en dessous, à droite (ex : Liège, le 3 juin 2026).</li>
+  <li><strong>Objet</strong> : une ligne résumant le sujet (ex : <em>Objet : résiliation du bail — adresse du logement</em>).</li>
+  <li><strong>Corps de la lettre</strong> : clair, court, une idée par paragraphe.</li>
+  <li><strong>Formule de politesse</strong> : simple suffit — <em>« Veuillez agréer, Madame, Monsieur, mes salutations distinguées. »</em></li>
+  <li><strong>Ta signature</strong> (manuscrite si imprimé).</li>
+</ul>
+
+<div class="callout tip"><div><strong>Modèles gratuits</strong>Inforjeunes, le Service Droit des Jeunes et ton AMO ont des modèles de lettres types pour les situations courantes (résiliation de bail, demande au CPAS, contestation…). Demande-leur avant de partir de zéro.</div></div>
+
+<h2>2. Mettre l'adresse sur l'enveloppe</h2>
+<p>Écris ou imprime :</p>
+<ul>
+  <li><strong>Centre de l'enveloppe</strong> : prénom + nom du destinataire, nom de l'organisme si besoin, rue + numéro, code postal + commune.</li>
+  <li><strong>Coin supérieur gauche</strong> (ou au dos) : ton adresse d'expéditeur — indispensable si la lettre revient.</li>
+</ul>
+<p>Exemple d'adresse destinataire :</p>
+<pre style="background:var(--color-surface-2);padding:var(--sp-3);border-radius:var(--radius-sm);font-size:var(--fs-sm);line-height:1.6;">Madame Dupont
+CPAS de Liège
+Rue du Commerce 10
+4000 Liège</pre>
+
+<h2>3. Choisir le bon type d'envoi</h2>
+<ul>
+  <li><strong>Lettre standard (Prior / Non Prior)</strong> : pour un courrier ordinaire. <strong>Prior</strong> arrive le lendemain ouvrable, <strong>Non Prior</strong> en 3 jours. Coût : ~1,20 € à 1,50 € (format standard, jusqu'à 50 g).</li>
+  <li><strong>Lettre recommandée</strong> : indispensable quand tu dois <strong>prouver que tu as envoyé</strong> quelque chose (préavis de bail, résiliation de contrat, réclamation…). Le facteur fait signer le destinataire. Coût : ~8 à 10 € (recommandé simple avec accusé de réception).</li>
+  <li><strong>Recommandé avec accusé de réception (AR)</strong> : tu reçois une carte signée par le destinataire = preuve de réception.</li>
+</ul>
+
+<div class="callout warn"><div><strong>Bail, résiliation, préavis</strong>Ces courriers <strong>doivent</strong> être envoyés en recommandé. Sans ça, tu ne pourras pas prouver la date d'envoi si un litige survient.</div></div>
+
+<h2>4. Affranchir ta lettre</h2>
+<p>L'<strong>affranchissement</strong> = le timbre qui paie le transport. Plusieurs façons de l'obtenir :</p>
+<ul>
+  <li><strong>Timbre à la poste</strong> : au bureau de poste bpost ou dans un point bpost (tabac, Proxy Delhaize, etc.). Dis la taille et le type d'envoi, on t'indique le montant.</li>
+  <li><strong>Timbre en ligne</strong> : <a href="https://www.bpost.be" target="_blank" rel="noopener">bpost.be</a> — tu imprimes le timbre chez toi (e-timbre).</li>
+  <li><strong>Affranchissement à la machine</strong> : dans certains bureaux de poste, tu pèses toi-même l'enveloppe et imprimes le bon montant.</li>
+</ul>
+<p>Le timbre se colle en haut à droite de l'enveloppe.</p>
+
+<h2>5. Poster la lettre</h2>
+<ul>
+  <li><strong>Boîte aux lettres rouge bpost</strong> : dans la rue, dans les bureaux de poste, dans certains points bpost. Collecte généralement 1× par jour en semaine.</li>
+  <li><strong>Au guichet bpost</strong> : pour les recommandés ou si tu veux une preuve de dépôt immédiate.</li>
+</ul>
+<p>Trouver le bureau bpost ou la boîte la plus proche : <a href="https://www.bpost.be/fr/trouver-un-point-de-service" target="_blank" rel="noopener">bpost.be — trouver un point de service</a>.</p>
+
+<h2>Délais indicatifs (Belgique 2026)</h2>
+<ul>
+  <li><strong>Prior</strong> : livraison le lendemain ouvrable.</li>
+  <li><strong>Non Prior</strong> : livraison en 2–3 jours ouvrables.</li>
+  <li><strong>Recommandé</strong> : livraison le lendemain ouvrable (comme Prior), mais avec signature.</li>
+</ul>
+
+<h2>Tu n'as pas d'imprimante ?</h2>
+<ul>
+  <li>La bibliothèque communale propose souvent une imprimante à prix symbolique.</li>
+  <li>Inforjeunes ou ton AMO peuvent t'aider à imprimer sur place.</li>
+  <li>Certains Copy-shops (Repro, Print Shop…) impriment pour quelques centimes la page.</li>
+</ul>
+
+<div class="callout tip"><div><strong>Garde une copie</strong>Avant d'envoyer, prends toujours une photo ou garde un double de ta lettre. Si un litige survient, tu pourras prouver ce que tu as écrit.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://www.bpost.be/fr/envoyer/lettres-et-cartes" target="_blank" rel="noopener">bpost.be — envoyer des lettres</a> (tarifs et services)</li>
+  <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — modèles de lettres type</li>
+</ul>
+`
         }
       ]
     },
@@ -2465,6 +2579,24 @@ window.MA_CONTENT = (function () {
     'mywash': ['vie/lavoir'],
     'couette': ['vie/lavoir', 'vie/lessive'],
     'edredon': ['vie/lavoir', 'vie/lessive'],
+    'lettre': ['vie/courrier'],
+    'lettres': ['vie/courrier'],
+    'courrier': ['vie/courrier'],
+    'poster': ['vie/courrier'],
+    'enveloppe': ['vie/courrier'],
+    'timbre': ['vie/courrier'],
+    'affranchir': ['vie/courrier'],
+    'affranchissement': ['vie/courrier'],
+    'recommande': ['vie/courrier'],
+    'recommandé': ['vie/courrier'],
+    'bpost': ['vie/courrier'],
+    'boite aux lettres': ['vie/courrier'],
+    'poste': ['vie/courrier'],
+    'preavis': ['vie/courrier', 'logement/bail'],
+    'préavis': ['vie/courrier', 'logement/bail'],
+    'compte bancaire': ['argent/compte-bancaire'],
+    'ouvrir un compte': ['argent/compte-bancaire'],
+    'itsme': ['argent/compte-bancaire', 'majeur/impots'],
 
     // Urgences
     'urgent': ['urgence/lignes-ecoute', 'urgence/services-aide'],

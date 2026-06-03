@@ -1627,6 +1627,161 @@ window.MA_CONTENT = (function () {
 
 <div class="callout tip"><div><strong>Pas de honte</strong>Demander de l'aide alimentaire, c'est un droit. Beaucoup de jeunes y ont recours à un moment de leur vie. Personne ne te demandera de te justifier.</div></div>
 `
+        },
+        {
+          id: 'lessive',
+          title: "Faire sa lessive",
+          summary: "Trier, doser, programmer, étendre : les bases pour pas tout abîmer.",
+          body: `
+<p>Première lessive sans tes parents ou ta famille d'accueil ? Pas de panique, ce n'est pas sorcier. Quelques règles simples suffisent à ne pas transformer ton t-shirt blanc en t-shirt rose.</p>
+
+<h2>1. Trier ton linge</h2>
+<p>C'est l'étape la plus importante. Fais 3-4 piles :</p>
+<ul>
+  <li><strong>Blanc et clair</strong> (chemises blanches, sous-vêtements clairs).</li>
+  <li><strong>Couleurs</strong> (t-shirts colorés, jeans non noirs).</li>
+  <li><strong>Foncé / noir</strong> (jeans noirs, hoodies foncés).</li>
+  <li><strong>Délicat</strong> (laine, soie, lingerie) — à part, programme spécial.</li>
+</ul>
+<p>Sépare aussi le linge <strong>très sale</strong> (sport, jardinage) du reste — sinon tu salis le reste.</p>
+
+<div class="callout warn"><div><strong>Étiquette = ta meilleure amie</strong>Regarde toujours l'étiquette à l'intérieur du vêtement. Les symboles indiquent la température max, si tu peux mettre au sèche-linge, si c'est lavable en machine, etc.</div></div>
+
+<h2>2. Préparer les vêtements</h2>
+<ul>
+  <li><strong>Vide les poches</strong> (mouchoirs, billets, écouteurs, monnaie…).</li>
+  <li><strong>Ferme</strong> les fermetures éclair et boutons (sinon ça arrache).</li>
+  <li><strong>Retourne</strong> les couleurs et les vêtements imprimés sur l'envers (évite la décoloration).</li>
+  <li>Mets les <strong>petites pièces fragiles</strong> (lingerie, chaussettes) dans un filet de lavage si tu en as un.</li>
+</ul>
+
+<h2>3. Charger la machine</h2>
+<ul>
+  <li><strong>Ne surcharge pas</strong> : le linge doit pouvoir tourner librement. Repère : ta main doit passer au-dessus.</li>
+  <li>Pour une machine standard de 7 kg, ça fait environ <strong>une grande corbeille</strong>.</li>
+</ul>
+
+<h2>4. Doser la lessive</h2>
+<p>Trop de lessive ne lave pas mieux — au contraire, ça rince mal et raidit les fibres.</p>
+<ul>
+  <li>Suis les <strong>indications sur l'emballage</strong> (bouchon doseur).</li>
+  <li>Pour une eau peu calcaire (la Belgique varie selon la région), <strong>réduis un peu</strong>.</li>
+  <li>Liquide ou poudre, c'est selon ton goût — la poudre est souvent moins chère.</li>
+  <li><strong>Adoucissant</strong> : facultatif. Évite-le sur les serviettes (perd l'absorbance) et les vêtements de sport techniques.</li>
+</ul>
+
+<h2>5. Choisir le programme</h2>
+<ul>
+  <li><strong>30 °C</strong> : couleurs, synthétique, vêtements peu sales. Économique en énergie — <strong>ça suffit pour 90 % du linge</strong>.</li>
+  <li><strong>40 °C</strong> : coton clair, linge un peu plus sale.</li>
+  <li><strong>60 °C</strong> : draps, serviettes, sous-vêtements, taches biologiques (sang, transpiration tenace).</li>
+  <li><strong>Délicat / Laine</strong> : programme dédié, eau froide, essorage doux. Indispensable pour la laine (sinon ça rétrécit).</li>
+  <li><strong>Essorage</strong> : 1000-1200 tours/min pour le coton standard, 600-800 pour le délicat.</li>
+</ul>
+
+<div class="callout tip"><div><strong>Astuce écologique et économique</strong>Lave à 30 °C dès que possible. Tu économises <strong>jusqu'à 60 %</strong> d'électricité par rapport à un 60 °C — la facture annuelle s'en ressent.</div></div>
+
+<h2>6. Étendre et sécher</h2>
+<ul>
+  <li><strong>Sors la machine vite</strong> après la fin (sinon ça sent le moisi humide).</li>
+  <li><strong>Secoue</strong> chaque vêtement avant de l'étendre (moins de plis).</li>
+  <li>Étends les couleurs à l'envers <strong>à l'abri du soleil direct</strong> (évite la décoloration).</li>
+  <li><strong>Sèche-linge</strong> : économise du temps mais coûte cher en élec — nettoie le filtre à peluches <strong>à chaque cycle</strong>.</li>
+  <li><strong>Pas de sèche-linge</strong> pour : laine, soie, élasthanne, vêtements de sport techniques (les fibres se cassent).</li>
+</ul>
+
+<h2>7. Détacher les taches courantes</h2>
+<ul>
+  <li><strong>Tache fraîche = tache facile.</strong> Agis vite.</li>
+  <li><strong>Sang</strong> : eau <strong>froide</strong> (l'eau chaude cuit la tache). Frotte avec du savon de Marseille.</li>
+  <li><strong>Gras / huile</strong> : saupoudre de talc ou de farine, laisse absorber, puis lave avec liquide vaisselle avant de mettre en machine.</li>
+  <li><strong>Vin / café</strong> : eau gazeuse + savon de Marseille.</li>
+  <li><strong>Sueur (auréoles)</strong> : vinaigre blanc avant lavage, ou bicarbonate de soude en pâte.</li>
+  <li><strong>Encre</strong> : alcool ménager (sur un coton), tamponne doucement.</li>
+</ul>
+
+<h2>8. Entretenir ta machine</h2>
+<ul>
+  <li><strong>1 fois par mois</strong> : programme 90 °C à vide avec <strong>1 verre de vinaigre blanc</strong> dans le tambour → détartre et désinfecte.</li>
+  <li><strong>Après chaque lavage</strong> : laisse la <strong>porte entrouverte</strong> (évite l'humidité et les odeurs).</li>
+  <li><strong>Tous les 6 mois</strong> : nettoie le filtre de vidange (en bas devant, souvent un petit volet) — sinon ça bouche.</li>
+  <li>Essuie le joint en caoutchouc autour de la porte de temps en temps.</li>
+</ul>
+
+<h2>Pas de machine chez toi ?</h2>
+<p>Direction le lavoir (laverie automatique). Voir la fiche dédiée : <a href="#/fiche/vie/lavoir">Les lavoirs (laveries automatiques)</a>.</p>
+
+<div class="callout tip"><div><strong>Côté budget</strong>Les marques distributeurs (Carrefour, Colruyt, Delhaize 365…) lavent <strong>aussi bien</strong> que les grandes marques pour 30-50 % moins cher. Le savon de Marseille et le vinaigre blanc remplacent la moitié des produits de l'industrie pour quelques euros par mois.</div></div>
+`
+        },
+        {
+          id: 'lavoir',
+          title: "Les lavoirs (laveries automatiques)",
+          summary: "Quand y aller, comment ça marche, combien ça coûte.",
+          body: `
+<p>Pas de machine chez toi ? En kot, en colocation sans accès lave-linge, ou ta machine est en panne ? Direction le <strong>lavoir</strong> (aussi appelé laverie automatique ou laundromat). C'est simple, rapide, et ça dépanne bien.</p>
+
+<h2>Quand y aller</h2>
+<ul>
+  <li>Tu n'as pas de lave-linge chez toi.</li>
+  <li>Tu vis en kot ou en logement étudiant sans buanderie.</li>
+  <li>Ta machine est en panne (en attendant la réparation).</li>
+  <li>Tu dois laver une <strong>grosse pièce</strong> (couette, gros édredon, sac de couchage) qui ne rentre pas dans une machine domestique standard.</li>
+</ul>
+
+<h2>Comment ça marche</h2>
+<ol class="fiche-ol">
+  <li>Apporte ton linge <strong>déjà trié</strong> (voir <a href="#/fiche/vie/lessive">Faire sa lessive</a> pour les bases du tri).</li>
+  <li>Choisis une <strong>machine libre</strong> selon la taille (souvent S / M / L / XL).</li>
+  <li><strong>Paie</strong> : selon l'endroit, c'est des jetons, de la monnaie, une appli (Wassalon par ex.), ou la carte bancaire.</li>
+  <li>Mets ta <strong>lessive</strong> dans le bac (souvent à apporter de chez toi, parfois distribuée sur place pour 1-2 € de plus).</li>
+  <li>Choisis le <strong>programme</strong> (30 / 40 / 60 °C) et lance.</li>
+  <li>Cycle de lavage : <strong>30 à 50 minutes</strong>. Tu peux rester ou repartir (à tes risques).</li>
+  <li>Sortie de machine, direction <strong>sèche-linge</strong> (autre machine, autre paiement, ~5 €).</li>
+  <li>Plie et c'est fini.</li>
+</ol>
+
+<h2>Combien ça coûte (Belgique 2026)</h2>
+<ul>
+  <li><strong>Machine standard</strong> (7-8 kg) : <strong>4 à 7 €</strong> selon la taille et l'endroit.</li>
+  <li><strong>Grosse machine</strong> (16-18 kg, pour les couettes) : <strong>10 à 14 €</strong>.</li>
+  <li><strong>Sèche-linge</strong> : <strong>3 à 6 €</strong> par cycle (~30 min, parfois 2 cycles nécessaires).</li>
+  <li><strong>Lessive sur place</strong> (si tu n'en as pas apporté) : <strong>1 à 2 €</strong>.</li>
+  <li><strong>Total pour une lessive complète</strong> : compte <strong>8 à 13 €</strong>.</li>
+</ul>
+
+<h2>Astuces pour économiser et gagner du temps</h2>
+<ul>
+  <li><strong>Apporte ta lessive de chez toi</strong> (économie de 2-3 € par fois).</li>
+  <li><strong>Remplis bien la machine</strong> : une grande machine 1× par mois revient moins cher que 4 petites.</li>
+  <li><strong>Heures creuses</strong> : matin tôt, milieu de semaine — moins d'attente.</li>
+  <li>Apporte un <strong>livre, écouteurs ou ton téléphone chargé</strong> : tu as ~45-90 min à occuper.</li>
+  <li>Plie <strong>sur place</strong> avant de remettre en sac (moins de plis chez toi).</li>
+  <li>Vérifie les <strong>poches</strong> avant de mettre dans la machine (oublier 5 € dans un jean coûte autant qu'une lessive).</li>
+</ul>
+
+<h2>Chaînes et lavoirs en Belgique</h2>
+<ul>
+  <li><strong>Wassalon</strong> — la plus grande chaîne (Wallonie + Bruxelles). Souvent paiement par appli.</li>
+  <li><strong>MyWash</strong> — plusieurs villes wallonnes.</li>
+  <li><strong>Laveries indépendantes</strong> — il y en a dans presque toutes les villes. Cherche "laverie automatique" + ta ville sur Google Maps.</li>
+</ul>
+
+<h2>Bons plans</h2>
+<ul>
+  <li><strong>CPAS</strong> : si tu galères pour payer ta lessive, ils peuvent accorder une aide ponctuelle (les vêtements propres font partie des besoins de base).</li>
+  <li>Certaines <strong>AMO</strong>, maisons de jeunes ou foyers d'accueil ont des machines à laver accessibles à prix symbolique ou gratuites pour leurs membres.</li>
+  <li><strong>Université ou haute école</strong> : certains kots étudiants ont une buanderie partagée à prix réduit.</li>
+</ul>
+
+<div class="callout tip"><div><strong>Pour les grosses pièces</strong>Couettes, gros édredons, gros sacs de couchage : préfère le lavoir, même si tu as une machine chez toi. Les grosses machines (16+ kg) lavent et essorent correctement ce que ta machine domestique fait mal (et risque de casser).</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li>Voir la fiche <a href="#/fiche/vie/lessive">Faire sa lessive</a> pour les bases (tri, dosage, programmes).</li>
+  <li>Voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> pour les aides liées au quotidien.</li>
+</ul>
+`
         }
       ]
     },
@@ -2281,6 +2436,33 @@ window.MA_CONTENT = (function () {
     'sncb': ['vie/transport'],
     'train': ['vie/transport'],
     'bus': ['vie/transport'],
+    'lessive': ['vie/lessive', 'vie/lavoir'],
+    'lessives': ['vie/lessive', 'vie/lavoir'],
+    'laver': ['vie/lessive', 'vie/lavoir'],
+    'linge': ['vie/lessive', 'vie/lavoir'],
+    'machine a laver': ['vie/lessive', 'vie/lavoir'],
+    'lave linge': ['vie/lessive', 'vie/lavoir'],
+    'lave-linge': ['vie/lessive', 'vie/lavoir'],
+    'vetements': ['vie/lessive'],
+    'vêtements': ['vie/lessive'],
+    'detacher': ['vie/lessive'],
+    'détacher': ['vie/lessive'],
+    'tache': ['vie/lessive'],
+    'tâche': ['vie/lessive'],
+    'taches': ['vie/lessive'],
+    'sechoir': ['vie/lessive', 'vie/lavoir'],
+    'séchoir': ['vie/lessive', 'vie/lavoir'],
+    'seche linge': ['vie/lessive', 'vie/lavoir'],
+    'sèche-linge': ['vie/lessive', 'vie/lavoir'],
+    'lavoir': ['vie/lavoir'],
+    'lavoirs': ['vie/lavoir'],
+    'laverie': ['vie/lavoir'],
+    'laveries': ['vie/lavoir'],
+    'laundromat': ['vie/lavoir'],
+    'wassalon': ['vie/lavoir'],
+    'mywash': ['vie/lavoir'],
+    'couette': ['vie/lavoir', 'vie/lessive'],
+    'edredon': ['vie/lavoir', 'vie/lessive'],
 
     // Urgences
     'urgent': ['urgence/lignes-ecoute', 'urgence/services-aide'],

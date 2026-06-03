@@ -1,5 +1,5 @@
 /* ============================================================
-   Pass'âge — Contenus
+   MonAvenir — Contenus
    Sources : Fiche Majorité (Service Familles d'Accueil)
    Tonalité : tutoiement, langage simple, bienveillant
    ============================================================ */
@@ -101,7 +101,8 @@ window.MA_CONTENT = (function () {
       steps: [
         { title: "Choisir mon médecin", desc: "Médecin traitant, maison médicale : ce qui te convient", linkType: 'fiche', linkId: 'sante/medecin' },
         { title: "La maison médicale", desc: "Soins gratuits si tu t'inscris au forfait", linkType: 'fiche', linkId: 'sante/maison-medicale' },
-        { title: "Combien ça va me coûter", desc: "DMG, BIM, génériques : ce qui réduit la facture", linkType: 'fiche', linkId: 'admin/mutuelle' }
+        { title: "Combien ça va me coûter", desc: "DMG, BIM, génériques : ce qui réduit la facture", linkType: 'fiche', linkId: 'admin/mutuelle' },
+        { title: "Prendre soin de moi au quotidien", desc: "Dentiste, gyno, check-ups : la fréquence à connaître", linkType: 'fiche', linkId: 'admin/mutuelle' }
       ],
       outcome: "Tu sais comment voir un médecin et combien ça va te coûter.",
       relatedModules: ['sante', 'admin']
@@ -116,7 +117,7 @@ window.MA_CONTENT = (function () {
       steps: [
         { title: "Reconnaître ce qui ne va pas", desc: "Anxiété, fatigue, tristesse : c'est plus courant que tu ne crois", linkType: 'fiche', linkId: 'urgence/mal-etre' },
         { title: "Parler sans appeler", desc: "Chat 103, e-mail Télé-Accueil, planning familial", linkType: 'fiche', linkId: 'sante/parler-sans-appeler' },
-        { title: "Voir un psy (gratuit avant 24 ans)", desc: "Convention psy 1ère ligne — comment commencer", linkType: 'fiche', linkId: 'sante/convention-psy' },
+        { title: "Voir un psy à 11 €", desc: "La convention psy 1ère ligne, comment commencer", linkType: 'fiche', linkId: 'sante/convention-psy' },
         { title: "Si c'est urgent maintenant", desc: "Numéros gratuits, 24/7, anonymes", linkType: 'page', linkId: 'urgence' }
       ],
       outcome: "Tu connais 2 ou 3 portes d'entrée — et tu choisis celle qui te ressemble.",
@@ -269,7 +270,7 @@ window.MA_CONTENT = (function () {
 <h2>7. T'inscrire pour voter (automatique)</h2>
 <p>Pas de démarche : ta convocation arrive par la poste avant chaque scrutin. Voir <a href="#/fiche/majeur/vote">Le droit de vote</a>.</p>
 
-<div class="callout"><div><strong>Une checklist</strong>Tu peux sauvegarder cette fiche en favori (icône cœur en haut) ou voir <a href="#/mes-documents">Mes documents</a> pour cocher au fur et à mesure.</div></div>
+<div class="callout"><div><strong>Garde-la sous la main</strong>Tu peux sauvegarder cette fiche en favori (icône cœur en haut) pour la retrouver vite quand tu en as besoin.</div></div>
 `
         },
         {
@@ -403,14 +404,13 @@ window.MA_CONTENT = (function () {
 <p>Tu peux demander au SAJ de prolonger l'intervention de ton service, <strong>jusqu'à 2 fois 6 mois maximum</strong>. Cette prolongation est acceptée sur base d'objectifs précis (mise en ordre administrative, passage à d'autres services…).</p>
 
 <h2>Les AMO (Aide en Milieu Ouvert)</h2>
-<p>Les AMO accompagnent les jeunes au quotidien : écoute, animations, aide pour démarrer en autonomie. C'est <strong>gratuit, confidentiel et anonyme</strong>.</p>
+<p>Les AMO accompagnent les jeunes au quotidien : écoute, animations, aide pour démarrer en autonomie. C'est gratuit et confidentiel.</p>
 <ul>
-  <li><strong>Tranche d'âge : 0 à 22 ans</strong> (jeunes et familles). Si tu as 23 ans ou plus, tourne-toi plutôt vers <strong>Inforjeunes</strong>, <strong>SOS Jeunes</strong>, le <strong>planning familial</strong> ou le <strong>CPAS</strong>.</li>
   <li>Trouver une AMO près de chez toi : <a href="https://inforjeunes.be/centre/" target="_blank" rel="noopener">inforjeunes.be/centre</a></li>
 </ul>
 
 <h2>Les maisons de jeunes</h2>
-<p>Lieux où tu peux rencontrer d'autres jeunes, te changer les idées, participer à des ateliers. Une équipe d'animateur·rices est présente pour te conseiller. <strong>Public : 12 à 26 ans</strong>. Les coordonnées sont sur le site de ta commune ou via la <a href="https://fmjbf.org/membres/" target="_blank" rel="noopener">Fédération des Maisons de Jeunes</a>.</p>
+<p>Lieux où tu peux rencontrer d'autres jeunes, te changer les idées, participer à des ateliers. Une équipe d'éducateurs y est présente pour te conseiller. Les coordonnées sont sur le site de ta commune.</p>
 
 <h2>Le service Familles d'Accueil</h2>
 <p>La porte du Service Familles d'Accueil te reste toujours ouverte. N'hésite pas à les contacter en cas de doute, de question ou simplement d'un besoin d'écoute.</p>
@@ -548,6 +548,67 @@ window.MA_CONTENT = (function () {
   <li><strong>Carte Européenne d'Assurance Maladie (CEAM)</strong> : gratuite, à demander à ta mutuelle, indispensable pour voyager dans l'UE.</li>
 </ul>
 `
+        },
+        {
+          id: 'aide-juridique',
+          title: "Avocat prodéo et aide juridique",
+          summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.",
+          source: 'justice.belgium.be · avocats.be · droitsquotidiens.be',
+          body: `
+<p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
+
+<h2>1ère ligne : un conseil gratuit, sans condition</h2>
+<p>Tu peux aller dans une <strong>Commission d'Aide Juridique (CAJ)</strong> ou une permanence d'avocat·e pour poser une question (loyer, papiers, dettes, séparation, travail…). C'est <strong>gratuit, pour toute personne, sans plafond de revenus</strong>.</p>
+<ul>
+  <li>Trouve une permanence près de chez toi : <a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be/aide-juridique</a></li>
+  <li>Ou via le palais de justice de ton arrondissement.</li>
+</ul>
+
+<h2>2ème ligne (« prodéo ») : un·e avocat·e désigné·e</h2>
+<p>Si tu dois aller plus loin (procédure, représentation devant un tribunal), tu peux demander qu'un·e avocat·e soit <strong>désigné·e</strong> via le <strong>Bureau d'Aide Juridique (BAJ)</strong> de ton arrondissement. Selon tes revenus, l'aide est <strong>totalement</strong> ou <strong>partiellement gratuite</strong>.</p>
+
+<h2>Plafonds de revenus 2026</h2>
+<p>Le BAJ examine le total des revenus mensuels nets de toutes les personnes vivant sous ton toit.</p>
+<ul>
+  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
+  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>355 €</strong> par personne supplémentaire (à confirmer auprès du BAJ).</li>
+</ul>
+
+<h2>Accès automatique (sans calcul de revenus)</h2>
+<p>Tu y as droit d'office (sans démarche de calcul) si tu es dans une de ces situations&nbsp;:</p>
+<ul>
+  <li>Tu touches le <strong>RIS</strong> du CPAS, ou une aide sociale équivalente.</li>
+  <li>Tu touches la <strong>GRAPA</strong> (personne âgée) ou une allocation pour personne handicapée.</li>
+  <li>Tu es <strong>mineur·e</strong>.</li>
+  <li>Tu es <strong>détenu·e</strong>, demandeur·euse d'asile, ou sans-papiers en procédure.</li>
+  <li>Tu es <strong>surendetté·e</strong> (procédure de règlement collectif de dettes).</li>
+</ul>
+
+<h2>Comment demander ?</h2>
+<ol class="fiche-ol">
+  <li>Repère le <strong>BAJ de ton arrondissement</strong> (ex. Verviers, Liège, Bruxelles…) via <a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be</a> ou le tribunal de ta région.</li>
+  <li>Apporte&nbsp;: ta <strong>carte d'identité</strong>, ta dernière <strong>composition de ménage</strong>, et tes <strong>justificatifs de revenus</strong> (fiche de paie, attestation RIS, allocation…).</li>
+  <li>Le BAJ examine ton dossier, vérifie que ta demande n'est pas manifestement infondée, et te <strong>désigne un·e avocat·e</strong>.</li>
+  <li>Tu rencontres ton avocat·e et tu n'avances en principe <strong>rien</strong> — sauf une éventuelle part à payer si tu es dans la tranche partielle.</li>
+</ol>
+
+<h2>Pour quelles affaires ?</h2>
+<ul>
+  <li>Procédures devant le tribunal du travail, de la famille, civil, pénal, jeunesse, étrangers.</li>
+  <li>Conflit avec un propriétaire, un employeur, une administration, un CPAS.</li>
+  <li>Séparation, divorce, garde, pension alimentaire, dettes.</li>
+  <li>Défense pénale si tu es poursuivi·e.</li>
+</ul>
+
+<div class="callout tip"><div><strong>N'attends pas</strong>Si tu reçois une convocation, un jugement, ou un courrier d'huissier que tu ne comprends pas — va voir une 1ère ligne <strong>tout de suite</strong>. Les délais juridiques sont courts et beaucoup de droits se perdent en quelques semaines.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://justice.belgium.be/fr/themes_et_dossiers/services_du_spf/access_a_la_justice/aide_juridique" target="_blank" rel="noopener">SPF Justice — aide juridique</a></li>
+  <li><a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be — annuaire des BAJ et permanences</a></li>
+  <li><a href="https://www.droitsquotidiens.be" target="_blank" rel="noopener">Droits Quotidiens</a> — explications juridiques en langage clair</li>
+</ul>
+`
         }
       ]
     },
@@ -622,7 +683,7 @@ window.MA_CONTENT = (function () {
 <h2>Ce qui change à 18 ans</h2>
 <ul>
   <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
-  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études : dans le supérieur, il faut être inscrit·e à <strong>au moins 27 crédits pour l'année académique</strong> (et l'inscription doit être faite <strong>avant le 30 novembre</strong>), ou être en enseignement secondaire à temps plein.</li>
+  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins 17 crédits/semestre dans le supérieur, ou enseignement secondaire à temps plein).</li>
   <li>Si tu interromps tes études : tu les gardes pendant <strong>360 jours</strong> de stage d'insertion (voir <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
 
@@ -1995,7 +2056,7 @@ window.MA_CONTENT = (function () {
 <h2>Voir un·e professionnel·le</h2>
 <ul>
   <li><strong>Ton médecin traitant</strong> peut t'orienter et prescrire un suivi psy.</li>
-  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e — <strong>gratuit avant 24 ans</strong>, 11 € la séance ensuite (4 € si BIM). 1ʳᵉ séance toujours gratuite. Pas besoin de prescription. Voir <a href="#/fiche/sante/convention-psy">la fiche détaillée</a>.</li>
+  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e à <strong>11 €</strong> la séance (4 € si BIM). Demande à ton médecin.</li>
   <li>Le <strong>service de santé mentale</strong> de ta région.</li>
 </ul>
 

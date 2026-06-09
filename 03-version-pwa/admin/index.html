@@ -86,29 +86,49 @@
     .save-status.ok { color: var(--success); }
     .save-status.err { color: var(--danger); }
 
-    /* ── Rich text editor ── */
-    .editor-toolbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px; background: #eef2f8; border: 1.5px solid var(--border); border-radius: 8px 8px 0 0; border-bottom: none; }
-    .editor-toolbar button { background: var(--white); border: 1.5px solid var(--border); border-radius: 6px; padding: 7px 12px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text); line-height: 1; transition: background .1s, color .1s; }
-    .editor-toolbar button:active, .editor-toolbar button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-    .toolbar-sep { width: 1px; background: var(--border); align-self: stretch; margin: 2px 2px; }
-    .body-editor { min-height: 260px; border: 1.5px solid var(--border); border-radius: 0 0 8px 8px; padding: 14px; font-size: 15px; line-height: 1.65; outline: none; background: var(--white); overflow-y: auto; -webkit-user-modify: read-write-plaintext-only; }
-    .body-editor[contenteditable] { -webkit-user-modify: read-write; }
-    .body-editor:focus { border-color: var(--primary); }
-    .body-editor p { margin: 0 0 8px; }
+    /* ── Toolbar (fine barre flottante) ── */
+    .editor-toolbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 8px; background: #fff; border: 1px solid #dde3ec; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); position: sticky; top: 52px; z-index: 5; }
+    .editor-toolbar button { background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 5px 10px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a2535; line-height: 1; transition: background .1s; }
+    .editor-toolbar button:active, .editor-toolbar button.active { background: #4F7CAC; color: #fff; border-color: #4F7CAC; }
+    .editor-toolbar button:hover:not(.active) { background: #eef2f8; }
+    .toolbar-sep { width: 1px; background: #dde3ec; align-self: stretch; margin: 2px 2px; }
+
+    /* ── Fiche preview (rendu identique à l'app) ── */
+    .body-editor {
+      background: #FFFFFF;
+      border: 1px solid #E8EAEF;
+      border-radius: 14px;
+      padding: 20px;
+      font-size: 1.0625rem;
+      color: #2D3142;
+      line-height: 1.6;
+      min-height: 320px;
+      outline: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .body-editor:focus { border-color: #4F7CAC; box-shadow: 0 0 0 3px rgba(79,124,172,.12); }
+    .body-editor p { margin: 0 0 .75rem; }
     .body-editor p:last-child { margin-bottom: 0; }
-    .body-editor h2 { font-size: 17px; font-weight: 700; margin: 16px 0 6px; }
-    .body-editor h3 { font-size: 15px; font-weight: 600; margin: 12px 0 4px; }
-    .body-editor ul, .body-editor ol { padding-left: 22px; margin: 0 0 8px; }
-    .body-editor li { margin-bottom: 3px; }
-    .body-editor a { color: var(--primary); text-decoration: underline; }
-    .body-editor strong { font-weight: 700; }
-    .body-editor .callout { background: var(--primary-soft); border-left: 4px solid var(--primary); border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
-    .body-editor .callout.warn { background: #fff8e1; border-left-color: #f59f00; }
-    .body-editor .callout.tip { background: #e6f9f2; border-left-color: var(--success); }
-    .body-textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 0 0 8px 8px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; resize: vertical; outline: none; }
-    .body-textarea:focus { border-color: var(--primary); }
-    .editor-help { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
-    .body-editor[data-placeholder]:empty::before { content: attr(data-placeholder); color: #bbb; pointer-events: none; display: block; }
+    .body-editor h2 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin: 1.25rem 0 .5rem; color: #2D3142; }
+    .body-editor h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.3; margin: 1rem 0 .25rem; color: #2D3142; }
+    .body-editor strong { font-weight: 700; color: #2D3142; }
+    .body-editor a { color: #4F7CAC; text-decoration: underline; }
+    /* Listes à puces colorées (exactement comme l'app) */
+    .body-editor ul { list-style: none; padding-left: 0; margin: .75rem 0; }
+    .body-editor ul li { position: relative; padding-left: 24px; margin-bottom: .5rem; }
+    .body-editor ul li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: #4F7CAC; }
+    .body-editor ol { padding-left: 22px; margin: .75rem 0; }
+    .body-editor ol li { margin-bottom: .5rem; }
+    /* Encadrés (exactement comme l'app) */
+    .body-editor .callout { display: flex; gap: .75rem; padding: 1rem; border-radius: 14px; margin: 1rem 0; font-size: .9375rem; background: #E5EDF5; border-left: 4px solid #4F7CAC; }
+    .body-editor .callout > div > strong:first-child { display: block; margin-bottom: 4px; }
+    .body-editor .callout.warn { background: #FBEFD7; border-color: #E8B86A; }
+    .body-editor .callout.tip  { background: #E0F0E6; border-color: #6FB58A; }
+    /* Placeholder */
+    .body-editor[data-placeholder]:empty::before { content: attr(data-placeholder); color: #bbb; pointer-events: none; display: block; font-style: italic; }
+    /* Mode HTML */
+    .body-textarea { width: 100%; border: 1px solid #E8EAEF; border-radius: 14px; padding: 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; resize: vertical; outline: none; }
+    .body-textarea:focus { border-color: #4F7CAC; }
 
     /* ── Buttons ── */
     .btn-primary { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .15s; }
@@ -219,7 +239,6 @@
         <!-- Rich text editor -->
         <div class="form-group">
           <label>Contenu</label>
-          <p class="editor-help">Écris ton texte, sélectionne un mot, puis appuie sur un bouton pour le mettre en forme.</p>
           <div class="editor-toolbar" id="editorToolbar">
             <button type="button" data-cmd="bold"><strong>Gras</strong></button>
             <button type="button" data-cmd="h2">Titre</button>

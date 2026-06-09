@@ -6,14 +6,14 @@ icon: heart
 objective: Trouver un médecin sans stress, comprendre les remboursements, parler quand ça va pas. À ton rythme.
 source: inami.fgov.be · inforjeunes.be · ssmg.be
 sections:
-  - id: mal-etre
-    title: Quand ça ne va pas
-    summary: 'Anxiété, tristesse, idées noires : tu n''es pas seul·e.'
-    linkTo: urgence/mal-etre
   - id: mutuelle
     title: Ma mutuelle
     summary: Comprendre ses remboursements, BIM, choisir sa mutuelle.
     linkTo: admin/mutuelle
+  - id: mal-etre
+    title: Quand ça ne va pas
+    summary: 'Anxiété, tristesse, idées noires : tu n''es pas seul·e.'
+    linkTo: urgence/mal-etre
   - id: parler-sans-appeler
     title: Parler sans appeler
     summary: Chat, e-mail, RDV en personne — tu choisis le canal.

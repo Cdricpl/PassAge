@@ -1,0 +1,272 @@
+id: argent
+title: "Argent & aides"
+subtitle: "Mes revenus, mes aides, mon budget"
+color: argent
+icon: euro
+objective: "Comprendre ce que tu peux toucher, mieux gérer ton argent, savoir où demander de l'aide."
+source: "mi-is.be (SPP Intégration sociale) · inforjeunes.be"
+sections:
+  - id: aides-disponibles
+    title: "Les aides auxquelles j'ai droit"
+    summary: "Vue d'ensemble : RIS, allocations, bourses."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
+      
+      <h2>1. Les allocations familiales</h2>
+      <p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
+      
+      <h2>2. Le RIS (revenu d'intégration sociale)</h2>
+      <p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
+      
+      <h2>3. La bourse d'études (FWB)</h2>
+      <p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
+      
+      <h2>4. Les aides ponctuelles du CPAS</h2>
+      <p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
+      
+      <h2>5. Le compte d'épargne mandant</h2>
+      <p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
+  - id: ris-cpas
+    title: "Le RIS et le CPAS"
+    summary: "Comment l'obtenir, conditions, contrat d'intégration."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune. En tant que jeune accueilli·e, c'est un droit pour toi.</p>
+      
+      <h2>Les conditions</h2>
+      <ul>
+        <li>Avoir 18 ans accomplis.</li>
+        <li>Ne pas avoir de ressources suffisantes pour vivre.</li>
+        <li>Accepter de signer un <strong>contrat d'intégration sociale</strong> avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…).</li>
+      </ul>
+      
+      <h2>Comment ça se passe ?</h2>
+      <ol class="fiche-ol">
+        <li>Tu prends rendez-vous au CPAS de ta commune de domicile.</li>
+        <li>Une enquête sociale est faite (sur ta situation, parfois sur tes parents).</li>
+        <li>Le montant est fixé en fonction (vis seul·e, en colocation…).</li>
+        <li>Tu signes le contrat, et le RIS est versé chaque mois.</li>
+      </ol>
+      
+      <div class="callout warn"><div><strong>Attention si tu travailles</strong>Si tu fais un job étudiant ou un job ponctuel, ton RIS peut être <strong>partiellement réduit</strong> ce mois-là. Renseigne-toi à l'avance, une exonération existe.</div></div>
+      
+      <h2>Aides ponctuelles</h2>
+      <p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>
+  - id: allocations-familiales
+    title: "Mes allocations familiales"
+    summary: "À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
+      
+      <h2>Ce qui change à 18 ans</h2>
+      <ul>
+        <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
+        <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins 17 crédits/semestre dans le supérieur, ou enseignement secondaire à temps plein).</li>
+        <li>Si tu interromps tes études : tu les gardes pendant <strong>360 jours</strong> de stage d'insertion (voir <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
+      </ul>
+      
+      <h2>Démarches à faire</h2>
+      <ol class="fiche-ol">
+        <li>Communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://my.famiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
+        <li>Si tu déménages : signale ton <strong>changement d'adresse</strong>.</li>
+        <li>Si tu es aux études : tu n'as souvent rien à faire — l'info est transmise par ton école.</li>
+      </ol>
+      
+      <h2>Le quota du job étudiant</h2>
+      <p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Si tu dépasses, ça peut suspendre les allocations le mois concerné. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
+      
+      <h2>Bon à savoir</h2>
+      <ul>
+        <li>Si tu as un enfant, tu touches aussi <strong>ses</strong> allocations familiales.</li>
+        <li>Tu peux <strong>cumuler</strong> tes allocations familiales avec un salaire ou avec le RIS.</li>
+        <li>Les allocations familiales <strong>ne sont pas taxables</strong> — pas besoin de les déclarer aux impôts.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Ton compte d'épargne mandant</strong>Si tu étais en famille d'accueil, vérifie aussi le compte d'épargne ouvert par l'autorité mandante. Voir <a href="#/fiche/argent/epargne-mandante">Le compte d'épargne mandant</a>.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.famiwal.be" target="_blank" rel="noopener">famiwal.be</a> — caisse publique wallonne</li>
+        <li><a href="https://www.aviq.be/familles" target="_blank" rel="noopener">AVIQ Familles</a> — info officielle Wallonie</li>
+        <li><a href="https://inforjeunes.be/thematique/allocations-familiales/" target="_blank" rel="noopener">Inforjeunes — FAQ allocations familiales</a></li>
+      </ul>
+  - id: compte-bancaire
+    title: "Le compte bancaire"
+    summary: "Ouvrir un compte, ordres permanents, épargne."
+    lastChecked: "03/06/2026"
+    source: "febelfin.be · inforjeunes.be"
+    body: |
+      <p>À 18 ans, tu peux ouvrir un compte en banque à ton nom. C'est indispensable pour recevoir un salaire, payer en magasin, ou recevoir tes aides.</p>
+      
+      <h2>Comment ouvrir un compte</h2>
+      <p>Tu as deux options :</p>
+      <ol class="fiche-ol">
+        <li><strong>En ligne</strong> : la plupart des banques proposent une ouverture de compte en quelques minutes via leur site ou appli. Tu auras besoin de ta carte d'identité (photo) et d'un selfie pour vérifier ton identité.</li>
+        <li><strong>En agence</strong> : tu te présentes avec ta carte d'identité. Un conseiller ouvre le compte sur place.</li>
+      </ol>
+      
+      <h2>Ce qu'il te faut</h2>
+      <ul>
+        <li>Ta <strong>carte d'identité</strong> (obligatoire).</li>
+        <li>Parfois : une <strong>preuve de domicile</strong> (facture, attestation commune) — pas toujours demandée.</li>
+        <li>Un <strong>numéro de téléphone</strong> pour activer l'appli et les codes.</li>
+      </ul>
+      
+      <h2>Comptes gratuits pour les jeunes (-25 ans)</h2>
+      <p>De nombreuses banques proposent des comptes <strong>sans frais</strong> pour les jeunes :</p>
+      <ul>
+        <li><strong>BNP Paribas Fortis</strong> — Fintro (compte Sixto gratuit -25 ans)</li>
+        <li><strong>Belfius</strong> — compte Belfius Start gratuit -25 ans</li>
+        <li><strong>ING</strong> — compte Lion gratuit -25 ans</li>
+        <li><strong>KBC / CBC</strong> — compte KBC Start gratuit -26 ans</li>
+        <li><strong>Argenta</strong> — compte gratuit tous âges</li>
+        <li><strong>Keytrade</strong> — 100 % en ligne, gratuit</li>
+      </ul>
+      <p>Compare les services (carte de débit, appli, retraits gratuits en Belgique) avant de choisir.</p>
+      
+      <h2>Le droit au compte de base</h2>
+      <p>Si une banque te refuse, tu as le droit à un <strong>compte de base</strong> — c'est garanti par la loi belge. Demande à n'importe quelle grande banque ou renseigne-toi auprès du <a href="https://www.febelfin.be" target="_blank" rel="noopener">SPF Économie</a>.</p>
+      
+      <h2>Activer itsme dès que possible</h2>
+      <p>Dès l'ouverture du compte, active <strong>itsme</strong> (l'identité numérique belge). Tu en auras besoin pour : Tax-on-Web (impôts), myFAMIWAL (allocations), e-services gouvernementaux, certaines banques en ligne.</p>
+      
+      <h2>Le compte courant — ce que tu peux faire</h2>
+      <ul>
+        <li>Recevoir tes revenus (salaire, allocations, RIS).</li>
+        <li>Faire des virements et payer en magasin.</li>
+        <li>Mettre en place des <strong>domiciliations</strong> (factures qui partent automatiquement).</li>
+        <li>Faire des <strong>ordres permanents</strong> (ex : loyer payé chaque mois sans y penser).</li>
+      </ul>
+      
+      <h2>Le compte épargne</h2>
+      <p>À associer à ton compte courant pour mettre de côté (projet, coup dur). Il rapporte un petit intérêt.</p>
+      
+      <h2>L'application mobile</h2>
+      <p>Très pratique : tu vois tes finances en temps réel, tu fais tes virements en quelques clics. Toutes les banques en proposent une.</p>
+      
+      <div class="callout tip"><div><strong>Astuce</strong>Beaucoup de banques proposent un compte gratuit pour les jeunes. Compare avant de choisir — les services (retraits, carte, appli) varient selon les établissements.</div></div>
+  - id: epargne-mandante
+    title: "Le compte d'épargne mandant"
+    summary: "Vérifier si un compte a été ouvert à ton nom pendant la prise en charge."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Pendant la période où tu as été éloigné·e de ton milieu familial (institution ou famille d'accueil), un compte d'épargne a peut-être été ouvert à ton nom par l'autorité mandante.</p>
+      
+      <h2>Ce qu'il faut vérifier</h2>
+      <ul>
+        <li>Cela <strong>n'est pas automatique</strong> — il faut vérifier auprès de l'autorité mandante qui s'occupait de ta situation.</li>
+        <li>Le montant versé dépend du type d'hébergement.</li>
+        <li>Pour certains jeunes, le solde peut être conséquent.</li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Attention</strong>L'argent part vite. Avant de tout dépenser, pense à un projet utile : caution de logement, voiture pour le travail, formation…</div></div>
+  - id: aides-supp
+    title: "Bons plans : tarif social, seconde main"
+    summary: "Tarif social énergie/internet, magasins de seconde main."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
+      
+      <h2>Tarif social pour l'énergie et l'eau</h2>
+      <p>Si tu touches le <strong>RIS du CPAS</strong>, certaines allocations handicap, ou la garantie de revenus aux personnes âgées, tu as droit au <strong>tarif social</strong> pour&nbsp;:</p>
+      <ul>
+        <li><strong>Électricité, gaz naturel, chaleur</strong> : tarif identique partout en Belgique, peu importe ton fournisseur.</li>
+        <li><strong>Eau</strong> : tarif réduit auprès de la SWDE.</li>
+      </ul>
+      <p>Demande à <strong>ton·ta intervenant·e social·e du CPAS</strong> de faire la démarche pour toi. Souvent, c'est <strong>automatique</strong> dès que tu es au RIS — mais vérifie.</p>
+      
+      <h2>Offre Internet sociale (19 €/mois)</h2>
+      <p>Si tu touches le RIS, l'aide sociale du CPAS, ou la GRAPA, tu as droit à une <strong>offre internet sociale</strong> à <strong>19 € par mois maximum</strong>, avec :</p>
+      <ul>
+        <li><strong>30 Mbps</strong> minimum de débit.</li>
+        <li><strong>150 Go</strong> de téléchargement inclus.</li>
+        <li>Disponible chez <strong>Proximus</strong>, <strong>VOO</strong> (Wallonie), parfois <strong>Orange</strong> selon zones.</li>
+      </ul>
+      <p>Demande directement à l'opérateur, ou vérifie ton éligibilité via le <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a>.</p>
+      
+      <h2>Tarif social téléphonie (mobile + fixe)</h2>
+      <p>Sous conditions (RIS, BIM, handicap…), tu peux aussi obtenir un tarif social sur ta téléphonie mobile et/ou fixe :</p>
+      <ul>
+        <li>Jusqu'à <strong>40 % de réduction</strong> sur les frais d'installation et l'abonnement.</li>
+        <li>Demande à ton opérateur ou via <a href="https://www.ibpt.be/consommateurs/tarif-social" target="_blank" rel="noopener">l'IBPT</a> (régulateur télécom).</li>
+      </ul>
+      
+      <h2>Magasins de seconde main</h2>
+      <p>Pour t'équiper sans te ruiner&nbsp;:</p>
+      <ul>
+        <li>ASBL et <strong>magasins de seconde main</strong> dans chaque ville (vêtements, meubles, électroménager). Demande à ta commune ou ton CPAS pour la liste locale.</li>
+        <li><strong>Ressourceries</strong> (style Les Petits Riens, Oxfam, Terre, La Bourse aux Vêtements).</li>
+      </ul>
+      
+      <h2>Sites de seconde main</h2>
+      <ul>
+        <li><a href="https://www.2ememain.be" target="_blank" rel="noopener">2ememain.be</a> — meubles, électroménager, divers</li>
+        <li><a href="https://www.facebook.com/marketplace" target="_blank" rel="noopener">Facebook Marketplace</a> — local, négociable</li>
+        <li><a href="https://www.vinted.be" target="_blank" rel="noopener">Vinted</a> — vêtements</li>
+        <li><a href="https://www.toogoodtogo.be" target="_blank" rel="noopener">Too Good To Go</a> — paniers anti-gaspi à prix cassés</li>
+      </ul>
+      
+      <h2>Frigos communautaires</h2>
+      <p>Plusieurs communes wallonnes ont mis en place des <strong>frigos solidaires</strong> où chacun peut déposer ou prendre. Renseigne-toi à ta commune ou ton CPAS pour savoir s'il y en a près de chez toi.</p>
+      
+      <div class="callout tip"><div><strong>L'aide alimentaire, c'est un droit</strong>Restos du Cœur, Croix-Rouge, épiceries sociales : si tu galères en fin de mois, n'attends pas. Ton CPAS peut t'orienter vers le bon service.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — comment accéder à ces tarifs sociaux</li>
+        <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — gérer ses dépenses prioritaires</li>
+        <li><a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a> — offre internet sociale officielle</li>
+        <li><a href="https://www.ecoconso.be" target="_blank" rel="noopener">ecoconso.be</a> — conseils pour réduire sa consommation</li>
+      </ul>
+  - id: budget
+    title: "Mon budget mensuel"
+    summary: "Dépenses obligatoires, priorités, astuces pour ne pas se planter."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Avant de prendre un logement ou un engagement, prends 10 minutes pour faire ton budget mensuel. Tu poses tes <strong>rentrées</strong> (RIS, salaire, allocations…) et tes <strong>dépenses fixes</strong>. Le reste, c'est ce que tu peux dépenser ou épargner.</p>
+      
+      <h2>Dépenses fixes — par ordre de priorité</h2>
+      <p>Ne paie <strong>jamais</strong> tes loisirs avant tes dépenses obligatoires. Voici l'ordre :</p>
+      <ol class="fiche-ol">
+        <li><strong>Loyer</strong> — astuce : tu peux demander au <a href="#/fiche/argent/ris-cpas">CPAS</a> de payer ton loyer directement au propriétaire (il te reverse le solde du RIS). Ça évite les oublis.</li>
+        <li><strong>Énergie</strong> (eau, électricité, gaz) — provision mensuelle + décompte annuel. Voir <a href="#/fiche/logement/compteurs">L'ouverture des compteurs</a>.</li>
+        <li><strong>Assurance habitation</strong> (souvent obligatoire dans le <a href="#/fiche/logement/bail">bail</a>). Voir <a href="#/fiche/logement/assurance-habitation">L'assurance habitation</a>.</li>
+        <li><strong>Cotisation mutuelle</strong> — tu peux payer mensuellement ou annuellement. Voir <a href="#/fiche/admin/mutuelle">La mutuelle</a>.</li>
+        <li><strong>Téléphone &amp; internet</strong> — voir aussi <a href="#/fiche/argent/aides-supp">tarif social internet</a>.</li>
+        <li><strong>Transport</strong> (TEC, SNCB, carburant, vélo).</li>
+        <li><strong>Impôts/taxes</strong> (taxe communale, taxe poubelles…) — souvent annuelles.</li>
+      </ol>
+      
+      <h2>Astuces pour ne pas oublier</h2>
+      <ul>
+        <li><strong>Domiciliations bancaires</strong> : ton loyer, ta mutuelle et tes factures partent automatiquement chaque mois. Plus d'oublis.</li>
+        <li><strong>Ordres permanents</strong> : pareil, mais pour des montants fixes (ex : virer 30 € sur ton compte épargne chaque mois).</li>
+        <li><strong>Une farde papier</strong> ou des dossiers sur ton ordi pour classer tes contrats, factures, fiches de paie. Tu te remercieras dans 3 ans.</li>
+      </ul>
+      
+      <h2>Dépenses variables</h2>
+      <ul>
+        <li><strong>Courses</strong> : ~200–300 €/mois pour 1 personne (voir <a href="#/fiche/vie/alimentation">Alimentation</a> pour les bons plans).</li>
+        <li>Vêtements, hygiène, loisirs.</li>
+        <li>Imprévus (médicaments, dépannages…).</li>
+      </ul>
+      
+      <h2>L'idéal — épargner un peu chaque mois</h2>
+      <p>Même 20 € par mois, c'est 240 € au bout d'un an : de quoi faire face à un coup dur (caution déposée pour un nouveau logement, panne d'électroménager, frais de santé inattendus).</p>
+      
+      <div class="callout warn"><div><strong>Si tu n'arrives pas à payer tes factures</strong>N'attends pas. Parle-en au CPAS, à ton AMO, ou au <a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a>. Il existe des solutions (plan de paiement, médiation de dettes…). Plus tu attends, plus c'est compliqué.</div></div>
+      
+      <h2>N'oublie pas en cas de déménagement</h2>
+      <p>Préviens du changement d'adresse à : ta mutuelle, ta banque, ton opérateur télécom, ton fournisseur d'énergie, FAMIWAL (allocations familiales), ton employeur, le Forem, le CPAS si tu y es suivi·e.</p>
+      
+      <div class="callout tip"><div><strong>Demande de l'aide</strong>Le CPAS, Inforjeunes ou une AMO peuvent t'aider à faire ton budget <strong>gratuitement et sans jugement</strong>. Tu peux aussi voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a>.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — si tes revenus ne couvrent pas le minimum</li>
+        <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> — réduire les factures</li>
+        <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADIL</li>
+        <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — aide gratuite pour les dettes et difficultés financières</li>
+      </ul>

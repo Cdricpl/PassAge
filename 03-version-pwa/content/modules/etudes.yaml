@@ -1,0 +1,45 @@
+id: etudes
+title: "Études & formations"
+subtitle: "Continuer ou reprendre"
+color: etudes
+icon: cap
+objective: "Trouver une formation qui te correspond et savoir comment la financer."
+source: "allocations-etudes.cfwb.be · enseignement.be (Fédération Wallonie-Bruxelles)"
+sections:
+  - id: bourse
+    title: "L'allocation d'études (bourse)"
+    summary: "Une aide financière qui ne se rembourse pas, sous conditions de ressources."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>L'<strong>allocation d'études</strong>, aussi appelée <strong>bourse</strong>, est une aide versée par la Fédération Wallonie-Bruxelles aux élèves et étudiants dont les ressources familiales sont limitées.</p>
+      
+      <h2>Les points-clés</h2>
+      <ul>
+        <li>Elle <strong>ne se rembourse pas</strong> (sauf abandon en cours d'année).</li>
+        <li>Elle s'adresse aux études secondaires et supérieures.</li>
+        <li>Les conditions de revenus dépendent de ta situation familiale.</li>
+      </ul>
+      
+      <h2>Comment faire la demande ?</h2>
+      <p>Tout se passe sur le site officiel : <a href="https://aides-etudes.cfwb.be" target="_blank" rel="noopener">aides-etudes.cfwb.be</a></p>
+      <p>Si tu galères avec le dossier, prends rendez-vous dans un centre <strong>Inforjeunes</strong> ou une <strong>AMO</strong> — c'est gratuit, ils ont l'habitude.</p>
+  - id: service-social-ecole
+    title: "Le service social de ton école"
+    summary: "Une aide au sein même de ton établissement."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Chaque école secondaire, haute école et université a un <strong>service social</strong> qui peut t'aider.</p>
+      
+      <h2>Pour qui ?</h2>
+      <p>Principalement pour les étudiants qui touchent une bourse, mais pas uniquement. N'hésite pas à pousser la porte.</p>
+      
+      <h2>Pour quoi ?</h2>
+      <ul>
+        <li>Achat de matériel (livres, ordinateur, blouse…).</li>
+        <li>Logement étudiant.</li>
+        <li>Transport.</li>
+        <li>Difficultés financières ponctuelles.</li>
+        <li>Soutien si tu rencontres des difficultés personnelles.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Confidentiel</strong>Tout ce que tu y dis reste confidentiel. C'est leur rôle.</div></div>

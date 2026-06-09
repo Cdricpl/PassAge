@@ -1,0 +1,180 @@
+id: admin
+title: "Administratif & juridique"
+subtitle: "Mes papiers, mes droits"
+color: admin
+icon: doc
+objective: "Gérer tes papiers d'identité, tes assurances, et savoir où aller pour quoi."
+source: "ibz.be (Registre national) · inami.fgov.be · belgium.be"
+sections:
+  - id: mutuelle
+    title: "La mutuelle"
+    summary: "Pourquoi c'est obligatoire et comment choisir."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>La mutuelle (officiellement : <strong>assurance soins de santé</strong>) te permet d'être remboursé·e quand tu vas chez le médecin, le dentiste, ou à l'hôpital.</p>
+      
+      <h2>C'est obligatoire</h2>
+      <p>Tout le monde doit être affilié soit à une mutuelle (cotisation à payer), soit à la <strong>CAAMI</strong> (gratuite, mais propose seulement le strict minimum).</p>
+      
+      <h2>Les services d'une mutuelle</h2>
+      <ul>
+        <li>Remboursement des soins (médecin, médicaments, hôpital).</li>
+        <li>Assurances facultatives (soins dentaires, hospitalisation…).</li>
+        <li>Services complémentaires (camps, sport, transport non urgent…).</li>
+      </ul>
+      
+      <h2>Comment choisir ?</h2>
+      <p>Les principales mutuelles : Mutualité Chrétienne, Neutre, Socialiste, Libérale, Solidaris… Compare les services et les cotisations sur leurs sites — selon ta situation, l'une peut être plus avantageuse qu'une autre.</p>
+      
+      <div class="callout tip"><div><strong>Conseils santé</strong>Dentiste 1×/an minimum (sinon le remboursement diminue), ophtalmo tous les 2 ans si tu portes des lunettes, gynéco 1×/an pour les filles.</div></div>
+  - id: rc-familiale
+    title: "L'assurance RC familiale"
+    summary: "Ce qu'elle couvre, pourquoi tu en as besoin."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>L'assurance <strong>Responsabilité Civile familiale</strong> (RC familiale) te protège financièrement si tu causes un dommage à quelqu'un par accident.</p>
+      
+      <h2>Quelques exemples</h2>
+      <ul>
+        <li>Ton chien provoque un accident.</li>
+        <li>Tu fais une rayure sur la portière d'une voiture en vélo.</li>
+        <li>Un pot de fleurs tombe de ton appui de fenêtre.</li>
+        <li>Un passant glisse sur le verglas devant chez toi.</li>
+      </ul>
+      
+      <p>Sans assurance, c'est <strong>toi</strong> qui dois payer — et ça peut monter très vite.</p>
+      
+      <h2>Quand en prendre une ?</h2>
+      <ul>
+        <li>Tant que tu vis chez ta famille d'accueil, tu es couvert·e par leur assurance.</li>
+        <li>Si tu prends ton autonomie, tu dois en souscrire une à ton nom.</li>
+      </ul>
+  - id: voyager
+    title: "Voyager à l'étranger"
+    summary: "Carte ID, passeport, visa, vaccins, CEAM."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Tu pars en voyage&nbsp;? Plus besoin d'autorisation parentale&nbsp;! Mais avant de boucler ton sac, vérifie que tu as bien tout côté papiers.</p>
+      
+      <h2>Carte d'identité</h2>
+      <p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, au Royaume-Uni (sous conditions), en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
+      
+      <h2>Passeport</h2>
+      <p>Pour <strong>tout le reste du monde</strong>, il te faut un <strong>passeport</strong>. À demander à ta <strong>commune</strong>.</p>
+      <ul>
+        <li>Validité : <strong>7 ans</strong>.</li>
+        <li>Coût : ~75 € (procédure normale, ~10 jours). Procédure d'urgence possible (plus chère).</li>
+        <li>Apporte une photo récente conforme aux normes.</li>
+      </ul>
+      
+      <h2>Visa</h2>
+      <p>Le <strong>visa</strong> est une autorisation d'entrée délivrée par le pays de destination. Tu peux l'obtenir&nbsp;:</p>
+      <ul>
+        <li>Auprès de l'<strong>ambassade ou consulat</strong> du pays.</li>
+        <li>Souvent <strong>en ligne</strong> (eVisa) pour les pays comme USA (ESTA), Canada (AVE), Australie, Inde, etc.</li>
+      </ul>
+      <p>Vérifie sur <a href="https://diplomatie.belgium.be/fr/Services/voyager_a_letranger" target="_blank" rel="noopener">diplomatie.belgium.be</a> si un visa est nécessaire pour ta destination.</p>
+      
+      <h2>Carnet de vaccination</h2>
+      <p>Selon la destination, certains vaccins sont <strong>obligatoires</strong> (fièvre jaune en Afrique tropicale par exemple) ou <strong>recommandés</strong> (typhoïde, hépatite A, tétanos…).</p>
+      <ul>
+        <li>Parle-en à <strong>ton médecin traitant</strong> ou à un centre de <strong>médecine du voyage</strong>.</li>
+        <li>Demande le <strong>certificat international de vaccination</strong> (carnet jaune).</li>
+        <li>Site officiel : <a href="https://www.itg.be" target="_blank" rel="noopener">Institut de Médecine Tropicale</a> (Anvers).</li>
+      </ul>
+      
+      <h2>Carte Européenne d'Assurance Maladie (CEAM)</h2>
+      <p>La <strong>CEAM</strong> te permet d'être soigné·e dans tous les pays de l'UE + Islande, Liechtenstein, Norvège, Suisse, aux mêmes conditions que les habitants du pays.</p>
+      <ul>
+        <li><strong>Gratuite</strong> auprès de ta mutuelle.</li>
+        <li>À demander <strong>plusieurs semaines avant</strong> ton départ.</li>
+        <li>Validité : 2 ans en général.</li>
+      </ul>
+      
+      <h2>Assurance voyage</h2>
+      <p>La CEAM ne couvre pas tout (rapatriement, soins privés…). Pour un long séjour ou un pays hors UE, prends une <strong>assurance voyage</strong> (souvent quelques €/jour). Ta mutuelle ou ta banque en proposent souvent.</p>
+      
+      <div class="callout tip"><div><strong>Avant de partir</strong>Inscris-toi sur <a href="https://travellersonline.diplomatie.be" target="_blank" rel="noopener">Travellers Online</a> (gratuit, pour que les Affaires étrangères belges puissent te contacter en cas d'urgence dans le pays).</div></div>
+  - id: documents
+    title: "Mes papiers d'identité"
+    summary: "Carte ID, passeport, casier : où et comment les obtenir."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>La plupart des documents administratifs s'obtiennent à <strong>l'administration communale</strong> de ta commune de domicile (ou de naissance).</p>
+      
+      <h2>À demander à la commune</h2>
+      <ul>
+        <li>Carte d'identité, passeport.</li>
+        <li>Actes d'état civil (naissance, mariage…).</li>
+        <li>Extrait de casier judiciaire.</li>
+        <li>Permis de conduire.</li>
+        <li>Don d'organes.</li>
+      </ul>
+      
+      <h2>Pour voyager</h2>
+      <ul>
+        <li><strong>Carte ID</strong> : valable dans les pays de l'UE et quelques pays voisins.</li>
+        <li><strong>Passeport</strong> : nécessaire hors UE. Valable 7 ans.</li>
+        <li><strong>Visa</strong> : à demander à l'ambassade du pays concerné (souvent en ligne).</li>
+        <li><strong>Carnet de vaccination</strong> : selon la destination (parle-en à ton médecin).</li>
+        <li><strong>Carte Européenne d'Assurance Maladie (CEAM)</strong> : gratuite, à demander à ta mutuelle, indispensable pour voyager dans l'UE.</li>
+      </ul>
+  - id: aide-juridique
+    title: "Avocat prodéo et aide juridique"
+    summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026."
+    lastChecked: "03/06/2026"
+    source: "justice.belgium.be · avocats.be · droitsquotidiens.be"
+    body: |
+      <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
+      
+      <h2>1ère ligne : un conseil gratuit, sans condition</h2>
+      <p>Tu peux aller dans une <strong>Commission d'Aide Juridique (CAJ)</strong> ou une permanence d'avocat·e pour poser une question (loyer, papiers, dettes, séparation, travail…). C'est <strong>gratuit, pour toute personne, sans plafond de revenus</strong>.</p>
+      <ul>
+        <li>Trouve une permanence près de chez toi : <a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be/aide-juridique</a></li>
+        <li>Ou via le palais de justice de ton arrondissement.</li>
+      </ul>
+      
+      <h2>2ème ligne (« prodéo ») : un·e avocat·e désigné·e</h2>
+      <p>Si tu dois aller plus loin (procédure, représentation devant un tribunal), tu peux demander qu'un·e avocat·e soit <strong>désigné·e</strong> via le <strong>Bureau d'Aide Juridique (BAJ)</strong> de ton arrondissement. Selon tes revenus, l'aide est <strong>totalement</strong> ou <strong>partiellement gratuite</strong>.</p>
+      
+      <h2>Plafonds de revenus 2026</h2>
+      <p>Le BAJ examine le total des revenus mensuels nets de toutes les personnes vivant sous ton toit.</p>
+      <ul>
+        <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
+        <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>355 €</strong> par personne supplémentaire (à confirmer auprès du BAJ).</li>
+      </ul>
+      
+      <h2>Accès automatique (sans calcul de revenus)</h2>
+      <p>Tu y as droit d'office (sans démarche de calcul) si tu es dans une de ces situations&nbsp;:</p>
+      <ul>
+        <li>Tu touches le <strong>RIS</strong> du CPAS, ou une aide sociale équivalente.</li>
+        <li>Tu touches la <strong>GRAPA</strong> (personne âgée) ou une allocation pour personne handicapée.</li>
+        <li>Tu es <strong>mineur·e</strong>.</li>
+        <li>Tu es <strong>détenu·e</strong>, demandeur·euse d'asile, ou sans-papiers en procédure.</li>
+        <li>Tu es <strong>surendetté·e</strong> (procédure de règlement collectif de dettes).</li>
+      </ul>
+      
+      <h2>Comment demander ?</h2>
+      <ol class="fiche-ol">
+        <li>Repère le <strong>BAJ de ton arrondissement</strong> (ex. Verviers, Liège, Bruxelles…) via <a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be</a> ou le tribunal de ta région.</li>
+        <li>Apporte&nbsp;: ta <strong>carte d'identité</strong>, ta dernière <strong>composition de ménage</strong>, et tes <strong>justificatifs de revenus</strong> (fiche de paie, attestation RIS, allocation…).</li>
+        <li>Le BAJ examine ton dossier, vérifie que ta demande n'est pas manifestement infondée, et te <strong>désigne un·e avocat·e</strong>.</li>
+        <li>Tu rencontres ton avocat·e et tu n'avances en principe <strong>rien</strong> — sauf une éventuelle part à payer si tu es dans la tranche partielle.</li>
+      </ol>
+      
+      <h2>Pour quelles affaires ?</h2>
+      <ul>
+        <li>Procédures devant le tribunal du travail, de la famille, civil, pénal, jeunesse, étrangers.</li>
+        <li>Conflit avec un propriétaire, un employeur, une administration, un CPAS.</li>
+        <li>Séparation, divorce, garde, pension alimentaire, dettes.</li>
+        <li>Défense pénale si tu es poursuivi·e.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>N'attends pas</strong>Si tu reçois une convocation, un jugement, ou un courrier d'huissier que tu ne comprends pas — va voir une 1ère ligne <strong>tout de suite</strong>. Les délais juridiques sont courts et beaucoup de droits se perdent en quelques semaines.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://justice.belgium.be/fr/themes_et_dossiers/services_du_spf/access_a_la_justice/aide_juridique" target="_blank" rel="noopener">SPF Justice — aide juridique</a></li>
+        <li><a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be — annuaire des BAJ et permanences</a></li>
+        <li><a href="https://www.droitsquotidiens.be" target="_blank" rel="noopener">Droits Quotidiens</a> — explications juridiques en langage clair</li>
+      </ul>

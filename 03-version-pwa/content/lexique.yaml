@@ -1,0 +1,681 @@
+"pas d argent":
+  - argent/ris-cpas
+  - argent/aides-supp
+  - argent/aides-disponibles
+"sans argent":
+  - argent/ris-cpas
+  - argent/aides-supp
+"galere":
+  - argent/ris-cpas
+  - argent/aides-disponibles
+  - urgence/services-aide
+"galère":
+  - argent/ris-cpas
+  - argent/aides-disponibles
+  - urgence/services-aide
+"fin de mois":
+  - argent/budget
+  - vie/alimentation
+  - argent/aides-supp
+"precaire":
+  - argent/ris-cpas
+  - argent/aides-supp
+  - logement/aides
+"précaire":
+  - argent/ris-cpas
+  - argent/aides-supp
+  - logement/aides
+"minimum":
+  - argent/ris-cpas
+"survie":
+  - argent/ris-cpas
+  - urgence/services-aide
+"aide sociale":
+  - argent/ris-cpas
+  - argent/aides-disponibles
+"aide cpas":
+  - argent/ris-cpas
+  - argent/aides-disponibles
+"pauvre":
+  - argent/ris-cpas
+  - argent/aides-supp
+"ris":
+  - argent/ris-cpas
+"rsa":
+  - argent/ris-cpas
+"cpas":
+  - argent/ris-cpas
+  - urgence/services-aide
+"allocations":
+  - argent/aides-disponibles
+"bourse":
+  - etudes/bourse
+"etudes":
+  - etudes/bourse
+  - etudes/service-social-ecole
+"banque":
+  - argent/compte-bancaire
+"compte":
+  - argent/compte-bancaire
+  - argent/epargne-mandante
+"budget":
+  - argent/budget
+"epargne":
+  - argent/compte-bancaire
+  - travail/epargne-pension
+  - argent/epargne-mandante
+"mal etre":
+  - urgence/mal-etre
+  - sante/convention-psy
+"mal-être":
+  - urgence/mal-etre
+  - sante/convention-psy
+"mal dans ma peau":
+  - urgence/mal-etre
+  - sante/convention-psy
+"depression":
+  - urgence/mal-etre
+  - sante/convention-psy
+"dépression":
+  - urgence/mal-etre
+  - sante/convention-psy
+"deprimer":
+  - urgence/mal-etre
+  - sante/convention-psy
+"triste":
+  - urgence/mal-etre
+  - sante/convention-psy
+"anxiete":
+  - urgence/mal-etre
+  - sante/convention-psy
+"anxiété":
+  - urgence/mal-etre
+  - sante/convention-psy
+"angoisse":
+  - urgence/mal-etre
+  - sante/convention-psy
+"crise":
+  - urgence/mal-etre
+  - urgence/lignes-ecoute
+"panique":
+  - urgence/mal-etre
+  - urgence/lignes-ecoute
+"idees noires":
+  - urgence/mal-etre
+  - urgence/lignes-ecoute
+"suicide":
+  - urgence/mal-etre
+  - urgence/lignes-ecoute
+"envie de mourir":
+  - urgence/mal-etre
+  - urgence/lignes-ecoute
+"fatigue":
+  - urgence/mal-etre
+  - sante/medecin
+"sommeil":
+  - urgence/mal-etre
+  - sante/medecin
+"parler a quelqu un":
+  - sante/parler-sans-appeler
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"ecouter":
+  - sante/parler-sans-appeler
+  - urgence/lignes-ecoute
+"psy":
+  - sante/convention-psy
+"psychologue":
+  - sante/convention-psy
+"psychiatre":
+  - sante/convention-psy
+  - sante/medecin
+"therapeute":
+  - sante/convention-psy
+"malade":
+  - sante/medecin
+  - sante/maison-medicale
+  - sante/urgence-medicale
+"medecin":
+  - sante/medecin
+  - sante/maison-medicale
+"docteur":
+  - sante/medecin
+  - sante/maison-medicale
+"maladie":
+  - sante/medecin
+  - admin/mutuelle
+"mutuelle":
+  - admin/mutuelle
+  - sante/medecin
+"assurance maladie":
+  - admin/mutuelle
+"remboursement":
+  - admin/mutuelle
+  - sante/maison-medicale
+"pharmacie":
+  - sante/medecin
+  - admin/mutuelle
+"medicament":
+  - sante/medecin
+"dentiste":
+  - sante/medecin
+  - admin/mutuelle
+"gyneco":
+  - sante/planning-familial
+"gynéco":
+  - sante/planning-familial
+"contraception":
+  - sante/planning-familial
+"pilule":
+  - sante/planning-familial
+"preservatif":
+  - sante/planning-familial
+"ivg":
+  - sante/planning-familial
+"avortement":
+  - sante/planning-familial
+"enceinte":
+  - sante/planning-familial
+"grossesse":
+  - sante/planning-familial
+"sexe":
+  - sante/planning-familial
+"ist":
+  - sante/planning-familial
+  - sante/medecin
+"appartement":
+  - logement/recherche
+  - logement/options
+"appart":
+  - logement/recherche
+  - logement/options
+"studio":
+  - logement/recherche
+  - logement/options
+"kot":
+  - logement/recherche
+"colocation":
+  - logement/recherche
+  - logement/options
+"coloc":
+  - logement/recherche
+  - logement/options
+"sdf":
+  - logement/aides
+  - urgence/services-aide
+"sans abri":
+  - logement/aides
+  - urgence/services-aide
+"sans logement":
+  - logement/aides
+  - urgence/services-aide
+"caution":
+  - logement/garantie
+"garantie":
+  - logement/garantie
+"bail":
+  - logement/bail
+"loyer":
+  - logement/aides
+  - logement/bail
+"proprietaire":
+  - logement/urgence-maison
+  - logement/bail
+"preavis":
+  - vie/courrier
+  - logement/bail
+"demenager":
+  - logement/changement-adresse
+  - logement/compteurs
+"demenagement":
+  - logement/changement-adresse
+  - logement/compteurs
+"electricite":
+  - logement/urgence-maison
+"électricité":
+  - logement/urgence-maison
+"gaz":
+  - logement/urgence-maison
+"eau":
+  - logement/compteurs
+"energie":
+  - logement/compteurs
+  - argent/aides-supp
+"compteur":
+  - logement/compteurs
+"chauffage":
+  - logement/compteurs
+"tarif social":
+  - argent/aides-supp
+  - logement/compteurs
+"sls":
+  - logement/options
+"ais":
+  - logement/options
+"social housing":
+  - logement/options
+  - logement/aides
+"job":
+  - travail/preparer
+  - travail/trouver
+"boulot":
+  - travail/preparer
+  - travail/trouver
+"emploi":
+  - travail/preparer
+  - travail/trouver
+"travailler":
+  - travail/preparer
+  - travail/job-etudiant
+"cv":
+  - travail/preparer
+"lettre de motivation":
+  - travail/preparer
+"entretien":
+  - travail/entretien
+"embauche":
+  - travail/entretien
+  - travail/contrat
+"contrat":
+  - travail/contrat
+"cdi":
+  - travail/contrat
+"cdd":
+  - travail/contrat
+"salaire":
+  - travail/contrat
+"paye":
+  - travail/contrat
+"paie":
+  - travail/contrat
+"forem":
+  - travail/preparer
+"interim":
+  - travail/trouver
+"intérim":
+  - travail/trouver
+"chomage":
+  - travail/chomage
+"chômage":
+  - travail/chomage
+"onem":
+  - travail/chomage
+"pension":
+  - travail/epargne-pension
+"retraite":
+  - travail/epargne-pension
+"job etudiant":
+  - travail/job-etudiant
+"job d ete":
+  - travail/job-etudiant
+  - travail/trouver
+"18 ans":
+  - majeur/changements
+  - majeur/demarches
+  - majeur/enfant-en-accueil
+"majorité":
+  - majeur/changements
+  - majeur/enfant-en-accueil
+"majorite":
+  - majeur/changements
+  - majeur/enfant-en-accueil
+"famille d accueil":
+  - majeur/enfant-en-accueil
+  - majeur/accompagnement
+"fa":
+  - majeur/enfant-en-accueil
+"saj":
+  - majeur/enfant-en-accueil
+  - majeur/accompagnement
+"spj":
+  - majeur/enfant-en-accueil
+  - majeur/accompagnement
+"mandant":
+  - majeur/enfant-en-accueil
+  - argent/epargne-mandante
+"amo":
+  - majeur/accompagnement
+  - urgence/services-aide
+"voter":
+  - majeur/vote
+"vote":
+  - majeur/vote
+"election":
+  - majeur/vote
+"élection":
+  - majeur/vote
+"impots":
+  - majeur/impots
+"impôts":
+  - majeur/impots
+"declaration":
+  - majeur/impots
+"déclaration":
+  - majeur/impots
+"tax":
+  - majeur/impots
+"fiscal":
+  - majeur/impots
+"contribution":
+  - majeur/impots
+"carte d identite":
+  - admin/documents
+"carte id":
+  - admin/documents
+"passeport":
+  - admin/voyager
+  - admin/documents
+"visa":
+  - admin/voyager
+"voyage":
+  - admin/voyager
+"voyager":
+  - admin/voyager
+"etranger":
+  - admin/voyager
+"étranger":
+  - admin/voyager
+"vacances":
+  - admin/voyager
+"commune":
+  - admin/documents
+  - logement/changement-adresse
+"permis":
+  - vie/transport
+"permis de conduire":
+  - vie/transport
+"casier judiciaire":
+  - admin/documents
+"rc familiale":
+  - admin/rc-familiale
+"responsabilite":
+  - admin/rc-familiale
+"manger":
+  - vie/alimentation
+"nourriture":
+  - vie/alimentation
+"courses":
+  - vie/alimentation
+"cuisine":
+  - vie/alimentation
+"recette":
+  - vie/cuisine
+  - vie/alimentation
+"aide alimentaire":
+  - vie/alimentation
+  - argent/aides-supp
+"restos du coeur":
+  - vie/alimentation
+"menage":
+  - logement/entretien
+"ménage":
+  - logement/entretien
+"nettoyer":
+  - logement/entretien
+"transport":
+  - vie/transport
+"tec":
+  - vie/transport
+"sncb":
+  - vie/transport
+"train":
+  - vie/transport
+"bus":
+  - vie/transport
+"lessive":
+  - vie/lessive
+  - vie/lavoir
+"lessives":
+  - vie/lessive
+  - vie/lavoir
+"laver":
+  - vie/lessive
+  - vie/lavoir
+"linge":
+  - vie/lessive
+  - vie/lavoir
+"machine a laver":
+  - vie/lessive
+  - vie/lavoir
+"lave linge":
+  - vie/lessive
+  - vie/lavoir
+"lave-linge":
+  - vie/lessive
+  - vie/lavoir
+"vetements":
+  - vie/lessive
+"vêtements":
+  - vie/lessive
+"detacher":
+  - vie/lessive
+"détacher":
+  - vie/lessive
+"tache":
+  - vie/lessive
+"tâche":
+  - vie/lessive
+"taches":
+  - vie/lessive
+"sechoir":
+  - vie/lessive
+  - vie/lavoir
+"séchoir":
+  - vie/lessive
+  - vie/lavoir
+"seche linge":
+  - vie/lessive
+  - vie/lavoir
+"sèche-linge":
+  - vie/lessive
+  - vie/lavoir
+"lavoir":
+  - vie/lavoir
+"lavoirs":
+  - vie/lavoir
+"laverie":
+  - vie/lavoir
+"laveries":
+  - vie/lavoir
+"laundromat":
+  - vie/lavoir
+"wassalon":
+  - vie/lavoir
+"mywash":
+  - vie/lavoir
+"couette":
+  - vie/lavoir
+  - vie/lessive
+"edredon":
+  - vie/lavoir
+  - vie/lessive
+"lettre":
+  - vie/courrier
+"lettres":
+  - vie/courrier
+"courrier":
+  - vie/courrier
+"poster":
+  - vie/courrier
+"enveloppe":
+  - vie/courrier
+"timbre":
+  - vie/courrier
+"affranchir":
+  - vie/courrier
+"affranchissement":
+  - vie/courrier
+"recommande":
+  - vie/courrier
+"recommandé":
+  - vie/courrier
+"bpost":
+  - vie/courrier
+"boite aux lettres":
+  - vie/courrier
+"poste":
+  - vie/courrier
+"préavis":
+  - vie/courrier
+  - logement/bail
+"cuisiner":
+  - vie/cuisine
+"cuisinier":
+  - vie/cuisine
+"recettes":
+  - vie/cuisine
+  - vie/alimentation
+"omelette":
+  - vie/cuisine
+"pates":
+  - vie/cuisine
+"pâtes":
+  - vie/cuisine
+"lentilles":
+  - vie/cuisine
+"casserole":
+  - vie/cuisine
+"poele":
+  - vie/cuisine
+"poêle":
+  - vie/cuisine
+"ustensiles":
+  - vie/cuisine
+"placard":
+  - vie/cuisine
+  - vie/alimentation
+"panne":
+  - logement/urgence-maison
+"pannes":
+  - logement/urgence-maison
+"fuite":
+  - logement/urgence-maison
+"fuite d eau":
+  - logement/urgence-maison
+"fuite de gaz":
+  - logement/urgence-maison
+"odeur de gaz":
+  - logement/urgence-maison
+"chaudiere":
+  - logement/urgence-maison
+"chaudière":
+  - logement/urgence-maison
+"disjoncteur":
+  - logement/urgence-maison
+"couper eau":
+  - logement/urgence-maison
+"robinet":
+  - logement/urgence-maison
+"wc":
+  - logement/urgence-maison
+"vanne":
+  - logement/urgence-maison
+"propriétaire":
+  - logement/urgence-maison
+  - logement/bail
+"compte bancaire":
+  - argent/compte-bancaire
+"ouvrir un compte":
+  - argent/compte-bancaire
+"itsme":
+  - argent/compte-bancaire
+  - majeur/impots
+"urgent":
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"urgence":
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"aide":
+  - urgence/services-aide
+  - urgence/lignes-ecoute
+"help":
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"violence":
+  - urgence/lignes-ecoute
+  - sante/planning-familial
+"violences":
+  - urgence/lignes-ecoute
+  - sante/planning-familial
+"viol":
+  - urgence/lignes-ecoute
+  - sante/planning-familial
+"agression":
+  - urgence/lignes-ecoute
+"harcelement":
+  - urgence/lignes-ecoute
+"harcèlement":
+  - urgence/lignes-ecoute
+"drogue":
+  - urgence/lignes-ecoute
+"drogues":
+  - urgence/lignes-ecoute
+"alcool":
+  - urgence/lignes-ecoute
+"addiction":
+  - urgence/lignes-ecoute
+"famiwal":
+  - argent/allocations-familiales
+"allocs":
+  - argent/allocations-familiales
+"caf":
+  - argent/allocations-familiales
+"gsm":
+  - vie/communication
+"telephone":
+  - vie/communication
+"téléphone":
+  - vie/communication
+"forfait":
+  - vie/communication
+"wifi":
+  - vie/communication
+  - argent/aides-supp
+"internet":
+  - vie/communication
+  - argent/aides-supp
+"proximus":
+  - vie/communication
+"orange":
+  - vie/communication
+"voo":
+  - vie/communication
+"permis b":
+  - vie/permis-conduire
+"conduire":
+  - vie/permis-conduire
+"voiture":
+  - vie/permis-conduire
+"auto-ecole":
+  - vie/permis-conduire
+"auto ecole":
+  - vie/permis-conduire
+"examen theorique":
+  - vie/permis-conduire
+"feu vert":
+  - vie/permis-conduire
+"assurance habitation":
+  - logement/assurance-habitation
+"assurance incendie":
+  - logement/assurance-habitation
+"incendie":
+  - logement/assurance-habitation
+  - urgence/lignes-ecoute
+"antipoison":
+  - urgence/lignes-ecoute
+"anti-poison":
+  - urgence/lignes-ecoute
+"intoxication":
+  - urgence/lignes-ecoute
+"medecin de garde":
+  - urgence/lignes-ecoute
+  - sante/urgence-medicale
+"pharmacie de garde":
+  - sante/urgence-medicale
+"tempete":
+  - urgence/lignes-ecoute
+"inondation":
+  - urgence/lignes-ecoute
+"go pass":
+  - vie/transport

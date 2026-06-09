@@ -1,0 +1,95 @@
+id: urgence
+title: "Aide & urgences"
+subtitle: "Trouver de l'aide rapidement"
+color: urgence
+icon: sos
+objective: "Obtenir de l'aide rapidement en cas de besoin (mal-être, violence, addiction, urgence)."
+source: "107.be · 0800-32.123 (Violence) · belgium.be"
+sections:
+  - id: lignes-ecoute
+    title: "Lignes d'écoute et numéros utiles"
+    summary: "Numéros gratuits et confidentiels."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Tu as besoin de parler ? Voici des numéros gratuits, anonymes et disponibles à toute heure.</p>
+      
+      <h2>Urgences vitales</h2>
+      <ul>
+        <li><strong>112</strong> — Numéro européen unique (police, ambulance, pompiers). Gratuit, 24/7.</li>
+        <li><strong>101</strong> — Police.</li>
+        <li><strong>100</strong> — Ambulance et pompiers.</li>
+        <li><strong>070 245 245</strong> — Centre Anti-Poisons. Gratuit, 24/7. À appeler en cas d'intoxication (médicament, produit ménager, plante…).</li>
+        <li><strong>1733</strong> — Médecin généraliste de garde (soir, nuit, week-end pour les soins courants non vitaux).</li>
+        <li><strong>1722</strong> — Pompiers, intempéries non urgentes (uniquement en cas de code orange/rouge IRM, pour désengorger le 112).</li>
+      </ul>
+      
+      <h2>Écoute et soutien moral</h2>
+      <ul>
+        <li><strong>103</strong> — Écoute Enfants Ado (jusqu'à 20 ans). Gratuit, anonyme, 7j/7.</li>
+        <li><strong>107</strong> — Télé-Accueil. Pour parler à quelqu'un quand ça ne va pas, 24/7.</li>
+        <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>. Gratuit, 24/7.</li>
+      </ul>
+      
+      <h2>Violences</h2>
+      <ul>
+        <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme.</li>
+        <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>.</li>
+        <li><strong>SOS Enfants : numéros locaux</strong> (consulter <a href="https://www.one.be" target="_blank" rel="noopener">one.be</a>).</li>
+      </ul>
+      
+      <h2>Addiction</h2>
+      <ul>
+        <li><strong>Infor-Drogues : 02 227 52 52</strong>. Anonyme, gratuit.</li>
+        <li><strong>Aide Alcool : 0800 358 88</strong>.</li>
+      </ul>
+  - id: services-aide
+    title: "Les services d'aide près de moi"
+    summary: "AMO, planning familial, CPAS, Inforjeunes."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Voici les services qui peuvent t'accompagner dans la durée. Tous sont gratuits et confidentiels.</p>
+      
+      <h2>Les AMO (Aide en Milieu Ouvert)</h2>
+      <p>Pour les jeunes : écoute, animations, aide aux démarches. Gratuit, confidentiel, sans rendez-vous obligatoire.</p>
+      <p>Trouve une AMO : <a href="https://inforjeunes.be/centre/" target="_blank" rel="noopener">inforjeunes.be/centre</a></p>
+      
+      <h2>Inforjeunes</h2>
+      <p>Info, conseils, aide aux démarches (logement, études, emploi, santé). Présent dans toute la Wallonie. Site : <a href="https://inforjeunes.be" target="_blank" rel="noopener">inforjeunes.be</a></p>
+      
+      <h2>Le service Droit des Jeunes</h2>
+      <p>Pour toute question juridique : bail, contrat, conflit avec un employeur, démêlés administratifs. Gratuit. Site : <a href="https://www.sdj.be" target="_blank" rel="noopener">sdj.be</a></p>
+      
+      <h2>Envol'toit (Inforjeunes)</h2>
+      <p>Le portail dédié à l'autonomie des jeunes : logement, budget, démarches. Plein de fiches claires. Site : <a href="https://envoltoit.be" target="_blank" rel="noopener">envoltoit.be</a></p>
+      
+      <h2>Le CPAS</h2>
+      <p>Aide sociale et financière de ta commune. RIS, aides ponctuelles, accompagnement.</p>
+      
+      <h2>Le planning familial</h2>
+      <p>Santé, sexualité, écoute psychologique, conseil juridique. Tarifs adaptés aux revenus.</p>
+      
+      <h2>La maison médicale</h2>
+      <p>Soins gratuits si tu t'inscris au forfait. <a href="https://www.maisonmedicale.org" target="_blank" rel="noopener">maisonmedicale.org</a></p>
+  - id: mal-etre
+    title: "Quand ça ne va pas"
+    summary: "Anxiété, dépression, idées noires : par où commencer."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Tu te sens mal, anxieux·se, tu n'arrives plus à dormir, tu as des idées noires ? <strong>Tu n'es pas seul·e, et ça se soigne.</strong> Voici des premières pistes.</p>
+      
+      <h2>Parler à quelqu'un</h2>
+      <ul>
+        <li><strong>107 (Télé-Accueil)</strong> : pour parler à quelqu'un, à toute heure.</li>
+        <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>.</li>
+        <li><strong>103</strong> si tu as moins de 20 ans.</li>
+        <li>Une AMO ou un planning familial : tu peux y aller librement.</li>
+      </ul>
+      
+      <h2>Voir un·e professionnel·le</h2>
+      <ul>
+        <li><strong>Ton médecin traitant</strong> peut t'orienter et prescrire un suivi psy.</li>
+        <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e à <strong>11 €</strong> la séance (4 € si BIM). Demande à ton médecin.</li>
+        <li>Le <strong>service de santé mentale</strong> de ta région.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Tu n'es pas faible</strong>Demander de l'aide quand on souffre, c'est courageux. Aucun·e pro ne te jugera.</div></div>

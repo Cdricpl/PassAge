@@ -1,0 +1,483 @@
+id: vie
+title: "Vie quotidienne"
+subtitle: "Transport, alimentation, débrouille"
+color: vie
+icon: cart
+objective: "Gérer ton quotidien plus facilement : se déplacer, se nourrir, économiser."
+source: "infotec.be (TEC) · wallonie.be · ibpt.be"
+sections:
+  - id: communication
+    title: "GSM, internet, abonnements"
+    summary: "Mettre ton GSM à ton nom, choisir un opérateur, tarif social."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Si ton numéro est encore lié au contrat de ta famille (ou famille d'accueil), tu peux le garder — mais le jour où tu prends ton autonomie, il faudra <strong>le mettre à ton nom</strong>. Voici comment t'y retrouver.</p>
+      
+      <h2>Garder ton numéro, changer le titulaire</h2>
+      <p>C'est gratuit et ça se fait en quelques étapes. Tu contactes ton opérateur (Proximus, Orange, Telenet/BASE, VOO…), tu demandes un <strong>transfert de titulaire</strong>. La personne actuellement titulaire doit signer pour autoriser, et toi tu fournis ta carte d'identité + un IBAN pour la domiciliation.</p>
+      
+      <h2>Comparer les opérateurs</h2>
+      <p>Les offres bougent souvent. Avant de signer, compare sur :</p>
+      <ul>
+        <li><a href="https://www.mesfournisseurs.be/mobile/" target="_blank" rel="noopener">mesfournisseurs.be</a> — comparateur indépendant GSM</li>
+        <li><a href="https://www.bestetarif.be" target="_blank" rel="noopener">bestetarif.be</a> — comparateur officiel BIPT (téléphonie + internet)</li>
+      </ul>
+      
+      <h2>Le tarif social internet (19 €/mois)</h2>
+      <p>Si tu touches le RIS, l'aide sociale du CPAS, ou la GRAPA, tu as droit à l'<strong>offre internet sociale</strong> : <strong>19 € par mois maximum</strong>, vitesse minimum 30 Mbps, 150 Go inclus.</p>
+      <ul>
+        <li>Disponible chez Proximus, Orange (sous certaines conditions), VOO (Wallonie).</li>
+        <li>Demande à l'opérateur ou via <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">le SPF Économie</a>.</li>
+      </ul>
+      
+      <h2>Astuces pour réduire la facture</h2>
+      <ul>
+        <li><strong>Forfait avec wifi à la maison</strong> : utilise ton wifi pour ne pas exploser les data mobiles.</li>
+        <li><strong>Cartes prépayées</strong> : pas de contrat, tu recharges quand tu veux.</li>
+        <li><strong>Pas de roaming UE</strong> : depuis 2017, tu utilises ton forfait belge dans toute l'UE sans surcoût.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Avant de signer</strong>Vérifie toujours : durée d'engagement (12 ou 24 mois), frais de résiliation anticipée, prix après les 6 premiers mois (souvent en promo, puis ça monte).</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.mesfournisseurs.be/mobile/" target="_blank" rel="noopener">mesfournisseurs.be</a> — comparateur GSM indépendant</li>
+        <li><a href="https://www.bestetarif.be" target="_blank" rel="noopener">bestetarif.be</a> — comparateur officiel BIPT</li>
+        <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a> — offre internet sociale à 19 €/mois si tu touches le RIS</li>
+      </ul>
+  - id: permis-conduire
+    title: "Le permis de conduire (B)"
+    summary: "Théorique, pratique, filières, coût en Wallonie 2026."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
+      
+      <h2>Étape 1 : l'examen théorique (dès 17 ans)</h2>
+      <ul>
+        <li>50 questions à choix multiples.</li>
+        <li><strong>17 € en 2026</strong>.</li>
+        <li>Tu peux te préparer avec le livre <strong>Feu Vert</strong>, des sites en ligne ou en auto-école.</li>
+        <li>Plus d'infos : <a href="https://www.wallonie.be/fr/demarches/passer-le-permis-de-conduire-theorique-categorie-b" target="_blank" rel="noopener">wallonie.be</a></li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Depuis le 1er janvier 2026</strong>Tu dois passer le théorique <strong>en Wallonie</strong> si tu veux passer le pratique en Wallonie. Plus possible de mixer Bruxelles + Wallonie.</div></div>
+      
+      <h2>Étape 2 : choisir ta filière pour le pratique</h2>
+      
+      <h3>Filière libre (M36)</h3>
+      <ul>
+        <li>Tu apprends avec un·e <strong>guide</strong> (parent, ami·e, etc., qui a son permis depuis ≥ 8 ans).</li>
+        <li>Obligatoire : <strong>rendez-vous pédagogique de 3 heures</strong> avec ton·ta guide avant de commencer.</li>
+        <li>Stage minimum 3 mois avant l'examen pratique.</li>
+        <li>Coût total estimé : <strong>150 à 250 €</strong> (examens + RDV pédago).</li>
+      </ul>
+      
+      <h3>Auto-école</h3>
+      <ul>
+        <li>Tu prends des cours encadrés.</li>
+        <li>Plus cher (souvent <strong>1500 à 2500 €</strong>) mais plus encadré.</li>
+        <li>Tu peux faire des forfaits ou des heures à l'unité.</li>
+      </ul>
+      
+      <h3>Filière accès direct (auto-école sans guide)</h3>
+      <p>Une variante d'auto-école avec une période de pratique courte. Renseigne-toi auprès des auto-écoles agréées.</p>
+      
+      <h2>Tu n'as pas les moyens&nbsp;?</h2>
+      <p>Le <strong>CPAS</strong> peut prendre en charge tout ou partie du permis si tu démontres que c'est nécessaire pour <strong>trouver un emploi</strong> ou pour ton autonomie. Demande à ton·ta assistant·e social·e.</p>
+      <p>Certaines régions proposent aussi des <strong>aides spécifiques au permis pour les jeunes</strong> ; renseigne-toi à ta commune.</p>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.wallonie.be/fr/demarches/passer-le-permis-de-conduire-theorique-categorie-b" target="_blank" rel="noopener">Wallonie — permis de conduire</a></li>
+        <li><a href="https://www.feuvert.be" target="_blank" rel="noopener">Feu Vert</a> — préparation aux examens</li>
+      </ul>
+  - id: transport
+    title: "Bus, train, vélo"
+    summary: "TEC, SNCB, abonnement combiné, vélo en libre-service."
+    lastChecked: "03/06/2026"
+    body: |
+      <h2>TEC (Wallonie) — bus, trams</h2>
+      <ul>
+        <li>Tarif réduit pour les <strong>moins de 25 ans</strong>.</li>
+        <li>Abonnement annuel TEC <strong>jusqu'à 24 ans : 12 €/an</strong> (oui, douze euros).</li>
+        <li>Site et appli : <a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a></li>
+      </ul>
+      
+      <h2>SNCB — trains</h2>
+      <ul>
+        <li><strong>Go Pass</strong> : pour les -26 ans. 10 trajets simples sur la Belgique pour ~60 €.</li>
+        <li><strong>Pass étudiant</strong> : abonnement scolaire entre la gare la plus proche de chez toi et celle de ton école/fac.</li>
+        <li>Simulateur tarif et achat : <a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a></li>
+      </ul>
+      
+      <h2>Combiné SNCB + TEC</h2>
+      <p>Si tu prends le train ET le bus quotidiennement, demande l'<strong>abonnement combiné</strong>. Plus avantageux que les deux pris séparément.</p>
+      
+      <h2>Vélo</h2>
+      <ul>
+        <li><strong>Vélos électriques en libre-service</strong> : Liège (Liégeois et environs), Charleroi, Mons (renseigne-toi à ta commune).</li>
+        <li><strong>Achat d'un vélo d'occasion</strong> : entre 100 et 300 €. Vérifie freins, chaîne, gonflage avant d'acheter.</li>
+      </ul>
+      
+      <h2>Permis de conduire</h2>
+      <p>Voir la fiche dédiée <a href="#/fiche/vie/permis-conduire">Le permis de conduire (B)</a> pour toutes les étapes (théorique, pratique, filières, coût) et les aides possibles via le CPAS.</p>
+      
+      <div class="callout tip"><div><strong>Tarif social transport</strong>Si tu touches le RIS du CPAS, l'abonnement TEC est gratuit (et non plus 12 €). Demande à ton·ta assistant·e social·e au CPAS.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a> — abonnements TEC et tarifs jeunes</li>
+        <li><a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> — Go Pass et abonnements SNCB</li>
+      </ul>
+  - id: alimentation
+    title: "Alimentation : manger bien sans se ruiner"
+    summary: "Pyramide, conservation, anti-gaspi, aide alimentaire."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>« Ça y est, je suis libre, ça sera fast-food tous les jours. » Tentant — mais ton corps et ton portefeuille vont le sentir vite. Quelques repères simples suffisent à manger correctement sans se ruiner.</p>
+      
+      <h2>La base : la pyramide alimentaire</h2>
+      <p>Pas de régime, juste un équilibre. Sur une semaine, vise&nbsp;:</p>
+      <ul>
+        <li><strong>Beaucoup</strong> : eau, légumes, fruits.</li>
+        <li><strong>Régulièrement</strong> : féculents complets (pâtes, riz, pain), légumineuses (lentilles, pois chiches).</li>
+        <li><strong>Modérément</strong> : viandes, poissons, œufs, produits laitiers.</li>
+        <li><strong>Avec parcimonie</strong> : graisses, sucres, alcool, plats préparés.</li>
+      </ul>
+      <p>Plus d'infos sur <a href="https://www.foodinaction.com" target="_blank" rel="noopener">foodinaction.com</a> ou <a href="https://www.mongeneraliste.be" target="_blank" rel="noopener">mongeneraliste.be</a>.</p>
+      
+      <h2>Faire ses courses sans exploser le budget</h2>
+      <ol class="fiche-ol">
+        <li><strong>Prépare un menu</strong> pour la semaine avant de partir au magasin.</li>
+        <li><strong>Fais une liste</strong> et tiens-toi à ta liste.</li>
+        <li><strong>Le ventre plein</strong> : on achète moins n'importe quoi quand on n'a pas faim.</li>
+        <li><strong>Marché en fin de journée</strong> : légumes parfois 50 % moins cher.</li>
+        <li><strong>Marques distributeurs</strong> : souvent identiques aux marques connues, 30–50 % moins cher.</li>
+      </ol>
+      
+      <h2>Anti-gaspi et seconde main alimentaire</h2>
+      <ul>
+        <li><a href="https://www.toogoodtogo.be" target="_blank" rel="noopener">Too Good To Go</a>, <a href="https://www.phenix.be" target="_blank" rel="noopener">Phenix</a> : invendus boulangeries, restos, supermarchés à 30–70 % moins cher.</li>
+        <li><strong>Frigos communautaires</strong> : présents dans plusieurs communes wallonnes (renseigne-toi à ta commune).</li>
+        <li><strong>Boîtes à dons</strong> dans certains quartiers : on prend, on dépose.</li>
+      </ul>
+      
+      <h2>Bien conserver ce qu'on achète</h2>
+      <ul>
+        <li><strong>Frigo</strong> : pas trop plein (l'air doit circuler), aliments dans des boîtes hermétiques quand l'emballage est ouvert.</li>
+        <li><strong>Zones de température</strong> : viande/poisson dans la zone froide (~4 °C), légumes dans le bac à légumes, restes en haut.</li>
+        <li><strong>Nettoyer le frigo</strong> 1 fois par mois (eau + vinaigre blanc).</li>
+        <li><strong>Congélateur</strong> : viande/sauces/poisson 3 mois max ; bœuf/volaille/légumes 1 an. <strong>Jamais recongeler</strong> un aliment décongelé.</li>
+      </ul>
+      
+      <h2>Recettes simples à connaître</h2>
+      <p>Avec quelques bases (œufs, pâtes, riz, légumineuses, conserves de légumes), tu te débrouilles. Cherche en ligne&nbsp;:</p>
+      <ul>
+        <li>« recette pâtes œufs lardons »</li>
+        <li>« lentilles corail express »</li>
+        <li>« omelette pommes de terre »</li>
+        <li>« riz cantonnais maison »</li>
+      </ul>
+      
+      <h2>L'aide alimentaire — c'est un droit</h2>
+      <p>Si tu galères, plusieurs services existent <strong>gratuitement</strong>&nbsp;:</p>
+      <ul>
+        <li><a href="https://www.restosducoeur.be" target="_blank" rel="noopener">Restos du Cœur</a></li>
+        <li><a href="https://www.croix-rouge.be" target="_blank" rel="noopener">Croix-Rouge</a> — colis et épiceries sociales</li>
+        <li>Épiceries sociales locales (à ~10–30 % du prix normal)</li>
+        <li>Ton <strong>CPAS</strong> peut t'orienter et accorder une aide ponctuelle — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> et <a href="#/fiche/urgence/services-aide">Les services d'aide près de moi</a>.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Pas de honte</strong>Demander de l'aide alimentaire, c'est un droit. Beaucoup de jeunes y ont recours à un moment de leur vie. Personne ne te demandera de te justifier.</div></div>
+  - id: lessive
+    title: "Faire sa lessive"
+    summary: "Trier, doser, programmer, étendre : les bases pour pas tout abîmer."
+    lastChecked: "03/06/2026"
+    source: "ecoconso.be · inforjeunes.be"
+    body: |
+      <p>Première lessive sans tes parents ou ta famille d'accueil ? Pas de panique, ce n'est pas sorcier. Quelques règles simples suffisent à ne pas transformer ton t-shirt blanc en t-shirt rose.</p>
+      
+      <h2>1. Trier ton linge</h2>
+      <p>C'est l'étape la plus importante. Fais 3-4 piles :</p>
+      <ul>
+        <li><strong>Blanc et clair</strong> (chemises blanches, sous-vêtements clairs).</li>
+        <li><strong>Couleurs</strong> (t-shirts colorés, jeans non noirs).</li>
+        <li><strong>Foncé / noir</strong> (jeans noirs, hoodies foncés).</li>
+        <li><strong>Délicat</strong> (laine, soie, lingerie) — à part, programme spécial.</li>
+      </ul>
+      <p>Sépare aussi le linge <strong>très sale</strong> (sport, jardinage) du reste — sinon tu salis le reste.</p>
+      
+      <div class="callout warn"><div><strong>Étiquette = ta meilleure amie</strong>Regarde toujours l'étiquette à l'intérieur du vêtement. Les symboles indiquent la température max, si tu peux mettre au sèche-linge, si c'est lavable en machine, etc.</div></div>
+      
+      <h2>2. Préparer les vêtements</h2>
+      <ul>
+        <li><strong>Vide les poches</strong> (mouchoirs, billets, écouteurs, monnaie…).</li>
+        <li><strong>Ferme</strong> les fermetures éclair et boutons (sinon ça arrache).</li>
+        <li><strong>Retourne</strong> les couleurs et les vêtements imprimés sur l'envers (évite la décoloration).</li>
+        <li>Mets les <strong>petites pièces fragiles</strong> (lingerie, chaussettes) dans un filet de lavage si tu en as un.</li>
+      </ul>
+      
+      <h2>3. Charger la machine</h2>
+      <ul>
+        <li><strong>Ne surcharge pas</strong> : le linge doit pouvoir tourner librement. Repère : ta main doit passer au-dessus.</li>
+        <li>Pour une machine standard de 7 kg, ça fait environ <strong>une grande corbeille</strong>.</li>
+      </ul>
+      
+      <h2>4. Doser la lessive</h2>
+      <p>Trop de lessive ne lave pas mieux — au contraire, ça rince mal et raidit les fibres.</p>
+      <ul>
+        <li>Suis les <strong>indications sur l'emballage</strong> (bouchon doseur).</li>
+        <li>Pour une eau peu calcaire (la Belgique varie selon la région), <strong>réduis un peu</strong>.</li>
+        <li>Liquide ou poudre, c'est selon ton goût — la poudre est souvent moins chère.</li>
+        <li><strong>Adoucissant</strong> : facultatif. Évite-le sur les serviettes (perd l'absorbance) et les vêtements de sport techniques.</li>
+      </ul>
+      
+      <h2>5. Choisir le programme</h2>
+      <ul>
+        <li><strong>30 °C</strong> : couleurs, synthétique, vêtements peu sales. Économique en énergie — <strong>ça suffit pour 90 % du linge</strong>.</li>
+        <li><strong>40 °C</strong> : coton clair, linge un peu plus sale.</li>
+        <li><strong>60 °C</strong> : draps, serviettes, sous-vêtements, taches biologiques (sang, transpiration tenace).</li>
+        <li><strong>Délicat / Laine</strong> : programme dédié, eau froide, essorage doux. Indispensable pour la laine (sinon ça rétrécit).</li>
+        <li><strong>Essorage</strong> : 1000-1200 tours/min pour le coton standard, 600-800 pour le délicat.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Astuce écologique et économique</strong>Lave à 30 °C dès que possible. Tu économises <strong>jusqu'à 60 %</strong> d'électricité par rapport à un 60 °C — la facture annuelle s'en ressent.</div></div>
+      
+      <h2>6. Étendre et sécher</h2>
+      <ul>
+        <li><strong>Sors la machine vite</strong> après la fin (sinon ça sent le moisi humide).</li>
+        <li><strong>Secoue</strong> chaque vêtement avant de l'étendre (moins de plis).</li>
+        <li>Étends les couleurs à l'envers <strong>à l'abri du soleil direct</strong> (évite la décoloration).</li>
+        <li><strong>Sèche-linge</strong> : économise du temps mais coûte cher en élec — nettoie le filtre à peluches <strong>à chaque cycle</strong>.</li>
+        <li><strong>Pas de sèche-linge</strong> pour : laine, soie, élasthanne, vêtements de sport techniques (les fibres se cassent).</li>
+      </ul>
+      
+      <h2>7. Détacher les taches courantes</h2>
+      <ul>
+        <li><strong>Tache fraîche = tache facile.</strong> Agis vite.</li>
+        <li><strong>Sang</strong> : eau <strong>froide</strong> (l'eau chaude cuit la tache). Frotte avec du savon de Marseille.</li>
+        <li><strong>Gras / huile</strong> : saupoudre de talc ou de farine, laisse absorber, puis lave avec liquide vaisselle avant de mettre en machine.</li>
+        <li><strong>Vin / café</strong> : eau gazeuse + savon de Marseille.</li>
+        <li><strong>Sueur (auréoles)</strong> : vinaigre blanc avant lavage, ou bicarbonate de soude en pâte.</li>
+        <li><strong>Encre</strong> : alcool ménager (sur un coton), tamponne doucement.</li>
+      </ul>
+      
+      <h2>8. Entretenir ta machine</h2>
+      <ul>
+        <li><strong>1 fois par mois</strong> : programme 90 °C à vide avec <strong>1 verre de vinaigre blanc</strong> dans le tambour → détartre et désinfecte.</li>
+        <li><strong>Après chaque lavage</strong> : laisse la <strong>porte entrouverte</strong> (évite l'humidité et les odeurs).</li>
+        <li><strong>Tous les 6 mois</strong> : nettoie le filtre de vidange (en bas devant, souvent un petit volet) — sinon ça bouche.</li>
+        <li>Essuie le joint en caoutchouc autour de la porte de temps en temps.</li>
+      </ul>
+      
+      <h2>Pas de machine chez toi ?</h2>
+      <p>Direction le lavoir (laverie automatique). Voir la fiche dédiée : <a href="#/fiche/vie/lavoir">Les lavoirs (laveries automatiques)</a>.</p>
+      
+      <div class="callout tip"><div><strong>Côté budget</strong>Les marques distributeurs (Carrefour, Colruyt, Delhaize 365…) lavent <strong>aussi bien</strong> que les grandes marques pour 30-50 % moins cher. Le savon de Marseille et le vinaigre blanc remplacent la moitié des produits de l'industrie pour quelques euros par mois.</div></div>
+  - id: lavoir
+    title: "Les lavoirs (laveries automatiques)"
+    summary: "Quand y aller, comment ça marche, combien ça coûte."
+    lastChecked: "03/06/2026"
+    source: "inforjeunes.be · wassalon.be"
+    body: |
+      <p>Pas de machine chez toi ? En kot, en colocation sans accès lave-linge, ou ta machine est en panne ? Direction le <strong>lavoir</strong> (aussi appelé laverie automatique ou laundromat). C'est simple, rapide, et ça dépanne bien.</p>
+      
+      <h2>Quand y aller</h2>
+      <ul>
+        <li>Tu n'as pas de lave-linge chez toi.</li>
+        <li>Tu vis en kot ou en logement étudiant sans buanderie.</li>
+        <li>Ta machine est en panne (en attendant la réparation).</li>
+        <li>Tu dois laver une <strong>grosse pièce</strong> (couette, gros édredon, sac de couchage) qui ne rentre pas dans une machine domestique standard.</li>
+      </ul>
+      
+      <h2>Comment ça marche</h2>
+      <ol class="fiche-ol">
+        <li>Apporte ton linge <strong>déjà trié</strong> (voir <a href="#/fiche/vie/lessive">Faire sa lessive</a> pour les bases du tri).</li>
+        <li>Choisis une <strong>machine libre</strong> selon la taille (souvent S / M / L / XL).</li>
+        <li><strong>Paie</strong> : selon l'endroit, c'est des jetons, de la monnaie, une appli (Wassalon par ex.), ou la carte bancaire.</li>
+        <li>Mets ta <strong>lessive</strong> dans le bac (souvent à apporter de chez toi, parfois distribuée sur place pour 1-2 € de plus).</li>
+        <li>Choisis le <strong>programme</strong> (30 / 40 / 60 °C) et lance.</li>
+        <li>Cycle de lavage : <strong>30 à 50 minutes</strong>. Tu peux rester ou repartir (à tes risques).</li>
+        <li>Sortie de machine, direction <strong>sèche-linge</strong> (autre machine, autre paiement, ~5 €).</li>
+        <li>Plie et c'est fini.</li>
+      </ol>
+      
+      <h2>Combien ça coûte (Belgique 2026)</h2>
+      <ul>
+        <li><strong>Machine standard</strong> (7-8 kg) : <strong>4 à 7 €</strong> selon la taille et l'endroit.</li>
+        <li><strong>Grosse machine</strong> (16-18 kg, pour les couettes) : <strong>10 à 14 €</strong>.</li>
+        <li><strong>Sèche-linge</strong> : <strong>3 à 6 €</strong> par cycle (~30 min, parfois 2 cycles nécessaires).</li>
+        <li><strong>Lessive sur place</strong> (si tu n'en as pas apporté) : <strong>1 à 2 €</strong>.</li>
+        <li><strong>Total pour une lessive complète</strong> : compte <strong>8 à 13 €</strong>.</li>
+      </ul>
+      
+      <h2>Astuces pour économiser et gagner du temps</h2>
+      <ul>
+        <li><strong>Apporte ta lessive de chez toi</strong> (économie de 2-3 € par fois).</li>
+        <li><strong>Remplis bien la machine</strong> : une grande machine 1× par mois revient moins cher que 4 petites.</li>
+        <li><strong>Heures creuses</strong> : matin tôt, milieu de semaine — moins d'attente.</li>
+        <li>Apporte un <strong>livre, écouteurs ou ton téléphone chargé</strong> : tu as ~45-90 min à occuper.</li>
+        <li>Plie <strong>sur place</strong> avant de remettre en sac (moins de plis chez toi).</li>
+        <li>Vérifie les <strong>poches</strong> avant de mettre dans la machine (oublier 5 € dans un jean coûte autant qu'une lessive).</li>
+      </ul>
+      
+      <h2>Chaînes et lavoirs en Belgique</h2>
+      <ul>
+        <li><strong>Wassalon</strong> — la plus grande chaîne (Wallonie + Bruxelles). Souvent paiement par appli.</li>
+        <li><strong>MyWash</strong> — plusieurs villes wallonnes.</li>
+        <li><strong>Laveries indépendantes</strong> — il y en a dans presque toutes les villes. Cherche "laverie automatique" + ta ville sur Google Maps.</li>
+      </ul>
+      
+      <h2>Bons plans</h2>
+      <ul>
+        <li><strong>CPAS</strong> : si tu galères pour payer ta lessive, ils peuvent accorder une aide ponctuelle (les vêtements propres font partie des besoins de base).</li>
+        <li>Certaines <strong>AMO</strong>, maisons de jeunes ou foyers d'accueil ont des machines à laver accessibles à prix symbolique ou gratuites pour leurs membres.</li>
+        <li><strong>Université ou haute école</strong> : certains kots étudiants ont une buanderie partagée à prix réduit.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Pour les grosses pièces</strong>Couettes, gros édredons, gros sacs de couchage : préfère le lavoir, même si tu as une machine chez toi. Les grosses machines (16+ kg) lavent et essorent correctement ce que ta machine domestique fait mal (et risque de casser).</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li>Voir la fiche <a href="#/fiche/vie/lessive">Faire sa lessive</a> pour les bases (tri, dosage, programmes).</li>
+        <li>Voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> pour les aides liées au quotidien.</li>
+      </ul>
+  - id: courrier
+    title: "Écrire une lettre et l'envoyer"
+    summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet."
+    lastChecked: "03/06/2026"
+    source: "bpost.be · inforjeunes.be"
+    body: |
+      <p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>
+      
+      <h2>1. Rédiger ta lettre</h2>
+      <p>Une lettre officielle suit toujours la même structure :</p>
+      <ul>
+        <li><strong>En haut à gauche</strong> : tes coordonnées (prénom, nom, adresse, e-mail, téléphone).</li>
+        <li><strong>En haut à droite</strong> : le nom et l'adresse du destinataire.</li>
+        <li><strong>La date</strong> : juste en dessous, à droite (ex : Liège, le 3 juin 2026).</li>
+        <li><strong>Objet</strong> : une ligne résumant le sujet (ex : <em>Objet : résiliation du bail — adresse du logement</em>).</li>
+        <li><strong>Corps de la lettre</strong> : clair, court, une idée par paragraphe.</li>
+        <li><strong>Formule de politesse</strong> : simple suffit — <em>« Veuillez agréer, Madame, Monsieur, mes salutations distinguées. »</em></li>
+        <li><strong>Ta signature</strong> (manuscrite si imprimé).</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Modèles gratuits</strong>Inforjeunes, le Service Droit des Jeunes et ton AMO ont des modèles de lettres types pour les situations courantes (résiliation de bail, demande au CPAS, contestation…). Demande-leur avant de partir de zéro.</div></div>
+      
+      <h2>2. Mettre l'adresse sur l'enveloppe</h2>
+      <p>Écris ou imprime :</p>
+      <ul>
+        <li><strong>Centre de l'enveloppe</strong> : prénom + nom du destinataire, nom de l'organisme si besoin, rue + numéro, code postal + commune.</li>
+        <li><strong>Coin supérieur gauche</strong> (ou au dos) : ton adresse d'expéditeur — indispensable si la lettre revient.</li>
+      </ul>
+      <p>Exemple d'adresse destinataire :</p>
+      <pre style="background:var(--color-surface-2);padding:var(--sp-3);border-radius:var(--radius-sm);font-size:var(--fs-sm);line-height:1.6;">Madame Dupont
+      CPAS de Liège
+      Rue du Commerce 10
+      4000 Liège</pre>
+      
+      <h2>3. Choisir le bon type d'envoi</h2>
+      <ul>
+        <li><strong>Lettre standard (Prior / Non Prior)</strong> : pour un courrier ordinaire. <strong>Prior</strong> arrive le lendemain ouvrable, <strong>Non Prior</strong> en 3 jours. Coût : ~1,20 € à 1,50 € (format standard, jusqu'à 50 g).</li>
+        <li><strong>Lettre recommandée</strong> : indispensable quand tu dois <strong>prouver que tu as envoyé</strong> quelque chose (préavis de bail, résiliation de contrat, réclamation…). Le facteur fait signer le destinataire. Coût : ~8 à 10 € (recommandé simple avec accusé de réception).</li>
+        <li><strong>Recommandé avec accusé de réception (AR)</strong> : tu reçois une carte signée par le destinataire = preuve de réception.</li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Bail, résiliation, préavis</strong>Ces courriers <strong>doivent</strong> être envoyés en recommandé. Sans ça, tu ne pourras pas prouver la date d'envoi si un litige survient.</div></div>
+      
+      <h2>4. Affranchir ta lettre</h2>
+      <p>L'<strong>affranchissement</strong> = le timbre qui paie le transport. Plusieurs façons de l'obtenir :</p>
+      <ul>
+        <li><strong>Timbre à la poste</strong> : au bureau de poste bpost ou dans un point bpost (tabac, Proxy Delhaize, etc.). Dis la taille et le type d'envoi, on t'indique le montant.</li>
+        <li><strong>Timbre en ligne</strong> : <a href="https://www.bpost.be" target="_blank" rel="noopener">bpost.be</a> — tu imprimes le timbre chez toi (e-timbre).</li>
+        <li><strong>Affranchissement à la machine</strong> : dans certains bureaux de poste, tu pèses toi-même l'enveloppe et imprimes le bon montant.</li>
+      </ul>
+      <p>Le timbre se colle en haut à droite de l'enveloppe.</p>
+      
+      <h2>5. Poster la lettre</h2>
+      <ul>
+        <li><strong>Boîte aux lettres rouge bpost</strong> : dans la rue, dans les bureaux de poste, dans certains points bpost. Collecte généralement 1× par jour en semaine.</li>
+        <li><strong>Au guichet bpost</strong> : pour les recommandés ou si tu veux une preuve de dépôt immédiate.</li>
+      </ul>
+      <p>Trouver le bureau bpost ou la boîte la plus proche : <a href="https://www.bpost.be/fr/trouver-un-point-de-service" target="_blank" rel="noopener">bpost.be — trouver un point de service</a>.</p>
+      
+      <h2>Délais indicatifs (Belgique 2026)</h2>
+      <ul>
+        <li><strong>Prior</strong> : livraison le lendemain ouvrable.</li>
+        <li><strong>Non Prior</strong> : livraison en 2–3 jours ouvrables.</li>
+        <li><strong>Recommandé</strong> : livraison le lendemain ouvrable (comme Prior), mais avec signature.</li>
+      </ul>
+      
+      <h2>Tu n'as pas d'imprimante ?</h2>
+      <ul>
+        <li>La bibliothèque communale propose souvent une imprimante à prix symbolique.</li>
+        <li>Inforjeunes ou ton AMO peuvent t'aider à imprimer sur place.</li>
+        <li>Certains Copy-shops (Repro, Print Shop…) impriment pour quelques centimes la page.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Garde une copie</strong>Avant d'envoyer, prends toujours une photo ou garde un double de ta lettre. Si un litige survient, tu pourras prouver ce que tu as écrit.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.bpost.be/fr/envoyer/lettres-et-cartes" target="_blank" rel="noopener">bpost.be — envoyer des lettres</a> (tarifs et services)</li>
+        <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — modèles de lettres type</li>
+      </ul>
+  - id: cuisine
+    title: "Cuisiner simple et pas cher"
+    summary: "Ustensiles de base, placard minimum et liens vers des sites de recettes faciles."
+    lastChecked: "03/06/2026"
+    source: "foodinaction.com · ecoconso.be · inforjeunes.be"
+    body: |
+      <p>Pas besoin d'être cuisinier pour se nourrir correctement. Avec quelques ustensiles et un placard de base, tu peux te débrouiller — et trouver l'inspiration en quelques secondes en ligne.</p>
+      
+      <h2>Les ustensiles indispensables</h2>
+      <p>Pas besoin de tout : juste ça pour commencer.</p>
+      <ul>
+        <li><strong>1 casserole</strong> (pour les pâtes, le riz, les soupes)</li>
+        <li><strong>1 poêle</strong> (pour tout faire sauter, les omelettes)</li>
+        <li><strong>1 couteau de cuisine</strong> (1 seul bon couteau suffit)</li>
+        <li><strong>1 planche à découper</strong></li>
+        <li><strong>1 passoire</strong> (pour égoutter les pâtes)</li>
+        <li><strong>1 spatule ou cuillère en bois</strong></li>
+        <li><strong>1 ouvre-boîte</strong></li>
+      </ul>
+      <p>Tout ça se trouve en seconde main pour 5–10 €, ou dans les vide-greniers. Voir <a href="#/fiche/argent/aides-supp">Bons plans : seconde main</a>.</p>
+      
+      <h2>Le placard de débrouille</h2>
+      <p>Ces ingrédients durent longtemps et permettent de tout cuisiner&nbsp;:</p>
+      <ul>
+        <li>Pâtes (~1 €/500 g)</li>
+        <li>Riz (~1 €/500 g)</li>
+        <li>Lentilles corail ou pois chiches en boîte (~1 €)</li>
+        <li>Boîtes de tomates concassées (~0,70 €)</li>
+        <li>Thon ou sardines en boîte (~1 €)</li>
+        <li>Huile (tournesol ou olive, petite bouteille)</li>
+        <li>Sel, poivre</li>
+        <li>Ail (1 tête dure 3 semaines à température ambiante)</li>
+        <li>Quelques épices : cumin, curry, origan — 1 € chacun en épicerie ou au marché</li>
+      </ul>
+      
+      <h2>Quelques règles de sécurité alimentaire</h2>
+      <ul>
+        <li><strong>Frigo à 4 °C max</strong> : viande et poisson en bas (zone froide), restes dans des boîtes fermées.</li>
+        <li><strong>Jamais recongeler</strong> un aliment décongelé.</li>
+        <li>La viande crue et le poulet ne durent que <strong>2 jours au frigo</strong>.</li>
+        <li>Un reste de repas se garde <strong>2–3 jours</strong> au frigo dans un contenant fermé.</li>
+      </ul>
+      
+      <h2>Trouver des recettes faciles</h2>
+      <p>Pour apprendre à cuisiner pas à pas, ces sites et chaînes sont faits pour les débutants&nbsp;:</p>
+      <ul>
+        <li><a href="https://www.750g.com/recettes-faciles.htm" target="_blank" rel="noopener">750g.com</a> — recettes simples avec vidéos, filtres « débutant » et « pas cher »</li>
+        <li><a href="https://www.marmiton.org" target="_blank" rel="noopener">Marmiton.org</a> — la référence francophone, tri par difficulté et budget</li>
+        <li><a href="https://www.cuisineaz.com" target="_blank" rel="noopener">CuisineAZ.com</a> — recettes du quotidien avec listes d'ingrédients claires</li>
+        <li><strong>YouTube</strong> — tape « recette [ingrédient] débutant » ou « cuisine facile moins de 5 euros » pour des vidéos pas à pas</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Astuce budget</strong>Tape dans la barre de recherche ce que t'as dans ton frigo (ex. « recette œufs courgette »). Tu évites le gaspillage et tu n'achètes pas exprès.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/vie/alimentation">Alimentation : manger bien sans se ruiner</a> — courses, anti-gaspi, aide alimentaire</li>
+        <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — estimer combien prévoir pour les courses</li>
+      </ul>

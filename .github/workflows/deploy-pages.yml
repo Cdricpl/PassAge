@@ -30,6 +30,12 @@ jobs:
         with:
           enablement: true
 
+      - name: Install build dependencies
+        run: npm install --prefix 03-version-pwa
+
+      - name: Build content.js from YAML sources
+        run: node 03-version-pwa/build.js
+
       - name: Upload PWA artifact
         uses: actions/upload-pages-artifact@v3
         with:

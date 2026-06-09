@@ -1,0 +1,215 @@
+id: travail
+title: "Travail"
+subtitle: "Du CV au premier contrat"
+color: travail
+icon: bag
+objective: "Trouver un emploi, comprendre ton contrat et tes droits."
+source: "leforem.be · onem.be · emploi.belgique.be"
+sections:
+  - id: preparer
+    title: "Préparer ma recherche"
+    summary: "Forem, CV, lettre de motivation : par où commencer."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Avant d'envoyer des candidatures, il y a deux choses à faire.</p>
+      
+      <h2>1. T'inscrire au Forem (obligatoire)</h2>
+      <p>Le <strong>Forem</strong> est l'organisme public wallon de l'emploi. Tu dois t'y inscrire <strong>en ligne</strong> dès que tu cherches un emploi.</p>
+      <ul>
+        <li>Site : <a href="https://www.leforem.be" target="_blank" rel="noopener">leforem.be</a></li>
+        <li>Si tu sors d'études, c'est aussi le point de départ pour ta période de stage d'insertion (avant le chômage).</li>
+      </ul>
+      
+      <h2>2. Préparer ton CV et ta lettre de motivation</h2>
+      <ul>
+        <li><strong>Word propose des modèles</strong> de CV gratuits — pas besoin de payer.</li>
+        <li>Cherche "modèle CV gratuit" sur Internet, beaucoup d'exemples disponibles.</li>
+        <li>Inforjeunes ou ton AMO peuvent t'aider à le rédiger.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Astuce</strong>Adapte ton CV à chaque offre — mets en avant les compétences qui correspondent à ce que cherche l'employeur.</div></div>
+  - id: trouver
+    title: "Trouver des offres"
+    summary: "Forem, Indeed, intérim, candidature spontanée."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Plusieurs canaux à activer en parallèle pour maximiser tes chances.</p>
+      
+      <h2>Sites d'offres d'emploi</h2>
+      <ul>
+        <li><a href="https://www.leforem.be" target="_blank" rel="noopener">leforem.be</a></li>
+        <li><a href="https://www.indeed.be" target="_blank" rel="noopener">indeed.be</a></li>
+        <li>StepStone, Jobat, Optioncarrière…</li>
+      </ul>
+      
+      <h2>Les agences d'intérim</h2>
+      <p>Adecco, Tempo Team, Randstad, LEM Interim, Equip Interim… Tu peux t'inscrire en ligne ou directement en agence. C'est souvent un bon point d'entrée pour un premier job.</p>
+      
+      <h2>La candidature spontanée</h2>
+      <p>Tu identifies des entreprises qui t'intéressent et tu leur envoies CV + lettre, même sans annonce. C'est un moyen efficace, surtout dans les petites structures. Voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> si tu n'as pas l'habitude.</p>
+      
+      <div class="callout tip"><div><strong>Astuce</strong>Envoie ta candidature spontanée par e-mail ET par lettre — tu te démarques davantage quand tu prends le temps d'écrire.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/travail/entretien">Réussir l'entretien d'embauche</a> — se préparer avant le rendez-vous.</li>
+        <li><a href="#/fiche/travail/contrat">Comprendre mon contrat</a> — avant de signer.</li>
+      </ul>
+  - id: entretien
+    title: "Réussir l'entretien d'embauche"
+    summary: "Ce à quoi t'attendre, comment te préparer."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Premier entretien ? Pas de panique. Si on t'appelle, c'est que ton profil intéresse déjà.</p>
+      
+      <h2>Les essentiels</h2>
+      <ul>
+        <li>Sois <strong>présentable</strong> (pas besoin d'un costume — tenue propre et adaptée).</li>
+        <li>Arrive <strong>5–10 minutes en avance</strong>.</li>
+        <li><strong>Renseigne-toi</strong> avant sur l'entreprise (site web, activité, valeurs).</li>
+        <li>Sois <strong>toi-même</strong> — la plupart des employeurs cherchent une personnalité, pas un robot.</li>
+      </ul>
+      
+      <h2>Les questions classiques</h2>
+      <ul>
+        <li>« Parlez-moi de vous. »</li>
+        <li>« Quelles sont vos qualités et vos défauts ? »</li>
+        <li>« Pourquoi voulez-vous travailler chez nous ? »</li>
+        <li>Mises en situation, questions sur ton parcours.</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Astuce</strong>Prépare 2–3 questions à poser à la fin (sur l'équipe, les horaires, les évolutions). Ça montre ton intérêt.</div></div>
+  - id: contrat
+    title: "Comprendre mon contrat"
+    summary: "CDI, CDD, intérim, brut/net, mes droits."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Tu as décroché un job ? Avant de signer, prends le temps de lire ton contrat. Tu as <strong>le droit de l'emporter</strong> pour le lire chez toi.</p>
+      
+      <h2>Les types de contrat</h2>
+      <ul>
+        <li><strong>CDI</strong> (durée indéterminée) : pas de fin prévue, sauf rupture par l'employeur ou toi.</li>
+        <li><strong>CDD</strong> (durée déterminée) : avec une date de fin précise.</li>
+        <li><strong>Contrat de remplacement</strong> : se termine quand la personne remplacée revient.</li>
+      </ul>
+      
+      <h2>Brut, net, c'est quoi ?</h2>
+      <ul>
+        <li><strong>Salaire brut</strong> : avant les retenues.</li>
+        <li><strong>Cotisations sociales</strong> (~13,07%) : pour la sécurité sociale (chômage, pension, <a href="#/fiche/admin/mutuelle">mutuelle</a>).</li>
+        <li><strong>Précompte professionnel</strong> : un acompte sur tes impôts.</li>
+        <li><strong>Salaire net</strong> : ce qui arrive sur ton compte.</li>
+      </ul>
+      
+      <h2>Que vérifier dans ton contrat</h2>
+      <ul>
+        <li>L'horaire et le nombre d'heures.</li>
+        <li>Le salaire brut et les éventuels avantages.</li>
+        <li>La durée (CDI, CDD…) et la période d'essai.</li>
+        <li>Tes droits (congés, jours de maladie…).</li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Avant de signer</strong>Si quelque chose te semble flou, demande à une personne de confiance, à Inforjeunes ou au service Droit des Jeunes de relire avec toi. C'est gratuit.</div></div>
+  - id: job-etudiant
+    title: "Le job étudiant"
+    summary: "Travailler pendant tes études : règles et quota 650h."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Dès 15 ans (et 2 ans de secondaire) ou 16 ans, tu peux travailler comme <strong>étudiant·e</strong>. C'est une bonne façon d'avoir un revenu d'appoint.</p>
+      
+      <h2>Les règles à connaître</h2>
+      <ul>
+        <li>Quota de <strong>650 heures par an</strong> à cotisations sociales réduites (depuis le 1er janvier 2025).</li>
+        <li>Si tu dépasses, tu cotises au taux normal — ton salaire net baisse fortement.</li>
+        <li>Tu peux suivre ton compteur sur <a href="https://www.studentatwork.be" target="_blank" rel="noopener">student@work</a> (compte officiel).</li>
+        <li>Tu dois être déclaré·e via une <strong>Dimona étudiant</strong> (ton employeur s'en occupe).</li>
+      </ul>
+      
+      <h2>Et tes allocations familiales&nbsp;?</h2>
+      <ul>
+        <li><strong>Avant 18 ans</strong> : aucune incidence sur les allocations familiales.</li>
+        <li><strong>De 18 à 25 ans en Wallonie</strong> : tu gardes les allocations si tu restes scolarisé·e et respectes le quota des 650h. La limite des 240h/trimestre n'existe plus en Wallonie pour le contrat étudiant.</li>
+      </ul>
+      
+      <h2>Si tu touches le RIS</h2>
+      <div class="callout warn"><div><strong>Attention</strong>Si tu travailles, ton <a href="#/fiche/argent/ris-cpas">RIS du CPAS</a> peut être réduit ce mois-là. Une exonération existe (différente si tu es boursier·ère ou non) — demande à ton·ta assistant·e social·e avant de signer.</div></div>
+      
+      <h2>Côté impôts</h2>
+      <p>Si tu gagnes plus que la quotité exemptée d'impôt sur l'année, tu devras déclarer tes revenus. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a>. À ton âge, tu n'as souvent rien à payer.</p>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.studentatwork.be" target="_blank" rel="noopener">student@work</a> — suivre ton compteur d'heures</li>
+        <li><a href="https://inforjeunes.be/thematique/job-etudiant/" target="_blank" rel="noopener">Inforjeunes — FAQ job étudiant</a></li>
+      </ul>
+  - id: epargne-pension
+    title: "L'épargne-pension"
+    summary: "Mettre un peu de côté pour ta pension future, avec un avantage fiscal."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>L'<strong>épargne-pension</strong>, c'est une formule d'épargne à long terme qui te permet de constituer une <strong>pension complémentaire</strong> à la pension légale belge. Et sous certaines conditions, tu profites d'un <strong>avantage fiscal</strong> chaque année.</p>
+      
+      <h2>Pourquoi y penser dès 18 ans ?</h2>
+      <p>Ça paraît loin, mais plus tu commences tôt, plus l'effet "boule de neige" est fort. Même de petits versements (30–50 € par mois) finissent par représenter une belle somme à 65 ans.</p>
+      
+      <h2>Comment ça marche ?</h2>
+      <ul>
+        <li>Tu verses un montant (libre, jusqu'à un <strong>plafond annuel fixé par le SPF Finances</strong>).</li>
+        <li>Tu récupères <strong>jusqu'à 30 %</strong> de ce versement sous forme de <strong>réduction d'impôt</strong>.</li>
+        <li>L'argent reste bloqué jusqu'à 60-65 ans (sauf quelques exceptions).</li>
+      </ul>
+      
+      <h2>Où en souscrire ?</h2>
+      <p>Auprès de la plupart des <strong>banques</strong> et <strong>compagnies d'assurances</strong> belges. Compare avant de signer : les frais de gestion varient.</p>
+      
+      <h2>Pas obligatoire</h2>
+      <p>Ce n'est <strong>pas obligatoire</strong>. Si tu n'as pas les moyens, ne te mets pas la pression — la pension légale existe. Ça peut attendre que tu aies un revenu stable.</p>
+      
+      <div class="callout tip"><div><strong>À retenir</strong>Si tu commences à 25 ans plutôt qu'à 45, tu pourrais avoir <strong>2 à 3 fois plus</strong> à la retraite, pour le même effort mensuel. Le temps fait tout le travail.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://finances.belgium.be" target="_blank" rel="noopener">SPF Finances</a> — règles fiscales et plafond annuel</li>
+        <li>Compare les offres sur <a href="https://www.guide-epargne.be" target="_blank" rel="noopener">guide-epargne.be</a> (indépendant)</li>
+      </ul>
+  - id: chomage
+    title: "Le chômage après les études"
+    summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
+      
+      <h2>Étape 1 : t'inscrire au Forem</h2>
+      <p>Dès la fin de tes études, tu dois t'<strong>inscrire comme demandeur·euse d'emploi au Forem</strong>. C'est cette inscription qui démarre le compteur du stage d'insertion. Voir <a href="#/fiche/travail/preparer">Préparer ma recherche</a>.</p>
+      
+      <h2>Étape 2 : le stage d'insertion (156 jours = 6 mois)</h2>
+      <p>Avant de pouvoir toucher des allocations, tu dois faire un <strong>stage d'insertion professionnelle de 156 jours</strong> (≈ 6 mois, hors dimanches). Pendant ce temps :</p>
+      <ul>
+        <li>Tu cherches activement un emploi.</li>
+        <li>Le Forem suit ta recherche (entretiens d'évaluation).</li>
+        <li>Tu peux faire des stages, suivre des formations.</li>
+      </ul>
+      <p>Avant la réforme, ce stage durait 310 jours (≈ 1 an). Depuis le <strong>1er mars 2026</strong>, c'est <strong>réduit à 156 jours</strong>.</p>
+      
+      <h2>Étape 3 : les allocations d'insertion (max 12 mois)</h2>
+      <p>Si tu n'as toujours pas d'emploi à la fin du stage, tu peux toucher les <strong>allocations d'insertion</strong> de l'ONEM.</p>
+      <ul>
+        <li>Versées <strong>pendant 12 mois maximum</strong> (avant la réforme : 36 mois).</li>
+        <li>Tu dois avoir <strong>moins de 25 ans</strong> au moment de la première demande.</li>
+        <li>Le montant dépend de ta situation : isolé·e, cohabitant·e, chef de ménage.</li>
+      </ul>
+      
+      <h2>Pendant le stage : à savoir</h2>
+      <ul>
+        <li>Tu gardes le droit aux <strong>allocations familiales</strong> (jusqu'à 25 ans).</li>
+        <li>Si tu n'as aucun revenu, demande le <strong>RIS au CPAS</strong> — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
+        <li>En tant que jeune accueilli·e, ton statut donne droit au RIS sans enquête sur les parents.</li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Attention — réforme récente</strong>Beaucoup d'infos en ligne ne sont pas encore à jour. Si tu lis "312 jours" ou "3 ans d'allocations", c'est l'ancien système. Depuis le 1er mars 2026 : <strong>156 jours de stage, 12 mois d'allocations max</strong>.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.onem.be/page/avez-vous-droit-aux-allocations-apres-des-etudes-allocations-d-insertion-et-pendant-combien-de-temps" target="_blank" rel="noopener">ONEM — allocations d'insertion</a></li>
+        <li><a href="https://inforjeunes.be/thematique/allocations-dinsertion-professionnelle/" target="_blank" rel="noopener">Inforjeunes — FAQ allocations d'insertion</a></li>
+      </ul>

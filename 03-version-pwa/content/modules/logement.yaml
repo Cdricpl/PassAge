@@ -1,0 +1,378 @@
+id: logement
+title: "Logement"
+subtitle: "Trouver, signer, emménager"
+color: logement
+icon: home
+objective: "Trouver un logement adapté à ta situation et connaître tes droits de locataire."
+source: "logement.wallonie.be · slrb.brussels · inforjeunes.be"
+sections:
+  - id: options
+    title: "Comprendre mes options"
+    summary: "Privé, AIS, SLSP, CPAS : c'est quoi la différence ?"
+    lastChecked: "03/06/2026"
+    body: |
+      <p>En Belgique, plusieurs types de logements existent, à des prix différents. Voici les principaux.</p>
+      
+      <h2>Le logement privé</h2>
+      <p>Tu loues à un propriétaire particulier ou via une agence immobilière. C'est le plus courant, mais aussi souvent le plus cher.</p>
+      
+      <h2>Le logement social (SLSP)</h2>
+      <p>Géré par les <strong>Sociétés de Logement de Service Public</strong>, à loyer modéré. Liste d'attente souvent longue, mais à inscrire dès que possible si tes revenus sont limités.</p>
+      
+      <h2>Les AIS (Agences Immobilières Sociales)</h2>
+      <p>Les AIS louent des logements privés à des conditions sociales. Le loyer est plus accessible et le bail est plus protecteur. Critères de revenus à respecter.</p>
+      
+      <h2>Le logement via le CPAS</h2>
+      <p>Certains CPAS ont leurs propres logements ou appartements de transit. À demander au CPAS de ta commune.</p>
+      
+      <h2>Les APL (Associations de Promotion du Logement)</h2>
+      <p>Elles aident à trouver un logement adapté et accompagnent les jeunes en transition. À chercher dans ta région.</p>
+  - id: recherche
+    title: "Trouver un logement"
+    summary: "Où chercher et quoi demander en visite."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Cherche large et compare. Voici comment.</p>
+      
+      <h2>Où chercher ?</h2>
+      <ul>
+        <li><strong>Sites en ligne</strong> : Immoweb, Logic-Immo, Zimmo.</li>
+        <li><strong>Réseaux sociaux</strong> : groupes Facebook locaux, marketplace.</li>
+        <li><strong>Affichages dans les quartiers</strong> : certains propriétaires ne passent pas par Internet.</li>
+        <li><strong>Bouche à oreille</strong> : famille, amis, AMO.</li>
+      </ul>
+      
+      <h2>Questions à poser au propriétaire</h2>
+      <ul>
+        <li>Quel est le montant du <strong>loyer</strong> ?</li>
+        <li>Les <strong>charges</strong> sont-elles comprises ? Forfait ou réelles ? Quel montant ?</li>
+        <li>Est-il <strong>meublé</strong> ?</li>
+        <li>Quand sera-t-il <strong>libre</strong> ?</li>
+        <li>Quelle est la <strong>durée du bail</strong> ?</li>
+        <li>Y a-t-il une <strong>assurance habitation</strong> sur le bâtiment ?</li>
+        <li>Peut-on s'y <strong>domicilier</strong> ?</li>
+        <li>Quel est le montant de la <strong>garantie locative</strong> ? Sur compte bloqué ?</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Avant de visiter</strong>Vérifie ton budget réel : loyer + charges ≤ ~1/3 de tes revenus, c'est une règle de prudence.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — ce qu'il doit contenir avant de signer.</li>
+        <li><a href="#/fiche/logement/garantie">La garantie locative</a> — comment la financer si tu n'as pas l'argent.</li>
+        <li><a href="#/fiche/logement/etat-des-lieux">L'état des lieux</a> — indispensable à l'entrée.</li>
+        <li><a href="#/fiche/logement/aides">Les aides au logement</a> — CPAS, ADIL, allocation loyer.</li>
+      </ul>
+  - id: bail
+    title: "Le contrat de bail"
+    summary: "Ce qu'il doit contenir, comment le vérifier."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
+      
+      <h2>Tu as le droit de l'emporter</h2>
+      <p>Avant de signer, prends ton exemplaire et lis-le tranquillement chez toi. Le service <strong>Droit des Jeunes</strong> peut t'aider à le décrypter — c'est gratuit.</p>
+      
+      <h2>Ce qu'il doit contenir</h2>
+      <ul>
+        <li>Identité des parties (avec numéro de registre national).</li>
+        <li>Date de prise du bail.</li>
+        <li>Description du logement.</li>
+        <li>Montant du loyer et des charges.</li>
+        <li>Durée du bail.</li>
+      </ul>
+      
+      <h2>L'enregistrement</h2>
+      <p>Le bail doit être <strong>enregistré au SPF Finances</strong>. Sans cet enregistrement, certaines clauses ne sont pas valables. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
+      
+      <h2>Durée du bail</h2>
+      <ul>
+        <li>1 an, 3 ans ou 9 ans : c'est la loi.</li>
+        <li>Si tu veux partir, tu dois donner ton <strong>préavis par lettre recommandée</strong> — voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>.</li>
+        <li>Le délai commence le <strong>1er du mois suivant</strong> l'envoi du recommandé.</li>
+      </ul>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/logement/etat-des-lieux">L'état des lieux</a> — le document qui te protège quand tu pars.</li>
+        <li><a href="#/fiche/logement/garantie">La garantie locative</a> — comment la constituer, l'aide du CPAS.</li>
+        <li><a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> — pour ton préavis recommandé.</li>
+        <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — relecture gratuite du bail.</li>
+      </ul>
+  - id: etat-des-lieux
+    title: "L'état des lieux"
+    summary: "Le document qui te protège quand tu pars."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. C'est <strong>essentiel</strong> : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
+      
+      <h2>Quand le faire ?</h2>
+      <p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement, ou dans les <strong>15 premiers jours</strong>.</p>
+      
+      <h2>À faire</h2>
+      <ul>
+        <li>Sois <strong>très précis·e</strong> : "porte d'entrée usée", "rideau de douche neuf"…</li>
+        <li><strong>Prends des photos</strong> et demande qu'elles soient incluses.</li>
+        <li>Signe et date le document, le propriétaire aussi.</li>
+        <li>Garde un exemplaire chez toi.</li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Pas d'état des lieux ?</strong>Tu es censé·e avoir reçu le bien dans le même état qu'à la sortie. Mais c'est risqué — exige toujours un état des lieux écrit.</div></div>
+      
+      <p>Pendant ton occupation, le propriétaire <strong>n'a pas le droit d'entrer chez toi</strong> sans rendez-vous.</p>
+  - id: garantie
+    title: "La garantie locative"
+    summary: "Ce que c'est, et l'aide du CPAS si tu n'as pas l'argent."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>La <strong>garantie locative</strong> (ou caution) sert à couvrir tes éventuels manquements (loyer impayé, dégâts…).</p>
+      
+      <h2>Trois formes possibles (au choix du locataire)</h2>
+      <ul>
+        <li><strong>Compte bloqué</strong> à ton nom : maximum <strong>2 mois</strong> de loyer.</li>
+        <li><strong>Garantie bancaire</strong> (constituée progressivement, sur 3 ans max) : maximum <strong>3 mois</strong> de loyer.</li>
+        <li><strong>Garantie via le CPAS</strong> (contrat type CPAS-banque) : maximum <strong>3 mois</strong> de loyer.</li>
+      </ul>
+      
+      <h2>Pas d'argent pour la caution ?</h2>
+      <p>Va voir le <strong>CPAS de ta commune</strong>. Il peut se porter garant pour toi via un document remis à ton propriétaire.</p>
+      
+      <div class="callout warn"><div><strong>À savoir</strong>Cette caution devra être remboursée au CPAS. Elle te sera prélevée du RIS pendant les premiers mois.</div></div>
+  - id: assurance-habitation
+    title: "L'assurance habitation"
+    summary: "Pourquoi en prendre une, ce qu'elle couvre, comment choisir."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). C'est généralement <strong>obligatoire</strong> dans le bail, et c'est ta protection si quelque chose tourne mal.</p>
+      
+      <h2>Ce qu'elle couvre</h2>
+      <ul>
+        <li><strong>Incendie</strong>, explosion, fumée.</li>
+        <li><strong>Dégâts des eaux</strong> (fuite, gel des canalisations).</li>
+        <li>Tempêtes, grêle, catastrophes naturelles.</li>
+        <li><strong>Ta responsabilité civile locative</strong> : si tu causes un dégât au logement (incendie de cuisine, fuite que tu n'as pas signalée…), c'est ton assurance qui paie le proprio.</li>
+        <li>Souvent : <strong>vol</strong> et <strong>contenu</strong> de ton logement (mobilier, électroménager, vêtements).</li>
+      </ul>
+      
+      <h2>Pourquoi c'est important</h2>
+      <p>Sans assurance, si un incendie partiel se déclare chez toi, tu peux te retrouver à devoir <strong>plusieurs dizaines de milliers d'euros</strong> au propriétaire. C'est un risque que tu ne peux pas porter seul·e.</p>
+      
+      <h2>Combien ça coûte&nbsp;?</h2>
+      <p>Pour un studio ou un petit appartement, compte généralement entre <strong>10 et 25 € par mois</strong>. Tu peux payer mensuellement ou annuellement (souvent un peu moins cher en annuel).</p>
+      
+      <h2>Où la souscrire&nbsp;?</h2>
+      <ul>
+        <li>Auprès de ta <strong>banque</strong> (souvent une offre packagée avec le compte).</li>
+        <li>Auprès d'une <strong>compagnie d'assurances</strong> directement (AG, AXA, Ethias, P&V, Belfius Insurance…).</li>
+        <li>Via un <strong>courtier d'assurance</strong> indépendant (gratuit pour toi, il compare plusieurs assureurs). Cherche sur Google « courtier d'assurance + ta ville ».</li>
+      </ul>
+      
+      <h2>À vérifier dans le contrat</h2>
+      <ul>
+        <li>Le <strong>capital assuré</strong> (en cas de dégâts, ça couvre jusqu'à combien ?).</li>
+        <li>La <strong>franchise</strong> (ce qui reste à ta charge en cas de sinistre).</li>
+        <li>Le <strong>vol</strong> est-il inclus ou en option ?</li>
+        <li>Y a-t-il un <strong>abandon de recours</strong> du proprio (= moins de risques pour toi) ?</li>
+      </ul>
+      
+      <div class="callout warn"><div><strong>Attention</strong>Le propriétaire a sa propre assurance pour le bâtiment, mais elle ne couvre <strong>pas</strong> tes affaires à toi ni ta responsabilité. Les deux assurances sont indispensables.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.assuralia.be" target="_blank" rel="noopener">Assuralia</a> — fédération des assureurs (infos générales)</li>
+      </ul>
+  - id: aides
+    title: "Les aides au logement"
+    summary: "Qui contacter, à quoi tu as droit."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
+      
+      <h2>L'aide du CPAS</h2>
+      <ul>
+        <li><strong>Garantie locative</strong> : le CPAS peut se porter garant.</li>
+        <li><strong>Aide à l'installation</strong> : ponctuelle, pour les premiers frais (mobilier, électroménager…).</li>
+        <li><strong>Aide au loyer</strong> : possible selon ta situation.</li>
+      </ul>
+      
+      <h2>L'allocation déménagement (ADIL)</h2>
+      <p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou trop petit pour un meilleur. À demander à la Région wallonne.</p>
+      
+      <h2>L'allocation loyer</h2>
+      <p>Pour les locataires d'un logement privé inscrits sur la liste d'attente d'un logement social. Conditions strictes.</p>
+      
+      <h2>Le service Droit des Jeunes</h2>
+      <p>Gratuit, confidentiel : ils t'aident à comprendre tes droits et à monter ton dossier. À contacter dès le début.</p>
+      
+      <div class="callout tip"><div><strong>Agis tôt</strong>Plus tu attends, moins il y a d'options. Dès que tu cherches un logement, contacte le CPAS et le Service Droit des Jeunes — même si tu n'es pas encore en difficulté.</div></div>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/logement/garantie">La garantie locative</a> — l'aide CPAS en détail.</li>
+        <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — pour connaître toutes les aides disponibles.</li>
+        <li><a href="https://logement.wallonie.be" target="_blank" rel="noopener">logement.wallonie.be</a> — aides régionales au logement.</li>
+        <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — accompagnement gratuit.</li>
+      </ul>
+  - id: compteurs
+    title: "L'ouverture des compteurs"
+    summary: "Eau, gaz, électricité : premières démarches dans ton logement."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Dès que tu as les clés, tu dois <strong>ouvrir les compteurs à ton nom</strong> (électricité, gaz, eau), <strong>sauf</strong> si les charges sont déjà comprises dans ton loyer.</p>
+      
+      <h2>Étape 1 : faire le relevé d'entrée</h2>
+      <p>Avec le <strong>locataire précédent</strong> (ou le propriétaire), note l'<strong>index</strong> des compteurs au moment où tu prends possession. Garde ces chiffres précieusement — ils servent à éviter qu'on te facture la consommation de quelqu'un d'autre.</p>
+      
+      <h2>Étape 2 : choisir un fournisseur d'énergie</h2>
+      <p>Plusieurs fournisseurs (Engie, Luminus, Mega, TotalEnergies, Octa+…). Compare les prix avant de signer :</p>
+      <ul>
+        <li><strong>Wallonie</strong> : <a href="https://www.compacwape.be" target="_blank" rel="noopener">comparateur officiel CWaPE</a></li>
+        <li><strong>Bruxelles</strong> : <a href="https://brusim.brugel.brussels" target="_blank" rel="noopener">comparateur Brugel</a></li>
+      </ul>
+      
+      <h2>Étape 3 : remplir et envoyer les formulaires</h2>
+      <ul>
+        <li><strong>Eau (Wallonie)</strong> : formulaire de déménagement de la <a href="https://www.swde.be" target="_blank" rel="noopener">SWDE</a> à compléter et renvoyer.</li>
+        <li><strong>Électricité &amp; gaz</strong> : <strong>document de reprise des énergies</strong> (signé entre toi et le locataire précédent) à renvoyer à ton fournisseur. Disponible sur le site de ton gestionnaire de réseau (RESA, ORES…).</li>
+      </ul>
+      
+      <h2>Tu touches le RIS ? Demande le tarif social</h2>
+      <p>Si tu es au RIS du CPAS, tu as droit au <strong>tarif social pour l'énergie</strong> (électricité, gaz, chaleur). Il est <strong>identique partout en Belgique</strong>, peu importe le fournisseur.</p>
+      <ul>
+        <li>Souvent <strong>automatique</strong> mais pas toujours.</li>
+        <li>Demande à ton·ta intervenant·e CPAS de faire la démarche.</li>
+        <li>Voir aussi <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a>.</li>
+      </ul>
+      
+      <h2>À vérifier avant de signer le bail</h2>
+      <ul>
+        <li><strong>EPB</strong> (performance énergétique) du logement — si c'est mauvais (F ou G), ta facture explosera.</li>
+        <li>Type de chauffage (gaz, mazout, électrique, pompe à chaleur).</li>
+        <li>Compteur intelligent ou pas (impacte les tarifs heures pleines/creuses).</li>
+      </ul>
+  - id: entretien
+    title: "Entretien du logement"
+    summary: "Quelques habitudes simples + produits naturels pour pas cher."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>« Un esprit sain dans un corps sain. » Ton logement aussi : si tu t'y sens bien, tu vas bien. Quelques habitudes simples suffisent — pas besoin de produits hors de prix.</p>
+      
+      <h2>Petites habitudes qui changent tout</h2>
+      <ul>
+        <li><strong>Faire ton lit</strong> tous les jours (5 min, ça change l'ambiance).</li>
+        <li>Chaque chose à sa place : <strong>ranger tout de suite</strong> ce que tu utilises.</li>
+        <li><strong>Vaisselle</strong> faite chaque jour (sinon ça s'accumule).</li>
+        <li><strong>Aérer</strong> 10 min par jour, même en hiver.</li>
+        <li>Balai ou aspirateur <strong>1 fois par semaine</strong> minimum.</li>
+      </ul>
+      
+      <h2>3 produits naturels qui font tout</h2>
+      <p>Les produits ménagers de supermarché coûtent cher. Avec ces trois-là, tu fais <strong>90 %</strong> du ménage&nbsp;:</p>
+      <ul>
+        <li><strong>Vinaigre blanc</strong> : détartre, désinfecte, dégraisse. Pas cher, dispo partout.</li>
+        <li><strong>Bicarbonate de soude</strong> : récure, désodorise, blanchit.</li>
+        <li><strong>Savon noir</strong> ou savon de Marseille : nettoie tout (sols, vêtements, vaisselle).</li>
+      </ul>
+      
+      <h2>Quelques recettes</h2>
+      <ul>
+        <li><strong>Anticalcaire WC/évier</strong> : vinaigre blanc pur, laisser agir 1 h, frotter, rincer.</li>
+        <li><strong>Désodoriser frigo/poubelle</strong> : 1 cuillère de bicarbonate dans une coupelle, à laisser 24 h.</li>
+        <li><strong>Vitres</strong> : eau + vinaigre blanc (50/50), papier journal pour essuyer.</li>
+      </ul>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.ecoconso.be" target="_blank" rel="noopener">ecoconso.be</a> — fiches pratiques sur les produits naturels d'entretien</li>
+      </ul>
+      
+      <div class="callout tip"><div><strong>Si tu galères mentalement</strong>Quand on déprime, l'entretien du logement est souvent ce qui lâche en premier — et ça empire le moral. Si tu vois ce cercle s'installer, c'est <strong>un signal</strong>. Voir <a href="#/fiche/urgence/mal-etre">Quand ça ne va pas</a>.</div></div>
+  - id: changement-adresse
+    title: "Changer d'adresse"
+    summary: "Domiciliation, démarches en chaîne."
+    lastChecked: "03/06/2026"
+    body: |
+      <p>Tu emménages ? Tu dois te <strong>domicilier</strong> à ta nouvelle adresse — c'est obligatoire.</p>
+      
+      <h2>Comment faire ?</h2>
+      <ol class="fiche-ol">
+        <li>Tu vas à l'administration communale de ta nouvelle commune avec ta carte d'identité.</li>
+        <li>Tu déclares ton changement d'adresse.</li>
+        <li>Un agent de quartier passe vérifier que tu vis bien à cette adresse.</li>
+        <li>Tu vas chercher ta nouvelle carte d'identité (ou la mise à jour) à la commune.</li>
+      </ol>
+      
+      <h2>À prévenir aussi</h2>
+      <ul>
+        <li>Ta <strong>mutuelle</strong>.</li>
+        <li>Ta <strong>banque</strong>.</li>
+        <li>Le <strong>Forem</strong> ou ton employeur.</li>
+        <li>Le <strong>CPAS</strong> si tu y es suivi·e.</li>
+        <li>Ton <strong>fournisseur d'énergie</strong> et ton opérateur télécom.</li>
+      </ul>
+  - id: urgence-maison
+    title: "Panne, fuite, urgence chez soi"
+    summary: "Couper l'eau, le gaz ou l'électricité, qui appelle qui, et les numéros utiles."
+    lastChecked: "03/06/2026"
+    source: "inforjeunes.be · sibelga.be · ores.net"
+    body: |
+      <p>Ça arrive à tout le monde : un robinet qui fuit, une panne de courant, une odeur de gaz. Savoir quoi faire — et vite — évite les dégâts.</p>
+      
+      <div class="callout warn"><div><strong>Odeur de gaz : procédure stricte</strong>N'allume ou n'éteins <strong>rien</strong> (même la lumière). Ouvre grand les fenêtres et portes. Coupe l'arrivée de gaz au compteur. Sors immédiatement. Appelle le <strong>112</strong> depuis l'extérieur, puis contacte ton gestionnaire de réseau gaz (numéro sur tes factures). Ne rentre pas avant que les secours aient vérifié.</div></div>
+      
+      <h2>Couper l'eau</h2>
+      <p>La vanne d'arrêt principale est généralement&nbsp;:</p>
+      <ul>
+        <li>Sous l'évier ou dans la salle de bain (petit robinet sur le tuyau d'arrivée d'eau)</li>
+        <li>Dans le couloir, la cave ou derrière un panneau au mur</li>
+        <li>Près du compteur d'eau (souvent dans la cave ou dans un coffret extérieur)</li>
+      </ul>
+      <p><strong>Pour fermer</strong> : tourner dans le sens des aiguilles d'une montre jusqu'en butée. L'eau s'arrête immédiatement.</p>
+      <p>En cas de fuite, ferme l'eau et préviens ton propriétaire par écrit (voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>).</p>
+      
+      <h2>Couper l'électricité</h2>
+      <p>Le <strong>tableau électrique</strong> (boîte avec des disjoncteurs) est souvent dans le couloir, la cuisine, la cave ou un placard. Il y a&nbsp;:</p>
+      <ul>
+        <li><strong>Un disjoncteur général</strong> (grand interrupteur en haut ou à part) : coupe tout le logement.</li>
+        <li><strong>Des disjoncteurs par circuit</strong> (lumières, prises, cuisine, etc.) : si l'un saute (position basse), retrouve le problème et remets-le en position haute.</li>
+      </ul>
+      <p>Si un disjoncteur saute en boucle, ne l'insiste pas : il y a un problème électrique → préviens le propriétaire.</p>
+      
+      
+      <h2>Panne de chauffage</h2>
+      <p>Si ta chaudière s'éteint&nbsp;:</p>
+      <ul>
+        <li>Vérifie la <strong>pression</strong> sur le manomètre (cadran sur la chaudière) : elle doit être entre 1 et 2 bars. Si elle est en dessous, il faut faire l'appoint d'eau (petit robinet de remplissage sous la chaudière — consulte le manuel ou YouTube pour ton modèle).</li>
+        <li>Si la chaudière affiche un <strong>code d'erreur</strong>, note-le et appelle le propriétaire : c'est sa responsabilité de la faire réparer.</li>
+        <li>Si tu as très froid et que la réparation tarde, le <strong>CPAS</strong> peut t'aider à trouver une solution d'urgence — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
+      </ul>
+      
+      <h2>Robinet qui fuit ou WC qui coule</h2>
+      <ul>
+        <li><strong>Robinet</strong> : ferme la vanne d'arrêt sous l'évier ou derrière la chasse d'eau. Préviens le propriétaire.</li>
+        <li><strong>WC qui coule</strong> (bruit constant d'eau) : souvent un flotteur à ajuster ou remplacer. Si tu n'es pas à l'aise, c'est au propriétaire de réparer.</li>
+        <li>Note et photo à l'appui : garde une trace de chaque signalement.</li>
+      </ul>
+      
+      <h2>Qui est responsable de quoi ?</h2>
+      <p>C'est dans le <a href="#/fiche/logement/bail">contrat de bail</a> — mais voici la règle générale&nbsp;:</p>
+      <ul>
+        <li><strong>Toi (locataire)</strong> : entretien courant (changer une ampoule, détartrer un robinet, nettoyer les vitres).</li>
+        <li><strong>Le propriétaire</strong> : réparations importantes (chaudière, canalisations, toit, fenêtres, électricité générale). Il doit intervenir dans un délai raisonnable.</li>
+      </ul>
+      <p>Si le propriétaire ne réagit pas, contacte le <strong>Service Droit des Jeunes (SDJ)</strong> ou un <strong>service juridique de première ligne</strong> — voir <a href="#/fiche/admin/aide-juridique">Avocat prodéo et aide juridique</a>.</p>
+      
+      <h2>Numéros utiles</h2>
+      <ul>
+        <li><strong>112</strong> — Urgences vitales, incendie, fuite de gaz (24/7, gratuit)</li>
+        <li><strong>Ton propriétaire</strong> — Garde son numéro dans ton téléphone dès l'emménagement</li>
+        <li><strong>Gestionnaire de réseau gaz/élec</strong> — Affiché sur tes factures (Sibelga, ORES, RESA…)</li>
+        <li><strong>SWDE (eau, Wallonie)</strong> — <a href="https://www.swde.be" target="_blank" rel="noopener">swde.be</a></li>
+      </ul>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="#/fiche/logement/entretien">Entretien du logement</a> — les habitudes de ménage au quotidien</li>
+        <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — tes droits et obligations en tant que locataire</li>
+        <li><a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a> — pour signaler un problème par écrit</li>
+      </ul>

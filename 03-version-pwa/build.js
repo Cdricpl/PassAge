@@ -188,29 +188,22 @@ function main() {
     .replace('/* LEXIQUE_PLACEHOLDER */', lexiqueJs);
 
   // 5. Determine version bump
-  // Read old version from index.html (the canonical source for the version token)
+  // oldVer is read from the repo's index.html (never updated back to repo).
+  // newVer is always a fresh timestamp so each CI build produces a unique URL
+  // and the browser/SW always fetches new content.
   let oldVer = null;
-  let newVer = null;
   const indexHtml = path.join(ROOT, 'index.html');
   if (fs.existsSync(indexHtml)) {
-    const indexContent = fs.readFileSync(indexHtml, 'utf8');
-    const m = indexContent.match(/content\.js\?v=([\w-]+)/);
-    if (m) {
-      oldVer = m[1];
-      const parts = oldVer.split('-');
-      if (parts.length >= 4) {
-        const num = parseInt(parts[parts.length - 1], 10);
-        parts[parts.length - 1] = String(num + 1).padStart(2, '0');
-        newVer = parts.join('-');
-      } else {
-        newVer = `${oldVer}-02`;
-      }
-    }
+    const m = fs.readFileSync(indexHtml, 'utf8').match(/content\.js\?v=([\w-]+)/);
+    if (m) oldVer = m[1];
   }
-  if (!newVer) {
-    const today = new Date().toISOString().slice(0, 10);
-    newVer = `${today}-01`;
-  }
+  const now = new Date();
+  const newVer = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, '0'),
+    String(now.getDate()).padStart(2, '0'),
+    String(now.getHours()).padStart(2, '0') + String(now.getMinutes()).padStart(2, '0')
+  ].join('-');
   console.log(`  version: ${oldVer || '(none)'} → ${newVer}`);
 
   // 6. Write content.js (with GENERATED comment at top)
@@ -219,13 +212,18 @@ function main() {
   console.log(`  wrote ${path.relative(ROOT, OUT)}`);
 
   // 7. Bump version in index.html and service-worker.js
-  // (content.js itself doesn't contain the version token — it's referenced externally)
   if (oldVer) {
     applyVersionBump(path.join(ROOT, 'index.html'), oldVer, newVer);
     applyVersionBump(path.join(ROOT, 'service-worker.js'), oldVer, newVer);
   } else {
     console.log('  (no old version found — skipping version bump in other files)');
   }
+  // Also update SW VERSION constant so the cache name changes and old caches are cleaned up
+  const swPath = path.join(ROOT, 'service-worker.js');
+  let swSrc = fs.readFileSync(swPath, 'utf8');
+  swSrc = swSrc.replace(/const VERSION = '[^']*'/, `const VERSION = 'v-${newVer}'`);
+  fs.writeFileSync(swPath, swSrc, 'utf8');
+  console.log(`  bumped SW VERSION to v-${newVer}`);
 
   // 8. Summary
   const totalSections = modules.reduce((n, m) => n + (m.sections ? m.sections.length : 0), 0);

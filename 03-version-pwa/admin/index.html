@@ -120,10 +120,12 @@
     .body-editor ol { padding-left: 22px; margin: .75rem 0; }
     .body-editor ol li { margin-bottom: .5rem; }
     /* Encadrés (exactement comme l'app) */
-    .body-editor .callout { display: flex; gap: .75rem; padding: 1rem; border-radius: 14px; margin: 1rem 0; font-size: .9375rem; background: #E5EDF5; border-left: 4px solid #4F7CAC; }
+    .body-editor .callout { position: relative; display: flex; gap: .75rem; padding: 1rem; border-radius: 14px; margin: 1rem 0; font-size: .9375rem; background: #E5EDF5; border-left: 4px solid #4F7CAC; }
     .body-editor .callout > div > strong:first-child { display: block; margin-bottom: 4px; }
     .body-editor .callout.warn { background: #FBEFD7; border-color: #E8B86A; }
     .body-editor .callout.tip  { background: #E0F0E6; border-color: #6FB58A; }
+    .callout-del { position: absolute; top: 6px; right: 8px; background: rgba(0,0,0,.15); border: none; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; cursor: pointer; color: inherit; display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .callout-del:hover { background: rgba(0,0,0,.3); }
     /* Placeholder */
     .body-editor[data-placeholder]:empty::before { content: attr(data-placeholder); color: #bbb; pointer-events: none; display: block; font-style: italic; }
     /* Mode HTML */
@@ -619,6 +621,19 @@ document.getElementById('editorToolbar').addEventListener('click', e => {
   }
 });
 
+function addCalloutDeleteBtn(el) {
+  if (el.querySelector('.callout-del')) return;
+  const btn = document.createElement('button');
+  btn.contentEditable = 'false';
+  btn.className = 'callout-del';
+  btn.type = 'button';
+  btn.title = 'Supprimer l\'encadré';
+  btn.textContent = '✕';
+  btn.addEventListener('mousedown', e => e.preventDefault());
+  btn.addEventListener('click', () => el.remove());
+  el.appendChild(btn);
+}
+
 function insertCallout(type) {
   if (htmlMode) { toggleHtml(); }
   const editor = document.getElementById('fieldBodyEditor');
@@ -628,6 +643,7 @@ function insertCallout(type) {
   document.execCommand('insertHTML', false,
     `<div class="${cls}"><div><strong>Titre de l'encadré</strong> ${placeholder}</div></div><p><br></p>`
   );
+  editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
 }
 
 function toggleHtml() {
@@ -653,7 +669,10 @@ function toggleHtml() {
 function getEditorHtml() {
   if (htmlMode) return document.getElementById('fieldBody').value.trim();
 
-  let html = document.getElementById('fieldBodyEditor').innerHTML;
+  // Clone to strip UI-only elements (delete buttons) before serialising
+  const clone = document.getElementById('fieldBodyEditor').cloneNode(true);
+  clone.querySelectorAll('.callout-del').forEach(el => el.remove());
+  let html = clone.innerHTML;
 
   // Normalize browser-specific bold tags
   html = html.replace(/<b\b([^>]*)>/gi, '<strong$1>').replace(/<\/b>/gi, '</strong>');
@@ -675,7 +694,9 @@ function getEditorHtml() {
 }
 
 function setEditorHtml(html) {
-  document.getElementById('fieldBodyEditor').innerHTML = html || '';
+  const editor = document.getElementById('fieldBodyEditor');
+  editor.innerHTML = html || '';
+  editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
 }
 
 // ── Service Worker ────────────────────────────────────────────────────────────

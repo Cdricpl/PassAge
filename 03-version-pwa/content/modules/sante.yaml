@@ -58,6 +58,10 @@ sections:
       </ul>
 
       <div class="callout tip"><div><strong>Si c'est trop cher</strong>Va voir la fiche <a href="#/fiche/sante/maison-medicale">La maison médicale</a> — soins illimités gratuits si revenus limités.</div></div>
+  - id: mutuelle
+    title: Ma mutuelle
+    summary: Comprendre ses remboursements, BIM, choisir sa mutuelle.
+    linkTo: admin/mutuelle
   - id: maison-medicale
     title: La maison médicale
     summary: Soins illimités gratuits si tu t'inscris au forfait.
@@ -88,10 +92,6 @@ sections:
       </ul>
 
       <div class="callout"><div><strong>Pour qui ?</strong>Pour tout le monde, mais c'est particulièrement utile si tu as peu de revenus, des soucis de santé chroniques, ou si l'idée d'avancer de l'argent t'angoisse.</div></div>
-  - id: mutuelle
-    title: Ma mutuelle
-    summary: Comprendre ses remboursements, BIM, choisir sa mutuelle.
-    linkTo: admin/mutuelle
   - id: convention-psy
     title: Voir un psy — gratuit avant 24 ans
     summary: La convention psy 1ère ligne — accessible et déstigmatisée.

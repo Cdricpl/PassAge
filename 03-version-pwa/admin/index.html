@@ -28,7 +28,6 @@
     #appHeader .brand { font-weight: 700; font-size: 17px; flex: 1; }
     #appHeader button { background: rgba(255,255,255,.15); border: none; color: #fff; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
     #appHeader button:hover { background: rgba(255,255,255,.25); }
-    #backBtn { display: flex; align-items: center; gap: 6px; }
 
     /* ── Login ── */
     #view-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
@@ -65,13 +64,12 @@
     .reorder-btns { display: flex; flex-direction: column; gap: 2px; }
     .reorder-btns button { padding: 2px 6px; font-size: 11px; line-height: 1.4; }
 
-    /* ── Editor ── */
+    /* ── Editor form ── */
     .editor-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
     .form-group { margin-bottom: 18px; }
     .form-group label { display: block; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 6px; }
-    .form-group input, .form-group textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 15px; outline: none; transition: border-color .15s; font-family: inherit; }
-    .form-group textarea { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; resize: vertical; }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .form-group input { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 15px; outline: none; transition: border-color .15s; font-family: inherit; }
+    .form-group input:focus { border-color: var(--primary); }
     .form-group .hint { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
     .date-row { display: flex; gap: 8px; align-items: center; }
     .date-row input { flex: 1; margin-bottom: 0; }
@@ -79,6 +77,30 @@
     .save-status { margin-top: 12px; font-size: 14px; min-height: 20px; }
     .save-status.ok { color: var(--success); }
     .save-status.err { color: var(--danger); }
+
+    /* ── Rich text editor ── */
+    .editor-toolbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px; background: #eef2f8; border: 1.5px solid var(--border); border-radius: 8px 8px 0 0; border-bottom: none; }
+    .editor-toolbar button { background: var(--white); border: 1.5px solid var(--border); border-radius: 6px; padding: 7px 12px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text); line-height: 1; transition: background .1s, color .1s; }
+    .editor-toolbar button:active, .editor-toolbar button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .toolbar-sep { width: 1px; background: var(--border); align-self: stretch; margin: 2px 2px; }
+    .body-editor { min-height: 260px; border: 1.5px solid var(--border); border-radius: 0 0 8px 8px; padding: 14px; font-size: 15px; line-height: 1.65; outline: none; background: var(--white); overflow-y: auto; -webkit-user-modify: read-write-plaintext-only; }
+    .body-editor[contenteditable] { -webkit-user-modify: read-write; }
+    .body-editor:focus { border-color: var(--primary); }
+    .body-editor p { margin: 0 0 8px; }
+    .body-editor p:last-child { margin-bottom: 0; }
+    .body-editor h2 { font-size: 17px; font-weight: 700; margin: 16px 0 6px; }
+    .body-editor h3 { font-size: 15px; font-weight: 600; margin: 12px 0 4px; }
+    .body-editor ul, .body-editor ol { padding-left: 22px; margin: 0 0 8px; }
+    .body-editor li { margin-bottom: 3px; }
+    .body-editor a { color: var(--primary); text-decoration: underline; }
+    .body-editor strong { font-weight: 700; }
+    .body-editor .callout { background: var(--primary-soft); border-left: 4px solid var(--primary); border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+    .body-editor .callout.warn { background: #fff8e1; border-left-color: #f59f00; }
+    .body-editor .callout.tip { background: #e6f9f2; border-left-color: var(--success); }
+    .body-textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 0 0 8px 8px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; resize: vertical; outline: none; }
+    .body-textarea:focus { border-color: var(--primary); }
+    .callout-bar { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+    .callout-bar button { font-size: 12px; padding: 5px 10px; }
 
     /* ── Buttons ── */
     .btn-primary { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .15s; }
@@ -183,17 +205,36 @@
         <div class="form-group">
           <label>Redirection vers (optionnel)</label>
           <input id="fieldLinkTo" type="text" placeholder="module/fiche-id  — laisser vide pour une fiche normale">
-          <div class="hint">Remplis ce champ uniquement si cette fiche est un raccourci vers une fiche existante dans un autre module. Dans ce cas, le contenu HTML n'est pas nécessaire.</div>
+          <div class="hint">Remplis ce champ uniquement si cette fiche est un raccourci vers une autre fiche existante. Dans ce cas, le contenu ci-dessous n'est pas nécessaire.</div>
         </div>
+
+        <!-- Rich text editor -->
         <div class="form-group">
-          <label>Contenu HTML</label>
-          <textarea id="fieldBody" rows="22" placeholder="<p>Ton contenu ici...</p>&#10;&#10;<h2>Sous-titre</h2>&#10;<ul>&#10;  <li>Élément</li>&#10;</ul>"></textarea>
-          <div class="hint">
-            Tags supportés : <code>&lt;p&gt;</code> <code>&lt;h2&gt;</code> <code>&lt;h3&gt;</code> <code>&lt;ul&gt;&lt;li&gt;</code> <code>&lt;ol class="fiche-ol"&gt;&lt;li&gt;</code> <code>&lt;strong&gt;</code> <code>&lt;a href="#/fiche/module/id"&gt;</code><br>
-            Encadré info : <code>&lt;div class="callout"&gt;&lt;div&gt;&lt;strong&gt;Titre&lt;/strong&gt;Texte.&lt;/div&gt;&lt;/div&gt;</code><br>
-            Encadré attention : remplace <code>callout</code> par <code>callout warn</code> ou <code>callout tip</code>.
+          <label>Contenu</label>
+          <div class="editor-toolbar" id="editorToolbar">
+            <button type="button" data-cmd="bold" title="Gras"><strong>G</strong></button>
+            <button type="button" data-cmd="h2" title="Titre H2">H2</button>
+            <button type="button" data-cmd="h3" title="Sous-titre H3">H3</button>
+            <span class="toolbar-sep"></span>
+            <button type="button" data-cmd="ul" title="Liste à puces">• Liste</button>
+            <button type="button" data-cmd="ol" title="Liste numérotée">1. Liste</button>
+            <span class="toolbar-sep"></span>
+            <button type="button" data-cmd="link" title="Insérer un lien">🔗 Lien</button>
+            <span class="toolbar-sep"></span>
+            <button type="button" id="htmlToggleBtn" onclick="toggleHtml()" title="Voir / modifier le HTML brut">HTML</button>
+          </div>
+          <div id="fieldBodyEditor" class="body-editor" contenteditable="true" spellcheck="true"></div>
+          <textarea id="fieldBody" class="body-textarea" style="display:none" rows="20" placeholder="<p>Ton contenu ici...</p>"></textarea>
+
+          <!-- Encadré insertion bar -->
+          <div class="callout-bar">
+            <span style="font-size:12px;color:var(--muted);align-self:center">Insérer un encadré :</span>
+            <button type="button" class="btn-ghost btn-sm" onclick="insertCallout('info')">ℹ Info</button>
+            <button type="button" class="btn-ghost btn-sm" onclick="insertCallout('warn')">⚠ Attention</button>
+            <button type="button" class="btn-ghost btn-sm" onclick="insertCallout('tip')">✓ Conseil</button>
           </div>
         </div>
+
         <div class="form-actions">
           <button type="button" onclick="cancelEdit()" class="btn-ghost">Annuler</button>
           <button type="button" id="saveBtn" onclick="saveSection()" class="btn-primary">Enregistrer</button>
@@ -223,7 +264,8 @@ let token = sessionStorage.getItem('gh_token') || '';
 let currentModuleId   = null;
 let currentModuleData = null;
 let currentModuleSha  = null;
-let currentSectionIdx = null; // -1 = new
+let currentSectionIdx = null;
+let htmlMode = false;
 
 // ── GitHub API ──────────────────────────────────────────────────────────────
 async function ghGet(path) {
@@ -268,18 +310,13 @@ function toast(msg, type = 'ok') {
 
 // ── View management ─────────────────────────────────────────────────────────
 const views = ['dashboard','module','section'];
-
 function showView(name) {
   views.forEach(v => document.getElementById(`view-${v}`).style.display = v === name ? '' : 'none');
   document.getElementById('backBtn').style.display = name === 'dashboard' ? 'none' : '';
 }
-
 function goBack() {
-  if (document.getElementById('view-section').style.display !== 'none') {
-    showView('module');
-  } else {
-    showView('dashboard');
-  }
+  if (document.getElementById('view-section').style.display !== 'none') showView('module');
+  else showView('dashboard');
 }
 
 // ── Auth ────────────────────────────────────────────────────────────────────
@@ -290,9 +327,7 @@ document.getElementById('loginForm').addEventListener('submit', async e => {
   errEl.style.display = 'none';
   btn.textContent = 'Connexion…';
   btn.disabled = true;
-
   token = document.getElementById('tokenInput').value.trim();
-
   try {
     const r = await fetch('https://api.github.com/user', {
       headers: { Authorization: `Bearer ${token}` }
@@ -323,14 +358,12 @@ async function showDashboard() {
   showView('dashboard');
   const grid = document.getElementById('moduleGrid');
   grid.innerHTML = '<div class="loading"><span class="spinner"></span>Chargement…</div>';
-
   try {
     const modules = await Promise.all(MODULE_ORDER.map(async id => {
       const data = await ghGet(`${BASE_PATH}/${id}.yaml`);
       const mod  = jsyaml.load(decodeContent(data.content));
       return { id, title: mod.title || MODULE_LABELS[id], count: (mod.sections || []).length };
     }));
-
     grid.innerHTML = modules.map(m => `
       <div class="module-card" onclick="loadModule('${m.id}')">
         <div class="mod-title">${m.title}</div>
@@ -349,7 +382,6 @@ async function loadModule(id) {
   document.getElementById('moduleTitle').textContent = MODULE_LABELS[id] || id;
   document.getElementById('sectionList').innerHTML =
     '<div class="loading"><span class="spinner"></span>Chargement…</div>';
-
   try {
     const data = await ghGet(`${BASE_PATH}/${id}.yaml`);
     currentModuleSha  = data.sha;
@@ -365,12 +397,10 @@ async function loadModule(id) {
 function renderSections() {
   const list = document.getElementById('sectionList');
   const secs = currentModuleData.sections;
-
   if (!secs.length) {
     list.innerHTML = '<p style="color:var(--muted)">Aucune fiche. Clique sur "+ Nouvelle fiche" pour commencer.</p>';
     return;
   }
-
   list.innerHTML = secs.map((s, i) => `
     <div class="section-row">
       <div class="section-info">
@@ -433,9 +463,11 @@ function populateEditor(s) {
   document.getElementById('fieldSource').value      = s.source      || '';
   document.getElementById('fieldLastChecked').value = s.lastChecked || '';
   document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
-  document.getElementById('fieldBody').value        = s.body        || '';
   document.getElementById('saveStatus').textContent = '';
   document.getElementById('saveStatus').className   = 'save-status';
+  // Reset to visual mode before setting content
+  if (htmlMode) toggleHtml();
+  setEditorHtml(s.body || '');
 }
 
 function setToday() {
@@ -445,9 +477,7 @@ function setToday() {
   document.getElementById('fieldLastChecked').value = `${day}/${mon}/${d.getFullYear()}`;
 }
 
-function cancelEdit() {
-  showView('module');
-}
+function cancelEdit() { showView('module'); }
 
 async function saveSection() {
   const id      = document.getElementById('fieldId').value.trim();
@@ -462,21 +492,16 @@ async function saveSection() {
     setStatus("L'ID ne doit contenir que des lettres minuscules, chiffres et tirets.", 'err');
     return;
   }
-
-  // Check for duplicate ID (only when adding)
-  if (currentSectionIdx === -1) {
-    const exists = currentModuleData.sections.some(s => s.id === id);
-    if (exists) {
-      setStatus(`L'ID "${id}" existe déjà dans ce module.`, 'err');
-      return;
-    }
+  if (currentSectionIdx === -1 && currentModuleData.sections.some(s => s.id === id)) {
+    setStatus(`L'ID "${id}" existe déjà dans ce module.`, 'err');
+    return;
   }
 
   const section = { id, title, summary };
   const source      = document.getElementById('fieldSource').value.trim();
   const lastChecked = document.getElementById('fieldLastChecked').value.trim();
   const linkTo      = document.getElementById('fieldLinkTo').value.trim();
-  const body        = document.getElementById('fieldBody').value.trim();
+  const body        = getEditorHtml();
 
   if (source)      section.source      = source;
   if (lastChecked) section.lastChecked = lastChecked;
@@ -493,19 +518,14 @@ async function saveSection() {
     } else {
       currentModuleData.sections[currentSectionIdx] = section;
     }
-
     const verb = currentSectionIdx === -1 ? 'ajout' : 'modification';
     await commitModule(`content(${currentModuleId}): ${verb} de "${id}"`);
     setStatus('Enregistré ✓', 'ok');
     setTimeout(() => { showView('module'); renderSections(); }, 1000);
   } catch (err) {
     setStatus(`Erreur : ${err.message}`, 'err');
-    // rollback
-    if (currentSectionIdx === -1) {
-      currentModuleData.sections.pop();
-    } else {
-      await loadModule(currentModuleId); // reload from server
-    }
+    if (currentSectionIdx === -1) currentModuleData.sections.pop();
+    else await loadModule(currentModuleId);
   } finally {
     btn.disabled = false;
     btn.textContent = 'Enregistrer';
@@ -520,20 +540,121 @@ function setStatus(msg, type) {
 
 // ── Commit helper ─────────────────────────────────────────────────────────────
 async function commitModule(message) {
-  const yaml = jsyaml.dump(currentModuleData, {
-    allowUnicode: true,
-    lineWidth: -1,
-    noRefs: true
-  });
-
+  const yaml = jsyaml.dump(currentModuleData, { allowUnicode: true, lineWidth: -1, noRefs: true });
   const result = await ghPut(`${BASE_PATH}/${currentModuleId}.yaml`, yaml, currentModuleSha, message);
   currentModuleSha = result.content.sha;
   toast('Sauvegardé — GitHub Actions va déployer dans quelques secondes.');
 }
 
+// ── Rich text editor ──────────────────────────────────────────────────────────
+
+// Prevent toolbar buttons from stealing focus (keeps cursor in editor)
+document.getElementById('editorToolbar').addEventListener('mousedown', e => {
+  if (e.target.closest('button[data-cmd]')) e.preventDefault();
+});
+
+document.getElementById('editorToolbar').addEventListener('click', e => {
+  const btn = e.target.closest('button[data-cmd]');
+  if (!btn) return;
+  const editor = document.getElementById('fieldBodyEditor');
+  editor.focus();
+  const cmd = btn.dataset.cmd;
+
+  if (cmd === 'bold') {
+    document.execCommand('bold', false, null);
+
+  } else if (cmd === 'h2' || cmd === 'h3') {
+    const current = document.queryCommandValue('formatBlock').toLowerCase();
+    document.execCommand('formatBlock', false, current === cmd ? 'p' : cmd);
+
+  } else if (cmd === 'ul') {
+    document.execCommand('insertUnorderedList', false, null);
+
+  } else if (cmd === 'ol') {
+    document.execCommand('insertOrderedList', false, null);
+
+  } else if (cmd === 'link') {
+    const sel = window.getSelection();
+    const selectedText = sel ? sel.toString().trim() : '';
+    const url = prompt(
+      'URL du lien :\n\nFiche interne → sante/medecin\nSite externe → https://site.be',
+      '#/fiche/'
+    );
+    if (!url) return;
+    editor.focus();
+    const fullUrl = url.startsWith('#') || url.startsWith('http') ? url : '#/fiche/' + url;
+    if (selectedText) {
+      document.execCommand('createLink', false, fullUrl);
+    } else {
+      document.execCommand('insertHTML', false, `<a href="${fullUrl}">${fullUrl}</a>`);
+    }
+  }
+});
+
+function insertCallout(type) {
+  if (htmlMode) {
+    toast('Passe en mode visuel pour insérer un encadré.', 'warn');
+    return;
+  }
+  const editor = document.getElementById('fieldBodyEditor');
+  editor.focus();
+  const cls = type === 'warn' ? 'callout warn' : type === 'tip' ? 'callout tip' : 'callout';
+  const placeholder = type === 'warn' ? 'Point important à retenir.' : type === 'tip' ? 'Conseil pratique.' : 'Information utile.';
+  document.execCommand('insertHTML', false,
+    `<div class="${cls}"><div><strong>Titre</strong> ${placeholder}</div></div><p><br></p>`
+  );
+}
+
+function toggleHtml() {
+  const editor   = document.getElementById('fieldBodyEditor');
+  const textarea = document.getElementById('fieldBody');
+  const btn      = document.getElementById('htmlToggleBtn');
+
+  if (!htmlMode) {
+    textarea.value = getEditorHtml();
+    textarea.rows  = Math.max(20, textarea.value.split('\n').length + 3);
+    editor.style.display   = 'none';
+    textarea.style.display = '';
+    btn.classList.add('active');
+  } else {
+    editor.innerHTML       = textarea.value || '';
+    editor.style.display   = '';
+    textarea.style.display = 'none';
+    btn.classList.remove('active');
+  }
+  htmlMode = !htmlMode;
+}
+
+function getEditorHtml() {
+  if (htmlMode) return document.getElementById('fieldBody').value.trim();
+
+  let html = document.getElementById('fieldBodyEditor').innerHTML;
+
+  // Normalize browser-specific bold tags
+  html = html.replace(/<b\b([^>]*)>/gi, '<strong$1>').replace(/<\/b>/gi, '</strong>');
+  // Strip browser-injected style/class/id/dir attributes (but keep our own class="callout*")
+  html = html.replace(/ style="[^"]*"/gi, '');
+  html = html.replace(/ id="[^"]*"/gi, '');
+  html = html.replace(/ dir="[^"]*"/gi, '');
+  html = html.replace(/ class="Apple-[^"]*"/gi, '');
+  html = html.replace(/ data-[a-z-]+="[^"]*"/gi, '');
+  // Add class to ordered lists
+  html = html.replace(/<ol\b[^>]*>/gi, '<ol class="fiche-ol">');
+  // Clean trailing <br> inside block elements
+  html = html.replace(/<br\s*\/?>\s*(<\/(li|p|h[23]|div)>)/gi, '$1');
+  // Remove purely empty paragraphs
+  html = html.replace(/<p>\s*<\/p>/gi, '');
+  html = html.replace(/<p><br\s*\/?><\/p>/gi, '');
+
+  return html.trim();
+}
+
+function setEditorHtml(html) {
+  document.getElementById('fieldBodyEditor').innerHTML = html || '';
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 if (token) {
-  // Already logged in (session still valid)
   document.getElementById('view-login').style.display = 'none';
   document.getElementById('app').style.display = '';
   showDashboard();

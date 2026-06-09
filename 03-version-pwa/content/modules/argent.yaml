@@ -9,8 +9,8 @@ sections:
   - id: ris-cpas
     title: Le RIS et le CPAS
     summary: Comment l'obtenir, conditions, contrat d'intégration.
-    lastChecked: 03/06/2026
-    body: |
+    lastChecked: 09/06/2026
+    body: |-
       <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune. En tant que jeune accueilli·e, c'est un droit pour toi.</p>
 
       <h2>Les conditions</h2>

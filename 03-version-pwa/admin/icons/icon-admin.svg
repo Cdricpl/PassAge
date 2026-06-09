@@ -1,0 +1,13 @@
+<svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond marine sombre (différent du bleu #4F7CAC de l'app publique) -->
+  <circle cx="96" cy="96" r="96" fill="#1D3557"/>
+  <!-- Maison (même style que l'app) -->
+  <path d="M60 132 L60 84 L96 60 L132 84 L132 132" fill="none" stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Porte -->
+  <rect x="82" y="100" width="28" height="32" rx="3" fill="none" stroke="white" stroke-width="8"/>
+  <!-- Crayon (coin haut-droit) — indique l'édition -->
+  <path d="M124 56 L136 44 L152 60 L140 72 Z" fill="#FCBF49"/>
+  <path d="M140 72 L148 85 L135 76 Z" fill="#D4940A"/>
+  <rect x="134" y="36" width="10" height="10" rx="2"
+        transform="rotate(45 139 41)" fill="#E8D5D5"/>
+</svg>

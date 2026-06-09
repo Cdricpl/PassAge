@@ -6,6 +6,27 @@ icon: euro
 objective: Comprendre ce que tu peux toucher, mieux gérer ton argent, savoir où demander de l'aide.
 source: mi-is.be (SPP Intégration sociale) · inforjeunes.be
 sections:
+  - id: aides-disponibles
+    title: Les aides auxquelles j'ai droit
+    summary: 'Vue d''ensemble : RIS, allocations, bourses.'
+    lastChecked: 03/06/2026
+    body: |
+      <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
+
+      <h2>1. Les allocations familiales</h2>
+      <p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
+
+      <h2>2. Le RIS (revenu d'intégration sociale)</h2>
+      <p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
+
+      <h2>3. La bourse d'études (FWB)</h2>
+      <p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
+
+      <h2>4. Les aides ponctuelles du CPAS</h2>
+      <p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
+
+      <h2>5. Le compte d'épargne mandant</h2>
+      <p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
   - id: ris-cpas
     title: Le RIS et le CPAS
     summary: Comment l'obtenir, conditions, contrat d'intégration.
@@ -32,27 +53,6 @@ sections:
 
       <h2>Aides ponctuelles</h2>
       <p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>
-  - id: aides-disponibles
-    title: Les aides auxquelles j'ai droit
-    summary: 'Vue d''ensemble : RIS, allocations, bourses.'
-    lastChecked: 03/06/2026
-    body: |
-      <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
-
-      <h2>1. Les allocations familiales</h2>
-      <p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
-
-      <h2>2. Le RIS (revenu d'intégration sociale)</h2>
-      <p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
-
-      <h2>3. La bourse d'études (FWB)</h2>
-      <p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
-
-      <h2>4. Les aides ponctuelles du CPAS</h2>
-      <p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
-
-      <h2>5. Le compte d'épargne mandant</h2>
-      <p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
   - id: allocations-familiales
     title: Mes allocations familiales
     summary: À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études.

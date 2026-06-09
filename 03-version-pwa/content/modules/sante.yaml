@@ -88,6 +88,10 @@ sections:
       </ul>
 
       <div class="callout"><div><strong>Pour qui ?</strong>Pour tout le monde, mais c'est particulièrement utile si tu as peu de revenus, des soucis de santé chroniques, ou si l'idée d'avancer de l'argent t'angoisse.</div></div>
+  - id: mutuelle
+    title: Ma mutuelle
+    summary: Comprendre ses remboursements, BIM, choisir sa mutuelle.
+    linkTo: admin/mutuelle
   - id: convention-psy
     title: Voir un psy — gratuit avant 24 ans
     summary: La convention psy 1ère ligne — accessible et déstigmatisée.
@@ -162,10 +166,6 @@ sections:
       </ul>
 
       <div class="callout warn"><div><strong>Dans le doute</strong>Appelle le 112 ou le 1733. Personne ne va te juger pour avoir appelé "pour rien".</div></div>
-  - id: mutuelle
-    title: Ma mutuelle
-    summary: Comprendre ses remboursements, BIM, choisir sa mutuelle.
-    linkTo: admin/mutuelle
   - id: planning-familial
     title: Le planning familial
     summary: Contraception, IVG, écoute, conseil — gratuit pour les jeunes.

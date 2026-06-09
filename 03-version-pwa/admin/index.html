@@ -107,8 +107,8 @@
     .body-editor .callout.tip { background: #e6f9f2; border-left-color: var(--success); }
     .body-textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 0 0 8px 8px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; resize: vertical; outline: none; }
     .body-textarea:focus { border-color: var(--primary); }
-    .callout-bar { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
-    .callout-bar button { font-size: 12px; padding: 5px 10px; }
+    .editor-help { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
+    .body-editor[data-placeholder]:empty::before { content: attr(data-placeholder); color: #bbb; pointer-events: none; display: block; }
 
     /* ── Buttons ── */
     .btn-primary { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .15s; }
@@ -219,28 +219,25 @@
         <!-- Rich text editor -->
         <div class="form-group">
           <label>Contenu</label>
+          <p class="editor-help">Écris ton texte, sélectionne un mot, puis appuie sur un bouton pour le mettre en forme.</p>
           <div class="editor-toolbar" id="editorToolbar">
-            <button type="button" data-cmd="bold" title="Gras"><strong>G</strong></button>
-            <button type="button" data-cmd="h2" title="Titre H2">H2</button>
-            <button type="button" data-cmd="h3" title="Sous-titre H3">H3</button>
+            <button type="button" data-cmd="bold"><strong>Gras</strong></button>
+            <button type="button" data-cmd="h2">Titre</button>
+            <button type="button" data-cmd="h3">Sous-titre</button>
             <span class="toolbar-sep"></span>
-            <button type="button" data-cmd="ul" title="Liste à puces">• Liste</button>
-            <button type="button" data-cmd="ol" title="Liste numérotée">1. Liste</button>
+            <button type="button" data-cmd="ul">• Puces</button>
+            <button type="button" data-cmd="ol">1. Numéros</button>
             <span class="toolbar-sep"></span>
-            <button type="button" data-cmd="link" title="Insérer un lien">🔗 Lien</button>
+            <button type="button" data-cmd="link">🔗 Lien</button>
             <span class="toolbar-sep"></span>
-            <button type="button" id="htmlToggleBtn" onclick="toggleHtml()" title="Voir / modifier le HTML brut">HTML</button>
+            <button type="button" data-cmd="callout-info" title="Encadré bleu informatif">📘 Info</button>
+            <button type="button" data-cmd="callout-warn" title="Encadré orange attention">⚠️ Attention</button>
+            <button type="button" data-cmd="callout-tip" title="Encadré vert conseil">✅ Conseil</button>
+            <span class="toolbar-sep"></span>
+            <button type="button" id="htmlToggleBtn" onclick="toggleHtml()" style="font-size:11px;color:var(--muted)">code HTML</button>
           </div>
-          <div id="fieldBodyEditor" class="body-editor" contenteditable="true" spellcheck="true"></div>
+          <div id="fieldBodyEditor" class="body-editor" contenteditable="true" spellcheck="true" data-placeholder="Commence à écrire le contenu de la fiche ici…"></div>
           <textarea id="fieldBody" class="body-textarea" style="display:none" rows="20" placeholder="<p>Ton contenu ici...</p>"></textarea>
-
-          <!-- Encadré insertion bar -->
-          <div class="callout-bar">
-            <span style="font-size:12px;color:var(--muted);align-self:center">Insérer un encadré :</span>
-            <button type="button" class="btn-ghost btn-sm" onclick="insertCallout('info')">ℹ Info</button>
-            <button type="button" class="btn-ghost btn-sm" onclick="insertCallout('warn')">⚠ Attention</button>
-            <button type="button" class="btn-ghost btn-sm" onclick="insertCallout('tip')">✓ Conseil</button>
-          </div>
         </div>
 
         <div class="form-actions">
@@ -581,6 +578,10 @@ document.getElementById('editorToolbar').addEventListener('click', e => {
   } else if (cmd === 'ol') {
     document.execCommand('insertOrderedList', false, null);
 
+  } else if (cmd === 'callout-info' || cmd === 'callout-warn' || cmd === 'callout-tip') {
+    const type = cmd.replace('callout-', '');
+    insertCallout(type);
+
   } else if (cmd === 'link') {
     const sel = window.getSelection();
     const selectedText = sel ? sel.toString().trim() : '';
@@ -600,16 +601,13 @@ document.getElementById('editorToolbar').addEventListener('click', e => {
 });
 
 function insertCallout(type) {
-  if (htmlMode) {
-    toast('Passe en mode visuel pour insérer un encadré.', 'warn');
-    return;
-  }
+  if (htmlMode) { toggleHtml(); }
   const editor = document.getElementById('fieldBodyEditor');
   editor.focus();
   const cls = type === 'warn' ? 'callout warn' : type === 'tip' ? 'callout tip' : 'callout';
   const placeholder = type === 'warn' ? 'Point important à retenir.' : type === 'tip' ? 'Conseil pratique.' : 'Information utile.';
   document.execCommand('insertHTML', false,
-    `<div class="${cls}"><div><strong>Titre</strong> ${placeholder}</div></div><p><br></p>`
+    `<div class="${cls}"><div><strong>Titre de l'encadré</strong> ${placeholder}</div></div><p><br></p>`
   );
 }
 

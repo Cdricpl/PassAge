@@ -16,26 +16,27 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary: #4F7CAC;
-      --primary-soft: #e8f0f8;
-      --danger: #E63946;
-      --danger-soft: #fdecea;
-      --success: #06A77D;
-      --text: #1a2535;
-      --muted: #6b7a90;
-      --border: #dde3ec;
-      --bg: #f4f6fa;
-      --white: #fff;
-      --radius: 10px;
+      --primary: #4F7CAC; --primary-soft: #e8f0f8; --primary-dark: #3A5F8A;
+      --danger: #E63946; --danger-soft: #fdecea;
+      --success: #06A77D; --success-soft: #e6f9f2;
+      --warn: #E8B86A; --warn-soft: #FBEFD7;
+      --text: #1a2535; --muted: #6b7a90; --border: #dde3ec;
+      --bg: #f4f6fa; --white: #fff; --radius: 10px;
       --shadow: 0 2px 8px rgba(0,0,0,.08);
     }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.5; }
 
     /* ── Header ── */
-    #appHeader { background: var(--primary); color: #fff; padding: 0 16px; height: 52px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10; }
+    #appHeader { background: var(--primary); color: #fff; padding: 0 16px; height: 52px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 20; }
     #appHeader .brand { font-weight: 700; font-size: 17px; flex: 1; }
     #appHeader button { background: rgba(255,255,255,.15); border: none; color: #fff; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
     #appHeader button:hover { background: rgba(255,255,255,.25); }
+
+    /* ── Deploy status bar ── */
+    #deployBar { display: none; position: sticky; top: 52px; z-index: 15; padding: 8px 16px; font-size: 13px; font-weight: 500; text-align: center; gap: 8px; align-items: center; justify-content: center; }
+    #deployBar.running { display: flex; background: #fff3cd; color: #856404; border-bottom: 1px solid #ffc107; }
+    #deployBar.success { display: flex; background: var(--success-soft); color: #065f46; border-bottom: 1px solid var(--success); }
+    #deployBar.error   { display: flex; background: var(--danger-soft); color: var(--danger); border-bottom: 1px solid var(--danger); }
 
     /* ── Login ── */
     #view-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
@@ -43,94 +44,112 @@
     .login-logo { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 6px; }
     .login-box h1 { font-size: 20px; font-weight: 600; margin-bottom: 24px; color: var(--muted); }
     .login-box label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-    .login-box input { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 15px; margin-bottom: 12px; outline: none; transition: border-color .15s; }
+    .login-box input { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 15px; margin-bottom: 12px; outline: none; }
     .login-box input:focus { border-color: var(--primary); }
     .login-box .hint { font-size: 13px; color: var(--muted); margin-top: 16px; }
     .login-box .hint code { background: var(--bg); padding: 1px 5px; border-radius: 4px; }
     .login-box .hint a { color: var(--primary); }
 
-    /* ── Container ── */
+    /* ── Container & titles ── */
     .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
-    .page-title { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+    .page-title { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+    .page-subtitle { font-size: 14px; color: var(--muted); margin-top: -10px; margin-bottom: 16px; }
+
+    /* ── Search ── */
+    .global-search { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 14px 10px 38px; font-size: 15px; outline: none; background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7a90' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 11px center; margin-bottom: 16px; }
+    .global-search:focus { border-color: var(--primary); }
+    .search-results { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+    .search-result { padding: 12px 16px; border-bottom: 1px solid var(--border); cursor: pointer; }
+    .search-result:last-child { border-bottom: none; }
+    .search-result:hover { background: var(--primary-soft); }
+    .search-result-mod { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .search-result-title { font-weight: 600; font-size: 15px; }
+    .search-result-summary { font-size: 13px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .search-empty { padding: 20px; text-align: center; color: var(--muted); font-size: 14px; }
 
     /* ── Module grid ── */
-    .module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+    .module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
     .module-card { background: var(--white); border-radius: var(--radius); padding: 16px; cursor: pointer; border: 1.5px solid var(--border); transition: border-color .15s, transform .1s; }
     .module-card:hover { border-color: var(--primary); transform: translateY(-1px); }
     .module-card .mod-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
     .module-card .mod-count { font-size: 13px; color: var(--muted); }
+    .dashboard-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 
     /* ── Section list ── */
-    .list-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .list-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 8px; flex-wrap: wrap; }
     .list-header h2 { font-size: 20px; font-weight: 700; }
-    .section-row { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; }
+    .list-actions { display: flex; gap: 8px; }
+    .section-row { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
     .section-info { flex: 1; min-width: 0; }
     .section-info strong { display: block; font-weight: 600; }
-    .section-summary { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 480px; display: block; margin-top: 2px; }
+    .section-summary { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 420px; display: block; margin-top: 2px; }
     .badge { font-size: 12px; background: var(--primary-soft); color: var(--primary); border-radius: 4px; padding: 1px 7px; margin-top: 4px; display: inline-block; }
-    .section-actions { display: flex; gap: 6px; flex-shrink: 0; align-items: center; }
+    .section-actions { display: flex; gap: 4px; flex-shrink: 0; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     .reorder-btns { display: flex; flex-direction: column; gap: 2px; }
     .reorder-btns button { padding: 2px 6px; font-size: 11px; line-height: 1.4; }
 
-    /* ── Editor form ── */
+    /* ── Forms ── */
     .editor-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
     .form-group { margin-bottom: 18px; }
     .form-group label { display: block; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 6px; }
-    .form-group input { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 15px; outline: none; transition: border-color .15s; font-family: inherit; }
-    .form-group input:focus { border-color: var(--primary); }
+    .form-group input, .form-group textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 15px; outline: none; transition: border-color .15s; font-family: inherit; }
+    .form-group textarea { resize: vertical; line-height: 1.5; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
     .form-group .hint { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
     .date-row { display: flex; gap: 8px; align-items: center; }
-    .date-row input { flex: 1; margin-bottom: 0; }
+    .date-row input { flex: 1; }
     .form-actions { display: flex; gap: 10px; margin-top: 24px; }
     .save-status { margin-top: 12px; font-size: 14px; min-height: 20px; }
     .save-status.ok { color: var(--success); }
     .save-status.err { color: var(--danger); }
 
-    /* ── Toolbar (fine barre flottante) ── */
+    /* ── Toolbar ── */
     .editor-toolbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 8px; background: #fff; border: 1px solid #dde3ec; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); position: sticky; top: 52px; z-index: 5; }
     .editor-toolbar button { background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 5px 10px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a2535; line-height: 1; transition: background .1s; }
-    .editor-toolbar button:active, .editor-toolbar button.active { background: #4F7CAC; color: #fff; border-color: #4F7CAC; }
+    .editor-toolbar button:active, .editor-toolbar button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
     .editor-toolbar button:hover:not(.active) { background: #eef2f8; }
     .toolbar-sep { width: 1px; background: #dde3ec; align-self: stretch; margin: 2px 2px; }
 
-    /* ── Fiche preview (rendu identique à l'app) ── */
-    .body-editor {
-      background: #FFFFFF;
-      border: 1px solid #E8EAEF;
-      border-radius: 14px;
-      padding: 20px;
-      font-size: 1.0625rem;
-      color: #2D3142;
-      line-height: 1.6;
-      min-height: 320px;
-      outline: none;
-      box-shadow: 0 1px 4px rgba(0,0,0,.04);
-    }
-    .body-editor:focus { border-color: #4F7CAC; box-shadow: 0 0 0 3px rgba(79,124,172,.12); }
+    /* ── Fiche editor (rendu identique à l'app) ── */
+    .body-editor { background: #FFFFFF; border: 1px solid #E8EAEF; border-radius: 14px; padding: 20px; font-size: 1.0625rem; color: #2D3142; line-height: 1.6; min-height: 320px; outline: none; box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+    .body-editor:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,124,172,.12); }
     .body-editor p { margin: 0 0 .75rem; }
     .body-editor p:last-child { margin-bottom: 0; }
     .body-editor h2 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin: 1.25rem 0 .5rem; color: #2D3142; }
     .body-editor h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.3; margin: 1rem 0 .25rem; color: #2D3142; }
     .body-editor strong { font-weight: 700; color: #2D3142; }
-    .body-editor a { color: #4F7CAC; text-decoration: underline; }
-    /* Listes à puces colorées (exactement comme l'app) */
+    .body-editor a { color: var(--primary); text-decoration: underline; }
     .body-editor ul { list-style: none; padding-left: 0; margin: .75rem 0; }
     .body-editor ul li { position: relative; padding-left: 24px; margin-bottom: .5rem; }
-    .body-editor ul li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: #4F7CAC; }
+    .body-editor ul li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
     .body-editor ol { padding-left: 22px; margin: .75rem 0; }
     .body-editor ol li { margin-bottom: .5rem; }
-    /* Encadrés (exactement comme l'app) */
-    .body-editor .callout { position: relative; display: flex; gap: .75rem; padding: 1rem; border-radius: 14px; margin: 1rem 0; font-size: .9375rem; background: #E5EDF5; border-left: 4px solid #4F7CAC; }
+    .body-editor .callout { position: relative; display: flex; gap: .75rem; padding: 1rem 2.5rem 1rem 1rem; border-radius: 14px; margin: 1rem 0; font-size: .9375rem; background: #E5EDF5; border-left: 4px solid var(--primary); }
     .body-editor .callout > div > strong:first-child { display: block; margin-bottom: 4px; }
-    .body-editor .callout.warn { background: #FBEFD7; border-color: #E8B86A; }
-    .body-editor .callout.tip  { background: #E0F0E6; border-color: #6FB58A; }
+    .body-editor .callout.warn { background: #FBEFD7; border-color: var(--warn); }
+    .body-editor .callout.tip  { background: #E0F0E6; border-color: var(--success); }
     .callout-del { position: absolute; top: 6px; right: 8px; background: rgba(0,0,0,.15); border: none; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; cursor: pointer; color: inherit; display: flex; align-items: center; justify-content: center; line-height: 1; }
     .callout-del:hover { background: rgba(0,0,0,.3); }
-    /* Placeholder */
     .body-editor[data-placeholder]:empty::before { content: attr(data-placeholder); color: #bbb; pointer-events: none; display: block; font-style: italic; }
-    /* Mode HTML */
     .body-textarea { width: 100%; border: 1px solid #E8EAEF; border-radius: 14px; padding: 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; resize: vertical; outline: none; }
-    .body-textarea:focus { border-color: #4F7CAC; }
+    .body-textarea:focus { border-color: var(--primary); }
+    .dirty-indicator { font-size: 12px; color: var(--warn); font-weight: 600; margin-left: 8px; }
+
+    /* ── Lexique ── */
+    .lex-entry { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
+    .lex-entry-header { display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; }
+    .lex-entry-header:hover { background: var(--primary-soft); }
+    .lex-keyword { font-weight: 700; flex: 1; font-size: 15px; }
+    .lex-tags { display: flex; flex-wrap: wrap; gap: 4px; flex: 2; }
+    .lex-tag { font-size: 11px; background: var(--primary-soft); color: var(--primary); border-radius: 4px; padding: 2px 7px; }
+    .lex-entry-body { display: none; padding: 0 14px 14px; border-top: 1px solid var(--border); }
+    .lex-entry-body.open { display: block; }
+    .lex-fiche-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .lex-fiche-row:last-child { border-bottom: none; }
+    .lex-fiche-path { flex: 1; font-size: 14px; font-family: monospace; }
+    .lex-add-row { display: flex; gap: 8px; margin-top: 10px; }
+    .lex-add-row input { flex: 1; border: 1.5px solid var(--border); border-radius: 6px; padding: 7px 10px; font-size: 14px; outline: none; }
+    .lex-add-row input:focus { border-color: var(--primary); }
 
     /* ── Buttons ── */
     .btn-primary { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .15s; }
@@ -141,24 +160,30 @@
     .btn-danger { background: var(--danger-soft); color: var(--danger); border: 1.5px solid transparent; border-radius: 8px; padding: 7px 12px; font-size: 13px; cursor: pointer; }
     .btn-danger:hover { border-color: var(--danger); }
     .btn-sm { padding: 6px 12px; font-size: 13px; }
+    .btn-xs { padding: 4px 8px; font-size: 12px; border-radius: 6px; }
 
     /* ── Error / loading ── */
     .error-msg { color: var(--danger); font-size: 14px; margin: 8px 0; }
     .loading { color: var(--muted); font-style: italic; padding: 24px 0; }
-    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 6px; }
+    .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(0,0,0,.15); border-top-color: currentColor; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 6px; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     /* ── Toast ── */
-    #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1a2535; color: #fff; border-radius: 8px; padding: 12px 24px; font-size: 14px; font-weight: 500; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 100; }
+    #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1a2535; color: #fff; border-radius: 8px; padding: 12px 24px; font-size: 14px; font-weight: 500; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 100; max-width: 90vw; text-align: center; }
     #toast.show { opacity: 1; }
   </style>
 </head>
 <body>
 
-<!-- Toast -->
 <div id="toast"></div>
 
-<!-- Login view -->
+<!-- Deploy status bar -->
+<div id="deployBar">
+  <span class="spinner"></span>
+  <span id="deployMsg">Déploiement en cours…</span>
+</div>
+
+<!-- ═══ LOGIN ═══ -->
 <div id="view-login">
   <div class="login-box">
     <div class="login-logo">Pass'âge</div>
@@ -176,7 +201,7 @@
   </div>
 </div>
 
-<!-- App (header + views) -->
+<!-- ═══ APP ═══ -->
 <div id="app" style="display:none">
   <header id="appHeader">
     <button id="backBtn" onclick="goBack()" style="display:none">← Retour</button>
@@ -188,16 +213,24 @@
   <div id="view-dashboard" style="display:none">
     <div class="container">
       <div class="page-title">Modules de contenu</div>
+      <input type="search" id="searchInput" class="global-search" placeholder="Chercher une fiche dans tous les modules…">
+      <div id="searchResults" style="display:none" class="search-results"></div>
       <div id="moduleGrid" class="module-grid"><div class="loading"><span class="spinner"></span>Chargement…</div></div>
+      <div class="dashboard-actions">
+        <button onclick="showLexique()" class="btn-ghost btn-sm">🔑 Gérer les mots-clés</button>
+      </div>
     </div>
   </div>
 
-  <!-- Module sections list -->
+  <!-- Module sections -->
   <div id="view-module" style="display:none">
     <div class="container">
       <div class="list-header">
         <h2 id="moduleTitle"></h2>
-        <button onclick="startAddSection()" class="btn-primary">+ Nouvelle fiche</button>
+        <div class="list-actions">
+          <button onclick="startEditModuleMeta()" class="btn-ghost btn-sm">Modifier le module</button>
+          <button onclick="startAddSection()" class="btn-primary btn-sm">+ Nouvelle fiche</button>
+        </div>
       </div>
       <div id="sectionList"></div>
     </div>
@@ -206,12 +239,12 @@
   <!-- Section editor -->
   <div id="view-section" style="display:none">
     <div class="container">
-      <div class="editor-title" id="editorTitle">Modifier la fiche</div>
+      <div class="editor-title" id="editorTitle">Modifier la fiche <span id="dirtyIndicator" class="dirty-indicator" style="display:none">● non sauvegardé</span></div>
       <form id="sectionForm" onsubmit="return false">
         <div class="form-group">
           <label>ID <span style="color:#E63946">*</span></label>
           <input id="fieldId" type="text" placeholder="mon-id-de-fiche">
-          <div class="hint">Lettres minuscules et tirets uniquement. Ex : <code>compte-bancaire</code>. Ne pas changer l'ID d'une fiche existante.</div>
+          <div class="hint">Lettres minuscules et tirets uniquement. Ex : <code>compte-bancaire</code>. Ne jamais changer l'ID d'une fiche existante.</div>
         </div>
         <div class="form-group">
           <label>Titre <span style="color:#E63946">*</span></label>
@@ -228,16 +261,15 @@
         <div class="form-group">
           <label>Vérifié le (optionnel)</label>
           <div class="date-row">
-            <input id="fieldLastChecked" type="text" placeholder="03/06/2026">
+            <input id="fieldLastChecked" type="text" placeholder="09/06/2026">
             <button type="button" onclick="setToday()" class="btn-ghost btn-sm">Aujourd'hui</button>
           </div>
         </div>
         <div class="form-group">
           <label>Redirection vers (optionnel)</label>
           <input id="fieldLinkTo" type="text" placeholder="module/fiche-id  — laisser vide pour une fiche normale">
-          <div class="hint">Remplis ce champ uniquement si cette fiche est un raccourci vers une autre fiche existante. Dans ce cas, le contenu ci-dessous n'est pas nécessaire.</div>
+          <div class="hint">Remplis uniquement si c'est un raccourci vers une autre fiche. Le contenu ci-dessous n'est alors pas nécessaire.</div>
         </div>
-
         <!-- Rich text editor -->
         <div class="form-group">
           <label>Contenu</label>
@@ -251,16 +283,15 @@
             <span class="toolbar-sep"></span>
             <button type="button" data-cmd="link">🔗 Lien</button>
             <span class="toolbar-sep"></span>
-            <button type="button" data-cmd="callout-info" title="Encadré bleu informatif">📘 Info</button>
-            <button type="button" data-cmd="callout-warn" title="Encadré orange attention">⚠️ Attention</button>
-            <button type="button" data-cmd="callout-tip" title="Encadré vert conseil">✅ Conseil</button>
+            <button type="button" data-cmd="callout-info">📘 Info</button>
+            <button type="button" data-cmd="callout-warn">⚠️ Attention</button>
+            <button type="button" data-cmd="callout-tip">✅ Conseil</button>
             <span class="toolbar-sep"></span>
             <button type="button" id="htmlToggleBtn" onclick="toggleHtml()" style="font-size:11px;color:var(--muted)">code HTML</button>
           </div>
           <div id="fieldBodyEditor" class="body-editor" contenteditable="true" spellcheck="true" data-placeholder="Commence à écrire le contenu de la fiche ici…"></div>
-          <textarea id="fieldBody" class="body-textarea" style="display:none" rows="20" placeholder="<p>Ton contenu ici...</p>"></textarea>
+          <textarea id="fieldBody" class="body-textarea" style="display:none" rows="20"></textarea>
         </div>
-
         <div class="form-actions">
           <button type="button" onclick="cancelEdit()" class="btn-ghost">Annuler</button>
           <button type="button" id="saveBtn" onclick="saveSection()" class="btn-primary">Enregistrer</button>
@@ -269,31 +300,99 @@
       </form>
     </div>
   </div>
-</div>
+
+  <!-- Module metadata editor -->
+  <div id="view-module-meta" style="display:none">
+    <div class="container">
+      <div class="editor-title">Informations du module</div>
+      <form id="moduleMetaForm" onsubmit="return false">
+        <div class="form-group">
+          <label>Titre</label>
+          <input id="metaTitle" type="text" placeholder="ex : Logement">
+        </div>
+        <div class="form-group">
+          <label>Sous-titre</label>
+          <input id="metaSubtitle" type="text" placeholder="ex : Trouver, signer, emménager">
+        </div>
+        <div class="form-group">
+          <label>Objectif (phrase d'accroche)</label>
+          <textarea id="metaObjective" rows="3" placeholder="ex : Comprendre tes droits en tant que locataire…"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Sources (optionnel)</label>
+          <input id="metaSource" type="text" placeholder="ex : droitbelgique.be · logement.wallonie.be">
+        </div>
+        <div class="form-actions">
+          <button type="button" onclick="goBack()" class="btn-ghost">Annuler</button>
+          <button type="button" id="saveMetaBtn" onclick="saveModuleMeta()" class="btn-primary">Enregistrer</button>
+        </div>
+        <div id="saveMetaStatus" class="save-status"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lexique / mots-clés -->
+  <div id="view-lexique" style="display:none">
+    <div class="container">
+      <div class="page-title">Mots-clés de recherche</div>
+      <p class="page-subtitle">Ces mots permettent aux utilisateurs de trouver les fiches via la recherche.</p>
+      <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+        <input type="search" id="lexSearchInput" class="global-search" placeholder="Filtrer les mots-clés…" style="flex:1;min-width:200px;margin-bottom:0">
+        <button onclick="startAddLexEntry()" class="btn-primary btn-sm" style="white-space:nowrap">+ Nouveau mot-clé</button>
+      </div>
+      <!-- Add form -->
+      <div id="addLexForm" style="display:none" class="lex-entry" id="addLexForm">
+        <div style="padding:14px">
+          <div class="form-group" style="margin-bottom:10px">
+            <label>Mot-clé</label>
+            <input id="newLexKey" type="text" placeholder="ex : loyer impayé">
+          </div>
+          <div class="form-group" style="margin-bottom:10px">
+            <label>Fiche liée (module/id)</label>
+            <input id="newLexVal" type="text" placeholder="ex : logement/bail">
+          </div>
+          <div style="display:flex;gap:8px">
+            <button onclick="cancelAddLexEntry()" class="btn-ghost btn-sm">Annuler</button>
+            <button onclick="confirmAddLexEntry()" class="btn-primary btn-sm">Ajouter</button>
+          </div>
+        </div>
+      </div>
+      <div id="lexiqueList"><div class="loading"><span class="spinner"></span>Chargement…</div></div>
+    </div>
+  </div>
+
+</div><!-- /app -->
 
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 <script>
 'use strict';
 
-// ── Config ─────────────────────────────────────────────────────────────────
-const REPO      = 'Cdricpl/PassAge';
-const BASE_PATH = '03-version-pwa/content/modules';
-const MODULE_ORDER = ['majeur','admin','argent','etudes','travail','logement','vie','loisirs','sante','urgence'];
+// ── Config ─────────────────────────────────────────────────────────────────────
+const REPO       = 'Cdricpl/PassAge';
+const BASE_PATH  = '03-version-pwa/content/modules';
+const LEXIQUE_PATH = '03-version-pwa/content/lexique.yaml';
+const MODULE_ORDER  = ['majeur','admin','argent','etudes','travail','logement','vie','loisirs','sante','urgence'];
 const MODULE_LABELS = {
   majeur:'Devenir majeur', admin:'Administratif & juridique', argent:'Argent & aides',
   etudes:'Études & formations', travail:'Travail', logement:'Logement',
-  vie:'Vie quotidienne', loisirs:'Loisirs', sante:'Santé', urgence:'Urgence'
+  vie:'Vie quotidienne', loisirs:'Loisirs', sante:'Santé & bien-être', urgence:'Aide & urgences'
 };
 
-// ── State ───────────────────────────────────────────────────────────────────
-let token = sessionStorage.getItem('gh_token') || '';
-let currentModuleId   = null;
+// ── State ───────────────────────────────────────────────────────────────────────
+let token            = sessionStorage.getItem('gh_token') || '';
+let currentModuleId  = null;
 let currentModuleData = null;
 let currentModuleSha  = null;
 let currentSectionIdx = null;
-let htmlMode = false;
+let htmlMode          = false;
+let isDirty           = false;
+let allModulesData    = null; // [{id, data, sha}] for search
+let currentLexique    = null;
+let currentLexiqueSha = null;
+let deployPollTimer   = null;
+let viewHistory       = [];
 
-// ── GitHub API ──────────────────────────────────────────────────────────────
+// ── GitHub API ──────────────────────────────────────────────────────────────────
 async function ghGet(path) {
   const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
@@ -305,16 +404,8 @@ async function ghGet(path) {
 async function ghPut(path, content, sha, message) {
   const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
     method: 'PUT',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      message,
-      content: btoa(unescape(encodeURIComponent(content))),
-      sha
-    })
+    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha })
   });
   if (!r.ok) throw new Error(`GitHub ${r.status}: ${(await r.json()).message}`);
   return r.json();
@@ -324,7 +415,7 @@ function decodeContent(b64) {
   return decodeURIComponent(escape(atob(b64.replace(/\n/g, ''))));
 }
 
-// ── Toast ───────────────────────────────────────────────────────────────────
+// ── Toast ───────────────────────────────────────────────────────────────────────
 let toastTimer = null;
 function toast(msg, type = 'ok') {
   const el = document.getElementById('toast');
@@ -334,80 +425,185 @@ function toast(msg, type = 'ok') {
   toastTimer = setTimeout(() => el.className = '', 3500);
 }
 
-// ── View management ─────────────────────────────────────────────────────────
-const views = ['dashboard','module','section'];
-function showView(name) {
-  views.forEach(v => document.getElementById(`view-${v}`).style.display = v === name ? '' : 'none');
-  document.getElementById('backBtn').style.display = name === 'dashboard' ? 'none' : '';
-}
-function goBack() {
-  if (document.getElementById('view-section').style.display !== 'none') showView('module');
-  else showView('dashboard');
+// ── Deploy Status ───────────────────────────────────────────────────────────────
+function startDeployPoll() {
+  stopDeployPoll();
+  const bar = document.getElementById('deployBar');
+  const msg = document.getElementById('deployMsg');
+  bar.className = 'running';
+  msg.textContent = 'Déploiement en cours…';
+  let attempts = 0;
+
+  deployPollTimer = setInterval(async () => {
+    attempts++;
+    if (attempts > 60) { stopDeployPoll(); return; } // 5 min max
+    try {
+      const r = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1&branch=main`, {
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+      });
+      if (!r.ok) return;
+      const data = await r.json();
+      const run = data.workflow_runs?.[0];
+      if (!run) return;
+      if (run.status === 'completed') {
+        stopDeployPoll();
+        if (run.conclusion === 'success') {
+          bar.className = 'success';
+          msg.textContent = '✓ Modifications en ligne !';
+          setTimeout(() => { bar.className = ''; bar.style.display = ''; }, 6000);
+        } else {
+          bar.className = 'error';
+          msg.textContent = `✗ Déploiement échoué (${run.conclusion})`;
+        }
+      }
+    } catch (_) {}
+  }, 5000);
 }
 
-// ── Auth ────────────────────────────────────────────────────────────────────
+function stopDeployPoll() {
+  if (deployPollTimer) { clearInterval(deployPollTimer); deployPollTimer = null; }
+}
+
+// ── View management ─────────────────────────────────────────────────────────────
+const views = ['dashboard','module','section','module-meta','lexique'];
+
+function showView(name, pushHistory = true) {
+  if (pushHistory) {
+    const current = views.find(v => document.getElementById(`view-${v}`)?.style.display !== 'none');
+    if (current && current !== name) viewHistory.push(current);
+  }
+  views.forEach(v => document.getElementById(`view-${v}`).style.display = v === name ? '' : 'none');
+  document.getElementById('backBtn').style.display = viewHistory.length ? '' : 'none';
+  window.scrollTo(0, 0);
+}
+
+function goBack() {
+  if (isDirty) {
+    if (!confirm('Tu as des changements non sauvegardés. Les abandonner ?')) return;
+    isDirty = false;
+  }
+  const prev = viewHistory.pop();
+  showView(prev || 'dashboard', false);
+  document.getElementById('backBtn').style.display = viewHistory.length ? '' : 'none';
+}
+
+// ── Dirty tracking ──────────────────────────────────────────────────────────────
+function markDirty() {
+  isDirty = true;
+  document.getElementById('dirtyIndicator').style.display = '';
+}
+
+function clearDirty() {
+  isDirty = false;
+  document.getElementById('dirtyIndicator').style.display = 'none';
+}
+
+// ── Auth ────────────────────────────────────────────────────────────────────────
 document.getElementById('loginForm').addEventListener('submit', async e => {
   e.preventDefault();
   const btn = document.getElementById('loginBtn');
   const errEl = document.getElementById('loginError');
   errEl.style.display = 'none';
-  btn.textContent = 'Connexion…';
-  btn.disabled = true;
+  btn.textContent = 'Connexion…'; btn.disabled = true;
   token = document.getElementById('tokenInput').value.trim();
   try {
-    const r = await fetch('https://api.github.com/user', {
-      headers: { Authorization: `Bearer ${token}` }
-    });
+    const r = await fetch('https://api.github.com/user', { headers: { Authorization: `Bearer ${token}` } });
     if (!r.ok) throw new Error('Token invalide ou permissions insuffisantes.');
     sessionStorage.setItem('gh_token', token);
     document.getElementById('view-login').style.display = 'none';
     document.getElementById('app').style.display = '';
     showDashboard();
   } catch (err) {
-    errEl.textContent = err.message;
-    errEl.style.display = '';
-    btn.textContent = 'Connexion';
-    btn.disabled = false;
+    errEl.textContent = err.message; errEl.style.display = '';
+    btn.textContent = 'Connexion'; btn.disabled = false;
   }
 });
 
 function logout() {
+  if (isDirty && !confirm('Des changements non sauvegardés seront perdus. Continuer ?')) return;
+  stopDeployPoll();
   sessionStorage.removeItem('gh_token');
-  token = '';
+  token = ''; isDirty = false; viewHistory = [];
   document.getElementById('view-login').style.display = '';
   document.getElementById('app').style.display = 'none';
   document.getElementById('tokenInput').value = '';
 }
 
-// ── Dashboard ───────────────────────────────────────────────────────────────
+// ── Dashboard ───────────────────────────────────────────────────────────────────
 async function showDashboard() {
-  showView('dashboard');
+  viewHistory = [];
+  showView('dashboard', false);
   const grid = document.getElementById('moduleGrid');
   grid.innerHTML = '<div class="loading"><span class="spinner"></span>Chargement…</div>';
   try {
     const modules = await Promise.all(MODULE_ORDER.map(async id => {
       const data = await ghGet(`${BASE_PATH}/${id}.yaml`);
-      const mod  = jsyaml.load(decodeContent(data.content));
-      return { id, title: mod.title || MODULE_LABELS[id], count: (mod.sections || []).length };
+      const parsed = jsyaml.load(decodeContent(data.content));
+      return { id, data: parsed, sha: data.sha, title: parsed.title || MODULE_LABELS[id], count: (parsed.sections || []).length };
     }));
+    allModulesData = modules;
     grid.innerHTML = modules.map(m => `
       <div class="module-card" onclick="loadModule('${m.id}')">
         <div class="mod-title">${m.title}</div>
         <div class="mod-count">${m.count} fiche${m.count > 1 ? 's' : ''}</div>
-      </div>
-    `).join('');
+      </div>`).join('');
   } catch (err) {
     grid.innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
   }
 }
 
-// ── Module list ──────────────────────────────────────────────────────────────
+// ── Global search ───────────────────────────────────────────────────────────────
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q || !allModulesData) { searchResults.style.display = 'none'; return; }
+  const hits = [];
+  for (const m of allModulesData) {
+    for (const s of m.data.sections || []) {
+      const hay = `${s.title} ${s.summary} ${s.id}`.toLowerCase();
+      if (hay.includes(q)) hits.push({ moduleId: m.id, moduleTitle: m.title, section: s });
+    }
+  }
+  if (!hits.length) {
+    searchResults.innerHTML = `<div class="search-empty">Aucune fiche pour « ${esc(searchInput.value)} »</div>`;
+  } else {
+    searchResults.innerHTML = hits.slice(0, 12).map((h, i) => `
+      <div class="search-result" onclick="goToSearchResult('${h.moduleId}',${allModulesData.find(m=>m.id===h.moduleId).data.sections.indexOf(h.section)})">
+        <div class="search-result-mod">${h.moduleTitle}</div>
+        <div class="search-result-title">${esc(h.section.title)}</div>
+        <div class="search-result-summary">${esc(h.section.summary || '')}</div>
+      </div>`).join('');
+  }
+  searchResults.style.display = '';
+});
+
+searchInput.addEventListener('blur', () => setTimeout(() => { searchResults.style.display = 'none'; }, 200));
+
+async function goToSearchResult(moduleId, sectionIdx) {
+  searchInput.value = '';
+  searchResults.style.display = 'none';
+  await loadModule(moduleId);
+  startEditSection(sectionIdx);
+}
+
+// ── Module list ─────────────────────────────────────────────────────────────────
 async function loadModule(id) {
   currentModuleId = id;
   showView('module');
   document.getElementById('moduleTitle').textContent = MODULE_LABELS[id] || id;
-  document.getElementById('sectionList').innerHTML =
-    '<div class="loading"><span class="spinner"></span>Chargement…</div>';
+  document.getElementById('sectionList').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement…</div>';
+
+  // Use cached data if available
+  const cached = allModulesData?.find(m => m.id === id);
+  if (cached) {
+    currentModuleData = cached.data;
+    currentModuleSha  = cached.sha;
+    if (!currentModuleData.sections) currentModuleData.sections = [];
+    renderSections();
+    return;
+  }
   try {
     const data = await ghGet(`${BASE_PATH}/${id}.yaml`);
     currentModuleSha  = data.sha;
@@ -415,8 +611,7 @@ async function loadModule(id) {
     if (!currentModuleData.sections) currentModuleData.sections = [];
     renderSections();
   } catch (err) {
-    document.getElementById('sectionList').innerHTML =
-      `<div class="error-msg">Erreur : ${err.message}</div>`;
+    document.getElementById('sectionList').innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
   }
 }
 
@@ -424,7 +619,7 @@ function renderSections() {
   const list = document.getElementById('sectionList');
   const secs = currentModuleData.sections;
   if (!secs.length) {
-    list.innerHTML = '<p style="color:var(--muted)">Aucune fiche. Clique sur "+ Nouvelle fiche" pour commencer.</p>';
+    list.innerHTML = '<p style="color:var(--muted)">Aucune fiche. Clique sur "+ Nouvelle fiche".</p>';
     return;
   }
   list.innerHTML = secs.map((s, i) => `
@@ -436,14 +631,14 @@ function renderSections() {
       </div>
       <div class="section-actions">
         <div class="reorder-btns">
-          <button class="btn-ghost btn-sm" onclick="moveSection(${i},-1)" ${i===0?'disabled':''} title="Monter">↑</button>
-          <button class="btn-ghost btn-sm" onclick="moveSection(${i},1)" ${i===secs.length-1?'disabled':''} title="Descendre">↓</button>
+          <button class="btn-ghost btn-xs" onclick="moveSection(${i},-1)" ${i===0?'disabled':''}>↑</button>
+          <button class="btn-ghost btn-xs" onclick="moveSection(${i},1)" ${i===secs.length-1?'disabled':''}>↓</button>
         </div>
-        <button class="btn-ghost btn-sm" onclick="startEditSection(${i})">Modifier</button>
-        <button class="btn-danger btn-sm" onclick="deleteSection(${i})">Supprimer</button>
+        <button class="btn-ghost btn-xs" onclick="startEditSection(${i})">Modifier</button>
+        <button class="btn-ghost btn-xs" onclick="duplicateSection(${i})" title="Dupliquer">⧉</button>
+        <button class="btn-danger btn-xs" onclick="deleteSection(${i})">Supprimer</button>
       </div>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
 function esc(s) {
@@ -452,33 +647,88 @@ function esc(s) {
 
 async function moveSection(idx, dir) {
   const secs = currentModuleData.sections;
-  const swapIdx = idx + dir;
-  if (swapIdx < 0 || swapIdx >= secs.length) return;
-  [secs[idx], secs[swapIdx]] = [secs[swapIdx], secs[idx]];
+  const j = idx + dir;
+  if (j < 0 || j >= secs.length) return;
+  [secs[idx], secs[j]] = [secs[j], secs[idx]];
   renderSections();
-  await commitModule(`content(${currentModuleId}): réorganisation des fiches`);
+  await commitModule(`content(${currentModuleId}): réorganisation`);
 }
 
 async function deleteSection(idx) {
   const s = currentModuleData.sections[idx];
-  if (!confirm(`Supprimer définitivement "${s.title}" ?\nCette action ne peut pas être annulée.`)) return;
+  if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
   currentModuleData.sections.splice(idx, 1);
   renderSections();
   await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
 }
 
-// ── Section editor ───────────────────────────────────────────────────────────
+async function duplicateSection(idx) {
+  const orig = currentModuleData.sections[idx];
+  const copy = JSON.parse(JSON.stringify(orig));
+  copy.id = `${orig.id}-copie`;
+  // Ensure unique ID
+  let n = 2;
+  while (currentModuleData.sections.some(s => s.id === copy.id)) {
+    copy.id = `${orig.id}-copie-${n++}`;
+  }
+  copy.title = `${orig.title} (copie)`;
+  currentModuleData.sections.splice(idx + 1, 0, copy);
+  renderSections();
+  await commitModule(`content(${currentModuleId}): duplication de "${orig.id}"`);
+  toast(`Fiche dupliquée : "${copy.id}"`);
+}
+
+// ── Module metadata ─────────────────────────────────────────────────────────────
+function startEditModuleMeta() {
+  document.getElementById('metaTitle').value    = currentModuleData.title    || '';
+  document.getElementById('metaSubtitle').value = currentModuleData.subtitle || '';
+  document.getElementById('metaObjective').value = currentModuleData.objective || '';
+  document.getElementById('metaSource').value   = currentModuleData.source   || '';
+  document.getElementById('saveMetaStatus').textContent = '';
+  showView('module-meta');
+}
+
+async function saveModuleMeta() {
+  const btn = document.getElementById('saveMetaBtn');
+  btn.disabled = true; btn.textContent = 'Enregistrement…';
+  currentModuleData.title    = document.getElementById('metaTitle').value.trim()    || currentModuleData.title;
+  currentModuleData.subtitle = document.getElementById('metaSubtitle').value.trim() || currentModuleData.subtitle;
+  currentModuleData.objective = document.getElementById('metaObjective').value.trim();
+  currentModuleData.source   = document.getElementById('metaSource').value.trim();
+  try {
+    await commitModule(`content(${currentModuleId}): mise à jour des métadonnées du module`);
+    // Update cache
+    if (allModulesData) {
+      const cached = allModulesData.find(m => m.id === currentModuleId);
+      if (cached) { cached.data = currentModuleData; cached.title = currentModuleData.title; }
+    }
+    document.getElementById('moduleTitle').textContent = currentModuleData.title;
+    setMetaStatus('Enregistré ✓', 'ok');
+    setTimeout(() => goBack(), 1000);
+  } catch (err) {
+    setMetaStatus(`Erreur : ${err.message}`, 'err');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Enregistrer';
+  }
+}
+
+function setMetaStatus(msg, type) {
+  const el = document.getElementById('saveMetaStatus');
+  el.textContent = msg; el.className = `save-status ${type}`;
+}
+
+// ── Section editor ──────────────────────────────────────────────────────────────
 function startAddSection() {
   currentSectionIdx = -1;
   populateEditor({});
-  document.getElementById('editorTitle').textContent = 'Nouvelle fiche';
+  document.getElementById('editorTitle').firstChild.textContent = 'Nouvelle fiche ';
   showView('section');
 }
 
 function startEditSection(idx) {
   currentSectionIdx = idx;
   populateEditor(currentModuleData.sections[idx]);
-  document.getElementById('editorTitle').textContent = 'Modifier la fiche';
+  document.getElementById('editorTitle').firstChild.textContent = 'Modifier la fiche ';
   showView('section');
 }
 
@@ -491,36 +741,38 @@ function populateEditor(s) {
   document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
   document.getElementById('saveStatus').textContent = '';
   document.getElementById('saveStatus').className   = 'save-status';
-  // Reset to visual mode before setting content
   if (htmlMode) toggleHtml();
   setEditorHtml(s.body || '');
+  clearDirty();
+
+  // Track changes
+  ['fieldId','fieldTitle','fieldSummary','fieldSource','fieldLastChecked','fieldLinkTo'].forEach(id => {
+    document.getElementById(id).addEventListener('input', markDirty, { once: false });
+  });
+  document.getElementById('fieldBodyEditor').addEventListener('input', markDirty, { once: false });
 }
 
 function setToday() {
   const d = new Date();
-  const day = String(d.getDate()).padStart(2,'0');
-  const mon = String(d.getMonth()+1).padStart(2,'0');
-  document.getElementById('fieldLastChecked').value = `${day}/${mon}/${d.getFullYear()}`;
+  document.getElementById('fieldLastChecked').value =
+    `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
 }
 
-function cancelEdit() { showView('module'); }
+function cancelEdit() {
+  if (isDirty && !confirm('Abandonner les changements ?')) return;
+  clearDirty();
+  goBack();
+}
 
 async function saveSection() {
   const id      = document.getElementById('fieldId').value.trim();
   const title   = document.getElementById('fieldTitle').value.trim();
   const summary = document.getElementById('fieldSummary').value.trim();
 
-  if (!id || !title || !summary) {
-    setStatus('Les champs ID, Titre et Résumé sont obligatoires.', 'err');
-    return;
-  }
-  if (!/^[a-z0-9-]+$/.test(id)) {
-    setStatus("L'ID ne doit contenir que des lettres minuscules, chiffres et tirets.", 'err');
-    return;
-  }
+  if (!id || !title || !summary) { setStatus('Les champs ID, Titre et Résumé sont obligatoires.', 'err'); return; }
+  if (!/^[a-z0-9-]+$/.test(id)) { setStatus("L'ID ne doit contenir que des lettres minuscules, chiffres et tirets.", 'err'); return; }
   if (currentSectionIdx === -1 && currentModuleData.sections.some(s => s.id === id)) {
-    setStatus(`L'ID "${id}" existe déjà dans ce module.`, 'err');
-    return;
+    setStatus(`L'ID "${id}" existe déjà dans ce module.`, 'err'); return;
   }
 
   const section = { id, title, summary };
@@ -528,53 +780,167 @@ async function saveSection() {
   const lastChecked = document.getElementById('fieldLastChecked').value.trim();
   const linkTo      = document.getElementById('fieldLinkTo').value.trim();
   const body        = getEditorHtml();
-
   if (source)      section.source      = source;
   if (lastChecked) section.lastChecked = lastChecked;
   if (linkTo)      section.linkTo      = linkTo;
   else if (body)   section.body        = body;
 
   const btn = document.getElementById('saveBtn');
-  btn.disabled = true;
-  btn.textContent = 'Enregistrement…';
-
+  btn.disabled = true; btn.textContent = 'Enregistrement…';
   try {
-    if (currentSectionIdx === -1) {
-      currentModuleData.sections.push(section);
-    } else {
-      currentModuleData.sections[currentSectionIdx] = section;
-    }
-    const verb = currentSectionIdx === -1 ? 'ajout' : 'modification';
-    await commitModule(`content(${currentModuleId}): ${verb} de "${id}"`);
+    if (currentSectionIdx === -1) currentModuleData.sections.push(section);
+    else currentModuleData.sections[currentSectionIdx] = section;
+
+    await commitModule(`content(${currentModuleId}): ${currentSectionIdx === -1 ? 'ajout' : 'modification'} de "${id}"`);
+    clearDirty();
     setStatus('Enregistré ✓', 'ok');
-    setTimeout(() => { showView('module'); renderSections(); }, 1000);
+    setTimeout(() => { goBack(); renderSections(); }, 900);
   } catch (err) {
     setStatus(`Erreur : ${err.message}`, 'err');
     if (currentSectionIdx === -1) currentModuleData.sections.pop();
-    else await loadModule(currentModuleId);
   } finally {
-    btn.disabled = false;
-    btn.textContent = 'Enregistrer';
+    btn.disabled = false; btn.textContent = 'Enregistrer';
   }
 }
 
 function setStatus(msg, type) {
   const el = document.getElementById('saveStatus');
-  el.textContent = msg;
-  el.className = `save-status ${type}`;
+  el.textContent = msg; el.className = `save-status ${type}`;
 }
 
-// ── Commit helper ─────────────────────────────────────────────────────────────
+// ── Commit helper ───────────────────────────────────────────────────────────────
 async function commitModule(message) {
   const yaml = jsyaml.dump(currentModuleData, { allowUnicode: true, lineWidth: -1, noRefs: true });
   const result = await ghPut(`${BASE_PATH}/${currentModuleId}.yaml`, yaml, currentModuleSha, message);
   currentModuleSha = result.content.sha;
-  toast('Sauvegardé — GitHub Actions va déployer dans quelques secondes.');
+  // Update cache sha
+  if (allModulesData) {
+    const c = allModulesData.find(m => m.id === currentModuleId);
+    if (c) { c.sha = currentModuleSha; c.data = currentModuleData; }
+  }
+  toast('Sauvegardé — déploiement en cours…');
+  startDeployPoll();
 }
 
-// ── Rich text editor ──────────────────────────────────────────────────────────
+// ── Lexique ─────────────────────────────────────────────────────────────────────
+async function showLexique() {
+  showView('lexique');
+  document.getElementById('lexiqueList').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement…</div>';
+  document.getElementById('addLexForm').style.display = 'none';
+  try {
+    const data = await ghGet(LEXIQUE_PATH);
+    currentLexiqueSha = data.sha;
+    currentLexique = jsyaml.load(decodeContent(data.content));
+    renderLexique();
+  } catch (err) {
+    document.getElementById('lexiqueList').innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
+  }
+}
 
-// Prevent toolbar buttons from stealing focus (keeps cursor in editor)
+document.getElementById('lexSearchInput').addEventListener('input', () => {
+  if (currentLexique) renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
+});
+
+function renderLexique(filter = '') {
+  const list = document.getElementById('lexiqueList');
+  const keys = Object.keys(currentLexique).sort();
+  const visible = filter ? keys.filter(k => k.toLowerCase().includes(filter) ||
+    (currentLexique[k] || []).some(v => v.toLowerCase().includes(filter))) : keys;
+
+  if (!visible.length) { list.innerHTML = '<div class="search-empty">Aucun mot-clé trouvé.</div>'; return; }
+
+  list.innerHTML = visible.map(key => {
+    const refs = currentLexique[key] || [];
+    const tags = refs.map(r => `<span class="lex-tag">${esc(r)}</span>`).join('');
+    const rows = refs.map((r, i) => `
+      <div class="lex-fiche-row">
+        <span class="lex-fiche-path">${esc(r)}</span>
+        <button class="btn-danger btn-xs" onclick="removeLexRef('${esc(key)}',${i})">✕</button>
+      </div>`).join('');
+    return `
+      <div class="lex-entry" id="lex-${esc(key)}">
+        <div class="lex-entry-header" onclick="toggleLexEntry('${esc(key)}')">
+          <span class="lex-keyword">${esc(key)}</span>
+          <div class="lex-tags">${tags}</div>
+          <button class="btn-danger btn-xs" onclick="event.stopPropagation();deleteLexEntry('${esc(key)}')">Supprimer</button>
+        </div>
+        <div class="lex-entry-body" id="lex-body-${esc(key)}">
+          ${rows}
+          <div class="lex-add-row">
+            <input type="text" placeholder="module/fiche-id" id="lex-new-${esc(key)}">
+            <button class="btn-primary btn-xs" onclick="addLexRef('${esc(key)}')">+ Ajouter</button>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function toggleLexEntry(key) {
+  const body = document.getElementById(`lex-body-${key}`);
+  body.classList.toggle('open');
+}
+
+async function removeLexRef(key, idx) {
+  if (!currentLexique[key]) return;
+  currentLexique[key].splice(idx, 1);
+  if (!currentLexique[key].length) delete currentLexique[key];
+  renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
+  await commitLexique(`lexique: retrait d'une référence de "${key}"`);
+}
+
+async function addLexRef(key) {
+  const input = document.getElementById(`lex-new-${key}`);
+  const val = input.value.trim();
+  if (!val) return;
+  if (!currentLexique[key]) currentLexique[key] = [];
+  if (!currentLexique[key].includes(val)) {
+    currentLexique[key].push(val);
+    await commitLexique(`lexique: ajout de "${val}" sous "${key}"`);
+    input.value = '';
+    renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
+    document.getElementById(`lex-body-${key}`)?.classList.add('open');
+  }
+}
+
+async function deleteLexEntry(key) {
+  if (!confirm(`Supprimer le mot-clé "${key}" et toutes ses associations ?`)) return;
+  delete currentLexique[key];
+  renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
+  await commitLexique(`lexique: suppression du mot-clé "${key}"`);
+}
+
+function startAddLexEntry() {
+  document.getElementById('addLexForm').style.display = '';
+  document.getElementById('newLexKey').value = '';
+  document.getElementById('newLexVal').value = '';
+  document.getElementById('newLexKey').focus();
+}
+
+function cancelAddLexEntry() {
+  document.getElementById('addLexForm').style.display = 'none';
+}
+
+async function confirmAddLexEntry() {
+  const key = document.getElementById('newLexKey').value.trim().toLowerCase();
+  const val = document.getElementById('newLexVal').value.trim();
+  if (!key || !val) { toast('Remplis les deux champs.', 'warn'); return; }
+  if (!currentLexique[key]) currentLexique[key] = [];
+  if (!currentLexique[key].includes(val)) currentLexique[key].push(val);
+  await commitLexique(`lexique: ajout du mot-clé "${key}"`);
+  document.getElementById('addLexForm').style.display = 'none';
+  renderLexique();
+  toast(`Mot-clé "${key}" ajouté.`);
+}
+
+async function commitLexique(message) {
+  const yaml = jsyaml.dump(currentLexique, { allowUnicode: true, lineWidth: -1, noRefs: true, sortKeys: true });
+  const result = await ghPut(LEXIQUE_PATH, yaml, currentLexiqueSha, message);
+  currentLexiqueSha = result.content.sha;
+  toast('Sauvegardé — déploiement en cours…');
+  startDeployPoll();
+}
+
+// ── Rich text editor ─────────────────────────────────────────────────────────────
 document.getElementById('editorToolbar').addEventListener('mousedown', e => {
   if (e.target.closest('button[data-cmd]')) e.preventDefault();
 });
@@ -588,108 +954,77 @@ document.getElementById('editorToolbar').addEventListener('click', e => {
 
   if (cmd === 'bold') {
     document.execCommand('bold', false, null);
-
   } else if (cmd === 'h2' || cmd === 'h3') {
-    const current = document.queryCommandValue('formatBlock').toLowerCase();
-    document.execCommand('formatBlock', false, current === cmd ? 'p' : cmd);
-
+    const cur = document.queryCommandValue('formatBlock').toLowerCase();
+    document.execCommand('formatBlock', false, cur === cmd ? 'p' : cmd);
   } else if (cmd === 'ul') {
     document.execCommand('insertUnorderedList', false, null);
-
   } else if (cmd === 'ol') {
     document.execCommand('insertOrderedList', false, null);
-
-  } else if (cmd === 'callout-info' || cmd === 'callout-warn' || cmd === 'callout-tip') {
-    const type = cmd.replace('callout-', '');
-    insertCallout(type);
-
   } else if (cmd === 'link') {
-    const sel = window.getSelection();
-    const selectedText = sel ? sel.toString().trim() : '';
-    const url = prompt(
-      'URL du lien :\n\nFiche interne → sante/medecin\nSite externe → https://site.be',
-      '#/fiche/'
-    );
+    const sel = window.getSelection()?.toString().trim();
+    const url = prompt('URL du lien :\n\nFiche → sante/medecin\nSite externe → https://site.be', '#/fiche/');
     if (!url) return;
     editor.focus();
-    const fullUrl = url.startsWith('#') || url.startsWith('http') ? url : '#/fiche/' + url;
-    if (selectedText) {
-      document.execCommand('createLink', false, fullUrl);
-    } else {
-      document.execCommand('insertHTML', false, `<a href="${fullUrl}">${fullUrl}</a>`);
-    }
+    const full = url.startsWith('#') || url.startsWith('http') ? url : '#/fiche/' + url;
+    if (sel) document.execCommand('createLink', false, full);
+    else document.execCommand('insertHTML', false, `<a href="${full}">${full}</a>`);
+  } else if (cmd.startsWith('callout-')) {
+    insertCallout(cmd.replace('callout-', ''));
   }
 });
 
 function addCalloutDeleteBtn(el) {
   if (el.querySelector('.callout-del')) return;
   const btn = document.createElement('button');
-  btn.contentEditable = 'false';
-  btn.className = 'callout-del';
-  btn.type = 'button';
-  btn.title = 'Supprimer l\'encadré';
-  btn.textContent = '✕';
+  btn.contentEditable = 'false'; btn.className = 'callout-del'; btn.type = 'button';
+  btn.title = 'Supprimer l\'encadré'; btn.textContent = '✕';
   btn.addEventListener('mousedown', e => e.preventDefault());
   btn.addEventListener('click', () => el.remove());
   el.appendChild(btn);
 }
 
 function insertCallout(type) {
-  if (htmlMode) { toggleHtml(); }
+  if (htmlMode) toggleHtml();
   const editor = document.getElementById('fieldBodyEditor');
   editor.focus();
   const cls = type === 'warn' ? 'callout warn' : type === 'tip' ? 'callout tip' : 'callout';
-  const placeholder = type === 'warn' ? 'Point important à retenir.' : type === 'tip' ? 'Conseil pratique.' : 'Information utile.';
+  const text = type === 'warn' ? 'Point important à retenir.' : type === 'tip' ? 'Conseil pratique.' : 'Information utile.';
   document.execCommand('insertHTML', false,
-    `<div class="${cls}"><div><strong>Titre de l'encadré</strong> ${placeholder}</div></div><p><br></p>`
-  );
+    `<div class="${cls}"><div><strong>Titre de l'encadré</strong> ${text}</div></div><p><br></p>`);
   editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
 }
 
 function toggleHtml() {
-  const editor   = document.getElementById('fieldBodyEditor');
+  const editor = document.getElementById('fieldBodyEditor');
   const textarea = document.getElementById('fieldBody');
-  const btn      = document.getElementById('htmlToggleBtn');
-
+  const btn = document.getElementById('htmlToggleBtn');
   if (!htmlMode) {
     textarea.value = getEditorHtml();
-    textarea.rows  = Math.max(20, textarea.value.split('\n').length + 3);
-    editor.style.display   = 'none';
-    textarea.style.display = '';
-    btn.classList.add('active');
+    textarea.rows = Math.max(20, textarea.value.split('\n').length + 3);
+    editor.style.display = 'none'; textarea.style.display = ''; btn.classList.add('active');
   } else {
-    editor.innerHTML       = textarea.value || '';
-    editor.style.display   = '';
-    textarea.style.display = 'none';
-    btn.classList.remove('active');
+    editor.innerHTML = textarea.value || '';
+    editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
+    editor.style.display = ''; textarea.style.display = 'none'; btn.classList.remove('active');
   }
   htmlMode = !htmlMode;
 }
 
 function getEditorHtml() {
   if (htmlMode) return document.getElementById('fieldBody').value.trim();
-
-  // Clone to strip UI-only elements (delete buttons) before serialising
   const clone = document.getElementById('fieldBodyEditor').cloneNode(true);
   clone.querySelectorAll('.callout-del').forEach(el => el.remove());
   let html = clone.innerHTML;
-
-  // Normalize browser-specific bold tags
   html = html.replace(/<b\b([^>]*)>/gi, '<strong$1>').replace(/<\/b>/gi, '</strong>');
-  // Strip browser-injected style/class/id/dir attributes (but keep our own class="callout*")
   html = html.replace(/ style="[^"]*"/gi, '');
   html = html.replace(/ id="[^"]*"/gi, '');
   html = html.replace(/ dir="[^"]*"/gi, '');
   html = html.replace(/ class="Apple-[^"]*"/gi, '');
   html = html.replace(/ data-[a-z-]+="[^"]*"/gi, '');
-  // Add class to ordered lists
   html = html.replace(/<ol\b[^>]*>/gi, '<ol class="fiche-ol">');
-  // Clean trailing <br> inside block elements
   html = html.replace(/<br\s*\/?>\s*(<\/(li|p|h[23]|div)>)/gi, '$1');
-  // Remove purely empty paragraphs
-  html = html.replace(/<p>\s*<\/p>/gi, '');
-  html = html.replace(/<p><br\s*\/?><\/p>/gi, '');
-
+  html = html.replace(/<p>\s*<\/p>/gi, '').replace(/<p><br\s*\/?><\/p>/gi, '');
   return html.trim();
 }
 
@@ -699,12 +1034,10 @@ function setEditorHtml(html) {
   editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
 }
 
-// ── Service Worker ────────────────────────────────────────────────────────────
+// ── Init ────────────────────────────────────────────────────────────────────────
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js').catch(() => {});
 }
-
-// ── Init ──────────────────────────────────────────────────────────────────────
 if (token) {
   document.getElementById('view-login').style.display = 'none';
   document.getElementById('app').style.display = '';

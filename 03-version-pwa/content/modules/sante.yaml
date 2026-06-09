@@ -1,77 +1,77 @@
 id: sante
-title: "Santé & bien-être"
-subtitle: "Prendre soin de toi, corps et tête"
+title: Santé & bien-être
+subtitle: Prendre soin de toi, corps et tête
 color: sante
 icon: heart
-objective: "Trouver un médecin sans stress, comprendre les remboursements, parler quand ça va pas. À ton rythme."
-source: "inami.fgov.be · inforjeunes.be · ssmg.be"
+objective: Trouver un médecin sans stress, comprendre les remboursements, parler quand ça va pas. À ton rythme.
+source: inami.fgov.be · inforjeunes.be · ssmg.be
 sections:
   - id: mal-etre
-    title: "Quand ça ne va pas"
-    summary: "Anxiété, tristesse, idées noires : tu n'es pas seul·e."
+    title: Quand ça ne va pas
+    summary: 'Anxiété, tristesse, idées noires : tu n''es pas seul·e.'
     linkTo: urgence/mal-etre
   - id: parler-sans-appeler
-    title: "Parler sans appeler"
-    summary: "Chat, e-mail, RDV en personne — tu choisis le canal."
-    lastChecked: "03/06/2026"
+    title: Parler sans appeler
+    summary: Chat, e-mail, RDV en personne — tu choisis le canal.
+    lastChecked: 03/06/2026
     body: |
       <p>Tu as besoin de parler mais l'idée de téléphoner te bloque ? <strong>C'est normal.</strong> Beaucoup de jeunes vivent ça. Voici d'autres façons de demander de l'aide.</p>
-      
+
       <h2>Le chat 103 (moins de 20 ans)</h2>
       <p>Le <strong>103</strong> propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
       <ul>
         <li>Site : <a href="https://www.103ecoute.be" target="_blank" rel="noopener">103ecoute.be</a></li>
       </ul>
-      
+
       <h2>L'e-mail Télé-Accueil (107)</h2>
       <p>Tu peux aussi <strong>écrire un e-mail</strong> à Télé-Accueil. Tu prends ton temps, tu poses ce que tu veux. La réponse vient dans les jours qui suivent.</p>
       <ul>
         <li>Site : <a href="https://www.tele-accueil.be" target="_blank" rel="noopener">tele-accueil.be</a></li>
       </ul>
-      
+
       <h2>Pousser la porte d'un service</h2>
       <p>Une <strong>AMO</strong> ou un <strong>planning familial</strong>, ça s'ouvre <strong>sans rendez-vous</strong> et sans jugement. Tu rentres, tu dis "j'aimerais juste parler", et c'est OK.</p>
-      
+
       <div class="callout tip"><div><strong>Pas pressé·e ?</strong>Tu n'as pas à expliquer pourquoi tu viens. Tu peux juste t'asseoir et voir si ça vient.</div></div>
   - id: medecin
-    title: "Mon médecin traitant"
-    summary: "Pourquoi en avoir un, comment le choisir."
-    lastChecked: "03/06/2026"
+    title: Mon médecin traitant
+    summary: Pourquoi en avoir un, comment le choisir.
+    lastChecked: 03/06/2026
     body: |
       <p>Avoir un <strong>médecin traitant</strong> (ou médecin de famille), c'est utile : il connaît ton dossier, te suit dans la durée, et tu es <strong>mieux remboursé·e</strong>.</p>
-      
+
       <h2>Comment le choisir ?</h2>
       <ul>
         <li>Près de chez toi (pour les consultations rapides).</li>
         <li>Tu peux changer si ça ne te convient pas — tu n'es engagé·e à rien.</li>
         <li>Demande autour de toi (famille, amis, AMO).</li>
       </ul>
-      
+
       <h2>Le DMG (Dossier Médical Global)</h2>
       <p>Au 1er RDV, demande d'ouvrir ton <strong>DMG</strong>. C'est gratuit (remboursé par la mutuelle), et tu paies <strong>moins cher</strong> à chaque consultation ensuite.</p>
-      
+
       <h2>Le 1er rendez-vous</h2>
       <ul>
         <li>Apporte ta <strong>carte d'identité</strong>, ta <a href="#/fiche/admin/mutuelle"><strong>vignette de mutuelle</strong></a>, et tes éventuels antécédents.</li>
         <li>Tu peux <strong>écrire tes questions avant</strong> — pas grave si tu hésites.</li>
         <li>Le médecin est tenu au secret professionnel. Tu peux tout dire.</li>
       </ul>
-      
+
       <div class="callout tip"><div><strong>Si c'est trop cher</strong>Va voir la fiche <a href="#/fiche/sante/maison-medicale">La maison médicale</a> — soins illimités gratuits si revenus limités.</div></div>
   - id: maison-medicale
-    title: "La maison médicale"
-    summary: "Soins illimités gratuits si tu t'inscris au forfait."
-    lastChecked: "03/06/2026"
+    title: La maison médicale
+    summary: Soins illimités gratuits si tu t'inscris au forfait.
+    lastChecked: 03/06/2026
     body: |
       <p>La <strong>maison médicale au forfait</strong>, c'est probablement la meilleure nouvelle de cette page. Tu t'y inscris, et tu ne paies <strong>plus rien</strong> à chaque consultation.</p>
-      
+
       <h2>Ce qui est inclus</h2>
       <ul>
         <li>Médecin généraliste — autant de fois que nécessaire.</li>
         <li>Souvent : <strong>kiné</strong>, <strong>infirmier·ère</strong>, parfois psy.</li>
         <li>Aucun ticket modérateur, aucun avance de frais à faire.</li>
       </ul>
-      
+
       <h2>Comment s'inscrire ?</h2>
       <ol class="fiche-ol">
         <li>Trouve une maison médicale près de chez toi : <a href="https://www.maisonmedicale.org" target="_blank" rel="noopener">maisonmedicale.org</a></li>
@@ -79,22 +79,22 @@ sections:
         <li>Tu apportes ta carte ID + vignette de mutuelle.</li>
         <li>Tu signes le contrat de forfait. C'est tout.</li>
       </ol>
-      
+
       <h2>Ce que tu dois savoir</h2>
       <ul>
         <li>Tu ne peux plus aller chez un autre médecin "à la carte" (sauf urgence). C'est la maison médicale qui te suit.</li>
         <li>Tu peux te désinscrire si ça ne te convient pas — tu n'es bloqué·e à rien.</li>
         <li>L'inscription est <strong>gratuite</strong>.</li>
       </ul>
-      
+
       <div class="callout"><div><strong>Pour qui ?</strong>Pour tout le monde, mais c'est particulièrement utile si tu as peu de revenus, des soucis de santé chroniques, ou si l'idée d'avancer de l'argent t'angoisse.</div></div>
   - id: convention-psy
-    title: "Voir un psy — gratuit avant 24 ans"
-    summary: "La convention psy 1ère ligne — accessible et déstigmatisée."
-    lastChecked: "03/06/2026"
+    title: Voir un psy — gratuit avant 24 ans
+    summary: La convention psy 1ère ligne — accessible et déstigmatisée.
+    lastChecked: 03/06/2026
     body: |
       <p>Voir un psy, c'est devenu vraiment accessible : grâce à la <strong>convention psychologique de 1ère ligne</strong> (INAMI), tu peux consulter un psy <strong>conventionné</strong> à des conditions très avantageuses.</p>
-      
+
       <h2>Combien ça coûte&nbsp;?</h2>
       <ul>
         <li><strong>Si tu as moins de 24 ans : c'est totalement GRATUIT</strong> (le ticket modérateur a été supprimé pour les jeunes depuis avril 2024).</li>
@@ -102,17 +102,17 @@ sections:
         <li><strong>La 1re séance est toujours gratuite</strong>, peu importe ton âge.</li>
         <li>Séance de groupe : 2,5 € pour tout le monde.</li>
       </ul>
-      
+
       <h2>Combien de séances&nbsp;?</h2>
       <p>En général jusqu'à <strong>8 séances par an</strong> (en individuel). Souvent suffisant pour un coup de pouce, un cap difficile, un mal-être passager. Pour aller plus loin, ton·ta psy peut t'orienter vers un suivi plus long en 2e ligne (toujours conventionné).</p>
-      
+
       <h2>Pour qui&nbsp;?</h2>
       <ul>
         <li>Toute personne ayant une mutuelle belge.</li>
         <li>Pour des situations courantes : stress, anxiété, tristesse, sommeil, conflit, deuil, perte de motivation…</li>
         <li><strong>Pas besoin d'avoir un "vrai" problème grave</strong>. C'est fait pour intervenir tôt.</li>
       </ul>
-      
+
       <h2>Comment commencer&nbsp;?</h2>
       <ol class="fiche-ol">
         <li>Trouve un psy conventionné : <a href="https://www.psyforyou.be" target="_blank" rel="noopener">psyforyou.be</a> (annuaire officiel) ou <a href="https://psychologue-premiere-ligne.be" target="_blank" rel="noopener">psychologue-premiere-ligne.be</a>.</li>
@@ -120,20 +120,20 @@ sections:
         <li>Apporte simplement ta carte d'identité et ta <a href="#/fiche/admin/mutuelle">carte de mutuelle</a> au 1er RDV.</li>
         <li>Le paiement se fait en <strong>tiers payant</strong> : tu n'avances pas l'argent, tu paies juste ta part (ou rien si -24 ans).</li>
       </ol>
-      
+
       <div class="callout tip"><div><strong>Voir un psy ≠ être "fou"</strong>Beaucoup de gens y vont à un moment de leur vie. C'est juste prendre un temps pour soi avec quelqu'un de formé. Et avant 24 ans, ça ne te coûte rien — aucune raison de t'en priver.</div></div>
-      
+
       <h2>Pour aller plus loin</h2>
       <ul>
         <li><a href="https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale/vos-soins-psychologiques-de-1re-ligne-rembourses-via-les-reseaux-de-sante-mentale" target="_blank" rel="noopener">INAMI — Soins psychologiques 1re ligne</a> (info officielle)</li>
       </ul>
   - id: urgence-medicale
-    title: "En cas d'urgence médicale"
-    summary: "Quand appeler le 112, quand aller aux urgences, quand attendre."
-    lastChecked: "03/06/2026"
+    title: En cas d'urgence médicale
+    summary: Quand appeler le 112, quand aller aux urgences, quand attendre.
+    lastChecked: 03/06/2026
     body: |
       <p>Pas toujours évident de savoir où aller. Voici un petit guide.</p>
-      
+
       <h2>Appeler le 112 si :</h2>
       <ul>
         <li>La personne ne respire plus, perd conscience, fait un AVC ou une crise cardiaque.</li>
@@ -141,7 +141,7 @@ sections:
         <li>Accident grave.</li>
         <li>Doute sérieux sur la vie d'une personne.</li>
       </ul>
-      
+
       <h2>Aller aux urgences hospitalières si :</h2>
       <ul>
         <li>Blessure qui nécessite des points, plâtre…</li>
@@ -149,26 +149,30 @@ sections:
         <li>Fièvre forte qui ne baisse pas.</li>
         <li>Suspicion de fracture.</li>
       </ul>
-      
+
       <h2>Médecin de garde / poste médical :</h2>
       <ul>
         <li>Soir et week-end pour les soins courants (rhume sévère, douleur sans gravité).</li>
         <li>Numéro unique : <strong>1733</strong> (te redirige vers le bon poste).</li>
       </ul>
-      
+
       <h2>Médecin traitant le lendemain :</h2>
       <ul>
         <li>Pour tout le reste (suivi, contrôle, prescription).</li>
       </ul>
-      
+
       <div class="callout warn"><div><strong>Dans le doute</strong>Appelle le 112 ou le 1733. Personne ne va te juger pour avoir appelé "pour rien".</div></div>
+  - id: mutuelle
+    title: Ma mutuelle
+    summary: Comprendre ses remboursements, BIM, choisir sa mutuelle.
+    linkTo: admin/mutuelle
   - id: planning-familial
-    title: "Le planning familial"
-    summary: "Contraception, IVG, écoute, conseil — gratuit pour les jeunes."
-    lastChecked: "03/06/2026"
+    title: Le planning familial
+    summary: Contraception, IVG, écoute, conseil — gratuit pour les jeunes.
+    lastChecked: 03/06/2026
     body: |
       <p>Les <strong>centres de planning familial</strong> sont des lieux d'accueil, d'écoute et de soins liés à la vie affective et sexuelle. Beaucoup plus que de la contraception.</p>
-      
+
       <h2>Ce qu'on y propose</h2>
       <ul>
         <li>Consultations médicales (gynéco, contraception, IST, test de grossesse).</li>
@@ -177,19 +181,15 @@ sections:
         <li>Conseils juridiques (violences, droits, divorce).</li>
         <li>Accueil pour les jeunes — souvent sans rendez-vous.</li>
       </ul>
-      
+
       <h2>C'est gratuit ou peu cher</h2>
       <p>Les tarifs sont adaptés à tes revenus. Pour les jeunes, <strong>c'est souvent gratuit</strong>.</p>
-      
+
       <h2>C'est confidentiel</h2>
       <p>Le secret professionnel est total. Personne ne saura que tu y as été — même pas tes parents si tu ne veux pas.</p>
-      
+
       <p>Trouver un centre près de chez toi : <a href="https://www.loveattitude.be" target="_blank" rel="noopener">loveattitude.be</a></p>
-  - id: mutuelle
-    title: "Ma mutuelle"
-    summary: "Comprendre ses remboursements, BIM, choisir sa mutuelle."
-    linkTo: admin/mutuelle
   - id: lignes-ecoute
-    title: "Tous les numéros d'écoute"
-    summary: "112, 103, 107, prévention suicide, SOS Viol…"
+    title: Tous les numéros d'écoute
+    summary: 112, 103, 107, prévention suicide, SOS Viol…
     linkTo: urgence/lignes-ecoute

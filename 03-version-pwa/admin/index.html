@@ -239,6 +239,7 @@
   <!-- Section editor -->
   <div id="view-section" style="display:none">
     <div class="container">
+      <div id="sectionBreadcrumb" style="font-size:13px;color:var(--muted);margin-bottom:6px"></div>
       <div class="editor-title" id="editorTitle">Modifier la fiche <span id="dirtyIndicator" class="dirty-indicator" style="display:none">● non sauvegardé</span></div>
       <form id="sectionForm" onsubmit="return false">
         <div class="form-group">
@@ -257,7 +258,7 @@
         <div class="form-group">
           <label>Sources de la fiche (optionnel)</label>
           <input id="fieldSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
-          <div class="hint">Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.</div>
+          <div class="hint" id="sourceHint">Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.</div>
         </div>
         <div class="form-group">
           <label>Avertissement légal (optionnel)</label>
@@ -733,14 +734,23 @@ function startAddSection() {
   populateEditor({});
   setToday();
   document.getElementById('editorTitle').firstChild.textContent = 'Nouvelle fiche ';
+  updateBreadcrumb('');
   showView('section');
 }
 
 function startEditSection(idx) {
   currentSectionIdx = idx;
-  populateEditor(currentModuleData.sections[idx]);
+  const s = currentModuleData.sections[idx];
+  populateEditor(s);
   document.getElementById('editorTitle').firstChild.textContent = 'Modifier la fiche ';
+  updateBreadcrumb(s.title || '');
   showView('section');
+}
+
+function updateBreadcrumb(sectionTitle) {
+  const modLabel = currentModuleData.title || MODULE_LABELS[currentModuleId] || currentModuleId;
+  const bc = document.getElementById('sectionBreadcrumb');
+  bc.textContent = sectionTitle ? `${modLabel}  →  ${sectionTitle}` : `${modLabel}  →  Nouvelle fiche`;
 }
 
 function populateEditor(s) {
@@ -749,6 +759,15 @@ function populateEditor(s) {
   document.getElementById('fieldSummary').value     = s.summary     || '';
   document.getElementById('fieldSource').value      = s.source      || '';
   document.getElementById('fieldDisclaimer').value  = s.disclaimer  || '';
+
+  // Show module-level source as hint so the user sees where the displayed source comes from
+  const modSource = currentModuleData?.source;
+  const hint = document.getElementById('sourceHint');
+  if (modSource && !s.source) {
+    hint.innerHTML = `Source du module (affichée par défaut) : <strong>${esc(modSource)}</strong>. Remplis ce champ pour remplacer uniquement pour cette fiche.`;
+  } else {
+    hint.textContent = 'Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.';
+  }
   document.getElementById('fieldLastChecked').value = s.lastChecked || '';
   document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
   document.getElementById('saveStatus').textContent = '';

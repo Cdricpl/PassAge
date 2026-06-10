@@ -204,6 +204,46 @@
     /* ── Toast ── */
     #toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: var(--text); color: #fff; border-radius: var(--radius-sm); padding: 12px 24px; font-size: 14px; font-weight: 500; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 200; max-width: 90vw; text-align: center; box-shadow: var(--shadow-lg); }
     #toast.show { opacity: 1; }
+
+    /* ── Module header (identique à l'app) ── */
+    .module-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 20px 16px; }
+    .module-header-inner { max-width: 800px; margin: 0 auto; display: flex; gap: 16px; align-items: flex-start; }
+    .module-header-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; margin-bottom: 0; }
+    .module-header-text h2 { font-size: 1.375rem; font-weight: 700; margin-bottom: 4px; }
+    .module-header-text .mod-subtitle { font-size: .9375rem; color: var(--text-soft); margin-bottom: 3px; }
+    .module-header-text .mod-objective { font-size: .875rem; color: var(--muted); font-style: italic; }
+
+    /* ── Fiche list (style app publique) ── */
+    .fiche-admin-row { display: flex; align-items: stretch; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; transition: box-shadow .15s; }
+    .fiche-admin-row:hover { box-shadow: var(--shadow-sm); }
+    .fiche-link-area { flex: 1; padding: 16px; cursor: pointer; transition: background .1s; }
+    .fiche-link-area:hover { background: var(--border-soft); }
+    .fiche-link-title { font-weight: 600; font-size: .9375rem; color: var(--text); margin-bottom: 3px; }
+    .fiche-link-summary { font-size: .8125rem; color: var(--text-soft); }
+    .fiche-admin-controls { display: flex; flex-direction: column; gap: 2px; padding: 8px; border-left: 1px solid var(--border-soft); background: var(--bg); justify-content: center; }
+
+    /* ── Fiche preview (rendu identique à l'app) ── */
+    .preview-banner { background: var(--primary-soft); border-radius: var(--radius-sm); padding: 8px 14px; margin-bottom: 16px; font-size: 13px; color: var(--primary); font-weight: 500; }
+    .fiche-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; box-shadow: var(--shadow-sm); }
+    .fiche-card h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+    .fiche-card p { margin: 0 0 .75rem; }
+    .fiche-card p:last-child { margin-bottom: 0; }
+    .fiche-card h2 { font-size: 1.25rem; font-weight: 700; margin: 1.25rem 0 .5rem; }
+    .fiche-card h3 { font-size: 1.0625rem; font-weight: 700; margin: 1rem 0 .25rem; }
+    .fiche-card ul { list-style: none; padding-left: 0; margin: .75rem 0; }
+    .fiche-card ul li { position: relative; padding-left: 24px; margin-bottom: .5rem; }
+    .fiche-card ul li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+    .fiche-card ol { padding-left: 22px; margin: .75rem 0; }
+    .fiche-card ol li { margin-bottom: .5rem; }
+    .fiche-card .callout { display: flex; gap: .75rem; padding: 1rem; border-radius: var(--radius); margin: 1rem 0; background: var(--primary-soft); border-left: 4px solid var(--primary); font-size: .9375rem; }
+    .fiche-card .callout.warn { background: var(--warn-soft); border-color: var(--warn); }
+    .fiche-card .callout.tip { background: var(--success-soft); border-color: var(--success); }
+    .fiche-card strong { font-weight: 700; }
+    .fiche-card a { color: var(--primary); text-decoration: underline; }
+    .fiche-meta-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 16px; font-size: .875rem; }
+    .fiche-meta-section p { color: var(--text-soft); margin-bottom: 6px; }
+    .fiche-meta-section p:last-child { color: var(--muted); font-style: italic; font-size: .8125rem; margin-bottom: 0; }
+    .preview-admin-bar { display: flex; gap: 10px; padding: 16px 0 8px; border-top: 2px dashed var(--border); flex-wrap: wrap; }
   </style>
 </head>
 <body>
@@ -257,13 +297,20 @@
 
   <!-- Module sections -->
   <div id="view-module" style="display:none">
-    <div class="container">
-      <div class="list-header">
-        <h2 id="moduleTitle"></h2>
-        <div class="list-actions">
-          <button onclick="startEditModuleMeta()" class="btn-ghost btn-sm">Modifier le module</button>
-          <button onclick="startAddSection()" class="btn-primary btn-sm">+ Nouvelle fiche</button>
+    <div id="moduleHeader" class="module-header">
+      <div class="module-header-inner">
+        <div id="moduleHeaderIcon" class="module-header-icon module-icon"></div>
+        <div class="module-header-text">
+          <h2 id="moduleTitle"></h2>
+          <div id="moduleSubtitle" class="mod-subtitle"></div>
+          <div id="moduleObjective" class="mod-objective"></div>
         </div>
+      </div>
+    </div>
+    <div class="container">
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+        <button onclick="startEditModuleMeta()" class="btn-ghost btn-sm">⚙️ Module</button>
+        <button onclick="startAddSection()" class="btn-primary btn-sm">+ Nouvelle fiche</button>
       </div>
       <div id="sectionList"></div>
     </div>
@@ -403,6 +450,28 @@
     </div>
   </div>
 
+  <!-- Fiche preview -->
+  <div id="view-fiche-preview" style="display:none">
+    <div class="container">
+      <div class="preview-banner">👁 Aperçu — rendu identique à l'application</div>
+      <p id="previewModuleCrumb" style="font-size:.875rem;color:var(--muted);margin-bottom:12px"></p>
+      <article class="fiche-card">
+        <h1 id="previewTitle"></h1>
+        <div id="previewBody"></div>
+      </article>
+      <section class="fiche-meta-section">
+        <p><strong>Source :</strong> <span id="previewSource"></span></p>
+        <p><strong>Dernière vérification :</strong> <span id="previewDate"></span></p>
+        <p id="previewDisclaimer"></p>
+      </section>
+      <div class="preview-admin-bar">
+        <button onclick="editCurrentSectionFromPreview()" class="btn-primary">✏️ Modifier cette fiche</button>
+        <button onclick="duplicateSection(currentSectionIdx)" class="btn-ghost">⧉ Dupliquer</button>
+        <button onclick="deleteSectionFromPreview()" class="btn-danger">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
 </div><!-- /app -->
 <datalist id="fichePaths"></datalist>
 
@@ -512,7 +581,7 @@ function stopDeployPoll() {
 }
 
 // ── View management ─────────────────────────────────────────────────────────────
-const views = ['dashboard','module','section','module-meta','lexique'];
+const views = ['dashboard','module','section','module-meta','lexique','fiche-preview'];
 
 function showView(name, pushHistory = true) {
   if (pushHistory) {
@@ -634,7 +703,7 @@ async function goToSearchResult(moduleId, sectionIdx) {
   searchInput.value = '';
   searchResults.style.display = 'none';
   await loadModule(moduleId);
-  startEditSection(sectionIdx);
+  previewSection(sectionIdx);
 }
 
 // ── Module list ─────────────────────────────────────────────────────────────────
@@ -642,14 +711,19 @@ async function loadModule(id) {
   currentModuleId = id;
   showView('module');
   document.getElementById('moduleTitle').textContent = MODULE_LABELS[id] || id;
+  document.getElementById('moduleSubtitle').textContent = '';
+  document.getElementById('moduleObjective').textContent = '';
+  const iconEl = document.getElementById('moduleHeaderIcon');
+  iconEl.setAttribute('data-m', id);
+  iconEl.textContent = MODULE_ICONS[id] || '📄';
   document.getElementById('sectionList').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement…</div>';
 
-  // Use cached data if available
   const cached = allModulesData?.find(m => m.id === id);
   if (cached) {
     currentModuleData = cached.data;
     currentModuleSha  = cached.sha;
     if (!currentModuleData.sections) currentModuleData.sections = [];
+    updateModuleHeader();
     renderSections();
     return;
   }
@@ -658,6 +732,7 @@ async function loadModule(id) {
     currentModuleSha  = data.sha;
     currentModuleData = jsyaml.load(decodeContent(data.content));
     if (!currentModuleData.sections) currentModuleData.sections = [];
+    updateModuleHeader();
     renderSections();
   } catch (err) {
     document.getElementById('sectionList').innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
@@ -672,20 +747,20 @@ function renderSections() {
     return;
   }
   list.innerHTML = secs.map((s, i) => `
-    <div class="section-row">
-      <div class="section-info">
-        <strong>${esc(s.title || '(sans titre)')}</strong>
-        <span class="section-summary">${esc(s.summary || '')}</span>
+    <div class="fiche-admin-row">
+      <div class="fiche-link-area" onclick="previewSection(${i})">
+        <div class="fiche-link-title">${esc(s.title || '(sans titre)')}</div>
+        <div class="fiche-link-summary">${esc(s.summary || '')}</div>
         ${s.linkTo ? `<span class="badge">→ ${esc(s.linkTo)}</span>` : ''}
       </div>
-      <div class="section-actions">
+      <div class="fiche-admin-controls">
         <div class="reorder-btns">
-          <button class="btn-ghost btn-xs" onclick="moveSection(${i},-1)" ${i===0?'disabled':''}>↑</button>
-          <button class="btn-ghost btn-xs" onclick="moveSection(${i},1)" ${i===secs.length-1?'disabled':''}>↓</button>
+          <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},-1)" ${i===0?'disabled':''}>↑</button>
+          <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},1)" ${i===secs.length-1?'disabled':''}>↓</button>
         </div>
-        <button class="btn-ghost btn-xs" onclick="startEditSection(${i})">Modifier</button>
-        <button class="btn-ghost btn-xs" onclick="duplicateSection(${i})" title="Dupliquer">⧉</button>
-        <button class="btn-danger btn-xs" onclick="deleteSection(${i})">Supprimer</button>
+        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();startEditSection(${i})" title="Modifier directement">✏️</button>
+        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();duplicateSection(${i})" title="Dupliquer">⧉</button>
+        <button class="btn-danger btn-xs" onclick="event.stopPropagation();deleteSection(${i})">✕</button>
       </div>
     </div>`).join('');
 }
@@ -753,7 +828,7 @@ async function saveModuleMeta() {
       const cached = allModulesData.find(m => m.id === currentModuleId);
       if (cached) { cached.data = currentModuleData; cached.title = currentModuleData.title; }
     }
-    document.getElementById('moduleTitle').textContent = currentModuleData.title;
+    updateModuleHeader();
     isMetaDirty = false;
     document.getElementById('metaDirtyIndicator').style.display = 'none';
     setMetaStatus('Enregistré ✓', 'ok');
@@ -893,7 +968,12 @@ async function saveSection() {
     await commitModule(`content(${currentModuleId}): ${currentSectionIdx === -1 ? 'ajout' : 'modification'} de "${id}"`);
     clearDirty();
     setStatus('Enregistré ✓', 'ok');
-    setTimeout(() => { goBack(); renderSections(); }, 900);
+    const prevView = viewHistory[viewHistory.length - 1];
+    setTimeout(() => {
+      goBack();
+      renderSections();
+      if (prevView === 'fiche-preview') refreshPreview(currentSectionIdx);
+    }, 900);
   } catch (err) {
     setStatus(`Erreur : ${err.message}`, 'err');
     if (currentSectionIdx === -1) currentModuleData.sections.pop();
@@ -1037,6 +1117,51 @@ async function commitLexique(message) {
   currentLexiqueSha = result.content.sha;
   toast('Sauvegardé — déploiement en cours…');
   startDeployPoll();
+}
+
+// ── Module header ────────────────────────────────────────────────────────────────
+function updateModuleHeader() {
+  const id = currentModuleId;
+  document.getElementById('moduleTitle').textContent = currentModuleData.title || MODULE_LABELS[id] || id;
+  document.getElementById('moduleSubtitle').textContent = currentModuleData.subtitle || '';
+  document.getElementById('moduleObjective').textContent = currentModuleData.objective || '';
+  const iconEl = document.getElementById('moduleHeaderIcon');
+  iconEl.setAttribute('data-m', id);
+  iconEl.textContent = MODULE_ICONS[id] || '📄';
+}
+
+// ── Fiche preview ────────────────────────────────────────────────────────────────
+function previewSection(idx) {
+  currentSectionIdx = idx;
+  refreshPreview(idx);
+  showView('fiche-preview');
+}
+
+function refreshPreview(idx) {
+  const s = currentModuleData.sections[idx];
+  const modSource = currentModuleData.source || '';
+  document.getElementById('previewModuleCrumb').textContent =
+    (currentModuleData.title || MODULE_LABELS[currentModuleId]) + '  →  ' + (s.title || '(sans titre)');
+  document.getElementById('previewTitle').textContent = s.title || '';
+  document.getElementById('previewBody').innerHTML = s.body ||
+    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : '');
+  document.getElementById('previewSource').textContent = s.source || modSource || '—';
+  document.getElementById('previewDate').textContent = s.lastChecked || '—';
+  document.getElementById('previewDisclaimer').textContent =
+    s.disclaimer || "Cette fiche est un repère général. Elle ne remplace pas l'avis d'un service compétent.";
+}
+
+function editCurrentSectionFromPreview() {
+  startEditSection(currentSectionIdx);
+}
+
+async function deleteSectionFromPreview() {
+  const s = currentModuleData.sections[currentSectionIdx];
+  if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
+  currentModuleData.sections.splice(currentSectionIdx, 1);
+  goBack();
+  renderSections();
+  await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
 }
 
 // ── Init event listeners (once) ─────────────────────────────────────────────────

@@ -1,9 +1,9 @@
-const CACHE = 'passage-admin-v1';
+const CACHE = 'passage-admin-v2';
 
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
-      .then(c => c.add('./'))
+      .then(c => c.add('./index.html'))
       .then(() => self.skipWaiting())
   );
 });

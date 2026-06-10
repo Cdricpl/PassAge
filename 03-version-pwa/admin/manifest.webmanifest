@@ -3,7 +3,7 @@
   "name": "Pass'âge Admin",
   "short_name": "Admin",
   "description": "Administration du contenu Pass'âge",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",

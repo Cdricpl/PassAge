@@ -146,295 +146,6 @@ window.MA_CONTENT = (function () {
   // ============================================================
   const MODULES = [
     {
-      id: "majeur",
-      title: "Devenir majeur",
-      subtitle: "Ce qui change à 18 ans",
-      color: "majeur",
-      icon: ICONS.cake,
-      objective: "Comprendre tes nouveaux droits et tes nouvelles responsabilités à 18 ans, et savoir ce qu'il faut faire en premier.",
-      source: "justice.belgium.be · one.be · belgium.be",
-      sections: [
-        {
-          id: "enfant-en-accueil",
-          title: "Si tu es en famille d'accueil",
-          summary: "Ce qui change vraiment pour toi (et ce qui ne change pas).",
-          lastChecked: "03/06/2026",
-          body: `
-<p>Cette fiche, c'est pour toi si tu as été (ou es encore) suivi·e par le SAJ, le SPJ, ou le tribunal de la jeunesse. Ta situation à 18 ans n'est pas tout à fait comme celle des autres jeunes — voici les points spécifiques.</p>
-
-<h2>Ce qui change vraiment</h2>
-<ul>
-  <li><strong>L'intervention du SAJ/SPJ s'arrête</strong> à ton 18e anniversaire. Plus de mesure imposée.</li>
-  <li>Tes <strong>allocations familiales</strong> (si tu poursuis tes études) te sont versées <strong>directement à toi</strong>, plus à ta famille d'accueil.</li>
-  <li>Tu peux <strong>quitter la FA quand tu veux</strong>, mais aussi <strong>y rester</strong> si tout le monde est d'accord.</li>
-</ul>
-
-<h2>Ce qui ne change pas</h2>
-<ul>
-  <li>La <strong>porte du Service Familles d'Accueil te reste ouverte</strong>. Tu peux les contacter pour une question, un doute, une écoute — même des années après.</li>
-  <li>Le <strong>lien avec ta famille d'accueil</strong> ne s'efface pas administrativement. C'est ton histoire.</li>
-</ul>
-
-<h2>Tu as droit au RIS — directement</h2>
-<p>En tant que jeune accueilli·e, tu as <strong>droit au revenu d'intégration sociale (RIS)</strong> dès tes 18 ans, et l'enquête du CPAS sur tes parents est <strong>simplifiée</strong> (ton statut le justifie).</p>
-<ul>
-  <li>Demande à introduire au CPAS de la commune où tu seras domicilié·e.</li>
-  <li>Apporte un document attestant de ton statut (mesure SAJ/SPJ ou jugement).</li>
-  <li>Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> pour les détails.</li>
-</ul>
-
-<h2>Le compte d'épargne du mandant (très important)</h2>
-<p>Pendant ton placement, l'autorité mandante (SAJ/SPJ) a peut-être ouvert un <strong>compte d'épargne à ton nom</strong>, alimenté par les allocations forfaitaires. Tu vas recevoir, dans les semaines qui suivent ta majorité&nbsp;:</p>
-<ul>
-  <li>Un <strong>document de la banque</strong> qui te confirme le solde du compte.</li>
-  <li>Un <strong>document du mandant</strong> (SAJ/SPJ) qui t'explique ce qu'il y a dessus et comment y accéder.</li>
-</ul>
-<div class="callout warn"><div><strong>Si tu n'as rien reçu après 2-3 mois</strong>Contacte le SAJ/SPJ ou le Service Familles d'Accueil. Ce compte t'appartient, mais il n'arrive pas toujours automatiquement. Voir aussi <a href="#/fiche/argent/epargne-mandante">Le compte d'épargne mandant</a>.</div></div>
-
-<h2>Tu peux demander la prolongation du suivi</h2>
-<p>Si tu as un <strong>projet concret</strong> (mise en ordre administrative, recherche logement, passage à un autre service…), tu peux demander au SAJ de <strong>prolonger ton accompagnement</strong> de <strong>2 fois 6 mois maximum</strong>.</p>
-<div class="callout warn"><div><strong>À faire 6 mois avant ta majorité (au minimum)</strong>La demande doit arriver bien avant l'anniversaire — sinon il est trop tard. Parle-s'en à ton délégué·e SAJ dès que possible.</div></div>
-
-<h2>Et si tu as juste besoin de parler ?</h2>
-<p>Tu peux contacter une <strong>AMO</strong> (Aide en Milieu Ouvert) près de chez toi : écoute, animations, aide aux démarches. Sans rendez-vous, gratuit, confidentiel. Voir aussi <a href="#/fiche/majeur/accompagnement">Garder un accompagnement</a>.</p>
-
-<h2>En résumé : 3 réflexes</h2>
-<ol class="fiche-ol">
-  <li>Demande <strong>6 mois avant tes 18 ans</strong> si tu veux prolonger ton suivi.</li>
-  <li>Vérifie que tu as bien reçu le <strong>document du compte d'épargne</strong> dans les semaines après.</li>
-  <li>Introduis ta demande de <strong>RIS au CPAS</strong> pour ne pas rester sans revenu.</li>
-</ol>
-`
-        },
-        {
-          id: "changements",
-          title: "Ce qui change à 18 ans",
-          summary: "Tes droits, tes responsabilités, ce que tes parents/FA peuvent encore te demander.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>À 18 ans, tu deviens <strong>majeur·e</strong>. Tu es libre de tes choix, et tu deviens responsable de tes actes.</p>
-
-<h2>Ce que tu peux faire seul·e</h2>
-<ul>
-  <li>Décider de ton lieu de vie, de tes études, de tes sorties.</li>
-  <li>Quitter le domicile familial si tu le souhaites.</li>
-  <li>Signer un contrat (bail, téléphone, assurance, banque…).</li>
-  <li>Te marier, ouvrir un compte, vendre ou acheter un bien.</li>
-  <li>Passer ton permis de conduire (catégorie B).</li>
-  <li>Choisir d'être donneur·euse d'organes (à signaler à la commune).</li>
-</ul>
-
-<h2>Tes nouveaux devoirs</h2>
-<ul>
-  <li><strong>Voter aux élections</strong> — c'est obligatoire en Belgique. Voir <a href="#/fiche/majeur/vote">Le droit de vote</a>.</li>
-  <li><strong>Faire ta déclaration d'impôts</strong> chaque année. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a>.</li>
-  <li><strong>Avoir une mutuelle</strong> à ton nom si tu n'es plus à charge. Voir <a href="#/fiche/sante/medecin">la santé</a>.</li>
-  <li><strong>Une assurance RC familiale</strong> si tu prends ton autonomie.</li>
-</ul>
-
-<h2>Et tes parents ou ta famille d'accueil ?</h2>
-<p>Légalement, ils ne décident plus pour toi. <strong>En pratique</strong>, si tu vis encore chez eux, ils auront sûrement des attentes. C'est normal — le dialogue reste utile, surtout si tu dépends d'eux financièrement.</p>
-
-<h2>Tes responsabilités</h2>
-<ul>
-  <li><strong>Civile :</strong> tu dois réparer les dommages que tu causes (d'où l'importance d'une <a href="#/fiche/admin/rc-familiale">assurance RC familiale</a>).</li>
-  <li><strong>Pénale :</strong> en cas de délit, tu peux être condamné·e comme tout adulte.</li>
-  <li><strong>Scolaire :</strong> à la fin de l'année où tu as 18 ans, l'obligation scolaire prend fin.</li>
-</ul>
-
-<div class="callout tip"><div><strong>Bon à savoir</strong>Une formation ou un diplôme reste un atout fort pour trouver un emploi. Pas besoin de tout décider tout de suite.</div></div>
-
-<h2>Pour aller plus loin</h2>
-<ul>
-  <li><a href="#/fiche/majeur/demarches">Mes premières démarches</a> — par quoi commencer concrètement</li>
-  <li><a href="#/fiche/admin/mutuelle">La mutuelle</a> et <a href="#/fiche/admin/rc-familiale">l'assurance RC familiale</a></li>
-  <li><a href="#/fiche/majeur/vote">Le droit de vote</a> et <a href="#/fiche/majeur/impots">La déclaration d'impôts</a></li>
-  <li><a href="https://www.belgium.be/fr" target="_blank" rel="noopener">belgium.be</a> — portail officiel des droits et devoirs des citoyens belges</li>
-</ul>
-`
-        },
-        {
-          id: "demarches",
-          title: "Mes premières démarches",
-          summary: "Mutuelle, banque, assurance, impôts : les choses à régler en priorité.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>Voici les démarches à prévoir dans tes premiers mois de majorité. Pas tout en même temps — on y va étape par étape.</p>
-
-<h2>1. La mutuelle (obligatoire)</h2>
-<p>Tant que tu es domicilié·e chez ta famille ou famille d'accueil, tu restes sur leur mutuelle. Si tu prends ton autonomie, tu dois t'affilier toi-même à une mutuelle (Chrétienne, Neutre, Socialiste, Libérale, Solidaris…) ou à la <strong>CAAMI</strong> (gratuite, mais moins avantageuse). Voir aussi <a href="#/fiche/sante/maison-medicale">la maison médicale</a>.</p>
-
-<h2>2. Le compte bancaire</h2>
-<p>Indispensable pour recevoir un salaire, payer en magasin, recevoir tes aides. Tu peux ouvrir un compte courant dès 18 ans — souvent gratuit pour les jeunes (-25 ans). Pense à activer <strong>itsme</strong> en même temps : tu vas en avoir besoin pour la déclaration d'impôts, Tax-on-Web, le SPF Finances… Voir <a href="#/fiche/argent/compte-bancaire">Le compte bancaire</a>.</p>
-
-<h2>3. L'assurance RC familiale</h2>
-<p>Si tu vis encore chez ta famille ou FA, tu es couvert·e par leur assurance. Si tu prends un logement, tu dois en souscrire une. Voir <a href="#/fiche/admin/rc-familiale">L'assurance RC familiale</a>.</p>
-
-<h2>4. Le RIS du CPAS (si besoin)</h2>
-<p>En tant que <strong>jeune accueilli·e</strong>, tu as droit au revenu d'intégration sociale. Demande à introduire au CPAS de ta commune. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> pour toutes les étapes.</p>
-
-<h2>5. Les allocations familiales</h2>
-<p>À 18 ans, elles sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil). Si tu poursuis tes études, tu les touches jusqu'à 25 ans max. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
-
-<h2>6. Ta déclaration d'impôts (chaque année)</h2>
-<p>Dès l'année qui suit tes 18 ans, tu reçois ta déclaration. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a> pour les détails — c'est plus simple que ça en a l'air.</p>
-
-<h2>7. T'inscrire pour voter (automatique)</h2>
-<p>Pas de démarche : ta convocation arrive par la poste avant chaque scrutin. Voir <a href="#/fiche/majeur/vote">Le droit de vote</a>.</p>
-
-<div class="callout"><div><strong>Garde-la sous la main</strong>Tu peux sauvegarder cette fiche en favori (icône cœur en haut) pour la retrouver vite quand tu en as besoin.</div></div>
-`
-        },
-        {
-          id: "vote",
-          title: "Le droit de vote",
-          summary: "Comment ça se passe, et comment choisir.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>À 18 ans, tu votes. <strong>En Belgique, le vote est obligatoire</strong> pour les élections fédérales, régionales, communales, provinciales et européennes. Ce n'est pas une corvée — c'est ta voix qui compte autant que celle des autres.</p>
-
-<h2>Quelles élections, quand ?</h2>
-<ul>
-  <li><strong>Élections fédérales</strong> (Chambre) : tous les 5 ans</li>
-  <li><strong>Élections régionales et communautaires</strong> : tous les 5 ans</li>
-  <li><strong>Élections européennes</strong> : tous les 5 ans (les 16-17 ans peuvent voter aussi depuis 2024)</li>
-  <li><strong>Élections communales et provinciales</strong> : tous les 6 ans</li>
-</ul>
-<p>En Belgique, les dernières grandes élections ont eu lieu en juin 2024 (fédérales, régionales, européennes) et en octobre 2024 (communales et provinciales). Les prochaines élections fédérales sont prévues en 2029.</p>
-
-<h2>Comment ça se passe le jour J ?</h2>
-<ol class="fiche-ol">
-  <li>Quelques semaines avant, tu reçois ta <strong>convocation</strong> par la poste (même le Roi en reçoit une).</li>
-  <li>Le jour du vote, tu te présentes au bureau indiqué avec <strong>ta carte d'identité + ta convocation</strong>.</li>
-  <li>Tu entres dans l'isoloir et tu votes (papier ou écran tactile selon ta commune).</li>
-  <li>L'agent tamponne ta convocation : c'est ta preuve d'avoir voté.</li>
-</ol>
-
-<h2>Pour qui voter ?</h2>
-<p>C'est <strong>ton</strong> choix. Personne ne peut te le dicter — pas tes parents, pas ton patron, pas tes amis. Pour t'aider à décider :</p>
-<ul>
-  <li><strong>Test Électoral RTBF</strong> : un quiz qui te dit quel parti correspond à tes idées (publié au moment des élections).</li>
-  <li><strong>De Stemtest</strong> (côté flamand, traduction possible).</li>
-  <li>Lis les <strong>programmes des partis</strong> sur leurs sites.</li>
-  <li>Méfie-toi des sites/comptes détenus par un parti — ils peuvent t'orienter.</li>
-</ul>
-
-<h2>Comment voter correctement ?</h2>
-<ul>
-  <li>Tu peux voter pour <strong>une liste entière</strong> (vote en tête de liste).</li>
-  <li>Tu peux voter pour <strong>un ou plusieurs candidats d'une même liste</strong>.</li>
-  <li>Tu <strong>ne peux pas</strong> voter pour des candidats de listes différentes — ton vote serait nul.</li>
-  <li>Tu peux aussi voter <strong>blanc</strong> (rien cocher) si aucun parti ne te convient.</li>
-</ul>
-
-<h2>Tu ne peux pas y aller le jour J ?</h2>
-<ul>
-  <li><strong>Procuration</strong> : tu désignes un proche pour voter à ta place (formulaire à la commune).</li>
-  <li><strong>Justification</strong> : maladie, étranger, raisons professionnelles → certificat à fournir.</li>
-  <li>Sinon, <strong>tu risques une amende</strong> (peu appliquée mais légale).</li>
-</ul>
-
-<div class="callout tip"><div><strong>Pas sûr·e de toi ?</strong>Voter, c'est un droit, pas un examen. Tu n'es pas obligé·e de tout comprendre. Choisis ce qui te parle, et tu apprendras avec le temps.</div></div>
-
-<h2>Pour aller plus loin</h2>
-<ul>
-  <li><a href="https://www.elections.fgov.be" target="_blank" rel="noopener">elections.fgov.be</a> — site officiel des élections en Belgique</li>
-  <li><a href="https://inforjeunes.be" target="_blank" rel="noopener">inforjeunes.be</a> — brochures et infos pour les jeunes</li>
-</ul>
-`
-        },
-        {
-          id: "impots",
-          title: "La déclaration d'impôts",
-          summary: "Cette fameuse déclaration de contribution annuelle.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>Dès tes 18 ans, tu dois faire ta <strong>déclaration à l'impôt des personnes physiques</strong> (IPP) — souvent appelée la <strong>déclaration de contribution</strong>. C'est annuel, c'est obligatoire, et c'est plus simple que ça en a l'air.</p>
-
-<h2>Pourquoi tu dois la faire ?</h2>
-<p>L'État doit savoir combien tu as gagné dans l'année pour calculer ton impôt. À ton âge, <strong>tu n'as souvent rien à payer</strong> — voire tu récupères de l'argent (par exemple si tu as un job étudiant et qu'on a retenu trop de précompte professionnel).</p>
-
-<h2>Quand ?</h2>
-<p>Chaque année, l'administration t'envoie un courrier ou un e-mail au printemps (vers avril-mai).</p>
-<ul>
-  <li><strong>En ligne (Tax-on-Web)</strong> : généralement jusqu'à <strong>mi-juillet</strong>.</li>
-  <li><strong>Sur papier</strong> : généralement avant <strong>fin juin</strong>.</li>
-  <li>Les dates exactes sont publiées chaque année par le SPF Finances.</li>
-</ul>
-
-<h2>Comment ?</h2>
-
-<h3>Option 1 — En ligne (le plus simple)</h3>
-<ol class="fiche-ol">
-  <li>Va sur <a href="https://finances.belgium.be/fr/E-services/tax-on-web" target="_blank" rel="noopener">Tax-on-Web</a>.</li>
-  <li>Connecte-toi avec <strong>itsme</strong> (le plus rapide) ou ta <strong>carte d'identité électronique</strong> (eID + lecteur de carte).</li>
-  <li>Beaucoup de cases sont <strong>déjà remplies</strong> par l'administration (salaire, allocations…).</li>
-  <li>Tu vérifies, complètes ce qui manque, signes électroniquement.</li>
-</ol>
-
-<h3>Option 2 — La PDS (Proposition de Déclaration Simplifiée)</h3>
-<p>Si ta situation est simple, l'administration t'envoie une <strong>proposition pré-remplie</strong>.</p>
-<ul>
-  <li>Tu vérifies : si tout est correct, <strong>rien à faire</strong>, c'est validé automatiquement.</li>
-  <li>Si tu dois corriger : tu te connectes à Tax-on-Web pour modifier.</li>
-</ul>
-
-<h2>Ce qu'il faut déclarer (et ce qui est exonéré)</h2>
-<ul>
-  <li><strong>Salaire</strong> (job étudiant, intérim, CDD/CDI) : à déclarer, généralement pré-rempli.</li>
-  <li><strong>RIS du CPAS</strong> : à déclarer mais <strong>exonéré d'impôt</strong>.</li>
-  <li><strong>Allocations de chômage</strong> : à déclarer.</li>
-  <li><strong>Allocations familiales</strong> : <strong>non taxables</strong>, rien à déclarer.</li>
-  <li><strong>Bourse d'études</strong> : <strong>non taxable</strong> dans la plupart des cas.</li>
-  <li><strong>Intérêts de compte d'épargne</strong> : exonérés jusqu'à un plafond fixé chaque année (voir le SPF Finances pour le montant en cours).</li>
-</ul>
-
-<h2>Si tu n'y comprends rien</h2>
-<p>C'est normal. Beaucoup d'adultes galèrent aussi. Plusieurs personnes peuvent t'aider <strong>gratuitement</strong> :</p>
-<ul>
-  <li><a href="https://inforjeunes.be" target="_blank" rel="noopener">Inforjeunes</a> — accompagnement gratuit, ils ont l'habitude.</li>
-  <li>Ton <strong>AMO</strong> ou ton <strong>service social</strong> (école, fac).</li>
-  <li>Le <strong>SPF Finances</strong> propose des permanences (téléphone ou en personne) au printemps.</li>
-  <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> pour les questions juridiques.</li>
-</ul>
-
-<div class="callout warn"><div><strong>Ne pas faire ta déclaration = amende</strong>Le fisc connaît tes employeurs et tes revenus. Garde tes <strong>fiches de paie</strong> au moins 7 ans, on peut te les redemander.</div></div>
-
-<h2>Pour aller plus loin</h2>
-<ul>
-  <li><a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a> — site du SPF Finances</li>
-  <li><a href="https://envoltoit.be" target="_blank" rel="noopener">envoltoit.be</a> — portail autonomie d'Inforjeunes</li>
-</ul>
-`
-        },
-        {
-          id: "accompagnement",
-          title: "Garder un accompagnement",
-          summary: "AMO, prolongation SAJ, maisons de jeunes : tu n'es pas seul·e après 18 ans.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>Le jour de tes 18 ans, le SAJ, le SPJ ou le tribunal de la jeunesse cesse son intervention. Mais tu peux <strong>continuer à être accompagné·e</strong> si tu en as besoin.</p>
-
-<h2>Prolonger l'accompagnement du SAJ</h2>
-<p>Tu peux demander au SAJ de prolonger l'intervention de ton service, <strong>jusqu'à 2 fois 6 mois maximum</strong>. Cette prolongation est acceptée sur base d'objectifs précis (mise en ordre administrative, passage à d'autres services…).</p>
-
-<h2>Les AMO (Aide en Milieu Ouvert)</h2>
-<p>Les AMO accompagnent les jeunes au quotidien : écoute, animations, aide pour démarrer en autonomie. C'est gratuit et confidentiel.</p>
-<ul>
-  <li>Trouver une AMO près de chez toi : <a href="https://inforjeunes.be/centre/" target="_blank" rel="noopener">inforjeunes.be/centre</a></li>
-</ul>
-
-<h2>Les maisons de jeunes</h2>
-<p>Lieux où tu peux rencontrer d'autres jeunes, te changer les idées, participer à des ateliers. Une équipe d'éducateurs y est présente pour te conseiller. Les coordonnées sont sur le site de ta commune.</p>
-
-<h2>Le service Familles d'Accueil</h2>
-<p>La porte du Service Familles d'Accueil te reste toujours ouverte. N'hésite pas à les contacter en cas de doute, de question ou simplement d'un besoin d'écoute.</p>
-`
-        },
-      ]
-    },
-
-    {
       id: "admin",
       title: "Administratif & juridique",
       subtitle: "Mes papiers, mes droits",
@@ -643,34 +354,10 @@ window.MA_CONTENT = (function () {
       source: "mi-is.be (SPP Intégration sociale) · inforjeunes.be",
       sections: [
         {
-          id: "aides-disponibles",
-          title: "Les aides auxquelles j'ai droit",
-          summary: "Vue d'ensemble : RIS, allocations, bourses.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
-
-<h2>1. Les allocations familiales</h2>
-<p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
-
-<h2>2. Le RIS (revenu d'intégration sociale)</h2>
-<p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
-
-<h2>3. La bourse d'études (FWB)</h2>
-<p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
-
-<h2>4. Les aides ponctuelles du CPAS</h2>
-<p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
-
-<h2>5. Le compte d'épargne mandant</h2>
-<p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
-`
-        },
-        {
           id: "ris-cpas",
           title: "Le RIS et le CPAS",
           summary: "Comment l'obtenir, conditions, contrat d'intégration.",
-          lastChecked: "03/06/2026",
+          lastChecked: "09/06/2026",
           body: `
 <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune. En tant que jeune accueilli·e, c'est un droit pour toi.</p>
 
@@ -692,7 +379,30 @@ window.MA_CONTENT = (function () {
 <div class="callout warn"><div><strong>Attention si tu travailles</strong>Si tu fais un job étudiant ou un job ponctuel, ton RIS peut être <strong>partiellement réduit</strong> ce mois-là. Renseigne-toi à l'avance, une exonération existe.</div></div>
 
 <h2>Aides ponctuelles</h2>
-<p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>
+<p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>`
+        },
+        {
+          id: "aides-disponibles",
+          title: "Les aides auxquelles j'ai droit",
+          summary: "Vue d'ensemble : RIS, allocations, bourses.",
+          lastChecked: "03/06/2026",
+          body: `
+<p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
+
+<h2>1. Les allocations familiales</h2>
+<p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
+
+<h2>2. Le RIS (revenu d'intégration sociale)</h2>
+<p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
+
+<h2>3. La bourse d'études (FWB)</h2>
+<p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
+
+<h2>4. Les aides ponctuelles du CPAS</h2>
+<p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
+
+<h2>5. Le compte d'épargne mandant</h2>
+<p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
 `
         },
         {
@@ -2287,6 +1997,12 @@ Rue du Commerce 10
       source: "inami.fgov.be · inforjeunes.be · ssmg.be",
       sections: [
         {
+          id: "mutuelle",
+          title: "Ma mutuelle",
+          summary: "Comprendre ses remboursements, BIM, choisir sa mutuelle.",
+          linkTo: "admin/mutuelle"
+        },
+        {
           id: "mal-etre",
           title: "Quand ça ne va pas",
           summary: "Anxiété, tristesse, idées noires : tu n'es pas seul·e.",
@@ -2484,12 +2200,6 @@ Rue du Commerce 10
 
 <p>Trouver un centre près de chez toi : <a href="https://www.loveattitude.be" target="_blank" rel="noopener">loveattitude.be</a></p>
 `
-        },
-        {
-          id: "mutuelle",
-          title: "Ma mutuelle",
-          summary: "Comprendre ses remboursements, BIM, choisir sa mutuelle.",
-          linkTo: "admin/mutuelle"
         },
         {
           id: "lignes-ecoute",
@@ -2760,26 +2470,6 @@ Rue du Commerce 10
     "retraite": ["travail/epargne-pension"],
     "job etudiant": ["travail/job-etudiant"],
     "job d ete": ["travail/job-etudiant", "travail/trouver"],
-    "18 ans": ["majeur/changements", "majeur/demarches", "majeur/enfant-en-accueil"],
-    "majorité": ["majeur/changements", "majeur/enfant-en-accueil"],
-    "majorite": ["majeur/changements", "majeur/enfant-en-accueil"],
-    "famille d accueil": ["majeur/enfant-en-accueil", "majeur/accompagnement"],
-    "fa": ["majeur/enfant-en-accueil"],
-    "saj": ["majeur/enfant-en-accueil", "majeur/accompagnement"],
-    "spj": ["majeur/enfant-en-accueil", "majeur/accompagnement"],
-    "mandant": ["majeur/enfant-en-accueil", "argent/epargne-mandante"],
-    "amo": ["majeur/accompagnement", "urgence/services-aide"],
-    "voter": ["majeur/vote"],
-    "vote": ["majeur/vote"],
-    "election": ["majeur/vote"],
-    "élection": ["majeur/vote"],
-    "impots": ["majeur/impots"],
-    "impôts": ["majeur/impots"],
-    "declaration": ["majeur/impots"],
-    "déclaration": ["majeur/impots"],
-    "tax": ["majeur/impots"],
-    "fiscal": ["majeur/impots"],
-    "contribution": ["majeur/impots"],
     "carte d identite": ["admin/documents"],
     "carte id": ["admin/documents"],
     "passeport": ["admin/voyager", "admin/documents"],
@@ -2879,7 +2569,7 @@ Rue du Commerce 10
     "propriétaire": ["logement/urgence-maison", "logement/bail"],
     "compte bancaire": ["argent/compte-bancaire"],
     "ouvrir un compte": ["argent/compte-bancaire"],
-    "itsme": ["argent/compte-bancaire", "majeur/impots"],
+    "itsme": ["argent/compte-bancaire"],
     "urgent": ["urgence/lignes-ecoute", "urgence/services-aide"],
     "urgence": ["urgence/lignes-ecoute", "urgence/services-aide"],
     "aide": ["urgence/services-aide", "urgence/lignes-ecoute"],

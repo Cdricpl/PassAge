@@ -309,55 +309,6 @@
 "job d ete":
   - travail/job-etudiant
   - travail/trouver
-"18 ans":
-  - majeur/changements
-  - majeur/demarches
-  - majeur/enfant-en-accueil
-"majorité":
-  - majeur/changements
-  - majeur/enfant-en-accueil
-"majorite":
-  - majeur/changements
-  - majeur/enfant-en-accueil
-"famille d accueil":
-  - majeur/enfant-en-accueil
-  - majeur/accompagnement
-"fa":
-  - majeur/enfant-en-accueil
-"saj":
-  - majeur/enfant-en-accueil
-  - majeur/accompagnement
-"spj":
-  - majeur/enfant-en-accueil
-  - majeur/accompagnement
-"mandant":
-  - majeur/enfant-en-accueil
-  - argent/epargne-mandante
-"amo":
-  - majeur/accompagnement
-  - urgence/services-aide
-"voter":
-  - majeur/vote
-"vote":
-  - majeur/vote
-"election":
-  - majeur/vote
-"élection":
-  - majeur/vote
-"impots":
-  - majeur/impots
-"impôts":
-  - majeur/impots
-"declaration":
-  - majeur/impots
-"déclaration":
-  - majeur/impots
-"tax":
-  - majeur/impots
-"fiscal":
-  - majeur/impots
-"contribution":
-  - majeur/impots
 "carte d identite":
   - admin/documents
 "carte id":
@@ -579,7 +530,6 @@
   - argent/compte-bancaire
 "itsme":
   - argent/compte-bancaire
-  - majeur/impots
 "urgent":
   - urgence/lignes-ecoute
   - urgence/services-aide

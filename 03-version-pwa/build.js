@@ -27,7 +27,7 @@ const LEX_FILE  = path.join(ROOT, 'content', 'lexique.yaml');
 
 // Canonical module order
 const MODULE_ORDER = [
-  'majeur', 'admin', 'argent', 'etudes', 'travail',
+  'admin', 'argent', 'etudes', 'travail',
   'logement', 'vie', 'loisirs', 'sante', 'urgence'
 ];
 

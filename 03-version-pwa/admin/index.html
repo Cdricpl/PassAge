@@ -87,37 +87,60 @@
     .search-result-summary { font-size: 13px; color: var(--text-soft); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .search-empty { padding: 24px; text-align: center; color: var(--muted); font-size: .9375rem; }
 
-    /* ── Module grid (tuiles identiques à l'app) ── */
-    .module-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
-    .module-card { background: var(--white); border-radius: var(--radius); padding: 16px; cursor: pointer; border: 1px solid var(--border); transition: transform .15s, box-shadow .15s; }
-    .module-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-    .module-icon { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-    .module-card .mod-subtitle { font-size: .8125rem; color: var(--text-soft); margin-top: 2px; line-height: 1.3; }
-    .module-icon[data-m=majeur]  { background: var(--c-majeur-soft);  color: var(--c-majeur); }
-    .module-icon[data-m=admin]   { background: var(--c-admin-soft);   color: var(--c-admin); }
-    .module-icon[data-m=argent]  { background: var(--c-argent-soft);  color: var(--c-argent); }
-    .module-icon[data-m=etudes]  { background: var(--c-etudes-soft);  color: var(--c-etudes); }
-    .module-icon[data-m=travail] { background: var(--c-travail-soft); color: var(--c-travail); }
-    .module-icon[data-m=logement]{ background: var(--c-logement-soft);color: var(--c-logement); }
-    .module-icon[data-m=vie]     { background: var(--c-vie-soft);     color: var(--c-vie); }
-    .module-icon[data-m=loisirs] { background: var(--c-loisirs-soft); color: var(--c-loisirs); }
-    .module-icon[data-m=sante]   { background: var(--c-sante-soft);   color: var(--c-sante); }
-    .module-icon[data-m=urgence] { background: var(--c-urgence-soft); color: var(--c-urgence); }
-    .module-card .mod-title { font-weight: 700; font-size: .9375rem; margin-bottom: 4px; }
-    .module-card .mod-count { font-size: 13px; color: var(--muted); }
+    /* ── Dashboard — section modules (style themes-preview de l'app) ── */
+    .modules-section { padding: 20px; background: linear-gradient(135deg, #FBEFD7 0%, #FCE7DE 50%, #F9E2D9 100%); border-radius: 20px; border: 1px solid rgba(232,168,124,.25); margin-bottom: 20px; }
+    .modules-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+    .modules-section-head h2 { font-size: 1.375rem; font-weight: 700; margin: 0; }
+    .modules-count { font-size: .9375rem; color: #B7691A; font-weight: 600; }
+    .modules-section-lead { font-size: .9375rem; color: #6B5544; margin-bottom: 16px; }
+    .tiles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    /* ── Tile (identique à l'app) ── */
+    .tile { display: flex; flex-direction: column; gap: 4px; padding: 16px; background: var(--white); border-radius: var(--radius); border: 1px solid rgba(255,255,255,.6); color: var(--text); cursor: pointer; transition: transform .15s, box-shadow .15s; }
+    .tile:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .tile-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 6px; font-size: 22px; }
+    .tile-title { font-weight: 600; font-size: .9375rem; line-height: 1.25; }
+    .tile-sub { font-size: .8125rem; color: var(--text-soft); line-height: 1.4; }
+    .tile-count { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+    .tile[data-color=majeur]  .tile-icon { background: var(--c-majeur-soft);  color: var(--c-majeur); }
+    .tile[data-color=admin]   .tile-icon { background: var(--c-admin-soft);   color: #B58326; }
+    .tile[data-color=argent]  .tile-icon { background: var(--c-argent-soft);  color: var(--c-argent); }
+    .tile[data-color=etudes]  .tile-icon { background: var(--c-etudes-soft);  color: var(--c-travail); }
+    .tile[data-color=travail] .tile-icon { background: var(--c-travail-soft); color: var(--c-travail); }
+    .tile[data-color=logement].tile-icon { background: var(--c-logement-soft);color: #B7691A; }
+    .tile[data-color=vie]     .tile-icon { background: var(--c-vie-soft);     color: #C2674B; }
+    .tile[data-color=loisirs] .tile-icon { background: var(--c-loisirs-soft); color: var(--c-loisirs); }
+    .tile[data-color=sante]   .tile-icon { background: var(--c-sante-soft);   color: var(--c-sante); }
+    .tile[data-color=urgence] .tile-icon { background: var(--c-urgence-soft); color: var(--c-urgence); }
     .dashboard-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 
-    /* ── Section list ── */
-    .list-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 8px; flex-wrap: wrap; }
-    .list-header h2 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
-    .list-actions { display: flex; gap: 8px; }
-    .section-row { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; transition: box-shadow .15s; }
-    .section-row:hover { box-shadow: var(--shadow-sm); }
-    .section-info { flex: 1; min-width: 0; }
-    .section-info strong { display: block; font-weight: 600; font-size: .9375rem; }
-    .section-summary { font-size: 13px; color: var(--text-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 420px; display: block; margin-top: 3px; }
+    /* ── Module hero header (fond coloré comme l'app) ── */
+    .module-hero { padding: 20px 16px 24px; }
+    .module-hero[data-color=majeur]  { background: var(--c-majeur-soft); }
+    .module-hero[data-color=admin]   { background: var(--c-admin-soft); }
+    .module-hero[data-color=argent]  { background: var(--c-argent-soft); }
+    .module-hero[data-color=etudes]  { background: var(--c-etudes-soft); }
+    .module-hero[data-color=travail] { background: var(--c-travail-soft); }
+    .module-hero[data-color=logement]{ background: var(--c-logement-soft); }
+    .module-hero[data-color=vie]     { background: var(--c-vie-soft); }
+    .module-hero[data-color=loisirs] { background: var(--c-loisirs-soft); }
+    .module-hero[data-color=sante]   { background: var(--c-sante-soft); }
+    .module-hero[data-color=urgence] { background: var(--c-urgence-soft); }
+    .module-hero-inner { max-width: 800px; margin: 0 auto; }
+    .module-hero h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+    .module-hero .mod-subtitle { font-size: 1rem; color: var(--text-soft); margin-bottom: 4px; }
+    .module-hero .mod-objective { font-size: .9375rem; color: var(--text-soft); line-height: 1.5; font-style: italic; }
+
+    /* ── Fiche list (identique à l'app) ── */
+    .fiche-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .fiche-link-admin { display: flex; align-items: stretch; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); transition: border-color .15s; overflow: hidden; }
+    .fiche-link-admin:hover { border-color: var(--primary); }
+    .fiche-link-body { flex: 1; padding: 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 10px; transition: background .1s; }
+    .fiche-link-body:hover { background: var(--border-soft); }
+    .fiche-link-text .fiche-link-title { font-weight: 600; font-size: .9375rem; line-height: 1.3; }
+    .fiche-link-text .fiche-link-sub { font-size: .8125rem; color: var(--text-soft); margin-top: 2px; }
+    .fiche-link-arrow { flex-shrink: 0; color: var(--muted); font-size: 18px; font-weight: 300; }
+    .fiche-link-controls { display: flex; flex-direction: column; gap: 2px; padding: 8px; border-left: 1px solid var(--border-soft); background: var(--bg); justify-content: center; }
     .badge { font-size: 12px; background: var(--primary-soft); color: var(--primary); border-radius: 999px; padding: 2px 9px; margin-top: 5px; display: inline-block; font-weight: 500; }
-    .section-actions { display: flex; gap: 4px; flex-shrink: 0; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     .reorder-btns { display: flex; flex-direction: column; gap: 2px; }
     .reorder-btns button { padding: 2px 6px; font-size: 11px; line-height: 1.4; }
 
@@ -206,44 +229,28 @@
     #toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: var(--text); color: #fff; border-radius: var(--radius-sm); padding: 12px 24px; font-size: 14px; font-weight: 500; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 200; max-width: 90vw; text-align: center; box-shadow: var(--shadow-lg); }
     #toast.show { opacity: 1; }
 
-    /* ── Module header (identique à l'app) ── */
-    .module-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 20px 16px; }
-    .module-header-inner { max-width: 800px; margin: 0 auto; display: flex; gap: 16px; align-items: flex-start; }
-    .module-header-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; margin-bottom: 0; }
-    .module-header-text h2 { font-size: 1.375rem; font-weight: 700; margin-bottom: 4px; }
-    .module-header-text .mod-subtitle { font-size: .9375rem; color: var(--text-soft); margin-bottom: 3px; }
-    .module-header-text .mod-objective { font-size: .875rem; color: var(--muted); font-style: italic; }
-
-    /* ── Fiche list (style app publique) ── */
-    .fiche-admin-row { display: flex; align-items: stretch; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; transition: box-shadow .15s; }
-    .fiche-admin-row:hover { box-shadow: var(--shadow-sm); }
-    .fiche-link-area { flex: 1; padding: 16px; cursor: pointer; transition: background .1s; }
-    .fiche-link-area:hover { background: var(--border-soft); }
-    .fiche-link-title { font-weight: 600; font-size: .9375rem; color: var(--text); margin-bottom: 3px; }
-    .fiche-link-summary { font-size: .8125rem; color: var(--text-soft); }
-    .fiche-admin-controls { display: flex; flex-direction: column; gap: 2px; padding: 8px; border-left: 1px solid var(--border-soft); background: var(--bg); justify-content: center; }
-
-    /* ── Fiche preview (rendu identique à l'app) ── */
+    /* ── Fiche preview (identique à l'app) ── */
     .preview-banner { background: var(--primary-soft); border-radius: var(--radius-sm); padding: 8px 14px; margin-bottom: 16px; font-size: 13px; color: var(--primary); font-weight: 500; }
-    .fiche-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; box-shadow: var(--shadow-sm); }
-    .fiche-card h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
-    .fiche-card p { margin: 0 0 .75rem; }
-    .fiche-card p:last-child { margin-bottom: 0; }
-    .fiche-card h2 { font-size: 1.25rem; font-weight: 700; margin: 1.25rem 0 .5rem; }
-    .fiche-card h3 { font-size: 1.0625rem; font-weight: 700; margin: 1rem 0 .25rem; }
-    .fiche-card ul { list-style: none; padding-left: 0; margin: .75rem 0; }
-    .fiche-card ul li { position: relative; padding-left: 24px; margin-bottom: .5rem; }
-    .fiche-card ul li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
-    .fiche-card ol { padding-left: 22px; margin: .75rem 0; }
-    .fiche-card ol li { margin-bottom: .5rem; }
-    .fiche-card .callout { display: flex; gap: .75rem; padding: 1rem; border-radius: var(--radius); margin: 1rem 0; background: var(--primary-soft); border-left: 4px solid var(--primary); font-size: .9375rem; }
-    .fiche-card .callout.warn { background: var(--warn-soft); border-color: var(--warn); }
-    .fiche-card .callout.tip { background: var(--success-soft); border-color: var(--success); }
-    .fiche-card strong { font-weight: 700; }
-    .fiche-card a { color: var(--primary); text-decoration: underline; }
-    .fiche-meta-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 16px; font-size: .875rem; }
-    .fiche-meta-section p { color: var(--text-soft); margin-bottom: 6px; }
-    .fiche-meta-section p:last-child { color: var(--muted); font-style: italic; font-size: .8125rem; margin-bottom: 0; }
+    .fiche { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+    .fiche h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .fiche h2 { font-size: 1.25rem; font-weight: 700; margin: 1.25rem 0 .5rem; }
+    .fiche h3 { font-size: 1.0625rem; font-weight: 700; margin: 1rem 0 .25rem; }
+    .fiche p { margin: 0 0 .75rem; }
+    .fiche p:last-child { margin-bottom: 0; }
+    .fiche ul { list-style: none; padding-left: 0; margin: .75rem 0; }
+    .fiche ul li { position: relative; padding-left: 24px; margin-bottom: .5rem; }
+    .fiche ul li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+    .fiche ol { padding-left: 22px; margin: .75rem 0; }
+    .fiche ol li { margin-bottom: .5rem; }
+    .fiche .callout { display: flex; gap: .75rem; padding: 1rem; border-radius: var(--radius); margin: 1rem 0; background: var(--primary-soft); border-left: 4px solid var(--primary); font-size: .9375rem; }
+    .fiche .callout > div > strong:first-child { display: block; margin-bottom: 4px; }
+    .fiche .callout.warn { background: var(--warn-soft); border-color: var(--warn); }
+    .fiche .callout.tip { background: var(--success-soft); border-color: var(--success); }
+    .fiche strong { font-weight: 700; }
+    .fiche a { color: var(--primary); text-decoration: underline; }
+    .fiche-meta { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 16px; }
+    .fiche-meta p { color: var(--text-soft); margin-bottom: 6px; font-size: .875rem; }
+    .fiche-meta-disclaimer { color: var(--muted) !important; font-style: italic; font-size: .8125rem !important; margin-bottom: 0 !important; }
     .preview-admin-bar { display: flex; gap: 10px; padding: 16px 0 8px; border-top: 2px dashed var(--border); flex-wrap: wrap; }
   </style>
 </head>
@@ -286,10 +293,16 @@
   <!-- Dashboard -->
   <div id="view-dashboard" style="display:none">
     <div class="container">
-      <div class="page-title">Modules de contenu</div>
       <input type="search" id="searchInput" class="global-search" placeholder="Chercher une fiche dans tous les modules…">
       <div id="searchResults" style="display:none" class="search-results"></div>
-      <div id="moduleGrid" class="module-grid"><div class="loading"><span class="spinner"></span>Chargement…</div></div>
+      <div class="modules-section">
+        <div class="modules-section-head">
+          <h2>Modules de contenu</h2>
+          <span class="modules-count" id="modulesCount"></span>
+        </div>
+        <p class="modules-section-lead">Sélectionne un module pour voir et modifier ses fiches.</p>
+        <div id="moduleGrid" class="tiles-grid"><div class="loading"><span class="spinner"></span>Chargement…</div></div>
+      </div>
       <div class="dashboard-actions">
         <button onclick="showLexique()" class="btn-ghost btn-sm">🔑 Gérer les mots-clés</button>
       </div>
@@ -298,22 +311,19 @@
 
   <!-- Module sections -->
   <div id="view-module" style="display:none">
-    <div id="moduleHeader" class="module-header">
-      <div class="module-header-inner">
-        <div id="moduleHeaderIcon" class="module-header-icon module-icon"></div>
-        <div class="module-header-text">
-          <h2 id="moduleTitle"></h2>
-          <div id="moduleSubtitle" class="mod-subtitle"></div>
-          <div id="moduleObjective" class="mod-objective"></div>
-        </div>
+    <div id="moduleHero" class="module-hero">
+      <div class="module-hero-inner">
+        <h1 id="moduleTitle"></h1>
+        <div id="moduleSubtitle" class="mod-subtitle"></div>
+        <div id="moduleObjective" class="mod-objective"></div>
       </div>
     </div>
     <div class="container">
-      <div style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin:16px 0 12px;flex-wrap:wrap">
         <button onclick="startEditModuleMeta()" class="btn-ghost btn-sm">⚙️ Module</button>
         <button onclick="startAddSection()" class="btn-primary btn-sm">+ Nouvelle fiche</button>
       </div>
-      <div id="sectionList"></div>
+      <div id="sectionList" class="fiche-list"></div>
     </div>
   </div>
 
@@ -455,15 +465,15 @@
   <div id="view-fiche-preview" style="display:none">
     <div class="container">
       <div class="preview-banner">👁 Aperçu — rendu identique à l'application</div>
-      <p id="previewModuleCrumb" style="font-size:.875rem;color:var(--muted);margin-bottom:12px"></p>
-      <article class="fiche-card">
+      <p id="previewModuleCrumb" style="margin-bottom:12px;color:var(--muted);font-size:.875rem"></p>
+      <article class="fiche">
         <h1 id="previewTitle"></h1>
         <div id="previewBody"></div>
       </article>
-      <section class="fiche-meta-section">
+      <section class="fiche-meta">
         <p><strong>Source :</strong> <span id="previewSource"></span></p>
         <p><strong>Dernière vérification :</strong> <span id="previewDate"></span></p>
-        <p id="previewDisclaimer"></p>
+        <p class="fiche-meta-disclaimer" id="previewDisclaimer"></p>
       </section>
       <div class="preview-admin-bar">
         <button onclick="editCurrentSectionFromPreview()" class="btn-primary">✏️ Modifier cette fiche</button>
@@ -660,12 +670,13 @@ async function showDashboard() {
     }));
     allModulesData = modules;
     updateFicheDatalist();
+    document.getElementById('modulesCount').textContent = `${modules.length} modules`;
     grid.innerHTML = modules.map(m => `
-      <div class="module-card" onclick="loadModule('${m.id}')">
-        <div class="module-icon" data-m="${m.id}">${MODULE_ICONS[m.id] || '📄'}</div>
-        <div class="mod-title">${m.title}</div>
-        ${m.data.subtitle ? `<div class="mod-subtitle">${esc(m.data.subtitle)}</div>` : ''}
-        <div class="mod-count" style="margin-top:6px">${m.count} fiche${m.count > 1 ? 's' : ''}</div>
+      <div class="tile" data-color="${m.id}" onclick="loadModule('${m.id}')">
+        <div class="tile-icon">${MODULE_ICONS[m.id] || '📄'}</div>
+        <div class="tile-title">${m.title}</div>
+        ${m.data.subtitle ? `<div class="tile-sub">${esc(m.data.subtitle)}</div>` : ''}
+        <div class="tile-count">${m.count} fiche${m.count > 1 ? 's' : ''}</div>
       </div>`).join('');
   } catch (err) {
     grid.innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
@@ -715,9 +726,7 @@ async function loadModule(id) {
   document.getElementById('moduleTitle').textContent = MODULE_LABELS[id] || id;
   document.getElementById('moduleSubtitle').textContent = '';
   document.getElementById('moduleObjective').textContent = '';
-  const iconEl = document.getElementById('moduleHeaderIcon');
-  iconEl.setAttribute('data-m', id);
-  iconEl.textContent = MODULE_ICONS[id] || '📄';
+  document.getElementById('moduleHero').setAttribute('data-color', id);
   document.getElementById('sectionList').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement…</div>';
 
   const cached = allModulesData?.find(m => m.id === id);
@@ -749,18 +758,20 @@ function renderSections() {
     return;
   }
   list.innerHTML = secs.map((s, i) => `
-    <div class="fiche-admin-row">
-      <div class="fiche-link-area" onclick="previewSection(${i})">
-        <div class="fiche-link-title">${esc(s.title || '(sans titre)')}</div>
-        <div class="fiche-link-summary">${esc(s.summary || '')}</div>
-        ${s.linkTo ? `<span class="badge">→ ${esc(s.linkTo)}</span>` : ''}
+    <div class="fiche-link-admin">
+      <div class="fiche-link-body" onclick="previewSection(${i})">
+        <div class="fiche-link-text">
+          <div class="fiche-link-title">${esc(s.title || '(sans titre)')}</div>
+          <div class="fiche-link-sub">${esc(s.summary || '')}${s.linkTo ? ` <span class="badge">→ ${esc(s.linkTo)}</span>` : ''}</div>
+        </div>
+        <span class="fiche-link-arrow">›</span>
       </div>
-      <div class="fiche-admin-controls">
+      <div class="fiche-link-controls">
         <div class="reorder-btns">
           <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},-1)" ${i===0?'disabled':''}>↑</button>
           <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},1)" ${i===secs.length-1?'disabled':''}>↓</button>
         </div>
-        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();startEditSection(${i})" title="Modifier directement">✏️</button>
+        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();startEditSection(${i})" title="Modifier">✏️</button>
         <button class="btn-ghost btn-xs" onclick="event.stopPropagation();duplicateSection(${i})" title="Dupliquer">⧉</button>
         <button class="btn-danger btn-xs" onclick="event.stopPropagation();deleteSection(${i})">✕</button>
       </div>
@@ -1127,9 +1138,7 @@ function updateModuleHeader() {
   document.getElementById('moduleTitle').textContent = currentModuleData.title || MODULE_LABELS[id] || id;
   document.getElementById('moduleSubtitle').textContent = currentModuleData.subtitle || '';
   document.getElementById('moduleObjective').textContent = currentModuleData.objective || '';
-  const iconEl = document.getElementById('moduleHeaderIcon');
-  iconEl.setAttribute('data-m', id);
-  iconEl.textContent = MODULE_ICONS[id] || '📄';
+  document.getElementById('moduleHero').setAttribute('data-color', id);
 }
 
 // ── Fiche preview ────────────────────────────────────────────────────────────────

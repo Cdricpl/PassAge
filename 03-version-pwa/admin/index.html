@@ -262,7 +262,7 @@
         <div class="form-group">
           <label>Avertissement légal (optionnel)</label>
           <input id="fieldDisclaimer" type="text" placeholder="Laisser vide pour le message par défaut">
-          <div class="hint">Remplace le disclaimer standard "Ces informations sont données à titre indicatif…"</div>
+          <div class="hint">Par défaut : <em>Cette fiche est un repère général. Elle ne remplace pas l'avis d'un service compétent.</em></div>
         </div>
         <div class="form-group">
           <label>Vérifié le (optionnel)</label>
@@ -273,11 +273,11 @@
         </div>
         <div class="form-group">
           <label>Redirection vers (optionnel)</label>
-          <input id="fieldLinkTo" type="text" placeholder="module/fiche-id  — laisser vide pour une fiche normale">
+          <input id="fieldLinkTo" type="text" placeholder="module/fiche-id  — laisser vide pour une fiche normale" list="fichePaths" oninput="updateLinkToMode()">
           <div class="hint">Remplis uniquement si c'est un raccourci vers une autre fiche. Le contenu ci-dessous n'est alors pas nécessaire.</div>
         </div>
         <!-- Rich text editor -->
-        <div class="form-group">
+        <div class="form-group" id="bodySection">
           <label>Contenu</label>
           <div class="editor-toolbar" id="editorToolbar">
             <button type="button" data-cmd="bold"><strong>Gras</strong></button>
@@ -300,6 +300,7 @@
         </div>
         <div class="form-actions">
           <button type="button" onclick="cancelEdit()" class="btn-ghost">Annuler</button>
+          <a id="viewInAppBtn" href="#" target="_blank" class="btn-ghost" style="display:none">↗ Voir dans l'app</a>
           <button type="button" id="saveBtn" onclick="saveSection()" class="btn-primary">Enregistrer</button>
         </div>
         <div id="saveStatus" class="save-status"></div>
@@ -356,7 +357,7 @@
           </div>
           <div class="form-group" style="margin-bottom:10px">
             <label>Fiche liée (module/id)</label>
-            <input id="newLexVal" type="text" placeholder="ex : logement/bail">
+            <input id="newLexVal" type="text" placeholder="ex : logement/bail" list="fichePaths">
           </div>
           <div style="display:flex;gap:8px">
             <button onclick="cancelAddLexEntry()" class="btn-ghost btn-sm">Annuler</button>
@@ -369,6 +370,7 @@
   </div>
 
 </div><!-- /app -->
+<datalist id="fichePaths"></datalist>
 
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 <script>
@@ -549,6 +551,7 @@ async function showDashboard() {
       return { id, data: parsed, sha: data.sha, title: parsed.title || MODULE_LABELS[id], count: (parsed.sections || []).length };
     }));
     allModulesData = modules;
+    updateFicheDatalist();
     grid.innerHTML = modules.map(m => `
       <div class="module-card" onclick="loadModule('${m.id}')">
         <div class="mod-title">${m.title}</div>
@@ -728,6 +731,7 @@ function setMetaStatus(msg, type) {
 function startAddSection() {
   currentSectionIdx = -1;
   populateEditor({});
+  setToday();
   document.getElementById('editorTitle').firstChild.textContent = 'Nouvelle fiche ';
   showView('section');
 }
@@ -758,12 +762,44 @@ function populateEditor(s) {
     document.getElementById(id).addEventListener('input', markDirty, { once: false });
   });
   document.getElementById('fieldBodyEditor').addEventListener('input', markDirty, { once: false });
+
+  updateLinkToMode();
+  updateViewInAppLink();
+  document.getElementById('fieldId').addEventListener('input', updateViewInAppLink);
 }
 
 function setToday() {
   const d = new Date();
   document.getElementById('fieldLastChecked').value =
     `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+}
+
+function updateLinkToMode() {
+  const hasLinkTo = document.getElementById('fieldLinkTo').value.trim() !== '';
+  document.getElementById('bodySection').style.display = hasLinkTo ? 'none' : '';
+}
+
+function updateViewInAppLink() {
+  const id = document.getElementById('fieldId').value.trim();
+  const btn = document.getElementById('viewInAppBtn');
+  if (id && currentModuleId && currentSectionIdx !== -1) {
+    btn.href = `https://cdricpl.github.io/PassAge/#/fiche/${currentModuleId}/${id}`;
+    btn.style.display = '';
+  } else {
+    btn.style.display = 'none';
+  }
+}
+
+function updateFicheDatalist() {
+  const dl = document.getElementById('fichePaths');
+  if (!dl || !allModulesData) return;
+  const paths = [];
+  for (const m of allModulesData) {
+    for (const s of m.data.sections || []) {
+      paths.push(`${m.id}/${s.id}`);
+    }
+  }
+  dl.innerHTML = paths.map(p => `<option value="${p}">`).join('');
 }
 
 function cancelEdit() {
@@ -877,7 +913,7 @@ function renderLexique(filter = '') {
         <div class="lex-entry-body" id="lex-body-${esc(key)}">
           ${rows}
           <div class="lex-add-row">
-            <input type="text" placeholder="module/fiche-id" id="lex-new-${esc(key)}">
+            <input type="text" placeholder="module/fiche-id" id="lex-new-${esc(key)}" list="fichePaths">
             <button class="btn-primary btn-xs" onclick="addLexRef('${esc(key)}')">+ Ajouter</button>
           </div>
         </div>

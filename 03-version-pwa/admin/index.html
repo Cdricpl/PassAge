@@ -105,6 +105,7 @@
 
     /* ── Toolbar ── */
     .editor-toolbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 8px; background: #fff; border: 1px solid #dde3ec; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); position: sticky; top: 52px; z-index: 5; }
+    body.has-deploy-bar .editor-toolbar { top: 90px; }
     .editor-toolbar button { background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 5px 10px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a2535; line-height: 1; transition: background .1s; }
     .editor-toolbar button:active, .editor-toolbar button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
     .editor-toolbar button:hover:not(.active) { background: #eef2f8; }
@@ -155,7 +156,7 @@
     .btn-primary { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .15s; }
     .btn-primary:hover { opacity: .88; }
     .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
-    .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); border-radius: 8px; padding: 9px 16px; font-size: 14px; cursor: pointer; transition: border-color .15s; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); border-radius: 8px; padding: 9px 16px; font-size: 14px; cursor: pointer; transition: border-color .15s; text-decoration: none; display: inline-flex; align-items: center; }
     .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
     .btn-danger { background: var(--danger-soft); color: var(--danger); border: 1.5px solid transparent; border-radius: 8px; padding: 7px 12px; font-size: 13px; cursor: pointer; }
     .btn-danger:hover { border-color: var(--danger); }
@@ -312,7 +313,7 @@
   <!-- Module metadata editor -->
   <div id="view-module-meta" style="display:none">
     <div class="container">
-      <div class="editor-title">Informations du module</div>
+      <div class="editor-title">Informations du module <span id="metaDirtyIndicator" class="dirty-indicator" style="display:none">● non sauvegardé</span></div>
       <form id="moduleMetaForm" onsubmit="return false">
         <div class="form-group">
           <label>Titre</label>
@@ -350,7 +351,7 @@
         <button onclick="startAddLexEntry()" class="btn-primary btn-sm" style="white-space:nowrap">+ Nouveau mot-clé</button>
       </div>
       <!-- Add form -->
-      <div id="addLexForm" style="display:none" class="lex-entry" id="addLexForm">
+      <div id="addLexForm" style="display:none" class="lex-entry">
         <div style="padding:14px">
           <div class="form-group" style="margin-bottom:10px">
             <label>Mot-clé</label>
@@ -401,6 +402,7 @@ let currentLexique    = null;
 let currentLexiqueSha = null;
 let deployPollTimer   = null;
 let viewHistory       = [];
+let isMetaDirty       = false;
 
 // ── GitHub API ──────────────────────────────────────────────────────────────────
 async function ghGet(path) {
@@ -436,35 +438,34 @@ function toast(msg, type = 'ok') {
 }
 
 // ── Deploy Status ───────────────────────────────────────────────────────────────
+function setDeployBar(cls, text) {
+  const bar = document.getElementById('deployBar');
+  bar.className = cls;
+  document.getElementById('deployMsg').textContent = text;
+  document.body.classList.toggle('has-deploy-bar', cls !== '');
+}
+
 function startDeployPoll() {
   stopDeployPoll();
-  const bar = document.getElementById('deployBar');
-  const msg = document.getElementById('deployMsg');
-  bar.className = 'running';
-  msg.textContent = 'Déploiement en cours…';
+  setDeployBar('running', 'Déploiement en cours…');
   let attempts = 0;
 
   deployPollTimer = setInterval(async () => {
     attempts++;
-    if (attempts > 60) { stopDeployPoll(); return; } // 5 min max
+    if (attempts > 60) { stopDeployPoll(); return; }
     try {
       const r = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1&branch=main`, {
         headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
       });
       if (!r.ok) return;
-      const data = await r.json();
-      const run = data.workflow_runs?.[0];
-      if (!run) return;
-      if (run.status === 'completed') {
-        stopDeployPoll();
-        if (run.conclusion === 'success') {
-          bar.className = 'success';
-          msg.textContent = '✓ Modifications en ligne !';
-          setTimeout(() => { bar.className = ''; bar.style.display = ''; }, 6000);
-        } else {
-          bar.className = 'error';
-          msg.textContent = `✗ Déploiement échoué (${run.conclusion})`;
-        }
+      const run = (await r.json()).workflow_runs?.[0];
+      if (!run || run.status !== 'completed') return;
+      stopDeployPoll();
+      if (run.conclusion === 'success') {
+        setDeployBar('success', '✓ Modifications en ligne !');
+        setTimeout(() => setDeployBar('', ''), 6000);
+      } else {
+        setDeployBar('error', `✗ Déploiement échoué (${run.conclusion})`);
       }
     } catch (_) {}
   }, 5000);
@@ -488,9 +489,9 @@ function showView(name, pushHistory = true) {
 }
 
 function goBack() {
-  if (isDirty) {
+  if (isDirty || isMetaDirty) {
     if (!confirm('Tu as des changements non sauvegardés. Les abandonner ?')) return;
-    isDirty = false;
+    isDirty = false; isMetaDirty = false;
   }
   const prev = viewHistory.pop();
   showView(prev || 'dashboard', false);
@@ -533,7 +534,7 @@ function logout() {
   if (isDirty && !confirm('Des changements non sauvegardés seront perdus. Continuer ?')) return;
   stopDeployPoll();
   sessionStorage.removeItem('gh_token');
-  token = ''; isDirty = false; viewHistory = [];
+  token = ''; isDirty = false; isMetaDirty = false; viewHistory = [];
   document.getElementById('view-login').style.display = '';
   document.getElementById('app').style.display = 'none';
   document.getElementById('tokenInput').value = '';
@@ -691,11 +692,13 @@ async function duplicateSection(idx) {
 
 // ── Module metadata ─────────────────────────────────────────────────────────────
 function startEditModuleMeta() {
-  document.getElementById('metaTitle').value    = currentModuleData.title    || '';
-  document.getElementById('metaSubtitle').value = currentModuleData.subtitle || '';
+  document.getElementById('metaTitle').value     = currentModuleData.title     || '';
+  document.getElementById('metaSubtitle').value  = currentModuleData.subtitle  || '';
   document.getElementById('metaObjective').value = currentModuleData.objective || '';
-  document.getElementById('metaSource').value   = currentModuleData.source   || '';
+  document.getElementById('metaSource').value    = currentModuleData.source    || '';
   document.getElementById('saveMetaStatus').textContent = '';
+  isMetaDirty = false;
+  document.getElementById('metaDirtyIndicator').style.display = 'none';
   showView('module-meta');
 }
 
@@ -714,6 +717,8 @@ async function saveModuleMeta() {
       if (cached) { cached.data = currentModuleData; cached.title = currentModuleData.title; }
     }
     document.getElementById('moduleTitle').textContent = currentModuleData.title;
+    isMetaDirty = false;
+    document.getElementById('metaDirtyIndicator').style.display = 'none';
     setMetaStatus('Enregistré ✓', 'ok');
     setTimeout(() => goBack(), 1000);
   } catch (err) {
@@ -775,16 +780,8 @@ function populateEditor(s) {
   if (htmlMode) toggleHtml();
   setEditorHtml(s.body || '');
   clearDirty();
-
-  // Track changes
-  ['fieldId','fieldTitle','fieldSummary','fieldSource','fieldDisclaimer','fieldLastChecked','fieldLinkTo'].forEach(id => {
-    document.getElementById(id).addEventListener('input', markDirty, { once: false });
-  });
-  document.getElementById('fieldBodyEditor').addEventListener('input', markDirty, { once: false });
-
   updateLinkToMode();
   updateViewInAppLink();
-  document.getElementById('fieldId').addEventListener('input', updateViewInAppLink);
 }
 
 function setToday() {
@@ -1004,6 +1001,14 @@ async function commitLexique(message) {
   toast('Sauvegardé — déploiement en cours…');
   startDeployPoll();
 }
+
+// ── Init event listeners (once) ─────────────────────────────────────────────────
+document.getElementById('sectionForm').addEventListener('input', markDirty);
+document.getElementById('fieldId').addEventListener('input', updateViewInAppLink);
+document.getElementById('moduleMetaForm').addEventListener('input', () => {
+  isMetaDirty = true;
+  document.getElementById('metaDirtyIndicator').style.display = '';
+});
 
 // ── Rich text editor ─────────────────────────────────────────────────────────────
 document.getElementById('editorToolbar').addEventListener('mousedown', e => {

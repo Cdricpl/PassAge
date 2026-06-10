@@ -255,6 +255,16 @@
           <input id="fieldSummary" type="text" placeholder="Une phrase courte décrivant la fiche.">
         </div>
         <div class="form-group">
+          <label>Sources de la fiche (optionnel)</label>
+          <input id="fieldSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
+          <div class="hint">Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.</div>
+        </div>
+        <div class="form-group">
+          <label>Avertissement légal (optionnel)</label>
+          <input id="fieldDisclaimer" type="text" placeholder="Laisser vide pour le message par défaut">
+          <div class="hint">Remplace le disclaimer standard "Ces informations sont données à titre indicatif…"</div>
+        </div>
+        <div class="form-group">
           <label>Vérifié le (optionnel)</label>
           <div class="date-row">
             <input id="fieldLastChecked" type="text" placeholder="09/06/2026">
@@ -315,8 +325,9 @@
           <textarea id="metaObjective" rows="3" placeholder="ex : Comprendre tes droits en tant que locataire…"></textarea>
         </div>
         <div class="form-group">
-          <label>Sources (optionnel)</label>
+          <label>Sources générales du module (optionnel)</label>
           <input id="metaSource" type="text" placeholder="ex : droitbelgique.be · logement.wallonie.be">
+          <div class="hint">Affiché sous chaque fiche du module, sauf si la fiche a sa propre source.</div>
         </div>
         <div class="form-actions">
           <button type="button" onclick="goBack()" class="btn-ghost">Annuler</button>
@@ -732,6 +743,8 @@ function populateEditor(s) {
   document.getElementById('fieldId').value          = s.id          || '';
   document.getElementById('fieldTitle').value       = s.title       || '';
   document.getElementById('fieldSummary').value     = s.summary     || '';
+  document.getElementById('fieldSource').value      = s.source      || '';
+  document.getElementById('fieldDisclaimer').value  = s.disclaimer  || '';
   document.getElementById('fieldLastChecked').value = s.lastChecked || '';
   document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
   document.getElementById('saveStatus').textContent = '';
@@ -741,7 +754,7 @@ function populateEditor(s) {
   clearDirty();
 
   // Track changes
-  ['fieldId','fieldTitle','fieldSummary','fieldLastChecked','fieldLinkTo'].forEach(id => {
+  ['fieldId','fieldTitle','fieldSummary','fieldSource','fieldDisclaimer','fieldLastChecked','fieldLinkTo'].forEach(id => {
     document.getElementById(id).addEventListener('input', markDirty, { once: false });
   });
   document.getElementById('fieldBodyEditor').addEventListener('input', markDirty, { once: false });
@@ -771,12 +784,13 @@ async function saveSection() {
   }
 
   const section = { id, title, summary };
+  const source      = document.getElementById('fieldSource').value.trim();
+  const disclaimer  = document.getElementById('fieldDisclaimer').value.trim();
   const lastChecked = document.getElementById('fieldLastChecked').value.trim();
   const linkTo      = document.getElementById('fieldLinkTo').value.trim();
   const body        = getEditorHtml();
-  // Preserve existing source if the section had one (not editable here — set at module level)
-  const existing = currentSectionIdx >= 0 ? currentModuleData.sections[currentSectionIdx] : null;
-  if (existing?.source) section.source = existing.source;
+  if (source)      section.source      = source;
+  if (disclaimer)  section.disclaimer  = disclaimer;
   if (lastChecked) section.lastChecked = lastChecked;
   if (linkTo)      section.linkTo      = linkTo;
   else if (body)   section.body        = body;

@@ -135,7 +135,7 @@ sections:
       <div class="callout warn"><div><strong>Attention</strong>Si tu travailles, ton <a href="#/fiche/argent/ris-cpas">RIS du CPAS</a> peut être réduit ce mois-là. Une exonération existe (différente si tu es boursier·ère ou non) — demande à ton·ta assistant·e social·e avant de signer.</div></div>
       
       <h2>Côté impôts</h2>
-      <p>Si tu gagnes plus que la quotité exemptée d'impôt sur l'année, tu devras déclarer tes revenus. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a>. À ton âge, tu n'as souvent rien à payer.</p>
+      <p>Si tu gagnes plus que la quotité exemptée d'impôt sur l'année, tu devras déclarer tes revenus via <a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a>. À ton âge, tu n'as souvent rien à payer.</p>
       
       <h2>Pour aller plus loin</h2>
       <ul>
@@ -175,7 +175,7 @@ sections:
   - id: chomage
     title: "Le chômage après les études"
     summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
       
@@ -201,12 +201,12 @@ sections:
       
       <h2>Pendant le stage : à savoir</h2>
       <ul>
-        <li>Tu gardes le droit aux <strong>allocations familiales</strong> (jusqu'à 25 ans).</li>
+        <li>Tu gardes le droit aux <strong>allocations familiales</strong> pendant <strong>12 mois maximum</strong> après les études (jusqu'à 25 ans) — depuis le 1er juillet 2026, c'est le statut « post-étudiant » qui ouvre ce droit, plus la simple inscription comme demandeur·euse d'emploi. Vérifie auprès de FAMIWAL.</li>
         <li>Si tu n'as aucun revenu, demande le <strong>RIS au CPAS</strong> — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
-        <li>En tant que jeune accueilli·e, ton statut donne droit au RIS sans enquête sur les parents.</li>
+        <li>En tant que jeune sortant de l'aide à la jeunesse, explique ta situation au CPAS : il peut renoncer à réclamer une intervention à tes parents. C'est examiné au cas par cas.</li>
       </ul>
       
-      <div class="callout warn"><div><strong>Attention — réforme récente</strong>Beaucoup d'infos en ligne ne sont pas encore à jour. Si tu lis "312 jours" ou "3 ans d'allocations", c'est l'ancien système. Depuis le 1er mars 2026 : <strong>156 jours de stage, 12 mois d'allocations max</strong>.</div></div>
+      <div class="callout warn"><div><strong>Attention — réforme récente</strong>Beaucoup d'infos en ligne ne sont pas encore à jour. Si tu lis "310 jours" ou "3 ans d'allocations", c'est l'ancien système. Depuis le 1er mars 2026 : <strong>156 jours de stage, 12 mois d'allocations max</strong>.</div></div>
       
       <h2>Pour aller plus loin</h2>
       <ul>

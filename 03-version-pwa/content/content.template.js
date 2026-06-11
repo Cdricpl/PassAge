@@ -9,7 +9,6 @@ window.MA_CONTENT = (function () {
 
   // ----- Pictogrammes (SVG inline) -----
   const ICONS = {
-    cake: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 6v3M9 5l3-3 3 3M5 22V12a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10M3 22h18M5 16h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     doc: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z M14 3v5h5 M9 13h6 M9 17h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     euro: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M18 6a8 8 0 1 0 0 12 M5 10h10 M5 14h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     cap: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M2 10l10-5 10 5-10 5-10-5z M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5 M22 10v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -19,127 +18,9 @@ window.MA_CONTENT = (function () {
     sos: '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
     arrow: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     phone: '<svg viewBox="0 0 24 24" width="22" height="22"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.07.72 3.06a2 2 0 0 1-.45 2.11L8.09 10.2a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1 .35 2.02.59 3.06.72A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
-    chat: '<svg viewBox="0 0 24 24" width="22" height="22"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
     heart: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
     leaf: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
-
-  // ============================================================
-  // SITUATIONS DE VIE — parcours guidés
-  // ============================================================
-  const SITUATIONS = [
-    {
-      id: 'majorite',
-      title: "Je viens d'avoir 18 ans",
-      subtitle: "Comprendre ce qui change pour toi",
-      color: 'majeur',
-      icon: ICONS.cake,
-      intro: "Avoir 18 ans, c'est un cap. Pas de panique : on va voir ensemble ce que ça change vraiment dans ta vie, et les premières choses à faire.",
-      steps: [
-        { title: "Ce qui change à 18 ans", desc: "Tes nouveaux droits et tes nouvelles responsabilités", linkType: 'fiche', linkId: 'majeur/changements' },
-        { title: "Mes premières démarches", desc: "Mutuelle, banque, assurance : par où commencer", linkType: 'fiche', linkId: 'majeur/demarches' },
-        { title: "Garder un accompagnement", desc: "AMO, prolongation SAJ, services à contacter", linkType: 'fiche', linkId: 'majeur/accompagnement' },
-        { title: "Vérifier mon compte d'épargne", desc: "Le compte ouvert par l'autorité mandante", linkType: 'fiche', linkId: 'argent/epargne-mandante' }
-      ],
-      outcome: "Tu sais quoi faire et dans quel ordre. Tu n'es pas seul·e.",
-      relatedModules: ['admin', 'argent']
-    },
-    {
-      id: 'logement',
-      title: "Je cherche un logement",
-      subtitle: "Trouver, comprendre, signer sans pièges",
-      color: 'logement',
-      icon: ICONS.home,
-      intro: "Trouver son premier logement, ça peut faire peur. On va voir ensemble comment chercher, ce qu'il faut vérifier, et quelles aides tu peux demander.",
-      steps: [
-        { title: "Comprendre mes options", desc: "Privé, AIS, SLSP, CPAS : c'est quoi la différence ?", linkType: 'fiche', linkId: 'logement/options' },
-        { title: "Trouver un logement", desc: "Où chercher, quoi demander en visite", linkType: 'fiche', linkId: 'logement/recherche' },
-        { title: "Avant de signer le bail", desc: "État des lieux, garantie, durée du bail", linkType: 'fiche', linkId: 'logement/bail' },
-        { title: "Les aides au logement", desc: "Garantie via le CPAS, allocations", linkType: 'fiche', linkId: 'logement/aides' }
-      ],
-      outcome: "Tu sais où chercher, quelles aides demander, et quoi vérifier avant de signer.",
-      relatedModules: ['logement', 'argent']
-    },
-    {
-      id: 'argent',
-      title: "Je n'ai pas assez d'argent",
-      subtitle: "Connaître mes droits et mes aides",
-      color: 'argent',
-      icon: ICONS.euro,
-      intro: "Ne reste pas seul·e avec tes soucis d'argent. Tu as probablement droit à des aides — voyons lesquelles.",
-      steps: [
-        { title: "Les aides auxquelles j'ai droit", desc: "RIS du CPAS, allocations familiales, bourse", linkType: 'fiche', linkId: 'argent/aides-disponibles' },
-        { title: "Le RIS (revenu d'intégration)", desc: "Comment l'obtenir, à quoi t'attendre", linkType: 'fiche', linkId: 'argent/ris-cpas' },
-        { title: "Estimer mon budget", desc: "Loyer, courses, énergie : combien pour vivre ?", linkType: 'fiche', linkId: 'argent/budget' },
-        { title: "Contacts utiles", desc: "CPAS, Droit des Jeunes, Inforjeunes", linkType: 'fiche', linkId: 'urgence/services-aide' }
-      ],
-      outcome: "Tu comprends ce que tu peux toucher et qui contacter pour passer à l'action.",
-      relatedModules: ['argent', 'urgence']
-    },
-    {
-      id: 'travail',
-      title: "Je cherche un travail",
-      subtitle: "Du CV au premier contrat",
-      color: 'travail',
-      icon: ICONS.bag,
-      intro: "Décrocher un job, ça commence par quelques étapes claires. On t'accompagne du CV au premier contrat.",
-      steps: [
-        { title: "Préparer ma recherche", desc: "S'inscrire au Forem, faire son CV", linkType: 'fiche', linkId: 'travail/preparer' },
-        { title: "Trouver des offres", desc: "Forem, Indeed, agences d'intérim", linkType: 'fiche', linkId: 'travail/trouver' },
-        { title: "Réussir l'entretien", desc: "Ce qu'il faut savoir avant le rendez-vous", linkType: 'fiche', linkId: 'travail/entretien' },
-        { title: "Comprendre mon contrat", desc: "CDI, CDD, brut/net, mes droits", linkType: 'fiche', linkId: 'travail/contrat' }
-      ],
-      outcome: "Tu as un CV, tu es inscrit·e au Forem, tu sais lire un contrat avant de signer.",
-      relatedModules: ['travail', 'argent']
-    },
-    {
-      id: 'sante-medecin',
-      title: "Je dois voir un médecin",
-      subtitle: "Comment trouver, prendre RDV, payer",
-      color: 'sante',
-      icon: ICONS.heart,
-      intro: "On va y aller doucement. Voir un médecin, c'est plus simple que ça en a l'air, et il existe des solutions pour ne pas se ruiner.",
-      steps: [
-        { title: "Choisir mon médecin", desc: "Médecin traitant, maison médicale : ce qui te convient", linkType: 'fiche', linkId: 'sante/medecin' },
-        { title: "La maison médicale", desc: "Soins gratuits si tu t'inscris au forfait", linkType: 'fiche', linkId: 'sante/maison-medicale' },
-        { title: "Combien ça va me coûter", desc: "DMG, BIM, génériques : ce qui réduit la facture", linkType: 'fiche', linkId: 'admin/mutuelle' },
-        { title: "Prendre soin de moi au quotidien", desc: "Dentiste, gyno, check-ups : la fréquence à connaître", linkType: 'fiche', linkId: 'admin/mutuelle' }
-      ],
-      outcome: "Tu sais comment voir un médecin et combien ça va te coûter.",
-      relatedModules: ['sante', 'admin']
-    },
-    {
-      id: 'sante-mal-etre',
-      title: "Ça stresse, ma santé",
-      subtitle: "Mal-être, anxiété : par où commencer",
-      color: 'sante',
-      icon: ICONS.leaf,
-      intro: "Pas obligé·e de tout comprendre tout de suite. On voit ensemble par quoi commencer — sans jugement, à ton rythme.",
-      steps: [
-        { title: "Reconnaître ce qui ne va pas", desc: "Anxiété, fatigue, tristesse : c'est plus courant que tu ne crois", linkType: 'fiche', linkId: 'urgence/mal-etre' },
-        { title: "Parler sans appeler", desc: "Chat 103, e-mail Télé-Accueil, planning familial", linkType: 'fiche', linkId: 'sante/parler-sans-appeler' },
-        { title: "Voir un psy à 11 €", desc: "La convention psy 1ère ligne, comment commencer", linkType: 'fiche', linkId: 'sante/convention-psy' },
-        { title: "Si c'est urgent maintenant", desc: "Numéros gratuits, 24/7, anonymes", linkType: 'page', linkId: 'urgence' }
-      ],
-      outcome: "Tu connais 2 ou 3 portes d'entrée — et tu choisis celle qui te ressemble.",
-      relatedModules: ['sante', 'urgence']
-    },
-    {
-      id: 'aide-rapide',
-      title: "J'ai besoin d'aide maintenant",
-      subtitle: "Trouver de l'écoute ou un service immédiat",
-      color: 'urgence',
-      icon: ICONS.sos,
-      intro: "Tu n'as pas à porter ça seul·e. Voici des numéros et des services disponibles, gratuits et anonymes.",
-      steps: [
-        { title: "Choisir ma situation", desc: "Vie en danger, mal-être, violences, addiction…", linkType: 'page', linkId: 'urgence' },
-        { title: "Appeler ou chatter", desc: "Numéros d'écoute, lignes gratuites 24/7", linkType: 'fiche', linkId: 'urgence/lignes-ecoute' },
-        { title: "Trouver un service près de moi", desc: "AMO, planning familial, maison médicale", linkType: 'fiche', linkId: 'urgence/services-aide' }
-      ],
-      outcome: "Tu ne restes pas seul·e — tu as parlé à quelqu'un ou tu sais où aller.",
-      relatedModules: ['urgence', 'sante']
-    }
-  ];
 
   // ============================================================
   // MODULES — contenus thématiques
@@ -180,49 +61,15 @@ window.MA_CONTENT = (function () {
   // ============================================================
   const LEXIQUE = /* LEXIQUE_PLACEHOLDER */;
 
-  const SITUATIONS_INDEX = {};
-  SITUATIONS.forEach(s => { SITUATIONS_INDEX[s.id] = s; });
-
   const MODULES_INDEX = {};
   MODULES.forEach(m => { MODULES_INDEX[m.id] = m; });
 
-  // ============================================================
-  // DOCUMENTS ESSENTIELS — checklist suggérée
-  // ============================================================
-  const DOCUMENTS_ESSENTIELS = [
-    { id: 'carte-id', label: "Carte d'identité (à jour)", category: "Identité" },
-    { id: 'passeport', label: "Passeport (si tu voyages hors UE)", category: "Identité" },
-    { id: 'permis', label: "Permis de conduire", category: "Identité" },
-    { id: 'mutuelle', label: "Carte de mutuelle / vignettes", category: "Santé" },
-    { id: 'ceam', label: "Carte Européenne d'Assurance Maladie (CEAM)", category: "Santé" },
-    { id: 'dmg', label: "Dossier Médical Global (DMG) ouvert", category: "Santé" },
-    { id: 'rib', label: "RIB / IBAN de mon compte bancaire", category: "Argent" },
-    { id: 'rc-familiale', label: "Attestation d'assurance RC familiale", category: "Argent" },
-    { id: 'attestation-cpas', label: "Attestation du CPAS (si tu touches le RIS)", category: "Argent" },
-    { id: 'attestation-allocs', label: "Attestation d'allocations familiales", category: "Argent" },
-    { id: 'composition-menage', label: "Composition de ménage (commune)", category: "Administratif" },
-    { id: 'casier', label: "Extrait de casier judiciaire", category: "Administratif" },
-    { id: 'inscription-forem', label: "Attestation d'inscription au Forem", category: "Travail" },
-    { id: 'cv', label: "Mon CV à jour", category: "Travail" },
-    { id: 'contrat-travail', label: "Contrat de travail (copie)", category: "Travail" },
-    { id: 'fiches-paie', label: "3 dernières fiches de paie", category: "Travail" },
-    { id: 'attestation-etudes', label: "Attestation d'inscription aux études", category: "Études" },
-    { id: 'releve-notes', label: "Relevé de notes / diplômes", category: "Études" },
-    { id: 'bail', label: "Contrat de bail signé", category: "Logement" },
-    { id: 'etat-lieux', label: "État des lieux d'entrée", category: "Logement" },
-    { id: 'garantie', label: "Preuve de la garantie locative", category: "Logement" },
-    { id: 'assurance-habitation', label: "Assurance habitation", category: "Logement" }
-  ];
-
   return {
     ICONS,
-    SITUATIONS,
-    SITUATIONS_INDEX,
     MODULES,
     MODULES_INDEX,
     FICHES_INDEX,
     REDIRECTS,
-    LEXIQUE,
-    DOCUMENTS_ESSENTIELS
+    LEXIQUE
   };
 })();

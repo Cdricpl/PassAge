@@ -9,7 +9,7 @@ sections:
   - id: lignes-ecoute
     title: "Lignes d'écoute et numéros utiles"
     summary: "Numéros gratuits et confidentiels."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Tu as besoin de parler ? Voici des numéros gratuits, anonymes et disponibles à toute heure.</p>
       
@@ -25,7 +25,7 @@ sections:
       
       <h2>Écoute et soutien moral</h2>
       <ul>
-        <li><strong>103</strong> — Écoute Enfants Ado (jusqu'à 20 ans). Gratuit, anonyme, 7j/7.</li>
+        <li><strong>103</strong> — Écoute-Enfants (enfants et ados). Gratuit, anonyme, tous les jours de 10h à minuit.</li>
         <li><strong>107</strong> — Télé-Accueil. Pour parler à quelqu'un quand ça ne va pas, 24/7.</li>
         <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>. Gratuit, 24/7.</li>
       </ul>
@@ -40,7 +40,7 @@ sections:
       <h2>Addiction</h2>
       <ul>
         <li><strong>Infor-Drogues : 02 227 52 52</strong>. Anonyme, gratuit.</li>
-        <li><strong>Aide Alcool : 0800 358 88</strong>.</li>
+        <li><strong>Infor-Drogues</strong> (alcool inclus) : 02 227 52 52. Voir aussi <a href="https://www.aide-alcool.be" target="_blank" rel="noopener">aide-alcool.be</a>.</li>
       </ul>
   - id: services-aide
     title: "Les services d'aide près de moi"
@@ -73,7 +73,7 @@ sections:
   - id: mal-etre
     title: "Quand ça ne va pas"
     summary: "Anxiété, dépression, idées noires : par où commencer."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Tu te sens mal, anxieux·se, tu n'arrives plus à dormir, tu as des idées noires ? <strong>Tu n'es pas seul·e, et ça se soigne.</strong> Voici des premières pistes.</p>
       
@@ -81,14 +81,14 @@ sections:
       <ul>
         <li><strong>107 (Télé-Accueil)</strong> : pour parler à quelqu'un, à toute heure.</li>
         <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>.</li>
-        <li><strong>103</strong> si tu as moins de 20 ans.</li>
+        <li><strong>103</strong> (Écoute-Enfants) si tu es ado ou jeune — tous les jours de 10h à minuit.</li>
         <li>Une AMO ou un planning familial : tu peux y aller librement.</li>
       </ul>
       
       <h2>Voir un·e professionnel·le</h2>
       <ul>
         <li><strong>Ton médecin traitant</strong> peut t'orienter et prescrire un suivi psy.</li>
-        <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e à <strong>11 €</strong> la séance (4 € si BIM). Demande à ton médecin.</li>
+        <li><strong>Convention psy de 1ère ligne</strong> : jusqu'à 10 séances/an chez un·e psychologue conventionné·e. <strong>Gratuit si tu as moins de 24 ans</strong> (11 € si 24+, 4 € si BIM). Voir <a href="#/fiche/sante/convention-psy">la fiche dédiée</a>.</li>
         <li>Le <strong>service de santé mentale</strong> de ta région.</li>
       </ul>
       

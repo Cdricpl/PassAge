@@ -537,7 +537,7 @@ def main():
     modules = parse_all_modules(modules_block)
     print(f"  Found {len(modules)} modules")
 
-    module_order = ['majeur', 'admin', 'argent', 'etudes', 'travail', 'logement', 'vie', 'loisirs', 'sante', 'urgence']
+    module_order = ['admin', 'argent', 'etudes', 'travail', 'logement', 'vie', 'loisirs', 'sante', 'urgence']
 
     base_dir = os.path.dirname(__file__)
     modules_dir = os.path.join(base_dir, 'content', 'modules')

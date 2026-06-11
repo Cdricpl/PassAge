@@ -30,7 +30,6 @@
       --shadow-lg: 0 8px 24px rgba(45,49,66,.10);
       --header-h: 56px;
       /* Couleurs des modules */
-      --c-majeur:#6FB58A; --c-majeur-soft:#E0F0E6;
       --c-admin:#E8B86A;  --c-admin-soft:#FBEFD7;
       --c-argent:#E27D7D; --c-argent-soft:#FBE3E3;
       --c-etudes:#B8A9D9; --c-etudes-soft:#EFEAF7;
@@ -114,7 +113,6 @@
 
     /* ── Module hero header (fond coloré comme l'app) ── */
     .module-hero { padding: 20px 16px 24px; }
-    .module-hero[data-color=majeur]  { background: var(--c-majeur-soft); }
     .module-hero[data-color=admin]   { background: var(--c-admin-soft); }
     .module-hero[data-color=argent]  { background: var(--c-argent-soft); }
     .module-hero[data-color=etudes]  { background: var(--c-etudes-soft); }
@@ -368,7 +366,7 @@
         <div class="form-group">
           <label>Source (optionnel)</label>
           <input id="fieldSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
-          <div class="hint" id="sourceHint">Si rempli, remplace les sources générales du module pour cette fiche uniquement.</div>
+          <div class="hint" id="sourceHint">Sources spécifiques à cette fiche (optionnel).</div>
         </div>
         <div class="form-group">
           <label>Dernière vérification (optionnel)</label>
@@ -405,6 +403,11 @@
         <div class="form-group">
           <label>Objectif (phrase d'accroche)</label>
           <textarea id="metaObjective" rows="3" placeholder="ex : Comprendre tes droits en tant que locataire…"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Sources du module</label>
+          <input id="metaSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
+          <div class="hint">Affichées en bas de toutes les fiches du module qui n'ont pas leur propre source.</div>
         </div>
         <div class="form-actions">
           <button type="button" onclick="goBack()" class="btn-ghost">Annuler</button>
@@ -493,7 +496,7 @@ const MODULE_ICONS = {
   logement: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
   vie:      '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 3h2l3 14h11l3-9H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.5" fill="currentColor"/><circle cx="18" cy="21" r="1.5" fill="currentColor"/></svg>',
   loisirs:  '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  sante:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sante:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
   urgence:  '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>'
 };
 
@@ -511,6 +514,7 @@ let currentLexiqueSha = null;
 let deployPollTimer   = null;
 let viewHistory       = [];
 let isMetaDirty       = false;
+let commitBusy        = false;
 
 // ── GitHub API ──────────────────────────────────────────────────────────────────
 async function ghGet(path) {
@@ -687,7 +691,7 @@ searchInput.addEventListener('input', () => {
     const secs = m.data.sections || [];
     for (let si = 0; si < secs.length; si++) {
       const s = secs[si];
-      const hay = `${s.title} ${s.summary} ${s.id}`.toLowerCase();
+      const hay = `${s.title} ${s.summary} ${s.id} ${(s.body || '').replace(/<[^>]+>/g, ' ')}`.toLowerCase();
       if (hay.includes(q)) hits.push({ moduleId: m.id, moduleTitle: m.title, section: s, sectionIdx: si });
     }
   }
@@ -774,25 +778,54 @@ function esc(s) {
 function attrJs(s) {
   return esc(String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"));
 }
+// Transforme les noms de domaine reconnus en liens cliquables (miroir de l'app publique)
+function linkifySource(src) {
+  if (!src) return '—';
+  return esc(src).replace(
+    /\b([a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)*\.(?:be|org|com|eu|fr|brussels))\b/gi,
+    m => `<a href="https://${m}" target="_blank" rel="noopener">${m}</a>`
+  );
+}
+
+// Empêche deux commits simultanés (double-clic ↑/↓ → conflit de sha GitHub)
+function commitGuard() {
+  if (commitBusy) { toast('Sauvegarde en cours, patiente une seconde…', 'warn'); return false; }
+  return true;
+}
 
 async function moveSection(idx, dir) {
+  if (!commitGuard()) return;
   const secs = currentModuleData.sections;
   const j = idx + dir;
   if (j < 0 || j >= secs.length) return;
   [secs[idx], secs[j]] = [secs[j], secs[idx]];
   renderSections();
-  await commitModule(`content(${currentModuleId}): réorganisation`);
+  try {
+    await commitModule(`content(${currentModuleId}): réorganisation`);
+  } catch (err) {
+    [secs[idx], secs[j]] = [secs[j], secs[idx]];
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 async function deleteSection(idx) {
+  if (!commitGuard()) return;
   const s = currentModuleData.sections[idx];
   if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
   currentModuleData.sections.splice(idx, 1);
   renderSections();
-  await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  try {
+    await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  } catch (err) {
+    currentModuleData.sections.splice(idx, 0, s);
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 async function duplicateSection(idx) {
+  if (!commitGuard()) return;
   const orig = currentModuleData.sections[idx];
   const copy = JSON.parse(JSON.stringify(orig));
   copy.id = `${orig.id}-copie`;
@@ -804,8 +837,14 @@ async function duplicateSection(idx) {
   copy.title = `${orig.title} (copie)`;
   currentModuleData.sections.splice(idx + 1, 0, copy);
   renderSections();
-  await commitModule(`content(${currentModuleId}): duplication de "${orig.id}"`);
-  toast(`Fiche dupliquée : "${copy.id}"`);
+  try {
+    await commitModule(`content(${currentModuleId}): duplication de "${orig.id}"`);
+    toast(`Fiche dupliquée : "${copy.id}"`);
+  } catch (err) {
+    currentModuleData.sections.splice(idx + 1, 1);
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 // ── Module metadata ─────────────────────────────────────────────────────────────
@@ -813,6 +852,7 @@ function startEditModuleMeta() {
   document.getElementById('metaTitle').value     = currentModuleData.title     || '';
   document.getElementById('metaSubtitle').value  = currentModuleData.subtitle  || '';
   document.getElementById('metaObjective').value = currentModuleData.objective || '';
+  document.getElementById('metaSource').value    = currentModuleData.source    || '';
   document.getElementById('saveMetaStatus').textContent = '';
   isMetaDirty = false;
   document.getElementById('metaDirtyIndicator').style.display = 'none';
@@ -825,6 +865,7 @@ async function saveModuleMeta() {
   currentModuleData.title    = document.getElementById('metaTitle').value.trim()    || currentModuleData.title;
   currentModuleData.subtitle = document.getElementById('metaSubtitle').value.trim() || currentModuleData.subtitle;
   currentModuleData.objective = document.getElementById('metaObjective').value.trim();
+  currentModuleData.source   = document.getElementById('metaSource').value.trim();
   try {
     await commitModule(`content(${currentModuleId}): mise à jour des métadonnées du module`);
     // Update cache
@@ -887,7 +928,7 @@ function populateEditor(s) {
   if (modSource && !s.source) {
     hint.innerHTML = `Source du module (affichée par défaut) : <strong>${esc(modSource)}</strong>. Remplis ce champ pour remplacer uniquement pour cette fiche.`;
   } else {
-    hint.textContent = 'Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.';
+    hint.textContent = 'Sources spécifiques à cette fiche. Affiché en bas de la fiche à la place des sources du module.';
   }
   document.getElementById('fieldLastChecked').value = s.lastChecked || '';
   document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
@@ -959,10 +1000,11 @@ async function saveSection() {
     clearDirty();
     setStatus('Enregistré ✓', 'ok');
     const prevView = viewHistory[viewHistory.length - 1];
+    const savedIdx = currentSectionIdx === -1 ? currentModuleData.sections.length - 1 : currentSectionIdx;
     setTimeout(() => {
       goBack();
       renderSections();
-      if (prevView === 'fiche-preview') refreshPreview(currentSectionIdx);
+      if (prevView === 'fiche-preview') refreshPreview(savedIdx);
     }, 900);
   } catch (err) {
     setStatus(`Erreur : ${err.message}`, 'err');
@@ -980,16 +1022,21 @@ function setStatus(msg, type) {
 
 // ── Commit helper ───────────────────────────────────────────────────────────────
 async function commitModule(message) {
-  const yaml = jsyaml.dump(currentModuleData, { allowUnicode: true, lineWidth: -1, noRefs: true });
-  const result = await ghPut(`${BASE_PATH}/${currentModuleId}.yaml`, yaml, currentModuleSha, message);
-  currentModuleSha = result.content.sha;
-  // Update cache sha
-  if (allModulesData) {
-    const c = allModulesData.find(m => m.id === currentModuleId);
-    if (c) { c.sha = currentModuleSha; c.data = currentModuleData; }
+  commitBusy = true;
+  try {
+    const yaml = jsyaml.dump(currentModuleData, { allowUnicode: true, lineWidth: -1, noRefs: true });
+    const result = await ghPut(`${BASE_PATH}/${currentModuleId}.yaml`, yaml, currentModuleSha, message);
+    currentModuleSha = result.content.sha;
+    // Update cache sha
+    if (allModulesData) {
+      const c = allModulesData.find(m => m.id === currentModuleId);
+      if (c) { c.sha = currentModuleSha; c.data = currentModuleData; }
+    }
+    toast('Sauvegardé — déploiement en cours…');
+    startDeployPoll();
+  } finally {
+    commitBusy = false;
   }
-  toast('Sauvegardé — déploiement en cours…');
-  startDeployPoll();
 }
 
 // ── Lexique ─────────────────────────────────────────────────────────────────────
@@ -1055,7 +1102,7 @@ async function removeLexRef(key, idx) {
   currentLexique[key].splice(idx, 1);
   if (!currentLexique[key].length) delete currentLexique[key];
   renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
-  await commitLexique(`lexique: retrait d'une référence de "${key}"`);
+  try { await commitLexique(`lexique: retrait d'une référence de "${key}"`); } catch (_) {}
 }
 
 async function addLexRef(key) {
@@ -1065,7 +1112,7 @@ async function addLexRef(key) {
   if (!currentLexique[key]) currentLexique[key] = [];
   if (!currentLexique[key].includes(val)) {
     currentLexique[key].push(val);
-    await commitLexique(`lexique: ajout de "${val}" sous "${key}"`);
+    try { await commitLexique(`lexique: ajout de "${val}" sous "${key}"`); } catch (_) { return; }
     input.value = '';
     renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
     document.getElementById(`lex-body-${key}`)?.classList.add('open');
@@ -1076,7 +1123,7 @@ async function deleteLexEntry(key) {
   if (!confirm(`Supprimer le mot-clé "${key}" et toutes ses associations ?`)) return;
   delete currentLexique[key];
   renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
-  await commitLexique(`lexique: suppression du mot-clé "${key}"`);
+  try { await commitLexique(`lexique: suppression du mot-clé "${key}"`); } catch (_) {}
 }
 
 function startAddLexEntry() {
@@ -1096,18 +1143,28 @@ async function confirmAddLexEntry() {
   if (!key || !val) { toast('Remplis les deux champs.', 'warn'); return; }
   if (!currentLexique[key]) currentLexique[key] = [];
   if (!currentLexique[key].includes(val)) currentLexique[key].push(val);
-  await commitLexique(`lexique: ajout du mot-clé "${key}"`);
+  try { await commitLexique(`lexique: ajout du mot-clé "${key}"`); } catch (_) { return; }
   document.getElementById('addLexForm').style.display = 'none';
   renderLexique();
   toast(`Mot-clé "${key}" ajouté.`);
 }
 
 async function commitLexique(message) {
-  const yaml = jsyaml.dump(currentLexique, { allowUnicode: true, lineWidth: -1, noRefs: true, sortKeys: true });
-  const result = await ghPut(LEXIQUE_PATH, yaml, currentLexiqueSha, message);
-  currentLexiqueSha = result.content.sha;
-  toast('Sauvegardé — déploiement en cours…');
-  startDeployPoll();
+  commitBusy = true;
+  try {
+    const yaml = jsyaml.dump(currentLexique, { allowUnicode: true, lineWidth: -1, noRefs: true, sortKeys: true });
+    const result = await ghPut(LEXIQUE_PATH, yaml, currentLexiqueSha, message);
+    currentLexiqueSha = result.content.sha;
+    toast('Sauvegardé — déploiement en cours…');
+    startDeployPoll();
+  } catch (err) {
+    // Resynchronise l'état local depuis GitHub pour éviter toute divergence
+    toast(`Erreur : ${err.message}`, 'warn');
+    showLexique();
+    throw err;
+  } finally {
+    commitBusy = false;
+  }
 }
 
 // ── Module header ────────────────────────────────────────────────────────────────
@@ -1132,9 +1189,13 @@ function refreshPreview(idx) {
   document.getElementById('previewModuleCrumb').textContent =
     (currentModuleData.title || MODULE_LABELS[currentModuleId]) + '  →  ' + (s.title || '(sans titre)');
   document.getElementById('previewTitle').textContent = s.title || '';
-  document.getElementById('previewBody').innerHTML = DOMPurify.sanitize(s.body ||
-    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : ''));
-  document.getElementById('previewSource').textContent = s.source || modSource || '—';
+  const rawBody = s.body ||
+    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : '');
+  const previewEl = document.getElementById('previewBody');
+  // Si DOMPurify n'a pas chargé (hors-ligne), affichage dégradé en texte brut plutôt que crash
+  if (window.DOMPurify) previewEl.innerHTML = DOMPurify.sanitize(rawBody);
+  else previewEl.textContent = rawBody;
+  document.getElementById('previewSource').innerHTML = linkifySource(s.source || modSource);
   document.getElementById('previewDate').textContent = s.lastChecked || '—';
   document.getElementById('previewDisclaimer').textContent =
     s.disclaimer || "Cette fiche est un repère général. Elle ne remplace pas l'avis d'un service compétent.";
@@ -1145,12 +1206,20 @@ function editCurrentSectionFromPreview() {
 }
 
 async function deleteSectionFromPreview() {
-  const s = currentModuleData.sections[currentSectionIdx];
+  if (!commitGuard()) return;
+  const idx = currentSectionIdx;
+  const s = currentModuleData.sections[idx];
   if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
-  currentModuleData.sections.splice(currentSectionIdx, 1);
+  currentModuleData.sections.splice(idx, 1);
   goBack();
   renderSections();
-  await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  try {
+    await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  } catch (err) {
+    currentModuleData.sections.splice(idx, 0, s);
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 // ── Init event listeners (once) ─────────────────────────────────────────────────

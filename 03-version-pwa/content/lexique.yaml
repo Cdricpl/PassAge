@@ -332,8 +332,10 @@
   - admin/documents
   - logement/changement-adresse
 "permis":
+  - vie/permis-conduire
   - vie/transport
 "permis de conduire":
+  - vie/permis-conduire
   - vie/transport
 "casier judiciaire":
   - admin/documents
@@ -629,3 +631,67 @@
   - urgence/lignes-ecoute
 "go pass":
   - vie/transport
+"impots":
+  - admin/impots
+"impôts":
+  - admin/impots
+"impot":
+  - admin/impots
+"impôt":
+  - admin/impots
+"declaration":
+  - admin/impots
+"déclaration":
+  - admin/impots
+"tax-on-web":
+  - admin/impots
+"taxonweb":
+  - admin/impots
+"myminfin":
+  - admin/impots
+"fisc":
+  - admin/impots
+"dette":
+  - argent/dettes
+"dettes":
+  - argent/dettes
+"surendettement":
+  - argent/dettes
+"huissier":
+  - argent/dettes
+"mediation de dettes":
+  - argent/dettes
+"médiation de dettes":
+  - argent/dettes
+"rappel":
+  - argent/dettes
+"mise en demeure":
+  - argent/dettes
+"facture impayee":
+  - argent/dettes
+"facture impayée":
+  - argent/dettes
+"recouvrement":
+  - argent/dettes
+"saisie":
+  - argent/dettes
+"creancier":
+  - argent/dettes
+"créancier":
+  - argent/dettes
+"voter":
+  - admin/voter
+"vote":
+  - admin/voter
+"elections":
+  - admin/voter
+"élections":
+  - admin/voter
+"election":
+  - admin/voter
+"élection":
+  - admin/voter
+"procuration":
+  - admin/voter
+"convocation":
+  - admin/voter

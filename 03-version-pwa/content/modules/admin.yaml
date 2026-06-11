@@ -1,39 +1,39 @@
 id: admin
-title: Administratif & juridique
-subtitle: Mes papiers, mes droits
+title: "Administratif & juridique"
+subtitle: "Mes papiers, mes droits"
 color: admin
 icon: doc
-objective: Gérer tes papiers d'identité, tes assurances, et savoir où aller pour quoi.
-source: ibz.be (Registre national) · inami.fgov.be · belgium.be
+objective: "Gérer tes papiers d'identité, tes assurances, et savoir où aller pour quoi."
+source: "ibz.be (Registre national) · inami.fgov.be · belgium.be"
 sections:
   - id: mutuelle
-    title: La mutuelle
-    summary: Pourquoi c'est obligatoire et comment choisir.
-    lastChecked: 11/06/2026
-    body: |-
+    title: "La mutuelle"
+    summary: "Pourquoi c'est obligatoire et comment choisir."
+    lastChecked: "03/06/2026"
+    body: |
       <p>La mutuelle (officiellement : <strong>assurance soins de santé</strong>) te permet d'être remboursé·e quand tu vas chez le médecin, le dentiste, ou à l'hôpital.</p>
-
+      
       <h2>C'est obligatoire</h2>
       <p>Tout le monde doit être affilié soit à une mutuelle (cotisation à payer), soit à la <strong>CAAMI</strong> (gratuite, mais propose seulement le strict minimum).</p>
-
+      
       <h2>Les services d'une mutuelle</h2>
       <ul>
         <li>Remboursement des soins (médecin, médicaments, hôpital).</li>
         <li>Assurances facultatives (soins dentaires, hospitalisation…).</li>
         <li>Services complémentaires (camps, sport, transport non urgent…).</li>
       </ul>
-
+      
       <h2>Comment choisir ?</h2>
       <p>Les principales mutuelles : Mutualité Chrétienne, Neutre, Socialiste, Libérale, Solidaris… Compare les services et les cotisations sur leurs sites — selon ta situation, l'une peut être plus avantageuse qu'une autre.</p>
-
+      
       <div class="callout tip"><div><strong>Conseils santé</strong>Dentiste 1×/an minimum (sinon le remboursement diminue), ophtalmo tous les 2 ans si tu portes des lunettes, gynéco 1×/an pour les filles.</div></div>
   - id: rc-familiale
-    title: L'assurance RC familiale
-    summary: Ce qu'elle couvre, pourquoi tu en as besoin.
-    lastChecked: 03/06/2026
+    title: "L'assurance RC familiale"
+    summary: "Ce qu'elle couvre, pourquoi tu en as besoin."
+    lastChecked: "03/06/2026"
     body: |
       <p>L'assurance <strong>Responsabilité Civile familiale</strong> (RC familiale) te protège financièrement si tu causes un dommage à quelqu'un par accident.</p>
-
+      
       <h2>Quelques exemples</h2>
       <ul>
         <li>Ton chien provoque un accident.</li>
@@ -41,32 +41,33 @@ sections:
         <li>Un pot de fleurs tombe de ton appui de fenêtre.</li>
         <li>Un passant glisse sur le verglas devant chez toi.</li>
       </ul>
-
+      
       <p>Sans assurance, c'est <strong>toi</strong> qui dois payer — et ça peut monter très vite.</p>
-
+      
       <h2>Quand en prendre une ?</h2>
       <ul>
         <li>Tant que tu vis chez ta famille d'accueil, tu es couvert·e par leur assurance.</li>
         <li>Si tu prends ton autonomie, tu dois en souscrire une à ton nom.</li>
       </ul>
   - id: voyager
-    title: Voyager à l'étranger
-    summary: Carte ID, passeport, visa, vaccins, CEAM.
-    lastChecked: 03/06/2026
+    title: "Voyager à l'étranger"
+    summary: "Carte ID, passeport, visa, vaccins, CEAM."
+    lastChecked: "11/06/2026"
     body: |
       <p>Tu pars en voyage&nbsp;? Plus besoin d'autorisation parentale&nbsp;! Mais avant de boucler ton sac, vérifie que tu as bien tout côté papiers.</p>
-
+      
       <h2>Carte d'identité</h2>
-      <p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, au Royaume-Uni (sous conditions), en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
-
+      <p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
+      <div class="callout warn"><div><strong>Royaume-Uni : passeport obligatoire</strong>Depuis 2021, la carte d'identité ne suffit plus pour le Royaume-Uni : il te faut un <strong>passeport</strong> + une autorisation électronique <strong>ETA</strong> (~20 £, valable 2 ans, à demander en ligne avant le départ).</div></div>
+      
       <h2>Passeport</h2>
       <p>Pour <strong>tout le reste du monde</strong>, il te faut un <strong>passeport</strong>. À demander à ta <strong>commune</strong>.</p>
       <ul>
         <li>Validité : <strong>7 ans</strong>.</li>
-        <li>Coût : ~75 € (procédure normale, ~10 jours). Procédure d'urgence possible (plus chère).</li>
+        <li>Coût : <strong>65 à 95 €</strong> selon la taxe de ta commune (procédure normale, environ 1 semaine). Procédure d'urgence possible (plus chère).</li>
         <li>Apporte une photo récente conforme aux normes.</li>
       </ul>
-
+      
       <h2>Visa</h2>
       <p>Le <strong>visa</strong> est une autorisation d'entrée délivrée par le pays de destination. Tu peux l'obtenir&nbsp;:</p>
       <ul>
@@ -74,7 +75,7 @@ sections:
         <li>Souvent <strong>en ligne</strong> (eVisa) pour les pays comme USA (ESTA), Canada (AVE), Australie, Inde, etc.</li>
       </ul>
       <p>Vérifie sur <a href="https://diplomatie.belgium.be/fr/Services/voyager_a_letranger" target="_blank" rel="noopener">diplomatie.belgium.be</a> si un visa est nécessaire pour ta destination.</p>
-
+      
       <h2>Carnet de vaccination</h2>
       <p>Selon la destination, certains vaccins sont <strong>obligatoires</strong> (fièvre jaune en Afrique tropicale par exemple) ou <strong>recommandés</strong> (typhoïde, hépatite A, tétanos…).</p>
       <ul>
@@ -82,7 +83,7 @@ sections:
         <li>Demande le <strong>certificat international de vaccination</strong> (carnet jaune).</li>
         <li>Site officiel : <a href="https://www.itg.be" target="_blank" rel="noopener">Institut de Médecine Tropicale</a> (Anvers).</li>
       </ul>
-
+      
       <h2>Carte Européenne d'Assurance Maladie (CEAM)</h2>
       <p>La <strong>CEAM</strong> te permet d'être soigné·e dans tous les pays de l'UE + Islande, Liechtenstein, Norvège, Suisse, aux mêmes conditions que les habitants du pays.</p>
       <ul>
@@ -90,18 +91,18 @@ sections:
         <li>À demander <strong>plusieurs semaines avant</strong> ton départ.</li>
         <li>Validité : 2 ans en général.</li>
       </ul>
-
+      
       <h2>Assurance voyage</h2>
       <p>La CEAM ne couvre pas tout (rapatriement, soins privés…). Pour un long séjour ou un pays hors UE, prends une <strong>assurance voyage</strong> (souvent quelques €/jour). Ta mutuelle ou ta banque en proposent souvent.</p>
-
+      
       <div class="callout tip"><div><strong>Avant de partir</strong>Inscris-toi sur <a href="https://travellersonline.diplomatie.be" target="_blank" rel="noopener">Travellers Online</a> (gratuit, pour que les Affaires étrangères belges puissent te contacter en cas d'urgence dans le pays).</div></div>
   - id: documents
-    title: Mes papiers d'identité
-    summary: 'Carte ID, passeport, casier : où et comment les obtenir.'
-    lastChecked: 03/06/2026
+    title: "Mes papiers d'identité"
+    summary: "Carte ID, passeport, casier : où et comment les obtenir."
+    lastChecked: "03/06/2026"
     body: |
       <p>La plupart des documents administratifs s'obtiennent à <strong>l'administration communale</strong> de ta commune de domicile (ou de naissance).</p>
-
+      
       <h2>À demander à la commune</h2>
       <ul>
         <li>Carte d'identité, passeport.</li>
@@ -110,7 +111,7 @@ sections:
         <li>Permis de conduire.</li>
         <li>Don d'organes.</li>
       </ul>
-
+      
       <h2>Pour voyager</h2>
       <ul>
         <li><strong>Carte ID</strong> : valable dans les pays de l'UE et quelques pays voisins.</li>
@@ -119,31 +120,114 @@ sections:
         <li><strong>Carnet de vaccination</strong> : selon la destination (parle-en à ton médecin).</li>
         <li><strong>Carte Européenne d'Assurance Maladie (CEAM)</strong> : gratuite, à demander à ta mutuelle, indispensable pour voyager dans l'UE.</li>
       </ul>
+  - id: impots
+    title: "Ma première déclaration d'impôts"
+    summary: "Qui doit déclarer, comment, et pourquoi tu ne paieras sans doute rien."
+    lastChecked: "11/06/2026"
+    source: "finances.belgium.be · wikifin.be"
+    body: |
+      <p>À partir de 18 ans, tu reçois chaque année une déclaration d'impôts (ou une proposition déjà remplie). Pas de panique : <strong>déclarer ne veut pas dire payer</strong>. Avec des revenus de jeune, tu ne paieras souvent rien du tout.</p>
+
+      <h2>Vais-je payer des impôts ?</h2>
+      <p>Probablement pas. En dessous d'environ <strong>10 900 € de revenus nets par an</strong> (revenus 2025), tu ne paies <strong>aucun impôt</strong>. Le RIS et les allocations familiales ne sont de toute façon <strong>pas imposables</strong>. Un job étudiant sous ce seuil non plus.</p>
+
+      <h2>La proposition de déclaration simplifiée (PDS)</h2>
+      <p>Si ta situation est simple (étudiant·e, RIS, un seul employeur), le fisc t'envoie souvent une <strong>déclaration déjà remplie</strong>.</p>
+      <ul>
+        <li>Si tout est correct : <strong>tu n'as rien à faire</strong>.</li>
+        <li>Si quelque chose manque ou est faux : tu la corriges (en ligne ou par papier) avant la date limite.</li>
+      </ul>
+
+      <h2>Comment déclarer ?</h2>
+      <ol class="fiche-ol">
+        <li>Connecte-toi sur <a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a> (avec itsme ou ta carte d'identité).</li>
+        <li>La plupart des cases sont <strong>déjà pré-remplies</strong> (salaire, précompte…). Vérifie et complète.</li>
+        <li>Valide. C'est tout.</li>
+      </ol>
+
+      <h2>Les délais</h2>
+      <ul>
+        <li><strong>Déclaration papier</strong> : fin juin.</li>
+        <li><strong>En ligne (MyMinfin / Tax-on-web)</strong> : mi-juillet.</li>
+      </ul>
+      <p>Les dates exactes changent chaque année — vérifie sur <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a>.</p>
+
+      <h2>Besoin d'aide pour remplir ?</h2>
+      <ul>
+        <li><strong>Par téléphone</strong> : le SPF Finances remplit ta déclaration avec toi au <strong>02 572 57 57</strong> (gratuit, prends rendez-vous tôt — les créneaux partent vite).</li>
+        <li><strong>Permanences</strong> : dans beaucoup de communes au printemps.</li>
+        <li>Ton AMO ou Inforjeunes peuvent aussi t'aider.</li>
+      </ul>
+
+      <div class="callout warn"><div><strong>Ne l'ignore pas</strong>Même si tu ne dois rien payer, tu dois répondre (ou vérifier ta proposition simplifiée). Sans réponse, tu risques une amende et une taxation d'office. Et souvent, déclarer joue en ta faveur : si trop de précompte a été retenu sur ton salaire, tu es <strong>remboursé·e</strong>.</div></div>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a> — déclarer en ligne</li>
+        <li><a href="https://www.wikifin.be" target="_blank" rel="noopener">Wikifin</a> — l'argent et les impôts expliqués simplement (site officiel FSMA)</li>
+      </ul>
+  - id: voter
+    title: "Voter en Belgique"
+    summary: "À 18 ans, voter est obligatoire. Convocation, procuration, mode d'emploi."
+    lastChecked: "11/06/2026"
+    source: "elections.fgov.be · wallonie.be"
+    body: |
+      <p>En Belgique, <strong>voter est un devoir légal</strong> dès 18 ans : tu es automatiquement inscrit·e sur la liste des électeurs, aucune démarche à faire. Et dès <strong>16 ans</strong>, tu votes aussi aux élections européennes.</p>
+
+      <h2>Quelles élections ?</h2>
+      <ul>
+        <li><strong>Fédérales</strong> (la Chambre) et <strong>régionales</strong> (Parlement wallon) — tous les 5 ans.</li>
+        <li><strong>Communales et provinciales</strong> — tous les 6 ans. En Wallonie, le vote y reste obligatoire.</li>
+        <li><strong>Européennes</strong> — tous les 5 ans, dès 16 ans.</li>
+      </ul>
+      <p>Prochains rendez-vous : <strong>2029</strong> (européennes, fédérales, régionales) puis <strong>2030</strong> (communales et provinciales).</p>
+
+      <h2>Comment ça se passe concrètement</h2>
+      <ol class="fiche-ol">
+        <li>Tu reçois une <strong>convocation</strong> par courrier quelques semaines avant.</li>
+        <li>Le jour J, présente-toi au bureau de vote indiqué, avec ta <strong>carte d'identité</strong> et ta convocation.</li>
+        <li>Tu votes dans l'isoloir (papier ou électronique selon la commune). Voter <strong>blanc</strong> est aussi possible.</li>
+      </ol>
+
+      <h2>Tu ne peux pas y aller ?</h2>
+      <p>Tu peux donner <strong>procuration</strong> à une personne de confiance (maladie, travail, études, voyage…). Le formulaire se demande à ta commune ou se télécharge en ligne, avec un justificatif. La personne vote pour toi en plus de son propre vote (1 procuration maximum par personne).</p>
+
+      <h2>Et si je ne vote pas ?</h2>
+      <p>Des amendes existent en théorie (40 à 80 € la première fois), mais elles sont rarement appliquées. Le vrai enjeu : <strong>les décisions prises te concernent directement</strong> (logement, transport, aides, études). Voter, c'est ta voix.</p>
+
+      <div class="callout tip"><div><strong>Pas sûr·e pour qui voter ?</strong>Avant chaque élection, des tests électoraux neutres (comme le Test électoral de la RTBF) comparent tes idées aux programmes des partis. Prends 20 minutes, ça aide vraiment à y voir clair.</div></div>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://elections.fgov.be" target="_blank" rel="noopener">elections.fgov.be</a> — info officielle (SPF Intérieur)</li>
+        <li><a href="https://www.wallonie.be/fr/demarches/voter-par-procuration" target="_blank" rel="noopener">Wallonie — voter par procuration</a></li>
+      </ul>
   - id: aide-juridique
-    title: Avocat prodéo et aide juridique
-    summary: Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.
-    lastChecked: 03/06/2026
-    source: justice.belgium.be · avocats.be · droitsquotidiens.be
+    title: "Avocat prodéo et aide juridique"
+    summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026."
+    lastChecked: "11/06/2026"
+    source: "justice.belgium.be · avocats.be · droitsquotidiens.be"
     body: |
       <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
-
+      
       <h2>1ère ligne : un conseil gratuit, sans condition</h2>
       <p>Tu peux aller dans une <strong>Commission d'Aide Juridique (CAJ)</strong> ou une permanence d'avocat·e pour poser une question (loyer, papiers, dettes, séparation, travail…). C'est <strong>gratuit, pour toute personne, sans plafond de revenus</strong>.</p>
       <ul>
         <li>Trouve une permanence près de chez toi : <a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be/aide-juridique</a></li>
         <li>Ou via le palais de justice de ton arrondissement.</li>
       </ul>
-
+      
       <h2>2ème ligne (« prodéo ») : un·e avocat·e désigné·e</h2>
       <p>Si tu dois aller plus loin (procédure, représentation devant un tribunal), tu peux demander qu'un·e avocat·e soit <strong>désigné·e</strong> via le <strong>Bureau d'Aide Juridique (BAJ)</strong> de ton arrondissement. Selon tes revenus, l'aide est <strong>totalement</strong> ou <strong>partiellement gratuite</strong>.</p>
-
+      
       <h2>Plafonds de revenus 2026</h2>
       <p>Le BAJ examine le total des revenus mensuels nets de toutes les personnes vivant sous ton toit.</p>
       <ul>
-        <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
+        <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 612 €/mois</strong> → gratuit total · entre <strong>1 612 € et 1 920 €</strong> → partiellement gratuit.</li>
+        <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
         <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>355 €</strong> par personne supplémentaire (à confirmer auprès du BAJ).</li>
       </ul>
-
+      
       <h2>Accès automatique (sans calcul de revenus)</h2>
       <p>Tu y as droit d'office (sans démarche de calcul) si tu es dans une de ces situations&nbsp;:</p>
       <ul>
@@ -153,7 +237,7 @@ sections:
         <li>Tu es <strong>détenu·e</strong>, demandeur·euse d'asile, ou sans-papiers en procédure.</li>
         <li>Tu es <strong>surendetté·e</strong> (procédure de règlement collectif de dettes).</li>
       </ul>
-
+      
       <h2>Comment demander ?</h2>
       <ol class="fiche-ol">
         <li>Repère le <strong>BAJ de ton arrondissement</strong> (ex. Verviers, Liège, Bruxelles…) via <a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be</a> ou le tribunal de ta région.</li>
@@ -161,7 +245,7 @@ sections:
         <li>Le BAJ examine ton dossier, vérifie que ta demande n'est pas manifestement infondée, et te <strong>désigne un·e avocat·e</strong>.</li>
         <li>Tu rencontres ton avocat·e et tu n'avances en principe <strong>rien</strong> — sauf une éventuelle part à payer si tu es dans la tranche partielle.</li>
       </ol>
-
+      
       <h2>Pour quelles affaires ?</h2>
       <ul>
         <li>Procédures devant le tribunal du travail, de la famille, civil, pénal, jeunesse, étrangers.</li>
@@ -169,9 +253,9 @@ sections:
         <li>Séparation, divorce, garde, pension alimentaire, dettes.</li>
         <li>Défense pénale si tu es poursuivi·e.</li>
       </ul>
-
+      
       <div class="callout tip"><div><strong>N'attends pas</strong>Si tu reçois une convocation, un jugement, ou un courrier d'huissier que tu ne comprends pas — va voir une 1ère ligne <strong>tout de suite</strong>. Les délais juridiques sont courts et beaucoup de droits se perdent en quelques semaines.</div></div>
-
+      
       <h2>Pour aller plus loin</h2>
       <ul>
         <li><a href="https://justice.belgium.be/fr/themes_et_dossiers/services_du_spf/access_a_la_justice/aide_juridique" target="_blank" rel="noopener">SPF Justice — aide juridique</a></li>

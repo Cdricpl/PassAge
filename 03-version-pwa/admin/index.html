@@ -404,6 +404,11 @@
           <label>Objectif (phrase d'accroche)</label>
           <textarea id="metaObjective" rows="3" placeholder="ex : Comprendre tes droits en tant que locataire…"></textarea>
         </div>
+        <div class="form-group">
+          <label>Sources du module</label>
+          <input id="metaSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
+          <div class="hint">Affichées en bas de toutes les fiches du module qui n'ont pas leur propre source.</div>
+        </div>
         <div class="form-actions">
           <button type="button" onclick="goBack()" class="btn-ghost">Annuler</button>
           <button type="button" id="saveMetaBtn" onclick="saveModuleMeta()" class="btn-primary">Enregistrer</button>
@@ -491,7 +496,7 @@ const MODULE_ICONS = {
   logement: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
   vie:      '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 3h2l3 14h11l3-9H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.5" fill="currentColor"/><circle cx="18" cy="21" r="1.5" fill="currentColor"/></svg>',
   loisirs:  '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  sante:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sante:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
   urgence:  '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>'
 };
 
@@ -686,7 +691,7 @@ searchInput.addEventListener('input', () => {
     const secs = m.data.sections || [];
     for (let si = 0; si < secs.length; si++) {
       const s = secs[si];
-      const hay = `${s.title} ${s.summary} ${s.id}`.toLowerCase();
+      const hay = `${s.title} ${s.summary} ${s.id} ${(s.body || '').replace(/<[^>]+>/g, ' ')}`.toLowerCase();
       if (hay.includes(q)) hits.push({ moduleId: m.id, moduleTitle: m.title, section: s, sectionIdx: si });
     }
   }
@@ -773,6 +778,14 @@ function esc(s) {
 function attrJs(s) {
   return esc(String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"));
 }
+// Transforme les noms de domaine reconnus en liens cliquables (miroir de l'app publique)
+function linkifySource(src) {
+  if (!src) return '—';
+  return esc(src).replace(
+    /\b([a-z0-9][a-z0-9-]*(?:\.[a-z0-9][a-z0-9-]*)*\.(?:be|org|com|eu|fr|brussels))\b/gi,
+    m => `<a href="https://${m}" target="_blank" rel="noopener">${m}</a>`
+  );
+}
 
 // Empêche deux commits simultanés (double-clic ↑/↓ → conflit de sha GitHub)
 function commitGuard() {
@@ -839,6 +852,7 @@ function startEditModuleMeta() {
   document.getElementById('metaTitle').value     = currentModuleData.title     || '';
   document.getElementById('metaSubtitle').value  = currentModuleData.subtitle  || '';
   document.getElementById('metaObjective').value = currentModuleData.objective || '';
+  document.getElementById('metaSource').value    = currentModuleData.source    || '';
   document.getElementById('saveMetaStatus').textContent = '';
   isMetaDirty = false;
   document.getElementById('metaDirtyIndicator').style.display = 'none';
@@ -851,6 +865,7 @@ async function saveModuleMeta() {
   currentModuleData.title    = document.getElementById('metaTitle').value.trim()    || currentModuleData.title;
   currentModuleData.subtitle = document.getElementById('metaSubtitle').value.trim() || currentModuleData.subtitle;
   currentModuleData.objective = document.getElementById('metaObjective').value.trim();
+  currentModuleData.source   = document.getElementById('metaSource').value.trim();
   try {
     await commitModule(`content(${currentModuleId}): mise à jour des métadonnées du module`);
     // Update cache
@@ -913,7 +928,7 @@ function populateEditor(s) {
   if (modSource && !s.source) {
     hint.innerHTML = `Source du module (affichée par défaut) : <strong>${esc(modSource)}</strong>. Remplis ce champ pour remplacer uniquement pour cette fiche.`;
   } else {
-    hint.textContent = 'Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.';
+    hint.textContent = 'Sources spécifiques à cette fiche. Affiché en bas de la fiche à la place des sources du module.';
   }
   document.getElementById('fieldLastChecked').value = s.lastChecked || '';
   document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
@@ -1180,7 +1195,7 @@ function refreshPreview(idx) {
   // Si DOMPurify n'a pas chargé (hors-ligne), affichage dégradé en texte brut plutôt que crash
   if (window.DOMPurify) previewEl.innerHTML = DOMPurify.sanitize(rawBody);
   else previewEl.textContent = rawBody;
-  document.getElementById('previewSource').textContent = s.source || modSource || '—';
+  document.getElementById('previewSource').innerHTML = linkifySource(s.source || modSource);
   document.getElementById('previewDate').textContent = s.lastChecked || '—';
   document.getElementById('previewDisclaimer').textContent =
     s.disclaimer || "Cette fiche est un repère général. Elle ne remplace pas l'avis d'un service compétent.";

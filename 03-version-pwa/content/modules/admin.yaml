@@ -52,18 +52,19 @@ sections:
   - id: voyager
     title: "Voyager à l'étranger"
     summary: "Carte ID, passeport, visa, vaccins, CEAM."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Tu pars en voyage&nbsp;? Plus besoin d'autorisation parentale&nbsp;! Mais avant de boucler ton sac, vérifie que tu as bien tout côté papiers.</p>
       
       <h2>Carte d'identité</h2>
-      <p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, au Royaume-Uni (sous conditions), en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
+      <p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
+      <div class="callout warn"><div><strong>Royaume-Uni : passeport obligatoire</strong>Depuis 2021, la carte d'identité ne suffit plus pour le Royaume-Uni : il te faut un <strong>passeport</strong> + une autorisation électronique <strong>ETA</strong> (~20 £, valable 2 ans, à demander en ligne avant le départ).</div></div>
       
       <h2>Passeport</h2>
       <p>Pour <strong>tout le reste du monde</strong>, il te faut un <strong>passeport</strong>. À demander à ta <strong>commune</strong>.</p>
       <ul>
         <li>Validité : <strong>7 ans</strong>.</li>
-        <li>Coût : ~75 € (procédure normale, ~10 jours). Procédure d'urgence possible (plus chère).</li>
+        <li>Coût : <strong>65 à 95 €</strong> selon la taxe de ta commune (procédure normale, environ 1 semaine). Procédure d'urgence possible (plus chère).</li>
         <li>Apporte une photo récente conforme aux normes.</li>
       </ul>
       

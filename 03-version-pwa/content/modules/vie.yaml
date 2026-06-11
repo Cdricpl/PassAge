@@ -48,7 +48,7 @@ sections:
   - id: permis-conduire
     title: "Le permis de conduire (B)"
     summary: "Théorique, pratique, filières, coût en Wallonie 2026."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
       
@@ -67,7 +67,7 @@ sections:
       <h3>Filière libre (M36)</h3>
       <ul>
         <li>Tu apprends avec un·e <strong>guide</strong> (parent, ami·e, etc., qui a son permis depuis ≥ 8 ans).</li>
-        <li>Obligatoire : <strong>rendez-vous pédagogique de 3 heures</strong> avec ton·ta guide avant de commencer.</li>
+        <li>Obligatoire : <strong>rendez-vous pédagogique d'1 heure</strong> avec ton·ta guide avant de commencer (en présentiel ou en e-learning via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>).</li>
         <li>Stage minimum 3 mois avant l'examen pratique.</li>
         <li>Coût total estimé : <strong>150 à 250 €</strong> (examens + RDV pédago).</li>
       </ul>
@@ -122,12 +122,12 @@ sections:
       <h2>Permis de conduire</h2>
       <p>Voir la fiche dédiée <a href="#/fiche/vie/permis-conduire">Le permis de conduire (B)</a> pour toutes les étapes (théorique, pratique, filières, coût) et les aides possibles via le CPAS.</p>
       
-      <div class="callout tip"><div><strong>Tarif social transport</strong>Si tu touches le RIS du CPAS, l'abonnement TEC est gratuit (et non plus 12 €). Demande à ton·ta assistant·e social·e au CPAS.</div></div>
+      <div class="callout tip"><div><strong>Tarif social transport</strong>Si tu es <strong>BIM</strong> (intervention majorée — souvent le cas si tu touches le RIS), l'abonnement TEC Horizon+ est <strong>gratuit</strong> (seuls les frais de carte restent). Vérifie ton statut BIM auprès de ta mutuelle, puis demande l'abonnement au TEC.</div></div>
       
       <h2>Pour aller plus loin</h2>
       <ul>
         <li><a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a> — abonnements TEC et tarifs jeunes</li>
-        <li><a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> — Go Pass et abonnements SNCB</li>
+        <li><a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> — offres jeunes et abonnements SNCB</li>
       </ul>
   - id: alimentation
     title: "Alimentation : manger bien sans se ruiner"

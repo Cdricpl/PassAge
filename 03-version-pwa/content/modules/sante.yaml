@@ -17,12 +17,12 @@ sections:
   - id: parler-sans-appeler
     title: Parler sans appeler
     summary: Chat, e-mail, RDV en personne — tu choisis le canal.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>Tu as besoin de parler mais l'idée de téléphoner te bloque ? <strong>C'est normal.</strong> Beaucoup de jeunes vivent ça. Voici d'autres façons de demander de l'aide.</p>
 
-      <h2>Le chat 103 (moins de 20 ans)</h2>
-      <p>Le <strong>103</strong> propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
+      <h2>Le chat 103 (enfants et ados)</h2>
+      <p>Le <strong>103</strong> (Écoute-Enfants) propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
       <ul>
         <li>Site : <a href="https://www.103ecoute.be" target="_blank" rel="noopener">103ecoute.be</a></li>
       </ul>
@@ -183,7 +183,7 @@ sections:
       </ul>
 
       <h2>C'est gratuit ou peu cher</h2>
-      <p>Les tarifs sont adaptés à tes revenus. Pour les jeunes, <strong>c'est souvent gratuit</strong>.</p>
+      <p>L'<strong>accueil et l'écoute sont gratuits</strong>. Les consultations sont à petit prix, adapté à tes revenus. Et bonne nouvelle : la <strong>contraception est gratuite jusqu'à 25 ans</strong> (remboursement INAMI), et la <strong>pilule du lendemain est gratuite</strong> pour toutes, sans limite d'âge.</p>
 
       <h2>C'est confidentiel</h2>
       <p>Le secret professionnel est total. Personne ne saura que tu y as été — même pas tes parents si tu ne veux pas.</p>

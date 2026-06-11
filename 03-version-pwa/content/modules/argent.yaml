@@ -95,7 +95,7 @@ sections:
   - id: compte-bancaire
     title: Le compte bancaire
     summary: Ouvrir un compte, ordres permanents, épargne.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     source: febelfin.be · inforjeunes.be
     body: |
       <p>À 18 ans, tu peux ouvrir un compte en banque à ton nom. C'est indispensable pour recevoir un salaire, payer en magasin, ou recevoir tes aides.</p>
@@ -114,20 +114,12 @@ sections:
         <li>Un <strong>numéro de téléphone</strong> pour activer l'appli et les codes.</li>
       </ul>
 
-      <h2>Comptes gratuits pour les jeunes (-25 ans)</h2>
-      <p>De nombreuses banques proposent des comptes <strong>sans frais</strong> pour les jeunes :</p>
-      <ul>
-        <li><strong>BNP Paribas Fortis</strong> — Fintro (compte Sixto gratuit -25 ans)</li>
-        <li><strong>Belfius</strong> — compte Belfius Start gratuit -25 ans</li>
-        <li><strong>ING</strong> — compte Lion gratuit -25 ans</li>
-        <li><strong>KBC / CBC</strong> — compte KBC Start gratuit -26 ans</li>
-        <li><strong>Argenta</strong> — compte gratuit tous âges</li>
-        <li><strong>Keytrade</strong> — 100 % en ligne, gratuit</li>
-      </ul>
-      <p>Compare les services (carte de débit, appli, retraits gratuits en Belgique) avant de choisir.</p>
+      <h2>Comptes gratuits pour les jeunes</h2>
+      <p>Toutes les grandes banques (BNP Paribas Fortis, Belfius, ING, KBC/CBC, Argenta, Keytrade…) proposent un <strong>compte jeune sans frais</strong> — gratuit jusqu'à 24, 25 ou 27 ans selon la banque. Certaines (Argenta, Keytrade) restent gratuites à tout âge.</p>
+      <p>Les noms et conditions des comptes changent souvent : compare les services (carte de débit, appli, retraits gratuits en Belgique) sur les sites des banques ou via <a href="https://www.wikifin.be" target="_blank" rel="noopener">Wikifin</a> (comparateur officiel et neutre) avant de choisir.</p>
 
       <h2>Le droit au compte de base</h2>
-      <p>Si une banque te refuse, tu as le droit à un <strong>compte de base</strong> — c'est garanti par la loi belge. Demande à n'importe quelle grande banque ou renseigne-toi auprès du <a href="https://www.febelfin.be" target="_blank" rel="noopener">SPF Économie</a>.</p>
+      <p>Si une banque te refuse, tu as le droit à un <strong>compte de base</strong> — c'est garanti par la loi belge. Demande à n'importe quelle grande banque ou renseigne-toi auprès de <a href="https://www.febelfin.be" target="_blank" rel="noopener">Febelfin</a> (fédération des banques).</p>
 
       <h2>Activer itsme dès que possible</h2>
       <p>Dès l'ouverture du compte, active <strong>itsme</strong> (l'identité numérique belge). Tu en auras besoin pour : Tax-on-Web (impôts), myFAMIWAL (allocations), e-services gouvernementaux, certaines banques en ligne.</p>
@@ -186,12 +178,8 @@ sections:
       </ul>
       <p>Demande directement à l'opérateur, ou vérifie ton éligibilité via le <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a>.</p>
 
-      <h2>Tarif social téléphonie (mobile + fixe)</h2>
-      <p>Sous conditions (RIS, BIM, handicap…), tu peux aussi obtenir un tarif social sur ta téléphonie mobile et/ou fixe :</p>
-      <ul>
-        <li>Jusqu'à <strong>40 % de réduction</strong> sur les frais d'installation et l'abonnement.</li>
-        <li>Demande à ton opérateur ou via <a href="https://www.ibpt.be/consommateurs/tarif-social" target="_blank" rel="noopener">l'IBPT</a> (régulateur télécom).</li>
-      </ul>
+      <h2>Et la téléphonie&nbsp;?</h2>
+      <p>L'ancien <strong>tarif social téléphonique</strong> a été <strong>supprimé le 1er mars 2024</strong> — il est remplacé par l'offre internet sociale ci-dessus. Si tu en bénéficiais avant cette date, tu peux le conserver. Infos : <a href="https://www.ibpt.be/consommateurs/tarif-social" target="_blank" rel="noopener">IBPT</a> (régulateur télécom).</p>
 
       <h2>Magasins de seconde main</h2>
       <p>Pour t'équiper sans te ruiner&nbsp;:</p>
@@ -223,7 +211,7 @@ sections:
   - id: budget
     title: Mon budget mensuel
     summary: Dépenses obligatoires, priorités, astuces pour ne pas se planter.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>Avant de prendre un logement ou un engagement, prends 10 minutes pour faire ton budget mensuel. Tu poses tes <strong>rentrées</strong> (RIS, salaire, allocations…) et tes <strong>dépenses fixes</strong>. Le reste, c'est ce que tu peux dépenser ou épargner.</p>
 
@@ -267,7 +255,7 @@ sections:
       <ul>
         <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — si tes revenus ne couvrent pas le minimum</li>
         <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> — réduire les factures</li>
-        <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADIL</li>
+        <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADeL</li>
         <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — aide gratuite pour les dettes et difficultés financières</li>
       </ul>
   - id: dettes

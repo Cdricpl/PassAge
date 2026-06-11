@@ -88,18 +88,19 @@ window.MA_CONTENT = (function () {
           id: "voyager",
           title: "Voyager à l'étranger",
           summary: "Carte ID, passeport, visa, vaccins, CEAM.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Tu pars en voyage&nbsp;? Plus besoin d'autorisation parentale&nbsp;! Mais avant de boucler ton sac, vérifie que tu as bien tout côté papiers.</p>
 
 <h2>Carte d'identité</h2>
-<p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, au Royaume-Uni (sous conditions), en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
+<p>Ta <strong>carte ID belge</strong> suffit pour aller dans <strong>tous les pays de l'UE</strong>, ainsi qu'en Suisse, en Norvège, Islande, Liechtenstein, Andorre, Saint-Marin, Vatican, Monaco. Vérifie sa <strong>date de validité</strong> avant de partir — elle doit souvent être valide encore 3 à 6 mois après ton retour.</p>
+<div class="callout warn"><div><strong>Royaume-Uni : passeport obligatoire</strong>Depuis 2021, la carte d'identité ne suffit plus pour le Royaume-Uni : il te faut un <strong>passeport</strong> + une autorisation électronique <strong>ETA</strong> (~20 £, valable 2 ans, à demander en ligne avant le départ).</div></div>
 
 <h2>Passeport</h2>
 <p>Pour <strong>tout le reste du monde</strong>, il te faut un <strong>passeport</strong>. À demander à ta <strong>commune</strong>.</p>
 <ul>
   <li>Validité : <strong>7 ans</strong>.</li>
-  <li>Coût : ~75 € (procédure normale, ~10 jours). Procédure d'urgence possible (plus chère).</li>
+  <li>Coût : <strong>65 à 95 €</strong> selon la taxe de ta commune (procédure normale, environ 1 semaine). Procédure d'urgence possible (plus chère).</li>
   <li>Apporte une photo récente conforme aux normes.</li>
 </ul>
 
@@ -422,7 +423,7 @@ window.MA_CONTENT = (function () {
           title: "Le compte bancaire",
           summary: "Ouvrir un compte, ordres permanents, épargne.",
           source: "febelfin.be · inforjeunes.be",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>À 18 ans, tu peux ouvrir un compte en banque à ton nom. C'est indispensable pour recevoir un salaire, payer en magasin, ou recevoir tes aides.</p>
 
@@ -440,20 +441,12 @@ window.MA_CONTENT = (function () {
   <li>Un <strong>numéro de téléphone</strong> pour activer l'appli et les codes.</li>
 </ul>
 
-<h2>Comptes gratuits pour les jeunes (-25 ans)</h2>
-<p>De nombreuses banques proposent des comptes <strong>sans frais</strong> pour les jeunes :</p>
-<ul>
-  <li><strong>BNP Paribas Fortis</strong> — Fintro (compte Sixto gratuit -25 ans)</li>
-  <li><strong>Belfius</strong> — compte Belfius Start gratuit -25 ans</li>
-  <li><strong>ING</strong> — compte Lion gratuit -25 ans</li>
-  <li><strong>KBC / CBC</strong> — compte KBC Start gratuit -26 ans</li>
-  <li><strong>Argenta</strong> — compte gratuit tous âges</li>
-  <li><strong>Keytrade</strong> — 100 % en ligne, gratuit</li>
-</ul>
-<p>Compare les services (carte de débit, appli, retraits gratuits en Belgique) avant de choisir.</p>
+<h2>Comptes gratuits pour les jeunes</h2>
+<p>Toutes les grandes banques (BNP Paribas Fortis, Belfius, ING, KBC/CBC, Argenta, Keytrade…) proposent un <strong>compte jeune sans frais</strong> — gratuit jusqu'à 24, 25 ou 27 ans selon la banque. Certaines (Argenta, Keytrade) restent gratuites à tout âge.</p>
+<p>Les noms et conditions des comptes changent souvent : compare les services (carte de débit, appli, retraits gratuits en Belgique) sur les sites des banques ou via <a href="https://www.wikifin.be" target="_blank" rel="noopener">Wikifin</a> (comparateur officiel et neutre) avant de choisir.</p>
 
 <h2>Le droit au compte de base</h2>
-<p>Si une banque te refuse, tu as le droit à un <strong>compte de base</strong> — c'est garanti par la loi belge. Demande à n'importe quelle grande banque ou renseigne-toi auprès du <a href="https://www.febelfin.be" target="_blank" rel="noopener">SPF Économie</a>.</p>
+<p>Si une banque te refuse, tu as le droit à un <strong>compte de base</strong> — c'est garanti par la loi belge. Demande à n'importe quelle grande banque ou renseigne-toi auprès de <a href="https://www.febelfin.be" target="_blank" rel="noopener">Febelfin</a> (fédération des banques).</p>
 
 <h2>Activer itsme dès que possible</h2>
 <p>Dès l'ouverture du compte, active <strong>itsme</strong> (l'identité numérique belge). Tu en auras besoin pour : Tax-on-Web (impôts), myFAMIWAL (allocations), e-services gouvernementaux, certaines banques en ligne.</p>
@@ -518,12 +511,8 @@ window.MA_CONTENT = (function () {
 </ul>
 <p>Demande directement à l'opérateur, ou vérifie ton éligibilité via le <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a>.</p>
 
-<h2>Tarif social téléphonie (mobile + fixe)</h2>
-<p>Sous conditions (RIS, BIM, handicap…), tu peux aussi obtenir un tarif social sur ta téléphonie mobile et/ou fixe :</p>
-<ul>
-  <li>Jusqu'à <strong>40 % de réduction</strong> sur les frais d'installation et l'abonnement.</li>
-  <li>Demande à ton opérateur ou via <a href="https://www.ibpt.be/consommateurs/tarif-social" target="_blank" rel="noopener">l'IBPT</a> (régulateur télécom).</li>
-</ul>
+<h2>Et la téléphonie&nbsp;?</h2>
+<p>L'ancien <strong>tarif social téléphonique</strong> a été <strong>supprimé le 1er mars 2024</strong> — il est remplacé par l'offre internet sociale ci-dessus. Si tu en bénéficiais avant cette date, tu peux le conserver. Infos : <a href="https://www.ibpt.be/consommateurs/tarif-social" target="_blank" rel="noopener">IBPT</a> (régulateur télécom).</p>
 
 <h2>Magasins de seconde main</h2>
 <p>Pour t'équiper sans te ruiner&nbsp;:</p>
@@ -558,7 +547,7 @@ window.MA_CONTENT = (function () {
           id: "budget",
           title: "Mon budget mensuel",
           summary: "Dépenses obligatoires, priorités, astuces pour ne pas se planter.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Avant de prendre un logement ou un engagement, prends 10 minutes pour faire ton budget mensuel. Tu poses tes <strong>rentrées</strong> (RIS, salaire, allocations…) et tes <strong>dépenses fixes</strong>. Le reste, c'est ce que tu peux dépenser ou épargner.</p>
 
@@ -602,7 +591,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li><a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a> — si tes revenus ne couvrent pas le minimum</li>
   <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> — réduire les factures</li>
-  <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADIL</li>
+  <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADeL</li>
   <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — aide gratuite pour les dettes et difficultés financières</li>
 </ul>
 `
@@ -681,7 +670,7 @@ window.MA_CONTENT = (function () {
           id: "bourse",
           title: "L'allocation d'études (bourse)",
           summary: "Une aide financière qui ne se rembourse pas, sous conditions de ressources.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>L'<strong>allocation d'études</strong>, aussi appelée <strong>bourse</strong>, est une aide versée par la Fédération Wallonie-Bruxelles aux élèves et étudiants dont les ressources familiales sont limitées.</p>
 
@@ -693,7 +682,7 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <h2>Comment faire la demande ?</h2>
-<p>Tout se passe sur le site officiel : <a href="https://aides-etudes.cfwb.be" target="_blank" rel="noopener">aides-etudes.cfwb.be</a></p>
+<p>Tout se passe sur le site officiel : <a href="https://allocations-etudes.cfwb.be" target="_blank" rel="noopener">allocations-etudes.cfwb.be</a> (numéro gratuit : 0800 11 869). La demande se fait chaque année, en général <strong>entre juillet et fin octobre</strong>.</p>
 <p>Si tu galères avec le dossier, prends rendez-vous dans un centre <strong>Inforjeunes</strong> ou une <strong>AMO</strong> — c'est gratuit, ils ont l'habitude.</p>
 `
         },
@@ -920,7 +909,7 @@ window.MA_CONTENT = (function () {
           id: "chomage",
           title: "Le chômage après les études",
           summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
 
@@ -948,10 +937,10 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Tu gardes le droit aux <strong>allocations familiales</strong> pendant <strong>12 mois maximum</strong> après les études (jusqu'à 25 ans) — depuis le 1er juillet 2026, c'est le statut « post-étudiant » qui ouvre ce droit, plus la simple inscription comme demandeur·euse d'emploi. Vérifie auprès de FAMIWAL.</li>
   <li>Si tu n'as aucun revenu, demande le <strong>RIS au CPAS</strong> — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
-  <li>En tant que jeune accueilli·e, ton statut donne droit au RIS sans enquête sur les parents.</li>
+  <li>En tant que jeune sortant de l'aide à la jeunesse, explique ta situation au CPAS : il peut renoncer à réclamer une intervention à tes parents. C'est examiné au cas par cas.</li>
 </ul>
 
-<div class="callout warn"><div><strong>Attention — réforme récente</strong>Beaucoup d'infos en ligne ne sont pas encore à jour. Si tu lis "312 jours" ou "3 ans d'allocations", c'est l'ancien système. Depuis le 1er mars 2026 : <strong>156 jours de stage, 12 mois d'allocations max</strong>.</div></div>
+<div class="callout warn"><div><strong>Attention — réforme récente</strong>Beaucoup d'infos en ligne ne sont pas encore à jour. Si tu lis "310 jours" ou "3 ans d'allocations", c'est l'ancien système. Depuis le 1er mars 2026 : <strong>156 jours de stage, 12 mois d'allocations max</strong>.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
@@ -1000,7 +989,7 @@ window.MA_CONTENT = (function () {
           id: "recherche",
           title: "Trouver un logement",
           summary: "Où chercher et quoi demander en visite.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Cherche large et compare. Voici comment.</p>
 
@@ -1031,7 +1020,7 @@ window.MA_CONTENT = (function () {
   <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — ce qu'il doit contenir avant de signer.</li>
   <li><a href="#/fiche/logement/garantie">La garantie locative</a> — comment la financer si tu n'as pas l'argent.</li>
   <li><a href="#/fiche/logement/etat-des-lieux">L'état des lieux</a> — indispensable à l'entrée.</li>
-  <li><a href="#/fiche/logement/aides">Les aides au logement</a> — CPAS, ADIL, allocation loyer.</li>
+  <li><a href="#/fiche/logement/aides">Les aides au logement</a> — CPAS, ADeL (allocation de déménagement et de loyer).</li>
 </ul>
 `
         },
@@ -1039,7 +1028,7 @@ window.MA_CONTENT = (function () {
           id: "bail",
           title: "Le contrat de bail",
           summary: "Ce qu'il doit contenir, comment le vérifier.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
 
@@ -1060,7 +1049,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Durée du bail</h2>
 <ul>
-  <li>1 an, 3 ans ou 9 ans : c'est la loi.</li>
+  <li>En Wallonie : <strong>9 ans</strong> par défaut, ou <strong>courte durée</strong> (3 ans maximum). Il existe aussi un <strong>bail étudiant</strong> spécifique.</li>
   <li>Si tu veux partir, tu dois donner ton <strong>préavis par lettre recommandée</strong> — voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>.</li>
   <li>Le délai commence le <strong>1er du mois suivant</strong> l'envoi du recommandé.</li>
 </ul>
@@ -1078,12 +1067,12 @@ window.MA_CONTENT = (function () {
           id: "etat-des-lieux",
           title: "L'état des lieux",
           summary: "Le document qui te protège quand tu pars.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. C'est <strong>essentiel</strong> : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
 
 <h2>Quand le faire ?</h2>
-<p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement, ou dans les <strong>15 premiers jours</strong>.</p>
+<p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement (quand il est encore vide), ou au plus tard pendant le <strong>premier mois d'occupation</strong>.</p>
 
 <h2>À faire</h2>
 <ul>
@@ -1093,7 +1082,7 @@ window.MA_CONTENT = (function () {
   <li>Garde un exemplaire chez toi.</li>
 </ul>
 
-<div class="callout warn"><div><strong>Pas d'état des lieux ?</strong>Tu es censé·e avoir reçu le bien dans le même état qu'à la sortie. Mais c'est risqué — exige toujours un état des lieux écrit.</div></div>
+<div class="callout warn"><div><strong>Pas d'état des lieux ?</strong>La loi présume alors que tu as reçu le logement dans l'état où il se trouve à ta sortie — le propriétaire ne peut en principe rien te réclamer. Mais exige quand même un état des lieux écrit : il évite les conflits et protège les deux parties.</div></div>
 
 <p>Pendant ton occupation, le propriétaire <strong>n'a pas le droit d'entrer chez toi</strong> sans rendez-vous.</p>
 `
@@ -1124,9 +1113,9 @@ window.MA_CONTENT = (function () {
           id: "assurance-habitation",
           title: "L'assurance habitation",
           summary: "Pourquoi en prendre une, ce qu'elle couvre, comment choisir.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
-<p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). C'est généralement <strong>obligatoire</strong> dans le bail, et c'est ta protection si quelque chose tourne mal.</p>
+<p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). En Wallonie, c'est <strong>obligatoire par la loi</strong> (décret de 2018) — et c'est ta protection si quelque chose tourne mal.</p>
 
 <h2>Ce qu'elle couvre</h2>
 <ul>
@@ -1170,7 +1159,7 @@ window.MA_CONTENT = (function () {
           id: "aides",
           title: "Les aides au logement",
           summary: "Qui contacter, à quoi tu as droit.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
 
@@ -1181,11 +1170,8 @@ window.MA_CONTENT = (function () {
   <li><strong>Aide au loyer</strong> : possible selon ta situation.</li>
 </ul>
 
-<h2>L'allocation déménagement (ADIL)</h2>
-<p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou trop petit pour un meilleur. À demander à la Région wallonne.</p>
-
-<h2>L'allocation loyer</h2>
-<p>Pour les locataires d'un logement privé inscrits sur la liste d'attente d'un logement social. Conditions strictes.</p>
+<h2>L'ADeL (Allocation de Déménagement et de Loyer)</h2>
+<p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou inadapté pour un meilleur : une <strong>allocation de déménagement</strong> (environ 400 €) et une <strong>allocation de loyer</strong> mensuelle (jusqu'à ~100 €/mois). Conditions de revenus strictes. À demander à la Région wallonne via <a href="https://www.wallonie.be/fr/demarches/obtenir-une-allocation-de-demenagement-et-de-loyer-adel" target="_blank" rel="noopener">wallonie.be</a>.</p>
 
 <h2>Le service Droit des Jeunes</h2>
 <p>Gratuit, confidentiel : ils t'aident à comprendre tes droits et à monter ton dossier. À contacter dès le début.</p>
@@ -1235,7 +1221,7 @@ window.MA_CONTENT = (function () {
 
 <h2>À vérifier avant de signer le bail</h2>
 <ul>
-  <li><strong>EPB</strong> (performance énergétique) du logement — si c'est mauvais (F ou G), ta facture explosera.</li>
+  <li><strong>PEB</strong> (performance énergétique du bâtiment) — si c'est mauvais (F ou G), ta facture explosera.</li>
   <li>Type de chauffage (gaz, mazout, électrique, pompe à chaleur).</li>
   <li>Compteur intelligent ou pas (impacte les tarifs heures pleines/creuses).</li>
 </ul>
@@ -1434,7 +1420,7 @@ window.MA_CONTENT = (function () {
           id: "permis-conduire",
           title: "Le permis de conduire (B)",
           summary: "Théorique, pratique, filières, coût en Wallonie 2026.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
 
@@ -1453,7 +1439,7 @@ window.MA_CONTENT = (function () {
 <h3>Filière libre (M36)</h3>
 <ul>
   <li>Tu apprends avec un·e <strong>guide</strong> (parent, ami·e, etc., qui a son permis depuis ≥ 8 ans).</li>
-  <li>Obligatoire : <strong>rendez-vous pédagogique de 3 heures</strong> avec ton·ta guide avant de commencer.</li>
+  <li>Obligatoire : <strong>rendez-vous pédagogique d'1 heure</strong> avec ton·ta guide avant de commencer (en présentiel ou en e-learning via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>).</li>
   <li>Stage minimum 3 mois avant l'examen pratique.</li>
   <li>Coût total estimé : <strong>150 à 250 €</strong> (examens + RDV pédago).</li>
 </ul>
@@ -1511,12 +1497,12 @@ window.MA_CONTENT = (function () {
 <h2>Permis de conduire</h2>
 <p>Voir la fiche dédiée <a href="#/fiche/vie/permis-conduire">Le permis de conduire (B)</a> pour toutes les étapes (théorique, pratique, filières, coût) et les aides possibles via le CPAS.</p>
 
-<div class="callout tip"><div><strong>Tarif social transport</strong>Si tu touches le RIS du CPAS, l'abonnement TEC est gratuit (et non plus 12 €). Demande à ton·ta assistant·e social·e au CPAS.</div></div>
+<div class="callout tip"><div><strong>Tarif social transport</strong>Si tu es <strong>BIM</strong> (intervention majorée — souvent le cas si tu touches le RIS), l'abonnement TEC Horizon+ est <strong>gratuit</strong> (seuls les frais de carte restent). Vérifie ton statut BIM auprès de ta mutuelle, puis demande l'abonnement au TEC.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
   <li><a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a> — abonnements TEC et tarifs jeunes</li>
-  <li><a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> — Go Pass et abonnements SNCB</li>
+  <li><a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> — offres jeunes et abonnements SNCB</li>
 </ul>
 `
         },
@@ -1903,15 +1889,21 @@ Rue du Commerce 10
           id: "pass-jeune",
           title: "Pass Jeune et réductions culturelles",
           summary: "Des réductions sur la culture, le sport et les loisirs pour les moins de 26 ans.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>En Belgique, plusieurs passes et réductions existent spécialement pour les jeunes. Tu n'as pas toujours besoin d'un revenu élevé pour profiter de la culture et des activités.</p>
 
-<h2>Le Pass Partout (Wallonie)</h2>
-<p>Si tu as moins de 26 ans et peu de revenus, tu peux avoir droit au <strong>Pass Partout</strong> : réductions sur les activités sportives, culturelles et de loisirs dans ta commune.</p>
+<h2>L'aide du CPAS pour la culture et le sport</h2>
+<p>Le CPAS peut financer ta <strong>participation sociale, culturelle et sportive</strong> : inscription à un club, stage, abonnement, matériel… Cette aide existe dans la plupart des CPAS et ne se limite pas aux personnes au RIS.</p>
 <ul>
-  <li>Renseigne-toi auprès de ton CPAS ou de ta commune.</li>
-  <li>Certaines communes ont leur propre Pass Jeune — demande à l'accueil communal.</li>
+  <li>Demande à ton·ta assistant·e social·e ou à l'accueil de ton CPAS.</li>
+  <li>Certaines communes ont aussi leurs propres chèques sport ou réductions jeunes — demande à l'accueil communal.</li>
+</ul>
+
+<h2>La Carte Jeunes européenne</h2>
+<p>Si tu as <strong>moins de 31 ans</strong>, la <strong>Carte Jeunes</strong> (12 à 15 €/an) donne des réductions sur des spectacles, loisirs, boutiques et voyages, en Belgique et dans plus de 30 pays européens.</p>
+<ul>
+  <li>Commande en ligne : <a href="https://cartejeunes.be" target="_blank" rel="noopener">cartejeunes.be</a></li>
 </ul>
 
 <h2>Article 27 — culture à 1,25 €</h2>
@@ -1921,13 +1913,14 @@ Rue du Commerce 10
   <li>Plus d'infos : <a href="https://www.article27.be" target="_blank" rel="noopener">article27.be</a></li>
 </ul>
 
-<h2>Musées gratuits</h2>
-<p>Beaucoup de musées sont <strong>gratuits pour les moins de 26 ans</strong>, notamment les musées fédéraux belges (Beaux-Arts, Sciences naturelles, Instruments de musique, Africa Museum…).</p>
+<h2>Musées pas chers (ou gratuits certains jours)</h2>
+<p>Les grands musées fédéraux (Beaux-Arts, Sciences naturelles, Instruments de musique, Africa Museum…) proposent un <strong>tarif réduit pour les moins de 26 ans</strong>, et beaucoup sont <strong>gratuits le 1er mercredi du mois après-midi</strong>.</p>
 <ul>
-  <li>Vérifie toujours sur le site du musée avant de te déplacer.</li>
+  <li>Avec Article 27, l'entrée tombe à 1,25 € dans les musées partenaires.</li>
+  <li>Vérifie toujours les tarifs sur le site du musée avant de te déplacer.</li>
 </ul>
 
-<div class="callout tip"><div><strong>Combiner les réductions</strong>Article 27 + maison de jeunes + Pass Partout = tu peux accéder à énormément d'activités pour quelques euros par mois. Demande à ton AMO ou ton CPAS de t'aider à activer ces dispositifs.</div></div>
+<div class="callout tip"><div><strong>Combiner les réductions</strong>Article 27 + maison de jeunes + aide du CPAS = tu peux accéder à énormément d'activités pour quelques euros par mois. Demande à ton AMO ou ton CPAS de t'aider à activer ces dispositifs.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
@@ -1967,7 +1960,7 @@ Rue du Commerce 10
           id: "sport",
           title: "Sport — trouver une activité",
           summary: "S'inscrire dans un club, trouver une salle, pratiquer sans se ruiner.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Le sport, c'est bon pour la tête autant que pour le corps. Et ça ne doit pas forcément coûter cher.</p>
 
@@ -1980,7 +1973,8 @@ Rue du Commerce 10
 
 <h2>Réductions pour les jeunes en difficulté</h2>
 <ul>
-  <li>Le <strong>Pass Partout</strong> (si disponible dans ta commune) couvre parfois les inscriptions sportives.</li>
+  <li>Le <strong>CPAS</strong> peut prendre en charge ton inscription à un club via l'aide à la participation sociale, culturelle et sportive — demande à ton·ta assistant·e social·e.</li>
+  <li><strong>Ta mutuelle rembourse</strong> souvent une partie de ta cotisation sportive (« avantage sport ») — demande-lui le formulaire.</li>
   <li>Certains clubs acceptent des paiements en plusieurs fois — demande directement.</li>
   <li>Renseigne-toi auprès du <strong>service jeunesse de ta commune</strong> pour des activités sportives organisées.</li>
 </ul>
@@ -2041,12 +2035,12 @@ Rue du Commerce 10
           id: "parler-sans-appeler",
           title: "Parler sans appeler",
           summary: "Chat, e-mail, RDV en personne — tu choisis le canal.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Tu as besoin de parler mais l'idée de téléphoner te bloque ? <strong>C'est normal.</strong> Beaucoup de jeunes vivent ça. Voici d'autres façons de demander de l'aide.</p>
 
-<h2>Le chat 103 (moins de 20 ans)</h2>
-<p>Le <strong>103</strong> propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
+<h2>Le chat 103 (enfants et ados)</h2>
+<p>Le <strong>103</strong> (Écoute-Enfants) propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
 <ul>
   <li>Site : <a href="https://www.103ecoute.be" target="_blank" rel="noopener">103ecoute.be</a></li>
 </ul>
@@ -2222,7 +2216,7 @@ Rue du Commerce 10
 </ul>
 
 <h2>C'est gratuit ou peu cher</h2>
-<p>Les tarifs sont adaptés à tes revenus. Pour les jeunes, <strong>c'est souvent gratuit</strong>.</p>
+<p>L'<strong>accueil et l'écoute sont gratuits</strong>. Les consultations sont à petit prix, adapté à tes revenus. Et bonne nouvelle : la <strong>contraception est gratuite jusqu'à 25 ans</strong> (remboursement INAMI), et la <strong>pilule du lendemain est gratuite</strong> pour toutes, sans limite d'âge.</p>
 
 <h2>C'est confidentiel</h2>
 <p>Le secret professionnel est total. Personne ne saura que tu y as été — même pas tes parents si tu ne veux pas.</p>
@@ -2268,7 +2262,7 @@ Rue du Commerce 10
 
 <h2>Écoute et soutien moral</h2>
 <ul>
-  <li><strong>103</strong> — Écoute Enfants Ado (jusqu'à 20 ans). Gratuit, anonyme, 7j/7.</li>
+  <li><strong>103</strong> — Écoute-Enfants (enfants et ados). Gratuit, anonyme, tous les jours de 10h à minuit.</li>
   <li><strong>107</strong> — Télé-Accueil. Pour parler à quelqu'un quand ça ne va pas, 24/7.</li>
   <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>. Gratuit, 24/7.</li>
 </ul>
@@ -2330,7 +2324,7 @@ Rue du Commerce 10
 <ul>
   <li><strong>107 (Télé-Accueil)</strong> : pour parler à quelqu'un, à toute heure.</li>
   <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>.</li>
-  <li><strong>103</strong> si tu as moins de 20 ans.</li>
+  <li><strong>103</strong> (Écoute-Enfants) si tu es ado ou jeune — tous les jours de 10h à minuit.</li>
   <li>Une AMO ou un planning familial : tu peux y aller librement.</li>
 </ul>
 

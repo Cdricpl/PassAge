@@ -30,7 +30,7 @@ sections:
   - id: recherche
     title: "Trouver un logement"
     summary: "Où chercher et quoi demander en visite."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Cherche large et compare. Voici comment.</p>
       
@@ -61,12 +61,12 @@ sections:
         <li><a href="#/fiche/logement/bail">Le contrat de bail</a> — ce qu'il doit contenir avant de signer.</li>
         <li><a href="#/fiche/logement/garantie">La garantie locative</a> — comment la financer si tu n'as pas l'argent.</li>
         <li><a href="#/fiche/logement/etat-des-lieux">L'état des lieux</a> — indispensable à l'entrée.</li>
-        <li><a href="#/fiche/logement/aides">Les aides au logement</a> — CPAS, ADIL, allocation loyer.</li>
+        <li><a href="#/fiche/logement/aides">Les aides au logement</a> — CPAS, ADeL (allocation de déménagement et de loyer).</li>
       </ul>
   - id: bail
     title: "Le contrat de bail"
     summary: "Ce qu'il doit contenir, comment le vérifier."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
       
@@ -87,7 +87,7 @@ sections:
       
       <h2>Durée du bail</h2>
       <ul>
-        <li>1 an, 3 ans ou 9 ans : c'est la loi.</li>
+        <li>En Wallonie : <strong>9 ans</strong> par défaut, ou <strong>courte durée</strong> (3 ans maximum). Il existe aussi un <strong>bail étudiant</strong> spécifique.</li>
         <li>Si tu veux partir, tu dois donner ton <strong>préavis par lettre recommandée</strong> — voir <a href="#/fiche/vie/courrier">Écrire une lettre et l'envoyer</a>.</li>
         <li>Le délai commence le <strong>1er du mois suivant</strong> l'envoi du recommandé.</li>
       </ul>
@@ -102,12 +102,12 @@ sections:
   - id: etat-des-lieux
     title: "L'état des lieux"
     summary: "Le document qui te protège quand tu pars."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. C'est <strong>essentiel</strong> : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
       
       <h2>Quand le faire ?</h2>
-      <p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement, ou dans les <strong>15 premiers jours</strong>.</p>
+      <p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement (quand il est encore vide), ou au plus tard pendant le <strong>premier mois d'occupation</strong>.</p>
       
       <h2>À faire</h2>
       <ul>
@@ -117,7 +117,7 @@ sections:
         <li>Garde un exemplaire chez toi.</li>
       </ul>
       
-      <div class="callout warn"><div><strong>Pas d'état des lieux ?</strong>Tu es censé·e avoir reçu le bien dans le même état qu'à la sortie. Mais c'est risqué — exige toujours un état des lieux écrit.</div></div>
+      <div class="callout warn"><div><strong>Pas d'état des lieux ?</strong>La loi présume alors que tu as reçu le logement dans l'état où il se trouve à ta sortie — le propriétaire ne peut en principe rien te réclamer. Mais exige quand même un état des lieux écrit : il évite les conflits et protège les deux parties.</div></div>
       
       <p>Pendant ton occupation, le propriétaire <strong>n'a pas le droit d'entrer chez toi</strong> sans rendez-vous.</p>
   - id: garantie
@@ -142,9 +142,9 @@ sections:
   - id: assurance-habitation
     title: "L'assurance habitation"
     summary: "Pourquoi en prendre une, ce qu'elle couvre, comment choisir."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
-      <p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). C'est généralement <strong>obligatoire</strong> dans le bail, et c'est ta protection si quelque chose tourne mal.</p>
+      <p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). En Wallonie, c'est <strong>obligatoire par la loi</strong> (décret de 2018) — et c'est ta protection si quelque chose tourne mal.</p>
       
       <h2>Ce qu'elle couvre</h2>
       <ul>
@@ -185,7 +185,7 @@ sections:
   - id: aides
     title: "Les aides au logement"
     summary: "Qui contacter, à quoi tu as droit."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
       
@@ -196,11 +196,8 @@ sections:
         <li><strong>Aide au loyer</strong> : possible selon ta situation.</li>
       </ul>
       
-      <h2>L'allocation déménagement (ADIL)</h2>
-      <p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou trop petit pour un meilleur. À demander à la Région wallonne.</p>
-      
-      <h2>L'allocation loyer</h2>
-      <p>Pour les locataires d'un logement privé inscrits sur la liste d'attente d'un logement social. Conditions strictes.</p>
+      <h2>L'ADeL (Allocation de Déménagement et de Loyer)</h2>
+      <p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou inadapté pour un meilleur : une <strong>allocation de déménagement</strong> (environ 400 €) et une <strong>allocation de loyer</strong> mensuelle (jusqu'à ~100 €/mois). Conditions de revenus strictes. À demander à la Région wallonne via <a href="https://www.wallonie.be/fr/demarches/obtenir-une-allocation-de-demenagement-et-de-loyer-adel" target="_blank" rel="noopener">wallonie.be</a>.</p>
       
       <h2>Le service Droit des Jeunes</h2>
       <p>Gratuit, confidentiel : ils t'aident à comprendre tes droits et à monter ton dossier. À contacter dès le début.</p>
@@ -247,7 +244,7 @@ sections:
       
       <h2>À vérifier avant de signer le bail</h2>
       <ul>
-        <li><strong>EPB</strong> (performance énergétique) du logement — si c'est mauvais (F ou G), ta facture explosera.</li>
+        <li><strong>PEB</strong> (performance énergétique du bâtiment) — si c'est mauvais (F ou G), ta facture explosera.</li>
         <li>Type de chauffage (gaz, mazout, électrique, pompe à chaleur).</li>
         <li>Compteur intelligent ou pas (impacte les tarifs heures pleines/creuses).</li>
       </ul>

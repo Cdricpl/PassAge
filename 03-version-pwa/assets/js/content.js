@@ -304,7 +304,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Démarches à faire</h2>
 <ol class="fiche-ol">
-  <li>Communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://my.famiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
+  <li>Communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://www.myfamiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
   <li>Si tu déménages : signale ton <strong>changement d'adresse</strong>.</li>
   <li>Si tu es aux études : tu n'as souvent rien à faire — l'info est transmise par ton école.</li>
 </ol>
@@ -1257,7 +1257,7 @@ window.MA_CONTENT = (function () {
 <p>Les offres bougent souvent. Avant de signer, compare sur :</p>
 <ul>
   <li><a href="https://www.mesfournisseurs.be/mobile/" target="_blank" rel="noopener">mesfournisseurs.be</a> — comparateur indépendant GSM</li>
-  <li><a href="https://www.bestetarif.be" target="_blank" rel="noopener">bestetarif.be</a> — comparateur officiel BIPT (téléphonie + internet)</li>
+  <li><a href="https://www.meilleurtarif.be" target="_blank" rel="noopener">meilleurtarif.be</a> — comparateur officiel BIPT (téléphonie + internet)</li>
 </ul>
 
 <h2>Le tarif social internet (19 €/mois)</h2>
@@ -1279,7 +1279,7 @@ window.MA_CONTENT = (function () {
 <h2>Pour aller plus loin</h2>
 <ul>
   <li><a href="https://www.mesfournisseurs.be/mobile/" target="_blank" rel="noopener">mesfournisseurs.be</a> — comparateur GSM indépendant</li>
-  <li><a href="https://www.bestetarif.be" target="_blank" rel="noopener">bestetarif.be</a> — comparateur officiel BIPT</li>
+  <li><a href="https://www.meilleurtarif.be" target="_blank" rel="noopener">meilleurtarif.be</a> — comparateur officiel BIPT</li>
   <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a> — offre internet sociale à 19 €/mois si tu touches le RIS</li>
 </ul>
 `
@@ -1751,7 +1751,7 @@ Rue du Commerce 10
       color: "loisirs",
       icon: ICONS.leaf,
       objective: "Trouver des activités, profiter de la culture et du sport, souffler quand t'en as besoin — souvent gratuitement ou à petit prix.",
-      source: "article27.be · adeps.be · fdmj.org",
+      source: "article27.be · adeps.be · fmjbf.org",
       sections: [
         {
           id: "pass-jeune",
@@ -1811,7 +1811,7 @@ Rue du Commerce 10
 <ul>
   <li>Cherche "maison de jeunes" + ton nom de commune sur Google.</li>
   <li>Demande à ton CPAS, à une AMO, ou à Inforjeunes.</li>
-  <li>Site de la Fédération des Maisons de Jeunes : <a href="https://www.fdmj.org" target="_blank" rel="noopener">fdmj.org</a></li>
+  <li>Site de la Fédération des Maisons de Jeunes : <a href="https://fmjbf.org" target="_blank" rel="noopener">fmjbf.org</a></li>
 </ul>
 
 <div class="callout tip"><div><strong>Astuce</strong>Beaucoup de maisons de jeunes organisent des sorties (piscine, bowling, concerts) à prix très réduits. N'hésite pas à t'informer directement sur place.</div></div>

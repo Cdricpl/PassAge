@@ -471,6 +471,7 @@
 <datalist id="fichePaths"></datalist>
 
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
 <script>
 'use strict';
 
@@ -665,7 +666,7 @@ async function showDashboard() {
     grid.innerHTML = modules.map(m => `
       <div class="tile" data-color="${m.id}" onclick="loadModule('${m.id}')">
         <div class="tile-icon">${MODULE_ICONS[m.id] || '📄'}</div>
-        <div class="tile-title">${m.title}</div>
+        <div class="tile-title">${esc(m.title)}</div>
         ${m.data.subtitle ? `<div class="tile-sub">${esc(m.data.subtitle)}</div>` : ''}
         <div class="tile-count">${m.count} fiche${m.count > 1 ? 's' : ''}</div>
       </div>`).join('');
@@ -683,17 +684,19 @@ searchInput.addEventListener('input', () => {
   if (!q || !allModulesData) { searchResults.style.display = 'none'; return; }
   const hits = [];
   for (const m of allModulesData) {
-    for (const s of m.data.sections || []) {
+    const secs = m.data.sections || [];
+    for (let si = 0; si < secs.length; si++) {
+      const s = secs[si];
       const hay = `${s.title} ${s.summary} ${s.id}`.toLowerCase();
-      if (hay.includes(q)) hits.push({ moduleId: m.id, moduleTitle: m.title, section: s });
+      if (hay.includes(q)) hits.push({ moduleId: m.id, moduleTitle: m.title, section: s, sectionIdx: si });
     }
   }
   if (!hits.length) {
     searchResults.innerHTML = `<div class="search-empty">Aucune fiche pour « ${esc(searchInput.value)} »</div>`;
   } else {
-    searchResults.innerHTML = hits.slice(0, 12).map((h, i) => `
-      <div class="search-result" onclick="goToSearchResult('${h.moduleId}',${allModulesData.find(m=>m.id===h.moduleId).data.sections.indexOf(h.section)})">
-        <div class="search-result-mod">${h.moduleTitle}</div>
+    searchResults.innerHTML = hits.slice(0, 12).map(h => `
+      <div class="search-result" onclick="goToSearchResult('${h.moduleId}',${h.sectionIdx})">
+        <div class="search-result-mod">${esc(h.moduleTitle)}</div>
         <div class="search-result-title">${esc(h.section.title)}</div>
         <div class="search-result-summary">${esc(h.section.summary || '')}</div>
       </div>`).join('');
@@ -766,6 +769,10 @@ function renderSections() {
 
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+// Safe for onclick="fn('…')" inside double-quoted HTML attributes
+function attrJs(s) {
+  return esc(String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"));
 }
 
 async function moveSection(idx, dir) {
@@ -923,7 +930,7 @@ async function saveSection() {
 
   if (!id || !title || !summary) { setStatus('Les champs ID, Titre et Résumé sont obligatoires.', 'err'); return; }
   if (!/^[a-z0-9-]+$/.test(id)) { setStatus("L'ID ne doit contenir que des lettres minuscules, chiffres et tirets.", 'err'); return; }
-  if (currentSectionIdx === -1 && currentModuleData.sections.some(s => s.id === id)) {
+  if (currentModuleData.sections.some((s, i) => s.id === id && i !== currentSectionIdx)) {
     setStatus(`L'ID "${id}" existe déjà dans ce module.`, 'err'); return;
   }
 
@@ -941,6 +948,9 @@ async function saveSection() {
 
   const btn = document.getElementById('saveBtn');
   btn.disabled = true; btn.textContent = 'Enregistrement…';
+  const oldSection = currentSectionIdx !== -1
+    ? JSON.parse(JSON.stringify(currentModuleData.sections[currentSectionIdx]))
+    : null;
   try {
     if (currentSectionIdx === -1) currentModuleData.sections.push(section);
     else currentModuleData.sections[currentSectionIdx] = section;
@@ -957,6 +967,7 @@ async function saveSection() {
   } catch (err) {
     setStatus(`Erreur : ${err.message}`, 'err');
     if (currentSectionIdx === -1) currentModuleData.sections.pop();
+    else if (oldSection) currentModuleData.sections[currentSectionIdx] = oldSection;
   } finally {
     btn.disabled = false; btn.textContent = 'Enregistrer';
   }
@@ -1014,20 +1025,20 @@ function renderLexique(filter = '') {
     const rows = refs.map((r, i) => `
       <div class="lex-fiche-row">
         <span class="lex-fiche-path">${esc(r)}</span>
-        <button class="btn-danger btn-xs" onclick="removeLexRef('${esc(key)}',${i})">✕</button>
+        <button class="btn-danger btn-xs" onclick="removeLexRef('${attrJs(key)}',${i})">✕</button>
       </div>`).join('');
     return `
       <div class="lex-entry" id="lex-${esc(key)}">
-        <div class="lex-entry-header" onclick="toggleLexEntry('${esc(key)}')">
+        <div class="lex-entry-header" onclick="toggleLexEntry('${attrJs(key)}')">
           <span class="lex-keyword">${esc(key)}</span>
           <div class="lex-tags">${tags}</div>
-          <button class="btn-danger btn-xs" onclick="event.stopPropagation();deleteLexEntry('${esc(key)}')">Supprimer</button>
+          <button class="btn-danger btn-xs" onclick="event.stopPropagation();deleteLexEntry('${attrJs(key)}')">Supprimer</button>
         </div>
         <div class="lex-entry-body" id="lex-body-${esc(key)}">
           ${rows}
           <div class="lex-add-row">
             <input type="text" placeholder="module/fiche-id" id="lex-new-${esc(key)}" list="fichePaths">
-            <button class="btn-primary btn-xs" onclick="addLexRef('${esc(key)}')">+ Ajouter</button>
+            <button class="btn-primary btn-xs" onclick="addLexRef('${attrJs(key)}')">+ Ajouter</button>
           </div>
         </div>
       </div>`;
@@ -1121,8 +1132,8 @@ function refreshPreview(idx) {
   document.getElementById('previewModuleCrumb').textContent =
     (currentModuleData.title || MODULE_LABELS[currentModuleId]) + '  →  ' + (s.title || '(sans titre)');
   document.getElementById('previewTitle').textContent = s.title || '';
-  document.getElementById('previewBody').innerHTML = s.body ||
-    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : '');
+  document.getElementById('previewBody').innerHTML = DOMPurify.sanitize(s.body ||
+    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : ''));
   document.getElementById('previewSource').textContent = s.source || modSource || '—';
   document.getElementById('previewDate').textContent = s.lastChecked || '—';
   document.getElementById('previewDisclaimer').textContent =

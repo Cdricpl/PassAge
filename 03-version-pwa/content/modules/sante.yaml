@@ -17,12 +17,12 @@ sections:
   - id: parler-sans-appeler
     title: Parler sans appeler
     summary: Chat, e-mail, RDV en personne — tu choisis le canal.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>Tu as besoin de parler mais l'idée de téléphoner te bloque ? <strong>C'est normal.</strong> Beaucoup de jeunes vivent ça. Voici d'autres façons de demander de l'aide.</p>
 
-      <h2>Le chat 103 (moins de 20 ans)</h2>
-      <p>Le <strong>103</strong> propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
+      <h2>Le chat 103 (enfants et ados)</h2>
+      <p>Le <strong>103</strong> (Écoute-Enfants) propose un <strong>chat anonyme et gratuit</strong>, dispo plusieurs heures par jour. Tu écris, quelqu'un te répond. Pas de carte d'identité, pas de questions pièges.</p>
       <ul>
         <li>Site : <a href="https://www.103ecoute.be" target="_blank" rel="noopener">103ecoute.be</a></li>
       </ul>
@@ -95,7 +95,7 @@ sections:
   - id: convention-psy
     title: Voir un psy — gratuit avant 24 ans
     summary: La convention psy 1ère ligne — accessible et déstigmatisée.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>Voir un psy, c'est devenu vraiment accessible : grâce à la <strong>convention psychologique de 1ère ligne</strong> (INAMI), tu peux consulter un psy <strong>conventionné</strong> à des conditions très avantageuses.</p>
 
@@ -108,7 +108,7 @@ sections:
       </ul>
 
       <h2>Combien de séances&nbsp;?</h2>
-      <p>En général jusqu'à <strong>8 séances par an</strong> (en individuel). Souvent suffisant pour un coup de pouce, un cap difficile, un mal-être passager. Pour aller plus loin, ton·ta psy peut t'orienter vers un suivi plus long en 2e ligne (toujours conventionné).</p>
+      <p>Jusqu'à <strong>10 séances par an</strong> en individuel si tu as moins de 24 ans (<strong>8 séances</strong> à partir de 24 ans). Souvent suffisant pour un coup de pouce, un cap difficile, un mal-être passager. Pour aller plus loin, ton·ta psy peut t'orienter vers un suivi plus long en 2e ligne (toujours conventionné).</p>
 
       <h2>Pour qui&nbsp;?</h2>
       <ul>
@@ -119,7 +119,7 @@ sections:
 
       <h2>Comment commencer&nbsp;?</h2>
       <ol class="fiche-ol">
-        <li>Trouve un psy conventionné : <a href="https://www.psyforyou.be" target="_blank" rel="noopener">psyforyou.be</a> (annuaire officiel) ou <a href="https://psychologue-premiere-ligne.be" target="_blank" rel="noopener">psychologue-premiere-ligne.be</a>.</li>
+        <li>Trouve un psy conventionné : <a href="https://psychologue-premiere-ligne.be" target="_blank" rel="noopener">psychologue-premiere-ligne.be</a> (annuaire officiel).</li>
         <li>Tu peux y aller <strong>directement</strong> : <strong>pas besoin de prescription</strong> de ton médecin.</li>
         <li>Apporte simplement ta carte d'identité et ta <a href="#/fiche/admin/mutuelle">carte de mutuelle</a> au 1er RDV.</li>
         <li>Le paiement se fait en <strong>tiers payant</strong> : tu n'avances pas l'argent, tu paies juste ta part (ou rien si -24 ans).</li>
@@ -169,7 +169,7 @@ sections:
   - id: planning-familial
     title: Le planning familial
     summary: Contraception, IVG, écoute, conseil — gratuit pour les jeunes.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>Les <strong>centres de planning familial</strong> sont des lieux d'accueil, d'écoute et de soins liés à la vie affective et sexuelle. Beaucoup plus que de la contraception.</p>
 
@@ -183,12 +183,12 @@ sections:
       </ul>
 
       <h2>C'est gratuit ou peu cher</h2>
-      <p>Les tarifs sont adaptés à tes revenus. Pour les jeunes, <strong>c'est souvent gratuit</strong>.</p>
+      <p>L'<strong>accueil et l'écoute sont gratuits</strong>. Les consultations sont à petit prix, adapté à tes revenus. Et bonne nouvelle : la <strong>contraception est gratuite jusqu'à 25 ans</strong> (remboursement INAMI), et la <strong>pilule du lendemain est gratuite</strong> pour toutes, sans limite d'âge.</p>
 
       <h2>C'est confidentiel</h2>
       <p>Le secret professionnel est total. Personne ne saura que tu y as été — même pas tes parents si tu ne veux pas.</p>
 
-      <p>Trouver un centre près de chez toi : <a href="https://www.loveattitude.be" target="_blank" rel="noopener">loveattitude.be</a></p>
+      <p>Trouver un centre près de chez toi : <a href="https://www.monplanningfamilial.be" target="_blank" rel="noopener">monplanningfamilial.be</a></p>
   - id: lignes-ecoute
     title: Tous les numéros d'écoute
     summary: 112, 103, 107, prévention suicide, SOS Viol…

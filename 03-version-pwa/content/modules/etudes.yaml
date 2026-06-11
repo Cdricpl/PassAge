@@ -9,7 +9,7 @@ sections:
   - id: bourse
     title: "L'allocation d'études (bourse)"
     summary: "Une aide financière qui ne se rembourse pas, sous conditions de ressources."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>L'<strong>allocation d'études</strong>, aussi appelée <strong>bourse</strong>, est une aide versée par la Fédération Wallonie-Bruxelles aux élèves et étudiants dont les ressources familiales sont limitées.</p>
       
@@ -21,7 +21,7 @@ sections:
       </ul>
       
       <h2>Comment faire la demande ?</h2>
-      <p>Tout se passe sur le site officiel : <a href="https://aides-etudes.cfwb.be" target="_blank" rel="noopener">aides-etudes.cfwb.be</a></p>
+      <p>Tout se passe sur le site officiel : <a href="https://allocations-etudes.cfwb.be" target="_blank" rel="noopener">allocations-etudes.cfwb.be</a> (numéro gratuit : 0800 11 869). La demande se fait chaque année, en général <strong>entre juillet et fin octobre</strong>.</p>
       <p>Si tu galères avec le dossier, prends rendez-vous dans un centre <strong>Inforjeunes</strong> ou une <strong>AMO</strong> — c'est gratuit, ils ont l'habitude.</p>
   - id: service-social-ecole
     title: "Le service social de ton école"

@@ -299,7 +299,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
   <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
-  <li>Si tu interromps tes études : tu les gardes pendant <strong>360 jours</strong> de stage d'insertion (voir <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
+  <li>Si tu termines ou interromps tes études : tu peux les garder encore <strong>12 mois maximum</strong>. Attention, la règle change au <strong>1er juillet 2026</strong> : un nouveau statut « post-étudiant » remplace l'ancien système des 360 jours de stage d'insertion — vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
 
 <h2>Démarches à faire</h2>
@@ -800,7 +800,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Pendant le stage : à savoir</h2>
 <ul>
-  <li>Tu gardes le droit aux <strong>allocations familiales</strong> (jusqu'à 25 ans).</li>
+  <li>Tu gardes le droit aux <strong>allocations familiales</strong> pendant <strong>12 mois maximum</strong> après les études (jusqu'à 25 ans) — depuis le 1er juillet 2026, c'est le statut « post-étudiant » qui ouvre ce droit, plus la simple inscription comme demandeur·euse d'emploi. Vérifie auprès de FAMIWAL.</li>
   <li>Si tu n'as aucun revenu, demande le <strong>RIS au CPAS</strong> — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
   <li>En tant que jeune accueilli·e, ton statut donne droit au RIS sans enquête sur les parents.</li>
 </ul>

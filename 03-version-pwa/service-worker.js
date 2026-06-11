@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v-2026-06-11-2001';
+const VERSION = 'v-2026-06-11-2021';
 const SHELL_CACHE = `passage-shell-${VERSION}`;
 const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 
@@ -12,12 +12,13 @@ const SHELL_ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './assets/css/styles.css?v=2026-06-11-2001',
-  './assets/js/app.js?v=2026-06-11-2001',
-  './assets/js/content.js?v=2026-06-11-2001',
-  './assets/js/sw-register.js?v=2026-06-11-2001',
+  './assets/css/styles.css?v=2026-06-11-2021',
+  './assets/js/app.js?v=2026-06-11-2021',
+  './assets/js/content.js?v=2026-06-11-2021',
+  './assets/js/sw-register.js?v=2026-06-11-2021',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',
+  './assets/icons/logo-sfa.png',
   './assets/policy.html'
 ];
 
@@ -62,7 +63,7 @@ self.addEventListener('fetch', (event) => {
         .then(res => {
           if (res.ok) {
             const clone = res.clone();
-            caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+            event.waitUntil(caches.open(RUNTIME_CACHE).then(c => c.put(req, clone)));
           }
           return res;
         })
@@ -76,18 +77,20 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(req).then(cached => {
       if (cached) {
-        fetch(req).then(res => {
-          if (res.ok) caches.open(RUNTIME_CACHE).then(c => c.put(req, res.clone()));
-        }).catch(() => {});
+        event.waitUntil(
+          fetch(req).then(res => {
+            if (res.ok) return caches.open(RUNTIME_CACHE).then(c => c.put(req, res.clone()));
+          }).catch(() => {})
+        );
         return cached;
       }
       return fetch(req).then(res => {
         if (res.ok) {
           const clone = res.clone();
-          caches.open(RUNTIME_CACHE).then(c => c.put(req, clone));
+          event.waitUntil(caches.open(RUNTIME_CACHE).then(c => c.put(req, clone)));
         }
         return res;
-      }).catch(() => caches.match('./index.html'));
+      }).catch(() => Response.error()); // pas de fallback HTML pour une image/un script : mieux vaut un échec net
     })
   );
 });

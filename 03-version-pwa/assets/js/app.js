@@ -79,7 +79,10 @@
   };
 
   const Favs = {
-    all: () => Store.get('favorites', []),
+    all: () => {
+      const list = Store.get('favorites', []);
+      return Array.isArray(list) ? list : [];
+    },
     has: (id) => Favs.all().includes(id),
     toggle: (id) => {
       const list = Favs.all();
@@ -91,7 +94,10 @@
   };
 
   const Notes = {
-    all: () => Store.get('notes', {}),
+    all: () => {
+      const o = Store.get('notes', {});
+      return (o && typeof o === 'object' && !Array.isArray(o)) ? o : {};
+    },
     get: (id) => Notes.all()[id] || '',
     set: (id, text) => {
       const all = Notes.all();
@@ -103,7 +109,10 @@
   };
 
   const Contacts = {
-    all: () => Store.get('contacts', []),
+    all: () => {
+      const list = Store.get('contacts', []);
+      return Array.isArray(list) ? list : [];
+    },
     add: (c) => {
       const list = Contacts.all();
       list.push({ ...c, id: 'c-' + Date.now() });
@@ -111,6 +120,28 @@
     },
     remove: (id) => Store.set('contacts', Contacts.all().filter(c => c.id !== id))
   };
+
+  // Migration : les fiches déplacées (REDIRECTS) doivent emporter leurs
+  // favoris et notes vers leur nouveau chemin. Idempotente, relancée à
+  // chaque démarrage pour couvrir les redirections ajoutées plus tard.
+  (function migrateRedirectedPaths() {
+    if (!REDIRECTS) return;
+    const favs = Favs.all();
+    const migratedFavs = [...new Set(favs.map(p => REDIRECTS[p] || p))];
+    if (migratedFavs.join('\n') !== favs.join('\n')) Store.set('favorites', migratedFavs);
+
+    const notes = Notes.all();
+    let notesChanged = false;
+    Object.keys(notes).forEach(p => {
+      const target = REDIRECTS[p];
+      if (!target) return;
+      // On ne déplace pas par-dessus une note existante sur le nouveau chemin
+      if (!notes[target]) notes[target] = notes[p];
+      delete notes[p];
+      notesChanged = true;
+    });
+    if (notesChanged) Store.set('notes', notes);
+  })();
 
   const Profile = {
     getName: () => Store.get('profile.name', ''),
@@ -121,7 +152,10 @@
   };
 
   const Rappels = {
-    all: () => Store.get('rappels', []).sort((a, b) => (a.date || '').localeCompare(b.date || '')),
+    all: () => {
+      const list = Store.get('rappels', []);
+      return (Array.isArray(list) ? list : []).sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+    },
     add: (r) => {
       const list = Store.get('rappels', []);
       list.push({ ...r, id: 'r-' + Date.now() });
@@ -145,7 +179,10 @@
       m => `<a href="https://${m}" target="_blank" rel="noopener">${m}</a>`
     );
   };
-  const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  // Minuscules, sans accents, et apostrophes/tirets ramenés à des espaces :
+  // « pas d'argent » doit matcher l'entrée de lexique « pas d argent ».
+  const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/['’`-]+/g, ' ').replace(/\s+/g, ' ').trim();
   const formatDate = (iso) => {
     if (!iso) return '';
     const d = new Date(iso + 'T00:00');
@@ -802,10 +839,12 @@
     const segments = path.split('/').filter(Boolean);
     const params = {};
     (qs || '').split('&').forEach(p => {
-      const [k, v] = p.split('=');
+      const i = p.indexOf('=');
+      const k = i === -1 ? p : p.slice(0, i);
+      const v = i === -1 ? '' : p.slice(i + 1); // seul le 1er « = » sépare : « q=a=b » garde « a=b »
       if (!k) return;
-      try { params[k] = decodeURIComponent(v || ''); }
-      catch (_) { params[k] = v || ''; } // lien tronqué/mal collé : on garde la valeur brute plutôt que de crasher
+      try { params[k] = decodeURIComponent(v); }
+      catch (_) { params[k] = v; } // lien tronqué/mal collé : on garde la valeur brute plutôt que de crasher
     });
     return { segments, params };
   }
@@ -825,18 +864,28 @@
   };
 
   function route() {
+    // Le lien d'accessibilité « Aller au contenu » (#main) n'est pas une
+    // route : on déplace juste le focus sans toucher au rendu.
+    if (window.location.hash === '#main') {
+      main.focus();
+      return;
+    }
+
     const { segments, params } = parseRoute();
     const top = segments[0] || '';
     favToggleBtn.hidden = true;
 
     // Cas spécial : 1ère visite sur la home, le HTML statique est déjà rendu.
-    if (top === '' && main.dataset.staticHome === 'true') {
+    // Le test #homeDynamic couvre l'entrée par lien profond : le statique a
+    // alors déjà été remplacé et on doit re-rendre la home normalement.
+    if (top === '' && main.dataset.staticHome === 'true' && document.getElementById('homeDynamic')) {
       delete main.dataset.staticHome;
       enhanceStaticHome();
       setActiveNav('home');
       backBtn.hidden = true;
       return;
     }
+    delete main.dataset.staticHome;
 
     const r = ROUTES[top];
     if (r) {
@@ -872,7 +921,11 @@
   function updatePageMetadata() {
     const titleText = main.querySelector('h1, .page-title')?.textContent?.trim();
     document.title = titleText ? `${titleText} — Pass'âge` : 'Pass\'âge — Tu n\'es pas seul·e';
-    main.focus({ preventScroll: true });
+    // Si la page demande le focus sur un champ (ex. recherche), on le respecte
+    // au lieu de le voler avec main.focus().
+    const auto = main.querySelector('[autofocus]');
+    if (auto) auto.focus({ preventScroll: true });
+    else main.focus({ preventScroll: true });
   }
 
   // ============================================================

@@ -178,3 +178,9 @@ sections:
         <li><a href="https://avocats.be/fr/aide-juridique" target="_blank" rel="noopener">avocats.be — annuaire des BAJ et permanences</a></li>
         <li><a href="https://www.droitsquotidiens.be" target="_blank" rel="noopener">Droits Quotidiens</a> — explications juridiques en langage clair</li>
       </ul>
+  - id: test
+    title: Test
+    summary: Test déscription
+    source: test.be
+    lastChecked: 11/06/2026
+    body: <h2>Comment faire le test</h2><div><ul><li>Lire à voix haute</li><li>Lire ensemble</li></ul></div>

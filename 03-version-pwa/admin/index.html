@@ -101,7 +101,6 @@
     .tile-title { font-weight: 600; font-size: .9375rem; line-height: 1.25; }
     .tile-sub { font-size: .8125rem; color: var(--text-soft); line-height: 1.4; }
     .tile-count { font-size: .75rem; color: var(--muted); margin-top: 2px; }
-    .tile[data-color=majeur]  .tile-icon { background: var(--c-majeur-soft);  color: var(--c-majeur); }
     .tile[data-color=admin]   .tile-icon { background: var(--c-admin-soft);   color: #B58326; }
     .tile[data-color=argent]  .tile-icon { background: var(--c-argent-soft);  color: var(--c-argent); }
     .tile[data-color=etudes]  .tile-icon { background: var(--c-etudes-soft);  color: var(--c-travail); }
@@ -346,30 +345,8 @@
           <label>Résumé <span style="color:#E63946">*</span></label>
           <input id="fieldSummary" type="text" placeholder="Une phrase courte décrivant la fiche.">
         </div>
-        <div class="form-group">
-          <label>Sources de la fiche (optionnel)</label>
-          <input id="fieldSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
-          <div class="hint" id="sourceHint">Si rempli, remplace les sources générales du module pour cette fiche uniquement. Affiché en bas de la fiche.</div>
-        </div>
-        <div class="form-group">
-          <label>Avertissement légal (optionnel)</label>
-          <input id="fieldDisclaimer" type="text" placeholder="Laisser vide pour le message par défaut">
-          <div class="hint">Par défaut : <em>Cette fiche est un repère général. Elle ne remplace pas l'avis d'un service compétent.</em></div>
-        </div>
-        <div class="form-group">
-          <label>Vérifié le (optionnel)</label>
-          <div class="date-row">
-            <input id="fieldLastChecked" type="text" placeholder="09/06/2026">
-            <button type="button" onclick="setToday()" class="btn-ghost btn-sm">Aujourd'hui</button>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Redirection vers (optionnel)</label>
-          <input id="fieldLinkTo" type="text" placeholder="module/fiche-id  — laisser vide pour une fiche normale" list="fichePaths" oninput="updateLinkToMode()">
-          <div class="hint">Remplis uniquement si c'est un raccourci vers une autre fiche. Le contenu ci-dessous n'est alors pas nécessaire.</div>
-        </div>
         <!-- Rich text editor -->
-        <div class="form-group" id="bodySection">
+        <div class="form-group">
           <label>Contenu</label>
           <div class="editor-toolbar" id="editorToolbar">
             <button type="button" data-cmd="bold"><strong>Gras</strong></button>
@@ -390,9 +367,23 @@
           <div id="fieldBodyEditor" class="body-editor" contenteditable="true" spellcheck="true" data-placeholder="Commence à écrire le contenu de la fiche ici…"></div>
           <textarea id="fieldBody" class="body-textarea" style="display:none" rows="20"></textarea>
         </div>
+        <div class="form-group">
+          <label>Source (optionnel)</label>
+          <input id="fieldSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
+          <div class="hint" id="sourceHint">Si rempli, remplace les sources générales du module pour cette fiche uniquement.</div>
+        </div>
+        <div class="form-group">
+          <label>Dernière vérification (optionnel)</label>
+          <div class="date-row">
+            <input id="fieldLastChecked" type="text" placeholder="09/06/2026">
+            <button type="button" onclick="setToday()" class="btn-ghost btn-sm">Aujourd'hui</button>
+          </div>
+        </div>
+        <!-- Champs préservés mais non affichés -->
+        <input type="hidden" id="fieldDisclaimer">
+        <input type="hidden" id="fieldLinkTo">
         <div class="form-actions">
           <button type="button" onclick="cancelEdit()" class="btn-ghost">Annuler</button>
-          <a id="viewInAppBtn" href="#" target="_blank" class="btn-ghost" style="display:none">↗ Voir dans l'app</a>
           <button type="button" id="saveBtn" onclick="saveSection()" class="btn-primary">Enregistrer</button>
         </div>
         <div id="saveStatus" class="save-status"></div>
@@ -501,8 +492,15 @@ const MODULE_LABELS = {
   vie:'Vie quotidienne', loisirs:'Loisirs', sante:'Santé & bien-être', urgence:'Aide & urgences'
 };
 const MODULE_ICONS = {
-  admin:'📋', argent:'💰', etudes:'📚', travail:'💼',
-  logement:'🏠', vie:'🌿', loisirs:'🎨', sante:'❤️', urgence:'🆘'
+  admin:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z M14 3v5h5 M9 13h6 M9 17h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  argent:   '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M18 6a8 8 0 1 0 0 12 M5 10h10 M5 14h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  etudes:   '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M2 10l10-5 10 5-10 5-10-5z M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5 M22 10v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  travail:  '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 8h18l-1 12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 8z M8 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  logement: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+  vie:      '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 3h2l3 14h11l3-9H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.5" fill="currentColor"/><circle cx="18" cy="21" r="1.5" fill="currentColor"/></svg>',
+  loisirs:  '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sante:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  urgence:  '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>'
 };
 
 // ── State ───────────────────────────────────────────────────────────────────────
@@ -905,8 +903,6 @@ function populateEditor(s) {
   if (htmlMode) toggleHtml();
   setEditorHtml(s.body || '');
   clearDirty();
-  updateLinkToMode();
-  updateViewInAppLink();
 }
 
 function setToday() {
@@ -915,21 +911,6 @@ function setToday() {
     `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
 }
 
-function updateLinkToMode() {
-  const hasLinkTo = document.getElementById('fieldLinkTo').value.trim() !== '';
-  document.getElementById('bodySection').style.display = hasLinkTo ? 'none' : '';
-}
-
-function updateViewInAppLink() {
-  const id = document.getElementById('fieldId').value.trim();
-  const btn = document.getElementById('viewInAppBtn');
-  if (id && currentModuleId && currentSectionIdx !== -1) {
-    btn.href = `https://cdricpl.github.io/PassAge/#/fiche/${currentModuleId}/${id}`;
-    btn.style.display = '';
-  } else {
-    btn.style.display = 'none';
-  }
-}
 
 function updateFicheDatalist() {
   const dl = document.getElementById('fichePaths');
@@ -970,7 +951,7 @@ async function saveSection() {
   if (disclaimer)  section.disclaimer  = disclaimer;
   if (lastChecked) section.lastChecked = lastChecked;
   if (linkTo)      section.linkTo      = linkTo;
-  else if (body)   section.body        = body;
+  if (body)        section.body        = body;
 
   const btn = document.getElementById('saveBtn');
   btn.disabled = true; btn.textContent = 'Enregistrement…';
@@ -1177,7 +1158,6 @@ async function deleteSectionFromPreview() {
 
 // ── Init event listeners (once) ─────────────────────────────────────────────────
 document.getElementById('sectionForm').addEventListener('input', markDirty);
-document.getElementById('fieldId').addEventListener('input', updateViewInAppLink);
 document.getElementById('moduleMetaForm').addEventListener('input', () => {
   isMetaDirty = true;
   document.getElementById('metaDirtyIndicator').style.display = '';

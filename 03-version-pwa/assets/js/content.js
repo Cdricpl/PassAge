@@ -425,7 +425,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li><strong>30 Mbps</strong> minimum de débit.</li>
   <li><strong>150 Go</strong> de téléchargement inclus.</li>
-  <li>Disponible chez <strong>Proximus</strong>, <strong>VOO</strong> (Wallonie), parfois <strong>Orange</strong> selon zones.</li>
+  <li>Disponible chez <strong>Proximus</strong>, <strong>VOO</strong> (Wallonie) et <strong>Telenet/BASE</strong>.</li>
 </ul>
 <p>Demande directement à l'opérateur, ou vérifie ton éligibilité via le <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a>.</p>
 
@@ -1261,7 +1261,7 @@ window.MA_CONTENT = (function () {
 <h2>Le tarif social internet (19 €/mois)</h2>
 <p>Si tu touches le RIS, l'aide sociale du CPAS, ou la GRAPA, tu as droit à l'<strong>offre internet sociale</strong> : <strong>19 € par mois maximum</strong>, vitesse minimum 30 Mbps, 150 Go inclus.</p>
 <ul>
-  <li>Disponible chez Proximus, Orange (sous certaines conditions), VOO (Wallonie).</li>
+  <li>Disponible chez Proximus, Telenet/BASE et VOO (Wallonie).</li>
   <li>Demande à l'opérateur ou via <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">le SPF Économie</a>.</li>
 </ul>
 
@@ -1346,7 +1346,7 @@ window.MA_CONTENT = (function () {
 
 <h2>SNCB — trains</h2>
 <ul>
-  <li><strong>Go Pass</strong> : pour les -26 ans. 10 trajets simples sur la Belgique pour ~60 €.</li>
+  <li><strong>Offres jeunes SNCB (-26 ans)</strong> : la SNCB propose régulièrement des produits à tarif réduit (trajets groupés, abonnements). Les offres et prix changent — consulte <a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a> pour les formules actuelles.</li>
   <li><strong>Pass étudiant</strong> : abonnement scolaire entre la gare la plus proche de chez toi et celle de ton école/fac.</li>
   <li>Simulateur tarif et achat : <a href="https://www.belgiantrain.be" target="_blank" rel="noopener">belgiantrain.be</a></li>
 </ul>
@@ -1631,8 +1631,8 @@ Rue du Commerce 10
 
 <h2>3. Choisir le bon type d'envoi</h2>
 <ul>
-  <li><strong>Lettre standard (Prior / Non Prior)</strong> : pour un courrier ordinaire. <strong>Prior</strong> arrive le lendemain ouvrable, <strong>Non Prior</strong> en 3 jours. Coût : ~1,20 € à 1,50 € (format standard, jusqu'à 50 g).</li>
-  <li><strong>Lettre recommandée</strong> : indispensable quand tu dois <strong>prouver que tu as envoyé</strong> quelque chose (préavis de bail, résiliation de contrat, réclamation…). Le facteur fait signer le destinataire. Coût : ~8 à 10 € (recommandé simple avec accusé de réception).</li>
+  <li><strong>Lettre standard (Prior / Non Prior)</strong> : pour un courrier ordinaire. <strong>Prior</strong> arrive le lendemain ouvrable, <strong>Non Prior</strong> en 2–3 jours. Coût en 2026 : environ <strong>2,50 € (Prior)</strong> pour un format standard jusqu'à 50 g. Vérifie les tarifs actuels sur <a href="https://www.bpost.be/fr/envoyer/lettres-et-cartes" target="_blank" rel="noopener">bpost.be</a>.</li>
+  <li><strong>Lettre recommandée</strong> : indispensable quand tu dois <strong>prouver que tu as envoyé</strong> quelque chose (préavis de bail, résiliation de contrat, réclamation…). Le facteur fait signer le destinataire. Coût en 2026 : <strong>~10 à 12 €</strong> (recommandé simple avec accusé de réception).</li>
   <li><strong>Recommandé avec accusé de réception (AR)</strong> : tu reçois une carte signée par le destinataire = preuve de réception.</li>
 </ul>
 
@@ -2135,7 +2135,7 @@ Rue du Commerce 10
 <h2>Addiction</h2>
 <ul>
   <li><strong>Infor-Drogues : 02 227 52 52</strong>. Anonyme, gratuit.</li>
-  <li><strong>Aide Alcool : 0800 358 88</strong>.</li>
+  <li><strong>Infor-Drogues</strong> (alcool inclus) : 02 227 52 52. Voir aussi <a href="https://www.aide-alcool.be" target="_blank" rel="noopener">aide-alcool.be</a>.</li>
 </ul>
 `
         },
@@ -2189,7 +2189,7 @@ Rue du Commerce 10
 <h2>Voir un·e professionnel·le</h2>
 <ul>
   <li><strong>Ton médecin traitant</strong> peut t'orienter et prescrire un suivi psy.</li>
-  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e à <strong>11 €</strong> la séance (4 € si BIM). Demande à ton médecin.</li>
+  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e. <strong>Gratuit si tu as moins de 24 ans</strong> (11 € si 24+, 4 € si BIM). Demande à ton médecin.</li>
   <li>Le <strong>service de santé mentale</strong> de ta région.</li>
 </ul>
 
@@ -2361,8 +2361,8 @@ Rue du Commerce 10
     "étranger": ["admin/voyager"],
     "vacances": ["admin/voyager"],
     "commune": ["admin/documents", "logement/changement-adresse"],
-    "permis": ["vie/transport"],
-    "permis de conduire": ["vie/transport"],
+    "permis": ["vie/permis-conduire", "vie/transport"],
+    "permis de conduire": ["vie/permis-conduire", "vie/transport"],
     "casier judiciaire": ["admin/documents"],
     "rc familiale": ["admin/rc-familiale"],
     "responsabilite": ["admin/rc-familiale"],

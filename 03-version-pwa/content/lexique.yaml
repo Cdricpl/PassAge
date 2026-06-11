@@ -332,8 +332,10 @@
   - admin/documents
   - logement/changement-adresse
 "permis":
+  - vie/permis-conduire
   - vie/transport
 "permis de conduire":
+  - vie/permis-conduire
   - vie/transport
 "casier judiciaire":
   - admin/documents

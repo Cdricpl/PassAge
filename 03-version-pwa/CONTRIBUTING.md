@@ -148,6 +148,20 @@ Pour lier vers un module entier :
 3. Le site est déployé sur GitHub Pages en quelques minutes
 4. Vérifie ta fiche sur le site déployé
 
+### Validation automatique
+
+Le build **vérifie le contenu avant de générer** et échoue (avec la liste
+des erreurs) si :
+
+- une balise HTML n'est pas fermée (`<ul>` sans `</ul>`…)
+- un lien interne `#/fiche/module/id` ou un `linkTo` pointe vers une fiche inexistante
+- une entrée du lexique pointe vers un chemin invalide
+- l'icône ou la couleur d'un module est inconnue
+- `id`, `title` ou `summary` manque sur une section
+
+Si le build GitHub Actions échoue après ton commit, ouvre les logs de
+l'action : la liste des erreurs t'indique exactement quoi corriger.
+
 Pour tester en local :
 ```bash
 cd 03-version-pwa

@@ -846,7 +846,7 @@ window.MA_CONTENT = (function () {
 <div class="callout warn"><div><strong>Attention</strong>Si tu travailles, ton <a href="#/fiche/argent/ris-cpas">RIS du CPAS</a> peut être réduit ce mois-là. Une exonération existe (différente si tu es boursier·ère ou non) — demande à ton·ta assistant·e social·e avant de signer.</div></div>
 
 <h2>Côté impôts</h2>
-<p>Si tu gagnes plus que la quotité exemptée d'impôt sur l'année, tu devras déclarer tes revenus. Voir <a href="#/fiche/majeur/impots">La déclaration d'impôts</a>. À ton âge, tu n'as souvent rien à payer.</p>
+<p>Si tu gagnes plus que la quotité exemptée d'impôt sur l'année, tu devras déclarer tes revenus via <a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a>. À ton âge, tu n'as souvent rien à payer.</p>
 
 <h2>Pour aller plus loin</h2>
 <ul>

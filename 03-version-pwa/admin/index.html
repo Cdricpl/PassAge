@@ -511,6 +511,7 @@ let currentLexiqueSha = null;
 let deployPollTimer   = null;
 let viewHistory       = [];
 let isMetaDirty       = false;
+let commitBusy        = false;
 
 // ── GitHub API ──────────────────────────────────────────────────────────────────
 async function ghGet(path) {
@@ -775,24 +776,45 @@ function attrJs(s) {
   return esc(String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"));
 }
 
+// Empêche deux commits simultanés (double-clic ↑/↓ → conflit de sha GitHub)
+function commitGuard() {
+  if (commitBusy) { toast('Sauvegarde en cours, patiente une seconde…', 'warn'); return false; }
+  return true;
+}
+
 async function moveSection(idx, dir) {
+  if (!commitGuard()) return;
   const secs = currentModuleData.sections;
   const j = idx + dir;
   if (j < 0 || j >= secs.length) return;
   [secs[idx], secs[j]] = [secs[j], secs[idx]];
   renderSections();
-  await commitModule(`content(${currentModuleId}): réorganisation`);
+  try {
+    await commitModule(`content(${currentModuleId}): réorganisation`);
+  } catch (err) {
+    [secs[idx], secs[j]] = [secs[j], secs[idx]];
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 async function deleteSection(idx) {
+  if (!commitGuard()) return;
   const s = currentModuleData.sections[idx];
   if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
   currentModuleData.sections.splice(idx, 1);
   renderSections();
-  await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  try {
+    await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  } catch (err) {
+    currentModuleData.sections.splice(idx, 0, s);
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 async function duplicateSection(idx) {
+  if (!commitGuard()) return;
   const orig = currentModuleData.sections[idx];
   const copy = JSON.parse(JSON.stringify(orig));
   copy.id = `${orig.id}-copie`;
@@ -804,8 +826,14 @@ async function duplicateSection(idx) {
   copy.title = `${orig.title} (copie)`;
   currentModuleData.sections.splice(idx + 1, 0, copy);
   renderSections();
-  await commitModule(`content(${currentModuleId}): duplication de "${orig.id}"`);
-  toast(`Fiche dupliquée : "${copy.id}"`);
+  try {
+    await commitModule(`content(${currentModuleId}): duplication de "${orig.id}"`);
+    toast(`Fiche dupliquée : "${copy.id}"`);
+  } catch (err) {
+    currentModuleData.sections.splice(idx + 1, 1);
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 // ── Module metadata ─────────────────────────────────────────────────────────────
@@ -959,10 +987,11 @@ async function saveSection() {
     clearDirty();
     setStatus('Enregistré ✓', 'ok');
     const prevView = viewHistory[viewHistory.length - 1];
+    const savedIdx = currentSectionIdx === -1 ? currentModuleData.sections.length - 1 : currentSectionIdx;
     setTimeout(() => {
       goBack();
       renderSections();
-      if (prevView === 'fiche-preview') refreshPreview(currentSectionIdx);
+      if (prevView === 'fiche-preview') refreshPreview(savedIdx);
     }, 900);
   } catch (err) {
     setStatus(`Erreur : ${err.message}`, 'err');
@@ -980,16 +1009,21 @@ function setStatus(msg, type) {
 
 // ── Commit helper ───────────────────────────────────────────────────────────────
 async function commitModule(message) {
-  const yaml = jsyaml.dump(currentModuleData, { allowUnicode: true, lineWidth: -1, noRefs: true });
-  const result = await ghPut(`${BASE_PATH}/${currentModuleId}.yaml`, yaml, currentModuleSha, message);
-  currentModuleSha = result.content.sha;
-  // Update cache sha
-  if (allModulesData) {
-    const c = allModulesData.find(m => m.id === currentModuleId);
-    if (c) { c.sha = currentModuleSha; c.data = currentModuleData; }
+  commitBusy = true;
+  try {
+    const yaml = jsyaml.dump(currentModuleData, { allowUnicode: true, lineWidth: -1, noRefs: true });
+    const result = await ghPut(`${BASE_PATH}/${currentModuleId}.yaml`, yaml, currentModuleSha, message);
+    currentModuleSha = result.content.sha;
+    // Update cache sha
+    if (allModulesData) {
+      const c = allModulesData.find(m => m.id === currentModuleId);
+      if (c) { c.sha = currentModuleSha; c.data = currentModuleData; }
+    }
+    toast('Sauvegardé — déploiement en cours…');
+    startDeployPoll();
+  } finally {
+    commitBusy = false;
   }
-  toast('Sauvegardé — déploiement en cours…');
-  startDeployPoll();
 }
 
 // ── Lexique ─────────────────────────────────────────────────────────────────────
@@ -1055,7 +1089,7 @@ async function removeLexRef(key, idx) {
   currentLexique[key].splice(idx, 1);
   if (!currentLexique[key].length) delete currentLexique[key];
   renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
-  await commitLexique(`lexique: retrait d'une référence de "${key}"`);
+  try { await commitLexique(`lexique: retrait d'une référence de "${key}"`); } catch (_) {}
 }
 
 async function addLexRef(key) {
@@ -1065,7 +1099,7 @@ async function addLexRef(key) {
   if (!currentLexique[key]) currentLexique[key] = [];
   if (!currentLexique[key].includes(val)) {
     currentLexique[key].push(val);
-    await commitLexique(`lexique: ajout de "${val}" sous "${key}"`);
+    try { await commitLexique(`lexique: ajout de "${val}" sous "${key}"`); } catch (_) { return; }
     input.value = '';
     renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
     document.getElementById(`lex-body-${key}`)?.classList.add('open');
@@ -1076,7 +1110,7 @@ async function deleteLexEntry(key) {
   if (!confirm(`Supprimer le mot-clé "${key}" et toutes ses associations ?`)) return;
   delete currentLexique[key];
   renderLexique(document.getElementById('lexSearchInput').value.trim().toLowerCase());
-  await commitLexique(`lexique: suppression du mot-clé "${key}"`);
+  try { await commitLexique(`lexique: suppression du mot-clé "${key}"`); } catch (_) {}
 }
 
 function startAddLexEntry() {
@@ -1096,18 +1130,28 @@ async function confirmAddLexEntry() {
   if (!key || !val) { toast('Remplis les deux champs.', 'warn'); return; }
   if (!currentLexique[key]) currentLexique[key] = [];
   if (!currentLexique[key].includes(val)) currentLexique[key].push(val);
-  await commitLexique(`lexique: ajout du mot-clé "${key}"`);
+  try { await commitLexique(`lexique: ajout du mot-clé "${key}"`); } catch (_) { return; }
   document.getElementById('addLexForm').style.display = 'none';
   renderLexique();
   toast(`Mot-clé "${key}" ajouté.`);
 }
 
 async function commitLexique(message) {
-  const yaml = jsyaml.dump(currentLexique, { allowUnicode: true, lineWidth: -1, noRefs: true, sortKeys: true });
-  const result = await ghPut(LEXIQUE_PATH, yaml, currentLexiqueSha, message);
-  currentLexiqueSha = result.content.sha;
-  toast('Sauvegardé — déploiement en cours…');
-  startDeployPoll();
+  commitBusy = true;
+  try {
+    const yaml = jsyaml.dump(currentLexique, { allowUnicode: true, lineWidth: -1, noRefs: true, sortKeys: true });
+    const result = await ghPut(LEXIQUE_PATH, yaml, currentLexiqueSha, message);
+    currentLexiqueSha = result.content.sha;
+    toast('Sauvegardé — déploiement en cours…');
+    startDeployPoll();
+  } catch (err) {
+    // Resynchronise l'état local depuis GitHub pour éviter toute divergence
+    toast(`Erreur : ${err.message}`, 'warn');
+    showLexique();
+    throw err;
+  } finally {
+    commitBusy = false;
+  }
 }
 
 // ── Module header ────────────────────────────────────────────────────────────────
@@ -1132,8 +1176,12 @@ function refreshPreview(idx) {
   document.getElementById('previewModuleCrumb').textContent =
     (currentModuleData.title || MODULE_LABELS[currentModuleId]) + '  →  ' + (s.title || '(sans titre)');
   document.getElementById('previewTitle').textContent = s.title || '';
-  document.getElementById('previewBody').innerHTML = DOMPurify.sanitize(s.body ||
-    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : ''));
+  const rawBody = s.body ||
+    (s.linkTo ? `<p>→ Redirige vers : <a href="#/fiche/${esc(s.linkTo)}">${esc(s.linkTo)}</a></p>` : '');
+  const previewEl = document.getElementById('previewBody');
+  // Si DOMPurify n'a pas chargé (hors-ligne), affichage dégradé en texte brut plutôt que crash
+  if (window.DOMPurify) previewEl.innerHTML = DOMPurify.sanitize(rawBody);
+  else previewEl.textContent = rawBody;
   document.getElementById('previewSource').textContent = s.source || modSource || '—';
   document.getElementById('previewDate').textContent = s.lastChecked || '—';
   document.getElementById('previewDisclaimer').textContent =
@@ -1145,12 +1193,20 @@ function editCurrentSectionFromPreview() {
 }
 
 async function deleteSectionFromPreview() {
-  const s = currentModuleData.sections[currentSectionIdx];
+  if (!commitGuard()) return;
+  const idx = currentSectionIdx;
+  const s = currentModuleData.sections[idx];
   if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
-  currentModuleData.sections.splice(currentSectionIdx, 1);
+  currentModuleData.sections.splice(idx, 1);
   goBack();
   renderSections();
-  await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  try {
+    await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
+  } catch (err) {
+    currentModuleData.sections.splice(idx, 0, s);
+    renderSections();
+    toast(`Erreur : ${err.message}`, 'warn');
+  }
 }
 
 // ── Init event listeners (once) ─────────────────────────────────────────────────

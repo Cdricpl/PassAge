@@ -30,7 +30,6 @@
       --shadow-lg: 0 8px 24px rgba(45,49,66,.10);
       --header-h: 56px;
       /* Couleurs des modules */
-      --c-majeur:#6FB58A; --c-majeur-soft:#E0F0E6;
       --c-admin:#E8B86A;  --c-admin-soft:#FBEFD7;
       --c-argent:#E27D7D; --c-argent-soft:#FBE3E3;
       --c-etudes:#B8A9D9; --c-etudes-soft:#EFEAF7;
@@ -114,7 +113,6 @@
 
     /* ── Module hero header (fond coloré comme l'app) ── */
     .module-hero { padding: 20px 16px 24px; }
-    .module-hero[data-color=majeur]  { background: var(--c-majeur-soft); }
     .module-hero[data-color=admin]   { background: var(--c-admin-soft); }
     .module-hero[data-color=argent]  { background: var(--c-argent-soft); }
     .module-hero[data-color=etudes]  { background: var(--c-etudes-soft); }
@@ -368,7 +366,7 @@
         <div class="form-group">
           <label>Source (optionnel)</label>
           <input id="fieldSource" type="text" placeholder="ex : inami.fgov.be · inforjeunes.be">
-          <div class="hint" id="sourceHint">Si rempli, remplace les sources générales du module pour cette fiche uniquement.</div>
+          <div class="hint" id="sourceHint">Sources spécifiques à cette fiche (optionnel).</div>
         </div>
         <div class="form-group">
           <label>Dernière vérification (optionnel)</label>

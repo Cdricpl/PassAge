@@ -11,7 +11,6 @@ Tu peux les éditer directement sur GitHub.com sans toucher au JavaScript.
 03-version-pwa/
   content/
     modules/
-      majeur.yaml      ← Devenir majeur
       admin.yaml       ← Administratif & juridique
       argent.yaml      ← Argent & aides
       etudes.yaml      ← Études & formations

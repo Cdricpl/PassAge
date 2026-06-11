@@ -29,22 +29,6 @@ window.MA_CONTENT = (function () {
   // ============================================================
   const SITUATIONS = [
     {
-      id: 'majorite',
-      title: "Je viens d'avoir 18 ans",
-      subtitle: "Comprendre ce qui change pour toi",
-      color: 'majeur',
-      icon: ICONS.cake,
-      intro: "Avoir 18 ans, c'est un cap. Pas de panique : on va voir ensemble ce que ça change vraiment dans ta vie, et les premières choses à faire.",
-      steps: [
-        { title: "Ce qui change à 18 ans", desc: "Tes nouveaux droits et tes nouvelles responsabilités", linkType: 'fiche', linkId: 'majeur/changements' },
-        { title: "Mes premières démarches", desc: "Mutuelle, banque, assurance : par où commencer", linkType: 'fiche', linkId: 'majeur/demarches' },
-        { title: "Garder un accompagnement", desc: "AMO, prolongation SAJ, services à contacter", linkType: 'fiche', linkId: 'majeur/accompagnement' },
-        { title: "Vérifier mon compte d'épargne", desc: "Le compte ouvert par l'autorité mandante", linkType: 'fiche', linkId: 'argent/epargne-mandante' }
-      ],
-      outcome: "Tu sais quoi faire et dans quel ordre. Tu n'es pas seul·e.",
-      relatedModules: ['admin', 'argent']
-    },
-    {
       id: 'logement',
       title: "Je cherche un logement",
       subtitle: "Trouver, comprendre, signer sans pièges",

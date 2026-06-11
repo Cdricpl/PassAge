@@ -119,6 +119,88 @@ sections:
         <li><strong>Carnet de vaccination</strong> : selon la destination (parle-en à ton médecin).</li>
         <li><strong>Carte Européenne d'Assurance Maladie (CEAM)</strong> : gratuite, à demander à ta mutuelle, indispensable pour voyager dans l'UE.</li>
       </ul>
+  - id: impots
+    title: "Ma première déclaration d'impôts"
+    summary: "Qui doit déclarer, comment, et pourquoi tu ne paieras sans doute rien."
+    lastChecked: "11/06/2026"
+    source: "finances.belgium.be · wikifin.be"
+    body: |
+      <p>À partir de 18 ans, tu reçois chaque année une déclaration d'impôts (ou une proposition déjà remplie). Pas de panique : <strong>déclarer ne veut pas dire payer</strong>. Avec des revenus de jeune, tu ne paieras souvent rien du tout.</p>
+
+      <h2>Vais-je payer des impôts ?</h2>
+      <p>Probablement pas. En dessous d'environ <strong>10 900 € de revenus nets par an</strong> (revenus 2025), tu ne paies <strong>aucun impôt</strong>. Le RIS et les allocations familiales ne sont de toute façon <strong>pas imposables</strong>. Un job étudiant sous ce seuil non plus.</p>
+
+      <h2>La proposition de déclaration simplifiée (PDS)</h2>
+      <p>Si ta situation est simple (étudiant·e, RIS, un seul employeur), le fisc t'envoie souvent une <strong>déclaration déjà remplie</strong>.</p>
+      <ul>
+        <li>Si tout est correct : <strong>tu n'as rien à faire</strong>.</li>
+        <li>Si quelque chose manque ou est faux : tu la corriges (en ligne ou par papier) avant la date limite.</li>
+      </ul>
+
+      <h2>Comment déclarer ?</h2>
+      <ol class="fiche-ol">
+        <li>Connecte-toi sur <a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a> (avec itsme ou ta carte d'identité).</li>
+        <li>La plupart des cases sont <strong>déjà pré-remplies</strong> (salaire, précompte…). Vérifie et complète.</li>
+        <li>Valide. C'est tout.</li>
+      </ol>
+
+      <h2>Les délais</h2>
+      <ul>
+        <li><strong>Déclaration papier</strong> : fin juin.</li>
+        <li><strong>En ligne (MyMinfin / Tax-on-web)</strong> : mi-juillet.</li>
+      </ul>
+      <p>Les dates exactes changent chaque année — vérifie sur <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a>.</p>
+
+      <h2>Besoin d'aide pour remplir ?</h2>
+      <ul>
+        <li><strong>Par téléphone</strong> : le SPF Finances remplit ta déclaration avec toi au <strong>02 572 57 57</strong> (gratuit, prends rendez-vous tôt — les créneaux partent vite).</li>
+        <li><strong>Permanences</strong> : dans beaucoup de communes au printemps.</li>
+        <li>Ton AMO ou Inforjeunes peuvent aussi t'aider.</li>
+      </ul>
+
+      <div class="callout warn"><div><strong>Ne l'ignore pas</strong>Même si tu ne dois rien payer, tu dois répondre (ou vérifier ta proposition simplifiée). Sans réponse, tu risques une amende et une taxation d'office. Et souvent, déclarer joue en ta faveur : si trop de précompte a été retenu sur ton salaire, tu es <strong>remboursé·e</strong>.</div></div>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a> — déclarer en ligne</li>
+        <li><a href="https://www.wikifin.be" target="_blank" rel="noopener">Wikifin</a> — l'argent et les impôts expliqués simplement (site officiel FSMA)</li>
+      </ul>
+  - id: voter
+    title: "Voter en Belgique"
+    summary: "À 18 ans, voter est obligatoire. Convocation, procuration, mode d'emploi."
+    lastChecked: "11/06/2026"
+    source: "elections.fgov.be · wallonie.be"
+    body: |
+      <p>En Belgique, <strong>voter est un devoir légal</strong> dès 18 ans : tu es automatiquement inscrit·e sur la liste des électeurs, aucune démarche à faire. Et dès <strong>16 ans</strong>, tu votes aussi aux élections européennes.</p>
+
+      <h2>Quelles élections ?</h2>
+      <ul>
+        <li><strong>Fédérales</strong> (la Chambre) et <strong>régionales</strong> (Parlement wallon) — tous les 5 ans.</li>
+        <li><strong>Communales et provinciales</strong> — tous les 6 ans. En Wallonie, le vote y reste obligatoire.</li>
+        <li><strong>Européennes</strong> — tous les 5 ans, dès 16 ans.</li>
+      </ul>
+      <p>Prochains rendez-vous : <strong>2029</strong> (européennes, fédérales, régionales) puis <strong>2030</strong> (communales et provinciales).</p>
+
+      <h2>Comment ça se passe concrètement</h2>
+      <ol class="fiche-ol">
+        <li>Tu reçois une <strong>convocation</strong> par courrier quelques semaines avant.</li>
+        <li>Le jour J, présente-toi au bureau de vote indiqué, avec ta <strong>carte d'identité</strong> et ta convocation.</li>
+        <li>Tu votes dans l'isoloir (papier ou électronique selon la commune). Voter <strong>blanc</strong> est aussi possible.</li>
+      </ol>
+
+      <h2>Tu ne peux pas y aller ?</h2>
+      <p>Tu peux donner <strong>procuration</strong> à une personne de confiance (maladie, travail, études, voyage…). Le formulaire se demande à ta commune ou se télécharge en ligne, avec un justificatif. La personne vote pour toi en plus de son propre vote (1 procuration maximum par personne).</p>
+
+      <h2>Et si je ne vote pas ?</h2>
+      <p>Des amendes existent en théorie (40 à 80 € la première fois), mais elles sont rarement appliquées. Le vrai enjeu : <strong>les décisions prises te concernent directement</strong> (logement, transport, aides, études). Voter, c'est ta voix.</p>
+
+      <div class="callout tip"><div><strong>Pas sûr·e pour qui voter ?</strong>Avant chaque élection, des tests électoraux neutres (comme le Test électoral de la RTBF) comparent tes idées aux programmes des partis. Prends 20 minutes, ça aide vraiment à y voir clair.</div></div>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://elections.fgov.be" target="_blank" rel="noopener">elections.fgov.be</a> — info officielle (SPF Intérieur)</li>
+        <li><a href="https://www.wallonie.be/fr/demarches/voter-par-procuration" target="_blank" rel="noopener">Wallonie — voter par procuration</a></li>
+      </ul>
   - id: aide-juridique
     title: "Avocat prodéo et aide juridique"
     summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026."

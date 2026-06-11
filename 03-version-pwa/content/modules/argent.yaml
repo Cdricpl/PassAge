@@ -270,3 +270,58 @@ sections:
         <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADIL</li>
         <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — aide gratuite pour les dettes et difficultés financières</li>
       </ul>
+  - id: dettes
+    title: "Dettes : que faire quand tu ne peux pas payer"
+    summary: "Rappels, huissiers, médiation de dettes gratuite : tes droits et les bons réflexes."
+    lastChecked: "11/06/2026"
+    source: "observatoire-credit.be · economie.fgov.be"
+    body: |
+      <p>Une facture que tu ne peux pas payer, ça arrive — surtout quand on démarre dans la vie. La pire chose à faire : <strong>l'ignorer</strong>. Voici tes droits et les bons réflexes, étape par étape.</p>
+      
+      <h2>Réflexe n°1 : réagis tout de suite</h2>
+      <ul>
+        <li><strong>Contacte le créancier</strong> (magasin, fournisseur, propriétaire…) dès que tu sais que tu ne pourras pas payer. Propose un <strong>plan de paiement</strong> (payer en plusieurs fois). Beaucoup acceptent.</li>
+        <li>Garde une <strong>trace écrite</strong> de tout (mails, courriers).</li>
+      </ul>
+      
+      <h2>Tes droits depuis 2023</h2>
+      <p>La loi protège les consommateurs contre les frais abusifs :</p>
+      <ul>
+        <li>Le <strong>premier rappel est gratuit</strong> — aucun frais ne peut t'être facturé.</li>
+        <li>Tu as ensuite <strong>14 jours</strong> pour payer avant tout frais supplémentaire.</li>
+        <li>Les frais de retard sont <strong>plafonnés par la loi</strong>.</li>
+        <li>Tu peux <strong>contester</strong> une dette que tu estimes injustifiée — fais-le par écrit.</li>
+      </ul>
+      
+      <h2>L'huissier de justice</h2>
+      <ul>
+        <li>Un courrier d'huissier n'est pas une saisie : à ce stade, tu peux encore <strong>négocier un plan de paiement</strong>.</li>
+        <li>Une <strong>saisie</strong> n'est possible qu'après un <strong>jugement</strong> du tribunal (sauf exceptions, comme certaines dettes fiscales).</li>
+        <li>Ne signe rien sous pression — demande d'abord conseil (gratuit, voir ci-dessous).</li>
+      </ul>
+      
+      <h2>La médiation de dettes — gratuite</h2>
+      <p>Si tu as plusieurs dettes et que tu ne t'en sors plus, un <strong>service de médiation de dettes agréé</strong> peut négocier avec tes créanciers à ta place et mettre en place un plan réaliste.</p>
+      <ul>
+        <li><strong>Gratuit</strong>, via ton <strong>CPAS</strong> ou un des 200+ services agréés en Wallonie.</li>
+        <li>Pour les situations graves, le <strong>règlement collectif de dettes</strong> (via le tribunal) gèle les intérêts et organise un plan global avec tous tes créanciers.</li>
+      </ul>
+      
+      <h2>Dettes d'énergie (gaz, électricité)</h2>
+      <p>Des protections spécifiques existent : plan de paiement, intervention du CPAS, fournisseur social. Ne laisse pas la situation pourrir — contacte ton fournisseur et ton CPAS dès le premier impayé. Voir <a href="#/fiche/logement/compteurs">la fiche compteurs et énergie</a>.</p>
+      
+      <div class="callout tip"><div><strong>Pas de honte, pas de panique</strong>Des milliers de personnes passent par la médiation de dettes chaque année. Plus tu agis tôt, plus c'est simple à régler. Demander de l'aide est un droit, pas un échec.</div></div>
+      
+      <h2>Qui peut m'aider ?</h2>
+      <ul>
+        <li><strong>Ton CPAS</strong> — médiation de dettes gratuite.</li>
+        <li><a href="https://www.observatoire-credit.be" target="_blank" rel="noopener">Observatoire du Crédit et de l'Endettement</a> — conseils juridiques gratuits : 071 33 12 59.</li>
+        <li>Le <a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — pour comprendre ou contester un courrier.</li>
+      </ul>
+      
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="https://economie.fgov.be/fr/themes/services-financiers/endettement/reglement-collectif-de-dettes" target="_blank" rel="noopener">SPF Économie — règlement collectif de dettes</a></li>
+        <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — éviter d'en arriver là</li>
+        <li><a href="#/fiche/admin/aide-juridique">Avocat prodéo et aide juridique</a> — si ça va jusqu'au tribunal</li>
+      </ul>

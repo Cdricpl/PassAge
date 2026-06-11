@@ -161,6 +161,94 @@ window.MA_CONTENT = (function () {
 `
         },
         {
+          id: "impots",
+          title: "Ma première déclaration d'impôts",
+          summary: "Qui doit déclarer, comment, et pourquoi tu ne paieras sans doute rien.",
+          source: "finances.belgium.be · wikifin.be",
+          lastChecked: "11/06/2026",
+          body: `
+<p>À partir de 18 ans, tu reçois chaque année une déclaration d'impôts (ou une proposition déjà remplie). Pas de panique : <strong>déclarer ne veut pas dire payer</strong>. Avec des revenus de jeune, tu ne paieras souvent rien du tout.</p>
+
+<h2>Vais-je payer des impôts ?</h2>
+<p>Probablement pas. En dessous d'environ <strong>10 900 € de revenus nets par an</strong> (revenus 2025), tu ne paies <strong>aucun impôt</strong>. Le RIS et les allocations familiales ne sont de toute façon <strong>pas imposables</strong>. Un job étudiant sous ce seuil non plus.</p>
+
+<h2>La proposition de déclaration simplifiée (PDS)</h2>
+<p>Si ta situation est simple (étudiant·e, RIS, un seul employeur), le fisc t'envoie souvent une <strong>déclaration déjà remplie</strong>.</p>
+<ul>
+  <li>Si tout est correct : <strong>tu n'as rien à faire</strong>.</li>
+  <li>Si quelque chose manque ou est faux : tu la corriges (en ligne ou par papier) avant la date limite.</li>
+</ul>
+
+<h2>Comment déclarer ?</h2>
+<ol class="fiche-ol">
+  <li>Connecte-toi sur <a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a> (avec itsme ou ta carte d'identité).</li>
+  <li>La plupart des cases sont <strong>déjà pré-remplies</strong> (salaire, précompte…). Vérifie et complète.</li>
+  <li>Valide. C'est tout.</li>
+</ol>
+
+<h2>Les délais</h2>
+<ul>
+  <li><strong>Déclaration papier</strong> : fin juin.</li>
+  <li><strong>En ligne (MyMinfin / Tax-on-web)</strong> : mi-juillet.</li>
+</ul>
+<p>Les dates exactes changent chaque année — vérifie sur <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a>.</p>
+
+<h2>Besoin d'aide pour remplir ?</h2>
+<ul>
+  <li><strong>Par téléphone</strong> : le SPF Finances remplit ta déclaration avec toi au <strong>02 572 57 57</strong> (gratuit, prends rendez-vous tôt — les créneaux partent vite).</li>
+  <li><strong>Permanences</strong> : dans beaucoup de communes au printemps.</li>
+  <li>Ton AMO ou Inforjeunes peuvent aussi t'aider.</li>
+</ul>
+
+<div class="callout warn"><div><strong>Ne l'ignore pas</strong>Même si tu ne dois rien payer, tu dois répondre (ou vérifier ta proposition simplifiée). Sans réponse, tu risques une amende et une taxation d'office. Et souvent, déclarer joue en ta faveur : si trop de précompte a été retenu sur ton salaire, tu es <strong>remboursé·e</strong>.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://www.myminfin.be" target="_blank" rel="noopener">MyMinfin</a> — déclarer en ligne</li>
+  <li><a href="https://www.wikifin.be" target="_blank" rel="noopener">Wikifin</a> — l'argent et les impôts expliqués simplement (site officiel FSMA)</li>
+</ul>
+`
+        },
+        {
+          id: "voter",
+          title: "Voter en Belgique",
+          summary: "À 18 ans, voter est obligatoire. Convocation, procuration, mode d'emploi.",
+          source: "elections.fgov.be · wallonie.be",
+          lastChecked: "11/06/2026",
+          body: `
+<p>En Belgique, <strong>voter est un devoir légal</strong> dès 18 ans : tu es automatiquement inscrit·e sur la liste des électeurs, aucune démarche à faire. Et dès <strong>16 ans</strong>, tu votes aussi aux élections européennes.</p>
+
+<h2>Quelles élections ?</h2>
+<ul>
+  <li><strong>Fédérales</strong> (la Chambre) et <strong>régionales</strong> (Parlement wallon) — tous les 5 ans.</li>
+  <li><strong>Communales et provinciales</strong> — tous les 6 ans. En Wallonie, le vote y reste obligatoire.</li>
+  <li><strong>Européennes</strong> — tous les 5 ans, dès 16 ans.</li>
+</ul>
+<p>Prochains rendez-vous : <strong>2029</strong> (européennes, fédérales, régionales) puis <strong>2030</strong> (communales et provinciales).</p>
+
+<h2>Comment ça se passe concrètement</h2>
+<ol class="fiche-ol">
+  <li>Tu reçois une <strong>convocation</strong> par courrier quelques semaines avant.</li>
+  <li>Le jour J, présente-toi au bureau de vote indiqué, avec ta <strong>carte d'identité</strong> et ta convocation.</li>
+  <li>Tu votes dans l'isoloir (papier ou électronique selon la commune). Voter <strong>blanc</strong> est aussi possible.</li>
+</ol>
+
+<h2>Tu ne peux pas y aller ?</h2>
+<p>Tu peux donner <strong>procuration</strong> à une personne de confiance (maladie, travail, études, voyage…). Le formulaire se demande à ta commune ou se télécharge en ligne, avec un justificatif. La personne vote pour toi en plus de son propre vote (1 procuration maximum par personne).</p>
+
+<h2>Et si je ne vote pas ?</h2>
+<p>Des amendes existent en théorie (40 à 80 € la première fois), mais elles sont rarement appliquées. Le vrai enjeu : <strong>les décisions prises te concernent directement</strong> (logement, transport, aides, études). Voter, c'est ta voix.</p>
+
+<div class="callout tip"><div><strong>Pas sûr·e pour qui voter ?</strong>Avant chaque élection, des tests électoraux neutres (comme le Test électoral de la RTBF) comparent tes idées aux programmes des partis. Prends 20 minutes, ça aide vraiment à y voir clair.</div></div>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://elections.fgov.be" target="_blank" rel="noopener">elections.fgov.be</a> — info officielle (SPF Intérieur)</li>
+  <li><a href="https://www.wallonie.be/fr/demarches/voter-par-procuration" target="_blank" rel="noopener">Wallonie — voter par procuration</a></li>
+</ul>
+`
+        },
+        {
           id: "aide-juridique",
           title: "Avocat prodéo et aide juridique",
           summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.",
@@ -516,6 +604,64 @@ window.MA_CONTENT = (function () {
   <li><a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a> — réduire les factures</li>
   <li><a href="#/fiche/logement/aides">Les aides au logement</a> — garantie locative, ADIL</li>
   <li><a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — aide gratuite pour les dettes et difficultés financières</li>
+</ul>
+`
+        },
+        {
+          id: "dettes",
+          title: "Dettes : que faire quand tu ne peux pas payer",
+          summary: "Rappels, huissiers, médiation de dettes gratuite : tes droits et les bons réflexes.",
+          source: "observatoire-credit.be · economie.fgov.be",
+          lastChecked: "11/06/2026",
+          body: `
+<p>Une facture que tu ne peux pas payer, ça arrive — surtout quand on démarre dans la vie. La pire chose à faire : <strong>l'ignorer</strong>. Voici tes droits et les bons réflexes, étape par étape.</p>
+
+<h2>Réflexe n°1 : réagis tout de suite</h2>
+<ul>
+  <li><strong>Contacte le créancier</strong> (magasin, fournisseur, propriétaire…) dès que tu sais que tu ne pourras pas payer. Propose un <strong>plan de paiement</strong> (payer en plusieurs fois). Beaucoup acceptent.</li>
+  <li>Garde une <strong>trace écrite</strong> de tout (mails, courriers).</li>
+</ul>
+
+<h2>Tes droits depuis 2023</h2>
+<p>La loi protège les consommateurs contre les frais abusifs :</p>
+<ul>
+  <li>Le <strong>premier rappel est gratuit</strong> — aucun frais ne peut t'être facturé.</li>
+  <li>Tu as ensuite <strong>14 jours</strong> pour payer avant tout frais supplémentaire.</li>
+  <li>Les frais de retard sont <strong>plafonnés par la loi</strong>.</li>
+  <li>Tu peux <strong>contester</strong> une dette que tu estimes injustifiée — fais-le par écrit.</li>
+</ul>
+
+<h2>L'huissier de justice</h2>
+<ul>
+  <li>Un courrier d'huissier n'est pas une saisie : à ce stade, tu peux encore <strong>négocier un plan de paiement</strong>.</li>
+  <li>Une <strong>saisie</strong> n'est possible qu'après un <strong>jugement</strong> du tribunal (sauf exceptions, comme certaines dettes fiscales).</li>
+  <li>Ne signe rien sous pression — demande d'abord conseil (gratuit, voir ci-dessous).</li>
+</ul>
+
+<h2>La médiation de dettes — gratuite</h2>
+<p>Si tu as plusieurs dettes et que tu ne t'en sors plus, un <strong>service de médiation de dettes agréé</strong> peut négocier avec tes créanciers à ta place et mettre en place un plan réaliste.</p>
+<ul>
+  <li><strong>Gratuit</strong>, via ton <strong>CPAS</strong> ou un des 200+ services agréés en Wallonie.</li>
+  <li>Pour les situations graves, le <strong>règlement collectif de dettes</strong> (via le tribunal) gèle les intérêts et organise un plan global avec tous tes créanciers.</li>
+</ul>
+
+<h2>Dettes d'énergie (gaz, électricité)</h2>
+<p>Des protections spécifiques existent : plan de paiement, intervention du CPAS, fournisseur social. Ne laisse pas la situation pourrir — contacte ton fournisseur et ton CPAS dès le premier impayé. Voir <a href="#/fiche/logement/compteurs">la fiche compteurs et énergie</a>.</p>
+
+<div class="callout tip"><div><strong>Pas de honte, pas de panique</strong>Des milliers de personnes passent par la médiation de dettes chaque année. Plus tu agis tôt, plus c'est simple à régler. Demander de l'aide est un droit, pas un échec.</div></div>
+
+<h2>Qui peut m'aider ?</h2>
+<ul>
+  <li><strong>Ton CPAS</strong> — médiation de dettes gratuite.</li>
+  <li><a href="https://www.observatoire-credit.be" target="_blank" rel="noopener">Observatoire du Crédit et de l'Endettement</a> — conseils juridiques gratuits : 071 33 12 59.</li>
+  <li>Le <a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a> — pour comprendre ou contester un courrier.</li>
+</ul>
+
+<h2>Pour aller plus loin</h2>
+<ul>
+  <li><a href="https://economie.fgov.be/fr/themes/services-financiers/endettement/reglement-collectif-de-dettes" target="_blank" rel="noopener">SPF Économie — règlement collectif de dettes</a></li>
+  <li><a href="#/fiche/argent/budget">Mon budget mensuel</a> — éviter d'en arriver là</li>
+  <li><a href="#/fiche/admin/aide-juridique">Avocat prodéo et aide juridique</a> — si ça va jusqu'au tribunal</li>
 </ul>
 `
         },
@@ -2497,6 +2643,38 @@ Rue du Commerce 10
     "tempete": ["urgence/lignes-ecoute"],
     "inondation": ["urgence/lignes-ecoute"],
     "go pass": ["vie/transport"],
+    "impots": ["admin/impots"],
+    "impôts": ["admin/impots"],
+    "impot": ["admin/impots"],
+    "impôt": ["admin/impots"],
+    "declaration": ["admin/impots"],
+    "déclaration": ["admin/impots"],
+    "tax-on-web": ["admin/impots"],
+    "taxonweb": ["admin/impots"],
+    "myminfin": ["admin/impots"],
+    "fisc": ["admin/impots"],
+    "dette": ["argent/dettes"],
+    "dettes": ["argent/dettes"],
+    "surendettement": ["argent/dettes"],
+    "huissier": ["argent/dettes"],
+    "mediation de dettes": ["argent/dettes"],
+    "médiation de dettes": ["argent/dettes"],
+    "rappel": ["argent/dettes"],
+    "mise en demeure": ["argent/dettes"],
+    "facture impayee": ["argent/dettes"],
+    "facture impayée": ["argent/dettes"],
+    "recouvrement": ["argent/dettes"],
+    "saisie": ["argent/dettes"],
+    "creancier": ["argent/dettes"],
+    "créancier": ["argent/dettes"],
+    "voter": ["admin/voter"],
+    "vote": ["admin/voter"],
+    "elections": ["admin/voter"],
+    "élections": ["admin/voter"],
+    "election": ["admin/voter"],
+    "élection": ["admin/voter"],
+    "procuration": ["admin/voter"],
+    "convocation": ["admin/voter"],
   };
 
   const MODULES_INDEX = {};

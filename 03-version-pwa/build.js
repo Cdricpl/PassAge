@@ -118,6 +118,99 @@ function lexiqueToJs(lex) {
   return lines.join('\n');
 }
 
+// ── validation ────────────────────────────────────────────────────────────────
+
+/**
+ * Validate the loaded content before generating anything.
+ * Returns an array of human-readable error strings (empty = all good).
+ * Checks: required fields, duplicate ids, known icons/colors, balanced HTML
+ * tags, internal #/fiche/ links, linkTo targets, and lexique paths.
+ */
+function validateContent(modules, lexique, template) {
+  const errors = [];
+  const selfClosing = new Set(['br', 'hr', 'img', 'input', 'meta', 'link']);
+
+  // Icon keys defined in the template's ICONS object
+  const iconKeys = new Set();
+  const iconBlock = template.match(/const ICONS = \{([\s\S]*?)\n  \};/);
+  if (iconBlock) {
+    for (const m of iconBlock[1].matchAll(/^\s*(\w+):/gm)) iconKeys.add(m[1]);
+  }
+
+  // Redirect sources defined in the template's REDIRECTS object
+  const validPaths = new Set();
+  for (const m of template.matchAll(/'([\w-]+\/[\w-]+)':\s*'[\w-]+\/[\w-]+'/g)) {
+    validPaths.add(m[1]);
+  }
+
+  // First pass: collect every module/section path, check structure
+  for (const mod of modules) {
+    if (!mod.id || !mod.title) errors.push(`module "${mod.id || '?'}": id ou title manquant`);
+    if (mod.icon && iconKeys.size && !iconKeys.has(mod.icon)) {
+      errors.push(`module "${mod.id}": icône inconnue "${mod.icon}"`);
+    }
+    if (mod.color && !MODULE_ORDER.includes(mod.color)) {
+      errors.push(`module "${mod.id}": couleur inconnue "${mod.color}"`);
+    }
+    const seen = new Set();
+    for (const sec of mod.sections || []) {
+      if (!sec.id || !sec.title || !sec.summary) {
+        errors.push(`${mod.id}/${sec.id || '?'}: id, title ou summary manquant`);
+      }
+      if (seen.has(sec.id)) errors.push(`${mod.id}/${sec.id}: id de section dupliqué`);
+      seen.add(sec.id);
+      if (!sec.linkTo && !sec.body) errors.push(`${mod.id}/${sec.id}: ni body ni linkTo`);
+      validPaths.add(`${mod.id}/${sec.id}`);
+    }
+  }
+
+  // Second pass: HTML balance, hrefs, linkTo targets
+  for (const mod of modules) {
+    for (const sec of mod.sections || []) {
+      if (sec.linkTo) {
+        if (!validPaths.has(sec.linkTo)) {
+          errors.push(`${mod.id}/${sec.id}: linkTo cassé → ${sec.linkTo}`);
+        }
+        continue;
+      }
+      const body = sec.body || '';
+      const stack = [];
+      for (const m of body.matchAll(/<\/?([a-zA-Z][a-zA-Z0-9]*)\b[^>]*?(\/?)>/g)) {
+        const tag = m[1].toLowerCase();
+        if (selfClosing.has(tag) || m[2] === '/') continue;
+        if (m[0][1] === '/') {
+          if (stack[stack.length - 1] === tag) stack.pop();
+          else errors.push(`${mod.id}/${sec.id}: balise fermante </${tag}> inattendue`);
+        } else {
+          stack.push(tag);
+        }
+      }
+      if (stack.length) {
+        errors.push(`${mod.id}/${sec.id}: balises non fermées [${stack.join(', ')}]`);
+      }
+      for (const m of body.matchAll(/href="([^"]+)"/g)) {
+        const h = m[1];
+        if (h.startsWith('#/fiche/')) {
+          if (!validPaths.has(h.slice(8))) {
+            errors.push(`${mod.id}/${sec.id}: lien interne cassé → ${h}`);
+          }
+        } else if (!h.startsWith('http') && !h.startsWith('#/') && !h.startsWith('tel:')) {
+          errors.push(`${mod.id}/${sec.id}: href suspect → ${h}`);
+        }
+      }
+    }
+  }
+
+  // Lexique paths must resolve
+  for (const [key, refs] of Object.entries(lexique)) {
+    for (const r of refs || []) {
+      if (!validPaths.has(r)) errors.push(`lexique "${key}": chemin cassé → ${r}`);
+    }
+  }
+
+  return errors;
+}
+
 // ── version bump ──────────────────────────────────────────────────────────────
 
 /**
@@ -177,12 +270,19 @@ function main() {
   const lexique = yaml.load(lexRaw);
   console.log(`  loaded lexique: ${Object.keys(lexique).length} entries\n`);
 
-  // 3. Generate JS snippets
+  // 3. Validate content before generating anything
+  const template = fs.readFileSync(TEMPLATE, 'utf8');
+  const errors = validateContent(modules, lexique, template);
+  if (errors.length) {
+    console.error(`\nERREUR — ${errors.length} problème(s) détecté(s), build annulé :\n`);
+    for (const e of errors) console.error(`  ✗ ${e}`);
+    process.exit(1);
+  }
+  console.log('  validation: OK (HTML, liens internes, lexique, icônes, couleurs)\n');
+
+  // 4. Generate JS snippets and replace placeholders
   const modulesJs = '[\n' + modules.map(moduleToJs).join(',\n\n') + '\n  ]';
   const lexiqueJs = lexiqueToJs(lexique);
-
-  // 4. Read template and replace placeholders
-  const template = fs.readFileSync(TEMPLATE, 'utf8');
   let output = template
     .replace('/* MODULES_PLACEHOLDER */', modulesJs)
     .replace('/* LEXIQUE_PLACEHOLDER */', lexiqueJs);

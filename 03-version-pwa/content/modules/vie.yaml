@@ -9,7 +9,7 @@ sections:
   - id: communication
     title: "GSM, internet, abonnements"
     summary: "Mettre ton GSM à ton nom, choisir un opérateur, tarif social."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <p>Si ton numéro est encore lié au contrat de ta famille (ou famille d'accueil), tu peux le garder — mais le jour où tu prends ton autonomie, il faudra <strong>le mettre à ton nom</strong>. Voici comment t'y retrouver.</p>
       
@@ -94,7 +94,7 @@ sections:
   - id: transport
     title: "Bus, train, vélo"
     summary: "TEC, SNCB, abonnement combiné, vélo en libre-service."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     body: |
       <h2>TEC (Wallonie) — bus, trams</h2>
       <ul>
@@ -345,7 +345,7 @@ sections:
   - id: courrier
     title: "Écrire une lettre et l'envoyer"
     summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet."
-    lastChecked: "03/06/2026"
+    lastChecked: "11/06/2026"
     source: "bpost.be · inforjeunes.be"
     body: |
       <p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>

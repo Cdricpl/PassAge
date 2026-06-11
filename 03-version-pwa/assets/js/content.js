@@ -165,7 +165,7 @@ window.MA_CONTENT = (function () {
           title: "Avocat prodéo et aide juridique",
           summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.",
           source: "justice.belgium.be · avocats.be · droitsquotidiens.be",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
 
@@ -182,7 +182,8 @@ window.MA_CONTENT = (function () {
 <h2>Plafonds de revenus 2026</h2>
 <p>Le BAJ examine le total des revenus mensuels nets de toutes les personnes vivant sous ton toit.</p>
 <ul>
-  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
+  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 612 €/mois</strong> → gratuit total · entre <strong>1 612 € et 1 920 €</strong> → partiellement gratuit.</li>
+  <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
   <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>355 €</strong> par personne supplémentaire (à confirmer auprès du BAJ).</li>
 </ul>
 
@@ -290,14 +291,14 @@ window.MA_CONTENT = (function () {
           id: "allocations-familiales",
           title: "Mes allocations familiales",
           summary: "À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
 
 <h2>Ce qui change à 18 ans</h2>
 <ul>
   <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
-  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins 17 crédits/semestre dans le supérieur, ou enseignement secondaire à temps plein).</li>
+  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
   <li>Si tu interromps tes études : tu les gardes pendant <strong>360 jours</strong> de stage d'insertion (voir <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
 
@@ -408,7 +409,7 @@ window.MA_CONTENT = (function () {
           id: "aides-supp",
           title: "Bons plans : tarif social, seconde main",
           summary: "Tarif social énergie/internet, magasins de seconde main.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 
@@ -955,16 +956,17 @@ window.MA_CONTENT = (function () {
           id: "garantie",
           title: "La garantie locative",
           summary: "Ce que c'est, et l'aide du CPAS si tu n'as pas l'argent.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>La <strong>garantie locative</strong> (ou caution) sert à couvrir tes éventuels manquements (loyer impayé, dégâts…).</p>
 
 <h2>Trois formes possibles (au choix du locataire)</h2>
 <ul>
   <li><strong>Compte bloqué</strong> à ton nom : maximum <strong>2 mois</strong> de loyer.</li>
-  <li><strong>Garantie bancaire</strong> (constituée progressivement, sur 3 ans max) : maximum <strong>3 mois</strong> de loyer.</li>
-  <li><strong>Garantie via le CPAS</strong> (contrat type CPAS-banque) : maximum <strong>3 mois</strong> de loyer.</li>
+  <li><strong>Garantie bancaire</strong> (constituée progressivement) : maximum <strong>2 mois</strong> de loyer.</li>
+  <li><strong>Garantie via le CPAS</strong> (contrat type CPAS-banque) : maximum <strong>2 mois</strong> de loyer.</li>
 </ul>
+<p>Depuis juin 2023, en Wallonie, la garantie est <strong>plafonnée à 2 mois de loyer</strong> quelle que soit sa forme. Si on te demande plus, c'est illégal.</p>
 
 <h2>Pas d'argent pour la caution ?</h2>
 <p>Va voir le <strong>CPAS de ta commune</strong>. Il peut se porter garant pour toi via un document remis à ton propriétaire.</p>
@@ -1057,7 +1059,7 @@ window.MA_CONTENT = (function () {
           id: "compteurs",
           title: "L'ouverture des compteurs",
           summary: "Eau, gaz, électricité : premières démarches dans ton logement.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Dès que tu as les clés, tu dois <strong>ouvrir les compteurs à ton nom</strong> (électricité, gaz, eau), <strong>sauf</strong> si les charges sont déjà comprises dans ton loyer.</p>
 
@@ -1068,7 +1070,7 @@ window.MA_CONTENT = (function () {
 <p>Plusieurs fournisseurs (Engie, Luminus, Mega, TotalEnergies, Octa+…). Compare les prix avant de signer :</p>
 <ul>
   <li><strong>Wallonie</strong> : <a href="https://www.compacwape.be" target="_blank" rel="noopener">comparateur officiel CWaPE</a></li>
-  <li><strong>Bruxelles</strong> : <a href="https://brusim.brugel.brussels" target="_blank" rel="noopener">comparateur Brugel</a></li>
+  <li><strong>Bruxelles</strong> : <a href="https://www.brugel.brussels" target="_blank" rel="noopener">comparateur Brugel</a></li>
 </ul>
 
 <h2>Étape 3 : remplir et envoyer les formulaires</h2>
@@ -1244,7 +1246,7 @@ window.MA_CONTENT = (function () {
           id: "communication",
           title: "GSM, internet, abonnements",
           summary: "Mettre ton GSM à ton nom, choisir un opérateur, tarif social.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Si ton numéro est encore lié au contrat de ta famille (ou famille d'accueil), tu peux le garder — mais le jour où tu prends ton autonomie, il faudra <strong>le mettre à ton nom</strong>. Voici comment t'y retrouver.</p>
 
@@ -1335,7 +1337,7 @@ window.MA_CONTENT = (function () {
           id: "transport",
           title: "Bus, train, vélo",
           summary: "TEC, SNCB, abonnement combiné, vélo en libre-service.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <h2>TEC (Wallonie) — bus, trams</h2>
 <ul>
@@ -1599,7 +1601,7 @@ window.MA_CONTENT = (function () {
           title: "Écrire une lettre et l'envoyer",
           summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet.",
           source: "bpost.be · inforjeunes.be",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>
 
@@ -1762,7 +1764,7 @@ Rue du Commerce 10
 <h2>Le Pass Partout (Wallonie)</h2>
 <p>Si tu as moins de 26 ans et peu de revenus, tu peux avoir droit au <strong>Pass Partout</strong> : réductions sur les activités sportives, culturelles et de loisirs dans ta commune.</p>
 <ul>
-  <li>Renseignes-toi auprès de ton CPAS ou de ta commune.</li>
+  <li>Renseigne-toi auprès de ton CPAS ou de ta commune.</li>
   <li>Certaines communes ont leur propre Pass Jeune — demande à l'accueil communal.</li>
 </ul>
 
@@ -1826,7 +1828,7 @@ Rue du Commerce 10
 <h2>Options gratuites ou peu chères</h2>
 <ul>
   <li><strong>Sport en plein air</strong> : running, vélo, foot dans un parc — zéro coût.</li>
-  <li><strong>Centre sportif communal</strong> : souvent à tarif réduit pour les habitants de la commune. Renseignes-toi à l'accueil communal.</li>
+  <li><strong>Centre sportif communal</strong> : souvent à tarif réduit pour les habitants de la commune. Renseigne-toi à l'accueil communal.</li>
   <li><strong>Clubs sportifs locaux</strong> : les cotisations annuelles sont souvent accessibles (30–100 € selon le sport). Certains clubs ont des tarifs "sociaux".</li>
 </ul>
 
@@ -1834,7 +1836,7 @@ Rue du Commerce 10
 <ul>
   <li>Le <strong>Pass Partout</strong> (si disponible dans ta commune) couvre parfois les inscriptions sportives.</li>
   <li>Certains clubs acceptent des paiements en plusieurs fois — demande directement.</li>
-  <li>Renseignes-toi auprès du <strong>service jeunesse de ta commune</strong> pour des activités sportives organisées.</li>
+  <li>Renseigne-toi auprès du <strong>service jeunesse de ta commune</strong> pour des activités sportives organisées.</li>
 </ul>
 
 <div class="callout tip"><div><strong>Bon à savoir</strong>Adeps (en Wallonie) gère des centres de plein air, piscines et infrastructures sportives accessibles à tous. Voir <a href="https://www.adeps.be" target="_blank" rel="noopener">adeps.be</a> pour les tarifs.</div></div>
@@ -1844,13 +1846,13 @@ Rue du Commerce 10
           id: "benevol",
           title: "Bénévolat et associations",
           summary: "Donner de son temps, rencontrer des gens, acquérir de l'expérience.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Le bénévolat, c'est une bonne façon de sortir de chez soi, de rencontrer des gens, et parfois de découvrir ce qui te passionne. Et en prime, ça peut s'ajouter à un CV.</p>
 
 <h2>Où chercher ?</h2>
 <ul>
-  <li><a href="https://www.benevol.be" target="_blank" rel="noopener">benevol.be</a> — plateforme nationale belge pour trouver des missions de bénévolat.</li>
+  <li><a href="https://www.levolontariat.be" target="_blank" rel="noopener">levolontariat.be</a> — la Plateforme francophone du Volontariat, pour trouver des missions près de chez toi.</li>
   <li><strong>Inforjeunes</strong> : ils ont souvent des listes d'associations locales qui cherchent des bénévoles.</li>
   <li><strong>Croix-Rouge</strong>, <strong>Restos du Cœur</strong>, clubs sportifs, épiceries sociales… — contacte directement.</li>
 </ul>
@@ -1980,7 +1982,7 @@ Rue du Commerce 10
           id: "convention-psy",
           title: "Voir un psy — gratuit avant 24 ans",
           summary: "La convention psy 1ère ligne — accessible et déstigmatisée.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Voir un psy, c'est devenu vraiment accessible : grâce à la <strong>convention psychologique de 1ère ligne</strong> (INAMI), tu peux consulter un psy <strong>conventionné</strong> à des conditions très avantageuses.</p>
 
@@ -1993,7 +1995,7 @@ Rue du Commerce 10
 </ul>
 
 <h2>Combien de séances&nbsp;?</h2>
-<p>En général jusqu'à <strong>8 séances par an</strong> (en individuel). Souvent suffisant pour un coup de pouce, un cap difficile, un mal-être passager. Pour aller plus loin, ton·ta psy peut t'orienter vers un suivi plus long en 2e ligne (toujours conventionné).</p>
+<p>Jusqu'à <strong>10 séances par an</strong> en individuel si tu as moins de 24 ans (<strong>8 séances</strong> à partir de 24 ans). Souvent suffisant pour un coup de pouce, un cap difficile, un mal-être passager. Pour aller plus loin, ton·ta psy peut t'orienter vers un suivi plus long en 2e ligne (toujours conventionné).</p>
 
 <h2>Pour qui&nbsp;?</h2>
 <ul>
@@ -2004,7 +2006,7 @@ Rue du Commerce 10
 
 <h2>Comment commencer&nbsp;?</h2>
 <ol class="fiche-ol">
-  <li>Trouve un psy conventionné : <a href="https://www.psyforyou.be" target="_blank" rel="noopener">psyforyou.be</a> (annuaire officiel) ou <a href="https://psychologue-premiere-ligne.be" target="_blank" rel="noopener">psychologue-premiere-ligne.be</a>.</li>
+  <li>Trouve un psy conventionné : <a href="https://psychologue-premiere-ligne.be" target="_blank" rel="noopener">psychologue-premiere-ligne.be</a> (annuaire officiel).</li>
   <li>Tu peux y aller <strong>directement</strong> : <strong>pas besoin de prescription</strong> de ton médecin.</li>
   <li>Apporte simplement ta carte d'identité et ta <a href="#/fiche/admin/mutuelle">carte de mutuelle</a> au 1er RDV.</li>
   <li>Le paiement se fait en <strong>tiers payant</strong> : tu n'avances pas l'argent, tu paies juste ta part (ou rien si -24 ans).</li>
@@ -2060,7 +2062,7 @@ Rue du Commerce 10
           id: "planning-familial",
           title: "Le planning familial",
           summary: "Contraception, IVG, écoute, conseil — gratuit pour les jeunes.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Les <strong>centres de planning familial</strong> sont des lieux d'accueil, d'écoute et de soins liés à la vie affective et sexuelle. Beaucoup plus que de la contraception.</p>
 
@@ -2079,7 +2081,7 @@ Rue du Commerce 10
 <h2>C'est confidentiel</h2>
 <p>Le secret professionnel est total. Personne ne saura que tu y as été — même pas tes parents si tu ne veux pas.</p>
 
-<p>Trouver un centre près de chez toi : <a href="https://www.loveattitude.be" target="_blank" rel="noopener">loveattitude.be</a></p>
+<p>Trouver un centre près de chez toi : <a href="https://www.monplanningfamilial.be" target="_blank" rel="noopener">monplanningfamilial.be</a></p>
 `
         },
         {
@@ -2104,7 +2106,7 @@ Rue du Commerce 10
           id: "lignes-ecoute",
           title: "Lignes d'écoute et numéros utiles",
           summary: "Numéros gratuits et confidentiels.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Tu as besoin de parler ? Voici des numéros gratuits, anonymes et disponibles à toute heure.</p>
 
@@ -2174,7 +2176,7 @@ Rue du Commerce 10
           id: "mal-etre",
           title: "Quand ça ne va pas",
           summary: "Anxiété, dépression, idées noires : par où commencer.",
-          lastChecked: "03/06/2026",
+          lastChecked: "11/06/2026",
           body: `
 <p>Tu te sens mal, anxieux·se, tu n'arrives plus à dormir, tu as des idées noires ? <strong>Tu n'es pas seul·e, et ça se soigne.</strong> Voici des premières pistes.</p>
 
@@ -2189,7 +2191,7 @@ Rue du Commerce 10
 <h2>Voir un·e professionnel·le</h2>
 <ul>
   <li><strong>Ton médecin traitant</strong> peut t'orienter et prescrire un suivi psy.</li>
-  <li><strong>Convention psy de 1ère ligne</strong> : 8 séances chez un·e psychologue conventionné·e. <strong>Gratuit si tu as moins de 24 ans</strong> (11 € si 24+, 4 € si BIM). Demande à ton médecin.</li>
+  <li><strong>Convention psy de 1ère ligne</strong> : jusqu'à 10 séances/an chez un·e psychologue conventionné·e. <strong>Gratuit si tu as moins de 24 ans</strong> (11 € si 24+, 4 € si BIM). Voir <a href="#/fiche/sante/convention-psy">la fiche dédiée</a>.</li>
   <li>Le <strong>service de santé mentale</strong> de ta région.</li>
 </ul>
 

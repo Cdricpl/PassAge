@@ -56,14 +56,14 @@ sections:
   - id: allocations-familiales
     title: Mes allocations familiales
     summary: À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
 
       <h2>Ce qui change à 18 ans</h2>
       <ul>
         <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
-        <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins 17 crédits/semestre dans le supérieur, ou enseignement secondaire à temps plein).</li>
+        <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
         <li>Si tu interromps tes études : tu les gardes pendant <strong>360 jours</strong> de stage d'insertion (voir <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
       </ul>
 
@@ -165,7 +165,7 @@ sections:
   - id: aides-supp
     title: 'Bons plans : tarif social, seconde main'
     summary: Tarif social énergie/internet, magasins de seconde main.
-    lastChecked: 03/06/2026
+    lastChecked: 11/06/2026
     body: |
       <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 

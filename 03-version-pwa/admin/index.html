@@ -473,8 +473,9 @@
 </div><!-- /app -->
 <datalist id="fichePaths"></datalist>
 
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+<!-- Versions épinglées : une montée de version majeure silencieuse du CDN ne doit pas pouvoir changer le code exécuté ici -->
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js" crossorigin="anonymous"></script>
 <script>
 'use strict';
 
@@ -517,11 +518,19 @@ let isMetaDirty       = false;
 let commitBusy        = false;
 
 // ── GitHub API ──────────────────────────────────────────────────────────────────
+// Le corps d'erreur n'est pas toujours du JSON (proxy 502, page HTML de rate-limit…)
+async function ghError(r) {
+  let msg = r.statusText || `HTTP ${r.status}`;
+  try { msg = (await r.json()).message || msg; } catch (_) {}
+  if (r.status === 401) msg = 'Token invalide ou expiré — déconnecte-toi et reconnecte-toi.';
+  return new Error(`GitHub ${r.status}: ${msg}`);
+}
+
 async function ghGet(path) {
   const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
   });
-  if (!r.ok) throw new Error(`GitHub ${r.status}: ${(await r.json()).message}`);
+  if (!r.ok) throw await ghError(r);
   return r.json();
 }
 
@@ -531,7 +540,7 @@ async function ghPut(path, content, sha, message) {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
     body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha })
   });
-  if (!r.ok) throw new Error(`GitHub ${r.status}: ${(await r.json()).message}`);
+  if (!r.ok) throw await ghError(r);
   return r.json();
 }
 
@@ -557,20 +566,23 @@ function setDeployBar(cls, text) {
   document.body.classList.toggle('has-deploy-bar', cls !== '');
 }
 
-function startDeployPoll() {
+function startDeployPoll(commitSha) {
   stopDeployPoll();
   setDeployBar('running', 'Déploiement en cours…');
   let attempts = 0;
 
   deployPollTimer = setInterval(async () => {
     attempts++;
-    if (attempts > 60) { stopDeployPoll(); return; }
+    if (attempts > 60) { stopDeployPoll(); setDeployBar('', ''); return; }
     try {
-      const r = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1&branch=main`, {
+      const r = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=5&branch=main`, {
         headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
       });
       if (!r.ok) return;
-      const run = (await r.json()).workflow_runs?.[0];
+      const runs = (await r.json()).workflow_runs || [];
+      // On ne suit que le run de NOTRE commit : juste après un push, le dernier
+      // run terminé est celui du déploiement précédent (faux positif).
+      const run = commitSha ? runs.find(x => x.head_sha === commitSha) : runs[0];
       if (!run || run.status !== 'completed') return;
       stopDeployPoll();
       if (run.conclusion === 'success') {
@@ -675,7 +687,7 @@ async function showDashboard() {
         <div class="tile-count">${m.count} fiche${m.count > 1 ? 's' : ''}</div>
       </div>`).join('');
   } catch (err) {
-    grid.innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
+    grid.innerHTML = `<div class="error-msg">Erreur : ${esc(err.message)}</div>`;
   }
 }
 
@@ -744,7 +756,7 @@ async function loadModule(id) {
     updateModuleHeader();
     renderSections();
   } catch (err) {
-    document.getElementById('sectionList').innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
+    document.getElementById('sectionList').innerHTML = `<div class="error-msg">Erreur : ${esc(err.message)}</div>`;
   }
 }
 
@@ -809,21 +821,6 @@ async function moveSection(idx, dir) {
   }
 }
 
-async function deleteSection(idx) {
-  if (!commitGuard()) return;
-  const s = currentModuleData.sections[idx];
-  if (!confirm(`Supprimer définitivement "${s.title}" ?`)) return;
-  currentModuleData.sections.splice(idx, 1);
-  renderSections();
-  try {
-    await commitModule(`content(${currentModuleId}): suppression de "${s.id}"`);
-  } catch (err) {
-    currentModuleData.sections.splice(idx, 0, s);
-    renderSections();
-    toast(`Erreur : ${err.message}`, 'warn');
-  }
-}
-
 async function duplicateSection(idx) {
   if (!commitGuard()) return;
   const orig = currentModuleData.sections[idx];
@@ -860,10 +857,20 @@ function startEditModuleMeta() {
 }
 
 async function saveModuleMeta() {
+  if (!commitGuard()) return;
+  const newTitle = document.getElementById('metaTitle').value.trim();
+  if (!newTitle) { setMetaStatus('Le titre du module est obligatoire.', 'err'); return; }
   const btn = document.getElementById('saveMetaBtn');
   btn.disabled = true; btn.textContent = 'Enregistrement…';
-  currentModuleData.title    = document.getElementById('metaTitle').value.trim()    || currentModuleData.title;
-  currentModuleData.subtitle = document.getElementById('metaSubtitle').value.trim() || currentModuleData.subtitle;
+  // Snapshot pour pouvoir restaurer si le commit échoue (l'objet est partagé
+  // par référence avec allModulesData : sans rollback, un échec laisserait
+  // des valeurs fantômes qui partiraient avec le prochain commit).
+  const prevMeta = {
+    title: currentModuleData.title, subtitle: currentModuleData.subtitle,
+    objective: currentModuleData.objective, source: currentModuleData.source
+  };
+  currentModuleData.title    = newTitle;
+  currentModuleData.subtitle = document.getElementById('metaSubtitle').value.trim();
   currentModuleData.objective = document.getElementById('metaObjective').value.trim();
   currentModuleData.source   = document.getElementById('metaSource').value.trim();
   try {
@@ -879,6 +886,8 @@ async function saveModuleMeta() {
     setMetaStatus('Enregistré ✓', 'ok');
     setTimeout(() => goBack(), 1000);
   } catch (err) {
+    Object.assign(currentModuleData, prevMeta);
+    updateModuleHeader();
     setMetaStatus(`Erreur : ${err.message}`, 'err');
   } finally {
     btn.disabled = false; btn.textContent = 'Enregistrer';
@@ -955,7 +964,7 @@ function updateFicheDatalist() {
       paths.push(`${m.id}/${s.id}`);
     }
   }
-  dl.innerHTML = paths.map(p => `<option value="${p}">`).join('');
+  dl.innerHTML = paths.map(p => `<option value="${esc(p)}">`).join('');
 }
 
 function cancelEdit() {
@@ -964,7 +973,84 @@ function cancelEdit() {
   goBack();
 }
 
+// ── Validation client (miroir de validateContent dans build.js) ────────────────
+// Le build CI refuse certains contenus ; sans cette validation, l'admin
+// committerait sur main un YAML que le déploiement rejette ensuite, sans
+// moyen pour un·e éditeur·rice non technique de réparer.
+
+function collectValidPaths(extraPath) {
+  const paths = new Set();
+  for (const m of allModulesData || []) {
+    for (const s of m.data.sections || []) paths.add(`${m.id}/${s.id}`);
+  }
+  if (extraPath) paths.add(extraPath);
+  return paths;
+}
+
+function validateSectionClient(section) {
+  const errors = [];
+  const selfClosing = new Set(['br', 'hr', 'img', 'input', 'meta', 'link']);
+  const validPaths = collectValidPaths(`${currentModuleId}/${section.id}`);
+
+  if (!section.linkTo && !section.body) {
+    errors.push('La fiche doit avoir un contenu (ou un champ linkTo).');
+  }
+
+  if (section.linkTo && !validPaths.has(section.linkTo)) {
+    errors.push(`linkTo cassé : la fiche "${section.linkTo}" n'existe pas.`);
+  }
+
+  const body = section.body || '';
+  const stack = [];
+  for (const m of body.matchAll(/<\/?([a-zA-Z][a-zA-Z0-9]*)\b[^>]*?(\/?)>/g)) {
+    const tag = m[1].toLowerCase();
+    if (selfClosing.has(tag) || m[2] === '/') continue;
+    if (m[0][1] === '/') {
+      if (stack[stack.length - 1] === tag) stack.pop();
+      else errors.push(`Balise HTML fermante </${tag}> inattendue (passe en mode "code HTML" pour corriger).`);
+    } else {
+      stack.push(tag);
+    }
+  }
+  if (stack.length) {
+    errors.push(`Balises HTML non fermées : ${stack.join(', ')} (passe en mode "code HTML" pour corriger).`);
+  }
+
+  for (const m of body.matchAll(/href="([^"]+)"/g)) {
+    const h = m[1];
+    if (h.startsWith('#/fiche/')) {
+      if (!validPaths.has(h.slice(8))) errors.push(`Lien interne cassé : ${h} (la fiche n'existe pas).`);
+    } else if (!h.startsWith('http') && !h.startsWith('#/') && !h.startsWith('tel:')) {
+      errors.push(`Lien suspect : ${h} (utilise https://…, #/fiche/… ou tel:…).`);
+    }
+  }
+
+  // Renommer un ID casse tout ce qui pointait vers l'ancien chemin
+  if (currentSectionIdx !== -1) {
+    const oldId = currentModuleData.sections[currentSectionIdx]?.id;
+    if (oldId && oldId !== section.id) {
+      const oldPath = `${currentModuleId}/${oldId}`;
+      const usedBy = [];
+      for (const m of allModulesData || []) {
+        for (const s of m.data.sections || []) {
+          if (s.linkTo === oldPath) usedBy.push(`linkTo de ${m.id}/${s.id}`);
+          if ((s.body || '').includes(`#/fiche/${oldPath}`)) usedBy.push(`lien dans ${m.id}/${s.id}`);
+        }
+      }
+      for (const [key, refs] of Object.entries(currentLexique || {})) {
+        if ((refs || []).includes(oldPath)) usedBy.push(`mot-clé "${key}"`);
+      }
+      if (usedBy.length) {
+        errors.push(`Impossible de renommer "${oldId}" en "${section.id}" : encore utilisé par ${usedBy.slice(0, 5).join(', ')}${usedBy.length > 5 ? '…' : ''}.`);
+      }
+    }
+  }
+
+  return errors;
+}
+
 async function saveSection() {
+  if (!commitGuard()) return;
   const id      = document.getElementById('fieldId').value.trim();
   const title   = document.getElementById('fieldTitle').value.trim();
   const summary = document.getElementById('fieldSummary').value.trim();
@@ -987,11 +1073,37 @@ async function saveSection() {
   if (linkTo)      section.linkTo      = linkTo;
   if (body)        section.body        = body;
 
-  const btn = document.getElementById('saveBtn');
-  btn.disabled = true; btn.textContent = 'Enregistrement…';
   const oldSection = currentSectionIdx !== -1
     ? JSON.parse(JSON.stringify(currentModuleData.sections[currentSectionIdx]))
     : null;
+
+  // Préserve les champs absents du formulaire mais gérés par le build
+  // (status, reviewedBy, internalNotes…) : sans ça, ils seraient effacés
+  // silencieusement à la première édition.
+  const formFields = new Set(['id', 'title', 'summary', 'source', 'disclaimer', 'lastChecked', 'linkTo', 'body']);
+  if (oldSection) {
+    for (const k of Object.keys(oldSection)) {
+      if (!formFields.has(k)) section[k] = oldSection[k];
+    }
+  }
+
+  // En cas de renommage d'ID, on a besoin du lexique pour vérifier les références
+  if (oldSection && oldSection.id !== id && currentLexique === null) {
+    try {
+      const data = await ghGet(LEXIQUE_PATH);
+      currentLexiqueSha = data.sha;
+      currentLexique = jsyaml.load(decodeContent(data.content));
+    } catch (_) { /* hors-ligne : la vérification lexique sera partielle */ }
+  }
+
+  const validationErrors = validateSectionClient(section);
+  if (validationErrors.length) {
+    setStatus(validationErrors.join(' '), 'err');
+    return;
+  }
+
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true; btn.textContent = 'Enregistrement…';
   try {
     if (currentSectionIdx === -1) currentModuleData.sections.push(section);
     else currentModuleData.sections[currentSectionIdx] = section;
@@ -1032,8 +1144,17 @@ async function commitModule(message) {
       const c = allModulesData.find(m => m.id === currentModuleId);
       if (c) { c.sha = currentModuleSha; c.data = currentModuleData; }
     }
+    updateFicheDatalist();
     toast('Sauvegardé — déploiement en cours…');
-    startDeployPoll();
+    startDeployPoll(result.commit?.sha);
+  } catch (err) {
+    // Sha périmé (commit concurrent depuis un autre onglet/poste) : on
+    // resynchronise pour que la prochaine tentative puisse aboutir.
+    try {
+      const fresh = await ghGet(`${BASE_PATH}/${currentModuleId}.yaml`);
+      currentModuleSha = fresh.sha;
+    } catch (_) {}
+    throw err;
   } finally {
     commitBusy = false;
   }
@@ -1050,7 +1171,7 @@ async function showLexique() {
     currentLexique = jsyaml.load(decodeContent(data.content));
     renderLexique();
   } catch (err) {
-    document.getElementById('lexiqueList').innerHTML = `<div class="error-msg">Erreur : ${err.message}</div>`;
+    document.getElementById('lexiqueList').innerHTML = `<div class="error-msg">Erreur : ${esc(err.message)}</div>`;
   }
 }
 
@@ -1105,10 +1226,19 @@ async function removeLexRef(key, idx) {
   try { await commitLexique(`lexique: retrait d'une référence de "${key}"`); } catch (_) {}
 }
 
+// Le build CI rejette tout chemin de lexique qui ne correspond pas à une
+// fiche existante : on vérifie ici avant de committer.
+function lexPathValid(val) {
+  if (!/^[\w-]+\/[\w-]+$/.test(val)) return false;
+  if (!allModulesData) return true; // dashboard pas encore chargé : on laisse passer plutôt que de bloquer
+  return collectValidPaths().has(val);
+}
+
 async function addLexRef(key) {
   const input = document.getElementById(`lex-new-${key}`);
   const val = input.value.trim();
   if (!val) return;
+  if (!lexPathValid(val)) { toast(`"${val}" n'est pas une fiche existante (format : module/fiche-id).`, 'warn'); return; }
   if (!currentLexique[key]) currentLexique[key] = [];
   if (!currentLexique[key].includes(val)) {
     currentLexique[key].push(val);
@@ -1141,6 +1271,7 @@ async function confirmAddLexEntry() {
   const key = document.getElementById('newLexKey').value.trim().toLowerCase();
   const val = document.getElementById('newLexVal').value.trim();
   if (!key || !val) { toast('Remplis les deux champs.', 'warn'); return; }
+  if (!lexPathValid(val)) { toast(`"${val}" n'est pas une fiche existante (format : module/fiche-id).`, 'warn'); return; }
   if (!currentLexique[key]) currentLexique[key] = [];
   if (!currentLexique[key].includes(val)) currentLexique[key].push(val);
   try { await commitLexique(`lexique: ajout du mot-clé "${key}"`); } catch (_) { return; }
@@ -1156,7 +1287,7 @@ async function commitLexique(message) {
     const result = await ghPut(LEXIQUE_PATH, yaml, currentLexiqueSha, message);
     currentLexiqueSha = result.content.sha;
     toast('Sauvegardé — déploiement en cours…');
-    startDeployPoll();
+    startDeployPoll(result.commit?.sha);
   } catch (err) {
     // Resynchronise l'état local depuis GitHub pour éviter toute divergence
     toast(`Erreur : ${err.message}`, 'warn');
@@ -1223,6 +1354,12 @@ async function deleteSectionFromPreview() {
 }
 
 // ── Init event listeners (once) ─────────────────────────────────────────────────
+// Fermer/recharger l'onglet avec du travail non sauvegardé doit prévenir,
+// comme le fait déjà la navigation interne (goBack).
+window.addEventListener('beforeunload', e => {
+  if (isDirty || isMetaDirty) { e.preventDefault(); e.returnValue = ''; }
+});
+
 document.getElementById('sectionForm').addEventListener('input', markDirty);
 document.getElementById('moduleMetaForm').addEventListener('input', () => {
   isMetaDirty = true;
@@ -1293,7 +1430,7 @@ function toggleHtml() {
     textarea.rows = Math.max(20, textarea.value.split('\n').length + 3);
     editor.style.display = 'none'; textarea.style.display = ''; btn.classList.add('active');
   } else {
-    editor.innerHTML = textarea.value || '';
+    editor.innerHTML = sanitizeBody(textarea.value);
     editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
     editor.style.display = ''; textarea.style.display = 'none'; btn.classList.remove('active');
   }
@@ -1317,9 +1454,19 @@ function getEditorHtml() {
   return html.trim();
 }
 
+// Même exigence que la prévisualisation : tout HTML venant du YAML (ou du
+// mode code) passe par DOMPurify avant d'être injecté. Un YAML piégé ne doit
+// pas pouvoir exécuter du code dans l'admin (le token GitHub y est accessible).
+function sanitizeBody(html) {
+  if (!html) return '';
+  if (window.DOMPurify) return DOMPurify.sanitize(html);
+  toast('Éditeur indisponible : DOMPurify n\'a pas chargé (hors-ligne ?). Recharge la page.', 'warn');
+  return '';
+}
+
 function setEditorHtml(html) {
   const editor = document.getElementById('fieldBodyEditor');
-  editor.innerHTML = html || '';
+  editor.innerHTML = sanitizeBody(html);
   editor.querySelectorAll('.callout').forEach(addCalloutDeleteBtn);
 }
 

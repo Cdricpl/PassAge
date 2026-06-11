@@ -408,11 +408,6 @@
           <label>Objectif (phrase d'accroche)</label>
           <textarea id="metaObjective" rows="3" placeholder="ex : Comprendre tes droits en tant que locataire…"></textarea>
         </div>
-        <div class="form-group">
-          <label>Sources générales du module (optionnel)</label>
-          <input id="metaSource" type="text" placeholder="ex : droitbelgique.be · logement.wallonie.be">
-          <div class="hint">Affiché sous chaque fiche du module, sauf si la fiche a sa propre source.</div>
-        </div>
         <div class="form-actions">
           <button type="button" onclick="goBack()" class="btn-ghost">Annuler</button>
           <button type="button" id="saveMetaBtn" onclick="saveModuleMeta()" class="btn-primary">Enregistrer</button>
@@ -818,7 +813,6 @@ function startEditModuleMeta() {
   document.getElementById('metaTitle').value     = currentModuleData.title     || '';
   document.getElementById('metaSubtitle').value  = currentModuleData.subtitle  || '';
   document.getElementById('metaObjective').value = currentModuleData.objective || '';
-  document.getElementById('metaSource').value    = currentModuleData.source    || '';
   document.getElementById('saveMetaStatus').textContent = '';
   isMetaDirty = false;
   document.getElementById('metaDirtyIndicator').style.display = 'none';
@@ -831,7 +825,6 @@ async function saveModuleMeta() {
   currentModuleData.title    = document.getElementById('metaTitle').value.trim()    || currentModuleData.title;
   currentModuleData.subtitle = document.getElementById('metaSubtitle').value.trim() || currentModuleData.subtitle;
   currentModuleData.objective = document.getElementById('metaObjective').value.trim();
-  currentModuleData.source   = document.getElementById('metaSource').value.trim();
   try {
     await commitModule(`content(${currentModuleId}): mise à jour des métadonnées du module`);
     // Update cache

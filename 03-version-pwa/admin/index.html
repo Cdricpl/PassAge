@@ -140,8 +140,6 @@
     .fiche-link-arrow { flex-shrink: 0; color: var(--muted); font-size: 18px; font-weight: 300; }
     .fiche-link-controls { display: flex; flex-direction: column; gap: 2px; padding: 8px; border-left: 1px solid var(--border-soft); background: var(--bg); justify-content: center; }
     .badge { font-size: 12px; background: var(--primary-soft); color: var(--primary); border-radius: 999px; padding: 2px 9px; margin-top: 5px; display: inline-block; font-weight: 500; }
-    .reorder-btns { display: flex; flex-direction: column; gap: 2px; }
-    .reorder-btns button { padding: 2px 6px; font-size: 11px; line-height: 1.4; }
 
     /* ── Forms ── */
     .editor-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; letter-spacing: -.01em; }
@@ -760,13 +758,8 @@ function renderSections() {
         <span class="fiche-link-arrow">›</span>
       </div>
       <div class="fiche-link-controls">
-        <div class="reorder-btns">
-          <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},-1)" ${i===0?'disabled':''}>↑</button>
-          <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},1)" ${i===secs.length-1?'disabled':''}>↓</button>
-        </div>
-        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();startEditSection(${i})" title="Modifier">✏️</button>
-        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();duplicateSection(${i})" title="Dupliquer">⧉</button>
-        <button class="btn-danger btn-xs" onclick="event.stopPropagation();deleteSection(${i})">✕</button>
+        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},-1)" ${i===0?'disabled':''}>↑</button>
+        <button class="btn-ghost btn-xs" onclick="event.stopPropagation();moveSection(${i},1)" ${i===secs.length-1?'disabled':''}>↓</button>
       </div>
     </div>`).join('');
 }

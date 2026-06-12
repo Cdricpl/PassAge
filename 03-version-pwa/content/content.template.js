@@ -61,6 +61,8 @@ window.MA_CONTENT = (function () {
   // ============================================================
   const LEXIQUE = /* LEXIQUE_PLACEHOLDER */;
 
+  const APROPOS = /* APROPOS_PLACEHOLDER */;
+
   const MODULES_INDEX = {};
   MODULES.forEach(m => { MODULES_INDEX[m.id] = m; });
 
@@ -70,6 +72,7 @@ window.MA_CONTENT = (function () {
     MODULES_INDEX,
     FICHES_INDEX,
     REDIRECTS,
-    LEXIQUE
+    LEXIQUE,
+    APROPOS
   };
 })();

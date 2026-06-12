@@ -19,11 +19,12 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 // ── paths ─────────────────────────────────────────────────────────────────────
-const ROOT      = __dirname;
-const TEMPLATE  = path.join(ROOT, 'content', 'content.template.js');
-const OUT       = path.join(ROOT, 'assets', 'js', 'content.js');
-const MOD_DIR   = path.join(ROOT, 'content', 'modules');
-const LEX_FILE  = path.join(ROOT, 'content', 'lexique.yaml');
+const ROOT         = __dirname;
+const TEMPLATE     = path.join(ROOT, 'content', 'content.template.js');
+const OUT          = path.join(ROOT, 'assets', 'js', 'content.js');
+const MOD_DIR      = path.join(ROOT, 'content', 'modules');
+const LEX_FILE     = path.join(ROOT, 'content', 'lexique.yaml');
+const APROPOS_FILE = path.join(ROOT, 'content', 'apropos.yaml');
 
 // Canonical module order
 const MODULE_ORDER = [
@@ -268,7 +269,11 @@ function main() {
   // 2. Read lexique YAML
   const lexRaw  = fs.readFileSync(LEX_FILE, 'utf8');
   const lexique = yaml.load(lexRaw);
-  console.log(`  loaded lexique: ${Object.keys(lexique).length} entries\n`);
+  console.log(`  loaded lexique: ${Object.keys(lexique).length} entries`);
+
+  // 2b. Read apropos YAML
+  const apropos = yaml.load(fs.readFileSync(APROPOS_FILE, 'utf8'));
+  console.log(`  loaded apropos: ${(apropos.sources || []).length} source groups\n`);
 
   // 3. Validate content before generating anything
   const template = fs.readFileSync(TEMPLATE, 'utf8');
@@ -285,7 +290,8 @@ function main() {
   const lexiqueJs = lexiqueToJs(lexique);
   let output = template
     .replace('/* MODULES_PLACEHOLDER */', modulesJs)
-    .replace('/* LEXIQUE_PLACEHOLDER */', lexiqueJs);
+    .replace('/* LEXIQUE_PLACEHOLDER */', lexiqueJs)
+    .replace('/* APROPOS_PLACEHOLDER */', JSON.stringify(apropos, null, 4));
 
   // 5. Determine version bump
   // oldVer is read from the repo's index.html (never updated back to repo).

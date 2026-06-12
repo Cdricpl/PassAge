@@ -1,0 +1,90 @@
+mission: >-
+  Trop d'infos utiles pour les jeunes majeur·es sont cachées dans du jargon
+  administratif. Pass'âge rassemble l'essentiel : devenir majeur·e, papiers,
+  argent, logement, travail, études, santé, vie quotidienne, urgences. Tu lis,
+  tu prends ce qui t'aide, tu refermes.
+
+service:
+  name: "Service Familles d'Accueil de Verviers"
+  url: "https://famillesdaccueil.mypixieset.com/"
+  description: >-
+    Pass'âge est née au Service Familles d'Accueil de Verviers, qui accompagne
+    depuis des années les jeunes en placement et leurs familles d'accueil. Sa
+    porte te reste ouverte après tes 18 ans : pour une question, un doute, une
+    écoute.
+
+contact:
+  email: "cpi@famillesaccueil.be"
+
+sources:
+  - group: "Aide à la jeunesse & accompagnement"
+    items:
+      - label: "Portail Aide à la jeunesse — Fédération Wallonie-Bruxelles"
+        url: "https://www.aidealajeunesse.cfwb.be"
+        note: "(SAJ, SPJ, AMO)"
+      - label: "Écoute-Enfants — 103"
+        url: "https://www.aidealajeunesse.cfwb.be/index.php?id=ecouteenfants"
+      - label: "Bruxelles-J — AMO (Aide en Milieu Ouvert)"
+        url: "https://www.bruxelles-j.be/ton-autonomie/tu-es-mineur/amo/"
+      - label: "Fédération des Maisons de Jeunes (12-26 ans)"
+        url: "https://fmjbf.org/membres/"
+  - group: "Argent & droits sociaux"
+    items:
+      - label: "FAMIWAL — allocations familiales après 18 ans"
+        url: "https://www.famiwal.be/jeunes/les-principes-de-base"
+        note: "(Wallonie, condition 27 crédits)"
+      - label: "SPP Intégration sociale — RIS, CPAS"
+        url: "https://www.mi-is.be"
+      - label: "UVCW — montants RIS au 01/03/2026"
+        url: "https://www.uvcw.be/aide-sociale/etudes/art-3768"
+      - label: "ONEM — réforme du chômage (1er mars 2026)"
+        url: "https://www.onem.be/actualites/2026/03/02/nouvelle-reglementation-chomage-en-vigueur-depuis-le-1er-mars-2026"
+      - label: "CSC — ce qui change en 2026 (chômage)"
+        url: "https://www.lacsc.be/vos-droits/chomage/ce-qui-change-en-2026"
+  - group: "Santé"
+    items:
+      - label: "INAMI — soins psychologiques de 1ère ligne"
+        url: "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale/vos-soins-psychologiques-de-1re-ligne-rembourses-via-les-reseaux-de-sante-mentale"
+        note: "(gratuit avant 24 ans)"
+      - label: "INAMI — mutuelle, conventions, BIM"
+        url: "https://www.inami.fgov.be"
+      - label: "PsyForYou — annuaire des psy conventionnés"
+        url: "https://www.psyforyou.be"
+  - group: "Logement"
+    items:
+      - label: "Logement Wallonie — garantie locative"
+        url: "https://logement.wallonie.be/fr/bail/garantie-locative"
+      - label: "Droits Quotidiens — garantie locative limitée à 2 mois (Wallonie)"
+        url: "https://www.droitsquotidiens.be/fr/actualites/garantie-locative-limitee-2-mois-de-loyer-en-wallonie"
+      - label: "SLRB Bruxelles — logement social"
+        url: "https://slrb-bghm.brussels"
+  - group: "Travail & études"
+    items:
+      - label: "Le Forem — emploi, formations, stage d'insertion"
+        url: "https://www.leforem.be"
+      - label: "Infor Jeunes — allocations d'insertion (FAQ)"
+        url: "https://inforjeunes.be/thematique/allocations-dinsertion-professionnelle/"
+      - label: "Allocations d'études FWB (bourses)"
+        url: "https://allocations-etudes.cfwb.be"
+  - group: "Écoute, violences, addictions"
+    items:
+      - label: "SOS Viol — 0800 98 100"
+        url: "https://www.sosviol.be"
+      - label: "Infor Drogues — 02 227 52 52"
+        url: "https://infordrogues.be/services/service-permanence/permanence-telephonique/"
+      - label: "Centre de Prévention du Suicide — 0800 32 123"
+        url: "https://www.preventionsuicide.be"
+      - label: "Télé-Accueil — 107"
+        url: "https://www.tele-accueil.be"
+  - group: "Information générale & juridique"
+    items:
+      - label: "Droits Quotidiens — vulgarisation juridique"
+        url: "https://www.droitsquotidiens.be"
+      - label: "Infor Jeunes"
+        url: "https://inforjeunes.be"
+      - label: "Bruxelles-J"
+        url: "https://www.bruxelles-j.be"
+      - label: "Service Droit des Jeunes (SDJ)"
+        url: "https://www.sdj.be"
+      - label: "belgium.be — portail des services publics fédéraux"
+        url: "https://www.belgium.be"

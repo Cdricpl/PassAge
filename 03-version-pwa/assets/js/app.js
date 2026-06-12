@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  const { MODULES, MODULES_INDEX, FICHES_INDEX, REDIRECTS, LEXIQUE, ICONS } = window.MA_CONTENT;
+  const { MODULES, MODULES_INDEX, FICHES_INDEX, REDIRECTS, LEXIQUE, ICONS, APROPOS } = window.MA_CONTENT;
 
   const main = document.getElementById('main');
   const backBtn = document.getElementById('backBtn');
@@ -695,6 +695,18 @@
   }
 
   function renderAPropos() {
+    const ap  = APROPOS || {};
+    const svc = ap.service || {};
+    const contact = ap.contact || {};
+    const sources = ap.sources || [];
+
+    const sourcesHtml = sources.map(grp => {
+      const items = (grp.items || []).map(item =>
+        `<li><a href="${escapeHtml(item.url || '#')}" target="_blank" rel="noopener" class="apropos-link">${escapeHtml(item.label || '')}</a>${item.note ? ' ' + escapeHtml(item.note) : ''}</li>`
+      ).join('');
+      return `<h3 class="apropos-source-group">${escapeHtml(grp.group || '')}</h3><ul class="apropos-sources">${items}</ul>`;
+    }).join('');
+
     main.innerHTML = `
       <p class="page-pretitle">À propos</p>
       <h1 class="page-title">Pass'âge, c'est quoi&nbsp;?</h1>
@@ -702,7 +714,7 @@
 
       <section class="apropos-card">
         <h2><span class="apropos-icon" style="background: var(--color-argent-soft); color: var(--color-argent);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" fill="currentColor"/></svg></span> Notre mission</h2>
-        <p>Trop d'infos utiles pour les jeunes majeur·es sont cachées dans du jargon administratif. Pass'âge rassemble l'essentiel : devenir majeur·e, papiers, argent, logement, travail, études, santé, vie quotidienne, urgences. Tu lis, tu prends ce qui t'aide, tu refermes.</p>
+        <p>${escapeHtml(ap.mission || '')}</p>
       </section>
 
       <section class="apropos-card">
@@ -710,11 +722,11 @@
           <img src="assets/icons/logo-sfa.png" alt="" class="apropos-logo" />
           <div>
             <p class="apropos-initiative-label">Une initiative du</p>
-            <h2 class="apropos-initiative-title">Service Familles d'Accueil de Verviers</h2>
+            <h2 class="apropos-initiative-title">${escapeHtml(svc.name || '')}</h2>
           </div>
         </div>
-        <p>Pass'âge est née au Service Familles d'Accueil de Verviers, qui accompagne depuis des années les jeunes en placement et leurs familles d'accueil. Sa porte te reste ouverte après tes 18 ans : pour une question, un doute, une écoute.</p>
-        <p><a href="https://famillesdaccueil.mypixieset.com/" target="_blank" rel="noopener" class="apropos-link">Site du Service Familles d'Accueil <span aria-hidden="true">↗</span></a></p>
+        <p>${escapeHtml(svc.description || '')}</p>
+        ${svc.url ? `<p><a href="${escapeHtml(svc.url)}" target="_blank" rel="noopener" class="apropos-link">Site du Service Familles d'Accueil <span aria-hidden="true">↗</span></a></p>` : ''}
       </section>
 
       <section class="apropos-card">
@@ -729,71 +741,18 @@
 
       <section class="apropos-card">
         <h2><span class="apropos-icon" style="background: var(--color-logement-soft); color: #B7691A;"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zM2 8l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span> Contact &amp; retours</h2>
-        <p>Tu vois une erreur, une info à mettre à jour, ou tu as une idée pour améliorer l'app&nbsp;? Écris-nous à <a href="mailto:cpi@famillesaccueil.be" class="apropos-link">cpi@famillesaccueil.be</a> ou via <a href="https://famillesdaccueil.mypixieset.com/" target="_blank" rel="noopener" class="apropos-link">le site du Service Familles d'Accueil</a>. Toute correction est la bienvenue.</p>
+        <p>Tu vois une erreur, une info à mettre à jour, ou tu as une idée pour améliorer l'app&nbsp;? Écris-nous à <a href="mailto:${escapeHtml(contact.email || '')}" class="apropos-link">${escapeHtml(contact.email || '')}</a> ou via <a href="${escapeHtml(svc.url || '#')}" target="_blank" rel="noopener" class="apropos-link">le site du Service Familles d'Accueil</a>. Toute correction est la bienvenue.</p>
       </section>
 
+      ${sources.length ? `
       <section class="apropos-card">
         <h2><span class="apropos-icon" style="background: var(--color-sante-soft); color: var(--color-sante);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 22s-8-4.5-8-12V5l8-3 8 3v5c0 7.5-8 12-8 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span> Nos sources</h2>
-        <p>Chaque fiche cite ses sources officielles propres (visibles en bas de fiche). En complément, voici les références publiques belges utilisées lors de la vérification du 20 mai 2026&nbsp;:</p>
-
-        <h3 class="apropos-source-group">Aide à la jeunesse &amp; accompagnement</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://www.aidealajeunesse.cfwb.be" target="_blank" rel="noopener" class="apropos-link">Portail Aide à la jeunesse — Fédération Wallonie-Bruxelles</a> (SAJ, SPJ, AMO)</li>
-          <li><a href="https://www.aidealajeunesse.cfwb.be/index.php?id=ecouteenfants" target="_blank" rel="noopener" class="apropos-link">Écoute-Enfants — 103</a></li>
-          <li><a href="https://www.bruxelles-j.be/ton-autonomie/tu-es-mineur/amo/" target="_blank" rel="noopener" class="apropos-link">Bruxelles-J — AMO (Aide en Milieu Ouvert)</a></li>
-          <li><a href="https://fmjbf.org/membres/" target="_blank" rel="noopener" class="apropos-link">Fédération des Maisons de Jeunes (12-26 ans)</a></li>
-        </ul>
-
-        <h3 class="apropos-source-group">Argent &amp; droits sociaux</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://www.famiwal.be/jeunes/les-principes-de-base" target="_blank" rel="noopener" class="apropos-link">FAMIWAL — allocations familiales après 18 ans</a> (Wallonie, condition 27 crédits)</li>
-          <li><a href="https://www.mi-is.be" target="_blank" rel="noopener" class="apropos-link">SPP Intégration sociale</a> — RIS, CPAS</li>
-          <li><a href="https://www.uvcw.be/aide-sociale/etudes/art-3768" target="_blank" rel="noopener" class="apropos-link">UVCW — montants RIS au 01/03/2026</a></li>
-          <li><a href="https://www.onem.be/actualites/2026/03/02/nouvelle-reglementation-chomage-en-vigueur-depuis-le-1er-mars-2026" target="_blank" rel="noopener" class="apropos-link">ONEM — réforme du chômage (1er mars 2026)</a></li>
-          <li><a href="https://www.lacsc.be/vos-droits/chomage/ce-qui-change-en-2026" target="_blank" rel="noopener" class="apropos-link">CSC — ce qui change en 2026 (chômage)</a></li>
-        </ul>
-
-        <h3 class="apropos-source-group">Santé</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale/vos-soins-psychologiques-de-1re-ligne-rembourses-via-les-reseaux-de-sante-mentale" target="_blank" rel="noopener" class="apropos-link">INAMI — soins psychologiques de 1ère ligne</a> (gratuit avant 24 ans)</li>
-          <li><a href="https://www.inami.fgov.be" target="_blank" rel="noopener" class="apropos-link">INAMI — mutuelle, conventions, BIM</a></li>
-          <li><a href="https://www.psyforyou.be" target="_blank" rel="noopener" class="apropos-link">PsyForYou — annuaire des psy conventionnés</a></li>
-        </ul>
-
-        <h3 class="apropos-source-group">Logement</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://logement.wallonie.be/fr/bail/garantie-locative" target="_blank" rel="noopener" class="apropos-link">Logement Wallonie — garantie locative</a></li>
-          <li><a href="https://www.droitsquotidiens.be/fr/actualites/garantie-locative-limitee-2-mois-de-loyer-en-wallonie" target="_blank" rel="noopener" class="apropos-link">Droits Quotidiens — garantie locative limitée à 2 mois (Wallonie)</a></li>
-          <li><a href="https://slrb-bghm.brussels" target="_blank" rel="noopener" class="apropos-link">SLRB Bruxelles — logement social</a></li>
-        </ul>
-
-        <h3 class="apropos-source-group">Travail &amp; études</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://www.leforem.be" target="_blank" rel="noopener" class="apropos-link">Le Forem</a> — emploi, formations, stage d'insertion</li>
-          <li><a href="https://inforjeunes.be/thematique/allocations-dinsertion-professionnelle/" target="_blank" rel="noopener" class="apropos-link">Infor Jeunes — allocations d'insertion (FAQ)</a></li>
-          <li><a href="https://allocations-etudes.cfwb.be" target="_blank" rel="noopener" class="apropos-link">Allocations d'études FWB (bourses)</a></li>
-        </ul>
-
-        <h3 class="apropos-source-group">Écoute, violences, addictions</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://www.sosviol.be" target="_blank" rel="noopener" class="apropos-link">SOS Viol — 0800 98 100</a></li>
-          <li><a href="https://infordrogues.be/services/service-permanence/permanence-telephonique/" target="_blank" rel="noopener" class="apropos-link">Infor Drogues — 02 227 52 52</a></li>
-          <li><a href="https://www.preventionsuicide.be" target="_blank" rel="noopener" class="apropos-link">Centre de Prévention du Suicide — 0800 32 123</a></li>
-          <li><a href="https://www.tele-accueil.be" target="_blank" rel="noopener" class="apropos-link">Télé-Accueil — 107</a></li>
-        </ul>
-
-        <h3 class="apropos-source-group">Information générale &amp; juridique</h3>
-        <ul class="apropos-sources">
-          <li><a href="https://www.droitsquotidiens.be" target="_blank" rel="noopener" class="apropos-link">Droits Quotidiens</a> — vulgarisation juridique</li>
-          <li><a href="https://inforjeunes.be" target="_blank" rel="noopener" class="apropos-link">Infor Jeunes</a> · <a href="https://www.bruxelles-j.be" target="_blank" rel="noopener" class="apropos-link">Bruxelles-J</a></li>
-          <li><a href="https://www.sdj.be" target="_blank" rel="noopener" class="apropos-link">Service Droit des Jeunes (SDJ)</a></li>
-          <li><a href="https://www.belgium.be" target="_blank" rel="noopener" class="apropos-link">belgium.be</a> — portail des services publics fédéraux</li>
-        </ul>
-
+        <p>Chaque fiche cite ses sources officielles propres (visibles en bas de fiche). En complément, voici les références publiques belges utilisées&nbsp;:</p>
+        ${sourcesHtml}
         <p class="apropos-meta-small">Les montants, seuils et procédures changent régulièrement en Belgique. En cas de doute, vérifie auprès du service compétent.</p>
-      </section>
+      </section>` : ''}
 
-      <p class="apropos-meta">Contenu mis à jour le 20 mai 2026. Vérifié à partir des sites publics belges.</p>
+      <p class="apropos-meta">Vérifié à partir des sites publics belges.</p>
     `;
   }
 

@@ -300,6 +300,7 @@
       </div>
       <div class="dashboard-actions">
         <button onclick="showLexique()" class="btn-ghost btn-sm">🔑 Gérer les mots-clés</button>
+        <button onclick="showApropos()" class="btn-ghost btn-sm">ℹ️ Modifier la page À propos</button>
       </div>
     </div>
   </div>
@@ -448,6 +449,51 @@
     </div>
   </div>
 
+  <!-- À propos editor -->
+  <div id="view-apropos" style="display:none">
+    <div class="container">
+      <div class="page-title">Page "À propos" <span id="aproposDirtyIndicator" class="dirty-indicator" style="display:none">● non sauvegardé</span></div>
+      <p class="page-subtitle">Ces textes apparaissent dans la section "À propos" de l'application publique.</p>
+
+      <div class="form-group">
+        <label>Mission</label>
+        <textarea id="aproposMission" rows="4" placeholder="Texte de présentation de l'application…"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Nom du service</label>
+        <input id="aproposServiceName" type="text" placeholder="Service Familles d'Accueil de Verviers">
+      </div>
+
+      <div class="form-group">
+        <label>URL du site du service</label>
+        <input id="aproposServiceUrl" type="url" placeholder="https://…">
+      </div>
+
+      <div class="form-group">
+        <label>Description du service</label>
+        <textarea id="aproposServiceDesc" rows="3" placeholder="Présentation du service…"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Email de contact</label>
+        <input id="aproposEmail" type="email" placeholder="contact@service.be">
+      </div>
+
+      <div class="form-group">
+        <label>Sources (YAML)</label>
+        <textarea id="aproposSources" rows="22" style="font-family:monospace;font-size:13px;line-height:1.5" spellcheck="false" placeholder="- group: &quot;Nom du groupe&quot;&#10;  items:&#10;    - label: &quot;Nom de la source&quot;&#10;      url: &quot;https://…&quot;"></textarea>
+        <div class="hint">Liste YAML de groupes. Chaque groupe : <code>group</code> (titre) + <code>items</code> (liste avec <code>label</code>, <code>url</code> et <code>note</code> optionnel).</div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" onclick="goBack()" class="btn-ghost">Annuler</button>
+        <button type="button" id="saveAproposBtn" onclick="saveApropos()" class="btn-primary">Enregistrer</button>
+      </div>
+      <div id="saveAproposStatus" class="save-status"></div>
+    </div>
+  </div>
+
   <!-- Fiche preview -->
   <div id="view-fiche-preview" style="display:none">
     <div class="container">
@@ -480,9 +526,10 @@
 'use strict';
 
 // ── Config ─────────────────────────────────────────────────────────────────────
-const REPO       = 'Cdricpl/PassAge';
-const BASE_PATH  = '03-version-pwa/content/modules';
+const REPO         = 'Cdricpl/PassAge';
+const BASE_PATH    = '03-version-pwa/content/modules';
 const LEXIQUE_PATH = '03-version-pwa/content/lexique.yaml';
+const APROPOS_PATH = '03-version-pwa/content/apropos.yaml';
 const MODULE_ORDER  = ['admin','argent','etudes','travail','logement','vie','loisirs','sante','urgence'];
 const MODULE_LABELS = {
   admin:'Administratif & juridique', argent:'Argent & aides',
@@ -512,6 +559,9 @@ let isDirty           = false;
 let allModulesData    = null; // [{id, data, sha}] for search
 let currentLexique    = null;
 let currentLexiqueSha = null;
+let currentApropos    = null;
+let currentAproposSha = null;
+let isAproposDirty    = false;
 let deployPollTimer   = null;
 let viewHistory       = [];
 let isMetaDirty       = false;
@@ -600,7 +650,7 @@ function stopDeployPoll() {
 }
 
 // ── View management ─────────────────────────────────────────────────────────────
-const views = ['dashboard','module','section','module-meta','lexique','fiche-preview'];
+const views = ['dashboard','module','section','module-meta','lexique','apropos','fiche-preview'];
 
 function showView(name, pushHistory = true) {
   if (pushHistory) {
@@ -613,9 +663,9 @@ function showView(name, pushHistory = true) {
 }
 
 function goBack() {
-  if (isDirty || isMetaDirty) {
+  if (isDirty || isMetaDirty || isAproposDirty) {
     if (!confirm('Tu as des changements non sauvegardés. Les abandonner ?')) return;
-    isDirty = false; isMetaDirty = false;
+    isDirty = false; isMetaDirty = false; isAproposDirty = false;
   }
   const prev = viewHistory.pop();
   showView(prev || 'dashboard', false);
@@ -1298,6 +1348,84 @@ async function commitLexique(message) {
   }
 }
 
+// ── À propos ─────────────────────────────────────────────────────────────────────
+async function showApropos() {
+  showView('apropos');
+  document.getElementById('saveAproposStatus').textContent = '';
+  document.getElementById('saveAproposStatus').className = 'save-status';
+  try {
+    const data = await ghGet(APROPOS_PATH);
+    currentAproposSha = data.sha;
+    currentApropos    = jsyaml.load(decodeContent(data.content));
+    renderAproposForm();
+  } catch (err) {
+    document.getElementById('saveAproposStatus').textContent = `Erreur : ${esc(err.message)}`;
+    document.getElementById('saveAproposStatus').className = 'save-status error';
+  }
+}
+
+function renderAproposForm() {
+  const ap  = currentApropos || {};
+  const svc = ap.service || {};
+  document.getElementById('aproposMission').value      = ap.mission || '';
+  document.getElementById('aproposServiceName').value  = svc.name || '';
+  document.getElementById('aproposServiceUrl').value   = svc.url || '';
+  document.getElementById('aproposServiceDesc').value  = svc.description || '';
+  document.getElementById('aproposEmail').value        = (ap.contact || {}).email || '';
+  document.getElementById('aproposSources').value      = jsyaml.dump(ap.sources || [], { allowUnicode: true, lineWidth: -1 });
+  isAproposDirty = false;
+  document.getElementById('aproposDirtyIndicator').style.display = 'none';
+}
+
+async function saveApropos() {
+  if (!commitGuard()) return;
+
+  let sources;
+  try {
+    const raw = document.getElementById('aproposSources').value.trim();
+    sources = raw ? jsyaml.load(raw) : [];
+    if (!Array.isArray(sources)) throw new Error('Doit être une liste YAML (commençant par -).');
+  } catch (err) {
+    const statusEl = document.getElementById('saveAproposStatus');
+    statusEl.textContent = `YAML invalide dans les sources : ${esc(err.message)}`;
+    statusEl.className = 'save-status error';
+    return;
+  }
+
+  const btn      = document.getElementById('saveAproposBtn');
+  const statusEl = document.getElementById('saveAproposStatus');
+  btn.disabled = true;
+  statusEl.textContent = 'Enregistrement…';
+  statusEl.className = 'save-status';
+
+  currentApropos = {
+    mission: document.getElementById('aproposMission').value.trim(),
+    service: {
+      name:        document.getElementById('aproposServiceName').value.trim(),
+      url:         document.getElementById('aproposServiceUrl').value.trim(),
+      description: document.getElementById('aproposServiceDesc').value.trim()
+    },
+    contact: { email: document.getElementById('aproposEmail').value.trim() },
+    sources
+  };
+
+  try {
+    const yaml = jsyaml.dump(currentApropos, { allowUnicode: true, lineWidth: -1, noRefs: true });
+    const result = await ghPut(APROPOS_PATH, yaml, currentAproposSha, 'content(apropos): mise à jour de la page À propos');
+    currentAproposSha = result.content.sha;
+    isAproposDirty = false;
+    document.getElementById('aproposDirtyIndicator').style.display = 'none';
+    statusEl.textContent = '';
+    toast('Sauvegardé — déploiement en cours…');
+    startDeployPoll(result.commit?.sha);
+  } catch (err) {
+    statusEl.textContent = `Erreur : ${esc(err.message)}`;
+    statusEl.className = 'save-status error';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
 // ── Module header ────────────────────────────────────────────────────────────────
 function updateModuleHeader() {
   const id = currentModuleId;
@@ -1357,13 +1485,17 @@ async function deleteSectionFromPreview() {
 // Fermer/recharger l'onglet avec du travail non sauvegardé doit prévenir,
 // comme le fait déjà la navigation interne (goBack).
 window.addEventListener('beforeunload', e => {
-  if (isDirty || isMetaDirty) { e.preventDefault(); e.returnValue = ''; }
+  if (isDirty || isMetaDirty || isAproposDirty) { e.preventDefault(); e.returnValue = ''; }
 });
 
 document.getElementById('sectionForm').addEventListener('input', markDirty);
 document.getElementById('moduleMetaForm').addEventListener('input', () => {
   isMetaDirty = true;
   document.getElementById('metaDirtyIndicator').style.display = '';
+});
+document.getElementById('view-apropos').addEventListener('input', () => {
+  isAproposDirty = true;
+  document.getElementById('aproposDirtyIndicator').style.display = '';
 });
 
 // ── Rich text editor ─────────────────────────────────────────────────────────────

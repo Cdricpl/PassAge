@@ -2,131 +2,142 @@
 
 > Comprendre. Agir. Avancer.
 
-Application web (PWA) pour les jeunes majeurs (18–25 ans), principalement les jeunes sortant de l'aide à la jeunesse et des familles d'accueil en Belgique francophone.
+Application web (PWA) pour les jeunes de 18 à 25 ans en sortie d'aide à la jeunesse ou de famille d'accueil en **Belgique francophone**.
 
 ## En ligne
 
-Version déployée : **https://cdricpl.github.io/Pass-ge/**
+**https://cdricpl.github.io/Pass-ge/**
 
-Le déploiement est automatique : à chaque push sur `main`, le workflow `.github/workflows/deploy-pages.yml` publie le dossier `03-version-pwa/` à la racine de GitHub Pages.
+Déploiement automatique : chaque push sur `main` publie le dossier `03-version-pwa/` via `.github/workflows/deploy-pages.yml`.
 
-## Lancer l'app en local
+---
 
-Toute l'app vit dans le dossier `03-version-pwa/`.
+## Ce que fait l'application
 
-### Option 1 — ouverture directe (rapide)
+- **9 modules thématiques** — Administration, Argent, Études, Travail, Logement, Vie quotidienne, Loisirs, Santé, Urgences
+- **59 fiches pratiques** avec informations vérifiées (montants, procédures, délais, numéros utiles)
+- **Lexique** — 294 définitions accessibles au survol dans les fiches
+- **Recherche** tolérante aux accents, apostrophes et tirets
+- **Favoris** — marquer des fiches sans compte
+- **Notes personnelles** par fiche
+- **Contacts** personnels enregistrables
+- **Rappels** à créer manuellement
+- **Onboarding** à la première visite
+- **Mode hors-ligne** — les fiches consultées restent accessibles sans réseau
+- **Installable** sur Android et iOS (PWA)
+- Mobile-first, accessible (ARIA, contraste, skip-link), langage volontairement simple
 
-Double-clique sur `03-version-pwa/index.html` — l'app s'ouvre dans ton navigateur.
+---
 
-> Note : en `file://`, le service worker (mode hors-ligne) ne fonctionne pas. Pour tester le mode hors-ligne, utilise l'option 2.
+## Structure du dépôt
 
-### Option 2 — serveur local (recommandé)
+```
+.
+├── 03-version-pwa/               L'application déployée
+│   ├── index.html                Shell de l'app
+│   ├── manifest.webmanifest      Manifeste PWA (installable)
+│   ├── service-worker.js         Cache hors-ligne
+│   ├── build.js                  Compile les YAML → content.js + valide le contenu
+│   ├── package.json
+│   ├── content/
+│   │   ├── modules/              9 fichiers YAML (un par module)
+│   │   │   ├── admin.yaml
+│   │   │   ├── argent.yaml
+│   │   │   ├── etudes.yaml
+│   │   │   ├── travail.yaml
+│   │   │   ├── logement.yaml
+│   │   │   ├── vie.yaml
+│   │   │   ├── loisirs.yaml
+│   │   │   ├── sante.yaml
+│   │   │   └── urgence.yaml
+│   │   └── lexique.yaml          294 définitions du lexique
+│   ├── admin/
+│   │   └── index.html            Interface d'édition visuelle (GitHub API)
+│   └── assets/
+│       ├── css/styles.css        Design system complet
+│       ├── js/
+│       │   ├── app.js            Router + toutes les interactions
+│       │   ├── content.js        Contenu compilé — généré par build.js
+│       │   └── sw-register.js    Enregistrement du service worker
+│       ├── icons/                Icônes PWA + logo SFA
+│       └── policy.html           Politique de confidentialité
+├── docs/                         Documentation complémentaire
+└── .github/workflows/
+    └── deploy-pages.yml          Déploiement automatique GitHub Pages
+```
 
-Depuis le dossier `03-version-pwa/`, lance un mini-serveur :
+---
+
+## Modifier les contenus
+
+### Via l'interface d'administration (recommandé)
+
+Ouvre `03-version-pwa/admin/index.html` dans un navigateur.  
+Entre ton Personal Access Token GitHub (permission `contents: write`).  
+L'interface permet de modifier les fiches et le lexique avec validation avant envoi.  
+Le build et le déploiement sont automatiques après chaque commit.
+
+### Via les fichiers YAML (développeurs)
 
 ```bash
 cd 03-version-pwa
 
-# Avec Python (souvent déjà installé)
+# 1. Modifier les fichiers dans content/modules/ ou content/lexique.yaml
+# 2. Compiler et valider
+node build.js
+
+# 3. Commit + push → déploiement automatique
+```
+
+> **Important** : ne modifie jamais `assets/js/content.js` directement. Ce fichier est généré par `build.js`.
+
+`build.js` valide le contenu avant de générer (HTML équilibré, liens internes, champs obligatoires, entrées de lexique). Le build échoue si une erreur est détectée.
+
+---
+
+## Lancer l'app en local
+
+```bash
+cd 03-version-pwa
+
+# Avec Python
 python -m http.server 8000
 
 # Ou avec Node.js
 npx serve .
 ```
 
-Puis ouvre [http://localhost:8000](http://localhost:8000).
+Ouvre [http://localhost:8000](http://localhost:8000).
 
-### Tester sur ton téléphone
+> En `file://`, le service worker ne s'active pas. Pour tester le mode hors-ligne, utilise un serveur local.
 
-1. Lance le serveur sur ton ordinateur (`python -m http.server 8000`).
+### Tester sur téléphone
+
+1. Lance le serveur local sur ton ordinateur.
 2. Connecte ton téléphone au même Wi-Fi.
-3. Trouve l'IP locale de ton ordi (`ipconfig` sous Windows, `ifconfig` sous macOS/Linux).
+3. Trouve l'IP locale (`ipconfig` Windows / `ifconfig` macOS-Linux).
 4. Ouvre `http://<ton-ip>:8000` dans le navigateur du téléphone.
-5. Sur Android (Chrome) → menu → "Installer l'application". Sur iOS (Safari) → partager → "Sur l'écran d'accueil". Tu as une vraie app installée.
-
-## Structure du dépôt
-
-```
-.
-├── 03-version-pwa/               L'app déployée (la seule version maintenue)
-│   ├── index.html                Shell de l'app (header, main, bottom nav)
-│   ├── manifest.webmanifest      Manifeste PWA (installable sur téléphone)
-│   ├── service-worker.js         Cache pour fonctionnement hors-ligne
-│   └── assets/
-│       ├── css/
-│       │   └── styles.css        Design system complet
-│       ├── js/
-│       │   ├── content.js        TOUS les contenus (modules, parcours, fiches)
-│       │   └── app.js            Routing + interactions
-│       ├── icons/
-│       │   ├── icon-192.svg
-│       │   └── icon-512.svg
-│       └── policy.html           Politique de confidentialité
-├── docs/                         Documentation, fiche source, listing store
-├── archive/                      Anciens prototypes conservés (non déployés)
-│   ├── 01-prototype-simple/      1er prototype mono-fichier
-│   ├── 02-version-separee/       Version intermédiaire
-│   ├── admin/                    Ancien outil d'édition local
-│   └── open_chrome_no_cache.bat
-└── .github/workflows/
-    └── deploy-pages.yml          Déploiement automatique GitHub Pages
-```
-
-> Le dossier `archive/` n'est jamais publié : le workflow ne déploie que `03-version-pwa/`. Il est conservé pour référence et l'historique git reste intact.
-
-## Modifier les contenus
-
-Tout est dans **`03-version-pwa/assets/js/content.js`**. Pas de base de données, pas de CMS pour l'instant — c'est un fichier JavaScript que tu peux ouvrir dans n'importe quel éditeur.
-
-- **Ajouter une fiche dans un module** : trouve le module concerné, ajoute un objet dans `sections`.
-- **Ajouter un parcours** (situation de vie) : ajoute un objet dans `SITUATIONS`.
-- **Modifier une fiche** : la propriété `body` accepte du HTML (titres `<h2>`, paragraphes, listes `<ul>`, callouts `<div class="callout tip">`, etc.).
-- **Mettre à jour un numéro d'urgence** : c'est dans la fonction `renderUrgence()` de `app.js`.
-
-## Fonctionnalités du MVP
-
-- 8 modules thématiques (Devenir majeur, Administratif, Argent, Études, Travail, Logement, Vie quotidienne, Aide & urgences).
-- 5 parcours guidés par situation de vie.
-- Recherche tolérante aux accents.
-- Favoris (sauvegardés localement, sans compte).
-- Bouton Aide / Urgence permanent avec numéros gratuits.
-- Mode hors-ligne (les fiches consultées restent accessibles sans réseau).
-- Mobile-first, accessible, langage simple.
-
-## Pas inclus dans le MVP
-
-À prévoir en V2/V3 (cf. document d'architecture) :
-
-- Backend / API.
-- Compte utilisateur synchronisé.
-- CMS pour les non-développeurs (Strapi, Directus).
-- Simulateurs (RIS, garantie locative, budget).
-- Géolocalisation des services.
-- Notifications.
-- Multi-langues.
-- Lecture audio des fiches.
-
-## Avant de mettre en ligne
-
-⚠️ Le contenu actuel est un point de départ basé sur la Fiche Majorité. **Avant toute publication réelle**, il faut :
-
-1. **Faire relire chaque fiche par un·e juriste / travailleur·euse social·e** (Droit des Jeunes, Inforjeunes). L'info erronée fait perdre des droits.
-2. **Tester avec 5–10 jeunes du public cible** (sortants AAJ/FA), pas avec des étudiants.
-3. **Vérifier les montants, seuils et procédures** — ils changent en Belgique.
-4. **Mettre en place un plan de mise à jour annuel**.
-
-## Stack technique
-
-- HTML/CSS/JavaScript pur (zéro dépendance, zéro build).
-- PWA installable (manifest + service worker).
-- Stockage local (favoris) via `localStorage`.
-
-Pas de framework, pas de bundler. Tout est éditable à la main.
-
-## Licence
-
-À définir par le porteur du projet (suggestion : licence libre type MIT ou CC BY-NC-SA pour un projet à impact social).
+5. Android (Chrome) → menu → "Installer l'application" / iOS (Safari) → partager → "Sur l'écran d'accueil".
 
 ---
 
-Sources principales : Fiche Majorité (Service Familles d'Accueil), Inforjeunes, Droit des Jeunes.
+## Stack technique
+
+| Couche | Technologie |
+|--------|-------------|
+| App (exécution) | HTML / CSS / JavaScript pur — zéro dépendance |
+| Build (dev) | Node.js — script `build.js` uniquement |
+| Admin (éditeur) | js-yaml 4.1.0 + DOMPurify 3.2.4 (CDN) |
+| PWA | Web App Manifest + Service Worker |
+| Stockage | `localStorage` (favoris, notes, contacts, rappels) |
+| Déploiement | GitHub Pages (auto sur push `main`) |
+
+---
+
+## Licence
+
+À définir par le porteur du projet.
+
+---
+
+*Sources : Inforjeunes, Droit des Jeunes, Service Familles d'Accueil (Fédération Wallonie-Bruxelles).*

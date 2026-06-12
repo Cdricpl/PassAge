@@ -376,13 +376,6 @@
             <button type="button" onclick="setToday()" class="btn-ghost btn-sm">Aujourd'hui</button>
           </div>
         </div>
-        <div class="form-group">
-          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:500">
-            <input type="checkbox" id="fieldTagPlacement" style="width:18px;height:18px;accent-color:#1D7A74;cursor:pointer">
-            Fiche spécifique "Famille d'accueil"
-          </label>
-          <div class="hint">Affiche un badge "Famille d'accueil" sur cette fiche — pour les informations qui ne concernent que les jeunes issus de placement.</div>
-        </div>
         <!-- Champs préservés mais non affichés -->
         <input type="hidden" id="fieldDisclaimer">
         <input type="hidden" id="fieldLinkTo">
@@ -996,9 +989,8 @@ function populateEditor(s) {
   } else {
     hint.textContent = 'Sources spécifiques à cette fiche. Affiché en bas de la fiche à la place des sources du module.';
   }
-  document.getElementById('fieldLastChecked').value     = s.lastChecked || '';
-  document.getElementById('fieldLinkTo').value          = s.linkTo      || '';
-  document.getElementById('fieldTagPlacement').checked  = Array.isArray(s.tags) && s.tags.includes('placement');
+  document.getElementById('fieldLastChecked').value = s.lastChecked || '';
+  document.getElementById('fieldLinkTo').value      = s.linkTo      || '';
   document.getElementById('saveStatus').textContent = '';
   document.getElementById('saveStatus').className   = 'save-status';
   if (htmlMode) toggleHtml();
@@ -1125,13 +1117,11 @@ async function saveSection() {
   const lastChecked = document.getElementById('fieldLastChecked').value.trim();
   const linkTo      = document.getElementById('fieldLinkTo').value.trim();
   const body        = getEditorHtml();
-  const tagPlacement = document.getElementById('fieldTagPlacement').checked;
-  if (source)        section.source      = source;
-  if (disclaimer)    section.disclaimer  = disclaimer;
-  if (lastChecked)   section.lastChecked = lastChecked;
-  if (linkTo)        section.linkTo      = linkTo;
-  if (body)          section.body        = body;
-  if (tagPlacement)  section.tags        = ['placement'];
+  if (source)      section.source      = source;
+  if (disclaimer)  section.disclaimer  = disclaimer;
+  if (lastChecked) section.lastChecked = lastChecked;
+  if (linkTo)      section.linkTo      = linkTo;
+  if (body)        section.body        = body;
 
   const oldSection = currentSectionIdx !== -1
     ? JSON.parse(JSON.stringify(currentModuleData.sections[currentSectionIdx]))
@@ -1140,7 +1130,7 @@ async function saveSection() {
   // Préserve les champs absents du formulaire mais gérés par le build
   // (status, reviewedBy, internalNotes…) : sans ça, ils seraient effacés
   // silencieusement à la première édition.
-  const formFields = new Set(['id', 'title', 'summary', 'source', 'disclaimer', 'lastChecked', 'linkTo', 'body', 'tags']);
+  const formFields = new Set(['id', 'title', 'summary', 'source', 'disclaimer', 'lastChecked', 'linkTo', 'body']);
   if (oldSection) {
     for (const k of Object.keys(oldSection)) {
       if (!formFields.has(k)) section[k] = oldSection[k];

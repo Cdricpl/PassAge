@@ -337,11 +337,10 @@
         ${m.sections.map(s => {
           const href = s.linkTo ? `#/fiche/${s.linkTo}` : `#/fiche/${m.id}/${s.id}`;
           const linkBadge = s.linkTo ? '<span class="link-badge" title="Vu ailleurs dans l\'app">↗</span>' : '';
-          const placementBadge = s.tags?.includes('placement') ? '<span class="placement-badge">Famille d\'accueil</span>' : '';
           return `
             <a class="fiche-link" href="${href}">
               <div>
-                <div class="fiche-link-title">${escapeHtml(s.title)}${linkBadge}${placementBadge}</div>
+                <div class="fiche-link-title">${escapeHtml(s.title)} ${linkBadge}</div>
                 <div class="fiche-link-sub">${escapeHtml(s.summary)}</div>
               </div>
               <span class="fiche-link-arrow">${arrow}</span>
@@ -370,7 +369,6 @@
       </p>
       <article class="fiche">
         <h1>${escapeHtml(f.title)}</h1>
-        ${f.tags?.includes('placement') ? '<span class="placement-badge">Famille d\'accueil</span>' : ''}
         ${f.body}
       </article>
 

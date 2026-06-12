@@ -484,31 +484,6 @@ p + p { margin-top: var(--sp-3); }
   vertical-align: 1px;
 }
 
-/* Badge "Famille d'accueil" — fiches spécifiques au placement */
-.placement-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  font-size: 11px;
-  font-weight: 600;
-  background: #DFF2F0;
-  color: #1D7A74;
-  border: 1px solid #8ECEC9;
-  border-radius: 999px;
-  padding: 2px 8px;
-  white-space: nowrap;
-  vertical-align: middle;
-  margin-left: 6px;
-  line-height: 1.4;
-}
-.fiche .placement-badge {
-  display: block;
-  width: fit-content;
-  margin: 8px 0 16px;
-  font-size: 12px;
-  padding: 4px 12px;
-}
-
 /* Bouton urgence sur l'accueil */
 .urgence-cta {
   display: flex;

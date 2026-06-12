@@ -357,7 +357,6 @@ window.MA_CONTENT = (function () {
           title: "Les aides auxquelles j'ai droit",
           summary: "Vue d'ensemble : RIS, allocations, bourses.",
           lastChecked: "03/06/2026",
-          tags: ["placement"],
           body: `
 <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
 
@@ -474,7 +473,6 @@ window.MA_CONTENT = (function () {
           title: "Le compte d'épargne mandant",
           summary: "Vérifier si un compte a été ouvert à ton nom pendant la prise en charge.",
           lastChecked: "03/06/2026",
-          tags: ["placement"],
           body: `
 <p>Pendant la période où tu as été éloigné·e de ton milieu familial (institution ou famille d'accueil), un compte d'épargne a peut-être été ouvert à ton nom par l'autorité mandante.</p>
 

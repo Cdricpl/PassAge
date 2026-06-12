@@ -87,9 +87,6 @@ function moduleToJs(mod) {
       if (sec.internalNotes !== undefined) {
         lines.push(`          internalNotes: ${JSON.stringify(sec.internalNotes)},`);
       }
-      if (sec.tags !== undefined) {
-        lines.push(`          tags: ${JSON.stringify(sec.tags)},`);
-      }
 
       // body as template literal
       const bodyRaw = sec.body || '';

@@ -490,10 +490,7 @@ window.MA_CONTENT = (function () {
   <li><a href="https://www.toogoodtogo.be" target="_blank" rel="noopener">Too Good To Go</a> — paniers anti-gaspi à prix cassés</li>
 </ul>
 
-<h2>Frigos communautaires</h2>
-<p>Plusieurs communes wallonnes ont mis en place des <strong>frigos solidaires</strong> où chacun peut déposer ou prendre. Renseigne-toi à ta commune ou ton CPAS pour savoir s'il y en a près de chez toi.</p>
-
-<div class="callout tip"><div><strong>L'aide alimentaire, c'est un droit</strong>Restos du Cœur, Croix-Rouge, épiceries sociales : si tu galères en fin de mois, n'attends pas. Ton CPAS peut t'orienter vers le bon service.</div></div>
+<div class="callout tip"><div><strong>L'aide alimentaire, c'est un droit</strong>Restos du Cœur, épiceries sociales, frigos solidaires, paniers anti-gaspi : tout est expliqué dans <a href="#/fiche/vie/alimentation">Alimentation : manger bien sans se ruiner</a>.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
@@ -544,7 +541,7 @@ window.MA_CONTENT = (function () {
 <div class="callout warn"><div><strong>Si tu n'arrives pas à payer tes factures</strong>N'attends pas. Parle-en au CPAS, à ton AMO, ou au <a href="https://www.sdj.be" target="_blank" rel="noopener">Service Droit des Jeunes</a>. Il existe des solutions (plan de paiement, médiation de dettes…). Plus tu attends, plus c'est compliqué.</div></div>
 
 <h2>N'oublie pas en cas de déménagement</h2>
-<p>Préviens du changement d'adresse à : ta mutuelle, ta banque, ton opérateur télécom, ton fournisseur d'énergie, FAMIWAL (allocations familiales), ton employeur, le Forem, le CPAS si tu y es suivi·e.</p>
+<p>Un déménagement impacte ton budget et tes organismes à prévenir. La liste complète est dans <a href="#/fiche/logement/changement-adresse">Changer d'adresse</a>.</p>
 
 <div class="callout tip"><div><strong>Demande de l'aide</strong>Le CPAS, Inforjeunes ou une AMO peuvent t'aider à faire ton budget <strong>gratuitement et sans jugement</strong>. Tu peux aussi voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a>.</div></div>
 
@@ -1173,13 +1170,7 @@ window.MA_CONTENT = (function () {
   <li><strong>Électricité &amp; gaz</strong> : <strong>document de reprise des énergies</strong> (signé entre toi et le locataire précédent) à renvoyer à ton fournisseur. Disponible sur le site de ton gestionnaire de réseau (RESA, ORES…).</li>
 </ul>
 
-<h2>Tu touches le RIS ? Demande le tarif social</h2>
-<p>Si tu es au RIS du CPAS, tu as droit au <strong>tarif social pour l'énergie</strong> (électricité, gaz, chaleur). Il est <strong>identique partout en Belgique</strong>, peu importe le fournisseur.</p>
-<ul>
-  <li>Souvent <strong>automatique</strong> mais pas toujours.</li>
-  <li>Demande à ton·ta intervenant·e CPAS de faire la démarche.</li>
-  <li>Voir aussi <a href="#/fiche/argent/aides-supp">Bons plans : tarif social, seconde main</a>.</li>
-</ul>
+<div class="callout tip"><div><strong>Tu touches le RIS ?</strong>Tu as droit au tarif social pour l'énergie — voir <a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a>.</div></div>
 
 <h2>À vérifier avant de signer le bail</h2>
 <ul>
@@ -1354,12 +1345,7 @@ window.MA_CONTENT = (function () {
   <li><a href="https://www.meilleurtarif.be" target="_blank" rel="noopener">meilleurtarif.be</a> — comparateur officiel BIPT (téléphonie + internet)</li>
 </ul>
 
-<h2>Le tarif social internet (19 €/mois)</h2>
-<p>Si tu touches le RIS, l'aide sociale du CPAS, ou la GRAPA, tu as droit à l'<strong>offre internet sociale</strong> : <strong>19 € par mois maximum</strong>, vitesse minimum 30 Mbps, 150 Go inclus.</p>
-<ul>
-  <li>Disponible chez Proximus, Telenet/BASE et VOO (Wallonie).</li>
-  <li>Demande à l'opérateur ou via <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">le SPF Économie</a>.</li>
-</ul>
+<div class="callout tip"><div><strong>Tu touches le RIS ou une aide du CPAS ?</strong>Tu as droit à l'offre internet sociale (19 €/mois max). Tout est expliqué dans <a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a>.</div></div>
 
 <h2>Astuces pour réduire la facture</h2>
 <ul>
@@ -2319,13 +2305,13 @@ Rue du Commerce 10
 <p>Le portail dédié à l'autonomie des jeunes : logement, budget, démarches. Plein de fiches claires. Site : <a href="https://envoltoit.be" target="_blank" rel="noopener">envoltoit.be</a></p>
 
 <h2>Le CPAS</h2>
-<p>Aide sociale et financière de ta commune. RIS, aides ponctuelles, accompagnement.</p>
+<p>Aide sociale et financière de ta commune. RIS, aides ponctuelles, accompagnement. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</p>
 
 <h2>Le planning familial</h2>
-<p>Santé, sexualité, écoute psychologique, conseil juridique. Tarifs adaptés aux revenus.</p>
+<p>Santé, sexualité, écoute psychologique, conseil juridique. Tarifs adaptés aux revenus. Voir <a href="#/fiche/sante/planning-familial">Le planning familial</a>.</p>
 
 <h2>La maison médicale</h2>
-<p>Soins gratuits si tu t'inscris au forfait. <a href="https://www.maisonmedicale.org" target="_blank" rel="noopener">maisonmedicale.org</a></p>
+<p>Soins gratuits si tu t'inscris au forfait. Voir <a href="#/fiche/sante/maison-medicale">La maison médicale</a>.</p>
 `
         },
         {
@@ -2342,6 +2328,7 @@ Rue du Commerce 10
   <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>.</li>
   <li><strong>103</strong> (Écoute-Enfants) si tu es ado ou jeune — tous les jours de 10h à minuit.</li>
   <li>Une AMO ou un planning familial : tu peux y aller librement.</li>
+  <li>Tous les autres numéros (SOS Viol, Infor Drogues…) : voir <a href="#/fiche/urgence/lignes-ecoute">Lignes d'écoute et numéros utiles</a>.</li>
 </ul>
 
 <h2>Voir un·e professionnel·le</h2>

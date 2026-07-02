@@ -39,6 +39,8 @@
   --color-vie-soft: #FCE7DE;
   --color-sante: #6FA8B5;
   --color-sante-soft: #DEEEF2;
+  --color-placement: #7CAE8B;
+  --color-placement-soft: #E3F0E8;
 
   /* Couleurs d'urgence et aide */
   --urgent-red: #D64545;
@@ -466,6 +468,7 @@ p + p { margin-top: var(--sp-3); }
 .tile[data-color="urgence"] .tile-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence); }
 .tile[data-color="sante"] .tile-icon { background: var(--color-sante-soft); color: var(--color-sante); }
 .tile[data-color="loisirs"] .tile-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs); }
+.tile[data-color="placement"] .tile-icon { background: var(--color-placement-soft); color: #3B7A64; }
 
 .module-header[data-color="sante"] { background: var(--color-sante-soft); }
 
@@ -538,6 +541,7 @@ p + p { margin-top: var(--sp-3); }
 .module-header[data-color="travail"] { background: var(--color-travail-soft); }
 .module-header[data-color="logement"] { background: var(--color-logement-soft); }
 .module-header[data-color="vie"] { background: var(--color-vie-soft); }
+.module-header[data-color="placement"] { background: var(--color-placement-soft); }
 
 /* Liste de fiches */
 .fiche-list {
@@ -653,6 +657,7 @@ p + p { margin-top: var(--sp-3); }
 .callout > div > strong:first-child { display: block; margin-bottom: 4px; }
 .callout.warn { background: var(--color-admin-soft); border-color: var(--color-admin); }
 .callout.tip { background: var(--color-success-soft); border-color: var(--color-success); }
+.callout.info { background: var(--color-sante-soft); border-color: var(--color-sante); }
 
 /* ============================================================
    Page urgence
@@ -1449,6 +1454,7 @@ body.no-scroll { overflow: hidden; }
 .theme-mini[data-color="etudes"] .theme-mini-icon { background: var(--color-etudes-soft); color: var(--color-travail); }
 .theme-mini[data-color="vie"] .theme-mini-icon { background: var(--color-vie-soft); color: #C2674B; }
 .theme-mini[data-color="urgence"] .theme-mini-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence); }
+.theme-mini[data-color="placement"] .theme-mini-icon { background: var(--color-placement-soft); color: #3B7A64; }
 
 .themes-preview-cta {
   display: flex;

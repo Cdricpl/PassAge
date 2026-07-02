@@ -29,7 +29,7 @@ const APROPOS_FILE = path.join(ROOT, 'content', 'apropos.yaml');
 // Canonical module order
 const MODULE_ORDER = [
   'admin', 'argent', 'etudes', 'travail',
-  'logement', 'vie', 'loisirs', 'sante', 'urgence'
+  'logement', 'vie', 'loisirs', 'sante', 'placement', 'urgence'
 ];
 
 // ── helpers ───────────────────────────────────────────────────────────────────

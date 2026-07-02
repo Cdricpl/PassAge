@@ -1,17 +1,17 @@
 "pas d argent":
   - argent/ris-cpas
   - argent/aides-supp
-  - argent/aides-disponibles
+  - placement/aides-disponibles
 "sans argent":
   - argent/ris-cpas
   - argent/aides-supp
 "galere":
   - argent/ris-cpas
-  - argent/aides-disponibles
+  - placement/aides-disponibles
   - urgence/services-aide
 "galère":
   - argent/ris-cpas
-  - argent/aides-disponibles
+  - placement/aides-disponibles
   - urgence/services-aide
 "fin de mois":
   - argent/budget
@@ -32,10 +32,10 @@
   - urgence/services-aide
 "aide sociale":
   - argent/ris-cpas
-  - argent/aides-disponibles
+  - placement/aides-disponibles
 "aide cpas":
   - argent/ris-cpas
-  - argent/aides-disponibles
+  - placement/aides-disponibles
 "pauvre":
   - argent/ris-cpas
   - argent/aides-supp
@@ -47,7 +47,7 @@
   - argent/ris-cpas
   - urgence/services-aide
 "allocations":
-  - argent/aides-disponibles
+  - placement/aides-disponibles
 "bourse":
   - etudes/bourse
 "etudes":
@@ -57,13 +57,13 @@
   - argent/compte-bancaire
 "compte":
   - argent/compte-bancaire
-  - argent/epargne-mandante
+  - placement/epargne-mandante
 "budget":
   - argent/budget
 "epargne":
   - argent/compte-bancaire
   - travail/epargne-pension
-  - argent/epargne-mandante
+  - placement/epargne-mandante
 "mal etre":
   - urgence/mal-etre
   - sante/convention-psy

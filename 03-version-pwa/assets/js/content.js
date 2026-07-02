@@ -19,7 +19,8 @@ window.MA_CONTENT = (function () {
     arrow: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     phone: '<svg viewBox="0 0 24 24" width="22" height="22"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.07.72 3.06a2 2 0 0 1-.45 2.11L8.09 10.2a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1 .35 2.02.59 3.06.72A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
     heart: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
-    leaf: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    leaf: '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    compass: '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
   };
 
   // ============================================================
@@ -79,7 +80,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Quand en prendre une ?</h2>
 <ul>
-  <li>Tant que tu vis chez ta famille d'accueil, tu es couvert·e par leur assurance.</li>
+  <li>Tant que tu vis chez tes parents ou ta famille d'accueil, tu es couvert·e par leur assurance.</li>
   <li>Si tu prends ton autonomie, tu dois en souscrire une à ton nom.</li>
 </ul>
 `
@@ -330,7 +331,7 @@ window.MA_CONTENT = (function () {
           summary: "Comment l'obtenir, conditions, contrat d'intégration.",
           lastChecked: "09/06/2026",
           body: `
-<p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune. En tant que jeune accueilli·e, c'est un droit pour toi.</p>
+<p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune, si tes ressources ne suffisent pas pour vivre.</p>
 
 <h2>Les conditions</h2>
 <ul>
@@ -350,31 +351,9 @@ window.MA_CONTENT = (function () {
 <div class="callout warn"><div><strong>Attention si tu travailles</strong>Si tu fais un job étudiant ou un job ponctuel, ton RIS peut être <strong>partiellement réduit</strong> ce mois-là. Renseigne-toi à l'avance, une exonération existe.</div></div>
 
 <h2>Aides ponctuelles</h2>
-<p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>`
-        },
-        {
-          id: "aides-disponibles",
-          title: "Les aides auxquelles j'ai droit",
-          summary: "Vue d'ensemble : RIS, allocations, bourses.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
+<p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>
 
-<h2>1. Les allocations familiales</h2>
-<p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
-
-<h2>2. Le RIS (revenu d'intégration sociale)</h2>
-<p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
-
-<h2>3. La bourse d'études (FWB)</h2>
-<p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
-
-<h2>4. Les aides ponctuelles du CPAS</h2>
-<p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
-
-<h2>5. Le compte d'épargne mandant</h2>
-<p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
-`
+<div class="callout info"><div><strong>Si tu as été accueilli·e en famille d'accueil ou en institution</strong>Ton statut d'enfant accueilli te donne un accès facilité au RIS. Explique ta situation au CPAS — et retrouve tous tes droits spécifiques dans <a href="#/module/placement">Après le placement</a>.</div></div>`
         },
         {
           id: "allocations-familiales",
@@ -386,7 +365,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Ce qui change à 18 ans</h2>
 <ul>
-  <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
+  <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à tes parents ou à l'adulte qui t'élevait).</li>
   <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
   <li>Si tu termines ou interromps tes études : tu peux les garder encore <strong>12 mois maximum</strong>. Attention, la règle change au <strong>1er juillet 2026</strong> : un nouveau statut « post-étudiant » remplace l'ancien système des 360 jours de stage d'insertion — vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
@@ -408,7 +387,7 @@ window.MA_CONTENT = (function () {
   <li>Les allocations familiales <strong>ne sont pas taxables</strong> — pas besoin de les déclarer aux impôts.</li>
 </ul>
 
-<div class="callout tip"><div><strong>Ton compte d'épargne mandant</strong>Si tu étais en famille d'accueil, vérifie aussi le compte d'épargne ouvert par l'autorité mandante. Voir <a href="#/fiche/argent/epargne-mandante">Le compte d'épargne mandant</a>.</div></div>
+<div class="callout info"><div><strong>Si tu as été accueilli·e en famille d'accueil ou en institution</strong>Vérifie aussi le compte d'épargne peut-être ouvert à ton nom par l'autorité mandante. Voir <a href="#/fiche/placement/epargne-mandante">Le compte d'épargne mandant</a>.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
@@ -466,24 +445,6 @@ window.MA_CONTENT = (function () {
 <p>Très pratique : tu vois tes finances en temps réel, tu fais tes virements en quelques clics. Toutes les banques en proposent une.</p>
 
 <div class="callout tip"><div><strong>Astuce</strong>Beaucoup de banques proposent un compte gratuit pour les jeunes. Compare avant de choisir — les services (retraits, carte, appli) varient selon les établissements.</div></div>
-`
-        },
-        {
-          id: "epargne-mandante",
-          title: "Le compte d'épargne mandant",
-          summary: "Vérifier si un compte a été ouvert à ton nom pendant la prise en charge.",
-          lastChecked: "03/06/2026",
-          body: `
-<p>Pendant la période où tu as été éloigné·e de ton milieu familial (institution ou famille d'accueil), un compte d'épargne a peut-être été ouvert à ton nom par l'autorité mandante.</p>
-
-<h2>Ce qu'il faut vérifier</h2>
-<ul>
-  <li>Cela <strong>n'est pas automatique</strong> — il faut vérifier auprès de l'autorité mandante qui s'occupait de ta situation.</li>
-  <li>Le montant versé dépend du type d'hébergement.</li>
-  <li>Pour certains jeunes, le solde peut être conséquent.</li>
-</ul>
-
-<div class="callout warn"><div><strong>Attention</strong>L'argent part vite. Avant de tout dépenser, pense à un projet utile : caution de logement, voiture pour le travail, formation…</div></div>
 `
         },
         {
@@ -937,8 +898,9 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Tu gardes le droit aux <strong>allocations familiales</strong> pendant <strong>12 mois maximum</strong> après les études (jusqu'à 25 ans) — depuis le 1er juillet 2026, c'est le statut « post-étudiant » qui ouvre ce droit, plus la simple inscription comme demandeur·euse d'emploi. Vérifie auprès de FAMIWAL.</li>
   <li>Si tu n'as aucun revenu, demande le <strong>RIS au CPAS</strong> — voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</li>
-  <li>En tant que jeune sortant de l'aide à la jeunesse, explique ta situation au CPAS : il peut renoncer à réclamer une intervention à tes parents. C'est examiné au cas par cas.</li>
 </ul>
+
+<div class="callout info"><div><strong>Si tu as été accueilli·e en famille d'accueil ou en institution</strong>Explique ta situation au CPAS : il peut renoncer à réclamer une intervention financière à tes parents. C'est examiné au cas par cas.</div></div>
 
 <div class="callout warn"><div><strong>Attention — réforme récente</strong>Beaucoup d'infos en ligne ne sont pas encore à jour. Si tu lis "310 jours" ou "3 ans d'allocations", c'est l'ancien système. Depuis le 1er mars 2026 : <strong>156 jours de stage, 12 mois d'allocations max</strong>.</div></div>
 
@@ -2234,6 +2196,60 @@ Rue du Commerce 10
     },
 
     {
+      id: "placement",
+      title: "Après le placement",
+      subtitle: "Tes droits spécifiques, ton parcours",
+      color: "placement",
+      icon: ICONS.compass,
+      objective: "Si tu as été accueilli·e en famille d'accueil ou en institution, certains droits et démarches te concernent spécifiquement. Ici, tu trouves l'essentiel — sans jargon.",
+      source: "aidealajeunesse.cfwb.be · mi-is.be (SPP Intégration sociale)",
+      sections: [
+        {
+          id: "aides-disponibles",
+          title: "Les aides auxquelles j'ai droit",
+          summary: "Vue d'ensemble : RIS, allocations, bourses, épargne mandante.",
+          lastChecked: "03/06/2026",
+          body: `
+<p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
+
+<h2>1. Les allocations familiales</h2>
+<p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
+
+<h2>2. Le RIS (revenu d'intégration sociale)</h2>
+<p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</p>
+
+<h2>3. La bourse d'études (FWB)</h2>
+<p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas. Voir <a href="#/fiche/etudes/bourse">L'allocation d'études</a>.</p>
+
+<h2>4. Les aides ponctuelles du CPAS</h2>
+<p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
+
+<h2>5. Le compte d'épargne mandant</h2>
+<p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent. Voir <a href="#/fiche/placement/epargne-mandante">Le compte d'épargne mandant</a>.</p>
+`
+        },
+        {
+          id: "epargne-mandante",
+          title: "Le compte d'épargne mandant",
+          summary: "Vérifier si un compte a été ouvert à ton nom pendant la prise en charge.",
+          lastChecked: "03/06/2026",
+          body: `
+<p>Pendant la période où tu as été éloigné·e de ton milieu familial (institution ou famille d'accueil), un compte d'épargne a peut-être été ouvert à ton nom par l'autorité mandante.</p>
+
+<h2>Ce qu'il faut vérifier</h2>
+<ul>
+  <li>Cela <strong>n'est pas automatique</strong> — il faut vérifier auprès de l'autorité mandante qui s'occupait de ta situation.</li>
+  <li>Le montant versé dépend du type d'hébergement.</li>
+  <li>Pour certains jeunes, le solde peut être conséquent.</li>
+</ul>
+
+<div class="callout warn"><div><strong>Attention</strong>L'argent part vite. Avant de tout dépenser, pense à un projet utile : caution de logement, voiture pour le travail, formation…</div></div>
+`
+        },
+      ]
+    },
+
+    {
       id: "urgence",
       title: "Aide & urgences",
       subtitle: "Trouver de l'aide rapidement",
@@ -2363,10 +2379,12 @@ Rue du Commerce 10
     });
   });
 
-  // Redirections pour conserver les anciens favoris (sections déplacées vers Santé)
+  // Redirections pour conserver les anciens favoris (sections déplacées)
   const REDIRECTS = {
     'vie/medecin': 'sante/medecin',
-    'vie/planning-familial': 'sante/planning-familial'
+    'vie/planning-familial': 'sante/planning-familial',
+    'argent/aides-disponibles': 'placement/aides-disponibles',
+    'argent/epargne-mandante': 'placement/epargne-mandante'
   };
 
   // ============================================================
@@ -2375,28 +2393,28 @@ Rue du Commerce 10
   // Format : "mot ou expression cherchée" → tableau de paths de fiches à proposer
   // ============================================================
   const LEXIQUE = {
-    "pas d argent": ["argent/ris-cpas", "argent/aides-supp", "argent/aides-disponibles"],
+    "pas d argent": ["argent/ris-cpas", "argent/aides-supp", "placement/aides-disponibles"],
     "sans argent": ["argent/ris-cpas", "argent/aides-supp"],
-    "galere": ["argent/ris-cpas", "argent/aides-disponibles", "urgence/services-aide"],
-    "galère": ["argent/ris-cpas", "argent/aides-disponibles", "urgence/services-aide"],
+    "galere": ["argent/ris-cpas", "placement/aides-disponibles", "urgence/services-aide"],
+    "galère": ["argent/ris-cpas", "placement/aides-disponibles", "urgence/services-aide"],
     "fin de mois": ["argent/budget", "vie/alimentation", "argent/aides-supp"],
     "precaire": ["argent/ris-cpas", "argent/aides-supp", "logement/aides"],
     "précaire": ["argent/ris-cpas", "argent/aides-supp", "logement/aides"],
     "minimum": ["argent/ris-cpas"],
     "survie": ["argent/ris-cpas", "urgence/services-aide"],
-    "aide sociale": ["argent/ris-cpas", "argent/aides-disponibles"],
-    "aide cpas": ["argent/ris-cpas", "argent/aides-disponibles"],
+    "aide sociale": ["argent/ris-cpas", "placement/aides-disponibles"],
+    "aide cpas": ["argent/ris-cpas", "placement/aides-disponibles"],
     "pauvre": ["argent/ris-cpas", "argent/aides-supp"],
     "ris": ["argent/ris-cpas"],
     "rsa": ["argent/ris-cpas"],
     "cpas": ["argent/ris-cpas", "urgence/services-aide"],
-    "allocations": ["argent/aides-disponibles"],
+    "allocations": ["placement/aides-disponibles"],
     "bourse": ["etudes/bourse"],
     "etudes": ["etudes/bourse", "etudes/service-social-ecole"],
     "banque": ["argent/compte-bancaire"],
-    "compte": ["argent/compte-bancaire", "argent/epargne-mandante"],
+    "compte": ["argent/compte-bancaire", "placement/epargne-mandante"],
     "budget": ["argent/budget"],
-    "epargne": ["argent/compte-bancaire", "travail/epargne-pension", "argent/epargne-mandante"],
+    "epargne": ["argent/compte-bancaire", "travail/epargne-pension", "placement/epargne-mandante"],
     "mal etre": ["urgence/mal-etre", "sante/convention-psy"],
     "mal-être": ["urgence/mal-etre", "sante/convention-psy"],
     "mal dans ma peau": ["urgence/mal-etre", "sante/convention-psy"],

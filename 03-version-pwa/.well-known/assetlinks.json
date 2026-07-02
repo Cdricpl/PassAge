@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "REMPLACER.PAR.TON.PACKAGE.ID",
+      "sha256_cert_fingerprints": [
+        "REMPLACER:PAR:LE:SHA256:DE:TA:CLE:DE:SIGNATURE:FOURNI:PAR:PWABUILDER"
+      ]
+    }
+  }
+]

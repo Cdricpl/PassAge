@@ -23,13 +23,8 @@ sections:
         <li><a href="https://www.meilleurtarif.be" target="_blank" rel="noopener">meilleurtarif.be</a> — comparateur officiel BIPT (téléphonie + internet)</li>
       </ul>
       
-      <h2>Le tarif social internet (19 €/mois)</h2>
-      <p>Si tu touches le RIS, l'aide sociale du CPAS, ou la GRAPA, tu as droit à l'<strong>offre internet sociale</strong> : <strong>19 € par mois maximum</strong>, vitesse minimum 30 Mbps, 150 Go inclus.</p>
-      <ul>
-        <li>Disponible chez Proximus, Telenet/BASE et VOO (Wallonie).</li>
-        <li>Demande à l'opérateur ou via <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">le SPF Économie</a>.</li>
-      </ul>
-      
+      <div class="callout tip"><div><strong>Tu touches le RIS ou une aide du CPAS ?</strong>Tu as droit à l'offre internet sociale (19 €/mois max). Tout est expliqué dans <a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a>.</div></div>
+
       <h2>Astuces pour réduire la facture</h2>
       <ul>
         <li><strong>Forfait avec wifi à la maison</strong> : utilise ton wifi pour ne pas exploser les data mobiles.</li>

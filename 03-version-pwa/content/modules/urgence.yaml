@@ -63,13 +63,13 @@ sections:
       <p>Le portail dédié à l'autonomie des jeunes : logement, budget, démarches. Plein de fiches claires. Site : <a href="https://envoltoit.be" target="_blank" rel="noopener">envoltoit.be</a></p>
       
       <h2>Le CPAS</h2>
-      <p>Aide sociale et financière de ta commune. RIS, aides ponctuelles, accompagnement.</p>
+      <p>Aide sociale et financière de ta commune. RIS, aides ponctuelles, accompagnement. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</p>
       
       <h2>Le planning familial</h2>
-      <p>Santé, sexualité, écoute psychologique, conseil juridique. Tarifs adaptés aux revenus.</p>
+      <p>Santé, sexualité, écoute psychologique, conseil juridique. Tarifs adaptés aux revenus. Voir <a href="#/fiche/sante/planning-familial">Le planning familial</a>.</p>
       
       <h2>La maison médicale</h2>
-      <p>Soins gratuits si tu t'inscris au forfait. <a href="https://www.maisonmedicale.org" target="_blank" rel="noopener">maisonmedicale.org</a></p>
+      <p>Soins gratuits si tu t'inscris au forfait. Voir <a href="#/fiche/sante/maison-medicale">La maison médicale</a>.</p>
   - id: mal-etre
     title: "Quand ça ne va pas"
     summary: "Anxiété, dépression, idées noires : par où commencer."
@@ -83,6 +83,7 @@ sections:
         <li><strong>Centre de Prévention du Suicide : 0800 32 123</strong>.</li>
         <li><strong>103</strong> (Écoute-Enfants) si tu es ado ou jeune — tous les jours de 10h à minuit.</li>
         <li>Une AMO ou un planning familial : tu peux y aller librement.</li>
+        <li>Tous les autres numéros (SOS Viol, Infor Drogues…) : voir <a href="#/fiche/urgence/lignes-ecoute">Lignes d'écoute et numéros utiles</a>.</li>
       </ul>
       
       <h2>Voir un·e professionnel·le</h2>

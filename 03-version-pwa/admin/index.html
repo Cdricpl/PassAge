@@ -38,6 +38,7 @@
       --c-vie:#F4B5A0;    --c-vie-soft:#FCE7DE;
       --c-loisirs:#4F7CAC;--c-loisirs-soft:#E5EDF5;
       --c-sante:#6FA8B5;  --c-sante-soft:#DEEEF2;
+      --c-placement:#7CAE8B; --c-placement-soft:#E3F0E8;
       --c-urgence:#D64545;--c-urgence-soft:#FCE8E8;
     }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -109,6 +110,7 @@
     .tile[data-color=loisirs] .tile-icon { background: var(--c-loisirs-soft); color: var(--c-loisirs); }
     .tile[data-color=sante]   .tile-icon { background: var(--c-sante-soft);   color: var(--c-sante); }
     .tile[data-color=urgence] .tile-icon { background: var(--c-urgence-soft); color: var(--c-urgence); }
+    .tile[data-color=placement] .tile-icon { background: var(--c-placement-soft); color: #3B7A64; }
     .dashboard-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 
     /* ── Module hero header (fond coloré comme l'app) ── */
@@ -122,6 +124,7 @@
     .module-hero[data-color=loisirs] { background: var(--c-loisirs-soft); }
     .module-hero[data-color=sante]   { background: var(--c-sante-soft); }
     .module-hero[data-color=urgence] { background: var(--c-urgence-soft); }
+    .module-hero[data-color=placement] { background: var(--c-placement-soft); }
     .module-hero-inner { max-width: 800px; margin: 0 auto; }
     .module-hero h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
     .module-hero .mod-subtitle { font-size: 1rem; color: var(--text-soft); margin-bottom: 4px; }
@@ -530,11 +533,12 @@ const REPO         = 'Cdricpl/PassAge';
 const BASE_PATH    = '03-version-pwa/content/modules';
 const LEXIQUE_PATH = '03-version-pwa/content/lexique.yaml';
 const APROPOS_PATH = '03-version-pwa/content/apropos.yaml';
-const MODULE_ORDER  = ['admin','argent','etudes','travail','logement','vie','loisirs','sante','urgence'];
+const MODULE_ORDER  = ['admin','argent','etudes','travail','logement','vie','loisirs','sante','placement','urgence'];
 const MODULE_LABELS = {
   admin:'Administratif & juridique', argent:'Argent & aides',
   etudes:'Études & formations', travail:'Travail', logement:'Logement',
-  vie:'Vie quotidienne', loisirs:'Loisirs', sante:'Santé & bien-être', urgence:'Aide & urgences'
+  vie:'Vie quotidienne', loisirs:'Loisirs', sante:'Santé & bien-être',
+  placement:'Après le placement', urgence:'Aide & urgences'
 };
 const MODULE_ICONS = {
   admin:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z M14 3v5h5 M9 13h6 M9 17h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -545,7 +549,8 @@ const MODULE_ICONS = {
   vie:      '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 3h2l3 14h11l3-9H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="21" r="1.5" fill="currentColor"/><circle cx="18" cy="21" r="1.5" fill="currentColor"/></svg>',
   loisirs:  '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M11 20A7 7 0 0 1 4 13c0-7 8-12 16-12-1 8-2 19-9 19zM2 22c1-3 3-6 9-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   sante:    '<svg viewBox="0 0 24 24" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
-  urgence:  '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>'
+  urgence:  '<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6 M12 16.5v.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
+  placement:'<svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
 };
 
 // ── State ───────────────────────────────────────────────────────────────────────

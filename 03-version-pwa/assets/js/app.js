@@ -217,7 +217,8 @@
       { href: '#/module/administratif', color: 'admin', icon: ICONS.doc, title: 'Administratif', subtitle: 'Papiers, mutuelle, démarches' },
       { href: '#/module/etudes', color: 'etudes', icon: ICONS.cap, title: 'Études & formations', subtitle: 'Bourses, écoles, orientation' },
       { href: '#/module/vie', color: 'vie', icon: ICONS.cart, title: 'Vie quotidienne', subtitle: 'Transports, GSM, alimentation' },
-      { href: '#/module/loisirs', color: 'loisirs', icon: ICONS.leaf, title: 'Loisirs', subtitle: 'Activités, culture, souffler' }
+      { href: '#/module/loisirs', color: 'loisirs', icon: ICONS.leaf, title: 'Loisirs', subtitle: 'Activités, culture, souffler' },
+      { href: '#/module/placement', color: 'placement', icon: ICONS.compass, title: 'Après le placement', subtitle: 'Tes droits spécifiques, ton parcours' }
     ];
 
     return `

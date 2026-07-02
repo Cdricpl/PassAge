@@ -11,7 +11,7 @@ sections:
     summary: Comment l'obtenir, conditions, contrat d'intégration.
     lastChecked: 09/06/2026
     body: |-
-      <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune. En tant que jeune accueilli·e, c'est un droit pour toi.</p>
+      <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune, si tes ressources ne suffisent pas pour vivre.</p>
 
       <h2>Les conditions</h2>
       <ul>
@@ -32,27 +32,8 @@ sections:
 
       <h2>Aides ponctuelles</h2>
       <p>Le CPAS peut aussi t'aider de manière ponctuelle (aide alimentaire, garantie locative, aide médicale urgente). Ces aides sont parfois remboursables.</p>
-  - id: aides-disponibles
-    title: Les aides auxquelles j'ai droit
-    summary: 'Vue d''ensemble : RIS, allocations, bourses.'
-    lastChecked: 03/06/2026
-    body: |
-      <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
 
-      <h2>1. Les allocations familiales</h2>
-      <p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans.</p>
-
-      <h2>2. Le RIS (revenu d'intégration sociale)</h2>
-      <p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune.</p>
-
-      <h2>3. La bourse d'études (FWB)</h2>
-      <p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas.</p>
-
-      <h2>4. Les aides ponctuelles du CPAS</h2>
-      <p>Le CPAS peut accorder des aides spécifiques (alimentaire, médicale, financière, garantie locative…) selon ta situation.</p>
-
-      <h2>5. Le compte d'épargne mandant</h2>
-      <p>Pendant ta période d'éloignement, un compte a peut-être été ouvert à ton nom par l'autorité mandante. <strong>Vérifie auprès d'eux</strong> — pour certains jeunes, le solde peut être conséquent.</p>
+      <div class="callout info"><div><strong>Si tu as été accueilli·e en famille d'accueil ou en institution</strong>Ton statut d'enfant accueilli te donne un accès facilité au RIS. Explique ta situation au CPAS — et retrouve tous tes droits spécifiques dans <a href="#/module/placement">Après le placement</a>.</div></div>
   - id: allocations-familiales
     title: Mes allocations familiales
     summary: À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études.
@@ -62,7 +43,7 @@ sections:
 
       <h2>Ce qui change à 18 ans</h2>
       <ul>
-        <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à ta famille d'accueil).</li>
+        <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à tes parents ou à l'adulte qui t'élevait).</li>
         <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
         <li>Si tu termines ou interromps tes études : tu peux les garder encore <strong>12 mois maximum</strong>. Attention, la règle change au <strong>1er juillet 2026</strong> : un nouveau statut « post-étudiant » remplace l'ancien système des 360 jours de stage d'insertion — vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
       </ul>
@@ -84,7 +65,7 @@ sections:
         <li>Les allocations familiales <strong>ne sont pas taxables</strong> — pas besoin de les déclarer aux impôts.</li>
       </ul>
 
-      <div class="callout tip"><div><strong>Ton compte d'épargne mandant</strong>Si tu étais en famille d'accueil, vérifie aussi le compte d'épargne ouvert par l'autorité mandante. Voir <a href="#/fiche/argent/epargne-mandante">Le compte d'épargne mandant</a>.</div></div>
+      <div class="callout info"><div><strong>Si tu as été accueilli·e en famille d'accueil ou en institution</strong>Vérifie aussi le compte d'épargne peut-être ouvert à ton nom par l'autorité mandante. Voir <a href="#/fiche/placement/epargne-mandante">Le compte d'épargne mandant</a>.</div></div>
 
       <h2>Pour aller plus loin</h2>
       <ul>
@@ -139,21 +120,6 @@ sections:
       <p>Très pratique : tu vois tes finances en temps réel, tu fais tes virements en quelques clics. Toutes les banques en proposent une.</p>
 
       <div class="callout tip"><div><strong>Astuce</strong>Beaucoup de banques proposent un compte gratuit pour les jeunes. Compare avant de choisir — les services (retraits, carte, appli) varient selon les établissements.</div></div>
-  - id: epargne-mandante
-    title: Le compte d'épargne mandant
-    summary: Vérifier si un compte a été ouvert à ton nom pendant la prise en charge.
-    lastChecked: 03/06/2026
-    body: |
-      <p>Pendant la période où tu as été éloigné·e de ton milieu familial (institution ou famille d'accueil), un compte d'épargne a peut-être été ouvert à ton nom par l'autorité mandante.</p>
-
-      <h2>Ce qu'il faut vérifier</h2>
-      <ul>
-        <li>Cela <strong>n'est pas automatique</strong> — il faut vérifier auprès de l'autorité mandante qui s'occupait de ta situation.</li>
-        <li>Le montant versé dépend du type d'hébergement.</li>
-        <li>Pour certains jeunes, le solde peut être conséquent.</li>
-      </ul>
-
-      <div class="callout warn"><div><strong>Attention</strong>L'argent part vite. Avant de tout dépenser, pense à un projet utile : caution de logement, voiture pour le travail, formation…</div></div>
   - id: aides-supp
     title: 'Bons plans : tarif social, seconde main'
     summary: Tarif social énergie/internet, magasins de seconde main.

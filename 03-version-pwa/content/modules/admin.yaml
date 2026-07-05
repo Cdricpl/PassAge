@@ -30,7 +30,7 @@ sections:
   - id: rc-familiale
     title: "L'assurance RC familiale"
     summary: "Ce qu'elle couvre, pourquoi tu en as besoin."
-    lastChecked: "03/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>L'assurance <strong>Responsabilité Civile familiale</strong> (RC familiale) te protège financièrement si tu causes un dommage à quelqu'un par accident.</p>
       
@@ -47,7 +47,7 @@ sections:
       <h2>Quand en prendre une ?</h2>
       <ul>
         <li>Tant que tu vis chez tes parents ou ta famille d'accueil, tu es couvert·e par leur assurance.</li>
-        <li>Si tu prends ton autonomie, tu dois en souscrire une à ton nom.</li>
+        <li>Si tu prends ton autonomie, il est <strong>vivement recommandé</strong> d'en souscrire une à ton nom (elle n'est pas obligatoire par la loi, contrairement à l'assurance auto — mais elle coûte peu et peut t'éviter des milliers d'euros).</li>
       </ul>
   - id: voyager
     title: "Voyager à l'étranger"
@@ -205,7 +205,7 @@ sections:
   - id: aide-juridique
     title: "Avocat prodéo et aide juridique"
     summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     source: "justice.belgium.be · avocats.be · droitsquotidiens.be"
     body: |
       <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
@@ -225,7 +225,7 @@ sections:
       <ul>
         <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 612 €/mois</strong> → gratuit total · entre <strong>1 612 € et 1 920 €</strong> → partiellement gratuit.</li>
         <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
-        <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>355 €</strong> par personne supplémentaire (à confirmer auprès du BAJ).</li>
+        <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>362 €</strong> par personne supplémentaire (montant au 1er mars 2026, à confirmer auprès du BAJ).</li>
       </ul>
       
       <h2>Accès automatique (sans calcul de revenus)</h2>

@@ -9,7 +9,7 @@ sections:
   - id: pass-jeune
     title: "Pass Jeune et réductions culturelles"
     summary: "Des réductions sur la culture, le sport et les loisirs pour les moins de 26 ans."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>En Belgique, plusieurs passes et réductions existent spécialement pour les jeunes. Tu n'as pas toujours besoin d'un revenu élevé pour profiter de la culture et des activités.</p>
       
@@ -21,7 +21,7 @@ sections:
       </ul>
 
       <h2>La Carte Jeunes européenne</h2>
-      <p>Si tu as <strong>moins de 31 ans</strong>, la <strong>Carte Jeunes</strong> (12 à 15 €/an) donne des réductions sur des spectacles, loisirs, boutiques et voyages, en Belgique et dans plus de 30 pays européens.</p>
+      <p>Si tu as <strong>moins de 31 ans</strong>, la <strong>Carte Jeunes</strong> (13 €/an en version digitale, 20 € en version physique) donne des réductions sur des spectacles, loisirs, boutiques et voyages, en Belgique et dans plus de 30 pays européens.</p>
       <ul>
         <li>Commande en ligne : <a href="https://cartejeunes.be" target="_blank" rel="noopener">cartejeunes.be</a></li>
       </ul>

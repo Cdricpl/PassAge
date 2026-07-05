@@ -64,7 +64,7 @@ window.MA_CONTENT = (function () {
           id: "rc-familiale",
           title: "L'assurance RC familiale",
           summary: "Ce qu'elle couvre, pourquoi tu en as besoin.",
-          lastChecked: "03/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>L'assurance <strong>Responsabilité Civile familiale</strong> (RC familiale) te protège financièrement si tu causes un dommage à quelqu'un par accident.</p>
 
@@ -81,7 +81,7 @@ window.MA_CONTENT = (function () {
 <h2>Quand en prendre une ?</h2>
 <ul>
   <li>Tant que tu vis chez tes parents ou ta famille d'accueil, tu es couvert·e par leur assurance.</li>
-  <li>Si tu prends ton autonomie, tu dois en souscrire une à ton nom.</li>
+  <li>Si tu prends ton autonomie, il est <strong>vivement recommandé</strong> d'en souscrire une à ton nom (elle n'est pas obligatoire par la loi, contrairement à l'assurance auto — mais elle coûte peu et peut t'éviter des milliers d'euros).</li>
 </ul>
 `
         },
@@ -255,7 +255,7 @@ window.MA_CONTENT = (function () {
           title: "Avocat prodéo et aide juridique",
           summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.",
           source: "justice.belgium.be · avocats.be · droitsquotidiens.be",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
 
@@ -274,7 +274,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 612 €/mois</strong> → gratuit total · entre <strong>1 612 € et 1 920 €</strong> → partiellement gratuit.</li>
   <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
-  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>355 €</strong> par personne supplémentaire (à confirmer auprès du BAJ).</li>
+  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>362 €</strong> par personne supplémentaire (montant au 1er mars 2026, à confirmer auprès du BAJ).</li>
 </ul>
 
 <h2>Accès automatique (sans calcul de revenus)</h2>
@@ -329,7 +329,7 @@ window.MA_CONTENT = (function () {
           id: "ris-cpas",
           title: "Le RIS et le CPAS",
           summary: "Comment l'obtenir, conditions, contrat d'intégration.",
-          lastChecked: "09/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune, si tes ressources ne suffisent pas pour vivre.</p>
 
@@ -337,7 +337,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Avoir 18 ans accomplis.</li>
   <li>Ne pas avoir de ressources suffisantes pour vivre.</li>
-  <li>Accepter de signer un <strong>contrat d'intégration sociale</strong> avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…).</li>
+  <li>Accepter de signer un <strong>PIIS</strong> (projet individualisé d'intégration sociale) avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…) — obligatoire si tu as moins de 25 ans.</li>
 </ul>
 
 <h2>Comment ça se passe ?</h2>
@@ -345,7 +345,7 @@ window.MA_CONTENT = (function () {
   <li>Tu prends rendez-vous au CPAS de ta commune de domicile.</li>
   <li>Une enquête sociale est faite (sur ta situation, parfois sur tes parents).</li>
   <li>Le montant est fixé en fonction (vis seul·e, en colocation…).</li>
-  <li>Tu signes le contrat, et le RIS est versé chaque mois.</li>
+  <li>Tu signes le PIIS, et le RIS est versé chaque mois.</li>
 </ol>
 
 <div class="callout warn"><div><strong>Attention si tu travailles</strong>Si tu fais un job étudiant ou un job ponctuel, ton RIS peut être <strong>partiellement réduit</strong> ce mois-là. Renseigne-toi à l'avance, une exonération existe.</div></div>
@@ -358,32 +358,38 @@ window.MA_CONTENT = (function () {
         {
           id: "allocations-familiales",
           title: "Mes allocations familiales",
-          summary: "À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études.",
-          lastChecked: "11/06/2026",
+          summary: "Qui les reçoit, jusqu'à quand, et les démarches à faire.",
+          lastChecked: "05/07/2026",
           body: `
 <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
 
-<h2>Ce qui change à 18 ans</h2>
+<h2>Qui reçoit l'argent ?</h2>
 <ul>
-  <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à tes parents ou à l'adulte qui t'élevait).</li>
-  <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
+  <li>Avoir 18 ans ne suffit pas : les allocations restent versées à <strong>la personne qui t'élève</strong> (parent, famille d'accueil…).</li>
+  <li>Elles arrivent <strong>directement sur ton compte</strong> si tu vis seul·e (domicile séparé), si tu es marié·e ou émancipé·e, si tu as un enfant, ou si tu es suivi·e par l'aide à la jeunesse à ta majorité.</li>
+</ul>
+
+<h2>Jusqu'à quand ?</h2>
+<ul>
+  <li>Jusqu'à <strong>21 ans</strong> : sans condition d'études (sauf si tu touches un revenu de remplacement ou dépasses les limites de travail).</li>
+  <li>De 21 à <strong>25 ans</strong> : si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
   <li>Si tu termines ou interromps tes études : tu peux les garder encore <strong>12 mois maximum</strong>. Attention, la règle change au <strong>1er juillet 2026</strong> : un nouveau statut « post-étudiant » remplace l'ancien système des 360 jours de stage d'insertion — vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
 
 <h2>Démarches à faire</h2>
 <ol class="fiche-ol">
-  <li>Communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://www.myfamiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
+  <li>Si tu es dans un des cas où l'argent te revient directement : communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://www.myfamiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
   <li>Si tu déménages : signale ton <strong>changement d'adresse</strong>.</li>
   <li>Si tu es aux études : tu n'as souvent rien à faire — l'info est transmise par ton école.</li>
 </ol>
 
 <h2>Le quota du job étudiant</h2>
-<p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Si tu dépasses, ça peut suspendre les allocations le mois concerné. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
+<p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Au-delà des 650 h, tu peux encore prester <strong>240 h par trimestre</strong> comme salarié·e ordinaire ; si tu dépasses aussi cette limite, tu perds les allocations pour <strong>le trimestre entier</strong>. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
 
 <h2>Bon à savoir</h2>
 <ul>
   <li>Si tu as un enfant, tu touches aussi <strong>ses</strong> allocations familiales.</li>
-  <li>Tu peux <strong>cumuler</strong> tes allocations familiales avec un salaire ou avec le RIS.</li>
+  <li>Tu peux les <strong>cumuler avec un salaire</strong> (dans les limites ci-dessus). Attention : si tu touches le <strong>RIS</strong> et que les allocations te sont versées à toi, elles comptent comme ressources et sont <strong>déduites du RIS</strong> (sauf celles de tes propres enfants).</li>
   <li>Les allocations familiales <strong>ne sont pas taxables</strong> — pas besoin de les déclarer aux impôts.</li>
 </ul>
 
@@ -451,16 +457,16 @@ window.MA_CONTENT = (function () {
           id: "aides-supp",
           title: "Bons plans : tarif social, seconde main",
           summary: "Tarif social énergie/internet, magasins de seconde main.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 
-<h2>Tarif social pour l'énergie et l'eau</h2>
+<h2>Tarif social pour l'énergie</h2>
 <p>Si tu touches le <strong>RIS du CPAS</strong>, certaines allocations handicap, ou la garantie de revenus aux personnes âgées, tu as droit au <strong>tarif social</strong> pour&nbsp;:</p>
 <ul>
   <li><strong>Électricité, gaz naturel, chaleur</strong> : tarif identique partout en Belgique, peu importe ton fournisseur.</li>
-  <li><strong>Eau</strong> : tarif réduit auprès de la SWDE.</li>
 </ul>
+<p>Pour l'<strong>eau</strong>, il n'existe pas de tarif social en Wallonie — mais le <strong>Fonds social de l'eau</strong> peut intervenir si tu as du mal à payer ta facture. Demande au CPAS.</p>
 <p>Demande à <strong>ton·ta intervenant·e social·e du CPAS</strong> de faire la démarche pour toi. Souvent, c'est <strong>automatique</strong> dès que tu es au RIS — mais vérifie.</p>
 
 <h2>Offre Internet sociale (19 €/mois)</h2>
@@ -468,7 +474,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li><strong>30 Mbps</strong> minimum de débit.</li>
   <li><strong>150 Go</strong> de téléchargement inclus.</li>
-  <li>Disponible chez <strong>Proximus</strong>, <strong>VOO</strong> (Wallonie) et <strong>Telenet/BASE</strong>.</li>
+  <li>En Wallonie : chez <strong>Proximus</strong> et <strong>VOO</strong> (Telenet la propose en Flandre).</li>
 </ul>
 <p>Demande directement à l'opérateur, ou vérifie ton éligibilité via le <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a>.</p>
 
@@ -867,7 +873,7 @@ window.MA_CONTENT = (function () {
           id: "chomage",
           title: "Le chômage après les études",
           summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
 
@@ -878,7 +884,7 @@ window.MA_CONTENT = (function () {
 <p>Avant de pouvoir toucher des allocations, tu dois faire un <strong>stage d'insertion professionnelle de 156 jours</strong> (≈ 6 mois, hors dimanches). Pendant ce temps :</p>
 <ul>
   <li>Tu cherches activement un emploi.</li>
-  <li>Le Forem suit ta recherche (entretiens d'évaluation).</li>
+  <li>Le Forem évalue ta recherche : il te faut <strong>2 évaluations positives</strong> pendant le stage pour ouvrir le droit aux allocations.</li>
   <li>Tu peux faire des stages, suivre des formations.</li>
 </ul>
 <p>Avant la réforme, ce stage durait 310 jours (≈ 1 an). Depuis le <strong>1er mars 2026</strong>, c'est <strong>réduit à 156 jours</strong>.</p>
@@ -888,6 +894,8 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Versées <strong>pendant 12 mois maximum</strong> (avant la réforme : 36 mois).</li>
   <li>Tu dois avoir <strong>moins de 25 ans</strong> au moment de la première demande.</li>
+  <li>Tu dois avoir <strong>terminé tes études avec un diplôme, certificat ou attestation de réussite</strong> — c'est une nouvelle condition de la réforme 2026.</li>
+  <li>Tu dois avoir obtenu <strong>2 évaluations positives</strong> de ta recherche d'emploi par le Forem.</li>
   <li>Le montant dépend de ta situation : isolé·e, cohabitant·e, chef de ménage.</li>
 </ul>
 
@@ -987,7 +995,7 @@ window.MA_CONTENT = (function () {
           id: "bail",
           title: "Le contrat de bail",
           summary: "Ce qu'il doit contenir, comment le vérifier.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
 
@@ -1004,7 +1012,7 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <h2>L'enregistrement</h2>
-<p>Le bail doit être <strong>enregistré au SPF Finances</strong>. Sans cet enregistrement, certaines clauses ne sont pas valables. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
+<p>Le bail doit être <strong>enregistré au SPF Finances</strong> — c'est <strong>au propriétaire</strong> de le faire, gratuitement, dans les 2 mois de la signature. S'il ne le fait pas (après mise en demeure restée sans suite pendant 1 mois), tu peux <strong>quitter le logement sans préavis ni indemnité</strong>. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
 
 <h2>Durée du bail</h2>
 <ul>
@@ -1026,9 +1034,9 @@ window.MA_CONTENT = (function () {
           id: "etat-des-lieux",
           title: "L'état des lieux",
           summary: "Le document qui te protège quand tu pars.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
-<p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. C'est <strong>essentiel</strong> : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
+<p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. En Wallonie, il est <strong>obligatoire</strong> (décret de 2018) — et essentiel : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
 
 <h2>Quand le faire ?</h2>
 <p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement (quand il est encore vide), ou au plus tard pendant le <strong>premier mois d'occupation</strong>.</p>
@@ -1050,7 +1058,7 @@ window.MA_CONTENT = (function () {
           id: "garantie",
           title: "La garantie locative",
           summary: "Ce que c'est, et l'aide du CPAS si tu n'as pas l'argent.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>La <strong>garantie locative</strong> (ou caution) sert à couvrir tes éventuels manquements (loyer impayé, dégâts…).</p>
 
@@ -1063,7 +1071,11 @@ window.MA_CONTENT = (function () {
 <p>Depuis juin 2023, en Wallonie, la garantie est <strong>plafonnée à 2 mois de loyer</strong> quelle que soit sa forme. Si on te demande plus, c'est illégal.</p>
 
 <h2>Pas d'argent pour la caution ?</h2>
-<p>Va voir le <strong>CPAS de ta commune</strong>. Il peut se porter garant pour toi via un document remis à ton propriétaire.</p>
+<p>Deux solutions :</p>
+<ul>
+  <li>Le <strong>CPAS de ta commune</strong> peut se porter garant pour toi via un document remis à ton propriétaire.</li>
+  <li>La <strong>SWCS</strong> (Société wallonne du crédit social) propose un <strong>prêt à taux zéro</strong> pour constituer ta garantie — y compris pour un kot ou une colocation, remboursable en 24 à 36 mois. Infos : <a href="https://www.swcs.be" target="_blank" rel="noopener">swcs.be</a>.</li>
+</ul>
 
 <div class="callout warn"><div><strong>À savoir</strong>Cette caution devra être remboursée au CPAS. Elle te sera prélevée du RIS pendant les premiers mois.</div></div>
 `
@@ -1118,7 +1130,7 @@ window.MA_CONTENT = (function () {
           id: "aides",
           title: "Les aides au logement",
           summary: "Qui contacter, à quoi tu as droit.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
 
@@ -1130,7 +1142,7 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <h2>L'ADeL (Allocation de Déménagement et de Loyer)</h2>
-<p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou inadapté pour un meilleur : une <strong>allocation de déménagement</strong> (environ 400 €) et une <strong>allocation de loyer</strong> mensuelle (jusqu'à ~100 €/mois). Conditions de revenus strictes. À demander à la Région wallonne via <a href="https://www.wallonie.be/fr/demarches/obtenir-une-allocation-de-demenagement-et-de-loyer-adel" target="_blank" rel="noopener">wallonie.be</a>.</p>
+<p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou inadapté pour un meilleur : une <strong>allocation de déménagement</strong> (environ 400 €) et une <strong>allocation de loyer</strong> mensuelle (environ 100 à 125 €/mois selon la situation). Conditions de revenus strictes. À demander à la Région wallonne via <a href="https://www.wallonie.be/fr/demarches/obtenir-une-allocation-de-demenagement-et-de-loyer-adel" target="_blank" rel="noopener">wallonie.be</a>.</p>
 
 <h2>Le service Droit des Jeunes</h2>
 <p>Gratuit, confidentiel : ils t'aident à comprendre tes droits et à monter ton dossier. À contacter dès le début.</p>
@@ -1150,7 +1162,7 @@ window.MA_CONTENT = (function () {
           id: "compteurs",
           title: "L'ouverture des compteurs",
           summary: "Eau, gaz, électricité : premières démarches dans ton logement.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Dès que tu as les clés, tu dois <strong>ouvrir les compteurs à ton nom</strong> (électricité, gaz, eau), <strong>sauf</strong> si les charges sont déjà comprises dans ton loyer.</p>
 
@@ -1161,7 +1173,7 @@ window.MA_CONTENT = (function () {
 <p>Plusieurs fournisseurs (Engie, Luminus, Mega, TotalEnergies, Octa+…). Compare les prix avant de signer :</p>
 <ul>
   <li><strong>Wallonie</strong> : <a href="https://www.compacwape.be" target="_blank" rel="noopener">comparateur officiel CWaPE</a></li>
-  <li><strong>Bruxelles</strong> : <a href="https://www.brugel.brussels" target="_blank" rel="noopener">comparateur Brugel</a></li>
+  <li><strong>Bruxelles</strong> : <a href="https://www.brusim.brussels" target="_blank" rel="noopener">BruSim</a> (le comparateur officiel de Brugel)</li>
 </ul>
 
 <h2>Étape 3 : remplir et envoyer les formulaires</h2>
@@ -1224,14 +1236,14 @@ window.MA_CONTENT = (function () {
           id: "changement-adresse",
           title: "Changer d'adresse",
           summary: "Domiciliation, démarches en chaîne.",
-          lastChecked: "03/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Tu emménages ? Tu dois te <strong>domicilier</strong> à ta nouvelle adresse — c'est obligatoire.</p>
 
 <h2>Comment faire ?</h2>
 <ol class="fiche-ol">
   <li>Tu vas à l'administration communale de ta nouvelle commune avec ta carte d'identité.</li>
-  <li>Tu déclares ton changement d'adresse.</li>
+  <li>Tu déclares ton changement d'adresse — dans les <strong>8 jours ouvrables</strong> après l'emménagement, c'est une obligation légale.</li>
   <li>Un agent de quartier passe vérifier que tu vis bien à cette adresse.</li>
   <li>Tu vas chercher ta nouvelle carte d'identité (ou la mise à jour) à la commune.</li>
 </ol>
@@ -1325,13 +1337,13 @@ window.MA_CONTENT = (function () {
       color: "vie",
       icon: ICONS.cart,
       objective: "Gérer ton quotidien plus facilement : se déplacer, se nourrir, économiser.",
-      source: "infotec.be (TEC) · wallonie.be · ibpt.be",
+      source: "letec.be (TEC) · wallonie.be · ibpt.be",
       sections: [
         {
           id: "communication",
           title: "GSM, internet, abonnements",
           summary: "Mettre ton GSM à ton nom, choisir un opérateur, tarif social.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Si ton numéro est encore lié au contrat de ta famille (ou famille d'accueil), tu peux le garder — mais le jour où tu prends ton autonomie, il faudra <strong>le mettre à ton nom</strong>. Voici comment t'y retrouver.</p>
 
@@ -1345,7 +1357,7 @@ window.MA_CONTENT = (function () {
   <li><a href="https://www.meilleurtarif.be" target="_blank" rel="noopener">meilleurtarif.be</a> — comparateur officiel BIPT (téléphonie + internet)</li>
 </ul>
 
-<div class="callout tip"><div><strong>Tu touches le RIS ou une aide du CPAS ?</strong>Tu as droit à l'offre internet sociale (19 €/mois max). Tout est expliqué dans <a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a>.</div></div>
+<div class="callout tip"><div><strong>Tu touches le RIS ?</strong>Tu as droit à l'offre internet sociale (19 €/mois max). Tout est expliqué dans <a href="#/fiche/argent/aides-supp">Bons plans : tarif social</a>.</div></div>
 
 <h2>Astuces pour réduire la facture</h2>
 <ul>
@@ -1368,7 +1380,7 @@ window.MA_CONTENT = (function () {
           id: "permis-conduire",
           title: "Le permis de conduire (B)",
           summary: "Théorique, pratique, filières, coût en Wallonie 2026.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
 
@@ -1387,7 +1399,7 @@ window.MA_CONTENT = (function () {
 <h3>Filière libre (M36)</h3>
 <ul>
   <li>Tu apprends avec un·e <strong>guide</strong> (parent, ami·e, etc., qui a son permis depuis ≥ 8 ans).</li>
-  <li>Obligatoire : <strong>rendez-vous pédagogique d'1 heure</strong> avec ton·ta guide avant de commencer (en présentiel ou en e-learning via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>).</li>
+  <li>Obligatoire : le <strong>rendez-vous pédagogique</strong> pour toi <strong>et</strong> chaque guide (3 h en présentiel ou ± 45 min en e-learning, ~12 €/personne, via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>). Ensuite : minimum 3 mois de stage <strong>et 1 500 km parcourus</strong> avant l'examen pratique.</li>
   <li>Stage minimum 3 mois avant l'examen pratique.</li>
   <li>Coût total estimé : <strong>150 à 250 €</strong> (examens + RDV pédago).</li>
 </ul>
@@ -1417,7 +1429,7 @@ window.MA_CONTENT = (function () {
           id: "transport",
           title: "Bus, train, vélo",
           summary: "TEC, SNCB, abonnement combiné, vélo en libre-service.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <h2>TEC (Wallonie) — bus, trams</h2>
 <ul>
@@ -1438,7 +1450,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Vélo</h2>
 <ul>
-  <li><strong>Vélos électriques en libre-service</strong> : Liège (Liégeois et environs), Charleroi, Mons (renseigne-toi à ta commune).</li>
+  <li><strong>Vélos électriques en libre-service</strong> : Liège, Charleroi… (renseigne-toi à ta commune).</li>
   <li><strong>Achat d'un vélo d'occasion</strong> : entre 100 et 300 €. Vérifie freins, chaîne, gonflage avant d'acheter.</li>
 </ul>
 
@@ -1681,7 +1693,7 @@ window.MA_CONTENT = (function () {
           title: "Écrire une lettre et l'envoyer",
           summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet.",
           source: "bpost.be · inforjeunes.be",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>
 
@@ -1714,7 +1726,7 @@ Rue du Commerce 10
 <h2>3. Choisir le bon type d'envoi</h2>
 <ul>
   <li><strong>Lettre standard (Prior / Non Prior)</strong> : pour un courrier ordinaire. <strong>Prior</strong> arrive le lendemain ouvrable, <strong>Non Prior</strong> en 2–3 jours. Coût en 2026 : environ <strong>2,50 € (Prior)</strong> pour un format standard jusqu'à 50 g. Vérifie les tarifs actuels sur <a href="https://www.bpost.be/fr/envoyer/lettres-et-cartes" target="_blank" rel="noopener">bpost.be</a>.</li>
-  <li><strong>Lettre recommandée</strong> : indispensable quand tu dois <strong>prouver que tu as envoyé</strong> quelque chose (préavis de bail, résiliation de contrat, réclamation…). Le facteur fait signer le destinataire. Coût en 2026 : <strong>~10 à 12 €</strong> (recommandé simple avec accusé de réception).</li>
+  <li><strong>Lettre recommandée</strong> : indispensable quand tu dois <strong>prouver que tu as envoyé</strong> quelque chose (préavis de bail, résiliation de contrat, réclamation…). Le facteur fait signer le destinataire. Coût en 2026 : <strong>~10 €</strong> (recommandé national) ; l'<strong>accusé de réception</strong> est une option à ~1,60 € en plus.</li>
   <li><strong>Recommandé avec accusé de réception (AR)</strong> : tu reçois une carte signée par le destinataire = preuve de réception.</li>
 </ul>
 
@@ -1837,7 +1849,7 @@ Rue du Commerce 10
           id: "pass-jeune",
           title: "Pass Jeune et réductions culturelles",
           summary: "Des réductions sur la culture, le sport et les loisirs pour les moins de 26 ans.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>En Belgique, plusieurs passes et réductions existent spécialement pour les jeunes. Tu n'as pas toujours besoin d'un revenu élevé pour profiter de la culture et des activités.</p>
 
@@ -1849,7 +1861,7 @@ Rue du Commerce 10
 </ul>
 
 <h2>La Carte Jeunes européenne</h2>
-<p>Si tu as <strong>moins de 31 ans</strong>, la <strong>Carte Jeunes</strong> (12 à 15 €/an) donne des réductions sur des spectacles, loisirs, boutiques et voyages, en Belgique et dans plus de 30 pays européens.</p>
+<p>Si tu as <strong>moins de 31 ans</strong>, la <strong>Carte Jeunes</strong> (13 €/an en version digitale, 20 € en version physique) donne des réductions sur des spectacles, loisirs, boutiques et voyages, en Belgique et dans plus de 30 pays européens.</p>
 <ul>
   <li>Commande en ligne : <a href="https://cartejeunes.be" target="_blank" rel="noopener">cartejeunes.be</a></li>
 </ul>
@@ -2194,15 +2206,15 @@ Rue du Commerce 10
           id: "aides-disponibles",
           title: "Les aides auxquelles j'ai droit",
           summary: "Vue d'ensemble : RIS, allocations, bourses, épargne mandante.",
-          lastChecked: "03/06/2026",
+          lastChecked: "05/07/2026",
           body: `
 <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
 
 <h2>1. Les allocations familiales</h2>
-<p>À 18 ans, elles te sont <strong>versées directement</strong>. Si tu poursuis tes études, tu peux les toucher jusqu'à 25 ans. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
+<p>Si tu vis seul·e ou si tu es suivi·e par l'aide à la jeunesse à ta majorité, elles te sont <strong>versées directement</strong> sur ton compte. Tu peux les toucher jusqu'à 21 ans sans condition, puis jusqu'à 25 ans si tu poursuis des études. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
 
 <h2>2. Le RIS (revenu d'intégration sociale)</h2>
-<p>Tu y as droit grâce à ton <strong>statut d'enfant accueilli</strong>. Demande à introduire au CPAS de ta commune. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</p>
+<p>Si tes ressources ne suffisent pas pour vivre, demande-le au CPAS de ta commune — ton <strong>statut d'enfant accueilli</strong> facilite l'examen de ton dossier. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</p>
 
 <h2>3. La bourse d'études (FWB)</h2>
 <p>Si tu étudies dans le supérieur ou le secondaire et que tes ressources sont limitées, tu peux demander une <strong>allocation d'études</strong>. Elle ne se rembourse pas. Voir <a href="#/fiche/etudes/bourse">L'allocation d'études</a>.</p>
@@ -2248,9 +2260,9 @@ Rue du Commerce 10
           id: "lignes-ecoute",
           title: "Lignes d'écoute et numéros utiles",
           summary: "Numéros gratuits et confidentiels.",
-          lastChecked: "11/06/2026",
+          lastChecked: "05/07/2026",
           body: `
-<p>Tu as besoin de parler ? Voici des numéros gratuits, anonymes et disponibles à toute heure.</p>
+<p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
 
 <h2>Urgences vitales</h2>
 <ul>
@@ -2278,7 +2290,7 @@ Rue du Commerce 10
 
 <h2>Addiction</h2>
 <ul>
-  <li><strong>Infor-Drogues : 02 227 52 52</strong>. Anonyme, gratuit.</li>
+  <li><strong>Infor Drogues &amp; Addictions : 02 227 52 52</strong>. Anonyme (prix d'un appel normal) — lun–ven 8h–22h, sam 10h–14h.</li>
   <li><strong>Infor-Drogues</strong> (alcool inclus) : 02 227 52 52. Voir aussi <a href="https://www.aide-alcool.be" target="_blank" rel="noopener">aide-alcool.be</a>.</li>
 </ul>
 `

@@ -9,9 +9,9 @@ sections:
   - id: lignes-ecoute
     title: "Lignes d'écoute et numéros utiles"
     summary: "Numéros gratuits et confidentiels."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
-      <p>Tu as besoin de parler ? Voici des numéros gratuits, anonymes et disponibles à toute heure.</p>
+      <p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
       
       <h2>Urgences vitales</h2>
       <ul>
@@ -39,7 +39,7 @@ sections:
       
       <h2>Addiction</h2>
       <ul>
-        <li><strong>Infor-Drogues : 02 227 52 52</strong>. Anonyme, gratuit.</li>
+        <li><strong>Infor Drogues &amp; Addictions : 02 227 52 52</strong>. Anonyme (prix d'un appel normal) — lun–ven 8h–22h, sam 10h–14h.</li>
         <li><strong>Infor-Drogues</strong> (alcool inclus) : 02 227 52 52. Voir aussi <a href="https://www.aide-alcool.be" target="_blank" rel="noopener">aide-alcool.be</a>.</li>
       </ul>
   - id: services-aide

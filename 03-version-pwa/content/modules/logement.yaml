@@ -66,7 +66,7 @@ sections:
   - id: bail
     title: "Le contrat de bail"
     summary: "Ce qu'il doit contenir, comment le vérifier."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
       
@@ -83,7 +83,7 @@ sections:
       </ul>
       
       <h2>L'enregistrement</h2>
-      <p>Le bail doit être <strong>enregistré au SPF Finances</strong>. Sans cet enregistrement, certaines clauses ne sont pas valables. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
+      <p>Le bail doit être <strong>enregistré au SPF Finances</strong> — c'est <strong>au propriétaire</strong> de le faire, gratuitement, dans les 2 mois de la signature. S'il ne le fait pas (après mise en demeure restée sans suite pendant 1 mois), tu peux <strong>quitter le logement sans préavis ni indemnité</strong>. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
       
       <h2>Durée du bail</h2>
       <ul>
@@ -102,9 +102,9 @@ sections:
   - id: etat-des-lieux
     title: "L'état des lieux"
     summary: "Le document qui te protège quand tu pars."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
-      <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. C'est <strong>essentiel</strong> : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
+      <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. En Wallonie, il est <strong>obligatoire</strong> (décret de 2018) — et essentiel : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
       
       <h2>Quand le faire ?</h2>
       <p>Avec le propriétaire, idéalement <strong>avant d'entrer</strong> dans le logement (quand il est encore vide), ou au plus tard pendant le <strong>premier mois d'occupation</strong>.</p>
@@ -123,7 +123,7 @@ sections:
   - id: garantie
     title: "La garantie locative"
     summary: "Ce que c'est, et l'aide du CPAS si tu n'as pas l'argent."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>La <strong>garantie locative</strong> (ou caution) sert à couvrir tes éventuels manquements (loyer impayé, dégâts…).</p>
       
@@ -136,7 +136,11 @@ sections:
       <p>Depuis juin 2023, en Wallonie, la garantie est <strong>plafonnée à 2 mois de loyer</strong> quelle que soit sa forme. Si on te demande plus, c'est illégal.</p>
       
       <h2>Pas d'argent pour la caution ?</h2>
-      <p>Va voir le <strong>CPAS de ta commune</strong>. Il peut se porter garant pour toi via un document remis à ton propriétaire.</p>
+      <p>Deux solutions :</p>
+      <ul>
+        <li>Le <strong>CPAS de ta commune</strong> peut se porter garant pour toi via un document remis à ton propriétaire.</li>
+        <li>La <strong>SWCS</strong> (Société wallonne du crédit social) propose un <strong>prêt à taux zéro</strong> pour constituer ta garantie — y compris pour un kot ou une colocation, remboursable en 24 à 36 mois. Infos : <a href="https://www.swcs.be" target="_blank" rel="noopener">swcs.be</a>.</li>
+      </ul>
       
       <div class="callout warn"><div><strong>À savoir</strong>Cette caution devra être remboursée au CPAS. Elle te sera prélevée du RIS pendant les premiers mois.</div></div>
   - id: assurance-habitation
@@ -185,7 +189,7 @@ sections:
   - id: aides
     title: "Les aides au logement"
     summary: "Qui contacter, à quoi tu as droit."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
       
@@ -197,7 +201,7 @@ sections:
       </ul>
       
       <h2>L'ADeL (Allocation de Déménagement et de Loyer)</h2>
-      <p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou inadapté pour un meilleur : une <strong>allocation de déménagement</strong> (environ 400 €) et une <strong>allocation de loyer</strong> mensuelle (jusqu'à ~100 €/mois). Conditions de revenus strictes. À demander à la Région wallonne via <a href="https://www.wallonie.be/fr/demarches/obtenir-une-allocation-de-demenagement-et-de-loyer-adel" target="_blank" rel="noopener">wallonie.be</a>.</p>
+      <p>Pour les personnes à revenus modestes qui quittent un logement insalubre ou inadapté pour un meilleur : une <strong>allocation de déménagement</strong> (environ 400 €) et une <strong>allocation de loyer</strong> mensuelle (environ 100 à 125 €/mois selon la situation). Conditions de revenus strictes. À demander à la Région wallonne via <a href="https://www.wallonie.be/fr/demarches/obtenir-une-allocation-de-demenagement-et-de-loyer-adel" target="_blank" rel="noopener">wallonie.be</a>.</p>
       
       <h2>Le service Droit des Jeunes</h2>
       <p>Gratuit, confidentiel : ils t'aident à comprendre tes droits et à monter ton dossier. À contacter dès le début.</p>
@@ -214,7 +218,7 @@ sections:
   - id: compteurs
     title: "L'ouverture des compteurs"
     summary: "Eau, gaz, électricité : premières démarches dans ton logement."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>Dès que tu as les clés, tu dois <strong>ouvrir les compteurs à ton nom</strong> (électricité, gaz, eau), <strong>sauf</strong> si les charges sont déjà comprises dans ton loyer.</p>
       
@@ -225,7 +229,7 @@ sections:
       <p>Plusieurs fournisseurs (Engie, Luminus, Mega, TotalEnergies, Octa+…). Compare les prix avant de signer :</p>
       <ul>
         <li><strong>Wallonie</strong> : <a href="https://www.compacwape.be" target="_blank" rel="noopener">comparateur officiel CWaPE</a></li>
-        <li><strong>Bruxelles</strong> : <a href="https://www.brugel.brussels" target="_blank" rel="noopener">comparateur Brugel</a></li>
+        <li><strong>Bruxelles</strong> : <a href="https://www.brusim.brussels" target="_blank" rel="noopener">BruSim</a> (le comparateur officiel de Brugel)</li>
       </ul>
       
       <h2>Étape 3 : remplir et envoyer les formulaires</h2>
@@ -282,14 +286,14 @@ sections:
   - id: changement-adresse
     title: "Changer d'adresse"
     summary: "Domiciliation, démarches en chaîne."
-    lastChecked: "03/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>Tu emménages ? Tu dois te <strong>domicilier</strong> à ta nouvelle adresse — c'est obligatoire.</p>
       
       <h2>Comment faire ?</h2>
       <ol class="fiche-ol">
         <li>Tu vas à l'administration communale de ta nouvelle commune avec ta carte d'identité.</li>
-        <li>Tu déclares ton changement d'adresse.</li>
+        <li>Tu déclares ton changement d'adresse — dans les <strong>8 jours ouvrables</strong> après l'emménagement, c'est une obligation légale.</li>
         <li>Un agent de quartier passe vérifier que tu vis bien à cette adresse.</li>
         <li>Tu vas chercher ta nouvelle carte d'identité (ou la mise à jour) à la commune.</li>
       </ol>

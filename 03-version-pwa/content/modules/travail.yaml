@@ -175,7 +175,7 @@ sections:
   - id: chomage
     title: "Le chômage après les études"
     summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026."
-    lastChecked: "11/06/2026"
+    lastChecked: "05/07/2026"
     body: |
       <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
       
@@ -186,7 +186,7 @@ sections:
       <p>Avant de pouvoir toucher des allocations, tu dois faire un <strong>stage d'insertion professionnelle de 156 jours</strong> (≈ 6 mois, hors dimanches). Pendant ce temps :</p>
       <ul>
         <li>Tu cherches activement un emploi.</li>
-        <li>Le Forem suit ta recherche (entretiens d'évaluation).</li>
+        <li>Le Forem évalue ta recherche : il te faut <strong>2 évaluations positives</strong> pendant le stage pour ouvrir le droit aux allocations.</li>
         <li>Tu peux faire des stages, suivre des formations.</li>
       </ul>
       <p>Avant la réforme, ce stage durait 310 jours (≈ 1 an). Depuis le <strong>1er mars 2026</strong>, c'est <strong>réduit à 156 jours</strong>.</p>
@@ -196,6 +196,8 @@ sections:
       <ul>
         <li>Versées <strong>pendant 12 mois maximum</strong> (avant la réforme : 36 mois).</li>
         <li>Tu dois avoir <strong>moins de 25 ans</strong> au moment de la première demande.</li>
+        <li>Tu dois avoir <strong>terminé tes études avec un diplôme, certificat ou attestation de réussite</strong> — c'est une nouvelle condition de la réforme 2026.</li>
+        <li>Tu dois avoir obtenu <strong>2 évaluations positives</strong> de ta recherche d'emploi par le Forem.</li>
         <li>Le montant dépend de ta situation : isolé·e, cohabitant·e, chef de ménage.</li>
       </ul>
       

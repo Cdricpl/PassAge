@@ -9,7 +9,7 @@ sections:
   - id: ris-cpas
     title: Le RIS et le CPAS
     summary: Comment l'obtenir, conditions, contrat d'intégration.
-    lastChecked: 09/06/2026
+    lastChecked: 05/07/2026
     body: |-
       <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune, si tes ressources ne suffisent pas pour vivre.</p>
 
@@ -17,7 +17,7 @@ sections:
       <ul>
         <li>Avoir 18 ans accomplis.</li>
         <li>Ne pas avoir de ressources suffisantes pour vivre.</li>
-        <li>Accepter de signer un <strong>contrat d'intégration sociale</strong> avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…).</li>
+        <li>Accepter de signer un <strong>PIIS</strong> (projet individualisé d'intégration sociale) avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…) — obligatoire si tu as moins de 25 ans.</li>
       </ul>
 
       <h2>Comment ça se passe ?</h2>
@@ -25,7 +25,7 @@ sections:
         <li>Tu prends rendez-vous au CPAS de ta commune de domicile.</li>
         <li>Une enquête sociale est faite (sur ta situation, parfois sur tes parents).</li>
         <li>Le montant est fixé en fonction (vis seul·e, en colocation…).</li>
-        <li>Tu signes le contrat, et le RIS est versé chaque mois.</li>
+        <li>Tu signes le PIIS, et le RIS est versé chaque mois.</li>
       </ol>
 
       <div class="callout warn"><div><strong>Attention si tu travailles</strong>Si tu fais un job étudiant ou un job ponctuel, ton RIS peut être <strong>partiellement réduit</strong> ce mois-là. Renseigne-toi à l'avance, une exonération existe.</div></div>
@@ -36,32 +36,38 @@ sections:
       <div class="callout info"><div><strong>Si tu as été accueilli·e en famille d'accueil ou en institution</strong>Ton statut d'enfant accueilli te donne un accès facilité au RIS. Explique ta situation au CPAS — et retrouve tous tes droits spécifiques dans <a href="#/module/placement">Après le placement</a>.</div></div>
   - id: allocations-familiales
     title: Mes allocations familiales
-    summary: À 18 ans, elles sont versées directement à toi. Jusqu'à 25 ans si tu études.
-    lastChecked: 11/06/2026
+    summary: Qui les reçoit, jusqu'à quand, et les démarches à faire.
+    lastChecked: 05/07/2026
     body: |
       <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
 
-      <h2>Ce qui change à 18 ans</h2>
+      <h2>Qui reçoit l'argent ?</h2>
       <ul>
-        <li>Les allocations te sont versées <strong>directement sur ton compte</strong> (et non plus à tes parents ou à l'adulte qui t'élevait).</li>
-        <li>Tu peux les toucher <strong>jusqu'à 25 ans</strong> si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
+        <li>Avoir 18 ans ne suffit pas : les allocations restent versées à <strong>la personne qui t'élève</strong> (parent, famille d'accueil…).</li>
+        <li>Elles arrivent <strong>directement sur ton compte</strong> si tu vis seul·e (domicile séparé), si tu es marié·e ou émancipé·e, si tu as un enfant, ou si tu es suivi·e par l'aide à la jeunesse à ta majorité.</li>
+      </ul>
+
+      <h2>Jusqu'à quand ?</h2>
+      <ul>
+        <li>Jusqu'à <strong>21 ans</strong> : sans condition d'études (sauf si tu touches un revenu de remplacement ou dépasses les limites de travail).</li>
+        <li>De 21 à <strong>25 ans</strong> : si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
         <li>Si tu termines ou interromps tes études : tu peux les garder encore <strong>12 mois maximum</strong>. Attention, la règle change au <strong>1er juillet 2026</strong> : un nouveau statut « post-étudiant » remplace l'ancien système des 360 jours de stage d'insertion — vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
       </ul>
 
       <h2>Démarches à faire</h2>
       <ol class="fiche-ol">
-        <li>Communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://www.myfamiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
+        <li>Si tu es dans un des cas où l'argent te revient directement : communique ton <strong>numéro de compte (IBAN)</strong> à FAMIWAL ou à ta caisse via <a href="https://www.myfamiwal.be" target="_blank" rel="noopener">myFAMIWAL</a> (connexion via itsme).</li>
         <li>Si tu déménages : signale ton <strong>changement d'adresse</strong>.</li>
         <li>Si tu es aux études : tu n'as souvent rien à faire — l'info est transmise par ton école.</li>
       </ol>
 
       <h2>Le quota du job étudiant</h2>
-      <p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Si tu dépasses, ça peut suspendre les allocations le mois concerné. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
+      <p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Au-delà des 650 h, tu peux encore prester <strong>240 h par trimestre</strong> comme salarié·e ordinaire ; si tu dépasses aussi cette limite, tu perds les allocations pour <strong>le trimestre entier</strong>. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
 
       <h2>Bon à savoir</h2>
       <ul>
         <li>Si tu as un enfant, tu touches aussi <strong>ses</strong> allocations familiales.</li>
-        <li>Tu peux <strong>cumuler</strong> tes allocations familiales avec un salaire ou avec le RIS.</li>
+        <li>Tu peux les <strong>cumuler avec un salaire</strong> (dans les limites ci-dessus). Attention : si tu touches le <strong>RIS</strong> et que les allocations te sont versées à toi, elles comptent comme ressources et sont <strong>déduites du RIS</strong> (sauf celles de tes propres enfants).</li>
         <li>Les allocations familiales <strong>ne sont pas taxables</strong> — pas besoin de les déclarer aux impôts.</li>
       </ul>
 
@@ -123,16 +129,16 @@ sections:
   - id: aides-supp
     title: 'Bons plans : tarif social, seconde main'
     summary: Tarif social énergie/internet, magasins de seconde main.
-    lastChecked: 11/06/2026
+    lastChecked: 05/07/2026
     body: |
       <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 
-      <h2>Tarif social pour l'énergie et l'eau</h2>
+      <h2>Tarif social pour l'énergie</h2>
       <p>Si tu touches le <strong>RIS du CPAS</strong>, certaines allocations handicap, ou la garantie de revenus aux personnes âgées, tu as droit au <strong>tarif social</strong> pour&nbsp;:</p>
       <ul>
         <li><strong>Électricité, gaz naturel, chaleur</strong> : tarif identique partout en Belgique, peu importe ton fournisseur.</li>
-        <li><strong>Eau</strong> : tarif réduit auprès de la SWDE.</li>
       </ul>
+      <p>Pour l'<strong>eau</strong>, il n'existe pas de tarif social en Wallonie — mais le <strong>Fonds social de l'eau</strong> peut intervenir si tu as du mal à payer ta facture. Demande au CPAS.</p>
       <p>Demande à <strong>ton·ta intervenant·e social·e du CPAS</strong> de faire la démarche pour toi. Souvent, c'est <strong>automatique</strong> dès que tu es au RIS — mais vérifie.</p>
 
       <h2>Offre Internet sociale (19 €/mois)</h2>
@@ -140,7 +146,7 @@ sections:
       <ul>
         <li><strong>30 Mbps</strong> minimum de débit.</li>
         <li><strong>150 Go</strong> de téléchargement inclus.</li>
-        <li>Disponible chez <strong>Proximus</strong>, <strong>VOO</strong> (Wallonie) et <strong>Telenet/BASE</strong>.</li>
+        <li>En Wallonie : chez <strong>Proximus</strong> et <strong>VOO</strong> (Telenet la propose en Flandre).</li>
       </ul>
       <p>Demande directement à l'opérateur, ou vérifie ton éligibilité via le <a href="https://economie.fgov.be/fr/themes/line/telecommunications/offre-internet-sociale" target="_blank" rel="noopener">SPF Économie</a>.</p>
 

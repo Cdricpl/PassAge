@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>shot</title></head><body>
+<script>
+localStorage.setItem('passage.welcome.done', 'true');
+localStorage.setItem('passage.profile.name', '"Léa"');
+var target = decodeURIComponent((location.search.match(/[?&]to=([^&]*)/)||[])[1] || '');
+location.replace('index.html' + (target || ''));
+</script></body></html>

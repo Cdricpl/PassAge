@@ -1,5 +1,8 @@
 # Captures d'écran pour le Play Store
 
+> ✅ **Les captures sont déjà générées.** Six captures réelles de l'app au format 1079×1918 (ratio 9:16, conforme Play Store) sont fournies dans le dossier `screenshots/`. Ce document reste utile si tu veux en refaire ou en ajouter depuis ton propre téléphone.
+
+
 Tu dois fournir **minimum 2, idéalement 5–8 captures** au format téléphone. Voici la procédure.
 
 ---
@@ -26,7 +29,7 @@ Tu dois fournir **minimum 2, idéalement 5–8 captures** au format téléphone.
 2. Sur ton GSM, ouvre Chrome et va sur `http://192.168.0.130:8000` (ton IP locale)
    - Ou utilise l'URL en ligne quand tu auras déployé sur Netlify
 3. **Désactive la barre Chrome** : ajoute l'app à l'écran d'accueil (menu ⋮ → "Installer l'application")
-4. Ouvre MonAvenir depuis l'icône → tu es en plein écran
+4. Ouvre Pass'âge depuis l'icône → tu es en plein écran
 5. Pour chaque écran à capturer :
    - Va sur l'écran
    - Capture : **bouton volume bas + bouton power** simultanément (sur la plupart des Android)
@@ -81,7 +84,7 @@ Tu dois fournir **minimum 2, idéalement 5–8 captures** au format téléphone.
 
 ### 6. Page "À propos" (optionnelle mais conseillée pour la légitimité)
 À montrer :
-- Le titre "MonAvenir, c'est quoi ?"
+- Le titre "Pass'âge, c'est quoi ?"
 - La carte "Une initiative du Service Familles d'Accueil de Verviers"
 - Le logo SFA visible
 
@@ -115,7 +118,7 @@ C'est la grande bannière qui apparaît en haut de la fiche Play. À créer dans
 1. [canva.com/create/feature-graphics](https://www.canva.com) — modèle "Feature graphic"
 2. Choisis un fond uni (couleur primaire `#4F7CAC`) ou un dégradé doux
 3. Ajoute :
-   - **À gauche** : logo MonAvenir (ou logo SFA) + texte "MonAvenir" en gros
+   - **À gauche** : logo Pass'âge (ou logo SFA) + texte "Pass'âge" en gros
    - **Au centre/droite** : un slogan : *"Comprendre. Agir. Avancer."*
    - **En bas** : 3 mini-mentions : *"Gratuit · Sans compte · Sans jugement"*
 4. Export → JPG ou PNG, 1024 × 500 exact

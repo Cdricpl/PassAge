@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "be.famillesdaccueil.passage",
       "sha256_cert_fingerprints": [
-        "07:D0:03:C4:FC:B7:1A:6C:34:31:77:B6:66:DA:1D:F7:63:CE:14:83:09:06:F7:B7:6D:58:D9:13:C1:EC:42:5F"
+        "07:D0:03:C4:FC:B7:1A:6C:34:31:77:B6:66:DA:1D:F7:63:CE:14:83:09:06:F7:B7:6D:58:D9:13:C1:EC:42:5F",
+        "B5:1E:8A:9D:45:8D:E8:CB:99:A1:4C:0E:97:F2:A3:CD:9A:33:A8:4B:B8:C3:BE:3A:FC:51:AB:CB:A5:69:59:6C"
       ]
     }
   }

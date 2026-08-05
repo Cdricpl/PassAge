@@ -43,7 +43,7 @@ sections:
   - id: permis-conduire
     title: "Le permis de conduire (B)"
     summary: "Théorique, pratique, filières, coût en Wallonie 2026."
-    lastChecked: "05/07/2026"
+    lastChecked: "06/07/2026"
     body: |
       <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
       
@@ -62,8 +62,7 @@ sections:
       <h3>Filière libre (M36)</h3>
       <ul>
         <li>Tu apprends avec un·e <strong>guide</strong> (parent, ami·e, etc., qui a son permis depuis ≥ 8 ans).</li>
-        <li>Obligatoire : le <strong>rendez-vous pédagogique</strong> pour toi <strong>et</strong> chaque guide (3 h en présentiel ou ± 45 min en e-learning, ~12 €/personne, via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>). Ensuite : minimum 3 mois de stage <strong>et 1 500 km parcourus</strong> avant l'examen pratique.</li>
-        <li>Stage minimum 3 mois avant l'examen pratique.</li>
+        <li>Obligatoire : le <strong>rendez-vous pédagogique</strong> pour toi <strong>et</strong> chaque guide (± 45 min en e-learning à ~12 €/personne via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>, ou 3 h en présentiel en auto-école agréée à son propre tarif). Ensuite : minimum 3 mois de stage <strong>et 1 500 km parcourus</strong> avant l'examen pratique.</li>
         <li>Coût total estimé : <strong>150 à 250 €</strong> (examens + RDV pédago).</li>
       </ul>
       
@@ -89,12 +88,12 @@ sections:
   - id: transport
     title: "Bus, train, vélo"
     summary: "TEC, SNCB, abonnement combiné, vélo en libre-service."
-    lastChecked: "05/07/2026"
+    lastChecked: "06/07/2026"
     body: |
       <h2>TEC (Wallonie) — bus, trams</h2>
       <ul>
         <li>Tarif réduit pour les <strong>moins de 25 ans</strong>.</li>
-        <li>Abonnement annuel TEC <strong>jusqu'à 24 ans : 12 €/an</strong> (oui, douze euros).</li>
+        <li>Abonnement annuel TEC <strong>de 18 à 24 ans : 12 €/an</strong> (oui, douze euros). Avant 18 ans, l'abonnement jeune est plus cher — vérifie sur letec.be.</li>
         <li>Site et appli : <a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a></li>
       </ul>
       
@@ -117,7 +116,7 @@ sections:
       <h2>Permis de conduire</h2>
       <p>Voir la fiche dédiée <a href="#/fiche/vie/permis-conduire">Le permis de conduire (B)</a> pour toutes les étapes (théorique, pratique, filières, coût) et les aides possibles via le CPAS.</p>
       
-      <div class="callout tip"><div><strong>Tarif social transport</strong>Si tu es <strong>BIM</strong> (intervention majorée — souvent le cas si tu touches le RIS), l'abonnement TEC Horizon+ est <strong>gratuit</strong> (seuls les frais de carte restent). Vérifie ton statut BIM auprès de ta mutuelle, puis demande l'abonnement au TEC.</div></div>
+      <div class="callout tip"><div><strong>Tarif social transport</strong>Si tu es <strong>BIM</strong> (intervention majorée — souvent le cas si tu touches le RIS), tu as droit à l'abonnement annuel TEC à <strong>12 €/an</strong> sur tout le réseau, quel que soit ton âge. Vérifie ton statut BIM auprès de ta mutuelle, puis demande l'abonnement au TEC.</div></div>
       
       <h2>Pour aller plus loin</h2>
       <ul>

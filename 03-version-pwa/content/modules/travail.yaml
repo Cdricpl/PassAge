@@ -113,7 +113,7 @@ sections:
   - id: job-etudiant
     title: "Le job étudiant"
     summary: "Travailler pendant tes études : règles et quota 650h."
-    lastChecked: "03/06/2026"
+    lastChecked: "06/07/2026"
     body: |
       <p>Dès 15 ans (et 2 ans de secondaire) ou 16 ans, tu peux travailler comme <strong>étudiant·e</strong>. C'est une bonne façon d'avoir un revenu d'appoint.</p>
       
@@ -128,7 +128,8 @@ sections:
       <h2>Et tes allocations familiales&nbsp;?</h2>
       <ul>
         <li><strong>Avant 18 ans</strong> : aucune incidence sur les allocations familiales.</li>
-        <li><strong>De 18 à 25 ans en Wallonie</strong> : tu gardes les allocations si tu restes scolarisé·e et respectes le quota des 650h. La limite des 240h/trimestre n'existe plus en Wallonie pour le contrat étudiant.</li>
+        <li><strong>De 18 à 21 ans en Wallonie</strong> : ton droit est maintenu <strong>sans condition</strong> de scolarité — le job étudiant n'a pas d'impact.</li>
+        <li><strong>De 21 à 25 ans</strong> : tu dois être inscrit·e comme étudiant·e ou demandeur·euse d'emploi. Sous contrat étudiant et dans le quota des 650h, pas d'impact non plus — la limite des 240h/trimestre ne concerne que le travail hors contrat étudiant.</li>
       </ul>
       
       <h2>Si tu touches le RIS</h2>

@@ -66,7 +66,7 @@ sections:
   - id: bail
     title: "Le contrat de bail"
     summary: "Ce qu'il doit contenir, comment le vérifier."
-    lastChecked: "05/07/2026"
+    lastChecked: "06/07/2026"
     body: |
       <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
       
@@ -75,7 +75,7 @@ sections:
       
       <h2>Ce qu'il doit contenir</h2>
       <ul>
-        <li>Identité des parties (avec numéro de registre national).</li>
+        <li>Identité des parties (nom, prénoms, domicile, date et lieu de naissance).</li>
         <li>Date de prise du bail.</li>
         <li>Description du logement.</li>
         <li>Montant du loyer et des charges.</li>
@@ -83,7 +83,7 @@ sections:
       </ul>
       
       <h2>L'enregistrement</h2>
-      <p>Le bail doit être <strong>enregistré au SPF Finances</strong> — c'est <strong>au propriétaire</strong> de le faire, gratuitement, dans les 2 mois de la signature. S'il ne le fait pas (après mise en demeure restée sans suite pendant 1 mois), tu peux <strong>quitter le logement sans préavis ni indemnité</strong>. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
+      <p>Le bail doit être <strong>enregistré au SPF Finances</strong> — c'est <strong>au propriétaire</strong> de le faire, gratuitement, dans les 2 mois de la signature. S'il ne le fait pas (après mise en demeure restée sans suite pendant 1 mois), tu peux <strong>quitter le logement sans préavis ni indemnité</strong> — à condition que ce soit ta résidence principale (pas un kot). Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
       
       <h2>Durée du bail</h2>
       <ul>

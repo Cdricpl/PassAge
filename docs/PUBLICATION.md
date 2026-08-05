@@ -1,12 +1,12 @@
-# Publier MonAvenir sur Google Play Store
+# Publier Pass'âge sur le Google Play Store
 
-Guide pas-à-pas pour publier la PWA MonAvenir sur le Play Store. Compte ~3 à 7 jours du début à la mise en ligne (dont 1 à 3 jours de validation Google).
+Guide pas-à-pas pour publier la PWA Pass'âge sur le Play Store. Compte ~3 à 7 jours du début à la mise en ligne (dont 1 à 3 jours de validation Google).
 
 ---
 
 ## Vue d'ensemble — comment ça marche ?
 
-Le Play Store n'accepte pas directement une PWA. La technique standard s'appelle **TWA (Trusted Web Activity)** : on emballe ta PWA dans une fine coque Android. L'utilisateur télécharge "MonAvenir" depuis le Play Store, et derrière le rideau c'est ton site web qui tourne en plein écran.
+Le Play Store n'accepte pas directement une PWA. La technique standard s'appelle **TWA (Trusted Web Activity)** : on emballe ta PWA dans une fine coque Android. L'utilisateur télécharge "Pass'âge" depuis le Play Store, et derrière le rideau c'est ton site web qui tourne en plein écran.
 
 **Avantages** :
 - L'app est cherchable sur le Play Store (visibilité)
@@ -23,7 +23,7 @@ Le Play Store n'accepte pas directement une PWA. La technique standard s'appelle
 | # | Pré-requis | Coût | Combien de temps |
 |---|---|---|---|
 | 1 | **Compte Google Play Developer** | 25 USD (~23 €) une seule fois à vie | 1 h (vérification d'identité) |
-| 2 | **Nom de domaine** (ex : `monavenir.be`, `monavenir-verviers.be`) | ~10–15 €/an | 30 min |
+| 2 | **Nom de domaine** (ex : `ton-domaine.be`, `monavenir-verviers.be`) | ~10–15 €/an | 30 min |
 | 3 | **Hébergement HTTPS gratuit** : Netlify, Vercel, Cloudflare Pages, GitHub Pages | 0 € | 30 min |
 | 4 | **Icônes PNG** 192×192 et 512×512 (à partir des SVG actuels) | 0 € | 10 min |
 | 5 | **Politique de confidentialité** en ligne (obligatoire Play) | 0 € | déjà créée → `assets/policy.html` |
@@ -55,27 +55,19 @@ Plus contrôle, plus cher. Recommandé pour la prod sérieuse à long terme.
 
 ---
 
-## Étape 2 — Convertir les icônes SVG en PNG
+## Étape 2 — Les icônes PNG ✅ déjà faites
 
-Le Play Store exige du **PNG** pour l'icône principale (512×512). Tu as actuellement `assets/icons/icon-192.svg` et `icon-512.svg`.
+Le Play Store exige du **PNG** (le SVG est refusé). Les fichiers sont déjà générés et présents dans le projet :
 
-### Méthode rapide (en ligne, gratuit)
+| Fichier | Rôle |
+|---|---|
+| `assets/icons/icon-512.png` | Icône de la fiche Play Store (obligatoire) |
+| `assets/icons/icon-maskable-512.png` | Icône adaptative Android (plein cadre, glyphe en zone sûre) |
+| `assets/icons/icon-192.png` | Icône PWA |
 
-1. Va sur [cloudconvert.com/svg-to-png](https://cloudconvert.com/svg-to-png)
-2. Upload `assets/icons/icon-512.svg`
-3. Width: **512**, Height: **512**
-4. Convert → télécharge `icon-512.png`
-5. Refais avec `icon-192.svg` → `icon-192.png`
-6. Place les PNG dans `assets/icons/` à côté des SVG
+Le `manifest.webmanifest` les déclare déjà. **Rien à faire ici.**
 
-### Méthode locale (Windows)
-
-Ouvre le SVG dans un navigateur Chrome → DevTools → clic droit sur l'élément → "Capture node screenshot". Ou via PowerShell :
-
-```powershell
-# Si tu as Inkscape ou ImageMagick installé, c'est instant
-# Sinon utilise CloudConvert
-```
+L'**image vedette** (1024×500, obligatoire aussi) est fournie : `feature-graphic-1024x500.png`.
 
 ---
 
@@ -98,8 +90,8 @@ Ouvre le SVG dans un navigateur Chrome → DevTools → clic droit sur l'éléme
 3. PWABuilder analyse — tu dois avoir un score correct (100/100 idéalement)
 4. Clic **"Package for stores"** → **Android**
 5. Remplis :
-   - **Package ID** : `be.famillesdaccueil.monavenir` (immuable une fois publié, choisis bien)
-   - **App name** : `MonAvenir`
+   - **Package ID** : `be.famillesdaccueil.passage` (immuable une fois publié, choisis bien)
+   - **App name** : `Pass'âge`
    - **Display mode** : `standalone`
    - **Notification permission** : `false` (pas en V1)
    - **Signing key** : choisis "Generate new" la 1re fois → ⚠️ **télécharge le `.keystore` et le mot de passe** et stocke-les **précieusement** (sans, tu ne pourras plus jamais mettre à jour l'app)
@@ -112,13 +104,18 @@ Ouvre le SVG dans un navigateur Chrome → DevTools → clic droit sur l'éléme
 
 ## Étape 5 — Héberger `assetlinks.json` sur ton site
 
-Pour prouver à Google que tu es bien le propriétaire de ton domaine + de l'app :
+Pour prouver à Google que tu es bien propriétaire du domaine ET de l'app :
 
-1. Crée un dossier `.well-known/` à la racine de ton site
-2. Place dedans le fichier `assetlinks.json` fourni par PWABuilder
-3. Vérifie qu'il est accessible : `https://ton-domaine.be/.well-known/assetlinks.json` doit retourner du JSON
+1. Place le fichier `assetlinks.json` fourni par PWABuilder dans un dossier `.well-known/` **à la racine du domaine**.
+2. Vérifie qu'il répond : `https://ton-domaine.be/.well-known/assetlinks.json` doit retourner du JSON.
 
-> 📌 Un template est fourni dans ce projet : `.well-known/assetlinks.json` (à compléter avec ton vrai `package_name` et tes vrais hashes).
+> ⚠️ **Le piège de GitHub Pages.** Google lit ce fichier **uniquement à la racine du domaine**, jamais dans un sous-dossier. Si ton app est publiée sur `https://cdricpl.github.io/PassAge/`, l'URL vérifiée sera `https://cdricpl.github.io/.well-known/assetlinks.json` — donc à la **racine du compte**, hors de ce dépôt.
+>
+> Deux solutions :
+> - **Un dépôt `Cdricpl.github.io`** contenant simplement `.well-known/assetlinks.json` (gratuit, 5 minutes). Attention : ce fichier vaudra alors pour *tout* `cdricpl.github.io`.
+> - **Un nom de domaine propre** (ex. `passage-app.be`, ~12 €/an) pointé vers GitHub Pages. Plus propre, plus crédible sur le Play Store, et tu maîtrises la racine. **C'est l'option recommandée.**
+
+Un template prêt à compléter est fourni : `.well-known/assetlinks.json` (remplace le `package_name` et l'empreinte SHA-256 par ceux que PWABuilder t'a donnés).
 
 ---
 
@@ -126,7 +123,7 @@ Pour prouver à Google que tu es bien le propriétaire de ton domaine + de l'app
 
 Dans [play.google.com/console](https://play.google.com/console) :
 
-1. **Create app** → "MonAvenir"
+1. **Create app** → "Pass'âge"
 2. Langue par défaut : Français (Belgique)
 3. App ou jeu : App
 4. Gratuit ou payant : Gratuit
@@ -158,7 +155,7 @@ Puis remplis l'arborescence à gauche (Google indique ce qu'il manque). Toutes l
 
 ### Étape 6c — Classification du contenu (IARC)
 
-Réponds au questionnaire — pour MonAvenir :
+Réponds au questionnaire — pour Pass'âge :
 - Violence : Non
 - Sexualité : Non (mais info santé sexuelle / planning familial → Léger)
 - Langage grossier : Non
@@ -223,10 +220,12 @@ Pas couvert ici, mais possible avec le même principe via [PWABuilder iOS packag
 
 ## Documents prêts dans ce projet
 
-- ✅ `PUBLICATION.md` — ce guide
-- ✅ `store-listing.md` — tous les textes prêts à coller dans Play Console
-- ✅ `assets/policy.html` — politique de confidentialité publique
-- ✅ `.well-known/assetlinks.json` — template à compléter
-- ✅ `screenshots-checklist.md` — comment prendre des screenshots qui passent
+- ✅ `docs/PUBLICATION.md` — ce guide
+- ✅ `docs/store-listing.md` — tous les textes prêts à coller dans Play Console
+- ✅ `03-version-pwa/assets/policy.html` — politique de confidentialité publique
+- ✅ `03-version-pwa/.well-known/assetlinks.json` — template à compléter
+- ✅ `03-version-pwa/assets/icons/icon-512.png` + `icon-maskable-512.png` + `icon-192.png`
+- ✅ `feature-graphic-1024x500.png` — image vedette
+- ✅ 6 captures d'écran réelles au format 1079×1918
 
-Bonne route. Si tu bloques quelque part, dis-moi à quelle étape.
+Bonne route. Si tu bloques à une étape, dis-moi laquelle.

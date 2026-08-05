@@ -1,114 +1,110 @@
-# Textes prêts pour la fiche Play Store
+# Textes prêts pour la fiche Play Store — Pass'âge
 
-Tous les textes ci-dessous sont en français (Belgique). Copie-colle directement dans Play Console.
+Tous les textes sont en français (Belgique), prêts à copier-coller dans Play Console.
+
+> ⚠️ Les champs marqués `À COMPLÉTER` dépendent de choix que toi seul peux faire (domaine, adresse e-mail du service). Remplace-les avant de soumettre.
 
 ---
 
-## Nom de l'application
+## Nom de l'application (max 30 caractères)
 
-**Tel quel (max 30 caractères) :**
 ```
-MonAvenir
+Pass'âge
 ```
 
-**Variantes possibles si déjà pris :**
-- MonAvenir — 18 ans
-- MonAvenir Belgique
-- MonAvenir SFA
+**Variantes si le nom est déjà pris :**
+- `Pass'âge — 18 ans et après` (26 car.)
+- `Pass'âge Belgique` (17 car.)
+- `Pass'âge SFA Verviers` (21 car.)
 
 ---
 
 ## Description courte (max 80 caractères)
 
 ```
-L'app qui t'aide à avancer après 18 ans. Gratuit, sans compte, sans jugement.
+Tes droits et démarches après 18 ans. Gratuit, sans compte, sans jugement.
 ```
 
-(78 caractères)
+(73 caractères)
 
 ---
 
 ## Description complète (max 4000 caractères)
 
 ```
-MonAvenir, c'est l'app qui t'aide à devenir autonome après 18 ans, à ton rythme, sans jugement.
+Pass'âge t'aide à devenir autonome après 18 ans, à ton rythme et sans jugement.
 
-Conçue pour les jeunes de 18 à 25 ans en Belgique francophone — surtout celles et ceux qui sortent de l'aide à la jeunesse, des familles d'accueil ou des situations de transition vers l'autonomie — MonAvenir réunit l'essentiel pour s'y retrouver dans la vraie vie : papiers, argent, logement, travail, études, santé, urgences.
+Conçue pour les jeunes de 18 à 25 ans en Belgique francophone, l'app réunit l'essentiel pour s'y retrouver dans la vraie vie : papiers, argent, logement, travail, études, santé, urgences. Le tout en langage clair, sans jargon administratif.
 
 🤝 PENSÉE POUR TOI
-Pas de jargon administratif. Pas d'obligation de t'inscrire. Pas de pub. Juste des infos claires, en langage humain, et des aides concrètes pour passer à l'action.
+Pas de compte à créer. Pas de pub. Pas de formulaire à remplir avant de pouvoir lire quoi que ce soit. Tu ouvres, tu trouves, tu avances.
 
-📚 9 GRANDS THÈMES
-• Devenir majeur — ce qui change à 18 ans, vote, déclaration d'impôts
-• Administratif — mutuelle, assurance, papiers, voyage
-• Argent & aides — RIS, allocations familiales, bons plans, budget
-• Études & formations — bourses, service social
-• Travail — CV, Forem, contrat, chômage
-• Logement — bail, garantie, aides, énergie
-• Santé & bien-être — médecin, maison médicale, psy gratuit avant 24 ans
-• Vie quotidienne — alimentation, transport, GSM, permis
-• Aide & urgences — numéros d'écoute, services près de chez toi
+📚 59 FICHES, 9 THÈMES
+• Administratif — mutuelle, papiers d'identité, impôts, assurances, voyage
+• Argent & aides — RIS et CPAS, allocations familiales, budget, dettes, bons plans
+• Études & formations — allocation d'études, service social de ton école
+• Travail — CV, Forem, contrat, job étudiant, chômage après les études
+• Logement — bail, garantie locative, état des lieux, aides, compteurs
+• Vie quotidienne — transports, GSM, alimentation, permis de conduire
+• Loisirs — Pass Jeune, maisons de jeunes, sport, bénévolat
+• Santé — médecin traitant, maison médicale, psy gratuit avant 24 ans, planning familial
+• Après le placement — les droits spécifiques si tu as été accueilli·e en famille d'accueil ou en institution
 
-🧭 PARCOURS PAR SITUATION
-Au lieu de chercher dans des catégories administratives, choisis ta situation :
-• Je viens d'avoir 18 ans
-• J'ai besoin d'argent
-• Je cherche un logement
-• Je cherche un job
-• Je veux comprendre mes droits
-• Ça stresse, ma santé
+🆘 UN BOUTON D'AIDE TOUJOURS À PORTÉE
+Accès direct aux numéros utiles : 112 (urgences vitales), 1733 (médecin de garde), 103 (Écoute Enfants Ado), 107 (Télé-Accueil), 0800 32 123 (prévention du suicide), 0800 98 100 (SOS Viol), Centre Anti-Poisons. Les horaires sont indiqués pour chacun — tu sais quand ça répond.
 
-L'app te guide étape par étape. Tu peux cocher tes étapes au fur et à mesure et reprendre plus tard.
+🔍 UNE RECHERCHE QUI COMPREND TES MOTS
+Tape « j'ai pas d'argent », « je me fais virer », « mon proprio veut me virer » : la recherche traduit le langage courant vers la bonne fiche. Plus de 290 expressions reconnues.
 
-🆘 BOUTON URGENCE TOUJOURS À PORTÉE
-Un accès direct aux numéros gratuits et anonymes : 112, 103 (Écoute Enfants Ado), 107 (Télé-Accueil), 0800 32 123 (prévention du suicide), 0800 98 100 (SOS Viol), Centre Anti-Poisons, médecin de garde…
+📌 TON ESPACE
+Mets des fiches en favori, prends des notes, garde tes contacts utiles et pose-toi des rappels pour tes démarches. Tout reste sur ton téléphone.
 
 🔒 100 % CONFIDENTIEL
-• Aucun compte n'est requis.
-• Aucune donnée n'est envoyée sur Internet.
-• Tes notes, tes favoris, tes contacts restent uniquement sur ton téléphone.
-• Aucune publicité, aucun cookie de tracking.
+• Aucun compte requis.
+• Aucune donnée envoyée sur Internet.
+• Tes notes, favoris et contacts restent uniquement sur ton appareil.
+• Aucune publicité, aucun traceur.
 
 📵 FONCTIONNE HORS LIGNE
-Une fois les fiches consultées, tu peux y revenir sans connexion. Pratique si tu as un forfait limité.
+Une fois l'app ouverte une première fois, tu peux consulter les fiches sans connexion. Pratique quand le forfait est serré.
 
 🏛 UNE INITIATIVE PUBLIQUE
-MonAvenir est édité par le Service Familles d'Accueil de Verviers, qui accompagne depuis des années les jeunes en placement et leurs familles d'accueil. La porte du SFA reste ouverte après tes 18 ans, pour une question, un doute, une écoute.
+Pass'âge est édité par le Service Familles d'Accueil de Verviers, qui accompagne depuis des années les jeunes en placement et leurs familles d'accueil. La porte du SFA reste ouverte après tes 18 ans — pour une question, un doute, ou juste une écoute.
 
-📋 SOURCES VÉRIFIÉES
-Les contenus s'appuient sur Inforjeunes, le Service Droit des Jeunes, Envol'toit, le SPF Finances, l'INAMI, l'ONEM, FAMIWAL, et les sites officiels belges. Mises à jour régulières.
+📋 SOURCES OFFICIELLES, VÉRIFIÉES
+Les contenus s'appuient sur les sources officielles belges : ONEM, Forem, FAMIWAL, INAMI, SPF Finances, SPF Économie, Wallonie (logement, énergie), SPP Intégration sociale, Inforjeunes, Service Droit des Jeunes. Chaque fiche indique sa date de dernière vérification.
 
-Tu n'es pas seul·e. Tu peux fermer l'app et revenir plus tard — on garde tout ce que tu as sauvegardé sur ton appareil.
+Tu peux fermer l'app et revenir plus tard. On garde ce que tu as sauvegardé, sur ton appareil.
 ```
 
-(~2700 caractères)
+(~2 500 caractères)
 
 ---
 
 ## Sécurité des données (Data Safety)
 
-À déclarer dans Play Console → "Data Safety". **C'est notre meilleur argument différenciant.**
+À déclarer dans Play Console → « Sécurité des données ». **C'est notre meilleur argument différenciant : ne le sous-vends pas.**
 
 ### Données collectées
-**Réponse : Aucune donnée n'est collectée.**
+**Réponse : aucune donnée n'est collectée.**
 
-Pour chaque type de données proposé par Google, coche : **« Non, nous ne collectons pas ce type de données. »**
-
-(Activité de l'app, infos de l'appareil, contacts, photos, audio, fichiers, position, infos personnelles, infos financières, santé/forme, messages, calendrier, web, etc.)
+Pour chaque catégorie proposée par Google (activité dans l'app, informations sur l'appareil, contacts, photos, audio, fichiers, position, informations personnelles, informations financières, santé, messages, calendrier, historique web…), coche : **« Non, cette application ne collecte pas ce type de données. »**
 
 ### Données partagées
-**Réponse : Aucune donnée n'est partagée avec des tiers.**
+**Réponse : aucune donnée n'est partagée avec des tiers.**
 
 ### Pratiques de sécurité
 - ✅ Les données sont chiffrées en transit (HTTPS).
-- ✅ Tu peux demander la suppression des données : oui (via l'app ou en désinstallant).
-- ✅ L'app suit les directives Google Play pour les familles : oui (pas de contenu inapproprié, pas de tracking).
+- ✅ L'utilisateur peut demander la suppression de ses données : oui — le bouton « Tout effacer » dans Mon espace, ou la désinstallation de l'app.
+- ✅ L'app respecte les règles de Google Play relatives aux familles.
+
+> **Cohérence obligatoire** : puisque tu déclares « aucune donnée collectée », l'app ne doit demander **aucune permission Android** (caméra, contacts, position…). Le paquet généré par PWABuilder n'en demande aucune par défaut — ne l'ajoute pas.
 
 ---
 
-## Catégorie & tags
+## Catégorie & étiquettes
 
-- **Catégorie principale** : Style de vie (ou Éducation, au choix)
+- **Catégorie principale** : Style de vie *(alternative acceptable : Éducation)*
 - **Étiquettes** (jusqu'à 5) :
   1. Aide sociale
   2. Jeunes adultes
@@ -120,15 +116,15 @@ Pour chaque type de données proposé par Google, coche : **« Non, nous ne coll
 
 ## Coordonnées
 
-- **E-mail public obligatoire** : `monavenir@famillesdaccueil-verviers.be` (ou un alias dédié)
-- **Site web** : `https://monavenir.be` (ton domaine)
-- **Politique de confidentialité** : `https://monavenir.be/assets/policy.html`
+| Champ | Valeur |
+|---|---|
+| E-mail public (obligatoire) | `À COMPLÉTER` — une adresse du SFA, pas une adresse perso |
+| Site web | `À COMPLÉTER` — l'URL publique de l'app |
+| Politique de confidentialité | `<ton-domaine>/assets/policy.html` — la page existe déjà dans le projet |
 
 ---
 
 ## Classification du contenu (questionnaire IARC)
-
-Réponds aux questions du questionnaire avec ces réponses :
 
 | Question | Réponse |
 |---|---|
@@ -136,97 +132,77 @@ Réponds aux questions du questionnaire avec ces réponses :
 | Thèmes effrayants | Non |
 | Sexualité explicite | Non |
 | Nudité | Non |
-| Gros mots | Non |
-| Drogues, alcool, tabac | Référencement informatif uniquement (services d'aide) — donc « Référence à l'aide pour les addictions » |
+| Langage grossier | Non |
+| Drogues, alcool, tabac | Référencement informatif de services d'aide uniquement |
 | Jeux d'argent | Non |
 | Achats intégrés | Non |
-| Localisation partagée | Non |
+| Partage de position | Non |
 | Échanges entre utilisateurs | Non |
-| Contenu généré par les utilisateurs | Non (les notes restent sur l'appareil, pas partagées) |
-| **Évocation du suicide / automutilation** | **OUI — informations de prévention et d'aide uniquement** |
+| Contenu généré par les utilisateurs | Non (les notes restent sur l'appareil, jamais partagées) |
+| **Évocation du suicide / automutilation** | **OUI — prévention et orientation vers de l'aide uniquement** |
 
-**Classification probable : PEGI 12 / Teen 13+** — c'est cohérent avec un public 18-25 ans.
-
----
-
-## Public cible (Target audience)
-
-- **Âges sélectionnés** : 18 ans et plus
-- **Approuvé pour la famille** : Non (à cause des thématiques santé mentale)
+**Classification attendue : PEGI 12 / Teen 13+.** Ne minimise pas la dernière question : sous-déclarer un contenu de prévention du suicide est un motif de suspension.
 
 ---
 
-## Annonces (Advertising)
+## Public cible
+
+- **Tranche d'âge** : 18 ans et plus
+- **Programme « Familles »** : non (thématiques santé mentale)
+
+---
+
+## Annonces
 
 - **Contient des annonces** : **Non**
 
 ---
 
-## Image vedette (Feature graphic) — 1024 × 500 px
-
-À créer (cf. `screenshots-checklist.md`). Suggestion de composition :
-- Fond : couleur primary `#4F7CAC` ou un dégradé doux primary → soft
-- À gauche : logo MonAvenir + texte « MonAvenir »
-- À droite : 3 mots-clés visuels « Comprendre · Agir · Avancer »
-- Sobre, pas de capture overlay (Google n'aime pas)
-
----
-
-## Captures d'écran
-
-Min 2, max 8. Voir `screenshots-checklist.md` pour les détails.
-
-**Suggestions d'écrans à capturer (dans cet ordre) :**
-
-1. **Home** avec les 6 tuiles situations + bouton rouge « Ça ne va pas ? »
-2. **Parcours « Je cherche un logement »** avec les étapes et la barre de progression
-3. **Page Aide / Urgence** avec les 9 numéros d'écoute
-4. **Fiche « Mon médecin traitant »** ou « Voir un psy à 11 € » (montre la qualité du contenu)
-5. **Mon espace** avec « Mes parcours en cours » et les outils
-6. (Optionnel) Page À propos avec le logo SFA pour montrer la légitimité institutionnelle
-
----
-
 ## Prix et pays
 
-- **Gratuit** ✅
-- **Pays** : Belgique (au minimum). Tu peux étendre à France, Luxembourg, Suisse romande, mais le contenu est très belgo-centré, à toi de voir.
+- **Gratuit** — et ce choix est **définitif** (on ne peut jamais rendre payante une app publiée gratuite).
+- **Pays** : Belgique au minimum. Le contenu est très belgo-centré (CPAS, Forem, FAMIWAL, décret wallon) — l'étendre à la France ou à la Suisse n'aurait guère de sens.
 
 ---
 
-## Notes de version (release notes)
-
-Pour la première version :
+## Notes de version (première publication)
 
 ```
-🎉 Première version de MonAvenir.
+🎉 Première version de Pass'âge.
 
-L'app qui t'aide à avancer après 18 ans. Trouve l'info dont tu as besoin sur le logement, l'argent, le travail, ta santé, et plus encore.
+Tes droits et tes démarches après 18 ans, expliqués simplement : logement, argent, travail, santé, papiers, et de l'aide quand ça ne va pas.
 
-100% gratuit, sans compte, sans pub. Tes données restent sur ton téléphone.
+59 fiches vérifiées auprès des sources officielles belges. 100 % gratuit, sans compte, sans pub — tes données restent sur ton téléphone.
 ```
 
 ---
 
-## Politique sur les données sensibles
+## Ressources graphiques fournies
 
-Si Google demande pour les données médicales/santé mentale (l'app aborde le mal-être) :
-- **L'app fournit des informations générales et des numéros d'écoute publics.**
-- **Aucun diagnostic, aucun conseil médical personnalisé.**
-- **Aucune donnée de santé n'est collectée ou stockée.**
+| Fichier | Usage Play Console |
+|---|---|
+| `icon-512.png` | Icône de l'application (512×512, obligatoire) |
+| `icon-maskable-512.png` | Icône adaptative Android |
+| `icon-192.png` | Icône PWA |
+| `feature-graphic-1024x500.png` | Image vedette (obligatoire) |
+| `screenshots/01-accueil.png` → `06-recherche.png` | Captures téléphone (min 2, max 8) — 1079×1918, ratio 9:16 conforme |
 
----
-
-## Documents complémentaires (bonus)
-
-- ✅ Politique de confidentialité accessible : `https://monavenir.be/assets/policy.html`
-- ✅ assetlinks.json hébergé : `https://monavenir.be/.well-known/assetlinks.json`
+Les captures sont de **vraies captures de l'application**, pas des maquettes — c'est ce qu'exige Google.
 
 ---
 
-## Ce qui est important pour la 1re soumission
+## Si Google pose des questions sur les données de santé
 
-1. **Sois cohérent** : si tu déclares "aucune donnée" dans Data Safety, ne demande aucune permission Android (caméra, contacts, position…). PWABuilder ne demande rien par défaut → ✅
-2. **Fais relire le contenu juridique** par le Service Droit des Jeunes avant publication.
-3. **Capture les screenshots depuis ton GSM réel**, pas un mockup design.
-4. **Compte 1-3 jours de validation** Google. La 1re soumission est souvent plus longue.
+L'app aborde le mal-être et la santé mentale. Réponse type :
+
+> L'application fournit des informations générales d'orientation et des numéros d'écoute publics belges. Elle ne pose aucun diagnostic, ne donne aucun conseil médical personnalisé, et ne collecte ni ne stocke aucune donnée de santé. Les notes éventuelles de l'utilisateur restent chiffrées localement sur son appareil et ne sont jamais transmises.
+
+---
+
+## Avant de soumettre — la liste qui compte
+
+1. **Vérifie que la politique de confidentialité répond en ligne** avant de soumettre (un lien mort = rejet automatique).
+2. **Vérifie `assetlinks.json`** avec [l'outil officiel Google](https://developers.google.com/digital-asset-links/tools/generator) — sinon l'app s'ouvre dans Chrome au lieu du mode plein écran.
+3. **Sauvegarde le `.keystore`** dans trois endroits différents. Le perdre, c'est ne plus jamais pouvoir mettre l'app à jour.
+4. **Fais relire le contenu juridique** par le Service Droit des Jeunes ou Inforjeunes avant publication — surtout les fiches Logement et Travail.
+5. **Compte 1 à 3 jours** de validation Google (souvent plus pour une première soumission).

@@ -487,17 +487,17 @@
       { tel: '112', title: '112 — Urgences vitales', sub: 'Police, ambulance, pompiers · 24/7 · gratuit', primary: true, className: 'urgence-card--112' },
       { tel: '1733', title: '1733 — Médecin de garde', sub: 'Soins courants en soirée et week-end', className: 'urgence-card--medical' },
       { tel: '0702452452', title: '070 245 245 — Centre Anti-Poisons', sub: 'Intoxication, ingestion · 24/7 · gratuit', className: 'urgence-card--poison' },
-      { tel: '103', title: '103 — Écoute Enfants Ado', sub: 'Pour les moins de 20 ans · gratuit, anonyme', className: 'urgence-card--youth' },
+      { tel: '103', title: '103 — Écoute Enfants Ado', sub: 'Moins de 20 ans · gratuit, anonyme · 10h–minuit', className: 'urgence-card--youth' },
       { tel: '107', title: '107 — Télé-Accueil', sub: 'Quand ça ne va pas, parle à quelqu\'un · 24/7', className: 'urgence-card--listening' },
       { tel: '080032123', title: '0800 32 123 — Prévention du suicide', sub: 'Gratuit · 24/7 · anonyme', className: 'urgence-card--suicide' },
-      { tel: '080098100', title: '0800 98 100 — SOS Viol', sub: 'Gratuit · anonyme', className: 'urgence-card--family' },
-      { tel: '080030030', title: '0800 30 030 — Violences conjugales', sub: 'Écoute et orientation', className: 'urgence-card--social' },
-      { tel: '022275252', title: '02 227 52 52 — Infor-Drogues', sub: 'Gratuit · anonyme', className: 'urgence-card--medical' }
+      { tel: '080098100', title: '0800 98 100 — SOS Viol', sub: 'Gratuit · anonyme · lun–ven 8h–18h', className: 'urgence-card--family' },
+      { tel: '080030030', title: '0800 30 030 — Violences conjugales', sub: 'Gratuit · écoute et orientation · en journée', className: 'urgence-card--social' },
+      { tel: '022275252', title: '02 227 52 52 — Infor Drogues & Addictions', sub: 'Anonyme · prix d\'un appel normal · lun–ven', className: 'urgence-card--medical' }
     ];
     main.innerHTML = `
       <section class="urgence-page">
         <h1 class="page-title">Aide / Urgence</h1>
-        <p class="page-lead">Tu n'es pas seul·e. Ces numéros sont gratuits, anonymes, et ouverts à toute heure.</p>
+        <p class="page-lead">Tu n'es pas seul·e. La plupart de ces numéros sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
 
         ${calls.map(c => `
           <a class="urgence-card ${c.primary ? 'primary' : ''} ${c.className || ''}" href="tel:${c.tel}">

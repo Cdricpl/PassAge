@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "REMPLACER.PAR.TON.PACKAGE.ID",
+      "package_name": "be.famillesdaccueil.passage",
       "sha256_cert_fingerprints": [
-        "REMPLACER:PAR:LE:SHA256:DE:TA:CLE:DE:SIGNATURE:FOURNI:PAR:PWABUILDER"
+        "07:D0:03:C4:FC:B7:1A:6C:34:31:77:B6:66:DA:1D:F7:63:CE:14:83:09:06:F7:B7:6D:58:D9:13:C1:EC:42:5F"
       ]
     }
   }

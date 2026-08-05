@@ -359,14 +359,14 @@ window.MA_CONTENT = (function () {
           id: "allocations-familiales",
           title: "Mes allocations familiales",
           summary: "Qui les reçoit, jusqu'à quand, et les démarches à faire.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
 
 <h2>Qui reçoit l'argent ?</h2>
 <ul>
   <li>Avoir 18 ans ne suffit pas : les allocations restent versées à <strong>la personne qui t'élève</strong> (parent, famille d'accueil…).</li>
-  <li>Elles arrivent <strong>directement sur ton compte</strong> si tu vis seul·e (domicile séparé), si tu es marié·e ou émancipé·e, si tu as un enfant, ou si tu es suivi·e par l'aide à la jeunesse à ta majorité.</li>
+  <li>Elles arrivent <strong>directement sur ton compte</strong> si tu es <strong>domicilié·e à une autre adresse</strong> que la personne qui t'élève (possible dès 16 ans — c'est le cas si tu es mis·e en autonomie), si tu es marié·e ou émancipé·e, ou si tu es toi-même allocataire pour ton enfant.</li>
 </ul>
 
 <h2>Jusqu'à quand ?</h2>
@@ -384,7 +384,7 @@ window.MA_CONTENT = (function () {
 </ol>
 
 <h2>Le quota du job étudiant</h2>
-<p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Au-delà des 650 h, tu peux encore prester <strong>240 h par trimestre</strong> comme salarié·e ordinaire ; si tu dépasses aussi cette limite, tu perds les allocations pour <strong>le trimestre entier</strong>. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
+<p>Tu peux travailler jusqu'à <strong>650 heures par an</strong> sous contrat étudiant <strong>sans</strong> perdre tes allocations familiales (en Wallonie, jusqu'à 25 ans). Au-delà des 650 h, tu peux encore prester <strong>240 h par trimestre</strong> comme salarié·e ordinaire ; si tu dépasses aussi cette limite, tu perds les allocations pour <strong>le trimestre entier</strong>. <strong>Exception</strong> : en juillet-août-septembre, si tu reprends les cours à la rentrée, tu peux travailler <strong>sans limite d'heures</strong>. Voir <a href="#/fiche/travail/job-etudiant">Le job étudiant</a>.</p>
 
 <h2>Bon à savoir</h2>
 <ul>
@@ -457,7 +457,7 @@ window.MA_CONTENT = (function () {
           id: "aides-supp",
           title: "Bons plans : tarif social, seconde main",
           summary: "Tarif social énergie/internet, magasins de seconde main.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 
@@ -470,7 +470,7 @@ window.MA_CONTENT = (function () {
 <p>Demande à <strong>ton·ta intervenant·e social·e du CPAS</strong> de faire la démarche pour toi. Souvent, c'est <strong>automatique</strong> dès que tu es au RIS — mais vérifie.</p>
 
 <h2>Offre Internet sociale (19 €/mois)</h2>
-<p>Si tu touches le RIS, l'aide sociale du CPAS, ou la GRAPA, tu as droit à une <strong>offre internet sociale</strong> à <strong>19 € par mois maximum</strong>, avec :</p>
+<p>Si tu touches le RIS, l'aide sociale du CPAS, la GRAPA, ou une <strong>allocation pour personne en situation de handicap</strong>, tu as droit à une <strong>offre internet sociale</strong> à <strong>19 € par mois maximum</strong>, avec :</p>
 <ul>
   <li><strong>30 Mbps</strong> minimum de débit.</li>
   <li><strong>150 Go</strong> de téléchargement inclus.</li>
@@ -805,7 +805,7 @@ window.MA_CONTENT = (function () {
           id: "job-etudiant",
           title: "Le job étudiant",
           summary: "Travailler pendant tes études : règles et quota 650h.",
-          lastChecked: "03/06/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>Dès 15 ans (et 2 ans de secondaire) ou 16 ans, tu peux travailler comme <strong>étudiant·e</strong>. C'est une bonne façon d'avoir un revenu d'appoint.</p>
 
@@ -820,7 +820,8 @@ window.MA_CONTENT = (function () {
 <h2>Et tes allocations familiales&nbsp;?</h2>
 <ul>
   <li><strong>Avant 18 ans</strong> : aucune incidence sur les allocations familiales.</li>
-  <li><strong>De 18 à 25 ans en Wallonie</strong> : tu gardes les allocations si tu restes scolarisé·e et respectes le quota des 650h. La limite des 240h/trimestre n'existe plus en Wallonie pour le contrat étudiant.</li>
+  <li><strong>De 18 à 21 ans en Wallonie</strong> : ton droit est maintenu <strong>sans condition</strong> de scolarité — le job étudiant n'a pas d'impact.</li>
+  <li><strong>De 21 à 25 ans</strong> : tu dois être inscrit·e comme étudiant·e ou demandeur·euse d'emploi. Sous contrat étudiant et dans le quota des 650h, pas d'impact non plus — la limite des 240h/trimestre ne concerne que le travail hors contrat étudiant.</li>
 </ul>
 
 <h2>Si tu touches le RIS</h2>
@@ -995,7 +996,7 @@ window.MA_CONTENT = (function () {
           id: "bail",
           title: "Le contrat de bail",
           summary: "Ce qu'il doit contenir, comment le vérifier.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
 
@@ -1004,7 +1005,7 @@ window.MA_CONTENT = (function () {
 
 <h2>Ce qu'il doit contenir</h2>
 <ul>
-  <li>Identité des parties (avec numéro de registre national).</li>
+  <li>Identité des parties (nom, prénoms, domicile, date et lieu de naissance).</li>
   <li>Date de prise du bail.</li>
   <li>Description du logement.</li>
   <li>Montant du loyer et des charges.</li>
@@ -1012,7 +1013,7 @@ window.MA_CONTENT = (function () {
 </ul>
 
 <h2>L'enregistrement</h2>
-<p>Le bail doit être <strong>enregistré au SPF Finances</strong> — c'est <strong>au propriétaire</strong> de le faire, gratuitement, dans les 2 mois de la signature. S'il ne le fait pas (après mise en demeure restée sans suite pendant 1 mois), tu peux <strong>quitter le logement sans préavis ni indemnité</strong>. Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
+<p>Le bail doit être <strong>enregistré au SPF Finances</strong> — c'est <strong>au propriétaire</strong> de le faire, gratuitement, dans les 2 mois de la signature. S'il ne le fait pas (après mise en demeure restée sans suite pendant 1 mois), tu peux <strong>quitter le logement sans préavis ni indemnité</strong> — à condition que ce soit ta résidence principale (pas un kot). Plus d'infos : <a href="https://finances.belgium.be" target="_blank" rel="noopener">finances.belgium.be</a></p>
 
 <h2>Durée du bail</h2>
 <ul>
@@ -1380,7 +1381,7 @@ window.MA_CONTENT = (function () {
           id: "permis-conduire",
           title: "Le permis de conduire (B)",
           summary: "Théorique, pratique, filières, coût en Wallonie 2026.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
 
@@ -1399,8 +1400,7 @@ window.MA_CONTENT = (function () {
 <h3>Filière libre (M36)</h3>
 <ul>
   <li>Tu apprends avec un·e <strong>guide</strong> (parent, ami·e, etc., qui a son permis depuis ≥ 8 ans).</li>
-  <li>Obligatoire : le <strong>rendez-vous pédagogique</strong> pour toi <strong>et</strong> chaque guide (3 h en présentiel ou ± 45 min en e-learning, ~12 €/personne, via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>). Ensuite : minimum 3 mois de stage <strong>et 1 500 km parcourus</strong> avant l'examen pratique.</li>
-  <li>Stage minimum 3 mois avant l'examen pratique.</li>
+  <li>Obligatoire : le <strong>rendez-vous pédagogique</strong> pour toi <strong>et</strong> chaque guide (± 45 min en e-learning à ~12 €/personne via <a href="https://rendezvouspedagogique.awsr.be/fr" target="_blank" rel="noopener">l'AWSR</a>, ou 3 h en présentiel en auto-école agréée à son propre tarif). Ensuite : minimum 3 mois de stage <strong>et 1 500 km parcourus</strong> avant l'examen pratique.</li>
   <li>Coût total estimé : <strong>150 à 250 €</strong> (examens + RDV pédago).</li>
 </ul>
 
@@ -1429,12 +1429,12 @@ window.MA_CONTENT = (function () {
           id: "transport",
           title: "Bus, train, vélo",
           summary: "TEC, SNCB, abonnement combiné, vélo en libre-service.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <h2>TEC (Wallonie) — bus, trams</h2>
 <ul>
   <li>Tarif réduit pour les <strong>moins de 25 ans</strong>.</li>
-  <li>Abonnement annuel TEC <strong>jusqu'à 24 ans : 12 €/an</strong> (oui, douze euros).</li>
+  <li>Abonnement annuel TEC <strong>de 18 à 24 ans : 12 €/an</strong> (oui, douze euros). Avant 18 ans, l'abonnement jeune est plus cher — vérifie sur letec.be.</li>
   <li>Site et appli : <a href="https://www.letec.be" target="_blank" rel="noopener">letec.be</a></li>
 </ul>
 
@@ -1457,7 +1457,7 @@ window.MA_CONTENT = (function () {
 <h2>Permis de conduire</h2>
 <p>Voir la fiche dédiée <a href="#/fiche/vie/permis-conduire">Le permis de conduire (B)</a> pour toutes les étapes (théorique, pratique, filières, coût) et les aides possibles via le CPAS.</p>
 
-<div class="callout tip"><div><strong>Tarif social transport</strong>Si tu es <strong>BIM</strong> (intervention majorée — souvent le cas si tu touches le RIS), l'abonnement TEC Horizon+ est <strong>gratuit</strong> (seuls les frais de carte restent). Vérifie ton statut BIM auprès de ta mutuelle, puis demande l'abonnement au TEC.</div></div>
+<div class="callout tip"><div><strong>Tarif social transport</strong>Si tu es <strong>BIM</strong> (intervention majorée — souvent le cas si tu touches le RIS), tu as droit à l'abonnement annuel TEC à <strong>12 €/an</strong> sur tout le réseau, quel que soit ton âge. Vérifie ton statut BIM auprès de ta mutuelle, puis demande l'abonnement au TEC.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
@@ -2206,12 +2206,12 @@ Rue du Commerce 10
           id: "aides-disponibles",
           title: "Les aides auxquelles j'ai droit",
           summary: "Vue d'ensemble : RIS, allocations, bourses, épargne mandante.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
 
 <h2>1. Les allocations familiales</h2>
-<p>Si tu vis seul·e ou si tu es suivi·e par l'aide à la jeunesse à ta majorité, elles te sont <strong>versées directement</strong> sur ton compte. Tu peux les toucher jusqu'à 21 ans sans condition, puis jusqu'à 25 ans si tu poursuis des études. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
+<p>Dès que tu es <strong>domicilié·e à ton propre logement</strong> (et non plus chez la personne qui t'élevait), elles te sont <strong>versées directement</strong> sur ton compte — c'est le cas quand tu es mis·e en autonomie. Tu peux les toucher jusqu'à 21 ans sans condition, puis jusqu'à 25 ans si tu poursuis des études. Voir <a href="#/fiche/argent/allocations-familiales">Mes allocations familiales</a>.</p>
 
 <h2>2. Le RIS (revenu d'intégration sociale)</h2>
 <p>Si tes ressources ne suffisent pas pour vivre, demande-le au CPAS de ta commune — ton <strong>statut d'enfant accueilli</strong> facilite l'examen de ton dossier. Voir <a href="#/fiche/argent/ris-cpas">Le RIS et le CPAS</a>.</p>
@@ -2260,7 +2260,7 @@ Rue du Commerce 10
           id: "lignes-ecoute",
           title: "Lignes d'écoute et numéros utiles",
           summary: "Numéros gratuits et confidentiels.",
-          lastChecked: "05/07/2026",
+          lastChecked: "06/07/2026",
           body: `
 <p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
 
@@ -2283,14 +2283,14 @@ Rue du Commerce 10
 
 <h2>Violences</h2>
 <ul>
-  <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme.</li>
+  <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme — lun–ven 8h–18h (chat aussi disponible).</li>
   <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>.</li>
   <li><strong>SOS Enfants : numéros locaux</strong> (consulter <a href="https://www.one.be" target="_blank" rel="noopener">one.be</a>).</li>
 </ul>
 
 <h2>Addiction</h2>
 <ul>
-  <li><strong>Infor Drogues &amp; Addictions : 02 227 52 52</strong>. Anonyme (prix d'un appel normal) — lun–ven 8h–22h, sam 10h–14h.</li>
+  <li><strong>Infor Drogues &amp; Addictions : 02 227 52 52</strong>. Anonyme (prix d'un appel normal) — lun–mer 9h–21h, jeu 13h–21h, ven 9h–17h, sam 10h–14h.</li>
   <li><strong>Infor-Drogues</strong> (alcool inclus) : 02 227 52 52. Voir aussi <a href="https://www.aide-alcool.be" target="_blank" rel="noopener">aide-alcool.be</a>.</li>
 </ul>
 `

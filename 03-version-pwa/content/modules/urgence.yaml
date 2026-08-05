@@ -9,7 +9,7 @@ sections:
   - id: lignes-ecoute
     title: "Lignes d'écoute et numéros utiles"
     summary: "Numéros gratuits et confidentiels."
-    lastChecked: "05/07/2026"
+    lastChecked: "06/07/2026"
     body: |
       <p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
       
@@ -32,14 +32,14 @@ sections:
       
       <h2>Violences</h2>
       <ul>
-        <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme.</li>
+        <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme — lun–ven 8h–18h (chat aussi disponible).</li>
         <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>.</li>
         <li><strong>SOS Enfants : numéros locaux</strong> (consulter <a href="https://www.one.be" target="_blank" rel="noopener">one.be</a>).</li>
       </ul>
       
       <h2>Addiction</h2>
       <ul>
-        <li><strong>Infor Drogues &amp; Addictions : 02 227 52 52</strong>. Anonyme (prix d'un appel normal) — lun–ven 8h–22h, sam 10h–14h.</li>
+        <li><strong>Infor Drogues &amp; Addictions : 02 227 52 52</strong>. Anonyme (prix d'un appel normal) — lun–mer 9h–21h, jeu 13h–21h, ven 9h–17h, sam 10h–14h.</li>
         <li><strong>Infor-Drogues</strong> (alcool inclus) : 02 227 52 52. Voir aussi <a href="https://www.aide-alcool.be" target="_blank" rel="noopener">aide-alcool.be</a>.</li>
       </ul>
   - id: services-aide

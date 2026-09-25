@@ -14,12 +14,12 @@
   --color-border-soft: #F0F2F5;
 
   /* Couleurs primaires */
-  --color-primary: #4F7CAC;
+  --color-primary: #3A6394;
   --color-primary-soft: #E5EDF5;
-  --color-primary-dark: #3A5F8A;
+  --color-primary-dark: #2F5079;
 
   /* Couleur sémantique « succès » (callouts tip, étapes cochées, chips vertes) */
-  --color-success: #6FB58A;
+  --color-success: #3F7D5C;
   --color-success-soft: #E0F0E6;
 
   /* Couleurs des modules */
@@ -42,8 +42,20 @@
   --color-placement: #7CAE8B;
   --color-placement-soft: #E3F0E8;
 
+  /* Accents lisibles : icônes et texte sur le pastel du module (>= 4,3:1) */
+  --color-admin-ink: #8A6420;
+  --color-argent-ink: #B04A4A;
+  --color-etudes-ink: #655595;
+  --color-travail-ink: #63509A;
+  --color-logement-ink: #9A5620;
+  --color-vie-ink: #9E5340;
+  --color-sante-ink: #3A6E7A;
+  --color-placement-ink: #44735A;
+  --color-loisirs-ink: #3A6394;
+  --color-urgence-ink: #B33033;
+
   /* Couleurs d'urgence et aide */
-  --urgent-red: #D64545;
+  --urgent-red: #C8383B;
   --urgent-red-soft: #FCE8E8;
   --poison-purple: #8A71C7;
   --poison-purple-soft: #F1EEFB;
@@ -321,13 +333,13 @@ p + p { margin-top: var(--sp-3); }
   grid-template-columns: auto 1fr;
   gap: var(--sp-4);
   align-items: center;
-  padding: 1.1rem 1rem;
-  margin: 0.85rem 0;
-  background: linear-gradient(180deg, rgba(214, 69, 69, 0.92), rgba(106, 66, 145, 0.96));
+  padding: 0.85rem 1rem;
+  margin: 0.75rem 0;
+  background: var(--color-urgence);
   color: white;
-  border-radius: 1.5rem;
+  border-radius: var(--r-lg);
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(74, 57, 128, 0.14);
+  box-shadow: 0 6px 16px rgba(200, 56, 59, 0.18);
 }
 .urgence-cta:hover {
   opacity: 0.95;
@@ -354,17 +366,18 @@ p + p { margin-top: var(--sp-3); }
    ============================================================ */
 
 .hero {
-  margin-bottom: var(--sp-6);
+  margin-bottom: var(--sp-4);
 }
 .hero-greeting {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-xl);
   font-weight: 700;
+  letter-spacing: -0.4px;
   margin-bottom: var(--sp-1);
 }
 .hero-question {
-  font-size: var(--fs-md);
+  font-size: var(--fs-base);
   color: var(--color-text-soft);
-  margin-bottom: var(--sp-5);
+  margin-bottom: var(--sp-2);
 }
 
 /* Recherche */
@@ -459,16 +472,16 @@ p + p { margin-top: var(--sp-3); }
 }
 
 /* Couleurs par module */
-.tile[data-color="admin"] .tile-icon { background: var(--color-admin-soft); color: #B58326; }
-.tile[data-color="argent"] .tile-icon { background: var(--color-argent-soft); color: var(--color-argent); }
-.tile[data-color="etudes"] .tile-icon { background: var(--color-etudes-soft); color: var(--color-travail); }
-.tile[data-color="travail"] .tile-icon { background: var(--color-travail-soft); color: var(--color-travail); }
-.tile[data-color="logement"] .tile-icon { background: var(--color-logement-soft); color: #B7691A; }
-.tile[data-color="vie"] .tile-icon { background: var(--color-vie-soft); color: #C2674B; }
-.tile[data-color="urgence"] .tile-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence); }
-.tile[data-color="sante"] .tile-icon { background: var(--color-sante-soft); color: var(--color-sante); }
-.tile[data-color="loisirs"] .tile-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs); }
-.tile[data-color="placement"] .tile-icon { background: var(--color-placement-soft); color: #3B7A64; }
+.tile[data-color="admin"] .tile-icon { background: var(--color-admin-soft); color: var(--color-admin-ink); }
+.tile[data-color="argent"] .tile-icon { background: var(--color-argent-soft); color: var(--color-argent-ink); }
+.tile[data-color="etudes"] .tile-icon { background: var(--color-etudes-soft); color: var(--color-etudes-ink); }
+.tile[data-color="travail"] .tile-icon { background: var(--color-travail-soft); color: var(--color-travail-ink); }
+.tile[data-color="logement"] .tile-icon { background: var(--color-logement-soft); color: var(--color-logement-ink); }
+.tile[data-color="vie"] .tile-icon { background: var(--color-vie-soft); color: var(--color-vie-ink); }
+.tile[data-color="urgence"] .tile-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence-ink); }
+.tile[data-color="sante"] .tile-icon { background: var(--color-sante-soft); color: var(--color-sante-ink); }
+.tile[data-color="loisirs"] .tile-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs-ink); }
+.tile[data-color="placement"] .tile-icon { background: var(--color-placement-soft); color: var(--color-placement-ink); }
 
 .module-header[data-color="sante"] { background: var(--color-sante-soft); }
 
@@ -663,18 +676,18 @@ p + p { margin-top: var(--sp-3); }
    Page urgence
    ============================================================ */
 
-.urgence-page h1 { color: var(--color-urgence); }
+.urgence-page h1 { color: var(--color-urgence-ink); }
 
 .urgence-card {
   display: flex;
   align-items: center;
   gap: var(--sp-3);
   width: 100%;
-  padding: var(--sp-5);
-  margin-bottom: var(--sp-3);
+  min-height: 60px;
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-2);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-left: 6px solid transparent;
   border-radius: var(--r-md);
   color: var(--color-text);
   text-decoration: none;
@@ -690,13 +703,12 @@ p + p { margin-top: var(--sp-3); }
   background: var(--urgent-red);
   color: white;
   border-color: var(--urgent-red);
-  border-left-color: var(--urgent-red);
 }
-.urgence-card.primary:hover { background: var(--color-urgence-dark); border-color: var(--color-urgence-dark); border-left-color: var(--color-urgence-dark); }
+.urgence-card.primary:hover { background: var(--color-urgence-dark); border-color: var(--color-urgence-dark); }
 .urgence-card-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -708,49 +720,24 @@ p + p { margin-top: var(--sp-3); }
   background: rgba(255,255,255,0.22);
   color: white;
 }
-.urgence-card-title { font-weight: 700; font-size: var(--fs-md); }
-.urgence-card-sub { font-size: var(--fs-sm); opacity: 0.85; margin-top: 2px; }
+.urgence-card-title { font-weight: 700; font-size: var(--fs-base); }
+.urgence-card-sub { font-size: var(--fs-xs); color: var(--color-text-soft); margin-top: 2px; }
+.urgence-card.primary .urgence-card-sub { color: rgba(255,255,255,0.92); }
 
-.urgence-card.urgence-card--112 {
-  border-left-color: var(--urgent-red);
-}
-.urgence-card.urgence-card--112.primary {
-  background: rgba(214, 69, 69, 0.22);
-  color: var(--color-text);
-  border-color: rgba(214, 69, 69, 0.44);
-  border-left-color: var(--urgent-red);
-}
-.urgence-card.urgence-card--112.primary:hover {
-  background: rgba(214, 69, 69, 0.26);
-  border-color: rgba(214, 69, 69, 0.64);
-}
-.urgence-card.urgence-card--112.primary .urgence-card-icon {
-  background: var(--urgent-red);
-  color: white;
-}
-
-.urgence-card.urgence-card--medical { border-left-color: var(--medical-blue); background: var(--medical-blue-soft); }
 .urgence-card.urgence-card--medical .urgence-card-icon { background: var(--medical-blue); color: white; }
 
-.urgence-card.urgence-card--poison { border-left-color: var(--poison-purple); background: var(--poison-purple-soft); }
 .urgence-card.urgence-card--poison .urgence-card-icon { background: var(--poison-purple); color: white; }
 
-.urgence-card.urgence-card--youth { border-left-color: var(--youth-orange); background: var(--youth-orange-soft); }
 .urgence-card.urgence-card--youth .urgence-card-icon { background: var(--youth-orange); color: white; }
 
-.urgence-card.urgence-card--listening { border-left-color: var(--listening-green); background: var(--listening-green-soft); }
 .urgence-card.urgence-card--listening .urgence-card-icon { background: var(--listening-green); color: white; }
 
-.urgence-card.urgence-card--suicide { border-left-color: var(--suicide-dark); background: var(--suicide-dark-soft); }
 .urgence-card.urgence-card--suicide .urgence-card-icon { background: var(--suicide-dark); color: white; }
 
-.urgence-card.urgence-card--police { border-left-color: var(--police-blue); background: var(--police-blue-soft); }
 .urgence-card.urgence-card--police .urgence-card-icon { background: var(--police-blue); color: white; }
 
-.urgence-card.urgence-card--social { border-left-color: var(--social-green); background: var(--social-green-soft); }
 .urgence-card.urgence-card--social .urgence-card-icon { background: var(--social-green); color: white; }
 
-.urgence-card.urgence-card--family { border-left-color: var(--family-purple); background: var(--family-purple-soft); }
 .urgence-card.urgence-card--family .urgence-card-icon { background: var(--family-purple); color: white; }
 
 /* ============================================================
@@ -1122,8 +1109,8 @@ p + p { margin-top: var(--sp-3); }
 .btn-primary:hover { background: var(--color-primary-dark); }
 
 .icon-btn {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1134,7 +1121,7 @@ p + p { margin-top: var(--sp-3); }
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
-.icon-btn:hover { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence); }
+.icon-btn:hover { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence-ink); }
 
 /* ============================================================
    Réassurance & home statique
@@ -1144,21 +1131,17 @@ p + p { margin-top: var(--sp-3); }
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-2);
-  margin-top: var(--sp-3);
+  margin-top: var(--sp-2);
   padding: 0;
   list-style: none;
 }
 .trust-chips li {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px 4px 8px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
+  gap: 5px;
   font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--color-text-soft);
+  color: var(--color-success);
 }
 .trust-chips .dot {
   display: inline-block;
@@ -1351,7 +1334,7 @@ p + p { margin-top: var(--sp-3); }
   transition: background 0.15s;
 }
 .btn-ghost:hover { background: var(--color-border); }
-.btn-ghost.danger { color: var(--color-urgence); }
+.btn-ghost.danger { color: var(--color-urgence-ink); }
 .btn-ghost.danger:hover { background: var(--color-urgence-soft, #FBE3E3); }
 
 body.no-scroll { overflow: hidden; }
@@ -1372,10 +1355,9 @@ body.no-scroll { overflow: hidden; }
 
 .themes-preview {
   margin: var(--sp-5) 0;
-  padding: var(--sp-5);
-  background: linear-gradient(135deg, #FBE7D7 0%, #FCE7DE 50%, #F9E2D9 100%);
-  border-radius: var(--r-lg);
-  border: 1px solid rgba(232, 168, 124, 0.25);
+  padding: 0;
+  background: none;
+  border: none;
 }
 .themes-preview-head {
   display: flex;
@@ -1388,22 +1370,25 @@ body.no-scroll { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  font-family: Georgia, serif;
-  font-size: var(--fs-xl);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
   margin: 0;
 }
 .themes-preview-spark {
   display: inline-flex;
-  color: #E8A87C;
+  color: var(--color-logement-ink);
 }
 .themes-preview-count {
-  font-size: var(--fs-sm);
-  color: #B7691A;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
   font-weight: 600;
 }
 .themes-preview-lead {
   font-size: var(--fs-sm);
-  color: #6B5544;
+  color: var(--color-text-soft);
   margin-bottom: var(--sp-4);
 }
 .themes-preview-grid {
@@ -1414,15 +1399,17 @@ body.no-scroll { overflow: hidden; }
 }
 .theme-mini {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: var(--sp-4);
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 60px;
+  padding: var(--sp-3);
   background: var(--color-surface);
   border-radius: var(--r-md);
   text-decoration: none;
   color: var(--color-text);
   transition: transform 0.15s, box-shadow 0.15s;
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid var(--color-border);
 }
 .theme-mini:hover {
   transform: translateY(-2px);
@@ -1430,8 +1417,9 @@ body.no-scroll { overflow: hidden; }
   text-decoration: none;
 }
 .theme-mini-icon {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1439,22 +1427,22 @@ body.no-scroll { overflow: hidden; }
   margin-bottom: 4px;
   background: var(--color-border-soft);
 }
-.theme-mini strong { font-size: var(--fs-md); line-height: 1.25; }
+.theme-mini strong { font-size: var(--fs-sm); font-weight: 600; line-height: 1.25; }
 .theme-mini span {
   font-size: var(--fs-xs);
   color: var(--color-text-soft);
   line-height: 1.4;
 }
-.theme-mini[data-color="argent"] .theme-mini-icon { background: var(--color-argent-soft); color: var(--color-argent); }
-.theme-mini[data-color="logement"] .theme-mini-icon { background: var(--color-logement-soft); color: #B7691A; }
-.theme-mini[data-color="travail"] .theme-mini-icon { background: var(--color-travail-soft); color: var(--color-travail); }
-.theme-mini[data-color="sante"] .theme-mini-icon { background: var(--color-sante-soft); color: var(--color-sante); }
-.theme-mini[data-color="loisirs"] .theme-mini-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs); }
-.theme-mini[data-color="admin"] .theme-mini-icon { background: var(--color-admin-soft); color: #B58326; }
-.theme-mini[data-color="etudes"] .theme-mini-icon { background: var(--color-etudes-soft); color: var(--color-travail); }
-.theme-mini[data-color="vie"] .theme-mini-icon { background: var(--color-vie-soft); color: #C2674B; }
-.theme-mini[data-color="urgence"] .theme-mini-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence); }
-.theme-mini[data-color="placement"] .theme-mini-icon { background: var(--color-placement-soft); color: #3B7A64; }
+.theme-mini[data-color="argent"] .theme-mini-icon { background: var(--color-argent-soft); color: var(--color-argent-ink); }
+.theme-mini[data-color="logement"] .theme-mini-icon { background: var(--color-logement-soft); color: var(--color-logement-ink); }
+.theme-mini[data-color="travail"] .theme-mini-icon { background: var(--color-travail-soft); color: var(--color-travail-ink); }
+.theme-mini[data-color="sante"] .theme-mini-icon { background: var(--color-sante-soft); color: var(--color-sante-ink); }
+.theme-mini[data-color="loisirs"] .theme-mini-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs-ink); }
+.theme-mini[data-color="admin"] .theme-mini-icon { background: var(--color-admin-soft); color: var(--color-admin-ink); }
+.theme-mini[data-color="etudes"] .theme-mini-icon { background: var(--color-etudes-soft); color: var(--color-etudes-ink); }
+.theme-mini[data-color="vie"] .theme-mini-icon { background: var(--color-vie-soft); color: var(--color-vie-ink); }
+.theme-mini[data-color="urgence"] .theme-mini-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence-ink); }
+.theme-mini[data-color="placement"] .theme-mini-icon { background: var(--color-placement-soft); color: var(--color-placement-ink); }
 
 .themes-preview-cta {
   display: flex;
@@ -1521,15 +1509,15 @@ body.no-scroll { overflow: hidden; }
 }
 
 /* Couleurs par module */
-.related-module[data-color="loisirs"] .tile-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs); }
-.related-module[data-color="admin"] .tile-icon { background: var(--color-admin-soft); color: #B58326; }
-.related-module[data-color="argent"] .tile-icon { background: var(--color-argent-soft); color: var(--color-argent); }
-.related-module[data-color="etudes"] .tile-icon { background: var(--color-etudes-soft); color: var(--color-travail); }
-.related-module[data-color="travail"] .tile-icon { background: var(--color-travail-soft); color: var(--color-travail); }
-.related-module[data-color="logement"] .tile-icon { background: var(--color-logement-soft); color: #B7691A; }
-.related-module[data-color="vie"] .tile-icon { background: var(--color-vie-soft); color: #C2674B; }
-.related-module[data-color="sante"] .tile-icon { background: var(--color-sante-soft); color: var(--color-sante); }
-.related-module[data-color="urgence"] .tile-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence); }
+.related-module[data-color="loisirs"] .tile-icon { background: var(--color-loisirs-soft); color: var(--color-loisirs-ink); }
+.related-module[data-color="admin"] .tile-icon { background: var(--color-admin-soft); color: var(--color-admin-ink); }
+.related-module[data-color="argent"] .tile-icon { background: var(--color-argent-soft); color: var(--color-argent-ink); }
+.related-module[data-color="etudes"] .tile-icon { background: var(--color-etudes-soft); color: var(--color-etudes-ink); }
+.related-module[data-color="travail"] .tile-icon { background: var(--color-travail-soft); color: var(--color-travail-ink); }
+.related-module[data-color="logement"] .tile-icon { background: var(--color-logement-soft); color: var(--color-logement-ink); }
+.related-module[data-color="vie"] .tile-icon { background: var(--color-vie-soft); color: var(--color-vie-ink); }
+.related-module[data-color="sante"] .tile-icon { background: var(--color-sante-soft); color: var(--color-sante-ink); }
+.related-module[data-color="urgence"] .tile-icon { background: var(--color-urgence-soft, #FBE3E3); color: var(--color-urgence-ink); }
 
 /* ============================================================
    Profile card (Mon espace)
@@ -1750,3 +1738,16 @@ body.no-scroll { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Onglet Aide : distingué par la forme ET la couleur, jamais la teinte seule */
+.nav-urgence .urgence-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-urgence);
+}
+.nav-urgence .urgence-badge svg { width: 17px; height: 17px; }
+.nav-urgence span:last-child { color: var(--color-urgence); font-weight: 700; }

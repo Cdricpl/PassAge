@@ -232,13 +232,11 @@
           </h2>
           <span class="themes-preview-count">${HOME_THEME_CARDS.length} thèmes</span>
         </header>
-        <p class="themes-preview-lead">Découvre les ${HOME_THEME_CARDS.length} thèmes de l'app et choisis ce qui t'intéresse.</p>
         <div class="themes-preview-grid">
           ${HOME_THEME_CARDS.map(card => `
-            <a class="theme-mini" href="${card.href}" data-color="${card.color}">
+            <a class="theme-mini" href="${card.href}" data-color="${card.color}" title="${escapeHtml(card.subtitle)}">
               <span class="theme-mini-icon">${card.icon}</span>
               <strong>${escapeHtml(card.title)}</strong>
-              <span>${escapeHtml(card.subtitle)}</span>
             </a>
           `).join('')}
         </div>

@@ -1739,15 +1739,3 @@ body.no-scroll { overflow: hidden; }
   * { animation: none !important; transition: none !important; }
 }
 
-/* Onglet Aide : distingué par la forme ET la couleur, jamais la teinte seule */
-.nav-urgence .urgence-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--color-urgence);
-}
-.nav-urgence .urgence-badge svg { width: 17px; height: 17px; }
-.nav-urgence span:last-child { color: var(--color-urgence); font-weight: 700; }

@@ -329,7 +329,7 @@ window.MA_CONTENT = (function () {
           id: "ris-cpas",
           title: "Le RIS et le CPAS",
           summary: "Comment l'obtenir, conditions, contrat d'intégration.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Le <strong>RIS</strong> (revenu d'intégration sociale) est une aide financière versée par le CPAS de ta commune, si tes ressources ne suffisent pas pour vivre.</p>
 
@@ -337,7 +337,7 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Avoir 18 ans accomplis.</li>
   <li>Ne pas avoir de ressources suffisantes pour vivre.</li>
-  <li>Accepter de signer un <strong>PIIS</strong> (projet individualisé d'intégration sociale) avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…) — obligatoire si tu as moins de 25 ans.</li>
+  <li>Accepter de signer un <strong>PIIS</strong> (projet individualisé d'intégration sociale) avec un·e travailleur·euse social·e du CPAS (objectifs scolarité, emploi…) — obligatoire pour tout nouveau bénéficiaire (sauf dispense motivée du CPAS).</li>
 </ul>
 
 <h2>Comment ça se passe ?</h2>
@@ -359,7 +359,7 @@ window.MA_CONTENT = (function () {
           id: "allocations-familiales",
           title: "Mes allocations familiales",
           summary: "Qui les reçoit, jusqu'à quand, et les démarches à faire.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>En Wallonie, les allocations familiales sont gérées par la <strong>caisse publique FAMIWAL</strong> (ou par une caisse privée si tu en as choisi une avant). À 18 ans, plusieurs choses changent.</p>
 
@@ -373,7 +373,8 @@ window.MA_CONTENT = (function () {
 <ul>
   <li>Jusqu'à <strong>21 ans</strong> : sans condition d'études (sauf si tu touches un revenu de remplacement ou dépasses les limites de travail).</li>
   <li>De 21 à <strong>25 ans</strong> : si tu poursuis des études (au moins <strong>27 crédits par année académique</strong> dans le supérieur, ou enseignement secondaire à temps plein).</li>
-  <li>Si tu termines ou interromps tes études : tu peux les garder encore <strong>12 mois maximum</strong>. Attention, la règle change au <strong>1er juillet 2026</strong> : un nouveau statut « post-étudiant » remplace l'ancien système des 360 jours de stage d'insertion — vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
+  <li>Si tu termines ou arrêtes tes études : depuis le <strong>1er juillet 2026</strong>, tu peux garder tes allocations <strong>12 mois maximum</strong> (statut « post-étudiant »), <strong>une seule fois</strong>. Conditions : avoir eu 21 ans à partir du 1/7/2026 et avoir été aux études ou en formation pendant ta 20e année. Jamais au-delà du mois de tes 25 ans.</li>
+  <li>T'inscrire comme demandeur·euse d'emploi au Forem <strong>ne maintient plus</strong> tes allocations familiales. Tu as eu 21 ans avant le 1/7/2026 ? Vérifie ta situation auprès de FAMIWAL (voir aussi <a href="#/fiche/travail/chomage">Le chômage après les études</a>).</li>
 </ul>
 
 <h2>Démarches à faire</h2>
@@ -1059,7 +1060,7 @@ window.MA_CONTENT = (function () {
           id: "garantie",
           title: "La garantie locative",
           summary: "Ce que c'est, et l'aide du CPAS si tu n'as pas l'argent.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>La <strong>garantie locative</strong> (ou caution) sert à couvrir tes éventuels manquements (loyer impayé, dégâts…).</p>
 
@@ -1075,7 +1076,7 @@ window.MA_CONTENT = (function () {
 <p>Deux solutions :</p>
 <ul>
   <li>Le <strong>CPAS de ta commune</strong> peut se porter garant pour toi via un document remis à ton propriétaire.</li>
-  <li>La <strong>SWCS</strong> (Société wallonne du crédit social) propose un <strong>prêt à taux zéro</strong> pour constituer ta garantie — y compris pour un kot ou une colocation, remboursable en 24 à 36 mois. Infos : <a href="https://www.swcs.be" target="_blank" rel="noopener">swcs.be</a>.</li>
+  <li>La <strong>SWCS</strong> (Société wallonne du crédit social) propose un <strong>prêt à taux zéro</strong> pour constituer ta garantie — y compris pour un kot ou une colocation, remboursable en 36 mois maximum (24 mois pour un kot). Infos : <a href="https://www.swcs.be" target="_blank" rel="noopener">swcs.be</a>.</li>
 </ul>
 
 <div class="callout warn"><div><strong>À savoir</strong>Cette caution devra être remboursée au CPAS. Elle te sera prélevée du RIS pendant les premiers mois.</div></div>
@@ -1163,7 +1164,7 @@ window.MA_CONTENT = (function () {
           id: "compteurs",
           title: "L'ouverture des compteurs",
           summary: "Eau, gaz, électricité : premières démarches dans ton logement.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Dès que tu as les clés, tu dois <strong>ouvrir les compteurs à ton nom</strong> (électricité, gaz, eau), <strong>sauf</strong> si les charges sont déjà comprises dans ton loyer.</p>
 
@@ -1174,7 +1175,7 @@ window.MA_CONTENT = (function () {
 <p>Plusieurs fournisseurs (Engie, Luminus, Mega, TotalEnergies, Octa+…). Compare les prix avant de signer :</p>
 <ul>
   <li><strong>Wallonie</strong> : <a href="https://www.compacwape.be" target="_blank" rel="noopener">comparateur officiel CWaPE</a></li>
-  <li><strong>Bruxelles</strong> : <a href="https://www.brusim.brussels" target="_blank" rel="noopener">BruSim</a> (le comparateur officiel de Brugel)</li>
+  <li><strong>Bruxelles</strong> : <a href="https://www.brugel.brussels/outils/brusim-2" target="_blank" rel="noopener">BruSim</a> (le comparateur officiel de Brugel)</li>
 </ul>
 
 <h2>Étape 3 : remplir et envoyer les formulaires</h2>

@@ -255,7 +255,7 @@ window.MA_CONTENT = (function () {
           title: "Avocat prodéo et aide juridique",
           summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.",
           source: "justice.belgium.be · avocats.be · droitsquotidiens.be",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
 
@@ -272,9 +272,9 @@ window.MA_CONTENT = (function () {
 <h2>Plafonds de revenus 2026</h2>
 <p>Le BAJ examine le total des revenus mensuels nets de toutes les personnes vivant sous ton toit.</p>
 <ul>
-  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 612 €/mois</strong> → gratuit total · entre <strong>1 612 € et 1 920 €</strong> → partiellement gratuit.</li>
-  <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
-  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>362 €</strong> par personne supplémentaire (montant au 1er mars 2026, à confirmer auprès du BAJ).</li>
+  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 670 €/mois</strong> → gratuit total · entre <strong>1 670 € et 1 988 €</strong> → partiellement gratuit.</li>
+  <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 988 €/mois</strong> → gratuit total · entre <strong>1 988 € et 2 305 €</strong> → partiellement gratuit.</li>
+  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>370 €</strong> par personne supplémentaire (montants au 1er septembre 2026, à confirmer auprès du BAJ).</li>
 </ul>
 
 <h2>Accès automatique (sans calcul de revenus)</h2>
@@ -805,9 +805,9 @@ window.MA_CONTENT = (function () {
           id: "job-etudiant",
           title: "Le job étudiant",
           summary: "Travailler pendant tes études : règles et quota 650h.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
-<p>Dès 15 ans (et 2 ans de secondaire) ou 16 ans, tu peux travailler comme <strong>étudiant·e</strong>. C'est une bonne façon d'avoir un revenu d'appoint.</p>
+<p>Dès <strong>15 ans</strong>, tu peux travailler comme <strong>étudiant·e</strong> (depuis mai 2026, plus besoin d'avoir terminé 2 années de secondaire). Tant que tu es en obligation scolaire à temps plein, seulement des <strong>travaux légers</strong> : pas de travail de nuit, le dimanche, les jours fériés, ni d'heures supplémentaires. C'est une bonne façon d'avoir un revenu d'appoint.</p>
 
 <h2>Les règles à connaître</h2>
 <ul>
@@ -1849,12 +1849,12 @@ Rue du Commerce 10
           id: "pass-jeune",
           title: "Pass Jeune et réductions culturelles",
           summary: "Des réductions sur la culture, le sport et les loisirs pour les moins de 26 ans.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>En Belgique, plusieurs passes et réductions existent spécialement pour les jeunes. Tu n'as pas toujours besoin d'un revenu élevé pour profiter de la culture et des activités.</p>
 
 <h2>L'aide du CPAS pour la culture et le sport</h2>
-<p>Le CPAS peut financer ta <strong>participation sociale, culturelle et sportive</strong> : inscription à un club, stage, abonnement, matériel… Cette aide existe dans la plupart des CPAS et ne se limite pas aux personnes au RIS.</p>
+<p>Certains CPAS peuvent financer ta <strong>participation sociale, culturelle et sportive</strong> : inscription à un club, stage, abonnement, matériel… Attention : le subside fédéral qui finançait cette aide a été <strong>supprimé début 2026</strong>. Elle dépend maintenant du budget de chaque CPAS — renseigne-toi, ça vaut toujours la peine de demander.</p>
 <ul>
   <li>Demande à ton·ta assistant·e social·e ou à l'accueil de ton CPAS.</li>
   <li>Certaines communes ont aussi leurs propres chèques sport ou réductions jeunes — demande à l'accueil communal.</li>
@@ -1869,7 +1869,7 @@ Rue du Commerce 10
 <h2>Article 27 — culture à 1,25 €</h2>
 <p>L'<strong>Article 27</strong> permet d'accéder à des spectacles, concerts, expos et cinémas pour <strong>1,25 € seulement</strong>. C'est pour les personnes en situation de précarité.</p>
 <ul>
-  <li>Demande une carte Article 27 via ton CPAS, une AMO, ou Inforjeunes.</li>
+  <li>Demande une carte Article 27 à ton CPAS (tous n'en distribuent plus depuis 2026), à une AMO, à Inforjeunes ou à une association partenaire.</li>
   <li>Plus d'infos : <a href="https://www.article27.be" target="_blank" rel="noopener">article27.be</a></li>
 </ul>
 
@@ -1880,7 +1880,7 @@ Rue du Commerce 10
   <li>Vérifie toujours les tarifs sur le site du musée avant de te déplacer.</li>
 </ul>
 
-<div class="callout tip"><div><strong>Combiner les réductions</strong>Article 27 + maison de jeunes + aide du CPAS = tu peux accéder à énormément d'activités pour quelques euros par mois. Demande à ton AMO ou ton CPAS de t'aider à activer ces dispositifs.</div></div>
+<div class="callout tip"><div><strong>Combiner les réductions</strong>Article 27 + maison de jeunes + aide du CPAS (si ton CPAS la propose encore) = tu peux accéder à énormément d'activités pour quelques euros par mois. Demande à ton AMO ou ton CPAS de t'aider à activer ces dispositifs.</div></div>
 
 <h2>Pour aller plus loin</h2>
 <ul>
@@ -1920,7 +1920,7 @@ Rue du Commerce 10
           id: "sport",
           title: "Sport — trouver une activité",
           summary: "S'inscrire dans un club, trouver une salle, pratiquer sans se ruiner.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Le sport, c'est bon pour la tête autant que pour le corps. Et ça ne doit pas forcément coûter cher.</p>
 
@@ -1933,7 +1933,7 @@ Rue du Commerce 10
 
 <h2>Réductions pour les jeunes en difficulté</h2>
 <ul>
-  <li>Le <strong>CPAS</strong> peut prendre en charge ton inscription à un club via l'aide à la participation sociale, culturelle et sportive — demande à ton·ta assistant·e social·e.</li>
+  <li>Certains <strong>CPAS</strong> peuvent encore prendre en charge ton inscription à un club sur leurs propres fonds (le subside fédéral a disparu en 2026) — demande à ton·ta assistant·e social·e.</li>
   <li><strong>Ta mutuelle rembourse</strong> souvent une partie de ta cotisation sportive (« avantage sport ») — demande-lui le formulaire.</li>
   <li>Certains clubs acceptent des paiements en plusieurs fois — demande directement.</li>
   <li>Renseigne-toi auprès du <strong>service jeunesse de ta commune</strong> pour des activités sportives organisées.</li>
@@ -2260,7 +2260,7 @@ Rue du Commerce 10
           id: "lignes-ecoute",
           title: "Lignes d'écoute et numéros utiles",
           summary: "Numéros gratuits et confidentiels.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
 
@@ -2284,7 +2284,7 @@ Rue du Commerce 10
 <h2>Violences</h2>
 <ul>
   <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme — lun–ven 8h–18h (chat aussi disponible).</li>
-  <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>.</li>
+  <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>. Gratuit, anonyme, 24h/24 (chat en journée sur ecouteviolencesconjugales.be).</li>
   <li><strong>SOS Enfants : numéros locaux</strong> (consulter <a href="https://www.one.be" target="_blank" rel="noopener">one.be</a>).</li>
 </ul>
 

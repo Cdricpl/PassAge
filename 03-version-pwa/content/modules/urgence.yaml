@@ -9,7 +9,7 @@ sections:
   - id: lignes-ecoute
     title: "Lignes d'écoute et numéros utiles"
     summary: "Numéros gratuits et confidentiels."
-    lastChecked: "06/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
       
@@ -33,7 +33,7 @@ sections:
       <h2>Violences</h2>
       <ul>
         <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme — lun–ven 8h–18h (chat aussi disponible).</li>
-        <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>.</li>
+        <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>. Gratuit, anonyme, 24h/24 (chat en journée sur ecouteviolencesconjugales.be).</li>
         <li><strong>SOS Enfants : numéros locaux</strong> (consulter <a href="https://www.one.be" target="_blank" rel="noopener">one.be</a>).</li>
       </ul>
       

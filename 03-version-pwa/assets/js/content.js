@@ -1059,7 +1059,7 @@ window.MA_CONTENT = (function () {
           id: "garantie",
           title: "La garantie locative",
           summary: "Ce que c'est, et l'aide du CPAS si tu n'as pas l'argent.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>La <strong>garantie locative</strong> (ou caution) sert à couvrir tes éventuels manquements (loyer impayé, dégâts…).</p>
 
@@ -1075,7 +1075,7 @@ window.MA_CONTENT = (function () {
 <p>Deux solutions :</p>
 <ul>
   <li>Le <strong>CPAS de ta commune</strong> peut se porter garant pour toi via un document remis à ton propriétaire.</li>
-  <li>La <strong>SWCS</strong> (Société wallonne du crédit social) propose un <strong>prêt à taux zéro</strong> pour constituer ta garantie — y compris pour un kot ou une colocation, remboursable en 24 à 36 mois. Infos : <a href="https://www.swcs.be" target="_blank" rel="noopener">swcs.be</a>.</li>
+  <li>La <strong>SWCS</strong> (Société wallonne du crédit social) propose un <strong>prêt à taux zéro</strong> pour constituer ta garantie — y compris pour un kot ou une colocation, remboursable en 36 mois maximum (24 mois pour un kot). Infos : <a href="https://www.swcs.be" target="_blank" rel="noopener">swcs.be</a>.</li>
 </ul>
 
 <div class="callout warn"><div><strong>À savoir</strong>Cette caution devra être remboursée au CPAS. Elle te sera prélevée du RIS pendant les premiers mois.</div></div>
@@ -1163,7 +1163,7 @@ window.MA_CONTENT = (function () {
           id: "compteurs",
           title: "L'ouverture des compteurs",
           summary: "Eau, gaz, électricité : premières démarches dans ton logement.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Dès que tu as les clés, tu dois <strong>ouvrir les compteurs à ton nom</strong> (électricité, gaz, eau), <strong>sauf</strong> si les charges sont déjà comprises dans ton loyer.</p>
 
@@ -1174,7 +1174,7 @@ window.MA_CONTENT = (function () {
 <p>Plusieurs fournisseurs (Engie, Luminus, Mega, TotalEnergies, Octa+…). Compare les prix avant de signer :</p>
 <ul>
   <li><strong>Wallonie</strong> : <a href="https://www.compacwape.be" target="_blank" rel="noopener">comparateur officiel CWaPE</a></li>
-  <li><strong>Bruxelles</strong> : <a href="https://www.brusim.brussels" target="_blank" rel="noopener">BruSim</a> (le comparateur officiel de Brugel)</li>
+  <li><strong>Bruxelles</strong> : <a href="https://www.brugel.brussels/outils/brusim-2" target="_blank" rel="noopener">BruSim</a> (le comparateur officiel de Brugel)</li>
 </ul>
 
 <h2>Étape 3 : remplir et envoyer les formulaires</h2>

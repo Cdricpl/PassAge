@@ -113,9 +113,9 @@ sections:
   - id: job-etudiant
     title: "Le job étudiant"
     summary: "Travailler pendant tes études : règles et quota 650h."
-    lastChecked: "06/07/2026"
+    lastChecked: "26/09/2026"
     body: |
-      <p>Dès 15 ans (et 2 ans de secondaire) ou 16 ans, tu peux travailler comme <strong>étudiant·e</strong>. C'est une bonne façon d'avoir un revenu d'appoint.</p>
+      <p>Dès <strong>15 ans</strong>, tu peux travailler comme <strong>étudiant·e</strong> (depuis mai 2026, plus besoin d'avoir terminé 2 années de secondaire). Tant que tu es en obligation scolaire à temps plein, seulement des <strong>travaux légers</strong> : pas de travail de nuit, le dimanche, les jours fériés, ni d'heures supplémentaires. C'est une bonne façon d'avoir un revenu d'appoint.</p>
       
       <h2>Les règles à connaître</h2>
       <ul>

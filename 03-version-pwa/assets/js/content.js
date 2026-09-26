@@ -255,7 +255,7 @@ window.MA_CONTENT = (function () {
           title: "Avocat prodéo et aide juridique",
           summary: "Un avocat gratuit ou presque, si tes revenus sont bas — comment ça marche en 2026.",
           source: "justice.belgium.be · avocats.be · droitsquotidiens.be",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu as besoin de conseils ou d'un·e avocat·e mais tu n'as pas les moyens&nbsp;? L'État belge prévoit deux dispositifs : l'aide juridique de <strong>1ère ligne</strong> (un premier conseil, gratuit, pour tout le monde) et l'aide juridique de <strong>2ème ligne</strong> — l'ancien <strong>« pro deo »</strong> ou <strong>prodéo</strong> — où un·e avocat·e t'est désigné·e gratuitement ou à coût réduit selon tes revenus.</p>
 
@@ -272,9 +272,9 @@ window.MA_CONTENT = (function () {
 <h2>Plafonds de revenus 2026</h2>
 <p>Le BAJ examine le total des revenus mensuels nets de toutes les personnes vivant sous ton toit.</p>
 <ul>
-  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 612 €/mois</strong> → gratuit total · entre <strong>1 612 € et 1 920 €</strong> → partiellement gratuit.</li>
-  <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 920 €/mois</strong> → gratuit total · entre <strong>1 920 € et 2 226 €</strong> → partiellement gratuit.</li>
-  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>362 €</strong> par personne supplémentaire (montant au 1er mars 2026, à confirmer auprès du BAJ).</li>
+  <li><strong>Personne isolée</strong> : revenus &lt; <strong>1 670 €/mois</strong> → gratuit total · entre <strong>1 670 € et 1 988 €</strong> → partiellement gratuit.</li>
+  <li><strong>Cohabitant·e</strong> (revenus du ménage) : &lt; <strong>1 988 €/mois</strong> → gratuit total · entre <strong>1 988 € et 2 305 €</strong> → partiellement gratuit.</li>
+  <li><strong>Avec d'autres personnes à charge</strong> : les plafonds augmentent de ~<strong>370 €</strong> par personne supplémentaire (montants au 1er septembre 2026, à confirmer auprès du BAJ).</li>
 </ul>
 
 <h2>Accès automatique (sans calcul de revenus)</h2>
@@ -2260,7 +2260,7 @@ Rue du Commerce 10
           id: "lignes-ecoute",
           title: "Lignes d'écoute et numéros utiles",
           summary: "Numéros gratuits et confidentiels.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu as besoin de parler ? Voici les numéros utiles. La plupart sont gratuits et anonymes — les horaires sont indiqués pour chacun.</p>
 
@@ -2284,7 +2284,7 @@ Rue du Commerce 10
 <h2>Violences</h2>
 <ul>
   <li><strong>SOS Viol : 0800 98 100</strong>. Gratuit, anonyme — lun–ven 8h–18h (chat aussi disponible).</li>
-  <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>.</li>
+  <li><strong>Écoute Violences Conjugales : 0800 30 030</strong>. Gratuit, anonyme, 24h/24 (chat en journée sur ecouteviolencesconjugales.be).</li>
   <li><strong>SOS Enfants : numéros locaux</strong> (consulter <a href="https://www.one.be" target="_blank" rel="noopener">one.be</a>).</li>
 </ul>
 

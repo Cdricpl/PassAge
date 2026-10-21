@@ -9,7 +9,7 @@ sections:
   - id: communication
     title: "GSM, internet, abonnements"
     summary: "Mettre ton GSM à ton nom, choisir un opérateur, tarif social."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Si ton numéro est encore lié au contrat de ta famille (ou famille d'accueil), tu peux le garder — mais le jour où tu prends ton autonomie, il faudra <strong>le mettre à ton nom</strong>. Voici comment t'y retrouver.</p>
       
@@ -43,7 +43,7 @@ sections:
   - id: permis-conduire
     title: "Le permis de conduire (B)"
     summary: "Théorique, pratique, filières, coût en Wallonie 2026."
-    lastChecked: "06/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
       
@@ -88,7 +88,7 @@ sections:
   - id: transport
     title: "Bus, train, vélo"
     summary: "TEC, SNCB, abonnement combiné, vélo en libre-service."
-    lastChecked: "06/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <h2>TEC (Wallonie) — bus, trams</h2>
       <ul>
@@ -126,7 +126,7 @@ sections:
   - id: alimentation
     title: "Alimentation : manger bien sans se ruiner"
     summary: "Pyramide, conservation, anti-gaspi, aide alimentaire."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>« Ça y est, je suis libre, ça sera fast-food tous les jours. » Tentant — mais ton corps et ton portefeuille vont le sentir vite. Quelques repères simples suffisent à manger correctement sans se ruiner.</p>
       
@@ -186,7 +186,7 @@ sections:
   - id: lessive
     title: "Faire sa lessive"
     summary: "Trier, doser, programmer, étendre : les bases pour pas tout abîmer."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     source: "ecoconso.be · inforjeunes.be"
     body: |
       <p>Première lessive sans tes parents ou ta famille d'accueil ? Pas de panique, ce n'est pas sorcier. Quelques règles simples suffisent à ne pas transformer ton t-shirt blanc en t-shirt rose.</p>
@@ -271,7 +271,7 @@ sections:
   - id: lavoir
     title: "Les lavoirs (laveries automatiques)"
     summary: "Quand y aller, comment ça marche, combien ça coûte."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     source: "inforjeunes.be · wassalon.be"
     body: |
       <p>Pas de machine chez toi ? En kot, en colocation sans accès lave-linge, ou ta machine est en panne ? Direction le <strong>lavoir</strong> (aussi appelé laverie automatique ou laundromat). C'est simple, rapide, et ça dépanne bien.</p>
@@ -339,7 +339,7 @@ sections:
   - id: courrier
     title: "Écrire une lettre et l'envoyer"
     summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     source: "bpost.be · inforjeunes.be"
     body: |
       <p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>
@@ -419,7 +419,7 @@ sections:
   - id: cuisine
     title: "Cuisiner simple et pas cher"
     summary: "Ustensiles de base, placard minimum et liens vers des sites de recettes faciles."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     source: "foodinaction.com · ecoconso.be · inforjeunes.be"
     body: |
       <p>Pas besoin d'être cuisinier pour se nourrir correctement. Avec quelques ustensiles et un placard de base, tu peux te débrouiller — et trouver l'inspiration en quelques secondes en ligne.</p>

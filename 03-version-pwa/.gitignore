@@ -1,2 +1,5 @@
 node_modules/
 package-lock.json
+
+# Outils locaux de capture (ne jamais publier)
+_shot.html

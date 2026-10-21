@@ -40,7 +40,7 @@ window.MA_CONTENT = (function () {
           id: "mutuelle",
           title: "La mutuelle",
           summary: "Pourquoi c'est obligatoire et comment choisir.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>La mutuelle (officiellement : <strong>assurance soins de santé</strong>) te permet d'être remboursé·e quand tu vas chez le médecin, le dentiste, ou à l'hôpital.</p>
 
@@ -64,7 +64,7 @@ window.MA_CONTENT = (function () {
           id: "rc-familiale",
           title: "L'assurance RC familiale",
           summary: "Ce qu'elle couvre, pourquoi tu en as besoin.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>L'assurance <strong>Responsabilité Civile familiale</strong> (RC familiale) te protège financièrement si tu causes un dommage à quelqu'un par accident.</p>
 
@@ -89,7 +89,7 @@ window.MA_CONTENT = (function () {
           id: "voyager",
           title: "Voyager à l'étranger",
           summary: "Carte ID, passeport, visa, vaccins, CEAM.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu pars en voyage&nbsp;? Plus besoin d'autorisation parentale&nbsp;! Mais avant de boucler ton sac, vérifie que tu as bien tout côté papiers.</p>
 
@@ -139,7 +139,7 @@ window.MA_CONTENT = (function () {
           id: "documents",
           title: "Mes papiers d'identité",
           summary: "Carte ID, passeport, casier : où et comment les obtenir.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>La plupart des documents administratifs s'obtiennent à <strong>l'administration communale</strong> de ta commune de domicile (ou de naissance).</p>
 
@@ -167,7 +167,7 @@ window.MA_CONTENT = (function () {
           title: "Ma première déclaration d'impôts",
           summary: "Qui doit déclarer, comment, et pourquoi tu ne paieras sans doute rien.",
           source: "finances.belgium.be · wikifin.be",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>À partir de 18 ans, tu reçois chaque année une déclaration d'impôts (ou une proposition déjà remplie). Pas de panique : <strong>déclarer ne veut pas dire payer</strong>. Avec des revenus de jeune, tu ne paieras souvent rien du tout.</p>
 
@@ -216,7 +216,7 @@ window.MA_CONTENT = (function () {
           title: "Voter en Belgique",
           summary: "À 18 ans, voter est obligatoire. Convocation, procuration, mode d'emploi.",
           source: "elections.fgov.be · wallonie.be",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>En Belgique, <strong>voter est un devoir légal</strong> dès 18 ans : tu es automatiquement inscrit·e sur la liste des électeurs, aucune démarche à faire. Et dès <strong>16 ans</strong>, tu votes aussi aux élections européennes.</p>
 
@@ -409,7 +409,7 @@ window.MA_CONTENT = (function () {
           title: "Le compte bancaire",
           summary: "Ouvrir un compte, ordres permanents, épargne.",
           source: "febelfin.be · inforjeunes.be",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>À 18 ans, tu peux ouvrir un compte en banque à ton nom. C'est indispensable pour recevoir un salaire, payer en magasin, ou recevoir tes aides.</p>
 
@@ -458,7 +458,7 @@ window.MA_CONTENT = (function () {
           id: "aides-supp",
           title: "Bons plans : tarif social, seconde main",
           summary: "Tarif social énergie/internet, magasins de seconde main.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 
@@ -512,7 +512,7 @@ window.MA_CONTENT = (function () {
           id: "budget",
           title: "Mon budget mensuel",
           summary: "Dépenses obligatoires, priorités, astuces pour ne pas se planter.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Avant de prendre un logement ou un engagement, prends 10 minutes pour faire ton budget mensuel. Tu poses tes <strong>rentrées</strong> (RIS, salaire, allocations…) et tes <strong>dépenses fixes</strong>. Le reste, c'est ce que tu peux dépenser ou épargner.</p>
 
@@ -566,7 +566,7 @@ window.MA_CONTENT = (function () {
           title: "Dettes : que faire quand tu ne peux pas payer",
           summary: "Rappels, huissiers, médiation de dettes gratuite : tes droits et les bons réflexes.",
           source: "observatoire-credit.be · economie.fgov.be",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Une facture que tu ne peux pas payer, ça arrive — surtout quand on démarre dans la vie. La pire chose à faire : <strong>l'ignorer</strong>. Voici tes droits et les bons réflexes, étape par étape.</p>
 
@@ -635,7 +635,7 @@ window.MA_CONTENT = (function () {
           id: "bourse",
           title: "L'allocation d'études (bourse)",
           summary: "Une aide financière qui ne se rembourse pas, sous conditions de ressources.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>L'<strong>allocation d'études</strong>, aussi appelée <strong>bourse</strong>, est une aide versée par la Fédération Wallonie-Bruxelles aux élèves et étudiants dont les ressources familiales sont limitées.</p>
 
@@ -655,7 +655,7 @@ window.MA_CONTENT = (function () {
           id: "service-social-ecole",
           title: "Le service social de ton école",
           summary: "Une aide au sein même de ton établissement.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Chaque école secondaire, haute école et université a un <strong>service social</strong> qui peut t'aider.</p>
 
@@ -690,7 +690,7 @@ window.MA_CONTENT = (function () {
           id: "preparer",
           title: "Préparer ma recherche",
           summary: "Forem, CV, lettre de motivation : par où commencer.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Avant d'envoyer des candidatures, il y a deux choses à faire.</p>
 
@@ -715,7 +715,7 @@ window.MA_CONTENT = (function () {
           id: "trouver",
           title: "Trouver des offres",
           summary: "Forem, Indeed, intérim, candidature spontanée.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Plusieurs canaux à activer en parallèle pour maximiser tes chances.</p>
 
@@ -745,7 +745,7 @@ window.MA_CONTENT = (function () {
           id: "entretien",
           title: "Réussir l'entretien d'embauche",
           summary: "Ce à quoi t'attendre, comment te préparer.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Premier entretien ? Pas de panique. Si on t'appelle, c'est que ton profil intéresse déjà.</p>
 
@@ -772,7 +772,7 @@ window.MA_CONTENT = (function () {
           id: "contrat",
           title: "Comprendre mon contrat",
           summary: "CDI, CDD, intérim, brut/net, mes droits.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu as décroché un job ? Avant de signer, prends le temps de lire ton contrat. Tu as <strong>le droit de l'emporter</strong> pour le lire chez toi.</p>
 
@@ -842,7 +842,7 @@ window.MA_CONTENT = (function () {
           id: "epargne-pension",
           title: "L'épargne-pension",
           summary: "Mettre un peu de côté pour ta pension future, avec un avantage fiscal.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>L'<strong>épargne-pension</strong>, c'est une formule d'épargne à long terme qui te permet de constituer une <strong>pension complémentaire</strong> à la pension légale belge. Et sous certaines conditions, tu profites d'un <strong>avantage fiscal</strong> chaque année.</p>
 
@@ -875,7 +875,7 @@ window.MA_CONTENT = (function () {
           id: "chomage",
           title: "Le chômage après les études",
           summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
 
@@ -934,7 +934,7 @@ window.MA_CONTENT = (function () {
           id: "options",
           title: "Comprendre mes options",
           summary: "Privé, AIS, SLSP, CPAS : c'est quoi la différence ?",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>En Belgique, plusieurs types de logements existent, à des prix différents. Voici les principaux.</p>
 
@@ -958,7 +958,7 @@ window.MA_CONTENT = (function () {
           id: "recherche",
           title: "Trouver un logement",
           summary: "Où chercher et quoi demander en visite.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Cherche large et compare. Voici comment.</p>
 
@@ -997,7 +997,7 @@ window.MA_CONTENT = (function () {
           id: "bail",
           title: "Le contrat de bail",
           summary: "Ce qu'il doit contenir, comment le vérifier.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
 
@@ -1036,7 +1036,7 @@ window.MA_CONTENT = (function () {
           id: "etat-des-lieux",
           title: "L'état des lieux",
           summary: "Le document qui te protège quand tu pars.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. En Wallonie, il est <strong>obligatoire</strong> (décret de 2018) — et essentiel : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
 
@@ -1086,7 +1086,7 @@ window.MA_CONTENT = (function () {
           id: "assurance-habitation",
           title: "L'assurance habitation",
           summary: "Pourquoi en prendre une, ce qu'elle couvre, comment choisir.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). En Wallonie, c'est <strong>obligatoire par la loi</strong> (décret de 2018) — et c'est ta protection si quelque chose tourne mal.</p>
 
@@ -1132,7 +1132,7 @@ window.MA_CONTENT = (function () {
           id: "aides",
           title: "Les aides au logement",
           summary: "Qui contacter, à quoi tu as droit.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
 
@@ -1198,7 +1198,7 @@ window.MA_CONTENT = (function () {
           id: "entretien",
           title: "Entretien du logement",
           summary: "Quelques habitudes simples + produits naturels pour pas cher.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>« Un esprit sain dans un corps sain. » Ton logement aussi : si tu t'y sens bien, tu vas bien. Quelques habitudes simples suffisent — pas besoin de produits hors de prix.</p>
 
@@ -1238,7 +1238,7 @@ window.MA_CONTENT = (function () {
           id: "changement-adresse",
           title: "Changer d'adresse",
           summary: "Domiciliation, démarches en chaîne.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu emménages ? Tu dois te <strong>domicilier</strong> à ta nouvelle adresse — c'est obligatoire.</p>
 
@@ -1265,7 +1265,7 @@ window.MA_CONTENT = (function () {
           title: "Panne, fuite, urgence chez soi",
           summary: "Couper l'eau, le gaz ou l'électricité, qui appelle qui, et les numéros utiles.",
           source: "inforjeunes.be · sibelga.be · ores.net",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Ça arrive à tout le monde : un robinet qui fuit, une panne de courant, une odeur de gaz. Savoir quoi faire — et vite — évite les dégâts.</p>
 
@@ -1345,7 +1345,7 @@ window.MA_CONTENT = (function () {
           id: "communication",
           title: "GSM, internet, abonnements",
           summary: "Mettre ton GSM à ton nom, choisir un opérateur, tarif social.",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Si ton numéro est encore lié au contrat de ta famille (ou famille d'accueil), tu peux le garder — mais le jour où tu prends ton autonomie, il faudra <strong>le mettre à ton nom</strong>. Voici comment t'y retrouver.</p>
 
@@ -1382,7 +1382,7 @@ window.MA_CONTENT = (function () {
           id: "permis-conduire",
           title: "Le permis de conduire (B)",
           summary: "Théorique, pratique, filières, coût en Wallonie 2026.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Le permis B (voiture), c'est un parcours en plusieurs étapes. Voici comment ça se passe en Wallonie.</p>
 
@@ -1430,7 +1430,7 @@ window.MA_CONTENT = (function () {
           id: "transport",
           title: "Bus, train, vélo",
           summary: "TEC, SNCB, abonnement combiné, vélo en libre-service.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <h2>TEC (Wallonie) — bus, trams</h2>
 <ul>
@@ -1471,7 +1471,7 @@ window.MA_CONTENT = (function () {
           id: "alimentation",
           title: "Alimentation : manger bien sans se ruiner",
           summary: "Pyramide, conservation, anti-gaspi, aide alimentaire.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>« Ça y est, je suis libre, ça sera fast-food tous les jours. » Tentant — mais ton corps et ton portefeuille vont le sentir vite. Quelques repères simples suffisent à manger correctement sans se ruiner.</p>
 
@@ -1535,7 +1535,7 @@ window.MA_CONTENT = (function () {
           title: "Faire sa lessive",
           summary: "Trier, doser, programmer, étendre : les bases pour pas tout abîmer.",
           source: "ecoconso.be · inforjeunes.be",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Première lessive sans tes parents ou ta famille d'accueil ? Pas de panique, ce n'est pas sorcier. Quelques règles simples suffisent à ne pas transformer ton t-shirt blanc en t-shirt rose.</p>
 
@@ -1623,7 +1623,7 @@ window.MA_CONTENT = (function () {
           title: "Les lavoirs (laveries automatiques)",
           summary: "Quand y aller, comment ça marche, combien ça coûte.",
           source: "inforjeunes.be · wassalon.be",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Pas de machine chez toi ? En kot, en colocation sans accès lave-linge, ou ta machine est en panne ? Direction le <strong>lavoir</strong> (aussi appelé laverie automatique ou laundromat). C'est simple, rapide, et ça dépanne bien.</p>
 
@@ -1694,7 +1694,7 @@ window.MA_CONTENT = (function () {
           title: "Écrire une lettre et l'envoyer",
           summary: "Rédiger, mettre en forme, affranchir, poster : le guide complet.",
           source: "bpost.be · inforjeunes.be",
-          lastChecked: "05/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Envoyer une lettre par la poste, ça peut sembler dépassé — mais beaucoup de démarches officielles l'exigent encore (résiliation de bail, courrier recommandé, lettre au CPAS…). Voici tout ce qu'il faut savoir.</p>
 
@@ -1777,7 +1777,7 @@ Rue du Commerce 10
           title: "Cuisiner simple et pas cher",
           summary: "Ustensiles de base, placard minimum et liens vers des sites de recettes faciles.",
           source: "foodinaction.com · ecoconso.be · inforjeunes.be",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Pas besoin d'être cuisinier pour se nourrir correctement. Avec quelques ustensiles et un placard de base, tu peux te débrouiller — et trouver l'inspiration en quelques secondes en ligne.</p>
 
@@ -1894,7 +1894,7 @@ Rue du Commerce 10
           id: "maisons-jeunes",
           title: "Maisons de jeunes et centres culturels",
           summary: "Des lieux pour se retrouver, faire des activités et rencontrer des gens.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Les <strong>maisons de jeunes</strong> et les <strong>centres culturels</strong> sont des endroits ouverts à tous les jeunes, souvent gratuits ou très peu chers.</p>
 
@@ -1947,7 +1947,7 @@ Rue du Commerce 10
           id: "benevol",
           title: "Bénévolat et associations",
           summary: "Donner de son temps, rencontrer des gens, acquérir de l'expérience.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Le bénévolat, c'est une bonne façon de sortir de chez soi, de rencontrer des gens, et parfois de découvrir ce qui te passionne. Et en prime, ça peut s'ajouter à un CV.</p>
 
@@ -1996,7 +1996,7 @@ Rue du Commerce 10
           id: "parler-sans-appeler",
           title: "Parler sans appeler",
           summary: "Chat, e-mail, RDV en personne — tu choisis le canal.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu as besoin de parler mais l'idée de téléphoner te bloque ? <strong>C'est normal.</strong> Beaucoup de jeunes vivent ça. Voici d'autres façons de demander de l'aide.</p>
 
@@ -2022,7 +2022,7 @@ Rue du Commerce 10
           id: "medecin",
           title: "Mon médecin traitant",
           summary: "Pourquoi en avoir un, comment le choisir.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Avoir un <strong>médecin traitant</strong> (ou médecin de famille), c'est utile : il connaît ton dossier, te suit dans la durée, et tu es <strong>mieux remboursé·e</strong>.</p>
 
@@ -2050,7 +2050,7 @@ Rue du Commerce 10
           id: "maison-medicale",
           title: "La maison médicale",
           summary: "Soins illimités gratuits si tu t'inscris au forfait.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>La <strong>maison médicale au forfait</strong>, c'est probablement la meilleure nouvelle de cette page. Tu t'y inscris, et tu ne paies <strong>plus rien</strong> à chaque consultation.</p>
 
@@ -2083,7 +2083,7 @@ Rue du Commerce 10
           id: "convention-psy",
           title: "Voir un psy — gratuit avant 24 ans",
           summary: "La convention psy 1ère ligne — accessible et déstigmatisée.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Voir un psy, c'est devenu vraiment accessible : grâce à la <strong>convention psychologique de 1ère ligne</strong> (INAMI), tu peux consulter un psy <strong>conventionné</strong> à des conditions très avantageuses.</p>
 
@@ -2125,7 +2125,7 @@ Rue du Commerce 10
           id: "urgence-medicale",
           title: "En cas d'urgence médicale",
           summary: "Quand appeler le 112, quand aller aux urgences, quand attendre.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Pas toujours évident de savoir où aller. Voici un petit guide.</p>
 
@@ -2163,7 +2163,7 @@ Rue du Commerce 10
           id: "planning-familial",
           title: "Le planning familial",
           summary: "Contraception, IVG, écoute, conseil — gratuit pour les jeunes.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Les <strong>centres de planning familial</strong> sont des lieux d'accueil, d'écoute et de soins liés à la vie affective et sexuelle. Beaucoup plus que de la contraception.</p>
 
@@ -2207,7 +2207,7 @@ Rue du Commerce 10
           id: "aides-disponibles",
           title: "Les aides auxquelles j'ai droit",
           summary: "Vue d'ensemble : RIS, allocations, bourses, épargne mandante.",
-          lastChecked: "06/07/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>En tant que jeune sortant·e de l'aide à la jeunesse ou de famille d'accueil, plusieurs aides peuvent te concerner :</p>
 
@@ -2231,7 +2231,7 @@ Rue du Commerce 10
           id: "epargne-mandante",
           title: "Le compte d'épargne mandant",
           summary: "Vérifier si un compte a été ouvert à ton nom pendant la prise en charge.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Pendant la période où tu as été éloigné·e de ton milieu familial (institution ou famille d'accueil), un compte d'épargne a peut-être été ouvert à ton nom par l'autorité mandante.</p>
 
@@ -2300,7 +2300,7 @@ Rue du Commerce 10
           id: "services-aide",
           title: "Les services d'aide près de moi",
           summary: "AMO, planning familial, CPAS, Inforjeunes.",
-          lastChecked: "03/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Voici les services qui peuvent t'accompagner dans la durée. Tous sont gratuits et confidentiels.</p>
 
@@ -2331,7 +2331,7 @@ Rue du Commerce 10
           id: "mal-etre",
           title: "Quand ça ne va pas",
           summary: "Anxiété, dépression, idées noires : par où commencer.",
-          lastChecked: "11/06/2026",
+          lastChecked: "26/09/2026",
           body: `
 <p>Tu te sens mal, anxieux·se, tu n'arrives plus à dormir, tu as des idées noires ? <strong>Tu n'es pas seul·e, et ça se soigne.</strong> Voici des premières pistes.</p>
 

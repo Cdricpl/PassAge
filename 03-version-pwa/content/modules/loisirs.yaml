@@ -50,7 +50,7 @@ sections:
   - id: maisons-jeunes
     title: "Maisons de jeunes et centres culturels"
     summary: "Des lieux pour se retrouver, faire des activités et rencontrer des gens."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Les <strong>maisons de jeunes</strong> et les <strong>centres culturels</strong> sont des endroits ouverts à tous les jeunes, souvent gratuits ou très peu chers.</p>
       
@@ -97,7 +97,7 @@ sections:
   - id: benevol
     title: "Bénévolat et associations"
     summary: "Donner de son temps, rencontrer des gens, acquérir de l'expérience."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Le bénévolat, c'est une bonne façon de sortir de chez soi, de rencontrer des gens, et parfois de découvrir ce qui te passionne. Et en prime, ça peut s'ajouter à un CV.</p>
       

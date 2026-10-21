@@ -1,9 +1,9 @@
-const CACHE = 'passage-admin-v3';
+const CACHE = 'passage-admin-v4';
 
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
-      .then(c => c.add('./index.html'))
+      .then(c => c.addAll(['./index.html', './vendor/js-yaml-4.1.0.min.js', './vendor/purify-3.2.4.min.js']))
       .then(() => self.skipWaiting())
   );
 });

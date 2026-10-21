@@ -9,7 +9,7 @@ sections:
   - id: options
     title: "Comprendre mes options"
     summary: "Privé, AIS, SLSP, CPAS : c'est quoi la différence ?"
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>En Belgique, plusieurs types de logements existent, à des prix différents. Voici les principaux.</p>
       
@@ -30,7 +30,7 @@ sections:
   - id: recherche
     title: "Trouver un logement"
     summary: "Où chercher et quoi demander en visite."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Cherche large et compare. Voici comment.</p>
       
@@ -66,7 +66,7 @@ sections:
   - id: bail
     title: "Le contrat de bail"
     summary: "Ce qu'il doit contenir, comment le vérifier."
-    lastChecked: "06/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Le bail, c'est l'écrit qui te lie au propriétaire. <strong>Toujours signer un bail écrit</strong>, en deux exemplaires (un pour toi).</p>
       
@@ -102,7 +102,7 @@ sections:
   - id: etat-des-lieux
     title: "L'état des lieux"
     summary: "Le document qui te protège quand tu pars."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>L'<strong>état des lieux</strong> décrit en détail le logement à ton arrivée. En Wallonie, il est <strong>obligatoire</strong> (décret de 2018) — et essentiel : ce qui n'est pas noté dedans pourra être mis sur ton dos quand tu quitteras les lieux.</p>
       
@@ -146,7 +146,7 @@ sections:
   - id: assurance-habitation
     title: "L'assurance habitation"
     summary: "Pourquoi en prendre une, ce qu'elle couvre, comment choisir."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Quand tu es <strong>locataire</strong>, tu dois souscrire une <strong>assurance habitation</strong> (souvent appelée <strong>assurance incendie locataire</strong>). En Wallonie, c'est <strong>obligatoire par la loi</strong> (décret de 2018) — et c'est ta protection si quelque chose tourne mal.</p>
       
@@ -189,7 +189,7 @@ sections:
   - id: aides
     title: "Les aides au logement"
     summary: "Qui contacter, à quoi tu as droit."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Plusieurs aides existent pour t'aider à payer ton logement. Renseigne-toi avant de signer.</p>
       
@@ -249,7 +249,7 @@ sections:
   - id: entretien
     title: "Entretien du logement"
     summary: "Quelques habitudes simples + produits naturels pour pas cher."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>« Un esprit sain dans un corps sain. » Ton logement aussi : si tu t'y sens bien, tu vas bien. Quelques habitudes simples suffisent — pas besoin de produits hors de prix.</p>
       
@@ -286,7 +286,7 @@ sections:
   - id: changement-adresse
     title: "Changer d'adresse"
     summary: "Domiciliation, démarches en chaîne."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Tu emménages ? Tu dois te <strong>domicilier</strong> à ta nouvelle adresse — c'est obligatoire.</p>
       
@@ -309,7 +309,7 @@ sections:
   - id: urgence-maison
     title: "Panne, fuite, urgence chez soi"
     summary: "Couper l'eau, le gaz ou l'électricité, qui appelle qui, et les numéros utiles."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     source: "inforjeunes.be · sibelga.be · ores.net"
     body: |
       <p>Ça arrive à tout le monde : un robinet qui fuit, une panne de courant, une odeur de gaz. Savoir quoi faire — et vite — évite les dégâts.</p>

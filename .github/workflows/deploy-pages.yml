@@ -36,10 +36,18 @@ jobs:
       - name: Build content.js from YAML sources
         run: node 03-version-pwa/build.js
 
+      # Liste blanche : seuls les fichiers servis aux utilisateurs sont publiés
+      # (pas de node_modules, sources YAML, scripts de build ni docs internes).
+      - name: Assemble public site
+        run: |
+          mkdir _site
+          cd 03-version-pwa
+          cp -r index.html manifest.webmanifest service-worker.js assets admin .well-known ../_site/
+
       - name: Upload PWA artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 03-version-pwa
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1739,3 +1739,12 @@ body.no-scroll { overflow: hidden; }
   * { animation: none !important; transition: none !important; }
 }
 
+
+/* Lien isolé (hors phrase) : zone tactile d'au moins 44 px de haut */
+.link-target {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+  margin: 0 -4px;
+}

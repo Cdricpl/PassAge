@@ -9,7 +9,7 @@ sections:
   - id: bourse
     title: "L'allocation d'études (bourse)"
     summary: "Une aide financière qui ne se rembourse pas, sous conditions de ressources."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>L'<strong>allocation d'études</strong>, aussi appelée <strong>bourse</strong>, est une aide versée par la Fédération Wallonie-Bruxelles aux élèves et étudiants dont les ressources familiales sont limitées.</p>
       
@@ -26,7 +26,7 @@ sections:
   - id: service-social-ecole
     title: "Le service social de ton école"
     summary: "Une aide au sein même de ton établissement."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Chaque école secondaire, haute école et université a un <strong>service social</strong> qui peut t'aider.</p>
       

@@ -261,7 +261,7 @@
       <footer class="app-footer">
         <p><strong>Tu peux fermer l'app et revenir plus tard.</strong> On garde tes notes et favoris sur ton appareil — rien n'est envoyé sur Internet.</p>
         <a href="https://famillesdaccueil.mypixieset.com/" target="_blank" rel="noopener" class="signature-block">
-          <img src="assets/icons/logo-sfa.png" alt="" class="signature-logo" />
+          <img src="assets/icons/logo-sfa.jpg" alt="" class="signature-logo" />
           <span class="signature-text">
             <span class="signature-intro">Une initiative du</span>
             <strong>Service Familles d'Accueil</strong>
@@ -364,7 +364,7 @@
       : `Cette fiche est un repère général. Elle ne remplace pas l’avis d’un service compétent.`;
     main.innerHTML = `
       <p style="margin-bottom: var(--sp-3); color: var(--color-text-soft); font-size: var(--fs-sm);">
-        <a href="#/module/${f.moduleId}" style="text-decoration: none;">${escapeHtml(f.moduleTitle)}</a>
+        <a href="#/module/${f.moduleId}" class="link-target" style="text-decoration: none;">${escapeHtml(f.moduleTitle)}</a>
       </p>
       <article class="fiche">
         <h1>${escapeHtml(f.title)}</h1>
@@ -596,7 +596,7 @@
       </div>
 
       <p style="text-align: center; margin: var(--sp-6) 0; font-size: var(--fs-sm);">
-        <a href="#" id="resetDataLink" style="color: var(--color-text-muted)">Tout effacer (favoris, notes, rappels…)</a>
+        <a href="#" id="resetDataLink" class="link-target" style="color: var(--color-text-muted)">Tout effacer (favoris, notes, rappels…)</a>
       </p>
     `;
   }
@@ -718,7 +718,7 @@
 
       <section class="apropos-card">
         <div class="apropos-initiative">
-          <img src="assets/icons/logo-sfa.png" alt="" class="apropos-logo" />
+          <img src="assets/icons/logo-sfa.jpg" alt="" class="apropos-logo" />
           <div>
             <p class="apropos-initiative-label">Une initiative du</p>
             <h2 class="apropos-initiative-title">${escapeHtml(svc.name || '')}</h2>

@@ -45,7 +45,7 @@ sections:
   - id: services-aide
     title: "Les services d'aide près de moi"
     summary: "AMO, planning familial, CPAS, Inforjeunes."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Voici les services qui peuvent t'accompagner dans la durée. Tous sont gratuits et confidentiels.</p>
       
@@ -73,7 +73,7 @@ sections:
   - id: mal-etre
     title: "Quand ça ne va pas"
     summary: "Anxiété, dépression, idées noires : par où commencer."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Tu te sens mal, anxieux·se, tu n'arrives plus à dormir, tu as des idées noires ? <strong>Tu n'es pas seul·e, et ça se soigne.</strong> Voici des premières pistes.</p>
       

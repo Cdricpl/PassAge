@@ -17,7 +17,7 @@ sections:
   - id: parler-sans-appeler
     title: Parler sans appeler
     summary: Chat, e-mail, RDV en personne — tu choisis le canal.
-    lastChecked: 11/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Tu as besoin de parler mais l'idée de téléphoner te bloque ? <strong>C'est normal.</strong> Beaucoup de jeunes vivent ça. Voici d'autres façons de demander de l'aide.</p>
 
@@ -40,7 +40,7 @@ sections:
   - id: medecin
     title: Mon médecin traitant
     summary: Pourquoi en avoir un, comment le choisir.
-    lastChecked: 03/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Avoir un <strong>médecin traitant</strong> (ou médecin de famille), c'est utile : il connaît ton dossier, te suit dans la durée, et tu es <strong>mieux remboursé·e</strong>.</p>
 
@@ -65,7 +65,7 @@ sections:
   - id: maison-medicale
     title: La maison médicale
     summary: Soins illimités gratuits si tu t'inscris au forfait.
-    lastChecked: 03/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>La <strong>maison médicale au forfait</strong>, c'est probablement la meilleure nouvelle de cette page. Tu t'y inscris, et tu ne paies <strong>plus rien</strong> à chaque consultation.</p>
 
@@ -95,7 +95,7 @@ sections:
   - id: convention-psy
     title: Voir un psy — gratuit avant 24 ans
     summary: La convention psy 1ère ligne — accessible et déstigmatisée.
-    lastChecked: 11/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Voir un psy, c'est devenu vraiment accessible : grâce à la <strong>convention psychologique de 1ère ligne</strong> (INAMI), tu peux consulter un psy <strong>conventionné</strong> à des conditions très avantageuses.</p>
 
@@ -134,7 +134,7 @@ sections:
   - id: urgence-medicale
     title: En cas d'urgence médicale
     summary: Quand appeler le 112, quand aller aux urgences, quand attendre.
-    lastChecked: 03/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Pas toujours évident de savoir où aller. Voici un petit guide.</p>
 
@@ -169,7 +169,7 @@ sections:
   - id: planning-familial
     title: Le planning familial
     summary: Contraception, IVG, écoute, conseil — gratuit pour les jeunes.
-    lastChecked: 11/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Les <strong>centres de planning familial</strong> sont des lieux d'accueil, d'écoute et de soins liés à la vie affective et sexuelle. Beaucoup plus que de la contraception.</p>
 

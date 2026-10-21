@@ -9,7 +9,7 @@ sections:
   - id: mutuelle
     title: "La mutuelle"
     summary: "Pourquoi c'est obligatoire et comment choisir."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>La mutuelle (officiellement : <strong>assurance soins de santé</strong>) te permet d'être remboursé·e quand tu vas chez le médecin, le dentiste, ou à l'hôpital.</p>
       
@@ -30,7 +30,7 @@ sections:
   - id: rc-familiale
     title: "L'assurance RC familiale"
     summary: "Ce qu'elle couvre, pourquoi tu en as besoin."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>L'assurance <strong>Responsabilité Civile familiale</strong> (RC familiale) te protège financièrement si tu causes un dommage à quelqu'un par accident.</p>
       
@@ -52,7 +52,7 @@ sections:
   - id: voyager
     title: "Voyager à l'étranger"
     summary: "Carte ID, passeport, visa, vaccins, CEAM."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Tu pars en voyage&nbsp;? Plus besoin d'autorisation parentale&nbsp;! Mais avant de boucler ton sac, vérifie que tu as bien tout côté papiers.</p>
       
@@ -99,7 +99,7 @@ sections:
   - id: documents
     title: "Mes papiers d'identité"
     summary: "Carte ID, passeport, casier : où et comment les obtenir."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>La plupart des documents administratifs s'obtiennent à <strong>l'administration communale</strong> de ta commune de domicile (ou de naissance).</p>
       
@@ -123,7 +123,7 @@ sections:
   - id: impots
     title: "Ma première déclaration d'impôts"
     summary: "Qui doit déclarer, comment, et pourquoi tu ne paieras sans doute rien."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     source: "finances.belgium.be · wikifin.be"
     body: |
       <p>À partir de 18 ans, tu reçois chaque année une déclaration d'impôts (ou une proposition déjà remplie). Pas de panique : <strong>déclarer ne veut pas dire payer</strong>. Avec des revenus de jeune, tu ne paieras souvent rien du tout.</p>
@@ -169,7 +169,7 @@ sections:
   - id: voter
     title: "Voter en Belgique"
     summary: "À 18 ans, voter est obligatoire. Convocation, procuration, mode d'emploi."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     source: "elections.fgov.be · wallonie.be"
     body: |
       <p>En Belgique, <strong>voter est un devoir légal</strong> dès 18 ans : tu es automatiquement inscrit·e sur la liste des électeurs, aucune démarche à faire. Et dès <strong>16 ans</strong>, tu votes aussi aux élections européennes.</p>

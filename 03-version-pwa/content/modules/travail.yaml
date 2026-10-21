@@ -9,7 +9,7 @@ sections:
   - id: preparer
     title: "Préparer ma recherche"
     summary: "Forem, CV, lettre de motivation : par où commencer."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Avant d'envoyer des candidatures, il y a deux choses à faire.</p>
       
@@ -31,7 +31,7 @@ sections:
   - id: trouver
     title: "Trouver des offres"
     summary: "Forem, Indeed, intérim, candidature spontanée."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Plusieurs canaux à activer en parallèle pour maximiser tes chances.</p>
       
@@ -58,7 +58,7 @@ sections:
   - id: entretien
     title: "Réussir l'entretien d'embauche"
     summary: "Ce à quoi t'attendre, comment te préparer."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Premier entretien ? Pas de panique. Si on t'appelle, c'est que ton profil intéresse déjà.</p>
       
@@ -82,7 +82,7 @@ sections:
   - id: contrat
     title: "Comprendre mon contrat"
     summary: "CDI, CDD, intérim, brut/net, mes droits."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Tu as décroché un job ? Avant de signer, prends le temps de lire ton contrat. Tu as <strong>le droit de l'emporter</strong> pour le lire chez toi.</p>
       
@@ -146,7 +146,7 @@ sections:
   - id: epargne-pension
     title: "L'épargne-pension"
     summary: "Mettre un peu de côté pour ta pension future, avec un avantage fiscal."
-    lastChecked: "03/06/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>L'<strong>épargne-pension</strong>, c'est une formule d'épargne à long terme qui te permet de constituer une <strong>pension complémentaire</strong> à la pension légale belge. Et sous certaines conditions, tu profites d'un <strong>avantage fiscal</strong> chaque année.</p>
       
@@ -176,7 +176,7 @@ sections:
   - id: chomage
     title: "Le chômage après les études"
     summary: "Stage d'insertion, allocations d'insertion, ONEM — règles 2026."
-    lastChecked: "05/07/2026"
+    lastChecked: "26/09/2026"
     body: |
       <p>Quand tu sors d'études sans emploi, tu peux avoir droit aux <strong>allocations d'insertion</strong> — mais le système a été <strong>profondément réformé en mars 2026</strong>. Voici les règles actuelles.</p>
       

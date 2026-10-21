@@ -83,7 +83,7 @@ sections:
   - id: compte-bancaire
     title: Le compte bancaire
     summary: Ouvrir un compte, ordres permanents, épargne.
-    lastChecked: 11/06/2026
+    lastChecked: 26/09/2026
     source: febelfin.be · inforjeunes.be
     body: |
       <p>À 18 ans, tu peux ouvrir un compte en banque à ton nom. C'est indispensable pour recevoir un salaire, payer en magasin, ou recevoir tes aides.</p>
@@ -130,7 +130,7 @@ sections:
   - id: aides-supp
     title: 'Bons plans : tarif social, seconde main'
     summary: Tarif social énergie/internet, magasins de seconde main.
-    lastChecked: 06/07/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Plein d'aides et d'astuces existent en plus du RIS pour te faciliter la vie. Voici les plus utiles.</p>
 
@@ -181,7 +181,7 @@ sections:
   - id: budget
     title: Mon budget mensuel
     summary: Dépenses obligatoires, priorités, astuces pour ne pas se planter.
-    lastChecked: 11/06/2026
+    lastChecked: 26/09/2026
     body: |
       <p>Avant de prendre un logement ou un engagement, prends 10 minutes pour faire ton budget mensuel. Tu poses tes <strong>rentrées</strong> (RIS, salaire, allocations…) et tes <strong>dépenses fixes</strong>. Le reste, c'est ce que tu peux dépenser ou épargner.</p>
 
@@ -231,7 +231,7 @@ sections:
   - id: dettes
     title: "Dettes : que faire quand tu ne peux pas payer"
     summary: "Rappels, huissiers, médiation de dettes gratuite : tes droits et les bons réflexes."
-    lastChecked: "11/06/2026"
+    lastChecked: "26/09/2026"
     source: "observatoire-credit.be · economie.fgov.be"
     body: |
       <p>Une facture que tu ne peux pas payer, ça arrive — surtout quand on démarre dans la vie. La pire chose à faire : <strong>l'ignorer</strong>. Voici tes droits et les bons réflexes, étape par étape.</p>

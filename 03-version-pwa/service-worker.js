@@ -4,7 +4,7 @@
    network-first pour le HTML (avec fallback offline).
    ============================================================ */
 
-const VERSION = 'v-2026-10-22-1052';
+const VERSION = 'v-2026-10-22-1103';
 const SHELL_CACHE = `passage-shell-${VERSION}`;
 const RUNTIME_CACHE = `passage-runtime-${VERSION}`;
 
@@ -12,10 +12,10 @@ const SHELL_ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './assets/css/styles.css?v=2026-10-22-1052',
-  './assets/js/app.js?v=2026-10-22-1052',
-  './assets/js/content.js?v=2026-10-22-1052',
-  './assets/js/sw-register.js?v=2026-10-22-1052',
+  './assets/css/styles.css?v=2026-10-22-1103',
+  './assets/js/app.js?v=2026-10-22-1103',
+  './assets/js/content.js?v=2026-10-22-1103',
+  './assets/js/sw-register.js?v=2026-10-22-1103',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',
   './assets/icons/logo-sfa.jpg',
@@ -31,14 +31,26 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(
-        keys.filter(k => ![SHELL_CACHE, RUNTIME_CACHE].includes(k))
-            .map(k => caches.delete(k))
-      ))
-      .then(() => self.clients.claim())
-  );
+  const activation = (async () => {
+    const keys = await caches.keys();
+    const old = keys.filter(k => ![SHELL_CACHE, RUNTIME_CACHE].includes(k));
+    await Promise.all(old.map(k => caches.delete(k)));
+    await self.clients.claim();
+    return old.some(k => k.startsWith('passage-'));   // vrai = mise à jour, pas 1re installation
+  })();
+  event.waitUntil(activation);
+  // Mise à jour : on recharge toutes les fenêtres ouvertes pour que chacun
+  // passe à la nouvelle version sans devoir fermer l'app — y compris les
+  // pages qui tournent encore avec l'ancien code. Les notes sont sauvegardées
+  // à chaque frappe : rien n'est perdu.
+  // Important : APRÈS l'activation, hors waitUntil. Le rechargement passe par
+  // ce service worker, qui ne répond qu'une fois activé : l'attendre dans
+  // waitUntil bloquerait les deux.
+  activation.then(async (isUpdate) => {
+    if (!isUpdate) return;
+    const wins = await self.clients.matchAll({ type: 'window' });
+    wins.forEach(c => c.navigate(c.url).catch(() => {}));
+  });
 });
 
 self.addEventListener('message', (event) => {

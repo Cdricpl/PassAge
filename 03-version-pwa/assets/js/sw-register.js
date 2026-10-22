@@ -18,6 +18,12 @@ if ('serviceWorker' in navigator && location.protocol !== 'file:') {
         });
       });
       reg.update();
+      // L'app installée reste souvent ouverte en arrière-plan pendant des
+      // jours : on revérifie à chaque retour au premier plan, et toutes les
+      // 30 minutes tant qu'elle est affichée.
+      const check = () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); };
+      document.addEventListener('visibilitychange', check);
+      setInterval(check, 30 * 60 * 1000);
     }).catch(() => {});
   });
 }

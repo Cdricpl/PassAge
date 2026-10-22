@@ -695,3 +695,512 @@
   - admin/voter
 "convocation":
   - admin/voter
+
+# --- Ajouts octobre 2026 : argot, placement, loisirs, juridique, détresse ---
+"thune":
+  - argent/ris-cpas
+  - argent/budget
+  - argent/aides-supp
+"fric":
+  - argent/ris-cpas
+  - argent/budget
+  - argent/aides-supp
+"oseille":
+  - argent/ris-cpas
+  - argent/budget
+"pognon":
+  - argent/ris-cpas
+  - argent/budget
+"plus de sous":
+  - argent/ris-cpas
+  - argent/aides-supp
+  - urgence/services-aide
+"fauché":
+  - argent/ris-cpas
+  - argent/aides-supp
+  - argent/budget
+"a sec":
+  - argent/ris-cpas
+  - argent/aides-supp
+"revenu d integration":
+  - argent/ris-cpas
+"revenu":
+  - argent/ris-cpas
+  - argent/budget
+"piis":
+  - argent/ris-cpas
+"decouvert":
+  - argent/compte-bancaire
+  - argent/dettes
+"carte bancaire":
+  - argent/compte-bancaire
+"bancontact":
+  - argent/compte-bancaire
+"virement":
+  - argent/compte-bancaire
+"domiciliation":
+  - argent/compte-bancaire
+  - argent/budget
+"iban":
+  - argent/compte-bancaire
+  - argent/allocations-familiales
+"credit":
+  - argent/dettes
+"pret":
+  - argent/dettes
+  - logement/garantie
+"rembourser":
+  - argent/dettes
+"facture":
+  - argent/budget
+  - argent/dettes
+  - logement/compteurs
+"impaye":
+  - argent/dettes
+"economiser":
+  - argent/budget
+  - argent/aides-supp
+"seconde main":
+  - argent/aides-supp
+"vinted":
+  - argent/aides-supp
+"allocations familiales":
+  - argent/allocations-familiales
+"post etudiant":
+  - argent/allocations-familiales
+  - travail/chomage
+"epargne mandant":
+  - placement/epargne-mandante
+"compte d epargne":
+  - placement/epargne-mandante
+  - argent/compte-bancaire
+"famille d accueil":
+  - placement/aides-disponibles
+  - placement/epargne-mandante
+"placement":
+  - placement/aides-disponibles
+  - placement/epargne-mandante
+"place":
+  - placement/aides-disponibles
+"institution":
+  - placement/aides-disponibles
+"foyer":
+  - placement/aides-disponibles
+  - logement/options
+"saj":
+  - placement/aides-disponibles
+  - placement/epargne-mandante
+"spj":
+  - placement/aides-disponibles
+  - placement/epargne-mandante
+"aide a la jeunesse":
+  - placement/aides-disponibles
+  - urgence/services-aide
+"delegue":
+  - placement/epargne-mandante
+  - placement/aides-disponibles
+"18 ans":
+  - placement/aides-disponibles
+  - argent/allocations-familiales
+  - admin/voter
+"majeur":
+  - placement/aides-disponibles
+  - admin/voter
+"majorite":
+  - placement/aides-disponibles
+  - admin/voter
+"autonomie":
+  - logement/options
+  - placement/aides-disponibles
+  - argent/budget
+"mise en autonomie":
+  - placement/aides-disponibles
+  - logement/options
+"quitter la maison":
+  - logement/options
+  - logement/recherche
+"partir de chez moi":
+  - logement/options
+  - logement/recherche
+"proprio":
+  - logement/bail
+  - logement/etat-des-lieux
+  - logement/garantie
+"bailleur":
+  - logement/bail
+  - logement/garantie
+"locataire":
+  - logement/bail
+  - logement/assurance-habitation
+"louer":
+  - logement/recherche
+  - logement/bail
+"chercher un appart":
+  - logement/recherche
+  - logement/options
+"immoweb":
+  - logement/recherche
+"logement social":
+  - logement/aides
+  - logement/options
+"slsp":
+  - logement/aides
+  - logement/options
+"adel":
+  - logement/aides
+"allocation loyer":
+  - logement/aides
+"swcs":
+  - logement/garantie
+"pret garantie":
+  - logement/garantie
+"etat des lieux":
+  - logement/etat-des-lieux
+"enregistrement du bail":
+  - logement/bail
+"virer de l appart":
+  - logement/bail
+  - admin/aide-juridique
+"expulse":
+  - logement/bail
+  - admin/aide-juridique
+  - urgence/services-aide
+"expulsion":
+  - logement/bail
+  - admin/aide-juridique
+  - urgence/services-aide
+"a la rue":
+  - urgence/services-aide
+  - argent/ris-cpas
+  - logement/aides
+"humidite":
+  - logement/entretien
+  - logement/urgence-maison
+"moisissure":
+  - logement/entretien
+  - logement/urgence-maison
+"insalubre":
+  - logement/bail
+  - logement/aides
+"reparation":
+  - logement/urgence-maison
+  - logement/bail
+"electricien":
+  - logement/urgence-maison
+"plombier":
+  - logement/urgence-maison
+"domicile":
+  - logement/changement-adresse
+"domicilier":
+  - logement/changement-adresse
+"agent de quartier":
+  - logement/changement-adresse
+"changer d adresse":
+  - logement/changement-adresse
+"fournisseur":
+  - logement/compteurs
+"index":
+  - logement/compteurs
+"taf":
+  - travail/trouver
+  - travail/preparer
+  - travail/job-etudiant
+"taff":
+  - travail/trouver
+  - travail/preparer
+  - travail/job-etudiant
+"chercher du travail":
+  - travail/trouver
+  - travail/preparer
+"postuler":
+  - travail/preparer
+  - travail/trouver
+  - travail/entretien
+"candidature":
+  - travail/preparer
+  - travail/trouver
+"offre d emploi":
+  - travail/trouver
+"indeed":
+  - travail/trouver
+"vire":
+  - travail/contrat
+  - travail/chomage
+  - admin/aide-juridique
+"licencie":
+  - travail/contrat
+  - travail/chomage
+  - admin/aide-juridique
+"licenciement":
+  - travail/contrat
+  - travail/chomage
+"demission":
+  - travail/contrat
+  - travail/chomage
+"demissionner":
+  - travail/contrat
+  - travail/chomage
+"fiche de paie":
+  - travail/contrat
+"brut net":
+  - travail/contrat
+"student at work":
+  - travail/job-etudiant
+"650 heures":
+  - travail/job-etudiant
+  - argent/allocations-familiales
+"stage d insertion":
+  - travail/chomage
+"allocation d insertion":
+  - travail/chomage
+"ifapme":
+  - travail/preparer
+  - etudes/bourse
+"formation":
+  - travail/preparer
+  - etudes/bourse
+"ecole":
+  - etudes/service-social-ecole
+  - etudes/bourse
+"universite":
+  - etudes/bourse
+  - etudes/service-social-ecole
+"unif":
+  - etudes/bourse
+  - etudes/service-social-ecole
+"haute ecole":
+  - etudes/bourse
+  - etudes/service-social-ecole
+"minerval":
+  - etudes/bourse
+  - etudes/service-social-ecole
+"allocation d etudes":
+  - etudes/bourse
+"inscription":
+  - etudes/bourse
+  - travail/preparer
+"decrocher":
+  - etudes/service-social-ecole
+  - urgence/services-aide
+"arreter l ecole":
+  - etudes/service-social-ecole
+  - travail/preparer
+  - argent/allocations-familiales
+"kot etudiant":
+  - logement/options
+  - logement/bail
+"generaliste":
+  - sante/medecin
+  - sante/maison-medicale
+"rendez vous medecin":
+  - sante/medecin
+  - sante/maison-medicale
+"maison medicale":
+  - sante/maison-medicale
+"kine":
+  - sante/maison-medicale
+"lunettes":
+  - admin/mutuelle
+"ophtalmo":
+  - admin/mutuelle
+"vaccin":
+  - admin/voyager
+  - sante/medecin
+"mst":
+  - sante/planning-familial
+"depistage":
+  - sante/planning-familial
+"test de grossesse":
+  - sante/planning-familial
+"capote":
+  - sante/planning-familial
+"pilule du lendemain":
+  - sante/planning-familial
+"regles":
+  - sante/planning-familial
+"planning familial":
+  - sante/planning-familial
+"parler a un psy":
+  - sante/convention-psy
+  - urgence/mal-etre
+"stress":
+  - urgence/mal-etre
+  - sante/convention-psy
+"burn out":
+  - urgence/mal-etre
+  - sante/convention-psy
+"seul":
+  - urgence/lignes-ecoute
+  - sante/parler-sans-appeler
+  - urgence/mal-etre
+"solitude":
+  - urgence/lignes-ecoute
+  - sante/parler-sans-appeler
+  - loisirs/maisons-jeunes
+"personne a qui parler":
+  - urgence/lignes-ecoute
+  - sante/parler-sans-appeler
+"peur":
+  - urgence/lignes-ecoute
+  - urgence/mal-etre
+"pleurer":
+  - urgence/mal-etre
+  - urgence/lignes-ecoute
+"me faire du mal":
+  - urgence/lignes-ecoute
+  - urgence/mal-etre
+"scarification":
+  - urgence/lignes-ecoute
+  - urgence/mal-etre
+"chat":
+  - sante/parler-sans-appeler
+"ecrire a quelqu un":
+  - sante/parler-sans-appeler
+"cannabis":
+  - urgence/lignes-ecoute
+"shit":
+  - urgence/lignes-ecoute
+"beuh":
+  - urgence/lignes-ecoute
+"frappe":
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"battu":
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"menace":
+  - urgence/lignes-ecoute
+  - admin/aide-juridique
+"racket":
+  - urgence/lignes-ecoute
+  - admin/aide-juridique
+"violence conjugale":
+  - urgence/lignes-ecoute
+"abus":
+  - urgence/lignes-ecoute
+  - urgence/services-aide
+"ambulance":
+  - sante/urgence-medicale
+  - urgence/lignes-ecoute
+"pompiers":
+  - urgence/lignes-ecoute
+  - logement/urgence-maison
+"police":
+  - urgence/lignes-ecoute
+  - admin/aide-juridique
+"112":
+  - sante/urgence-medicale
+  - urgence/lignes-ecoute
+"1733":
+  - sante/urgence-medicale
+"avocat":
+  - admin/aide-juridique
+"pro deo":
+  - admin/aide-juridique
+"baj":
+  - admin/aide-juridique
+"tribunal":
+  - admin/aide-juridique
+"juge":
+  - admin/aide-juridique
+"plainte":
+  - admin/aide-juridique
+  - urgence/services-aide
+"amende":
+  - admin/aide-juridique
+  - admin/voter
+"droits":
+  - admin/aide-juridique
+  - urgence/services-aide
+"eid":
+  - admin/documents
+"papiers":
+  - admin/documents
+"perdu ma carte":
+  - admin/documents
+"vol":
+  - admin/documents
+  - admin/rc-familiale
+"assurance":
+  - admin/rc-familiale
+  - logement/assurance-habitation
+  - admin/mutuelle
+"ceam":
+  - admin/voyager
+  - admin/mutuelle
+"royaume uni":
+  - admin/voyager
+"eta":
+  - admin/voyager
+"erasmus":
+  - admin/voyager
+  - etudes/bourse
+"velo":
+  - vie/transport
+"trottinette":
+  - vie/transport
+"abonnement":
+  - vie/transport
+  - vie/communication
+"carte mobib":
+  - vie/transport
+"examen pratique":
+  - vie/permis-conduire
+"guide":
+  - vie/permis-conduire
+"filiere libre":
+  - vie/permis-conduire
+"operateur":
+  - vie/communication
+"carte sim":
+  - vie/communication
+"colis alimentaire":
+  - vie/alimentation
+  - argent/aides-supp
+"epicerie sociale":
+  - vie/alimentation
+  - argent/aides-supp
+"faim":
+  - vie/alimentation
+  - argent/ris-cpas
+"too good to go":
+  - vie/alimentation
+"sport":
+  - loisirs/sport
+"club":
+  - loisirs/sport
+  - loisirs/maisons-jeunes
+"foot":
+  - loisirs/sport
+"salle de sport":
+  - loisirs/sport
+"cinema":
+  - loisirs/pass-jeune
+"concert":
+  - loisirs/pass-jeune
+"culture":
+  - loisirs/pass-jeune
+"article 27":
+  - loisirs/pass-jeune
+"carte jeunes":
+  - loisirs/pass-jeune
+"sortir":
+  - loisirs/pass-jeune
+  - loisirs/maisons-jeunes
+"m ennuie":
+  - loisirs/maisons-jeunes
+  - loisirs/sport
+  - loisirs/benevol
+"maison de jeunes":
+  - loisirs/maisons-jeunes
+"amo":
+  - urgence/services-aide
+  - loisirs/maisons-jeunes
+"infor jeunes":
+  - urgence/services-aide
+"benevolat":
+  - loisirs/benevol
+"volontariat":
+  - loisirs/benevol
+"aider les autres":
+  - loisirs/benevol

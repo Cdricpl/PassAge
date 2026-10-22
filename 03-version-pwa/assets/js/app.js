@@ -404,42 +404,137 @@
     `;
   }
 
+  // ============================================================
+  // Moteur de recherche
+  // - mots vides ignorés (« comment trouver un logement » → logement)
+  // - pluriels ramenés au singulier (loyers → loyer)
+  // - début de mot accepté (mutu → mutuelle)
+  // - tolérance aux fautes de frappe (logment → logement)
+  // - résultats classés : titre > résumé > texte, lexique en bonus
+  // ============================================================
+  const STOP_WORDS = new Set(('a au aux avec ce ces c ca cela comment combien de des du d dans en est et '
+    + 'faire faut il ils j je la le les l ma me mes mon moi m n ne on ou ont par pas pour pourquoi quand que '
+    + 'quel quelle quels qu qui sa se ses son sur t ta te tes ton toi tu un une vos votre y suis etre avoir '
+    + 'veux voudrais peux puis dois doit besoin aide aider svp stp merci bonjour salut quoi ou ya '
+    + 'voir veut vais va sens sent plus tres trop bien tout tous encore deja fait vraiment').split(' '));
+  // « pas » et « aide » sont gardés quand ils font partie d'une expression du lexique (« pas d'argent »).
+  const stem = (w) => (w.length > 3 && /[sx]$/.test(w) && !/(ss|ous|is|us)$/.test(w)) ? w.slice(0, -1) : w;
+  const words = (s) => norm(s).split(/[^a-z0-9]+/).filter(Boolean);
+
+  let SEARCH_INDEX = null;
+  function buildSearchIndex() {
+    const vocab = new Set();
+    const add = (list) => { list.forEach(w => { if (w.length >= 3) vocab.add(w); }); return list; };
+    const docs = [];
+    Object.entries(FICHES_INDEX).forEach(([path, f]) => {
+      docs.push({
+        href: `#/fiche/${path}`, path, title: f.title, sub: `${f.moduleTitle} — ${f.summary}`,
+        fields: [
+          { w: 6, set: new Set(add(words(f.title).map(stem))) },
+          { w: 3, set: new Set(add(words(f.summary).map(stem))) },
+          { w: 1, set: new Set(add(words(f.body.replace(/<[^>]+>/g, ' ')).map(stem))) }
+        ]
+      });
+    });
+    MODULES.forEach(m => {
+      docs.push({
+        href: `#/module/${m.id}`, path: null, title: m.title, sub: m.subtitle || '',
+        fields: [
+          { w: 6, set: new Set(add(words(m.title).map(stem))) },
+          { w: 2, set: new Set(add(words(`${m.subtitle || ''} ${m.objective || ''}`).map(stem))) }
+        ]
+      });
+    });
+    const lexique = Object.entries(LEXIQUE).map(([term, paths]) => ({ toks: add(words(term).map(stem)), paths }));
+    SEARCH_INDEX = { docs, lexique, vocab: [...vocab] };
+    return SEARCH_INDEX;
+  }
+
+  // Distance d'édition bornée (Damerau simplifiée : inclut l'inversion de 2 lettres)
+  function editDistance(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+    for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) {
+      let rowMin = Infinity;
+      for (let j = 1; j <= b.length; j++) {
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+        rowMin = Math.min(rowMin, d[i][j]);
+      }
+      if (rowMin > max) return max + 1;
+    }
+    return d[a.length][b.length];
+  }
+
+  function searchContent(query) {
+    const idx = SEARCH_INDEX || buildSearchIndex();
+    const all = words(query).map(stem);
+    let toks = all.filter(t => !STOP_WORDS.has(t));
+    if (!toks.length) toks = all;                       // que des mots vides : on garde tout
+    const vocabSet = new Set(idx.vocab);
+    const corrections = [];
+
+    // Pour chaque mot : variantes acceptées et leur poids (1 = exact, 0.7 = début de mot, 0.6 = faute de frappe)
+    const variants = toks.map(t => {
+      const v = new Map();
+      if (vocabSet.has(t)) v.set(t, 1);
+      if (t.length >= 3) idx.vocab.forEach(w => { if (w !== t && w.startsWith(t)) v.set(w, Math.max(v.get(w) || 0, 0.7)); });
+      if (!v.size && t.length >= 4) {
+        const max = t.length >= 8 ? 2 : 1;
+        let best = null, bestD = max + 1;
+        idx.vocab.forEach(w => {
+          const dist = editDistance(t, w, max);
+          if (dist <= max) { v.set(w, 0.6); if (dist < bestD) { bestD = dist; best = w; } }
+        });
+        if (best) corrections.push(best);
+      }
+      return v;
+    });
+
+    const scores = new Map();
+    idx.docs.forEach(doc => {
+      let score = 0, matched = 0;
+      variants.forEach(v => {
+        let best = 0;
+        doc.fields.forEach(f => v.forEach((wt, w) => { if (f.set.has(w)) best = Math.max(best, f.w * wt); }));
+        if (best > 0) { score += best; matched++; }
+      });
+      const needed = Math.max(1, Math.ceil(toks.length / 2));
+      if (matched >= needed) scores.set(doc, score + (matched === toks.length ? 4 : 0));
+    });
+
+    // Lexique : expressions du quotidien → fiches (« pas d'argent », « proprio », « thune »…)
+    const qSet = new Set(all);
+    variants.forEach(v => v.forEach((_, w) => qSet.add(w)));
+    idx.lexique.forEach(({ toks: lt, paths }) => {
+      if (!lt.length || !lt.every(t => qSet.has(t))) return;
+      paths.forEach((path, i) => {
+        const doc = idx.docs.find(d => d.path === path);
+        if (doc) scores.set(doc, (scores.get(doc) || 0) + 10 - i);   // le 1er chemin du lexique est le plus pertinent
+      });
+    });
+
+    // On ne garde que les résultats assez proches du meilleur (évite les longues listes peu utiles)
+    const ranked = [...scores.entries()].sort((a, b) => b[1] - a[1]);
+    const cutoff = ranked.length ? ranked[0][1] * 0.3 : 0;
+    const results = ranked.filter(([, sc]) => sc >= cutoff).slice(0, 15)
+      .map(([doc]) => ({ href: doc.href, title: doc.title, sub: doc.sub }));
+    return { results, corrections };
+  }
+
   function renderRecherche(query) {
     const q = (query || '').trim();
     let results = [];
     const seen = new Set();
     const addResult = (r) => { if (!seen.has(r.href)) { seen.add(r.href); results.push(r); } };
 
+    let corrections = [];
     if (q.length >= 2) {
-      const nq = norm(q);
-      const tokens = nq.split(/\s+/).filter(Boolean);
-      const matchesAllTokens = (text) => {
-        const normText = norm(text);
-        return tokens.every(token => normText.includes(token));
-      };
-
-      Object.entries(FICHES_INDEX).forEach(([path, f]) => {
-        const text = `${f.title} ${f.summary} ${f.body.replace(/<[^>]+>/g, ' ')}`;
-        if (matchesAllTokens(text)) {
-          addResult({ href: `#/fiche/${path}`, title: f.title, sub: `${f.moduleTitle} — ${f.summary}` });
-        }
-      });
-
-      MODULES.forEach(m => {
-        const text = `${m.title} ${m.subtitle || ''} ${m.objective || ''}`;
-        if (matchesAllTokens(text)) {
-          addResult({ href: `#/module/${m.id}`, title: m.title, sub: m.subtitle || '' });
-        }
-      });
-      Object.entries(LEXIQUE).forEach(([term, paths]) => {
-        const nt = norm(term);
-        if (nt.length >= 3 && (nt.includes(nq) || nq.includes(nt))) {
-          paths.forEach(path => {
-            const f = FICHES_INDEX[path];
-            if (f) addResult({ href: `#/fiche/${path}`, title: f.title, sub: `${f.moduleTitle} — ${f.summary}` });
-          });
-        }
-      });
+      const found = searchContent(q);
+      corrections = found.corrections;
+      found.results.forEach(addResult);
     }
 
     main.innerHTML = `
@@ -461,10 +556,11 @@
       ` : results.length === 0 ? `
         <div class="empty-state">
           <p>Rien trouvé pour <strong>« ${escapeHtml(q)} »</strong>.</p>
-          <p style="margin-top: var(--sp-3)">Essaie un autre mot, ou reviens à <a href="#/">l'accueil</a>.</p>
+          <p style="margin-top: var(--sp-3)">Essaie avec tes propres mots : « proprio », « thune », « je me sens seul »… ou parcours les <a href="#/">thèmes</a>.</p>
+          <p style="margin-top: var(--sp-3)">Ça ne va pas ? <a href="#/urgence">Trouve quelqu'un à qui parler</a>.</p>
         </div>
       ` : `
-        <p style="color: var(--color-text-soft); margin: var(--sp-3) 0;">${results.length} résultat${results.length > 1 ? 's' : ''}</p>
+        <p style="color: var(--color-text-soft); margin: var(--sp-3) 0;">${results.length} résultat${results.length > 1 ? 's' : ''}${corrections.length ? ` — on a aussi cherché « ${escapeHtml(corrections.join(' '))} »` : ''}</p>
         <div class="search-results fiche-list">
           ${results.map(r => `
             <a class="fiche-link" href="${r.href}">
